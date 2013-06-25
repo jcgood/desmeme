@@ -1,4 +1,4 @@
-; Mon Jun 24 14:06:59 EDT 2013
+; Tue Jun 25 14:23:06 EDT 2013
 ; 
 ;+ (version "3.3.1")
 ;+ (build "Build 430")
@@ -20,10 +20,10 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[template_ProjectKB_Instance_30074]
-		[template_ProjectKB_Instance_40075]
-		[template_ProjectKB_Instance_40076]
-		[template_ProjectKB_Instance_40077]))
+		[template_ProjectKB_Instance_10082]
+		[template_ProjectKB_Instance_10083]
+		[template_ProjectKB_Instance_10084]
+		[template_ProjectKB_Instance_10085]))
 
 ([CLSES_TAB] of  Widget
 
@@ -151,20 +151,22 @@
 
 	(browser_slot_names [BROWSER_SLOT_NAMES])
 	(customized_instance_widgets
+		[template_ProjectKB_Instance_225]
+		[PAL_FORM_WIDGET]
+		[INSTANCE_ANNOTATION_FORM_WIDGET]
+		[template_ProjectKB_Instance_20070]
+		[template_ProjectKB_Instance_10164]
+		[template_ProjectKB_Instance_448]
 		[template_ProjectKB_Instance_99]
 		[template_ProjectKB_Instance_232]
-		[PAL_FORM_WIDGET]
-		[template_ProjectKB_Instance_20070]
-		[INSTANCE_ANNOTATION_FORM_WIDGET]
-		[template_ProjectKB_Instance_225]
-		[template_ProjectKB_Instance_448]
 		[template_ProjectKB_Instance_30079]
-		[template_ProjectKB_Instance_385]
-		[STANDARD_CLASS_FORM_WIDGET]
-		[STANDARD_SLOT_FORM_WIDGET]
 		[template_ProjectKB_Instance_378]
-		[template_ProjectKB_Instance_30075]
-		[STANDARD_FACET_FORM_WIDGET])
+		[STANDARD_CLASS_FORM_WIDGET]
+		[template_ProjectKB_Instance_10108]
+		[STANDARD_SLOT_FORM_WIDGET]
+		[STANDARD_FACET_FORM_WIDGET]
+		[template_ProjectKB_Instance_385]
+		[template_ProjectKB_Instance_30075])
 	(default_cls_metaclass ":STANDARD-CLASS")
 	(default_facet_metaclass ":STANDARD-FACET")
 	(default_instance_widget_class_name "edu.stanford.smi.protege.widget.FormWidget")
@@ -820,43 +822,16 @@
 ([template_ProjectKB_Instance_10069] of  Property_List
 )
 
-([template_ProjectKB_Instance_10070] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "spectemplate:STRICTURE")
-	(property_list [template_ProjectKB_Instance_10071])
-	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
-	(width 200)
-	(x 0)
-	(y 280))
-
-([template_ProjectKB_Instance_10071] of  Property_List
-
-	(properties
-		[template_ProjectKB_Instance_10072]
-		[template_ProjectKB_Instance_10073]))
-
-([template_ProjectKB_Instance_10072] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-View References to Value"))
-
-([template_ProjectKB_Instance_10073] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-Delete Instance"))
-
 ([template_ProjectKB_Instance_10074] of  Widget
 
-	(height 60)
+	(height 120)
 	(is_hidden FALSE)
-	(name "spectemplate:FOUNDATION")
+	(name "spectemplate:RESTKOMPONENT")
 	(property_list [template_ProjectKB_Instance_10075])
-	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
 	(width 200)
 	(x 0)
-	(y 350))
+	(y 120))
 
 ([template_ProjectKB_Instance_10075] of  Property_List
 
@@ -874,36 +849,260 @@
 	(boolean_value FALSE)
 	(name "ButtonDisplayed-Delete Instance"))
 
-([template_ProjectKB_Instance_10078] of  Widget
+([template_ProjectKB_Instance_10082] of  String
 
-	(height 60)
-	(is_hidden FALSE)
-	(name "specgeneral:CONDITIONING")
-	(property_list [template_ProjectKB_Instance_10079])
-	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
-	(width 200)
-	(x 0)
-	(y 210))
+	(name ":PAL-CONSTRAINT")
+	(string_value "%3APAL-NAME"))
 
-([template_ProjectKB_Instance_10079] of  Property_List
+([template_ProjectKB_Instance_10083] of  String
 
-	(properties
-		[template_ProjectKB_Instance_10080]
-		[template_ProjectKB_Instance_10081]))
+	(name ":INSTANCE-ANNOTATION")
+	(string_value "%3AANNOTATION-TEXT"))
 
-([template_ProjectKB_Instance_10080] of  Boolean
+([template_ProjectKB_Instance_10084] of  String
 
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-View References to Value"))
+	(name ":META-CLASS")
+	(string_value "%3ANAME"))
 
-([template_ProjectKB_Instance_10081] of  Boolean
+([template_ProjectKB_Instance_10085] of  String
 
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-Delete Instance"))
+	(name "form:transcription")
+	(string_value "specform%3ATRANSCRIPTION_STRING"))
 
 ([template_ProjectKB_Instance_101] of  Property_List
 
 	(name "layout properties"))
+
+([template_ProjectKB_Instance_10108] of  Widget
+
+	(is_hidden FALSE)
+	(name "arch")
+	(property_list [template_ProjectKB_Instance_10109])
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
+
+([template_ProjectKB_Instance_10109] of  Property_List
+
+	(properties
+		[template_ProjectKB_Instance_10110]
+		[template_ProjectKB_Instance_10111]
+		[template_ProjectKB_Instance_10117]
+		[template_ProjectKB_Instance_10121]
+		[template_ProjectKB_Instance_10125]
+		[template_ProjectKB_Instance_10129]
+		[template_ProjectKB_Instance_10133]
+		[template_ProjectKB_Instance_10185]))
+
+([template_ProjectKB_Instance_10110] of  Property_List
+
+	(name "layout properties"))
+
+([template_ProjectKB_Instance_10111] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name ":NAME")
+	(property_list [template_ProjectKB_Instance_10112])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceNameWidget")
+	(width 200)
+	(x 0)
+	(y 0))
+
+([template_ProjectKB_Instance_10112] of  Property_List
+)
+
+([template_ProjectKB_Instance_10117] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "spectemplate:KEYSTONE")
+	(property_list [template_ProjectKB_Instance_10118])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
+	(width 200)
+	(x 0)
+	(y 60))
+
+([template_ProjectKB_Instance_10118] of  Property_List
+
+	(properties
+		[template_ProjectKB_Instance_10119]
+		[template_ProjectKB_Instance_10120]))
+
+([template_ProjectKB_Instance_10119] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([template_ProjectKB_Instance_10120] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([template_ProjectKB_Instance_10121] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "spectemplate:RIGHT_SUPPORT")
+	(property_list [template_ProjectKB_Instance_10122])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
+	(width 200)
+	(x 200)
+	(y 0))
+
+([template_ProjectKB_Instance_10122] of  Property_List
+
+	(properties
+		[template_ProjectKB_Instance_10123]
+		[template_ProjectKB_Instance_10124]))
+
+([template_ProjectKB_Instance_10123] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([template_ProjectKB_Instance_10124] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([template_ProjectKB_Instance_10125] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "spectemplate:RIGHT_VOUSSOIR")
+	(property_list [template_ProjectKB_Instance_10126])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
+	(width 200)
+	(x 200)
+	(y 60))
+
+([template_ProjectKB_Instance_10126] of  Property_List
+
+	(properties
+		[template_ProjectKB_Instance_10127]
+		[template_ProjectKB_Instance_10128]))
+
+([template_ProjectKB_Instance_10127] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([template_ProjectKB_Instance_10128] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([template_ProjectKB_Instance_10129] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "spectemplate:LEFT_SUPPORT")
+	(property_list [template_ProjectKB_Instance_10130])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
+	(width 200)
+	(x 0)
+	(y 120))
+
+([template_ProjectKB_Instance_10130] of  Property_List
+
+	(properties
+		[template_ProjectKB_Instance_10131]
+		[template_ProjectKB_Instance_10132]))
+
+([template_ProjectKB_Instance_10131] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([template_ProjectKB_Instance_10132] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([template_ProjectKB_Instance_10133] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "spectemplate:LEFT_VOUSSOIR")
+	(property_list [template_ProjectKB_Instance_10134])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
+	(width 200)
+	(x 0)
+	(y 180))
+
+([template_ProjectKB_Instance_10134] of  Property_List
+
+	(properties
+		[template_ProjectKB_Instance_10135]
+		[template_ProjectKB_Instance_10136]))
+
+([template_ProjectKB_Instance_10135] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([template_ProjectKB_Instance_10136] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([template_ProjectKB_Instance_10164] of  Widget
+
+	(is_hidden FALSE)
+	(name "component:restkomponentenSet")
+	(property_list [template_ProjectKB_Instance_10165])
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
+
+([template_ProjectKB_Instance_10165] of  Property_List
+
+	(properties
+		[template_ProjectKB_Instance_10166]
+		[template_ProjectKB_Instance_10171]
+		[template_ProjectKB_Instance_10074]))
+
+([template_ProjectKB_Instance_10166] of  Property_List
+
+	(name "layout properties"))
+
+([template_ProjectKB_Instance_10171] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name ":NAME")
+	(property_list [template_ProjectKB_Instance_10172])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceNameWidget")
+	(width 200)
+	(x 0)
+	(y 0))
+
+([template_ProjectKB_Instance_10172] of  Property_List
+)
+
+([template_ProjectKB_Instance_10185] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "spectemplate:RESTKOMPONENTEN")
+	(property_list [template_ProjectKB_Instance_10186])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
+	(width 200)
+	(x 200)
+	(y 120))
+
+([template_ProjectKB_Instance_10186] of  Property_List
+
+	(properties
+		[template_ProjectKB_Instance_10187]
+		[template_ProjectKB_Instance_10188]))
+
+([template_ProjectKB_Instance_10187] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([template_ProjectKB_Instance_10188] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
 
 ([template_ProjectKB_Instance_114] of  Widget
 
@@ -922,84 +1121,6 @@
 ([template_ProjectKB_Instance_116] of  String
 
 	(name "SearchTab_Query"))
-
-([template_ProjectKB_Instance_123] of  Widget
-
-	(is_hidden FALSE)
-	(name "template:desmeme")
-	(property_list [template_ProjectKB_Instance_124])
-	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
-
-([template_ProjectKB_Instance_124] of  Property_List
-
-	(properties
-		[template_ProjectKB_Instance_125]
-		[template_ProjectKB_Instance_126]
-		[template_ProjectKB_Instance_128]
-		[template_ProjectKB_Instance_130]
-		[template_ProjectKB_Instance_147]
-		[template_ProjectKB_Instance_10070]
-		[template_ProjectKB_Instance_10074]
-		[template_ProjectKB_Instance_10078]))
-
-([template_ProjectKB_Instance_125] of  Property_List
-
-	(name "layout properties"))
-
-([template_ProjectKB_Instance_126] of  Widget
-
-	(height 0)
-	(is_hidden FALSE)
-	(name "general:STRATIFICATION")
-	(property_list [template_ProjectKB_Instance_127])
-	(width 0)
-	(x 0)
-	(y 0))
-
-([template_ProjectKB_Instance_127] of  Property_List
-)
-
-([template_ProjectKB_Instance_128] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "function:FUNCTION")
-	(property_list [template_ProjectKB_Instance_129])
-	(widget_class_name "edu.stanford.smi.protege.widget.ClsFieldWidget")
-	(width 200)
-	(x 0)
-	(y 60))
-
-([template_ProjectKB_Instance_129] of  Property_List
-)
-
-([template_ProjectKB_Instance_130] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "template:VIOLABILITY")
-	(property_list [template_ProjectKB_Instance_131])
-	(widget_class_name "edu.stanford.smi.protege.widget.ClsFieldWidget")
-	(width 200)
-	(x 0)
-	(y 120))
-
-([template_ProjectKB_Instance_131] of  Property_List
-)
-
-([template_ProjectKB_Instance_147] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name ":NAME")
-	(property_list [template_ProjectKB_Instance_148])
-	(widget_class_name "edu.stanford.smi.protege.widget.InstanceNameWidget")
-	(width 200)
-	(x 0)
-	(y 0))
-
-([template_ProjectKB_Instance_148] of  Property_List
-)
 
 ([template_ProjectKB_Instance_2] of  Widget
 
@@ -1137,11 +1258,6 @@
 	(name "factory_class_name")
 	(string_value "edu.stanford.smi.protegex.storage.rdf.configurable.RDFCBackend"))
 
-([template_ProjectKB_Instance_30074] of  String
-
-	(name ":PAL-CONSTRAINT")
-	(string_value "%3APAL-NAME"))
-
 ([template_ProjectKB_Instance_30075] of  Widget
 
 	(is_hidden FALSE)
@@ -1233,29 +1349,6 @@
 
 ([template_ProjectKB_Instance_30087] of  Property_List
 )
-
-([template_ProjectKB_Instance_30105] of  Widget
-
-	(is_hidden FALSE)
-	(name "template:arch")
-	(property_list [template_ProjectKB_Instance_30106])
-	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
-
-([template_ProjectKB_Instance_30106] of  Property_List
-
-	(properties
-		[template_ProjectKB_Instance_30107]
-		[template_ProjectKB_Instance_40108]
-		[template_ProjectKB_Instance_40112]
-		[template_ProjectKB_Instance_40116]
-		[template_ProjectKB_Instance_40120]
-		[template_ProjectKB_Instance_40122]
-		[template_ProjectKB_Instance_40126]
-		[template_ProjectKB_Instance_40130]))
-
-([template_ProjectKB_Instance_30107] of  Property_List
-
-	(name "layout properties"))
 
 ([template_ProjectKB_Instance_30108] of  Widget
 
@@ -1445,21 +1538,6 @@
 
 	(name "renaming_namespaces"))
 
-([template_ProjectKB_Instance_40075] of  String
-
-	(name ":INSTANCE-ANNOTATION")
-	(string_value "%3AANNOTATION-TEXT"))
-
-([template_ProjectKB_Instance_40076] of  String
-
-	(name ":META-CLASS")
-	(string_value "%3ANAME"))
-
-([template_ProjectKB_Instance_40077] of  String
-
-	(name "form:transcription")
-	(string_value "specform%3ATRANSCRIPTION_STRING"))
-
 ([template_ProjectKB_Instance_40079] of  Property_List
 )
 
@@ -1522,182 +1600,6 @@
 	(name "ButtonDisplayed-View References to Value"))
 
 ([template_ProjectKB_Instance_40097] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-Delete Instance"))
-
-([template_ProjectKB_Instance_40108] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "spectemplate:LEFT_VOUSSOIR")
-	(property_list [template_ProjectKB_Instance_40109])
-	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
-	(width 200)
-	(x 0)
-	(y 130))
-
-([template_ProjectKB_Instance_40109] of  Property_List
-
-	(properties
-		[template_ProjectKB_Instance_40110]
-		[template_ProjectKB_Instance_40111]))
-
-([template_ProjectKB_Instance_40110] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-View References to Value"))
-
-([template_ProjectKB_Instance_40111] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-Delete Instance"))
-
-([template_ProjectKB_Instance_40112] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "spectemplate:KEYSTONE")
-	(property_list [template_ProjectKB_Instance_40113])
-	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
-	(width 200)
-	(x 110)
-	(y 70))
-
-([template_ProjectKB_Instance_40113] of  Property_List
-
-	(properties
-		[template_ProjectKB_Instance_40114]
-		[template_ProjectKB_Instance_40115]))
-
-([template_ProjectKB_Instance_40114] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-View References to Value"))
-
-([template_ProjectKB_Instance_40115] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-Delete Instance"))
-
-([template_ProjectKB_Instance_40116] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "spectemplate:RIGHT_SUPPORT")
-	(property_list [template_ProjectKB_Instance_40117])
-	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
-	(width 200)
-	(x 210)
-	(y 190))
-
-([template_ProjectKB_Instance_40117] of  Property_List
-
-	(properties
-		[template_ProjectKB_Instance_40118]
-		[template_ProjectKB_Instance_40119]))
-
-([template_ProjectKB_Instance_40118] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-View References to Value"))
-
-([template_ProjectKB_Instance_40119] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-Delete Instance"))
-
-([template_ProjectKB_Instance_40120] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name ":NAME")
-	(property_list [template_ProjectKB_Instance_40121])
-	(widget_class_name "edu.stanford.smi.protege.widget.InstanceNameWidget")
-	(width 200)
-	(x 0)
-	(y 0))
-
-([template_ProjectKB_Instance_40121] of  Property_List
-)
-
-([template_ProjectKB_Instance_40122] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "spectemplate:LEFT_SUPPORT")
-	(property_list [template_ProjectKB_Instance_40123])
-	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
-	(width 200)
-	(x 0)
-	(y 190))
-
-([template_ProjectKB_Instance_40123] of  Property_List
-
-	(properties
-		[template_ProjectKB_Instance_40124]
-		[template_ProjectKB_Instance_40125]))
-
-([template_ProjectKB_Instance_40124] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-View References to Value"))
-
-([template_ProjectKB_Instance_40125] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-Delete Instance"))
-
-([template_ProjectKB_Instance_40126] of  Widget
-
-	(height 120)
-	(is_hidden FALSE)
-	(name "spectemplate:RESTKOMPONENTEN")
-	(property_list [template_ProjectKB_Instance_40127])
-	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
-	(width 200)
-	(x 0)
-	(y 250))
-
-([template_ProjectKB_Instance_40127] of  Property_List
-
-	(properties
-		[template_ProjectKB_Instance_40128]
-		[template_ProjectKB_Instance_40129]))
-
-([template_ProjectKB_Instance_40128] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-View References to Value"))
-
-([template_ProjectKB_Instance_40129] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-Delete Instance"))
-
-([template_ProjectKB_Instance_40130] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "spectemplate:RIGHT_VOUSSOIR")
-	(property_list [template_ProjectKB_Instance_40131])
-	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
-	(width 200)
-	(x 210)
-	(y 130))
-
-([template_ProjectKB_Instance_40131] of  Property_List
-
-	(properties
-		[template_ProjectKB_Instance_40132]
-		[template_ProjectKB_Instance_40133]))
-
-([template_ProjectKB_Instance_40132] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-View References to Value"))
-
-([template_ProjectKB_Instance_40133] of  Boolean
 
 	(boolean_value FALSE)
 	(name "ButtonDisplayed-Delete Instance"))
@@ -1835,16 +1737,6 @@
 	(is_readonly FALSE)
 	(undo_enabled TRUE)
 	(update_modification_slots FALSE))
-
-([template_ProjectKB_Instance_60186] of  String
-
-	(name "template:length")
-	(string_value "%3ANAME"))
-
-([template_ProjectKB_Instance_60187] of  String
-
-	(name "template:order")
-	(string_value "%3ANAME"))
 
 ([template_ProjectKB_Instance_77] of  Property_List
 

@@ -37,6 +37,7 @@
 	<rdfs:domain rdf:resource="&component;component"/>
 	<rdfs:domain rdf:resource="&component;elasticity"/>
 	<rdfs:domain rdf:resource="&component;filledness"/>
+	<rdfs:domain rdf:resource="&component;restkomponentenSet"/>
 	<rdfs:domain rdf:resource="&component;stability"/>
 	<rdfs:domain rdf:resource="&form;form"/>
 	<rdfs:domain rdf:resource="&form;transcription"/>
@@ -150,6 +151,11 @@
 	 rdfs:label="component:partiallyFilled">
 	<rdfs:subClassOf rdf:resource="&component;filled"/>
 	<rdfs:subClassOf rdf:resource="&component;open"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&component;restkomponentenSet"
+	 rdfs:label="component:restkomponentenSet">
+	<rdfs:comment>I need to hack in a Restkomponenten container to get the set functionality of Restkomponenten.</rdfs:comment>
+	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&component;stability"
 	 a:role="abstract"
@@ -689,9 +695,15 @@ TOO MANY SYMBOLS</rdfs:comment>
 	<rdfs:range rdf:resource="&component;component"/>
 	<rdfs:domain rdf:resource="&template_;arch"/>
 </rdf:Property>
-<rdf:Property rdf:about="&spectemplate;RESTKOMPONENTEN"
-	 rdfs:label="spectemplate:RESTKOMPONENTEN">
+<rdf:Property rdf:about="&spectemplate;RESTKOMPONENT"
+	 rdfs:label="spectemplate:RESTKOMPONENT">
 	<rdfs:range rdf:resource="&component;component"/>
+	<rdfs:domain rdf:resource="&component;restkomponentenSet"/>
+</rdf:Property>
+<rdf:Property rdf:about="&spectemplate;RESTKOMPONENTEN"
+	 a:maxCardinality="1"
+	 rdfs:label="spectemplate:RESTKOMPONENTEN">
+	<rdfs:range rdf:resource="&component;restkomponentenSet"/>
 	<rdfs:domain rdf:resource="&template_;foundation"/>
 </rdf:Property>
 <rdf:Property rdf:about="&spectemplate;RIGHT_SUPPORT"

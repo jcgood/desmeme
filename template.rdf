@@ -76,11 +76,11 @@
 <template_:arch rdf:about="&templates;Algonquian_clause_Foundation"
 	 rdfs:label="templates:Algonquian_clause_Foundation">
 	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;Algonquian_clause-Negative"/>
-	<spectemplate:RESTKOMPONENTEN rdf:resource="&templates;Algonquian_clause_Focus"/>
 	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;Algonquian_clause_Oblique"/>
 	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;Algonquian_clause_Postverbal"/>
 	<spectemplate:KEYSTONE rdf:resource="&templates;Algonquian_clause_Verb"/>
 	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;Algonquian_clause_nullComponent"/>
+	<spectemplate:RESTKOMPONENTEN rdf:resource="&template_;Algonquian_clause-RK"/>
 </template_:arch>
 <component:coherent rdf:about="&templates;Algonquian_clause_Keystone-coherent"
 	 rdfs:label="templates:Algonquian_clause_Keystone-coherent">
@@ -740,9 +740,9 @@
 	<spectemplate:KEYSTONE rdf:resource="&templates;German_cf"/>
 	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;German_mf"/>
 	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;German_nf"/>
-	<spectemplate:RESTKOMPONENTEN rdf:resource="&templates;German_vc"/>
 	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;German_vf"/>
 	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;German_vf"/>
+	<spectemplate:RESTKOMPONENTEN rdf:resource="&template_;German-RK"/>
 </template_:arch>
 <template_:order rdf:about="&templates;German_clause_Stricture-Order"
 	 general:COUNT="5"
@@ -932,9 +932,9 @@
 	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;Mande_O"/>
 	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;Mande_S"/>
 	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;Mande_S"/>
-	<spectemplate:RESTKOMPONENTEN rdf:resource="&templates;Mande_V"/>
 	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;Mande_X"/>
 	<spectemplate:KEYSTONE rdf:resource="&templates;Mande_clause_TMA"/>
+	<spectemplate:RESTKOMPONENTEN rdf:resource="&template_;Mande-RK"/>
 </template_:arch>
 <template_:order rdf:about="&templates;Mande_clause_Order"
 	 general:COUNT="5"
@@ -1135,12 +1135,8 @@
 <template_:span rdf:about="&templates;Nimboran_verb-Span"
 	 rdfs:label="templates:Nimboran_verb-Span">
 	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;Nimboran_verb-LeftSupport"/>
-	<spectemplate:RESTKOMPONENTEN rdf:resource="&templates;Nimboran_verb-Position3"/>
-	<spectemplate:RESTKOMPONENTEN rdf:resource="&templates;Nimboran_verb-Position4"/>
-	<spectemplate:RESTKOMPONENTEN rdf:resource="&templates;Nimboran_verb-Position5"/>
-	<spectemplate:RESTKOMPONENTEN rdf:resource="&templates;Nimboran_verb-Position6"/>
-	<spectemplate:RESTKOMPONENTEN rdf:resource="&templates;Nimboran_verb-Position7"/>
 	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;Nimboran_verb-RightSupport"/>
+	<spectemplate:RESTKOMPONENTEN rdf:resource="&template_;Nimboran_verb-RK"/>
 </template_:span>
 <general:constructionalConditioning rdf:about="&templates;Nimboran_verbal_conditioning"
 	 notes:CONDITIONS="These are the conditions for the Nimboran verbal template"
@@ -1360,8 +1356,8 @@
 <template_:span rdf:about="&templates;Tiene_verb-Span"
 	 rdfs:label="templates:Tiene_verb-Span">
 	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;Tiene_verb-LeftSupport"/>
-	<spectemplate:RESTKOMPONENTEN rdf:resource="&templates;Tiene_verb-MiddleConsonant"/>
 	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;Tiene_verb-RightSupport"/>
+	<spectemplate:RESTKOMPONENTEN rdf:resource="&template_;Tiene_verb-RK"/>
 </template_:span>
 <template_:order rdf:about="&templates;Tiene_verb-Stricture"
 	 general:COUNT="3"
@@ -1382,8 +1378,6 @@
 	 general:MAXIMUM="1"
 	 general:MINIMUM="0"
 	 rdfs:label="templates:template_Instance_18"/>
-<template_:span rdf:about="&templates;template_Instance_2"
-	 rdfs:label="templates:template_Instance_2"/>
 <component:inelastic rdf:about="&templates;template_Instance_22"
 	 general:COUNT="1"
 	 rdfs:label="templates:template_Instance_22"/>
@@ -1396,4 +1390,22 @@
 	 rdfs:label="templates:template_Instance_6">
 	<function:CLASS rdf:resource="&localfunction;locative"/>
 </component:coherent>
+<component:restkomponentenSet rdf:about="&template_;Algonquian_clause-RK"
+	 rdfs:label="Algonquian_clause-RK"/>
+<component:restkomponentenSet rdf:about="&template_;German-RK"
+	 rdfs:label="German-RK"/>
+<component:restkomponentenSet rdf:about="&template_;Mande-RK"
+	 rdfs:label="Mande-RK"/>
+<component:restkomponentenSet rdf:about="&template_;Nimboran_verb-RK"
+	 rdfs:label="Nimboran_verb-RK">
+	<spectemplate:RESTKOMPONENT rdf:resource="&templates;Nimboran_verb-Position3"/>
+	<spectemplate:RESTKOMPONENT rdf:resource="&templates;Nimboran_verb-Position4"/>
+	<spectemplate:RESTKOMPONENT rdf:resource="&templates;Nimboran_verb-Position5"/>
+	<spectemplate:RESTKOMPONENT rdf:resource="&templates;Nimboran_verb-Position6"/>
+	<spectemplate:RESTKOMPONENT rdf:resource="&templates;Nimboran_verb-Position7"/>
+</component:restkomponentenSet>
+<component:restkomponentenSet rdf:about="&template_;Tiene_verb-RK"
+	 rdfs:label="Tiene_verb-RK"/>
+<component:component rdf:about="&template_;template_Instance_6"
+	 rdfs:label="template_Instance_6"/>
 </rdf:RDF>

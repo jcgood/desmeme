@@ -3,6 +3,7 @@
 import tdag
 from tdag import rdfGraph, Namespace, RDF, process_templates
 from tdag.avm import avm
+import inspect
 
 # Load templates, turn them into despecified graphs
 rdfTemplates = rdfGraph()
@@ -17,5 +18,8 @@ gTemplates = process_templates(templates, rdfTemplates)
 for gTemplate in gTemplates:
 	
 	templateAVM = avm(gTemplate.name,"desmeme")
-	
 	templateAVM.graph_toAVM(gTemplate)
+	
+	templateAVM.to_latex()
+	
+	print "\n"
