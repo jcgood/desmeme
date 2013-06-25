@@ -1,0 +1,210 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE rdf:RDF [
+	 <!ENTITY form 'http://linguistics-ontology.org/jcgood/ns/form#'>
+	 <!ENTITY rdf 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+	 <!ENTITY general 'http://linguistics-ontology.org/jcgood/ns/general#'>
+	 <!ENTITY templates_ 'http://linguistics-ontology.org/jcgood/templates#'>
+	 <!ENTITY component 'http://linguistics-ontology.org/jcgood/ns/component#'>
+	 <!ENTITY template 'http://linguistics-ontology.org/jcgood/ns/template#'>
+	 <!ENTITY rdfs 'http://www.w3.org/2000/01/rdf-schema#'>
+]>
+<rdf:RDF xmlns:rdf="&rdf;"
+	 xmlns:form="&form;"
+	 xmlns:general="&general;"
+	 xmlns:templates_="&templates_;"
+	 xmlns:component="&component;"
+	 xmlns:template="&template;"
+	 xmlns:rdfs="&rdfs;">
+<component:inelastic rdf:about="&templates_;template_Instance_0"
+	 general:COUNT="1"
+	 general:NAME="Bantu *-y-VC- keystone elasticity"
+	 rdfs:label="Bantu *-y-VC- keystone elasticity"/>
+<component:empty rdf:about="&templates_;template_Instance_10"
+	 general:NAME="Bantu verb stem filledness"
+	 rdfs:label="Bantu verb stem filledness">
+	<component:COHERENCE rdf:resource="&templates_;template_Instance_20011"/>
+</component:empty>
+<template:template rdf:about="&templates_;template_Instance_10000"
+	 general:NAME="Chechen preverbal 'a"
+	 rdfs:label="Chechen preverbal 'a">
+	<general:STRATIFICATION rdf:resource="&general;flat"/>
+	<template:STRICTURE rdf:resource="&templates_;template_Instance_10001"/>
+	<template:FOUNDATION rdf:resource="&templates_;template_Instance_10005"/>
+	<general:CONDITIONING rdf:resource="&templates_;template_Instance_10023"/>
+</template:template>
+<template:length rdf:about="&templates_;template_Instance_10001"
+	 general:COUNT="2"
+	 general:NAME="Chechen preverbal 'a length"
+	 rdfs:label="Chechen preverbal 'a length">
+	<general:CONSTITUENT rdf:resource="&templates_;template_Instance_10004"/>
+</template:length>
+<general:prosodicConstituent rdf:about="&templates_;template_Instance_10004"
+	 general:PROSODIC_CONSTITUENT="prosodic_word"
+	 rdfs:label="prosodic_word"/>
+<template:span rdf:about="&templates_;template_Instance_10005"
+	 general:NAME="Chechen preverbal 'a span"
+	 rdfs:label="Chechen preverbal 'a span">
+	<template:LEFT_SUPPORT rdf:resource="&templates_;template_Instance_10006"/>
+	<template:RIGHT_SUPPORT rdf:resource="&templates_;template_Instance_10018"/>
+</template:span>
+<component:component rdf:about="&templates_;template_Instance_10006"
+	 general:NAME="Chechen preverbal 'a left support"
+	 rdfs:label="Chechen preverbal 'a left support">
+	<component:ELASTICITY rdf:resource="&templates_;template_Instance_10009"/>
+	<component:FILLEDNESS rdf:resource="&templates_;template_Instance_10010"/>
+	<component:STABILITY rdf:resource="&templates_;template_Instance_10017"/>
+</component:component>
+<component:inelastic rdf:about="&templates_;template_Instance_10009"
+	 general:COUNT="1"
+	 general:NAME="Chechen preverbal 'a left support elasticity"
+	 rdfs:label="Chechen preverbal 'a left support elasticity"/>
+<component:partiallyFilled rdf:about="&templates_;template_Instance_10010"
+	 general:NAME="Chechen preverbal 'a left support filledness"
+	 rdfs:label="Chechen preverbal 'a left support filledness">
+	<component:FILLERPOSITION rdf:resource="&general;final"/>
+	<component:COHERENCE rdf:resource="&templates_;template_Instance_10011"/>
+	<component:FILLERFORM rdf:resource="&templates_;template_Instance_10013"/>
+</component:partiallyFilled>
+<component:incoherent rdf:about="&templates_;template_Instance_10011"
+	 general:NAME="Chechen preverbal 'a left support coherence"
+	 rdfs:label="Chechen preverbal 'a left support coherence">
+	<general:CLASSES>object</general:CLASSES>
+	<general:CLASSES>preverb</general:CLASSES>
+</component:incoherent>
+<component:fillerClassList rdf:about="&templates_;template_Instance_10012"
+	 rdfs:label="template_Instance_10012"/>
+<form:canonicalForm rdf:about="&templates_;template_Instance_10013"
+	 general:NAME="Chechen preverbal 'a left support filler"
+	 rdfs:label="Chechen preverbal 'a left support filler">
+	<form:LIAISON rdf:resource="&form;sinistrous"/>
+	<form:TRANSCRIPTION rdf:resource="&templates_;template_Instance_10014"/>
+</form:canonicalForm>
+<form:transcription rdf:about="&templates_;template_Instance_10014"
+	 form:TRANSCRIPTION_STRING="='a"
+	 rdfs:label="='a"/>
+<component:stable rdf:about="&templates_;template_Instance_10017"
+	 general:NAME="Chechen preverbal 'a left support stability"
+	 rdfs:label="Chechen preverbal 'a left support stability"/>
+<component:component rdf:about="&templates_;template_Instance_10018"
+	 general:NAME="Chechen preverbal 'a right support"
+	 rdfs:label="Chechen preverbal 'a right support">
+	<component:ELASTICITY rdf:resource="&templates_;template_Instance_10019"/>
+	<component:FILLEDNESS rdf:resource="&templates_;template_Instance_10020"/>
+	<component:STABILITY rdf:resource="&templates_;template_Instance_10022"/>
+</component:component>
+<component:inelastic rdf:about="&templates_;template_Instance_10019"
+	 general:COUNT="1"
+	 general:NAME="Chechen preverbal 'a right support elasticity"
+	 rdfs:label="Chechen preverbal 'a right support elasticity"/>
+<component:empty rdf:about="&templates_;template_Instance_10020"
+	 general:NAME="Chechen preverbal 'a right support filledness"
+	 rdfs:label="Chechen preverbal 'a right support filledness">
+	<component:COHERENCE rdf:resource="&templates_;template_Instance_10021"/>
+</component:empty>
+<component:coherent rdf:about="&templates_;template_Instance_10021"
+	 general:CLASS="verb"
+	 general:NAME="Chechen preverbal 'a right support coherence"
+	 rdfs:label="Chechen preverbal 'a right support coherence"/>
+<component:stable rdf:about="&templates_;template_Instance_10022"
+	 general:NAME="Chechen preverbal 'a right support stability"
+	 rdfs:label="Chechen preverbal 'a right support stability"/>
+<general:lexicoconstructionalConditioning rdf:about="&templates_;template_Instance_10023"
+	 rdfs:label="template_Instance_10023"/>
+<template:template rdf:about="&templates_;template_Instance_2"
+	 general:NAME="Bantu *-y-VC-"
+	 template:FUNCTION="valency"
+	 rdfs:label="Bantu *-y-VC-">
+	<general:STRATIFICATION rdf:resource="&general;flat"/>
+	<template:VIOLABILITY rdf:resource="&template;homophonic"/>
+	<general:CONDITIONING rdf:resource="&templates_;template_Instance_20030"/>
+	<template:STRICTURE rdf:resource="&templates_;template_Instance_3"/>
+	<template:FOUNDATION rdf:resource="&templates_;template_Instance_4"/>
+</template:template>
+<component:coherent rdf:about="&templates_;template_Instance_20011"
+	 general:CLASS="verb_stem"
+	 general:NAME="Bantu verb stem class"
+	 rdfs:label="Bantu verb stem class"/>
+<general:function rdf:about="&templates_;template_Instance_20013"
+	 general:NAME="Bantu verb stem"
+	 rdfs:label="Bantu verb stem"/>
+<component:component rdf:about="&templates_;template_Instance_20015"
+	 general:NAME="Bantu -VC-"
+	 rdfs:label="Bantu -VC-">
+	<component:ELASTICITY rdf:resource="&templates_;template_Instance_20016"/>
+	<component:FILLEDNESS rdf:resource="&templates_;template_Instance_20017"/>
+	<component:STABILITY rdf:resource="&templates_;template_Instance_20020"/>
+</component:component>
+<component:elastic rdf:about="&templates_;template_Instance_20016"
+	 general:MAXIMUM="3"
+	 general:MINIMUM="0"
+	 general:NAME="Bantu -VC- elasticity"
+	 rdfs:label="Bantu -VC- elasticity"/>
+<component:empty rdf:about="&templates_;template_Instance_20017"
+	 general:NAME="Bantu -VC- filledness"
+	 rdfs:label="Bantu -VC- filledness">
+	<component:COHERENCE rdf:resource="&templates_;template_Instance_20018"/>
+</component:empty>
+<component:coherent rdf:about="&templates_;template_Instance_20018"
+	 general:CLASS="valency_suffix"
+	 general:NAME="Bantu -VC- coherence"
+	 rdfs:label="Bantu -VC- coherence"/>
+<component:stable rdf:about="&templates_;template_Instance_20020"
+	 general:NAME="Bantu -VC- stability"
+	 rdfs:label="Bantu -VC- stability"/>
+<component:component rdf:about="&templates_;template_Instance_20021"
+	 general:NAME="Bantu *-y-"
+	 rdfs:label="Bantu *-y-">
+	<component:ELASTICITY rdf:resource="&templates_;template_Instance_20022"/>
+	<component:FILLEDNESS rdf:resource="&templates_;template_Instance_20024"/>
+	<component:STABILITY rdf:resource="&templates_;template_Instance_20029"/>
+</component:component>
+<component:elastic rdf:about="&templates_;template_Instance_20022"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 general:NAME="Bantu *-y- elasticity"
+	 rdfs:label="Bantu *-y- elasticity"/>
+<component:filled rdf:about="&templates_;template_Instance_20024"
+	 general:NAME="Bantu *-y- filledness"
+	 rdfs:label="Bantu *-y- filledness">
+	<component:FILLERFORM rdf:resource="&templates_;template_Instance_20025"/>
+</component:filled>
+<form:canonicalForm rdf:about="&templates_;template_Instance_20025"
+	 general:NAME="Bantu *-y- form"
+	 rdfs:label="Bantu *-y- form">
+	<form:TRANSCRIPTION rdf:resource="&templates_;template_Instance_20028"/>
+</form:canonicalForm>
+<form:transcription rdf:about="&templates_;template_Instance_20028"
+	 form:TRANSCRIPTION_STRING="-y-"
+	 rdfs:label="-y-"/>
+<component:stable rdf:about="&templates_;template_Instance_20029"
+	 general:NAME="Bantu *-y- stability"
+	 rdfs:label="Bantu *-y- stability"/>
+<general:lexicoconstructionalConditioning rdf:about="&templates_;template_Instance_20030"
+	 general:CONDITIONS="verbal"
+	 rdfs:label="verbal"/>
+<template:order rdf:about="&templates_;template_Instance_3"
+	 general:COUNT="2"
+	 general:NAME="Bantu *-y-VC- order"
+	 rdfs:label="Bantu *-y-VC- order">
+	<general:RELATIONS rdf:resource="&general;simple"/>
+</template:order>
+<component:stable rdf:about="&templates_;template_Instance_300"
+	 general:NAME="Bantu verb stem stability in *-y-VC- template"
+	 rdfs:label="Bantu verb stem stability in *-y-VC- template"/>
+<template:arch rdf:about="&templates_;template_Instance_4"
+	 general:NAME="Bantu *-y-VC- arch"
+	 rdfs:label="Bantu *-y-VC- arch">
+	<template:RIGHT_VOUSSOIR rdf:resource="&templates_;template_Instance_20015"/>
+	<template:RIGHT_SUPPORT rdf:resource="&templates_;template_Instance_20021"/>
+	<template:LEFT_SUPPORT rdf:resource="&templates_;template_Instance_8"/>
+	<template:LEFT_VOUSSOIR rdf:resource="&templates_;template_Instance_8"/>
+	<template:KEYSTONE rdf:resource="&templates_;template_Instance_8"/>
+</template:arch>
+<component:component rdf:about="&templates_;template_Instance_8"
+	 general:NAME="Bantu verb stem"
+	 rdfs:label="Bantu verb stem">
+	<component:ELASTICITY rdf:resource="&templates_;template_Instance_0"/>
+	<component:FILLEDNESS rdf:resource="&templates_;template_Instance_10"/>
+	<component:STABILITY rdf:resource="&templates_;template_Instance_300"/>
+</component:component>
+</rdf:RDF>

@@ -1,0 +1,716 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE rdf:RDF [
+	 <!ENTITY specform 'http://linguistics-ontology.org/jcgood/ns/specform#'>
+	 <!ENTITY notes 'http://linguistics-ontology.org/jcgood/ns/notes#'>
+	 <!ENTITY localfunction 'http://linguistics-ontology.org/jcgood/ns/localfunction#'>
+	 <!ENTITY template 'http://linguistics-ontology.org/jcgood/ns/template#'>
+	 <!ENTITY a 'http://protege.stanford.edu/system#'>
+	 <!ENTITY spectemplate 'http://linguistics-ontology.org/jcgood/ns/spectemplate#'>
+	 <!ENTITY speccomponent 'http://linguistics-ontology.org/jcgood/ns/speccomponent#'>
+	 <!ENTITY rdfs 'http://www.w3.org/2000/01/rdf-schema#'>
+	 <!ENTITY specgeneral 'http://linguistics-ontology.org/jcgood/ns/specgeneral#'>
+	 <!ENTITY gold 'http://purl.org/linguistics/gold#'>
+	 <!ENTITY component 'http://linguistics-ontology.org/jcgood/ns/component#'>
+	 <!ENTITY form 'http://linguistics-ontology.org/jcgood/ns/form#'>
+	 <!ENTITY rdf 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+	 <!ENTITY general 'http://linguistics-ontology.org/jcgood/ns/general#'>
+	 <!ENTITY function 'http://linguistics-ontology.org/jcgood/ns/function#'>
+]>
+<rdf:RDF xmlns:specform="&specform;"
+	 xmlns:notes="&notes;"
+	 xmlns:localfunction="&localfunction;"
+	 xmlns:template="&template;"
+	 xmlns:a="&a;"
+	 xmlns:spectemplate="&spectemplate;"
+	 xmlns:rdfs="&rdfs;"
+	 xmlns:speccomponent="&speccomponent;"
+	 xmlns:specgeneral="&specgeneral;"
+	 xmlns:gold="&gold;"
+	 xmlns:component="&component;"
+	 xmlns:form="&form;"
+	 xmlns:rdf="&rdf;"
+	 xmlns:function="&function;"
+	 xmlns:general="&general;">
+<rdf:Property rdf:about="&component;FILLER_POSITION"
+	 a:maxCardinality="1"
+	 a:range="cls"
+	 rdfs:label="component:FILLER_POSITION">
+	<rdfs:domain rdf:resource="&component;partiallyFilled"/>
+	<a:allowedParents rdf:resource="&general;position"/>
+	<rdfs:range rdf:resource="&rdfs;Class"/>
+</rdf:Property>
+<rdf:Property rdf:about="&component;SUPPORT_POSITION"
+	 a:maxCardinality="1"
+	 a:range="cls"
+	 rdfs:label="component:SUPPORT_POSITION">
+	<rdfs:domain rdf:resource="&component;unstable"/>
+	<a:allowedParents rdf:resource="&general;position"/>
+	<rdfs:range rdf:resource="&rdfs;Class"/>
+</rdf:Property>
+<rdfs:Class rdf:about="&component;coherence"
+	 a:role="abstract"
+	 rdfs:label="component:coherence">
+	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&component;coherent"
+	 rdfs:label="component:coherent">
+	<rdfs:subClassOf rdf:resource="&component;coherence"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&component;component"
+	 rdfs:label="component:component">
+	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&component;elastic"
+	 rdfs:label="component:elastic">
+	<rdfs:subClassOf rdf:resource="&component;elasticity"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&component;elasticity"
+	 a:role="abstract"
+	 rdfs:label="component:elasticity">
+	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&component;empty"
+	 rdfs:label="component:empty">
+	<rdfs:subClassOf rdf:resource="&component;unfilled"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&component;filled"
+	 rdfs:label="component:filled">
+	<rdfs:subClassOf rdf:resource="&component;filledness"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&component;filledness"
+	 a:role="abstract"
+	 rdfs:label="component:filledness">
+	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&component;fillerClassList"
+	 rdfs:label="component:fillerClassList">
+	<rdfs:subClassOf rdf:resource="&rdf;List"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&component;incoherent"
+	 rdfs:label="component:incoherent">
+	<rdfs:subClassOf rdf:resource="&component;coherence"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&component;inelastic"
+	 rdfs:label="component:inelastic">
+	<rdfs:subClassOf rdf:resource="&component;elasticity"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&component;null"
+	 rdfs:label="component:null">
+	<rdfs:subClassOf rdf:resource="&component;filledness"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&component;partiallyFilled"
+	 rdfs:label="component:partiallyFilled">
+	<rdfs:subClassOf rdf:resource="&component;unfilled"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&component;stability"
+	 a:role="abstract"
+	 rdfs:label="component:stability">
+	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&component;stable"
+	 rdfs:label="component:stable">
+	<rdfs:subClassOf rdf:resource="&component;stability"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&component;unfilled"
+	 a:role="abstract"
+	 rdfs:label="component:unfilled">
+	<rdfs:subClassOf rdf:resource="&component;filledness"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&component;unstable"
+	 rdfs:label="component:unstable">
+	<rdfs:subClassOf rdf:resource="&component;stability"/>
+</rdfs:Class>
+<rdf:Property rdf:about="&form;LIAISON"
+	 a:maxCardinality="1"
+	 a:range="cls"
+	 rdfs:label="form:LIAISON">
+	<rdfs:domain rdf:resource="&form;canonicalForm"/>
+	<a:allowedParents rdf:resource="&form;liaison"/>
+	<rdfs:range rdf:resource="&rdfs;Class"/>
+</rdf:Property>
+<rdfs:Class rdf:about="&form;canonicalForm"
+	 rdfs:label="form:canonicalForm">
+	<rdfs:subClassOf rdf:resource="&form;form"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&form;dependent"
+	 a:role="abstract"
+	 rdfs:label="form:dependent">
+	<rdfs:subClassOf rdf:resource="&form;liaison"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&form;dextrous"
+	 a:role="abstract"
+	 rdfs:label="form:dextrous">
+	<rdfs:subClassOf rdf:resource="&form;dependent"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&form;form"
+	 a:role="abstract"
+	 rdfs:label="form:form">
+	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&form;independent"
+	 a:role="abstract"
+	 rdfs:label="form:independent">
+	<rdfs:subClassOf rdf:resource="&form;liaison"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&form;liaison"
+	 a:role="abstract"
+	 rdfs:label="form:liaison">
+	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&form;sinistrous"
+	 a:role="abstract"
+	 rdfs:label="form:sinistrous">
+	<rdfs:subClassOf rdf:resource="&form;dependent"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&form;transcription"
+	 rdfs:label="form:transcription">
+	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
+</rdfs:Class>
+<rdf:Property rdf:about="&function;CLASS"
+	 a:maxCardinality="1"
+	 a:range="cls"
+	 rdfs:label="function:CLASS">
+	<rdfs:domain rdf:resource="&component;coherent"/>
+	<a:allowedParents rdf:resource="&general;constituent"/>
+	<a:allowedParents rdf:resource="&general;function"/>
+	<rdfs:range rdf:resource="&rdfs;Class"/>
+</rdf:Property>
+<rdf:Property rdf:about="&function;CLASSES"
+	 a:range="cls"
+	 rdfs:label="function:CLASSES">
+	<rdfs:domain rdf:resource="&component;incoherent"/>
+	<a:allowedParents rdf:resource="&general;function"/>
+	<rdfs:range rdf:resource="&rdfs;Class"/>
+</rdf:Property>
+<rdf:Property rdf:about="&function;FUNCTION"
+	 a:maxCardinality="1"
+	 a:range="cls"
+	 rdfs:label="function:FUNCTION">
+	<a:allowedParents rdf:resource="&general;function"/>
+	<rdfs:domain rdf:resource="&template;template"/>
+	<rdfs:range rdf:resource="&rdfs;Class"/>
+</rdf:Property>
+<rdf:Property rdf:about="&general;CONSTITUENT"
+	 a:maxCardinality="1"
+	 a:range="cls"
+	 rdfs:label="general:CONSTITUENT">
+	<a:allowedParents rdf:resource="&general;constituent"/>
+	<rdfs:domain rdf:resource="&template;length"/>
+	<rdfs:range rdf:resource="&rdfs;Class"/>
+</rdf:Property>
+<rdf:Property rdf:about="&general;COUNT"
+	 a:maxCardinality="1"
+	 a:range="integer"
+	 rdfs:label="general:COUNT">
+	<rdfs:domain rdf:resource="&component;inelastic"/>
+	<rdfs:domain rdf:resource="&template;stricture"/>
+	<rdfs:range rdf:resource="&rdfs;Literal"/>
+</rdf:Property>
+<rdf:Property rdf:about="&general;MAXIMUM"
+	 a:maxCardinality="1"
+	 a:range="integer"
+	 rdfs:label="general:MAXIMUM">
+	<rdfs:domain rdf:resource="&component;elastic"/>
+	<rdfs:range rdf:resource="&rdfs;Literal"/>
+</rdf:Property>
+<rdf:Property rdf:about="&general;MINIMUM"
+	 a:maxCardinality="1"
+	 a:range="integer"
+	 rdfs:label="general:MINIMUM">
+	<rdfs:domain rdf:resource="&component;elastic"/>
+	<rdfs:range rdf:resource="&rdfs;Literal"/>
+</rdf:Property>
+<rdf:Property rdf:about="&general;POSITION"
+	 a:maxCardinality="1"
+	 a:range="cls"
+	 rdfs:label="general:POSITION">
+	<a:allowedParents rdf:resource="&general;position"/>
+	<rdfs:range rdf:resource="&rdfs;Class"/>
+</rdf:Property>
+<rdf:Property rdf:about="&general;RELATIONS"
+	 a:maxCardinality="1"
+	 a:range="cls"
+	 rdfs:label="general:RELATIONS">
+	<a:allowedParents rdf:resource="&general;relations"/>
+	<rdfs:domain rdf:resource="&template;order"/>
+	<rdfs:range rdf:resource="&rdfs;Class"/>
+</rdf:Property>
+<rdf:Property rdf:about="&general;STRATIFICATION"
+	 a:maxCardinality="1"
+	 a:range="cls"
+	 rdfs:label="general:STRATIFICATION">
+	<a:allowedParents rdf:resource="&general;stratification"/>
+	<rdfs:domain rdf:resource="&template;template"/>
+	<rdfs:range rdf:resource="&rdfs;Class"/>
+</rdf:Property>
+<rdfs:Class rdf:about="&general;absolutePositions"
+	 a:role="abstract"
+	 rdfs:label="general:absolutePositions">
+	<rdfs:subClassOf rdf:resource="&general;position"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&general;adjacentPosition"
+	 a:role="abstract"
+	 rdfs:label="general:adjacentPosition">
+	<rdfs:subClassOf rdf:resource="&general;relativePositions"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&general;conditioning"
+	 a:role="abstract"
+	 rdfs:label="general:conditioning">
+	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&general;consonantalConditioning"
+	 rdfs:label="general:consonantalConditioning">
+	<rdfs:subClassOf rdf:resource="&general;segmentalConditioning"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&general;constituent"
+	 a:role="abstract"
+	 rdfs:label="general:constituent">
+	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&general;constructionalConditioning"
+	 rdfs:label="general:constructionalConditioning">
+	<rdfs:subClassOf rdf:resource="&general;morphosyntacticConditioning"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&general;final"
+	 a:role="abstract"
+	 rdfs:label="general:final">
+	<rdfs:subClassOf rdf:resource="&general;absolutePositions"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&general;flat"
+	 a:role="abstract"
+	 rdfs:label="general:flat">
+	<rdfs:subClassOf rdf:resource="&general;stratification"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&general;freeConditioning"
+	 a:role="abstract"
+	 rdfs:label="general:freeConditioning">
+	<rdfs:comment>I NEED TO FIX THIS TO GET CONDITIONING FUNCTIONS MORE COHERENT.
+TOO MANY SYMBOLS</rdfs:comment>
+	<rdfs:subClassOf rdf:resource="&general;conditioning"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&general;function"
+	 a:role="abstract"
+	 rdfs:label="general:function">
+	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&general;ignorance"
+	 a:role="abstract"
+	 rdfs:label="general:ignorance">
+	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&general;immediateLeft"
+	 a:role="abstract"
+	 rdfs:label="general:immediateLeft">
+	<rdfs:subClassOf rdf:resource="&general;adjacentPosition"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&general;immediateRight"
+	 a:role="abstract"
+	 rdfs:label="general:immediateRight">
+	<rdfs:subClassOf rdf:resource="&general;adjacentPosition"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&general;initial"
+	 a:role="abstract"
+	 rdfs:label="general:initial">
+	<rdfs:subClassOf rdf:resource="&general;absolutePositions"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&general;left"
+	 a:role="abstract"
+	 rdfs:label="general:left">
+	<rdfs:subClassOf rdf:resource="&general;relativePositions"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&general;lexicalConditioning"
+	 rdfs:label="general:lexicalConditioning">
+	<rdfs:subClassOf rdf:resource="&general;morphosyntacticConditioning"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&general;lexicoconstructionalConditioning"
+	 rdfs:label="general:lexicoconstructionalConditioning">
+	<rdfs:subClassOf rdf:resource="&general;morphosyntacticConditioning"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&general;medial"
+	 a:role="abstract"
+	 rdfs:label="general:medial">
+	<rdfs:subClassOf rdf:resource="&general;absolutePositions"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&general;morphosyntacticConditioning"
+	 a:role="abstract"
+	 rdfs:label="general:morphosyntacticConditioning">
+	<rdfs:subClassOf rdf:resource="&general;conditioning"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&general;morphosyntacticConstituent"
+	 a:role="abstract"
+	 rdfs:label="general:morphosyntacticConstituent">
+	<rdfs:subClassOf rdf:resource="&general;constituent"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&general;phonologicalConditioning"
+	 a:role="abstract"
+	 rdfs:label="general:phonologicalConditioning">
+	<rdfs:subClassOf rdf:resource="&general;conditioning"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&general;position"
+	 a:role="abstract"
+	 rdfs:label="general:position">
+	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&general;prosodicConditioning"
+	 rdfs:label="general:prosodicConditioning">
+	<rdfs:subClassOf rdf:resource="&general;phonologicalConditioning"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&general;prosodicConstituent"
+	 a:role="abstract"
+	 rdfs:label="general:prosodicConstituent">
+	<rdfs:subClassOf rdf:resource="&general;constituent"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&general;prosodicWord"
+	 a:role="abstract"
+	 rdfs:label="general:prosodicWord">
+	<rdfs:subClassOf rdf:resource="&general;prosodicConstituent"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&general;relations"
+	 a:role="abstract"
+	 rdfs:label="general:relations">
+	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&general;relativePositions"
+	 a:role="abstract"
+	 rdfs:label="general:relativePositions">
+	<rdfs:subClassOf rdf:resource="&general;position"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&general;right"
+	 a:role="abstract"
+	 rdfs:label="general:right">
+	<rdfs:subClassOf rdf:resource="&general;relativePositions"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&general;segmentalConditioning"
+	 a:role="abstract"
+	 rdfs:label="general:segmentalConditioning">
+	<rdfs:subClassOf rdf:resource="&general;phonologicalConditioning"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&general;simple"
+	 a:role="abstract"
+	 rdfs:label="general:simple">
+	<rdfs:subClassOf rdf:resource="&general;relations"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&general;stratification"
+	 a:role="abstract"
+	 rdfs:label="general:stratification">
+	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&general;stratified"
+	 a:role="abstract"
+	 rdfs:label="general:stratified">
+	<rdfs:subClassOf rdf:resource="&general;stratification"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&general;taxonomic"
+	 a:role="abstract"
+	 rdfs:label="general:taxonomic">
+	<rdfs:subClassOf rdf:resource="&general;relations"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&general;vocalicConditioning"
+	 rdfs:label="general:vocalicConditioning">
+	<rdfs:subClassOf rdf:resource="&general;segmentalConditioning"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&localfunction;adpositonalPhrase"
+	 a:role="abstract"
+	 rdfs:label="localfunction:adpositonalPhrase">
+	<rdfs:subClassOf rdf:resource="&general;function"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&localfunction;clauseChaining"
+	 a:role="abstract"
+	 rdfs:label="localfunction:clauseChaining">
+	<rdfs:subClassOf rdf:resource="&general;function"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&localfunction;constituent"
+	 a:role="abstract"
+	 rdfs:label="localfunction:constituent">
+	<rdfs:subClassOf rdf:resource="&general;function"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&localfunction;finite"
+	 a:role="abstract"
+	 rdfs:label="localfunction:finite">
+	<rdfs:subClassOf rdf:resource="&gold;Verbal"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&localfunction;goal"
+	 a:role="abstract"
+	 rdfs:label="localfunction:goal">
+	<rdfs:subClassOf rdf:resource="&general;function"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&localfunction;infinitive"
+	 a:role="abstract"
+	 rdfs:label="localfunction:infinitive">
+	<rdfs:subClassOf rdf:resource="&gold;Verbal"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&localfunction;personReference"
+	 a:role="abstract"
+	 rdfs:label="localfunction:personReference">
+	<rdfs:subClassOf rdf:resource="&general;function"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&localfunction;valency"
+	 a:role="abstract"
+	 rdfs:label="localfunction:valency">
+	<rdfs:subClassOf rdf:resource="&general;function"/>
+</rdfs:Class>
+<rdf:Property rdf:about="&notes;CONDITIONS"
+	 a:maxCardinality="1"
+	 rdfs:label="notes:CONDITIONS">
+	<rdfs:domain rdf:resource="&general;conditioning"/>
+	<rdfs:range rdf:resource="&rdfs;Literal"/>
+</rdf:Property>
+<rdf:Property rdf:about="&speccomponent;COHERENCE"
+	 a:maxCardinality="1"
+	 rdfs:label="speccomponent:COHERENCE">
+	<rdfs:range rdf:resource="&component;coherence"/>
+	<rdfs:domain rdf:resource="&component;unfilled"/>
+</rdf:Property>
+<rdf:Property rdf:about="&speccomponent;ELASTICITY"
+	 a:maxCardinality="1"
+	 rdfs:label="speccomponent:ELASTICITY">
+	<rdfs:domain rdf:resource="&component;component"/>
+	<rdfs:range rdf:resource="&component;elasticity"/>
+</rdf:Property>
+<rdf:Property rdf:about="&speccomponent;FILLEDNESS"
+	 a:maxCardinality="1"
+	 rdfs:label="speccomponent:FILLEDNESS">
+	<rdfs:domain rdf:resource="&component;component"/>
+	<rdfs:range rdf:resource="&component;filledness"/>
+</rdf:Property>
+<rdf:Property rdf:about="&speccomponent;FILLER_FORM"
+	 a:maxCardinality="1"
+	 rdfs:label="speccomponent:FILLER_FORM">
+	<rdfs:domain rdf:resource="&component;filled"/>
+	<rdfs:domain rdf:resource="&component;partiallyFilled"/>
+	<rdfs:range rdf:resource="&form;form"/>
+</rdf:Property>
+<rdf:Property rdf:about="&speccomponent;STABILITY"
+	 a:maxCardinality="1"
+	 rdfs:label="speccomponent:STABILITY">
+	<rdfs:domain rdf:resource="&component;component"/>
+	<rdfs:range rdf:resource="&component;stability"/>
+</rdf:Property>
+<rdf:Property rdf:about="&speccomponent;SUPPORT"
+	 a:maxCardinality="1"
+	 rdfs:label="speccomponent:SUPPORT">
+	<rdfs:range rdf:resource="&component;component"/>
+	<rdfs:domain rdf:resource="&component;unstable"/>
+</rdf:Property>
+<rdf:Property rdf:about="&specform;FORM"
+	 a:maxCardinality="1"
+	 rdfs:label="specform:FORM">
+	<rdfs:range rdf:resource="&rdfs;Resource"/>
+</rdf:Property>
+<rdf:Property rdf:about="&specform;TRANSCRIPTION"
+	 a:maxCardinality="1"
+	 rdfs:label="specform:TRANSCRIPTION">
+	<rdfs:domain rdf:resource="&form;canonicalForm"/>
+	<rdfs:range rdf:resource="&form;transcription"/>
+</rdf:Property>
+<rdf:Property rdf:about="&specform;TRANSCRIPTION_STRING"
+	 a:maxCardinality="1"
+	 rdfs:label="specform:TRANSCRIPTION_STRING">
+	<rdfs:domain rdf:resource="&form;transcription"/>
+	<rdfs:range rdf:resource="&rdfs;Literal"/>
+</rdf:Property>
+<rdf:Property rdf:about="&specgeneral;CONDITIONING"
+	 a:maxCardinality="1"
+	 rdfs:label="specgeneral:CONDITIONING">
+	<rdfs:range rdf:resource="&general;conditioning"/>
+	<rdfs:domain rdf:resource="&template;template"/>
+	<rdfs:domain rdf:resource="&template;violable"/>
+</rdf:Property>
+<rdf:Property rdf:about="&spectemplate;FILLED_COMPONENT"
+	 a:maxCardinality="1"
+	 rdfs:label="spectemplate:FILLED_COMPONENT">
+	<rdfs:range rdf:resource="&component;component"/>
+	<rdfs:domain rdf:resource="&general;lexicoconstructionalConditioning"/>
+</rdf:Property>
+<rdf:Property rdf:about="&spectemplate;FOUNDATION"
+	 a:maxCardinality="1"
+	 rdfs:label="spectemplate:FOUNDATION">
+	<rdfs:range rdf:resource="&template;foundation"/>
+	<rdfs:domain rdf:resource="&template;template"/>
+</rdf:Property>
+<rdf:Property rdf:about="&spectemplate;KEYSTONE"
+	 a:maxCardinality="1"
+	 rdfs:label="spectemplate:KEYSTONE">
+	<rdfs:range rdf:resource="&component;component"/>
+	<rdfs:domain rdf:resource="&template;arch"/>
+</rdf:Property>
+<rdf:Property rdf:about="&spectemplate;LEFT_SUPPORT"
+	 a:maxCardinality="1"
+	 rdfs:label="spectemplate:LEFT_SUPPORT">
+	<rdfs:range rdf:resource="&component;component"/>
+	<rdfs:domain rdf:resource="&template;foundation"/>
+</rdf:Property>
+<rdf:Property rdf:about="&spectemplate;LEFT_VOUSSOIR"
+	 a:maxCardinality="1"
+	 rdfs:label="spectemplate:LEFT_VOUSSOIR">
+	<rdfs:range rdf:resource="&component;component"/>
+	<rdfs:domain rdf:resource="&template;arch"/>
+</rdf:Property>
+<rdf:Property rdf:about="&spectemplate;RESTKOMPONENTEN"
+	 rdfs:label="spectemplate:RESTKOMPONENTEN">
+	<rdfs:range rdf:resource="&component;component"/>
+	<rdfs:domain rdf:resource="&template;foundation"/>
+</rdf:Property>
+<rdf:Property rdf:about="&spectemplate;RIGHT_SUPPORT"
+	 a:maxCardinality="1"
+	 rdfs:label="spectemplate:RIGHT_SUPPORT">
+	<rdfs:range rdf:resource="&component;component"/>
+	<rdfs:domain rdf:resource="&template;foundation"/>
+</rdf:Property>
+<rdf:Property rdf:about="&spectemplate;RIGHT_VOUSSOIR"
+	 a:maxCardinality="1"
+	 rdfs:label="spectemplate:RIGHT_VOUSSOIR">
+	<rdfs:range rdf:resource="&component;component"/>
+	<rdfs:domain rdf:resource="&template;arch"/>
+</rdf:Property>
+<rdf:Property rdf:about="&spectemplate;STRICTURE"
+	 a:maxCardinality="1"
+	 rdfs:label="spectemplate:STRICTURE">
+	<rdfs:range rdf:resource="&template;stricture"/>
+	<rdfs:domain rdf:resource="&template;template"/>
+</rdf:Property>
+<rdf:Property rdf:about="&template;FILLER_POSITION"
+	 a:maxCardinality="1"
+	 a:range="cls"
+	 rdfs:label="template:FILLER_POSITION">
+	<rdfs:domain rdf:resource="&general;lexicoconstructionalConditioning"/>
+	<a:allowedParents rdf:resource="&general;position"/>
+	<rdfs:range rdf:resource="&rdfs;Class"/>
+</rdf:Property>
+<rdf:Property rdf:about="&template;VIOLABILITY"
+	 a:maxCardinality="1"
+	 a:range="cls"
+	 rdfs:label="template:VIOLABILITY">
+	<rdfs:domain rdf:resource="&template;template"/>
+	<a:allowedParents rdf:resource="&template;violability"/>
+	<rdfs:range rdf:resource="&rdfs;Class"/>
+</rdf:Property>
+<rdfs:Class rdf:about="&template;arch"
+	 rdfs:label="template:arch">
+	<rdfs:subClassOf rdf:resource="&template;foundation"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&template;constructionalViolability"
+	 a:role="abstract"
+	 rdfs:label="template:constructionalViolability">
+	<rdfs:subClassOf rdf:resource="&template;violable"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&template;foundation"
+	 a:role="abstract"
+	 rdfs:label="template:foundation">
+	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&template;freeViolabiliy"
+	 a:role="abstract"
+	 rdfs:label="template:freeViolabiliy">
+	<rdfs:subClassOf rdf:resource="&template;violable"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&template;homophonic"
+	 a:role="abstract"
+	 rdfs:label="template:homophonic">
+	<rdfs:subClassOf rdf:resource="&template;inviolable"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&template;ineffable"
+	 a:role="abstract"
+	 rdfs:label="template:ineffable">
+	<rdfs:subClassOf rdf:resource="&template;inviolable"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&template;insertion"
+	 a:role="abstract"
+	 rdfs:label="template:insertion">
+	<rdfs:subClassOf rdf:resource="&template;reparable"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&template;inviolable"
+	 a:role="abstract"
+	 rdfs:label="template:inviolable">
+	<rdfs:subClassOf rdf:resource="&template;violability"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&template;length"
+	 rdfs:label="template:length">
+	<rdfs:subClassOf rdf:resource="&template;stricture"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&template;lexicalViolability"
+	 a:role="abstract"
+	 rdfs:label="template:lexicalViolability">
+	<rdfs:subClassOf rdf:resource="&template;violable"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&template;order"
+	 rdfs:label="template:order">
+	<rdfs:subClassOf rdf:resource="&template;stricture"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&template;reparable"
+	 a:role="abstract"
+	 rdfs:label="template:reparable">
+	<rdfs:subClassOf rdf:resource="&template;inviolable"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&template;span"
+	 rdfs:label="template:span">
+	<rdfs:subClassOf rdf:resource="&template;foundation"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&template;stricture"
+	 a:role="abstract"
+	 rdfs:label="template:stricture">
+	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&template;template"
+	 rdfs:label="template:template">
+	<rdfs:subClassOf rdf:resource="&form;form"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&template;violability"
+	 a:role="abstract"
+	 rdfs:label="template:violability">
+	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&template;violable"
+	 a:role="abstract"
+	 rdfs:label="template:violable">
+	<rdfs:subClassOf rdf:resource="&template;violability"/>
+</rdfs:Class>
+<rdf:Property rdf:about="&a;_name"
+	 rdfs:label=":NAME">
+	<rdfs:domain rdf:resource="&component;coherence"/>
+	<rdfs:domain rdf:resource="&component;component"/>
+	<rdfs:domain rdf:resource="&component;elasticity"/>
+	<rdfs:domain rdf:resource="&component;filledness"/>
+	<rdfs:domain rdf:resource="&component;stability"/>
+	<rdfs:domain rdf:resource="&form;form"/>
+	<rdfs:domain rdf:resource="&form;transcription"/>
+	<rdfs:domain rdf:resource="&general;conditioning"/>
+	<rdfs:domain rdf:resource="&template;foundation"/>
+	<rdfs:domain rdf:resource="&template;stricture"/>
+</rdf:Property>
+<rdfs:Class rdf:about="&gold;Complementizer"
+	 a:role="abstract"
+	 rdfs:label="gold:Complementizer">
+	<rdfs:subClassOf rdf:resource="&general;function"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&gold;MainClause"
+	 a:role="abstract"
+	 rdfs:label="gold:MainClause">
+	<rdfs:subClassOf rdf:resource="&general;function"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&gold;Object"
+	 a:role="abstract"
+	 rdfs:label="gold:Object">
+	<rdfs:subClassOf rdf:resource="&general;function"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&gold;Preverb"
+	 a:role="abstract"
+	 rdfs:label="gold:Preverb">
+	<rdfs:subClassOf rdf:resource="&general;function"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&gold;Subject"
+	 a:role="abstract"
+	 rdfs:label="gold:Subject">
+	<rdfs:subClassOf rdf:resource="&general;function"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&gold;Verbal"
+	 a:role="abstract"
+	 rdfs:label="gold:Verbal">
+	<rdfs:subClassOf rdf:resource="&general;function"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&gold;directObject"
+	 a:role="abstract"
+	 rdfs:label="gold:directObject">
+	<rdfs:subClassOf rdf:resource="&gold;Object"/>
+</rdfs:Class>
+</rdf:RDF>
