@@ -6,7 +6,7 @@ from rdflib import BNode as rdfNode
 
 
 rdfsTemplates = rdfGraph()
-rdfsTemplates.load("/Volumes/Obang/MyDocuments/Linearity/template_ontology/template.rdfs")
+rdfsTemplates.load("./template.rdfs")
 
 # Only classes in my namespaces should be paid attention to.
 myPfxs = ["http://purl.org/linguistics/jcgood/template#",

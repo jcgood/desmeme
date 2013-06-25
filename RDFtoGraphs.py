@@ -8,7 +8,7 @@ from tdag import simUI_d, get_distances, to_nex, draw_graphs, full_grid, process
 rdfTemplates = rdfGraph()
 
 instanceNS = Namespace("http://purl.org/linguistics/jcgood/template#")
-rdfTemplates.load("/Volumes/Obang/MyDocuments/Linearity/template_ontology/template.rdf")
+rdfTemplates.load("./template.rdf")
 
 # Get template IDs from RDF
 templatesGenerator = rdfTemplates.subjects(RDF.type, instanceNS['desmeme'])

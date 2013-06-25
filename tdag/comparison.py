@@ -175,7 +175,7 @@ def draw_graphs(graphs, outpath, format="png"):
 	for graph in graphs:	
 		name = graph.name
 		dot = graph.to_dot() # my hack for reentrancy from foundation
-		dot.write_dot('Graphs/' + str(name) + '.dot')
+		dot.write_dot(outpath + str(name) + '.dot')
 
 		#f = open( str(name) + '.dot', 'w')
 		#f.write(dot)
