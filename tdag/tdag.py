@@ -4,7 +4,7 @@
 from pygraph.classes.digraph import digraph
 from pygraph.classes.exceptions import AdditionError
 
-# Imports
+# Do I need all these?
 from pygraph.classes.exceptions import InvalidGraphType
 from pygraph.classes.graph import graph
 from pygraph.classes.hypergraph import hypergraph

@@ -28,7 +28,6 @@ def process_template(mother,genericMother,rdfGraph,tdag):
 				prettyDName = tdag.has_node(prettyDName,daughter)
 				print "Warning ", prettyDName, daughter, mother, "may be a case of a duplicatable node not yet properly handled. Examine the template using it and the class function in tdag and add a case for this if graph does not properly duplicate nodes."
 			else:
-				#print prettyDName
 				prettyDName = tdag.add_node(prettyDName,daughter,mother,predicate)
 			
 			# The method used here is from the original pygraph, and does not involve labeled edges
