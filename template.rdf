@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE rdf:RDF [
-	 <!ENTITY template_ 'http://purl.org/linguistics/jcgood/template#'>
+	 <!ENTITY template 'http://purl.org/linguistics/jcgood/template#'>
 	 <!ENTITY localfunction 'http://purl.org/linguistics/jcgood/localfunction#'>
 	 <!ENTITY specgeneral 'http://purl.org/linguistics/jcgood/specgeneral#'>
 	 <!ENTITY form 'http://purl.org/linguistics/jcgood/form#'>
@@ -16,7 +16,7 @@
 	 <!ENTITY rdf 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
 	 <!ENTITY specform 'http://purl.org/linguistics/jcgood/specform#'>
 ]>
-<rdf:RDF xmlns:template_="&template_;"
+<rdf:RDF xmlns:template="&template;"
 	 xmlns:specgeneral="&specgeneral;"
 	 xmlns:localfunction="&localfunction;"
 	 xmlns:form="&form;"
@@ -31,14 +31,14 @@
 	 xmlns:notes="&notes;"
 	 xmlns:rdf="&rdf;"
 	 xmlns:specform="&specform;">
-<template_:desmeme rdf:about="&templates;Algonquian_clause"
+<template:desmeme rdf:about="&templates;Algonquian_clause"
 	 rdfs:label="templates:Algonquian_clause">
 	<specgeneral:CONDITIONING rdf:resource="&templates;Algonquian_clause_Conditioning"/>
 	<spectemplate:FOUNDATION rdf:resource="&templates;Algonquian_clause_Foundation"/>
 	<spectemplate:STRICTURE rdf:resource="&templates;Algonquian_clause_order"/>
 	<function:FUNCTION rdf:resource="&gold;MainClause"/>
-	<template_:VIOLABILITY rdf:resource="&template_;neutral"/>
-</template_:desmeme>
+	<template:VIOLABILITY rdf:resource="&template;neutral"/>
+</template:desmeme>
 <component:component rdf:about="&templates;Algonquian_clause-Negative"
 	 rdfs:label="templates:Algonquian_clause-Negative">
 	<speccomponent:ELASTICITY rdf:resource="&templates;Algonquian_clause-Negative_Elasticity"/>
@@ -73,15 +73,15 @@
 </component:open>
 <component:stable rdf:about="&templates;Algonquian_clause_Focus-Stability"
 	 rdfs:label="templates:Algonquian_clause_Focus-Stability"/>
-<template_:arch rdf:about="&templates;Algonquian_clause_Foundation"
+<template:arch rdf:about="&templates;Algonquian_clause_Foundation"
 	 rdfs:label="templates:Algonquian_clause_Foundation">
 	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;Algonquian_clause-Negative"/>
 	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;Algonquian_clause_Oblique"/>
 	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;Algonquian_clause_Postverbal"/>
 	<spectemplate:KEYSTONE rdf:resource="&templates;Algonquian_clause_Verb"/>
 	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;Algonquian_clause_nullComponent"/>
-	<spectemplate:RESTKOMPONENTEN rdf:resource="&template_;Algonquian_clause-RK"/>
-</template_:arch>
+	<spectemplate:RESTKOMPONENTEN rdf:resource="&template;Algonquian_clause-RK"/>
+</template:arch>
 <component:coherent rdf:about="&templates;Algonquian_clause_Keystone-coherent"
 	 rdfs:label="templates:Algonquian_clause_Keystone-coherent">
 	<function:CLASS rdf:resource="&localfunction;finite"/>
@@ -169,12 +169,12 @@
 	 rdfs:label="templates:Algonquian_clause_nullComponent_Filledness"/>
 <component:stable rdf:about="&templates;Algonquian_clause_nullComponent_Stability"
 	 rdfs:label="templates:Algonquian_clause_nullComponent_Stability"/>
-<template_:order rdf:about="&templates;Algonquian_clause_order"
+<template:order rdf:about="&templates;Algonquian_clause_order"
 	 general:COUNT="5"
 	 rdfs:label="templates:Algonquian_clause_order">
 	<general:RELATIONS rdf:resource="&general;simple"/>
 	<general:CONSTITUENT rdf:resource="&general;syntacticConstituent"/>
-</template_:order>
+</template:order>
 <component:coherent rdf:about="&templates;Bantu-verbStem_Coherence"
 	 rdfs:label="templates:Bantu-verbStem_Coherence">
 	<function:CLASS rdf:resource="&gold;Verbal"/>
@@ -186,22 +186,22 @@
 	 rdfs:label="templates:Bantu_AC_Conditioning">
 	<notes:CONDITIONS>The Applicative is being treated as the "cause" of the restriction.</notes:CONDITIONS>
 	<spectemplate:FILLED_COMPONENT rdf:resource="&templates;Bantu_Applicative"/>
-	<template_:FILLER_POSITION rdf:resource="&general;final"/>
+	<template:FILLER_POSITION rdf:resource="&general;final"/>
 </general:lexicoconstructionalConditioning>
-<template_:arch rdf:about="&templates;Bantu_AC_Foundation"
+<template:arch rdf:about="&templates;Bantu_AC_Foundation"
 	 rdfs:label="templates:Bantu_AC_Foundation">
 	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;Bantu_Applicative"/>
 	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;Bantu_Causative"/>
 	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;Bantu_beforeVerbStem_nullComponent"/>
 	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;Bantu_verbStem"/>
 	<spectemplate:KEYSTONE rdf:resource="&templates;Bantu_verbStem"/>
-</template_:arch>
-<template_:order rdf:about="&templates;Bantu_AC_Stricture-Order"
+</template:arch>
+<template:order rdf:about="&templates;Bantu_AC_Stricture-Order"
 	 general:COUNT="2"
 	 rdfs:label="templates:Bantu_AC_Stricture-Order">
 	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
 	<general:RELATIONS rdf:resource="&general;simple"/>
-</template_:order>
+</template:order>
 <component:component rdf:about="&templates;Bantu_Applicative"
 	 rdfs:label="templates:Bantu_Applicative">
 	<speccomponent:ELASTICITY rdf:resource="&templates;Bantu_Applicative_Elasticity"/>
@@ -227,14 +227,14 @@
 <form:transcription rdf:about="&templates;Bantu_Applicative_Transcription"
 	 specform:TRANSCRIPTION_STRING="-id-"
 	 rdfs:label="-id-"/>
-<template_:desmeme rdf:about="&templates;Bantu_CA"
+<template:desmeme rdf:about="&templates;Bantu_CA"
 	 rdfs:label="templates:Bantu_CA">
 	<specgeneral:CONDITIONING rdf:resource="&templates;Bantu_AC_Conditioning"/>
 	<spectemplate:FOUNDATION rdf:resource="&templates;Bantu_AC_Foundation"/>
 	<spectemplate:STRICTURE rdf:resource="&templates;Bantu_AC_Stricture-Order"/>
 	<function:FUNCTION rdf:resource="&localfunction;valency"/>
-	<template_:VIOLABILITY rdf:resource="&template_;homophonic"/>
-</template_:desmeme>
+	<template:VIOLABILITY rdf:resource="&template;homophonic"/>
+</template:desmeme>
 <component:component rdf:about="&templates;Bantu_Causative"
 	 rdfs:label="templates:Bantu_Causative">
 	<speccomponent:ELASTICITY rdf:resource="&templates;Bantu_Causative_Elasticity"/>
@@ -313,34 +313,34 @@
 </component:open>
 <component:stable rdf:about="&templates;Bantu_verbStem_Stability-Stable"
 	 rdfs:label="templates:Bantu_verbStem_Stability-Stable"/>
-<template_:desmeme rdf:about="&templates;Bantu_y-VC"
+<template:desmeme rdf:about="&templates;Bantu_y-VC"
 	 rdfs:label="templates:Bantu_y-VC">
 	<specgeneral:CONDITIONING rdf:resource="&templates;Bantu_y-VC_Conditions"/>
 	<spectemplate:FOUNDATION rdf:resource="&templates;Bantu_y-VC_Foundation"/>
 	<spectemplate:STRICTURE rdf:resource="&templates;Bantu_y-VC_Stricture-Order"/>
 	<function:FUNCTION rdf:resource="&localfunction;valency"/>
-	<template_:VIOLABILITY rdf:resource="&template_;homophonic"/>
-</template_:desmeme>
+	<template:VIOLABILITY rdf:resource="&template;homophonic"/>
+</template:desmeme>
 <general:lexicoconstructionalConditioning rdf:about="&templates;Bantu_y-VC_Conditions"
 	 rdfs:label="templates:Bantu_y-VC_Conditions">
 	<notes:CONDITIONS>The template appears when certain valency suffixes are found on the verb stem.</notes:CONDITIONS>
 	<spectemplate:FILLED_COMPONENT rdf:resource="&templates;Bantu_y_Component"/>
-	<template_:FILLER_POSITION rdf:resource="&general;final"/>
+	<template:FILLER_POSITION rdf:resource="&general;final"/>
 </general:lexicoconstructionalConditioning>
-<template_:arch rdf:about="&templates;Bantu_y-VC_Foundation"
+<template:arch rdf:about="&templates;Bantu_y-VC_Foundation"
 	 rdfs:label="templates:Bantu_y-VC_Foundation">
 	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;Bantu_VC"/>
 	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;Bantu_beforeVerbStem_nullComponent"/>
 	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;Bantu_verbStem"/>
 	<spectemplate:KEYSTONE rdf:resource="&templates;Bantu_verbStem"/>
 	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;Bantu_y_Component"/>
-</template_:arch>
-<template_:order rdf:about="&templates;Bantu_y-VC_Stricture-Order"
+</template:arch>
+<template:order rdf:about="&templates;Bantu_y-VC_Stricture-Order"
 	 general:COUNT="2"
 	 rdfs:label="templates:Bantu_y-VC_Stricture-Order">
 	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
 	<general:RELATIONS rdf:resource="&general;simple"/>
-</template_:order>
+</template:order>
 <component:component rdf:about="&templates;Bantu_y_Component"
 	 rdfs:label="templates:Bantu_y_Component">
 	<speccomponent:ELASTICITY rdf:resource="&templates;Bantu_y_Component_Elasticity"/>
@@ -393,30 +393,30 @@
 </component:partiallyFilled>
 <component:stable rdf:about="&templates;Chechen_preverbal_Component_Stability-Stable"
 	 rdfs:label="templates:Chechen_preverbal_Component_Stability-Stable"/>
-<template_:desmeme rdf:about="&templates;Chechen_preverbal_a"
+<template:desmeme rdf:about="&templates;Chechen_preverbal_a"
 	 rdfs:label="templates:Chechen_preverbal_a">
 	<specgeneral:CONDITIONING rdf:resource="&templates;Chechen_preverbal_a_Conditions"/>
 	<spectemplate:FOUNDATION rdf:resource="&templates;Chechen_preverbal_a_Foundation"/>
 	<spectemplate:STRICTURE rdf:resource="&templates;Chechen_preverbal_a_Stricture-Length"/>
 	<function:FUNCTION rdf:resource="&localfunction;clauseChaining"/>
-	<template_:VIOLABILITY rdf:resource="&template_;insertion"/>
-</template_:desmeme>
+	<template:VIOLABILITY rdf:resource="&template;insertion"/>
+</template:desmeme>
 <general:lexicoconstructionalConditioning rdf:about="&templates;Chechen_preverbal_a_Conditions"
 	 rdfs:label="templates:Chechen_preverbal_a_Conditions">
 	<notes:CONDITIONS>This template appears in converbal clauses used for chaining marked with preverbal 'a.</notes:CONDITIONS>
 	<spectemplate:FILLED_COMPONENT rdf:resource="&templates;Chechen_verb_Component"/>
-	<template_:FILLER_POSITION rdf:resource="&general;medial"/>
+	<template:FILLER_POSITION rdf:resource="&general;medial"/>
 </general:lexicoconstructionalConditioning>
-<template_:span rdf:about="&templates;Chechen_preverbal_a_Foundation"
+<template:span rdf:about="&templates;Chechen_preverbal_a_Foundation"
 	 rdfs:label="templates:Chechen_preverbal_a_Foundation">
 	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;Chechen_preverbal_Component"/>
 	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;Chechen_verb_Component"/>
-</template_:span>
-<template_:length rdf:about="&templates;Chechen_preverbal_a_Stricture-Length"
+</template:span>
+<template:length rdf:about="&templates;Chechen_preverbal_a_Stricture-Length"
 	 general:COUNT="2"
 	 rdfs:label="templates:Chechen_preverbal_a_Stricture-Length">
 	<general:CONSTITUENT rdf:resource="&general;prosodicWord"/>
-</template_:length>
+</template:length>
 <component:component rdf:about="&templates;Chechen_verb_Component"
 	 rdfs:label="templates:Chechen_verb_Component">
 	<speccomponent:ELASTICITY rdf:resource="&templates;Chechen_verb_Component_Elasticity"/>
@@ -436,19 +436,19 @@
 </component:open>
 <component:stable rdf:about="&templates;Chechen_verb_Component_Stability-Stable"
 	 rdfs:label="templates:Chechen_verb_Component_Stability-Stable"/>
-<template_:desmeme rdf:about="&templates;Chichewa_AR"
+<template:desmeme rdf:about="&templates;Chichewa_AR"
 	 rdfs:label="templates:Chichewa_AR">
 	<specgeneral:CONDITIONING rdf:resource="&templates;Chichewa_AR_Conditioning"/>
 	<spectemplate:FOUNDATION rdf:resource="&templates;Chichewa_RA_Foundation"/>
 	<spectemplate:STRICTURE rdf:resource="&templates;Chichewa_Reciprocal_Stricture"/>
 	<function:FUNCTION rdf:resource="&localfunction;valency"/>
-	<template_:VIOLABILITY rdf:resource="&template_;insertion"/>
-</template_:desmeme>
+	<template:VIOLABILITY rdf:resource="&template;insertion"/>
+</template:desmeme>
 <general:lexicoconstructionalConditioning rdf:about="&templates;Chichewa_AR_Conditioning"
 	 notes:CONDITIONS="Treating the Reciprocal as the main conditioner her."
 	 rdfs:label="templates:Chichewa_AR_Conditioning">
 	<spectemplate:FILLED_COMPONENT rdf:resource="&templates;Chichewa_Reciprocal"/>
-	<template_:FILLER_POSITION rdf:resource="&general;final"/>
+	<template:FILLER_POSITION rdf:resource="&general;final"/>
 </general:lexicoconstructionalConditioning>
 <component:component rdf:about="&templates;Chichewa_Applicative"
 	 rdfs:label="templates:Chichewa_Applicative">
@@ -475,14 +475,14 @@
 <form:transcription rdf:about="&templates;Chichewa_Applicative_Transcription"
 	 specform:TRANSCRIPTION_STRING="-il-"
 	 rdfs:label="-il-"/>
-<template_:arch rdf:about="&templates;Chichewa_RA_Foundation"
+<template:arch rdf:about="&templates;Chichewa_RA_Foundation"
 	 rdfs:label="templates:Chichewa_RA_Foundation">
 	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;Chichewa_Applicative"/>
 	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;Chichewa_Reciprocal"/>
 	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;Chichewa_beforeVerbStem_nullComponent"/>
 	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;Chichewa_verbStem"/>
 	<spectemplate:KEYSTONE rdf:resource="&templates;Chichewa_verbStem"/>
-</template_:arch>
+</template:arch>
 <component:component rdf:about="&templates;Chichewa_Reciprocal"
 	 rdfs:label="templates:Chichewa_Reciprocal">
 	<speccomponent:ELASTICITY rdf:resource="&templates;Chichewa_Reciprocal_Elasticity"/>
@@ -505,12 +505,12 @@
 </form:canonicalLineate>
 <component:stable rdf:about="&templates;Chichewa_Reciprocal_Stability"
 	 rdfs:label="templates:Chichewa_Reciprocal_Stability"/>
-<template_:order rdf:about="&templates;Chichewa_Reciprocal_Stricture"
+<template:order rdf:about="&templates;Chichewa_Reciprocal_Stricture"
 	 general:COUNT="2"
 	 rdfs:label="templates:Chichewa_Reciprocal_Stricture">
 	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
 	<general:RELATIONS rdf:resource="&general;simple"/>
-</template_:order>
+</template:order>
 <form:transcription rdf:about="&templates;Chichewa_Reciprocal_Transcription"
 	 specform:TRANSCRIPTION_STRING="-an-"
 	 rdfs:label="-an-"/>
@@ -565,31 +565,31 @@
 </component:open>
 <component:stable rdf:about="&templates;Chintang_prefix_Stability"
 	 rdfs:label="templates:Chintang_prefix_Stability"/>
-<template_:desmeme rdf:about="&templates;Chintang_prefixes"
+<template:desmeme rdf:about="&templates;Chintang_prefixes"
 	 rdfs:label="templates:Chintang_prefixes">
 	<specgeneral:CONDITIONING rdf:resource="&templates;Chintang_prefixes_Conditioning"/>
 	<spectemplate:FOUNDATION rdf:resource="&templates;Chintang_prefixes_Foundation"/>
 	<spectemplate:STRICTURE rdf:resource="&templates;Chintang_prefixes_stricture-Order"/>
 	<function:FUNCTION rdf:resource="&gold;Verbal"/>
-	<template_:VIOLABILITY rdf:resource="&template_;neutral"/>
-</template_:desmeme>
+	<template:VIOLABILITY rdf:resource="&template;neutral"/>
+</template:desmeme>
 <general:constructionalConditioning rdf:about="&templates;Chintang_prefixes_Conditioning"
 	 notes:CONDITIONS="Freely-ordered prefixes appear on the verb."
 	 rdfs:label="templates:Chintang_prefixes_Conditioning"/>
-<template_:arch rdf:about="&templates;Chintang_prefixes_Foundation"
+<template:arch rdf:about="&templates;Chintang_prefixes_Foundation"
 	 rdfs:label="templates:Chintang_prefixes_Foundation">
 	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;Chintang_prefix"/>
 	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;Chintang_prefix"/>
 	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;Chintang_verb_nullComponent"/>
 	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;Chintang_verb_rightProsWord"/>
 	<spectemplate:KEYSTONE rdf:resource="&templates;Chintang_verb_rightProsWord"/>
-</template_:arch>
-<template_:order rdf:about="&templates;Chintang_prefixes_stricture-Order"
+</template:arch>
+<template:order rdf:about="&templates;Chintang_prefixes_stricture-Order"
 	 general:COUNT="2"
 	 rdfs:label="templates:Chintang_prefixes_stricture-Order">
 	<general:CONSTITUENT rdf:resource="&general;prosodicWord"/>
 	<general:RELATIONS rdf:resource="&general;simple"/>
-</template_:order>
+</template:order>
 <component:component rdf:about="&templates;Chintang_verb_nullComponent"
 	 rdfs:label="templates:Chintang_verb_nullComponent">
 	<speccomponent:ELASTICITY rdf:resource="&templates;Chintang_verb_nullComponent_Elasticity"/>
@@ -641,14 +641,14 @@
 </component:open>
 <component:stable rdf:about="&templates;English_nounStem_stability"
 	 rdfs:label="templates:English_nounStem_stability"/>
-<template_:desmeme rdf:about="&templates;English_plural"
+<template:desmeme rdf:about="&templates;English_plural"
 	 rdfs:label="templates:English_plural">
 	<spectemplate:FOUNDATION rdf:resource="&templates;English_plural_Foundation"/>
 	<spectemplate:STRICTURE rdf:resource="&templates;English_plural_Stricture"/>
 	<specgeneral:CONDITIONING rdf:resource="&templates;English_plural_conditioning"/>
 	<function:FUNCTION rdf:resource="&localfunction;plural"/>
-	<template_:VIOLABILITY rdf:resource="&template_;neutral"/>
-</template_:desmeme>
+	<template:VIOLABILITY rdf:resource="&template;neutral"/>
+</template:desmeme>
 <component:component rdf:about="&templates;English_pluralSuffix"
 	 rdfs:label="templates:English_pluralSuffix">
 	<speccomponent:STABILITY rdf:resource="&templates;English_pluralSuffix-stability"/>
@@ -674,20 +674,20 @@
 <form:transcription rdf:about="&templates;English_pluralSuffix_transcription"
 	 specform:TRANSCRIPTION_STRING="-s"
 	 rdfs:label="-s"/>
-<template_:arch rdf:about="&templates;English_plural_Foundation"
+<template:arch rdf:about="&templates;English_plural_Foundation"
 	 rdfs:label="templates:English_plural_Foundation">
 	<spectemplate:KEYSTONE rdf:resource="&templates;English_nounStem"/>
 	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;English_pluralSuffix"/>
 	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;English_pluralSuffix"/>
 	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;English_plural_nullComponent"/>
 	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;English_plural_nullComponent"/>
-</template_:arch>
-<template_:order rdf:about="&templates;English_plural_Stricture"
+</template:arch>
+<template:order rdf:about="&templates;English_plural_Stricture"
 	 general:COUNT="2"
 	 rdfs:label="templates:English_plural_Stricture">
 	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
 	<general:RELATIONS rdf:resource="&general;simple"/>
-</template_:order>
+</template:order>
 <general:constructionalConditioning rdf:about="&templates;English_plural_conditioning"
 	 notes:CONDITIONS="Suffix for regular plural formation."
 	 rdfs:label="templates:English_plural_conditioning"/>
@@ -724,32 +724,32 @@
 </component:open>
 <component:stable rdf:about="&templates;German_cf_Stability"
 	 rdfs:label="templates:German_cf_Stability"/>
-<template_:desmeme rdf:about="&templates;German_clause"
+<template:desmeme rdf:about="&templates;German_clause"
 	 rdfs:label="templates:German_clause">
 	<specgeneral:CONDITIONING rdf:resource="&templates;German_clause_Conditioning"/>
 	<spectemplate:FOUNDATION rdf:resource="&templates;German_clause_Foundation"/>
 	<spectemplate:STRICTURE rdf:resource="&templates;German_clause_Stricture-Order"/>
 	<function:FUNCTION rdf:resource="&gold;MainClause"/>
-	<template_:VIOLABILITY rdf:resource="&template_;neutral"/>
-</template_:desmeme>
+	<template:VIOLABILITY rdf:resource="&template;neutral"/>
+</template:desmeme>
 <general:constructionalConditioning rdf:about="&templates;German_clause_Conditioning"
 	 notes:CONDITIONS="applies to all clauses"
 	 rdfs:label="templates:German_clause_Conditioning"/>
-<template_:arch rdf:about="&templates;German_clause_Foundation"
+<template:arch rdf:about="&templates;German_clause_Foundation"
 	 rdfs:label="templates:German_clause_Foundation">
 	<spectemplate:KEYSTONE rdf:resource="&templates;German_cf"/>
 	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;German_mf"/>
 	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;German_nf"/>
 	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;German_vf"/>
 	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;German_vf"/>
-	<spectemplate:RESTKOMPONENTEN rdf:resource="&template_;German-RK"/>
-</template_:arch>
-<template_:order rdf:about="&templates;German_clause_Stricture-Order"
+	<spectemplate:RESTKOMPONENTEN rdf:resource="&template;German-RK"/>
+</template:arch>
+<template:order rdf:about="&templates;German_clause_Stricture-Order"
 	 general:COUNT="5"
 	 rdfs:label="templates:German_clause_Stricture-Order">
 	<general:CONSTITUENT rdf:resource="&general;syntacticConstituent"/>
 	<general:RELATIONS rdf:resource="&general;taxonomic"/>
-</template_:order>
+</template:order>
 <component:component rdf:about="&templates;German_mf"
 	 rdfs:label="templates:German_mf">
 	<speccomponent:ELASTICITY rdf:resource="&templates;German_mf_Elasticity"/>
@@ -915,33 +915,33 @@
 </component:open>
 <component:stable rdf:about="&templates;Mande_X_Stability"
 	 rdfs:label="templates:Mande_X_Stability"/>
-<template_:desmeme rdf:about="&templates;Mande_clause"
+<template:desmeme rdf:about="&templates;Mande_clause"
 	 rdfs:label="templates:Mande_clause">
 	<specgeneral:CONDITIONING rdf:resource="&templates;Mande_clause_Conditioning"/>
 	<spectemplate:FOUNDATION rdf:resource="&templates;Mande_clause_Foundation"/>
 	<spectemplate:STRICTURE rdf:resource="&templates;Mande_clause_Order"/>
 	<function:FUNCTION rdf:resource="&gold;MainClause"/>
-	<template_:VIOLABILITY rdf:resource="&template_;lexicalViolability"/>
-</template_:desmeme>
+	<template:VIOLABILITY rdf:resource="&template;lexicalViolability"/>
+</template:desmeme>
 <general:constructionalConditioning rdf:about="&templates;Mande_clause_Conditioning"
 	 rdfs:label="templates:Mande_clause_Conditioning">
 	<notes:CONDITIONS>This template describes the linearization of the Mande clause.</notes:CONDITIONS>
 </general:constructionalConditioning>
-<template_:arch rdf:about="&templates;Mande_clause_Foundation"
+<template:arch rdf:about="&templates;Mande_clause_Foundation"
 	 rdfs:label="templates:Mande_clause_Foundation">
 	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;Mande_O"/>
 	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;Mande_S"/>
 	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;Mande_S"/>
 	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;Mande_X"/>
 	<spectemplate:KEYSTONE rdf:resource="&templates;Mande_clause_TMA"/>
-	<spectemplate:RESTKOMPONENTEN rdf:resource="&template_;Mande-RK"/>
-</template_:arch>
-<template_:order rdf:about="&templates;Mande_clause_Order"
+	<spectemplate:RESTKOMPONENTEN rdf:resource="&template;Mande-RK"/>
+</template:arch>
+<template:order rdf:about="&templates;Mande_clause_Order"
 	 general:COUNT="5"
 	 rdfs:label="templates:Mande_clause_Order">
 	<general:RELATIONS rdf:resource="&general;simple"/>
 	<general:CONSTITUENT rdf:resource="&general;syntacticConstituent"/>
-</template_:order>
+</template:order>
 <component:component rdf:about="&templates;Mande_clause_TMA"
 	 rdfs:label="templates:Mande_clause_TMA">
 	<speccomponent:FILLEDNESS rdf:resource="&templates;Mande_clause_TMA_Coherence"/>
@@ -961,14 +961,14 @@
 	 rdfs:label="templates:Mande_clause_TMA_Elasticity"/>
 <component:stable rdf:about="&templates;Mande_clause_TMA_Stability"
 	 rdfs:label="templates:Mande_clause_TMA_Stability"/>
-<template_:desmeme rdf:about="&templates;Nimboran_verb"
+<template:desmeme rdf:about="&templates;Nimboran_verb"
 	 rdfs:label="templates:Nimboran_verb">
 	<spectemplate:STRICTURE rdf:resource="&templates;Nimboran_verb-Order"/>
 	<spectemplate:FOUNDATION rdf:resource="&templates;Nimboran_verb-Span"/>
 	<specgeneral:CONDITIONING rdf:resource="&templates;Nimboran_verbal_conditioning"/>
 	<function:FUNCTION rdf:resource="&localfunction;finite"/>
-	<template_:VIOLABILITY rdf:resource="&template_;homophonic"/>
-</template_:desmeme>
+	<template:VIOLABILITY rdf:resource="&template;homophonic"/>
+</template:desmeme>
 <component:component rdf:about="&templates;Nimboran_verb-LeftSupport"
 	 rdfs:label="templates:Nimboran_verb-LeftSupport">
 	<speccomponent:ELASTICITY rdf:resource="&templates;Nimboran_verb-LeftSupport-elastic"/>
@@ -993,12 +993,12 @@
 	 rdfs:label="templates:Nimboran_verb-LeftSupport-unfilled">
 	<speccomponent:COHERENCE rdf:resource="&templates;Nimboran_verb-LeftSupport-incoherent"/>
 </component:open>
-<template_:order rdf:about="&templates;Nimboran_verb-Order"
+<template:order rdf:about="&templates;Nimboran_verb-Order"
 	 general:COUNT="7"
 	 rdfs:label="templates:Nimboran_verb-Order">
 	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
 	<general:RELATIONS rdf:resource="&general;taxonomic"/>
-</template_:order>
+</template:order>
 <component:component rdf:about="&templates;Nimboran_verb-Position3"
 	 rdfs:label="templates:Nimboran_verb-Position3">
 	<speccomponent:FILLEDNESS rdf:resource="&templates;Nimboran_verb-Position3-Unfilled"/>
@@ -1132,39 +1132,39 @@
 	 rdfs:label="templates:Nimboran_verb-RightSupport-unfilled">
 	<speccomponent:COHERENCE rdf:resource="&templates;Nimboran_verb-RightSupport-coherent"/>
 </component:open>
-<template_:span rdf:about="&templates;Nimboran_verb-Span"
+<template:span rdf:about="&templates;Nimboran_verb-Span"
 	 rdfs:label="templates:Nimboran_verb-Span">
 	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;Nimboran_verb-LeftSupport"/>
 	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;Nimboran_verb-RightSupport"/>
-	<spectemplate:RESTKOMPONENTEN rdf:resource="&template_;Nimboran_verb-RK"/>
-</template_:span>
+	<spectemplate:RESTKOMPONENTEN rdf:resource="&template;Nimboran_verb-RK"/>
+</template:span>
 <general:constructionalConditioning rdf:about="&templates;Nimboran_verbal_conditioning"
 	 notes:CONDITIONS="These are the conditions for the Nimboran verbal template"
 	 rdfs:label="templates:Nimboran_verbal_conditioning"/>
-<template_:desmeme rdf:about="&templates;SerboCroatian_je"
+<template:desmeme rdf:about="&templates;SerboCroatian_je"
 	 rdfs:label="templates:SerboCroatian_je">
 	<specgeneral:CONDITIONING rdf:resource="&templates;SerboCroatian_je_Conditioning"/>
 	<spectemplate:FOUNDATION rdf:resource="&templates;SerboCroatian_je_Foundation"/>
 	<spectemplate:STRICTURE rdf:resource="&templates;SerboCroatian_je_Stricture-Order"/>
 	<function:FUNCTION rdf:resource="&gold;MainClause"/>
-	<template_:VIOLABILITY rdf:resource="&template_;neutral"/>
-</template_:desmeme>
+	<template:VIOLABILITY rdf:resource="&template;neutral"/>
+</template:desmeme>
 <general:lexicoconstructionalConditioning rdf:about="&templates;SerboCroatian_je_Conditioning"
 	 rdfs:label="templates:SerboCroatian_je_Conditioning">
 	<notes:CONDITIONS>This template appears when a particular clitic is found in a clause.</notes:CONDITIONS>
 	<spectemplate:FILLED_COMPONENT rdf:resource="&templates;SerboCroatian_je_LeftEdge"/>
-	<template_:FILLER_POSITION rdf:resource="&general;medial"/>
+	<template:FILLER_POSITION rdf:resource="&general;medial"/>
 </general:lexicoconstructionalConditioning>
 <form:canonicalLineate rdf:about="&templates;SerboCroatian_je_Form"
 	 rdfs:label="templates:SerboCroatian_je_Form">
 	<specform:TRANSCRIPTION rdf:resource="&templates;SerboCroatian_je_Transcription"/>
 	<form:LIAISON rdf:resource="&form;sinistrous"/>
 </form:canonicalLineate>
-<template_:span rdf:about="&templates;SerboCroatian_je_Foundation"
+<template:span rdf:about="&templates;SerboCroatian_je_Foundation"
 	 rdfs:label="templates:SerboCroatian_je_Foundation">
 	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;SerboCroatian_je_LeftEdge"/>
 	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;SerboCroatian_je_RightEdge"/>
-</template_:span>
+</template:span>
 <component:component rdf:about="&templates;SerboCroatian_je_LeftEdge"
 	 rdfs:label="templates:SerboCroatian_je_LeftEdge">
 	<speccomponent:ELASTICITY rdf:resource="&templates;SerboCroatian_je_LeftEdge_Elasticity"/>
@@ -1213,31 +1213,31 @@
 	 rdfs:label="templates:SerboCroatian_je_RightEdge_Stability"/>
 <component:stable rdf:about="&templates;SerboCroatian_je_Stability"
 	 rdfs:label="templates:SerboCroatian_je_Stability"/>
-<template_:order rdf:about="&templates;SerboCroatian_je_Stricture-Order"
+<template:order rdf:about="&templates;SerboCroatian_je_Stricture-Order"
 	 general:COUNT="2"
 	 rdfs:label="templates:SerboCroatian_je_Stricture-Order">
 	<general:RELATIONS rdf:resource="&general;simple"/>
 	<general:CONSTITUENT rdf:resource="&general;syntacticConstituent"/>
-</template_:order>
+</template:order>
 <form:transcription rdf:about="&templates;SerboCroatian_je_Transcription"
 	 specform:TRANSCRIPTION_STRING="=je"
 	 rdfs:label="=je"/>
-<template_:desmeme rdf:about="&templates;SerboCroatian_topicalization"
+<template:desmeme rdf:about="&templates;SerboCroatian_topicalization"
 	 rdfs:label="templates:SerboCroatian_topicalization">
 	<specgeneral:CONDITIONING rdf:resource="&templates;SerboCroatian_topicalization-Conditioning"/>
 	<spectemplate:FOUNDATION rdf:resource="&templates;SerboCroatian_topicalization-Foundation"/>
 	<spectemplate:STRICTURE rdf:resource="&templates;SerboCroatian_topicalization-Stricture"/>
 	<function:FUNCTION rdf:resource="&localfunction;topicalization"/>
-	<template_:VIOLABILITY rdf:resource="&template_;ineffable"/>
-</template_:desmeme>
+	<template:VIOLABILITY rdf:resource="&template;ineffable"/>
+</template:desmeme>
 <general:constructionalConditioning rdf:about="&templates;SerboCroatian_topicalization-Conditioning"
 	 notes:CONDITIONS="Used for left-edge topicalization."
 	 rdfs:label="templates:SerboCroatian_topicalization-Conditioning"/>
-<template_:span rdf:about="&templates;SerboCroatian_topicalization-Foundation"
+<template:span rdf:about="&templates;SerboCroatian_topicalization-Foundation"
 	 rdfs:label="templates:SerboCroatian_topicalization-Foundation">
 	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;SerboCroatian_topicalization-LeftSupport"/>
 	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;SerboCroatian_topicalization-RightSupport"/>
-</template_:span>
+</template:span>
 <component:component rdf:about="&templates;SerboCroatian_topicalization-LeftSupport"
 	 rdfs:label="templates:SerboCroatian_topicalization-LeftSupport">
 	<speccomponent:ELASTICITY rdf:resource="&templates;SerboCroatian_topicalization-LeftSupportElasticity"/>
@@ -1277,21 +1277,21 @@
 </component:open>
 <component:stable rdf:about="&templates;SerboCroatian_topicalization-RightSupportStability"
 	 rdfs:label="templates:SerboCroatian_topicalization-RightSupportStability"/>
-<template_:length rdf:about="&templates;SerboCroatian_topicalization-Stricture"
+<template:length rdf:about="&templates;SerboCroatian_topicalization-Stricture"
 	 general:COUNT="2"
 	 rdfs:label="templates:SerboCroatian_topicalization-Stricture">
 	<general:CONSTITUENT rdf:resource="&general;prosodicPhrase"/>
-</template_:length>
+</template:length>
 <general:final rdf:about="&templates;SerboCroation_je_finality"
 	 rdfs:label="templates:SerboCroation_je_finality"/>
-<template_:desmeme rdf:about="&templates;Tiene_verb"
+<template:desmeme rdf:about="&templates;Tiene_verb"
 	 rdfs:label="templates:Tiene_verb">
 	<specgeneral:CONDITIONING rdf:resource="&templates;Tiene_verb-Conditioning"/>
 	<spectemplate:FOUNDATION rdf:resource="&templates;Tiene_verb-Span"/>
 	<spectemplate:STRICTURE rdf:resource="&templates;Tiene_verb-Stricture"/>
 	<function:FUNCTION rdf:resource="&localfunction;valency"/>
-	<template_:VIOLABILITY rdf:resource="&template_;metathesis"/>
-</template_:desmeme>
+	<template:VIOLABILITY rdf:resource="&template;metathesis"/>
+</template:desmeme>
 <general:consonantalConditioning rdf:about="&templates;Tiene_verb-Conditioning"
 	 rdfs:label="templates:Tiene_verb-Conditioning"/>
 <component:component rdf:about="&templates;Tiene_verb-LeftSupport"
@@ -1353,18 +1353,18 @@
 </component:open>
 <component:stable rdf:about="&templates;Tiene_verb-RightSupport-Stable"
 	 rdfs:label="templates:Tiene_verb-RightSupport-Stable"/>
-<template_:span rdf:about="&templates;Tiene_verb-Span"
+<template:span rdf:about="&templates;Tiene_verb-Span"
 	 rdfs:label="templates:Tiene_verb-Span">
 	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;Tiene_verb-LeftSupport"/>
 	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;Tiene_verb-RightSupport"/>
-	<spectemplate:RESTKOMPONENTEN rdf:resource="&template_;Tiene_verb-RK"/>
-</template_:span>
-<template_:order rdf:about="&templates;Tiene_verb-Stricture"
+	<spectemplate:RESTKOMPONENTEN rdf:resource="&template;Tiene_verb-RK"/>
+</template:span>
+<template:order rdf:about="&templates;Tiene_verb-Stricture"
 	 general:COUNT="3"
 	 rdfs:label="templates:Tiene_verb-Stricture">
 	<general:CONSTITUENT rdf:resource="&general;segment"/>
 	<general:RELATIONS rdf:resource="&general;simple"/>
-</template_:order>
+</template:order>
 <general:left rdf:about="&templates;template_Instance_10003"
 	 rdfs:label="templates:template_Instance_10003"/>
 <component:inelastic rdf:about="&templates;template_Instance_11"
@@ -1390,22 +1390,30 @@
 	 rdfs:label="templates:template_Instance_6">
 	<function:CLASS rdf:resource="&localfunction;locative"/>
 </component:coherent>
-<component:restkomponentenSet rdf:about="&template_;Algonquian_clause-RK"
-	 rdfs:label="Algonquian_clause-RK"/>
-<component:restkomponentenSet rdf:about="&template_;German-RK"
-	 rdfs:label="German-RK"/>
-<component:restkomponentenSet rdf:about="&template_;Mande-RK"
-	 rdfs:label="Mande-RK"/>
-<component:restkomponentenSet rdf:about="&template_;Nimboran_verb-RK"
-	 rdfs:label="Nimboran_verb-RK">
+<component:restkomponentenSet rdf:about="&template;Algonquian_clause-RK"
+	 rdfs:label="template:Algonquian_clause-RK">
+	<spectemplate:RESTKOMPONENT rdf:resource="&templates;Algonquian_clause_Focus"/>
+</component:restkomponentenSet>
+<component:restkomponentenSet rdf:about="&template;German-RK"
+	 rdfs:label="template:German-RK">
+	<spectemplate:RESTKOMPONENT rdf:resource="&templates;German_vc"/>
+</component:restkomponentenSet>
+<component:restkomponentenSet rdf:about="&template;Mande-RK"
+	 rdfs:label="template:Mande-RK">
+	<spectemplate:RESTKOMPONENT rdf:resource="&templates;Mande_V"/>
+</component:restkomponentenSet>
+<component:restkomponentenSet rdf:about="&template;Nimboran_verb-RK"
+	 rdfs:label="template:Nimboran_verb-RK">
 	<spectemplate:RESTKOMPONENT rdf:resource="&templates;Nimboran_verb-Position3"/>
 	<spectemplate:RESTKOMPONENT rdf:resource="&templates;Nimboran_verb-Position4"/>
 	<spectemplate:RESTKOMPONENT rdf:resource="&templates;Nimboran_verb-Position5"/>
 	<spectemplate:RESTKOMPONENT rdf:resource="&templates;Nimboran_verb-Position6"/>
 	<spectemplate:RESTKOMPONENT rdf:resource="&templates;Nimboran_verb-Position7"/>
 </component:restkomponentenSet>
-<component:restkomponentenSet rdf:about="&template_;Tiene_verb-RK"
-	 rdfs:label="Tiene_verb-RK"/>
-<component:component rdf:about="&template_;template_Instance_6"
-	 rdfs:label="template_Instance_6"/>
+<component:restkomponentenSet rdf:about="&template;Tiene_verb-RK"
+	 rdfs:label="template:Tiene_verb-RK">
+	<spectemplate:RESTKOMPONENT rdf:resource="&templates;Tiene_verb-MiddleConsonant"/>
+</component:restkomponentenSet>
+<component:component rdf:about="&template;template_Instance_6"
+	 rdfs:label="template:template_Instance_6"/>
 </rdf:RDF>

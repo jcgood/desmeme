@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE rdf:RDF [
-	 <!ENTITY template_ 'http://purl.org/linguistics/jcgood/template#'>
+	 <!ENTITY template 'http://purl.org/linguistics/jcgood/template#'>
 	 <!ENTITY specgeneral 'http://purl.org/linguistics/jcgood/specgeneral#'>
 	 <!ENTITY localfunction 'http://purl.org/linguistics/jcgood/localfunction#'>
 	 <!ENTITY form 'http://purl.org/linguistics/jcgood/form#'>
@@ -16,7 +16,7 @@
 	 <!ENTITY rdf 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
 	 <!ENTITY specform 'http://purl.org/linguistics/jcgood/specform#'>
 ]>
-<rdf:RDF xmlns:template_="&template_;"
+<rdf:RDF xmlns:template="&template;"
 	 xmlns:specgeneral="&specgeneral;"
 	 xmlns:localfunction="&localfunction;"
 	 xmlns:form="&form;"
@@ -43,8 +43,8 @@
 	<rdfs:domain rdf:resource="&form;transcription"/>
 	<rdfs:domain rdf:resource="&general;conditioning"/>
 	<rdfs:domain rdf:resource="&general;position"/>
-	<rdfs:domain rdf:resource="&template_;foundation"/>
-	<rdfs:domain rdf:resource="&template_;stricture"/>
+	<rdfs:domain rdf:resource="&template;foundation"/>
+	<rdfs:domain rdf:resource="&template;stricture"/>
 </rdf:Property>
 <rdfs:Class rdf:about="&gold;Auxiliary"
 	 rdfs:label="gold:Auxiliary">
@@ -126,10 +126,6 @@
 	 a:role="abstract"
 	 rdfs:label="component:filledness">
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
-</rdfs:Class>
-<rdfs:Class rdf:about="&component;fillerClassList"
-	 rdfs:label="component:fillerClassList">
-	<rdfs:subClassOf rdf:resource="&rdf;List"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&component;incoherent"
 	 rdfs:label="component:incoherent">
@@ -249,7 +245,7 @@
 	 a:range="cls"
 	 rdfs:label="function:FUNCTION">
 	<a:allowedParents rdf:resource="&general;grammaticalFunction"/>
-	<rdfs:domain rdf:resource="&template_;desmeme"/>
+	<rdfs:domain rdf:resource="&template;desmeme"/>
 	<rdfs:range rdf:resource="&rdfs;Class"/>
 </rdf:Property>
 <rdf:Property rdf:about="&general;CONSTITUENT"
@@ -257,7 +253,7 @@
 	 a:range="cls"
 	 rdfs:label="general:CONSTITUENT">
 	<a:allowedParents rdf:resource="&general;constituent"/>
-	<rdfs:domain rdf:resource="&template_;stricture"/>
+	<rdfs:domain rdf:resource="&template;stricture"/>
 	<rdfs:range rdf:resource="&rdfs;Class"/>
 </rdf:Property>
 <rdf:Property rdf:about="&general;COUNT"
@@ -265,7 +261,7 @@
 	 a:range="integer"
 	 rdfs:label="general:COUNT">
 	<rdfs:domain rdf:resource="&component;inelastic"/>
-	<rdfs:domain rdf:resource="&template_;stricture"/>
+	<rdfs:domain rdf:resource="&template;stricture"/>
 	<rdfs:range rdf:resource="&rdfs;Literal"/>
 </rdf:Property>
 <rdf:Property rdf:about="&general;MAXIMUM"
@@ -294,7 +290,7 @@
 	 a:range="cls"
 	 rdfs:label="general:RELATIONS">
 	<a:allowedParents rdf:resource="&general;relations"/>
-	<rdfs:domain rdf:resource="&template_;order"/>
+	<rdfs:domain rdf:resource="&template;order"/>
 	<rdfs:range rdf:resource="&rdfs;Class"/>
 </rdf:Property>
 <rdfs:Class rdf:about="&general;absolutePositions"
@@ -601,7 +597,7 @@ TOO MANY SYMBOLS</rdfs:comment>
 <rdf:Property rdf:about="&speccomponent;CONTAINS_TEMPLATE"
 	 a:maxCardinality="1"
 	 rdfs:label="speccomponent:CONTAINS_TEMPLATE">
-	<rdfs:range rdf:resource="&template_;desmeme"/>
+	<rdfs:range rdf:resource="&template;desmeme"/>
 </rdf:Property>
 <rdf:Property rdf:about="&speccomponent;ELASTICITY"
 	 a:maxCardinality="1"
@@ -662,8 +658,8 @@ TOO MANY SYMBOLS</rdfs:comment>
 	 a:maxCardinality="1"
 	 rdfs:label="specgeneral:CONDITIONING">
 	<rdfs:range rdf:resource="&general;conditioning"/>
-	<rdfs:domain rdf:resource="&template_;desmeme"/>
-	<rdfs:domain rdf:resource="&template_;violable"/>
+	<rdfs:domain rdf:resource="&template;desmeme"/>
+	<rdfs:domain rdf:resource="&template;violable"/>
 </rdf:Property>
 <rdf:Property rdf:about="&spectemplate;FILLED_COMPONENT"
 	 a:maxCardinality="1"
@@ -674,26 +670,26 @@ TOO MANY SYMBOLS</rdfs:comment>
 <rdf:Property rdf:about="&spectemplate;FOUNDATION"
 	 a:maxCardinality="1"
 	 rdfs:label="spectemplate:FOUNDATION">
-	<rdfs:domain rdf:resource="&template_;desmeme"/>
-	<rdfs:range rdf:resource="&template_;foundation"/>
+	<rdfs:domain rdf:resource="&template;desmeme"/>
+	<rdfs:range rdf:resource="&template;foundation"/>
 </rdf:Property>
 <rdf:Property rdf:about="&spectemplate;KEYSTONE"
 	 a:maxCardinality="1"
 	 rdfs:label="spectemplate:KEYSTONE">
 	<rdfs:range rdf:resource="&component;component"/>
-	<rdfs:domain rdf:resource="&template_;arch"/>
+	<rdfs:domain rdf:resource="&template;arch"/>
 </rdf:Property>
 <rdf:Property rdf:about="&spectemplate;LEFT_SUPPORT"
 	 a:maxCardinality="1"
 	 rdfs:label="spectemplate:LEFT_SUPPORT">
 	<rdfs:range rdf:resource="&component;component"/>
-	<rdfs:domain rdf:resource="&template_;foundation"/>
+	<rdfs:domain rdf:resource="&template;foundation"/>
 </rdf:Property>
 <rdf:Property rdf:about="&spectemplate;LEFT_VOUSSOIR"
 	 a:maxCardinality="1"
 	 rdfs:label="spectemplate:LEFT_VOUSSOIR">
 	<rdfs:range rdf:resource="&component;component"/>
-	<rdfs:domain rdf:resource="&template_;arch"/>
+	<rdfs:domain rdf:resource="&template;arch"/>
 </rdf:Property>
 <rdf:Property rdf:about="&spectemplate;RESTKOMPONENT"
 	 rdfs:label="spectemplate:RESTKOMPONENT">
@@ -704,137 +700,137 @@ TOO MANY SYMBOLS</rdfs:comment>
 	 a:maxCardinality="1"
 	 rdfs:label="spectemplate:RESTKOMPONENTEN">
 	<rdfs:range rdf:resource="&component;restkomponentenSet"/>
-	<rdfs:domain rdf:resource="&template_;foundation"/>
+	<rdfs:domain rdf:resource="&template;foundation"/>
 </rdf:Property>
 <rdf:Property rdf:about="&spectemplate;RIGHT_SUPPORT"
 	 a:maxCardinality="1"
 	 rdfs:label="spectemplate:RIGHT_SUPPORT">
 	<rdfs:range rdf:resource="&component;component"/>
-	<rdfs:domain rdf:resource="&template_;foundation"/>
+	<rdfs:domain rdf:resource="&template;foundation"/>
 </rdf:Property>
 <rdf:Property rdf:about="&spectemplate;RIGHT_VOUSSOIR"
 	 a:maxCardinality="1"
 	 rdfs:label="spectemplate:RIGHT_VOUSSOIR">
 	<rdfs:range rdf:resource="&component;component"/>
-	<rdfs:domain rdf:resource="&template_;arch"/>
+	<rdfs:domain rdf:resource="&template;arch"/>
 </rdf:Property>
 <rdf:Property rdf:about="&spectemplate;STRICTURE"
 	 a:maxCardinality="1"
 	 rdfs:label="spectemplate:STRICTURE">
-	<rdfs:domain rdf:resource="&template_;desmeme"/>
-	<rdfs:range rdf:resource="&template_;stricture"/>
+	<rdfs:domain rdf:resource="&template;desmeme"/>
+	<rdfs:range rdf:resource="&template;stricture"/>
 </rdf:Property>
-<rdf:Property rdf:about="&template_;FILLER_POSITION"
+<rdf:Property rdf:about="&template;FILLER_POSITION"
 	 a:maxCardinality="1"
 	 a:range="cls"
-	 rdfs:label="FILLER_POSITION">
+	 rdfs:label="template:FILLER_POSITION">
 	<rdfs:domain rdf:resource="&general;lexicoconstructionalConditioning"/>
 	<a:allowedParents rdf:resource="&general;position"/>
 	<rdfs:range rdf:resource="&rdfs;Class"/>
 </rdf:Property>
-<rdf:Property rdf:about="&template_;VIOLABILITY"
+<rdf:Property rdf:about="&template;VIOLABILITY"
 	 a:maxCardinality="1"
 	 a:range="cls"
-	 rdfs:label="VIOLABILITY">
-	<rdfs:domain rdf:resource="&template_;desmeme"/>
-	<a:allowedParents rdf:resource="&template_;violability"/>
+	 rdfs:label="template:VIOLABILITY">
+	<rdfs:domain rdf:resource="&template;desmeme"/>
+	<a:allowedParents rdf:resource="&template;violability"/>
 	<rdfs:range rdf:resource="&rdfs;Class"/>
 </rdf:Property>
-<rdfs:Class rdf:about="&template_;arch"
-	 rdfs:label="arch">
-	<rdfs:subClassOf rdf:resource="&template_;foundation"/>
+<rdfs:Class rdf:about="&template;arch"
+	 rdfs:label="template:arch">
+	<rdfs:subClassOf rdf:resource="&template;foundation"/>
 </rdfs:Class>
-<rdfs:Class rdf:about="&template_;blocking"
+<rdfs:Class rdf:about="&template;blocking"
 	 a:role="abstract"
-	 rdfs:label="blocking">
-	<rdfs:subClassOf rdf:resource="&template_;inviolable"/>
+	 rdfs:label="template:blocking">
+	<rdfs:subClassOf rdf:resource="&template;inviolable"/>
 </rdfs:Class>
-<rdfs:Class rdf:about="&template_;constructionalViolability"
+<rdfs:Class rdf:about="&template;constructionalViolability"
 	 a:role="abstract"
-	 rdfs:label="constructionalViolability">
-	<rdfs:subClassOf rdf:resource="&template_;violable"/>
+	 rdfs:label="template:constructionalViolability">
+	<rdfs:subClassOf rdf:resource="&template;violable"/>
 </rdfs:Class>
-<rdfs:Class rdf:about="&template_;desmeme"
-	 rdfs:label="desmeme">
+<rdfs:Class rdf:about="&template;desmeme"
+	 rdfs:label="template:desmeme">
 	<rdfs:subClassOf rdf:resource="&form;lineate"/>
 </rdfs:Class>
-<rdfs:Class rdf:about="&template_;foundation"
+<rdfs:Class rdf:about="&template;foundation"
 	 a:role="abstract"
-	 rdfs:label="foundation">
+	 rdfs:label="template:foundation">
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
-<rdfs:Class rdf:about="&template_;freeViolabiliy"
+<rdfs:Class rdf:about="&template;freeViolabiliy"
 	 a:role="abstract"
-	 rdfs:label="freeViolabiliy">
-	<rdfs:subClassOf rdf:resource="&template_;violable"/>
+	 rdfs:label="template:freeViolabiliy">
+	<rdfs:subClassOf rdf:resource="&template;violable"/>
 </rdfs:Class>
-<rdfs:Class rdf:about="&template_;homophonic"
+<rdfs:Class rdf:about="&template;homophonic"
 	 a:role="abstract"
-	 rdfs:label="homophonic">
-	<rdfs:subClassOf rdf:resource="&template_;blocking"/>
+	 rdfs:label="template:homophonic">
+	<rdfs:subClassOf rdf:resource="&template;blocking"/>
 </rdfs:Class>
-<rdfs:Class rdf:about="&template_;ineffable"
+<rdfs:Class rdf:about="&template;ineffable"
 	 a:role="abstract"
-	 rdfs:label="ineffable">
-	<rdfs:subClassOf rdf:resource="&template_;blocking"/>
+	 rdfs:label="template:ineffable">
+	<rdfs:subClassOf rdf:resource="&template;blocking"/>
 </rdfs:Class>
-<rdfs:Class rdf:about="&template_;insertion"
+<rdfs:Class rdf:about="&template;insertion"
 	 a:role="abstract"
 	 rdfs:comment="I am not, for now, coding the specifics of what is inserted."
-	 rdfs:label="insertion">
-	<rdfs:subClassOf rdf:resource="&template_;reparable"/>
+	 rdfs:label="template:insertion">
+	<rdfs:subClassOf rdf:resource="&template;reparable"/>
 </rdfs:Class>
-<rdfs:Class rdf:about="&template_;inviolable"
+<rdfs:Class rdf:about="&template;inviolable"
 	 a:role="abstract"
-	 rdfs:label="inviolable">
-	<rdfs:subClassOf rdf:resource="&template_;violability"/>
+	 rdfs:label="template:inviolable">
+	<rdfs:subClassOf rdf:resource="&template;violability"/>
 </rdfs:Class>
-<rdfs:Class rdf:about="&template_;length"
-	 rdfs:label="length">
-	<rdfs:subClassOf rdf:resource="&template_;stricture"/>
+<rdfs:Class rdf:about="&template;length"
+	 rdfs:label="template:length">
+	<rdfs:subClassOf rdf:resource="&template;stricture"/>
 </rdfs:Class>
-<rdfs:Class rdf:about="&template_;lexicalViolability"
+<rdfs:Class rdf:about="&template;lexicalViolability"
 	 a:role="abstract"
-	 rdfs:label="lexicalViolability">
-	<rdfs:subClassOf rdf:resource="&template_;violable"/>
+	 rdfs:label="template:lexicalViolability">
+	<rdfs:subClassOf rdf:resource="&template;violable"/>
 </rdfs:Class>
-<rdfs:Class rdf:about="&template_;metathesis"
+<rdfs:Class rdf:about="&template;metathesis"
 	 a:role="abstract"
-	 rdfs:label="metathesis">
-	<rdfs:subClassOf rdf:resource="&template_;reparable"/>
+	 rdfs:label="template:metathesis">
+	<rdfs:subClassOf rdf:resource="&template;reparable"/>
 </rdfs:Class>
-<rdfs:Class rdf:about="&template_;neutral"
+<rdfs:Class rdf:about="&template;neutral"
 	 a:role="abstract"
-	 rdfs:label="neutral">
+	 rdfs:label="template:neutral">
 	<rdfs:comment>For cases of surface patterns (e.g., German clause) where the template does not impinge upon semantic expression at all)</rdfs:comment>
-	<rdfs:subClassOf rdf:resource="&template_;inviolable"/>
+	<rdfs:subClassOf rdf:resource="&template;inviolable"/>
 </rdfs:Class>
-<rdfs:Class rdf:about="&template_;order"
-	 rdfs:label="order">
-	<rdfs:subClassOf rdf:resource="&template_;stricture"/>
+<rdfs:Class rdf:about="&template;order"
+	 rdfs:label="template:order">
+	<rdfs:subClassOf rdf:resource="&template;stricture"/>
 </rdfs:Class>
-<rdfs:Class rdf:about="&template_;reparable"
+<rdfs:Class rdf:about="&template;reparable"
 	 a:role="abstract"
-	 rdfs:label="reparable">
-	<rdfs:subClassOf rdf:resource="&template_;inviolable"/>
+	 rdfs:label="template:reparable">
+	<rdfs:subClassOf rdf:resource="&template;inviolable"/>
 </rdfs:Class>
-<rdfs:Class rdf:about="&template_;span"
-	 rdfs:label="span">
-	<rdfs:subClassOf rdf:resource="&template_;foundation"/>
+<rdfs:Class rdf:about="&template;span"
+	 rdfs:label="template:span">
+	<rdfs:subClassOf rdf:resource="&template;foundation"/>
 </rdfs:Class>
-<rdfs:Class rdf:about="&template_;stricture"
+<rdfs:Class rdf:about="&template;stricture"
 	 a:role="abstract"
-	 rdfs:label="stricture">
+	 rdfs:label="template:stricture">
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
-<rdfs:Class rdf:about="&template_;violability"
+<rdfs:Class rdf:about="&template;violability"
 	 a:role="abstract"
-	 rdfs:label="violability">
+	 rdfs:label="template:violability">
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
-<rdfs:Class rdf:about="&template_;violable"
+<rdfs:Class rdf:about="&template;violable"
 	 a:role="abstract"
-	 rdfs:label="violable">
-	<rdfs:subClassOf rdf:resource="&template_;violability"/>
+	 rdfs:label="template:violable">
+	<rdfs:subClassOf rdf:resource="&template;violability"/>
 </rdfs:Class>
 </rdf:RDF>
