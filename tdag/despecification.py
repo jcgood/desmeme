@@ -7,17 +7,13 @@ from tdag import tdag
 # RDF bits not important for the comparative analysis.
 # It's recursive and passes back the original nodes and a despecified/generic one.
 def process_template(mother,genericMother,rdfGraph,tdag):
-	
-	print "mother", mother, genericMother
-	
+		
 	for predicate, daughter in rdfGraph.predicate_objects(mother):
 
 		# Conflate (if applicable) the daughters of the mother if possible and create pretty names.
 		despecifiedD = conflate(daughter,rdfGraph)
 		prettyDName = prettyName(despecifiedD)
 		prettyPredName = prettyName(predicate)
-
-		print mother, predicate, daughter
 
 		# Here we need some special logic to make sure that (components especially)
 		# Have their potentially shared nodes "split" up so that each component points
@@ -35,19 +31,15 @@ def process_template(mother,genericMother,rdfGraph,tdag):
 				prettyDName = tdag.add_node(prettyDName,daughter,mother,predicate)
 			
 			# The method used here is from the original pygraph, and does not involve labeled edges
-			
-			#print genericMother, prettyDName,prettyPredName
-			
+						
 			if tdag.has_edge((genericMother, prettyDName), prettyPredName):
 				pass
 			else:
 				# Now we are using the special tdag methods to add an edge with a label for multiple arcs from/to same nodes
 				tdag.add_edge((genericMother, prettyDName), label=prettyPredName)
-				#print "added above!"
 			
 			# Now send the rest of the template, after conflation of this layer, back through the function.
 			process_template(daughter, prettyDName, rdfGraph, tdag)
-			print "Recursion:", prettyDName
 			
 		# Not a generic/conflatable node. So, we don't add anything but, instead, just cycle through.
 		else: process_template(daughter, genericMother, rdfGraph, tdag)

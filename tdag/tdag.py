@@ -131,7 +131,6 @@ class tdag ( ):
 				self.components.append(URI)
 				self.componentMapping[URI] = nodeName # This is the nodename with the number on it to make sure it can be identified properly for pydot.
 				self.core.add_node(nodeName, attrs=[("label", "component")]) # Now we add the node to the internal graph, giving it a label without the extra digit.
-				print "added:", nodeName, URI
 
 		elif node == "elastic":
 			if URI in self.elastics:
@@ -280,7 +279,6 @@ class tdag ( ):
 		# If we've made it this far, it's a non-repeatable, generic node.		
 		else:
 			self.core.add_node(nodeName)
-			print "adding generic:", nodeName
 		
 		return nodeName
 
@@ -328,7 +326,6 @@ class tdag ( ):
  		# This is the usual case: One pair of nodes, one edge. Just add it.
  		else:
  			self.add_labeled_edge(edge, label, wt=1, attrs=[])
- 			#print "adding...", edge, label, attrs
 	
 
 	# Checks to see if a labeled edge is already there.
