@@ -1,5 +1,6 @@
 from tdag import tdag
 
+# Possible improvement: Make subclass of "topAVM" adding features (e.g., totaltags, tags) just for that class.
 class avm ( ):
 
 	def __init__(self, name, type):
@@ -15,6 +16,16 @@ class avm ( ):
 		#A list for feature-value pairs
 		self.featvals = [ ]
 	
+		# For re-entrancy, a tag say this is a re-entered AVM and one saying
+		# If it is the "primary" one--i.e., to be expressed in the LaTeX form.
+		# These get re-set as appropriate. We also store a counter for the numeric tag for re-entrancy.
+		self.reentered = False
+		self.primary = False
+		self.tag = 0
+		
+		# top-level AVMs will also keep track of how many tags they have inside of them and what the tags are for a given AVM.
+		self.totaltags = 0
+		self.tags = { }
 	
 	
 	def addFV(self, featval):
@@ -26,17 +37,22 @@ class avm ( ):
 		storedFeatvals = self.featvals
 		
 		
-		# Avoid duplication due to re-entrancy
+		# Avoid duplication due to re-entrancy except or restkomponenten (code a bit hackish and non-general here)
 		hasFeature = False
-		for storedFeatval in storedFeatvals:
-			storedFeat = storedFeatval.feature			
-			if feat == storedFeat:
-				hasFeature = True
+
+		if feat == 'RESTKOMPONENT':
+				self.featvals.append(featval)
 		
-		if hasFeature == True:
-			pass
 		else:
-			self.featvals.append(featval)
+			for storedFeatval in storedFeatvals:
+				storedFeat = storedFeatval.feature			
+				if feat == storedFeat:
+					hasFeature = True
+		
+			if hasFeature == True:
+				pass
+			else:
+				self.featvals.append(featval)
 
 
 	# Will need recursive
@@ -55,6 +71,7 @@ class avm ( ):
 			# solution, but since, for now, this only happens for foundations, I'm going with
 			# a specific one
 			# TO CONSIDER: Can I just replace the old "else" code with this code? Is there a reason to believe it won't generalize?
+			# If I did above, I'd have to alter getfoundation() too...
 			if root == 'arch' or root == 'span':
 				
 				alledges = tgraph.edges
@@ -75,7 +92,7 @@ class avm ( ):
 					embeddedAVM.graph_toAVM(tgraph, n2)
 					FV = featval(attribute, embeddedAVM)
 					self.addFV(FV)
-					#print attribute, embeddedAVM			
+			
 			
 			else:
 				edge_props =  pygraph.get_edge_properties((root,neighbor))
@@ -97,6 +114,7 @@ class avm ( ):
 					FV = featval(attribute, embeddedAVM)
 					self.addFV(FV)
 
+	
 	def getfoundation(self, edges):
 		
 		keys = edges.keys()
@@ -109,7 +127,6 @@ class avm ( ):
 			
 			# Check if we are dealing with foundation nodes
 			if n1 == 'arch' or n1 == 'span':
-				#print n1, n2, label
 				foundationedges[label] = ((n1, n2), label)
 				
 		return foundationedges
@@ -129,13 +146,14 @@ class avm ( ):
 		orderings = { 'desmeme' 			: ["CONDITIONING", "VIOLABILITY", "STRICTURE", "FOUNDATION" ],
 					  'length'  			: ["CONSTITUENT", "COUNT" ],
 					  'order'  				: ["CONSTITUENT", "COUNT", "RELATIONS" ],
-					  'arch'  				: ["LEFT_SUPPORT", "LEFT_VOUSSOIR", "KEYSTONE", "RIGHT_VOUSSOIR", "RIGHT_SUPPORT"],
-					  'span'  				: ["LEFT_SUPPORT", "RIGHT_SUPPORT"],
+					  'arch'  				: ["LEFT_SUPPORT", "LEFT_VOUSSOIR", "KEYSTONE", "RIGHT_VOUSSOIR", "RIGHT_SUPPORT", "RESTKOMPONENTEN"], # Need full ordering or RKs are ignored (which is bad)
+					  'span'  				: ["LEFT_SUPPORT", "RIGHT_SUPPORT", "RESTKOMPONENTEN"],
 					  'component'		  	: ["ELASTICITY", "FILLEDNESS", "STABILITY" ],
 					  'elastic'  			: ["MAXIMUM", "MINUMUM" ],
 					  'partially filled'  	: ["FILLER_POSITION", "FORM", "COHERENCE" ],
 					  'unstable'  			: ["SUPPORT", "SUPPORT_POSITION" ],
 					  'lexicoconstructionalConditioning': ["FILLER_POSITION", "FILLED_COMPONENT" ],
+					  'restkomponentenSet'	: ["RESTKOMPONENT"] # Need this list of one to allow components in side RK to be procssed; unfortunate hack
 					}
 
 		# I want to use type() later, so I can't assign type to a string!
@@ -148,44 +166,68 @@ class avm ( ):
 			featorder = [] # Empty list to block to the for loop below, probably not a "pythonic" way of doing things
 		
 		
-		ofeatvals = []
-		for ofeat in featorder: # "o" stands for ordered
+		# RKs are a special case, generalization no doubt possible, but I don't want to deal with it now.
+		if type == 'restkomponentenSet':
+			# RKsets only contain RKs which are themselves components. So, we just order all of them.
 			for ufeatval in ufeatvals:
-				ufeat = ufeatval.feature
 				uval = ufeatval.value
-				if ofeat == ufeat:
-					# We've found the feature we want in the unordered list; add it to the ordered list and delete from the unordered one.
-					if isinstance(uval ,avm):
-						uval.order()
-						ofeatvals.append(ufeatval)
-						ufeatvals.remove(ufeatval)
-					else:
-						ofeatvals.append(ufeatval)
-						ufeatvals.remove(ufeatval)
+				uval.order()
 					
-		# If anything remains in unordered list, just append it to the ordered list as leftovers
-		for ufeatval in ufeatvals:
-			ofeatvals.append(ufeatval)
+		else:
+			ofeatvals = []
+			for ofeat in featorder: # "o" stands for ordered
+				for ufeatval in ufeatvals:
+					ufeat = ufeatval.feature
+					uval = ufeatval.value
+					if ofeat == ufeat:
+						# We've found the feature we want in the unordered list; add it to the ordered list and delete from the unordered one.
+						if isinstance(uval, avm):
+							uval.order()
+							ofeatvals.append(ufeatval)
+							ufeatvals.remove(ufeatval)
+						else:
+							ofeatvals.append(ufeatval)
+							ufeatvals.remove(ufeatval)
+					
+			# If anything remains in unordered list, just append it to the ordered list as leftovers
+			for ufeatval in ufeatvals:
+				ofeatvals.append(ufeatval)
 			
-		# set original featvals to ordered list
-		self.featvals = ofeatvals
+			# set original featvals to ordered list
+			self.featvals = ofeatvals
 
 	
-	# Removes duplicate component features, adding reference tags
-	# Recursive
+	# Removes duplicate component features, adding reference tag
 	def normalize(self, components = None):
 
+		# A list for prioritizing which features get the full AVM and (implicitly) which just get tags.
+		# All possible features for components need to be listed here for the function to work.
+		prioritylist = [ "KEYSTONE", "LEFT_SUPPORT", "RIGHT_SUPPORT", "LEFT_VOUSSOIR", "RIGHT_VOUSSOIR", "FILLED_COMPONENT", "SUPPORT"]
 		
 		if components == None: components = {}
 
-		# TODO: FILL THIS OUT
-		# I now have a nice components list for finding re-entrancy.
-		# I just need to use it...
-
+		#Get a list of components and associated attributes that point to them
 		components = self.buildcomponentlist()
 
-		print components
+		for component in components.keys():
+			
+			attributes = components[component]
+			
+			if len(attributes) > 1:
+				
+				priorityset = False
+				for foundationfeature in prioritylist:
+				
+					if foundationfeature in attributes and priorityset == False:
+						self.makepriorityfeature(foundationfeature, self)
+						priorityset = True
 
+					elif foundationfeature in attributes:
+						self.makereenteredfeature(foundationfeature)
+						
+				if priorityset == False:
+					print "Error: No prioritized feature found for", component
+					
 
 	# Removes duplicate component features, adding reference tags
 	# Recursive
@@ -216,6 +258,56 @@ class avm ( ):
 			
 		return components
 
+
+	# For a given feature, set it it as being the priority feature of a re-entrant AVM
+	# We need to keep track of the highest AVM so we can set the tag numbers as appropriate
+	# Recursive
+	def makepriorityfeature(self, priorityfeature, topavm):
+
+		featvals = self.featvals
+		tagcount = topavm.totaltags
+
+		for featval in featvals:
+			feat = featval.feature
+			val = featval.value
+
+			if feat == priorityfeature:
+				id = val.name
+				val.reentered = True
+				val.primary = True
+				tagcount += 1
+				val.tag = tagcount
+				topavm.totaltags = tagcount
+				topavm.tags[id] = tagcount
+			
+			else:
+				if isinstance(val, basestring):
+					pass
+				# Otherwise, we must have an embedded AVM to process to find what we need
+				else:
+					val.makepriorityfeature(priorityfeature, topavm)
+
+	# For a given feature, set it it as being a non=priority re-entered feature
+	# Recursive
+	def makereenteredfeature(self, priorityfeature):
+
+		featvals = self.featvals
+
+		for featval in featvals:
+			feat = featval.feature
+			val = featval.value
+
+			if feat == priorityfeature:
+				val.reentered = True
+			
+			else:
+				if isinstance(val, basestring):
+					pass
+				# Otherwise, we must have an embedded AVM to process to find what we need
+				else:
+					val.makereenteredfeature(priorityfeature)
+		
+		
 	
 	# Let's us know if there's an embedded AVM or not
 	def terminal(self, node, tgraph):
@@ -229,31 +321,106 @@ class avm ( ):
 
 
 	# Recursive
-	def to_latex(self, embedding = 0, seencomponents = { }, componentcount = 1):
+	# Pass around topavm to keep track of tags for re-entered components
+	def to_ASCII(self, topavm, embedding = 0, seencomponents = { }, componentcount = 1):
 		
 		id = self.name
 		type = self.type
+		reentered = self.reentered
+		primary = self.primary
 		featvals = self.featvals
-				
 		
-		print "\t"*embedding+"type:", type, "("+id+")"
-		
-		for featval in featvals:
-					
-			feat = featval.feature
-			val = featval.value
-			
-			if isinstance(val, basestring):
-				print "\t"*embedding, feat, val
+		# Check for re-entrancy conditions
+
+		# If re-entered and not primary, just print a tag			
+		if self.reentered and not(self.primary):
+			tag = topavm.tags[id]
+			print "\t"*embedding+"type:", "@"+str(tag), "("+id+")"
+
+		else:
+			if self.primary:
+				tag = self.tag
+				print "\t"*embedding+"type:", "@"+str(tag), type, "("+id+")"
 
 			else:
-				print "\t"*embedding, feat
-				
-				embedding += 1
-				val.to_latex(embedding, seencomponents, componentcount)
-				embedding -= 1
-				
+				print "\t"*embedding+"type:", type, "("+id+")"
 		
+			for featval in featvals:
+					
+				feat = featval.feature
+				val = featval.value
+			
+				if isinstance(val, basestring):
+					print "\t"*embedding, feat, val
+
+				else:
+					print "\t"*embedding, feat
+					embedding += 1
+					val.to_ASCII(topavm, embedding, seencomponents, componentcount)
+					embedding -= 1
+				
+	
+	# Recursive
+	# Pass around topavm to keep track of tags for re-entered components
+	def to_latex(self, topavm, embedding = 0, seencomponents = { }, componentcount = 1):
+		
+		id = self.name
+		type = self.type
+		reentered = self.reentered
+		primary = self.primary
+		featvals = self.featvals
+		
+		# Check for re-entrancy conditions
+
+		if embedding == 0:
+			
+			id = id.replace("_", " ")
+			print "{\singlespacing"
+			print "\\textbf{"+id+"}\n"
+			print "\\begin{avm}"
+
+		# If re-entered and not primary, just print a tag			
+		if self.reentered and not(self.primary):
+			tag = topavm.tags[id]
+			print "\t"*embedding+"\\phantom{\\@"+str(0)+"}"+"\\@"+str(tag)+"\\raisebox{-.5em}{\\rule{0pt}{1.5em}}"
+
+		else:
+			if self.primary:
+				tag = self.tag
+				print "\t"*embedding+"\\@"+str(tag), "\\[\t\\emph{"+type+"} \\cr"
+
+			else:
+				print "\t"*embedding+"\\phantom{\\@"+str(0)+"}", "\\[\t\\emph{"+type+"} \\cr"
+		
+			for featval in featvals:
+					
+				feat = featval.feature
+				val = featval.value
+			
+				prettyfeat = feat.lower()
+				prettyfeat = prettyfeat.replace("_", " ")
+			
+				if isinstance(val, basestring):
+					# Don't italicize numbers
+					try:
+						float(val)
+						print "\t"*embedding, "\\textsc{"+prettyfeat+"}\t&\t", "\\phantom{\\@"+str(0)+"}"+val, "\\raisebox{-.5em}{\\rule{0pt}{1.5em}}\\cr"
+					
+					except:
+						print "\t"*embedding, "\\textsc{"+prettyfeat+"}\t&\t", "\\phantom{\\@"+str(0)+"}"+"\\emph{"+val+"}", "\\raisebox{-.5em}{\\rule{0pt}{1.5em}}\\cr"
+
+				else:
+					print "\t"*embedding, "\\textsc{"+prettyfeat+"}"+"\t&\t",
+					embedding += 1
+					val.to_latex(topavm, embedding, seencomponents, componentcount)
+					print "\t"*embedding, " \\cr"
+					embedding -= 1
+					
+			print "\t"*embedding, "\\]"
+
+			if embedding == 0:
+				print "\\end{avm}}"
+
 
 
 class featval ( ):
