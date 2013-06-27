@@ -54,6 +54,7 @@ class avm ( ):
 			# associated with two distinct edges. It would be nice to find a general
 			# solution, but since, for now, this only happens for foundations, I'm going with
 			# a specific one
+			# TO CONSIDER: Can I just replace the old "else" code with this code? Is there a reason to believe it won't generalize?
 			if root == 'arch' or root == 'span':
 				
 				alledges = tgraph.edges
