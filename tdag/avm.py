@@ -25,7 +25,6 @@ class avm ( ):
 		feat = featval.feature
 		storedFeatvals = self.featvals
 		
-		print "f", feat
 		
 		# Avoid duplication due to re-entrancy
 		hasFeature = False
@@ -46,37 +45,79 @@ class avm ( ):
 		pygraph = tgraph.core
 		nodes = pygraph.nodes()
 		edges = pygraph.edges()
-		print "keys:", tgraph.edges
-		
+				
 		neighbors = pygraph.neighbors(root)
 		
 		for neighbor in neighbors:
-			
-			# TODO: I'M LOSING EDGES WITH REENTRANCY (EG IN CHICH AVM) ONLY ONE EDGE FOUND...NEED TO WORK ON FINDING EDGES, CHECK TO DOT?
-			
-			edge_props =  pygraph.get_edge_properties((root,neighbor))
-			attribute = edge_props['label']
-				
-			value = neighbor
-			node_attrs = pygraph.node_attributes(neighbor)
-			for a,v in node_attrs:
-				if a == "label":
-					value = v
 
-			if self.terminal(neighbor, tgraph):
-				FV = featval(attribute,value)
-				self.addFV(FV)
+			# We need to do something special for the case where a pair of nodes is
+			# associated with two distinct edges. It would be nice to find a general
+			# solution, but since, for now, this only happens for foundations, I'm going with
+			# a specific one
+			if root == 'arch' or root == 'span':
+				
+				alledges = tgraph.edges
+				foundationedges = self.getfoundation(alledges)
+				
+				for foundationedge in foundationedges.keys():
+					
+					((n1, n2), attribute) = foundationedges[foundationedge]
+					
+					node_attrs = pygraph.node_attributes(n2)
+					value = n2
+					for a,v in node_attrs:
+						if a == "label":
+							value = v
+							
+					# Should only point to components
+					embeddedAVM = avm(n2, value)
+					embeddedAVM.graph_toAVM(tgraph, n2)
+					FV = featval(attribute, embeddedAVM)
+					self.addFV(FV)
+					#print attribute, embeddedAVM			
 			
 			else:
-				embeddedAVM = avm(neighbor, value)
-				embeddedAVM.graph_toAVM(tgraph, neighbor)
-				FV = featval(attribute, embeddedAVM)
-				self.addFV(FV)
+				edge_props =  pygraph.get_edge_properties((root,neighbor))
+				attribute = edge_props['label']
+				
+				value = neighbor
+				node_attrs = pygraph.node_attributes(neighbor)
+				for a,v in node_attrs:
+					if a == "label":
+						value = v
 
+				if self.terminal(neighbor, tgraph):
+					FV = featval(attribute,value)
+					self.addFV(FV)
+			
+				else:
+					embeddedAVM = avm(neighbor, value)
+					embeddedAVM.graph_toAVM(tgraph, neighbor)
+					FV = featval(attribute, embeddedAVM)
+					self.addFV(FV)
+
+	def getfoundation(self, edges):
+		
+		keys = edges.keys()
+
+		foundationedges = { }
+		for key in keys:
+			
+			# The values of edges are a pair of nodes, followed by a label
+			((n1, n2), label) = edges[key]
+			
+			# Check if we are dealing with foundation nodes
+			if n1 == 'arch' or n1 == 'span':
+				#print n1, n2, label
+				foundationedges[label] = ((n1, n2), label)
+				
+		return foundationedges
+			
+			
 	
 	def canonicalize(self):
 		self.order()
-		#self.normalize()
+		self.normalize()
 
 
 	# Order the feature-value pairs following order specified in orderings in function.
@@ -131,42 +172,46 @@ class avm ( ):
 	
 	# Removes duplicate component features, adding reference tags
 	# Recursive
-	def normalize(self, components = {}):
+	def normalize(self, components = None):
+
+		
+		if components == None: components = {}
 
 		# TODO: FILL THIS OUT
+		# I now have a nice components list for finding re-entrancy.
+		# I just need to use it...
 
 		components = self.buildcomponentlist()
 
-		id = self.name
-		type = self.type
-		ufeatvals = self.featvals # "u" stands for "unordered"
-
+		print components
 
 
 	# Removes duplicate component features, adding reference tags
 	# Recursive
-	def buildcomponentlist(self, components = {}):
-
-		# TODO: THIS HAS ODD BEHAVIOR, OVERCOUNTING COMPONENTS. I DON"T KNOW WHY, GOT distracted by lost edges...
+	def buildcomponentlist(self, feature = None, components = None):
+		
+		# Mutable defaults fix!
+		if components == None: components = {}
 
 		id = self.name
 		type = self.type
 		featvals = self.featvals
 
 		if type == "component":
-			print type, id
 			try:
-				components[id] += 1
+				attributes = components[id]
+				attributes.append(feature)
+				components[id] = attributes
 			except:
-				components[id] = 0
+				components[id] = [feature]
 
 		for featval in featvals:
 			val = featval.value
+			feat = featval.feature
 			if isinstance(val, basestring):
 				pass
 			else:
-				print val.name
-				val.buildcomponentlist(components)
+				val.buildcomponentlist(feat,components)
 			
 		return components
 

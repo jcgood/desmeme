@@ -20,7 +20,7 @@ for gTemplate in gTemplates:
 	templateAVM = avm(gTemplate.name,"desmeme")
 	templateAVM.graph_toAVM(gTemplate)
 	
-	#templateAVM.canonicalize()
+	templateAVM.canonicalize()
 	templateAVM.to_latex()
 	
 	#print templateAVM.buildcomponentlist()
