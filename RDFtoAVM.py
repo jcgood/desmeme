@@ -23,9 +23,5 @@ for gTemplate in gTemplates:
 	templateAVM.canonicalize()
 	#templateAVM.to_latex(templateAVM)
 	templateAVM.to_ASCII(templateAVM)
-	
-	# To do: Write to minifiles in book folder for automagic updating
-	
-	#print templateAVM.buildcomponentlist()
-	
+		
 	print "\n"

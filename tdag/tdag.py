@@ -11,6 +11,9 @@ from pygraph.classes.hypergraph import hypergraph
 from pygraph.readwrite.markup import write
 import pydot
 
+import re
+
+
 # A series of functions for abstracting away from some RDF specificities, including documentation fields
 import despecification
 
@@ -407,9 +410,10 @@ class tdag ( ):
 		# Add all the edges with labels.
 		dagEdgeKeys = dag.edges.keys()
 		for dagEdgeKey in dagEdgeKeys:
+			
 			(edge, label) = dag.edges[dagEdgeKey]
 			(edge_from, edge_to) = edge
-
+			
  			attr_list = {}
  			attr_list['label'] = str(label)
 			
@@ -417,5 +421,62 @@ class tdag ( ):
 			
 			dotDag.add_edge(newEdge)
 			
+		#return dotDag.to_string()
+		return dotDag
+		
+		
+
+	# Makes dot files just for the components of a graph
+	# BUG: prints out floating digit nodes for digity things that aren't part of components
+	def to_dot_components(dag, weighted=False):
+
+		# These are the nodes that can be in components
+		componentcats = ['component','elastic','inelastic','null','filled','open','partiallyFilled','coherent','incoherent','stable','unstable','final','initial','medial', 'MAXIMUM', 'MINIMUM', 'COUNT']
+
+		# Get the core graph we've made
+		dagGraph = dag.core
+		
+		# Create a pydot object
+		dotDag = pydot.Dot()
+		
+		# For now, we don't set the name because "_" seems to cause an error
+		# So we use the existing name. I no longer follow all the logic.
+		if not 'name' in dir(dagGraph):
+			dotDag.set_name('graphname')
+		else:
+			dotDag.set_name(dag.name)
+		
+		# Go through all the nodes in the graph for components
+		for node in dagGraph.nodes():
+			attr_list = {}
+			for attr in dagGraph.node_attributes(node):
+				attr_list[str(attr[0])] = str(attr[1])
+			
+			for cat in componentcats:
+				catmatch = re.compile(cat)
+				print node
+				if catmatch.match(node): # Need numeric nodes, too
+					newNode = pydot.Node(str(node), **attr_list)			
+					print attr_list
+					dotDag.add_node(newNode)
+		
+		
+		# Hacking for my specific drawing needs--no weights, just labels
+		# Add all the edges with labels.
+		dagEdgeKeys = dag.edges.keys()
+		for dagEdgeKey in dagEdgeKeys:
+			
+			(edge, label) = dag.edges[dagEdgeKey]
+			(edge_from, edge_to) = edge
+			
+ 			attr_list = {}
+ 			attr_list['label'] = str(label)
+						
+			for cat in componentcats:
+				catmatch = re.compile(cat)
+				if catmatch.match(edge_from):
+					newEdge = pydot.Edge(str(edge_from), str(edge_to), **attr_list)
+					dotDag.add_edge(newEdge)
+				
 		#return dotDag.to_string()
 		return dotDag

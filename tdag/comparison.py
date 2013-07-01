@@ -183,3 +183,20 @@ def draw_graphs(graphs, outpath, format="png"):
 		#gvv = gv.readstring(dot)
 		#gv.layout(gvv,'dot')
 		#gv.render(gvv, format, outpath + str(name) + extension)
+		
+		
+# Turns a template into a .dot file but only gives components
+def draw_components(graphs, outpath, format="png"):
+
+	extension = "." + format
+	for graph in graphs:	
+		name = graph.name
+		dot = graph.to_dot_components() # my hack for reentrancy from foundation
+		dot.write_dot(outpath + str(name) + '.dot')
+
+		#f = open( str(name) + '.dot', 'w')
+		#f.write(dot)
+		# JG: Hack since gv linking no longer working; trying to work with .dot instead
+		#gvv = gv.readstring(dot)
+		#gv.layout(gvv,'dot')
+		#gv.render(gvv, format, outpath + str(name) + extension)

@@ -2,7 +2,7 @@
 
 import tdag
 from tdag import rdfGraph, Namespace, RDF, tdag, conflate, process_template, prettyName
-from tdag import simUI_d, get_distances, to_nex, draw_graphs, full_grid, process_templates
+from tdag import simUI_d, get_distances, to_nex, draw_graphs, full_grid, process_templates, draw_components
 
 
 rdfTemplates = rdfGraph()
@@ -22,4 +22,5 @@ gTemplates = process_templates(templates, rdfTemplates)
 # NOTE: CAN NO LONGER GO DIRECTLY TO PNG or PDF; MUST MANUALLY PROCESS .dot FOR NOW
 #graphfolder = "/Volumes/Obang/MyDocuments/Linearity/template_ontology/Graphs/"
 graphfolder = "/Users/jcgood/Desktop/Graphs/"
-draw_graphs(gTemplates, graphfolder)
+#draw_graphs(gTemplates, graphfolder)
+draw_components(gTemplates, graphfolder)
