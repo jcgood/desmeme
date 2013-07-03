@@ -362,7 +362,7 @@ class avm ( ):
 	
 	# Recursive
 	# Pass around topavm to keep track of tags for re-entered components
-	def to_latex(self, topavm, embedding = 0, seencomponents = { }, componentcount = 1):
+	def to_latex(self, topavm, outfile, embedding = 0, seencomponents = { }, componentcount = 1):
 		
 		id = self.name
 		type = self.type
@@ -375,22 +375,22 @@ class avm ( ):
 		if embedding == 0:
 			
 			id = id.replace("_", " ")
-			print "{\singlespacing"
-			print "\\textbf{"+id+"}\n"
-			print "\\begin{avm}"
+			print >> outfile, "{\singlespacing"
+			print >> outfile, "\\textbf{"+id+"}\n"
+			print >> outfile, "\\begin{avm}"
 
 		# If re-entered and not primary, just print a tag			
 		if self.reentered and not(self.primary):
 			tag = topavm.tags[id]
-			print "\t"*embedding+"\\phantom{\\@"+str(0)+"}"+"\\@"+str(tag)+"\\raisebox{-.5em}{\\rule{0pt}{1.5em}}"
+			print >> outfile, "\t"*embedding+"\\phantom{\\@"+str(0)+"}"+"\\@"+str(tag)+"\\raisebox{-.5em}{\\rule{0pt}{1.5em}}"
 
 		else:
 			if self.primary:
 				tag = self.tag
-				print "\t"*embedding+"\\@"+str(tag), "\\[\t\\emph{"+type+"} \\cr"
+				print >> outfile, "\t"*embedding+"\\@"+str(tag), "\\[\t\\emph{"+type+"} \\cr"
 
 			else:
-				print "\t"*embedding+"\\phantom{\\@"+str(0)+"}", "\\[\t\\emph{"+type+"} \\cr"
+				print >> outfile, "\t"*embedding+"\\phantom{\\@"+str(0)+"}", "\\[\t\\emph{"+type+"} \\cr"
 		
 			for featval in featvals:
 					
@@ -404,22 +404,22 @@ class avm ( ):
 					# Don't italicize numbers
 					try:
 						float(val)
-						print "\t"*embedding, "\\textsc{"+prettyfeat+"}\t&\t", "\\phantom{\\@"+str(0)+"}"+val, "\\raisebox{-.5em}{\\rule{0pt}{1.5em}}\\cr"
+						print >> outfile, "\t"*embedding, "\\textsc{"+prettyfeat+"}\t&\t", "\\phantom{\\@"+str(0)+"}"+val, "\\raisebox{-.5em}{\\rule{0pt}{1.5em}}\\cr"
 					
 					except:
-						print "\t"*embedding, "\\textsc{"+prettyfeat+"}\t&\t", "\\phantom{\\@"+str(0)+"}"+"\\emph{"+val+"}", "\\raisebox{-.5em}{\\rule{0pt}{1.5em}}\\cr"
+						print >> outfile, "\t"*embedding, "\\textsc{"+prettyfeat+"}\t&\t", "\\phantom{\\@"+str(0)+"}"+"\\emph{"+val+"}", "\\raisebox{-.5em}{\\rule{0pt}{1.5em}}\\cr"
 
 				else:
-					print "\t"*embedding, "\\textsc{"+prettyfeat+"}"+"\t&\t",
+					print >> outfile, "\t"*embedding, "\\textsc{"+prettyfeat+"}"+"\t&\t",
 					embedding += 1
-					val.to_latex(topavm, embedding, seencomponents, componentcount)
-					print "\t"*embedding, " \\cr"
+					val.to_latex(topavm, outfile, embedding, seencomponents, componentcount)
+					print >> outfile, "\t"*embedding, " \\cr"
 					embedding -= 1
 					
-			print "\t"*embedding, "\\]"
+			print >> outfile, "\t"*embedding, "\\]"
 
 			if embedding == 0:
-				print "\\end{avm}}"
+				print >> outfile, "\\end{avm}}"
 
 
 

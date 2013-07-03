@@ -15,13 +15,20 @@ for template in templatesGenerator:
 	templates.append(template)
 gTemplates = process_templates(templates, rdfTemplates)
 
+#avmfolder = "/Volumes/Obang/MyDocuments/Linearity/template_ontology/AVMs/"
+avmfolder = "/Users/jcgood/Desktop/AVMs/"
+
+
 for gTemplate in gTemplates:
 	
 	templateAVM = avm(gTemplate.name,"desmeme")
 	templateAVM.graph_toAVM(gTemplate)
-	
 	templateAVM.canonicalize()
-	#templateAVM.to_latex(templateAVM)
-	templateAVM.to_ASCII(templateAVM)
+	
+	outfile = open(avmfolder+templateAVM.name+".tex", "w")
+
+	templateAVM.to_latex(templateAVM, outfile)
+	
+	#templateAVM.to_ASCII(templateAVM)
 		
-	print "\n"
+	#print "\n"
