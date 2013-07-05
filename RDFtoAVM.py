@@ -15,8 +15,8 @@ for template in templatesGenerator:
 	templates.append(template)
 gTemplates = process_templates(templates, rdfTemplates)
 
-#avmfolder = "/Volumes/Obang/MyDocuments/Linearity/template_ontology/AVMs/"
-avmfolder = "/Users/jcgood/Desktop/AVMs/"
+avmfolder = "/Volumes/Obang/MyDocuments/Linearity/TemplatesBook/AVMs/"
+#avmfolder = "/Users/jcgood/Desktop/AVMs/"
 
 
 for gTemplate in gTemplates:

@@ -149,7 +149,7 @@ class avm ( ):
 					  'arch'  				: ["LEFT_SUPPORT", "LEFT_VOUSSOIR", "KEYSTONE", "RIGHT_VOUSSOIR", "RIGHT_SUPPORT", "RESTKOMPONENTEN"], # Need full ordering or RKs are ignored (which is bad)
 					  'span'  				: ["LEFT_SUPPORT", "RIGHT_SUPPORT", "RESTKOMPONENTEN"],
 					  'component'		  	: ["ELASTICITY", "FILLEDNESS", "STABILITY" ],
-					  'elastic'  			: ["MAXIMUM", "MINUMUM" ],
+					  'elastic'  			: ["MINIMUM", "MAXIMUM" ],
 					  'partially filled'  	: ["FILLER_POSITION", "FORM", "COHERENCE" ],
 					  'unstable'  			: ["SUPPORT", "SUPPORT_POSITION" ],
 					  'lexicoconstructionalConditioning': ["FILLER_POSITION", "FILLED_COMPONENT" ],
@@ -374,9 +374,12 @@ class avm ( ):
 
 		if embedding == 0:
 			
+			latexLabel = id.replace("_", "")
 			id = id.replace("_", " ")
-			print >> outfile, "{\singlespacing"
-			print >> outfile, "\\textbf{"+id+"}\n"
+			#print >> outfile, "\\textbf{"+id+"}\n"
+			print >> outfile, "\\begin{figure}[ht]"
+			print >> outfile, "{\\singlespacing\\avmshrink"
+			print >> outfile, "\\begin{center}"
 			print >> outfile, "\\begin{avm}"
 
 		# If re-entered and not primary, just print a tag			
@@ -401,10 +404,15 @@ class avm ( ):
 				prettyfeat = prettyfeat.replace("_", " ")
 			
 				if isinstance(val, basestring):
-					# Don't italicize numbers
+					# Don't italicize numbers and change the "100" placeholder to infinity
 					try:
 						float(val)
-						print >> outfile, "\t"*embedding, "\\textsc{"+prettyfeat+"}\t&\t", "\\phantom{\\@"+str(0)+"}"+val, "\\raisebox{-.5em}{\\rule{0pt}{1.5em}}\\cr"
+						
+						if val == '100':
+							print >> outfile, "\t"*embedding, "\\textsc{"+prettyfeat+"}\t&\t", "\\phantom{\\@"+str(0)+"}"+"$\infty$", "\\raisebox{-.5em}{\\rule{0pt}{1.5em}}\\cr"
+						
+						else:
+							print >> outfile, "\t"*embedding, "\\textsc{"+prettyfeat+"}\t&\t", "\\phantom{\\@"+str(0)+"}"+val, "\\raisebox{-.5em}{\\rule{0pt}{1.5em}}\\cr"
 					
 					except:
 						print >> outfile, "\t"*embedding, "\\textsc{"+prettyfeat+"}\t&\t", "\\phantom{\\@"+str(0)+"}"+"\\emph{"+val+"}", "\\raisebox{-.5em}{\\rule{0pt}{1.5em}}\\cr"
@@ -419,7 +427,11 @@ class avm ( ):
 			print >> outfile, "\t"*embedding, "\\]"
 
 			if embedding == 0:
-				print >> outfile, "\\end{avm}}"
+				print >> outfile, "\\end{avm}"
+				print >> outfile, "\\end{center}}"
+				print >> outfile, "\\caption{Attribute-value representation of", id, "template", "\\label{"+latexLabel+"}}"
+				print >> outfile, "\\end{figure}"
+
 
 
 

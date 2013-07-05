@@ -31,7 +31,6 @@ def process_template(mother,genericMother,rdfGraph,tdag):
 				prettyDName = tdag.add_node(prettyDName,daughter,mother,predicate)
 			
 			# The method used here is from the original pygraph, and does not involve labeled edges
-						
 			if tdag.has_edge((genericMother, prettyDName), prettyPredName):
 				pass
 			else:

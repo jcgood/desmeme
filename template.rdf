@@ -105,8 +105,8 @@
 </component:open>
 <component:unstable rdf:about="&templates;Algonquian_clause_Negative-Stability"
 	 rdfs:label="templates:Algonquian_clause_Negative-Stability">
-	<speccomponent:SUPPORT_POSITION rdf:resource="&templates;Algonquian_clause_Negative-Support"/>
-	<speccomponent:SUPPORT rdf:resource="&templates;Algonquian_clause_Verb"/>
+	<speccomponent:ASSOCIATE_POSITION rdf:resource="&templates;Algonquian_clause_Negative-Support"/>
+	<speccomponent:ASSOCIATE rdf:resource="&templates;Algonquian_clause_Verb"/>
 </component:unstable>
 <general:right rdf:about="&templates;Algonquian_clause_Negative-Support"
 	 rdfs:label="templates:Algonquian_clause_Negative-Support"/>
@@ -141,7 +141,7 @@
 	<function:CLASS rdf:resource="&localfunction;argument"/>
 </component:coherent>
 <component:elastic rdf:about="&templates;Algonquian_clause_Postverbal-Elasticity"
-	 general:MAXIMUM="6"
+	 general:MAXIMUM="100"
 	 general:MINIMUM="0"
 	 rdfs:label="templates:Algonquian_clause_Postverbal-Elasticity"/>
 <component:open rdf:about="&templates;Algonquian_clause_Postverbal-Filledness"
@@ -276,7 +276,7 @@
 	<function:CLASS rdf:resource="&localfunction;valency"/>
 </component:coherent>
 <component:elastic rdf:about="&templates;Bantu_VC_Elasticity"
-	 general:MAXIMUM="5"
+	 general:MAXIMUM="100"
 	 general:MINIMUM="0"
 	 rdfs:label="templates:Bantu_VC_Elasticity"/>
 <component:open rdf:about="&templates;Bantu_VC_Filledness"
@@ -761,7 +761,7 @@
 	<function:CLASSES rdf:resource="&localfunction;constituent"/>
 </component:incoherent>
 <component:elastic rdf:about="&templates;German_mf_Elasticity"
-	 general:MAXIMUM="6"
+	 general:MAXIMUM="100"
 	 general:MINIMUM="0"
 	 rdfs:label="templates:German_mf_Elasticity"/>
 <component:open rdf:about="&templates;German_mf_Filledness"
@@ -801,7 +801,7 @@
 	<function:CLASS rdf:resource="&gold;Verbal"/>
 </component:coherent>
 <component:elastic rdf:about="&templates;German_vc_Elasticity"
-	 general:MAXIMUM="6"
+	 general:MAXIMUM="100"
 	 general:MINIMUM="0"
 	 rdfs:label="templates:German_vc_Elasticity"/>
 <component:open rdf:about="&templates;German_vc_Filledness"
@@ -810,8 +810,8 @@
 </component:open>
 <component:unstable rdf:about="&templates;German_vc_Stability"
 	 rdfs:label="templates:German_vc_Stability">
-	<speccomponent:SUPPORT rdf:resource="&templates;German_cf"/>
-	<speccomponent:SUPPORT_POSITION rdf:resource="&templates;German_vc_Stability_support"/>
+	<speccomponent:ASSOCIATE rdf:resource="&templates;German_cf"/>
+	<speccomponent:ASSOCIATE_POSITION rdf:resource="&templates;German_vc_Stability_support"/>
 </component:unstable>
 <general:left rdf:about="&templates;German_vc_Stability_support"
 	 rdfs:label="templates:German_vc_Stability_support"/>
@@ -906,7 +906,7 @@
 	<function:CLASSES rdf:resource="&localfunction;adpositionalPhrase"/>
 </component:incoherent>
 <component:elastic rdf:about="&templates;Mande_X_Elasticity"
-	 general:MAXIMUM="6"
+	 general:MAXIMUM="100"
 	 general:MINIMUM="0"
 	 rdfs:label="templates:Mande_X_Elasticity"/>
 <component:open rdf:about="&templates;Mande_X_Filledness"
@@ -1202,7 +1202,7 @@
 	<function:CLASSES rdf:resource="&localfunction;adpositionalPhrase"/>
 </component:incoherent>
 <component:elastic rdf:about="&templates;SerboCroatian_je_RightEdge_Elasticity"
-	 general:MAXIMUM="6"
+	 general:MAXIMUM="100"
 	 general:MINIMUM="1"
 	 rdfs:label="templates:SerboCroatian_je_RightEdge_Elasticity"/>
 <component:open rdf:about="&templates;SerboCroatian_je_RightEdge_Filledness"
@@ -1367,25 +1367,12 @@
 </template:order>
 <general:left rdf:about="&templates;template_Instance_10003"
 	 rdfs:label="templates:template_Instance_10003"/>
-<component:inelastic rdf:about="&templates;template_Instance_11"
-	 general:COUNT="1"
-	 rdfs:label="templates:template_Instance_11"/>
 <component:incoherent rdf:about="&templates;template_Instance_13"
 	 rdfs:label="templates:template_Instance_13">
 	<function:CLASSES rdf:resource="&localfunction;constituent"/>
 </component:incoherent>
-<component:elastic rdf:about="&templates;template_Instance_18"
-	 general:MAXIMUM="1"
-	 general:MINIMUM="0"
-	 rdfs:label="templates:template_Instance_18"/>
-<component:inelastic rdf:about="&templates;template_Instance_22"
-	 general:COUNT="1"
-	 rdfs:label="templates:template_Instance_22"/>
 <general:immediateLeft rdf:about="&templates;template_Instance_30"
 	 rdfs:label="templates:template_Instance_30"/>
-<component:inelastic rdf:about="&templates;template_Instance_4"
-	 general:COUNT="1"
-	 rdfs:label="templates:template_Instance_4"/>
 <component:coherent rdf:about="&templates;template_Instance_6"
 	 rdfs:label="templates:template_Instance_6">
 	<function:CLASS rdf:resource="&localfunction;locative"/>

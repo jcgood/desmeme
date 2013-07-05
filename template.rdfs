@@ -588,6 +588,18 @@ TOO MANY SYMBOLS</rdfs:comment>
 	<rdfs:domain rdf:resource="&general;conditioning"/>
 	<rdfs:range rdf:resource="&rdfs;Literal"/>
 </rdf:Property>
+<rdf:Property rdf:about="&speccomponent;ASSOCIATE"
+	 a:maxCardinality="1"
+	 rdfs:label="speccomponent:ASSOCIATE">
+	<rdfs:range rdf:resource="&component;component"/>
+	<rdfs:domain rdf:resource="&component;unstable"/>
+</rdf:Property>
+<rdf:Property rdf:about="&speccomponent;ASSOCIATE_POSITION"
+	 a:maxCardinality="1"
+	 rdfs:label="speccomponent:ASSOCIATE_POSITION">
+	<rdfs:domain rdf:resource="&component;unstable"/>
+	<rdfs:range rdf:resource="&general;relativePositions"/>
+</rdf:Property>
 <rdf:Property rdf:about="&speccomponent;COHERENCE"
 	 a:maxCardinality="1"
 	 rdfs:label="speccomponent:COHERENCE">
@@ -629,18 +641,6 @@ TOO MANY SYMBOLS</rdfs:comment>
 	 rdfs:label="speccomponent:STABILITY">
 	<rdfs:domain rdf:resource="&component;component"/>
 	<rdfs:range rdf:resource="&component;stability"/>
-</rdf:Property>
-<rdf:Property rdf:about="&speccomponent;SUPPORT"
-	 a:maxCardinality="1"
-	 rdfs:label="speccomponent:SUPPORT">
-	<rdfs:range rdf:resource="&component;component"/>
-	<rdfs:domain rdf:resource="&component;unstable"/>
-</rdf:Property>
-<rdf:Property rdf:about="&speccomponent;SUPPORT_POSITION"
-	 a:maxCardinality="1"
-	 rdfs:label="speccomponent:SUPPORT_POSITION">
-	<rdfs:domain rdf:resource="&component;unstable"/>
-	<rdfs:range rdf:resource="&general;position"/>
 </rdf:Property>
 <rdf:Property rdf:about="&specform;TRANSCRIPTION"
 	 a:maxCardinality="1"

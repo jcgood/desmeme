@@ -277,7 +277,11 @@ class tdag ( ):
 					self.counts[generalNodeName] = 1
 				nodeName = generalNodeName + "-" + str(self.counts[generalNodeName])
 				self.countMapping[indexName] = nodeName
-				self.core.add_node(nodeName,  attrs=[("label", node)])
+				# If the node is "100" then that is the RDF "shorthand" for infinity. We replace it here for graph display.
+				if node == '100':
+					self.core.add_node(nodeName,  attrs=[("label", '\xe2\x88\x9e')]) # Some sort of escape sequence for infinity, got it by playing with Python on shell mode.				
+				else:
+					self.core.add_node(nodeName,  attrs=[("label", node)])
 		
 		# If we've made it this far, it's a non-repeatable, generic node.		
 		else:
@@ -454,10 +458,10 @@ class tdag ( ):
 			
 			for cat in componentcats:
 				catmatch = re.compile(cat)
-				print node
+				#print node
 				if catmatch.match(node): # Need numeric nodes, too
 					newNode = pydot.Node(str(node), **attr_list)			
-					print attr_list
+					#print attr_list
 					dotDag.add_node(newNode)
 		
 		
