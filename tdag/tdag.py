@@ -254,7 +254,7 @@ class tdag ( ):
 				nodeName = node + str(canonicalNumber)
 				self.canonicals.append(URI)
 				self.canonicalMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", "canonical")])
+				self.core.add_node(nodeName, attrs=[("label", "canonicalLineate")])
 
 		# Slightly different scenario for integer values.
 		elif node.isdigit():
@@ -435,7 +435,7 @@ class tdag ( ):
 	def to_dot_components(dag, weighted=False):
 
 		# These are the nodes that can be in components
-		componentcats = ['component','elastic','inelastic','null','filled','open','partiallyFilled','coherent','incoherent','stable','unstable','final','initial','medial', 'MAXIMUM', 'MINIMUM', 'COUNT']
+		componentcats = ['component','elastic','inelastic','null','filled','open','partiallyFilled','canonicalLineate','coherent','incoherent','stable','unstable','final','initial','medial', 'MAXIMUM', 'MINIMUM', 'COUNT']
 
 		# Get the core graph we've made
 		dagGraph = dag.core
@@ -458,10 +458,8 @@ class tdag ( ):
 			
 			for cat in componentcats:
 				catmatch = re.compile(cat)
-				#print node
 				if catmatch.match(node): # Need numeric nodes, too
 					newNode = pydot.Node(str(node), **attr_list)			
-					#print attr_list
 					dotDag.add_node(newNode)
 		
 		

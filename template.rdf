@@ -1401,6 +1401,4 @@
 	 rdfs:label="template:Tiene_verb-RK">
 	<spectemplate:RESTKOMPONENT rdf:resource="&templates;Tiene_verb-MiddleConsonant"/>
 </component:restkomponentenSet>
-<component:component rdf:about="&template;template_Instance_6"
-	 rdfs:label="template:template_Instance_6"/>
 </rdf:RDF>

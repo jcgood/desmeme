@@ -99,6 +99,7 @@
 <rdfs:Class rdf:about="&component;coherence"
 	 a:role="abstract"
 	 rdfs:label="component:coherence">
+	<rdfs:comment>Specification for whether a component's possible fillers comprise a functionally coherent or incoherent set of items.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&component;coherent"
@@ -327,9 +328,8 @@
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;freeConditioning"
 	 a:role="abstract"
+	 rdfs:comment="I should double check that I need all of these."
 	 rdfs:label="general:freeConditioning">
-	<rdfs:comment>I NEED TO FIX THIS TO GET CONDITIONING FUNCTIONS MORE COHERENT.
-TOO MANY SYMBOLS</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&general;conditioning"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;grammaticalFunction"

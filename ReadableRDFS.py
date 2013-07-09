@@ -47,7 +47,15 @@ def getPropertyLabel(URI):
 # Called recursively, gets subclasses of classes, and their properties, wraps LaTeX code around
 def processClass(classURI,embedding=0):
 
-	print >> outfile, "\t"*embedding+"\item \\emph{"+getClassLabel(classURI)+"}\n"
+	print >> outfile, "\t"*embedding+"\item \\emph{"+getClassLabel(classURI)+"}"
+	
+	# Get documentation, if it exists, and print it
+	RDFSdocumentation = rdfsTemplates.value(subject=classURI,predicate=RDFS['comment'])
+	if RDFSdocumentation:
+		print >> outfile, "\t"*embedding+"\\hspace{1em}\\parbox[t]{\\linegoal}{\\footnotesize "+RDFSdocumentation+"}"
+	
+	print >> outfile, "\n"
+	
 	
 	# Get properties
 	RDFSpropertiesURIs = rdfsTemplates.subjects(RDFS['domain'], classURI)

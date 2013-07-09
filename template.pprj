@@ -1,4 +1,4 @@
-; Wed Jul 03 14:34:11 EDT 2013
+; Tue Jul 09 11:55:26 EDT 2013
 ; 
 ;+ (version "3.3.1")
 ;+ (build "Build 430")
@@ -20,10 +20,10 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[template_ProjectKB_Instance_70100]
-		[template_ProjectKB_Instance_70101]
-		[template_ProjectKB_Instance_70102]
-		[template_ProjectKB_Instance_70103]))
+		[template_ProjectKB_Instance_70086]
+		[template_ProjectKB_Instance_70087]
+		[template_ProjectKB_Instance_70088]
+		[template_ProjectKB_Instance_70089]))
 
 ([CLSES_TAB] of  Widget
 
@@ -1718,22 +1718,22 @@
 	(boolean_value FALSE)
 	(name "ButtonDisplayed-Delete Instance"))
 
-([template_ProjectKB_Instance_70100] of  String
+([template_ProjectKB_Instance_70086] of  String
 
 	(name ":PAL-CONSTRAINT")
 	(string_value "%3APAL-NAME"))
 
-([template_ProjectKB_Instance_70101] of  String
+([template_ProjectKB_Instance_70087] of  String
 
 	(name ":INSTANCE-ANNOTATION")
 	(string_value "%3AANNOTATION-TEXT"))
 
-([template_ProjectKB_Instance_70102] of  String
+([template_ProjectKB_Instance_70088] of  String
 
 	(name ":META-CLASS")
 	(string_value "%3ANAME"))
 
-([template_ProjectKB_Instance_70103] of  String
+([template_ProjectKB_Instance_70089] of  String
 
 	(name "form:transcription")
 	(string_value "specform%3ATRANSCRIPTION_STRING"))
