@@ -1246,7 +1246,7 @@
 </component:component>
 <component:incoherent rdf:about="&templates;SerboCroatian_topicalization-LeftSupportCoherence"
 	 rdfs:label="templates:SerboCroatian_topicalization-LeftSupportCoherence">
-	<function:CLASSES rdf:resource="&general;grammaticalFunction"/>
+	<function:CLASSES rdf:resource="&general;function"/>
 </component:incoherent>
 <component:inelastic rdf:about="&templates;SerboCroatian_topicalization-LeftSupportElasticity"
 	 general:COUNT="1"
@@ -1265,7 +1265,7 @@
 </component:component>
 <component:incoherent rdf:about="&templates;SerboCroatian_topicalization-RightSupportCoherence"
 	 rdfs:label="templates:SerboCroatian_topicalization-RightSupportCoherence">
-	<function:CLASSES rdf:resource="&general;grammaticalFunction"/>
+	<function:CLASSES rdf:resource="&general;function"/>
 </component:incoherent>
 <component:inelastic rdf:about="&templates;SerboCroatian_topicalization-RightSupportElasticity"
 	 general:COUNT="1">

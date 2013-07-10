@@ -53,7 +53,7 @@
 <rdfs:Class rdf:about="&gold;Complementizer"
 	 a:role="abstract"
 	 rdfs:label="gold:Complementizer">
-	<rdfs:subClassOf rdf:resource="&general;grammaticalFunction"/>
+	<rdfs:subClassOf rdf:resource="&general;function"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&gold;DirectObject"
 	 a:role="abstract"
@@ -68,33 +68,33 @@
 <rdfs:Class rdf:about="&gold;MainClause"
 	 a:role="abstract"
 	 rdfs:label="gold:MainClause">
-	<rdfs:subClassOf rdf:resource="&general;grammaticalFunction"/>
+	<rdfs:subClassOf rdf:resource="&general;function"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&gold;Object"
 	 a:role="abstract"
 	 rdfs:label="gold:Object">
-	<rdfs:subClassOf rdf:resource="&general;grammaticalFunction"/>
+	<rdfs:subClassOf rdf:resource="&general;function"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&gold;Preverb"
 	 a:role="abstract"
 	 rdfs:label="gold:Preverb">
-	<rdfs:subClassOf rdf:resource="&general;grammaticalFunction"/>
+	<rdfs:subClassOf rdf:resource="&general;function"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&gold;Subject"
 	 a:role="abstract"
 	 rdfs:label="gold:Subject">
-	<rdfs:subClassOf rdf:resource="&general;grammaticalFunction"/>
+	<rdfs:subClassOf rdf:resource="&general;function"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&gold;Verbal"
 	 a:role="abstract"
 	 rdfs:label="gold:Verbal">
-	<rdfs:subClassOf rdf:resource="&general;grammaticalFunction"/>
+	<rdfs:subClassOf rdf:resource="&general;function"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&gold;VerbalParticle"
 	 a:role="abstract"
 	 rdfs:label="gold:VerbalParticle">
 	<rdfs:comment>I am using it for a morphologically bound particle in addition to a partly-free one.</rdfs:comment>
-	<rdfs:subClassOf rdf:resource="&general;grammaticalFunction"/>
+	<rdfs:subClassOf rdf:resource="&general;function"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&component;coherence"
 	 a:role="abstract"
@@ -117,6 +117,7 @@
 <rdfs:Class rdf:about="&component;elasticity"
 	 a:role="abstract"
 	 rdfs:label="component:elasticity">
+	<rdfs:comment>A xxx type (check for 'feature' used where 'type' should be) for characterizing the overall size of a component, including whether or not its size is fixed or variable.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&component;filled"
@@ -126,6 +127,7 @@
 <rdfs:Class rdf:about="&component;filledness"
 	 a:role="abstract"
 	 rdfs:label="component:filledness">
+	<rdfs:comment>A feature for characterizing the nature of the class of elements that is found within a given component, for instance whether it can be occupied by only one morpheme or an entire class of morphemes.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&component;incoherent"
@@ -157,6 +159,7 @@
 <rdfs:Class rdf:about="&component;stability"
 	 a:role="abstract"
 	 rdfs:label="component:stability">
+	<rdfs:comment>A feature for characterizing dependencies among components, in particular for cases where the nature of the content of one component is somehow dependent on what is found in another component.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&component;stable"
@@ -223,14 +226,14 @@
 	 a:range="cls"
 	 rdfs:label="function:CLASS">
 	<rdfs:domain rdf:resource="&component;coherent"/>
-	<a:allowedParents rdf:resource="&general;grammaticalFunction"/>
+	<a:allowedParents rdf:resource="&general;function"/>
 	<rdfs:range rdf:resource="&rdfs;Class"/>
 </rdf:Property>
 <rdf:Property rdf:about="&function;CLASSES"
 	 a:range="cls"
 	 rdfs:label="function:CLASSES">
 	<rdfs:domain rdf:resource="&component;incoherent"/>
-	<a:allowedParents rdf:resource="&general;grammaticalFunction"/>
+	<a:allowedParents rdf:resource="&general;function"/>
 	<rdfs:range rdf:resource="&rdfs;Class"/>
 </rdf:Property>
 <rdf:Property rdf:about="&function;FILLER_CLASS"
@@ -238,14 +241,14 @@
 	 a:range="cls"
 	 rdfs:label="function:FILLER_CLASS">
 	<rdfs:domain rdf:resource="&component;filled"/>
-	<a:allowedParents rdf:resource="&general;grammaticalFunction"/>
+	<a:allowedParents rdf:resource="&general;function"/>
 	<rdfs:range rdf:resource="&rdfs;Class"/>
 </rdf:Property>
 <rdf:Property rdf:about="&function;FUNCTION"
 	 a:maxCardinality="1"
 	 a:range="cls"
 	 rdfs:label="function:FUNCTION">
-	<a:allowedParents rdf:resource="&general;grammaticalFunction"/>
+	<a:allowedParents rdf:resource="&general;function"/>
 	<rdfs:domain rdf:resource="&template;desmeme"/>
 	<rdfs:range rdf:resource="&rdfs;Class"/>
 </rdf:Property>
@@ -253,6 +256,7 @@
 	 a:maxCardinality="1"
 	 a:range="cls"
 	 rdfs:label="general:CONSTITUENT">
+	<rdfs:comment>A general feature for cases where a given type can be associated with some constituent, for instance when a length restriction applies to a constituent of a certain type.</rdfs:comment>
 	<a:allowedParents rdf:resource="&general;constituent"/>
 	<rdfs:domain rdf:resource="&template;stricture"/>
 	<rdfs:range rdf:resource="&rdfs;Class"/>
@@ -261,6 +265,7 @@
 	 a:maxCardinality="1"
 	 a:range="integer"
 	 rdfs:label="general:COUNT">
+	<rdfs:comment>A general feature for cases where a given type can be associated with a fixed countable number of subunits. Its precise interpretation is dependent on the type it is associated with.</rdfs:comment>
 	<rdfs:domain rdf:resource="&component;inelastic"/>
 	<rdfs:domain rdf:resource="&template;stricture"/>
 	<rdfs:range rdf:resource="&rdfs;Literal"/>
@@ -307,6 +312,7 @@
 <rdfs:Class rdf:about="&general;conditioning"
 	 a:role="abstract"
 	 rdfs:label="general:conditioning">
+	<rdfs:comment>A supertype for subtypes that characterizing the type of grammatical environment where the template is found, for instance, whether it appears in a specific morphosyntactic context of phonological one.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;consonantalConditioning"
@@ -326,20 +332,11 @@
 	 rdfs:label="general:final">
 	<rdfs:subClassOf rdf:resource="&general;absolutePositions"/>
 </rdfs:Class>
-<rdfs:Class rdf:about="&general;freeConditioning"
+<rdfs:Class rdf:about="&general;function"
 	 a:role="abstract"
-	 rdfs:comment="I should double check that I need all of these."
-	 rdfs:label="general:freeConditioning">
-	<rdfs:subClassOf rdf:resource="&general;conditioning"/>
-</rdfs:Class>
-<rdfs:Class rdf:about="&general;grammaticalFunction"
-	 a:role="abstract"
-	 rdfs:label="general:grammaticalFunction">
-	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
-</rdfs:Class>
-<rdfs:Class rdf:about="&general;ignorance"
-	 a:role="abstract"
-	 rdfs:label="general:ignorance">
+	 rdfs:label="general:function">
+	<rdfs:comment>A feature that indicates the general grammatical function of
+a given template. This feature does not enter into the typological comparison at present but is included due its potential interest for purposes of reference and for future studies.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;immediateLeft"
@@ -357,10 +354,6 @@
 <rdfs:Class rdf:about="&general;left"
 	 rdfs:label="general:left">
 	<rdfs:subClassOf rdf:resource="&general;relativePositions"/>
-</rdfs:Class>
-<rdfs:Class rdf:about="&general;lexicalConditioning"
-	 rdfs:label="general:lexicalConditioning">
-	<rdfs:subClassOf rdf:resource="&general;morphosyntacticConditioning"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;lexicoconstructionalConditioning"
 	 rdfs:label="general:lexicoconstructionalConditioning">
@@ -400,10 +393,6 @@
 	 rdfs:label="general:position">
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
-<rdfs:Class rdf:about="&general;prosodicConditioning"
-	 rdfs:label="general:prosodicConditioning">
-	<rdfs:subClassOf rdf:resource="&general;phonologicalConditioning"/>
-</rdfs:Class>
 <rdfs:Class rdf:about="&general;prosodicConstituent"
 	 a:role="abstract"
 	 rdfs:label="general:prosodicConstituent">
@@ -439,6 +428,7 @@
 	<rdfs:subClassOf rdf:resource="&general;phonologicalConstituent"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;segmentalConditioning"
+	 a:role="abstract"
 	 rdfs:label="general:segmentalConditioning">
 	<rdfs:subClassOf rdf:resource="&general;phonologicalConditioning"/>
 </rdfs:Class>
@@ -457,50 +447,46 @@
 	 rdfs:label="general:taxonomic">
 	<rdfs:subClassOf rdf:resource="&general;relations"/>
 </rdfs:Class>
-<rdfs:Class rdf:about="&general;vocalicConditioning"
-	 rdfs:label="general:vocalicConditioning">
-	<rdfs:subClassOf rdf:resource="&general;segmentalConditioning"/>
-</rdfs:Class>
 <rdfs:Class rdf:about="&localfunction;TenseMoodAspect"
 	 a:role="abstract"
 	 rdfs:label="localfunction:TenseMoodAspect">
-	<rdfs:subClassOf rdf:resource="&general;grammaticalFunction"/>
+	<rdfs:subClassOf rdf:resource="&general;function"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&localfunction;adjunct"
 	 a:role="abstract"
 	 rdfs:label="localfunction:adjunct">
-	<rdfs:subClassOf rdf:resource="&general;grammaticalFunction"/>
+	<rdfs:subClassOf rdf:resource="&general;function"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&localfunction;adpositionalPhrase"
 	 a:role="abstract"
 	 rdfs:label="localfunction:adpositionalPhrase">
-	<rdfs:subClassOf rdf:resource="&general;grammaticalFunction"/>
+	<rdfs:subClassOf rdf:resource="&general;function"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&localfunction;alveolarConsonant"
 	 a:role="abstract"
 	 rdfs:label="localfunction:alveolarConsonant">
-	<rdfs:subClassOf rdf:resource="&general;grammaticalFunction"/>
+	<rdfs:subClassOf rdf:resource="&general;function"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&localfunction;argument"
 	 a:role="abstract"
 	 rdfs:comment="Check Gold later, when new website up."
 	 rdfs:label="localfunction:argument">
-	<rdfs:subClassOf rdf:resource="&general;grammaticalFunction"/>
+	<rdfs:subClassOf rdf:resource="&general;function"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&localfunction;clauseChaining"
 	 a:role="abstract"
 	 rdfs:label="localfunction:clauseChaining">
-	<rdfs:subClassOf rdf:resource="&general;grammaticalFunction"/>
+	<rdfs:subClassOf rdf:resource="&general;function"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&localfunction;consonant"
 	 a:role="abstract"
 	 rdfs:label="localfunction:consonant">
-	<rdfs:subClassOf rdf:resource="&general;grammaticalFunction"/>
+	<rdfs:subClassOf rdf:resource="&general;function"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&localfunction;constituent"
 	 a:role="abstract"
 	 rdfs:label="localfunction:constituent">
-	<rdfs:subClassOf rdf:resource="&general;grammaticalFunction"/>
+	<rdfs:subClassOf rdf:resource="&general;function"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&localfunction;finite"
 	 a:role="abstract"
@@ -510,12 +496,12 @@
 <rdfs:Class rdf:about="&localfunction;focus"
 	 a:role="abstract"
 	 rdfs:label="localfunction:focus">
-	<rdfs:subClassOf rdf:resource="&general;grammaticalFunction"/>
+	<rdfs:subClassOf rdf:resource="&general;function"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&localfunction;goal"
 	 a:role="abstract"
 	 rdfs:label="localfunction:goal">
-	<rdfs:subClassOf rdf:resource="&general;grammaticalFunction"/>
+	<rdfs:subClassOf rdf:resource="&general;function"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&localfunction;infinitive"
 	 a:role="abstract"
@@ -525,17 +511,17 @@
 <rdfs:Class rdf:about="&localfunction;locative"
 	 a:role="abstract"
 	 rdfs:label="localfunction:locative">
-	<rdfs:subClassOf rdf:resource="&general;grammaticalFunction"/>
+	<rdfs:subClassOf rdf:resource="&general;function"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&localfunction;negative"
 	 a:role="abstract"
 	 rdfs:label="localfunction:negative">
-	<rdfs:subClassOf rdf:resource="&general;grammaticalFunction"/>
+	<rdfs:subClassOf rdf:resource="&general;function"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&localfunction;noun"
 	 a:role="abstract"
 	 rdfs:label="localfunction:noun">
-	<rdfs:subClassOf rdf:resource="&general;grammaticalFunction"/>
+	<rdfs:subClassOf rdf:resource="&general;function"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&localfunction;objectReference"
 	 a:role="abstract"
@@ -545,17 +531,17 @@
 <rdfs:Class rdf:about="&localfunction;oblique"
 	 a:role="abstract"
 	 rdfs:label="localfunction:oblique">
-	<rdfs:subClassOf rdf:resource="&general;grammaticalFunction"/>
+	<rdfs:subClassOf rdf:resource="&general;function"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&localfunction;personReference"
 	 a:role="abstract"
 	 rdfs:label="localfunction:personReference">
-	<rdfs:subClassOf rdf:resource="&general;grammaticalFunction"/>
+	<rdfs:subClassOf rdf:resource="&general;function"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&localfunction;plural"
 	 a:role="abstract"
 	 rdfs:label="localfunction:plural">
-	<rdfs:subClassOf rdf:resource="&general;grammaticalFunction"/>
+	<rdfs:subClassOf rdf:resource="&general;function"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&localfunction;subjectReference"
 	 a:role="abstract"
@@ -570,17 +556,17 @@
 <rdfs:Class rdf:about="&localfunction;topicalization"
 	 a:role="abstract"
 	 rdfs:label="localfunction:topicalization">
-	<rdfs:subClassOf rdf:resource="&general;grammaticalFunction"/>
+	<rdfs:subClassOf rdf:resource="&general;function"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&localfunction;valency"
 	 a:role="abstract"
 	 rdfs:label="localfunction:valency">
-	<rdfs:subClassOf rdf:resource="&general;grammaticalFunction"/>
+	<rdfs:subClassOf rdf:resource="&general;function"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&localfunction;velarConsonant"
 	 a:role="abstract"
 	 rdfs:label="localfunction:velarConsonant">
-	<rdfs:subClassOf rdf:resource="&general;grammaticalFunction"/>
+	<rdfs:subClassOf rdf:resource="&general;function"/>
 </rdfs:Class>
 <rdf:Property rdf:about="&notes;CONDITIONS"
 	 a:maxCardinality="1"
@@ -596,6 +582,7 @@
 </rdf:Property>
 <rdf:Property rdf:about="&speccomponent;ASSOCIATE_POSITION"
 	 a:maxCardinality="1"
+	 rdfs:comment="This is just some filler."
 	 rdfs:label="speccomponent:ASSOCIATE_POSITION">
 	<rdfs:domain rdf:resource="&component;unstable"/>
 	<rdfs:range rdf:resource="&general;relativePositions"/>
@@ -609,6 +596,7 @@
 <rdf:Property rdf:about="&speccomponent;CONTAINS_TEMPLATE"
 	 a:maxCardinality="1"
 	 rdfs:label="speccomponent:CONTAINS_TEMPLATE">
+	<rdfs:comment>This is just some filler. This is just some filler. This is just some filler. This is just some filler. This is just some filler. This is just some filler.</rdfs:comment>
 	<rdfs:range rdf:resource="&template;desmeme"/>
 </rdf:Property>
 <rdf:Property rdf:about="&speccomponent;ELASTICITY"
@@ -676,41 +664,48 @@
 <rdf:Property rdf:about="&spectemplate;KEYSTONE"
 	 a:maxCardinality="1"
 	 rdfs:label="spectemplate:KEYSTONE">
+	<rdfs:comment>A privileged component in an arch template which the other components are analyzed as being built around.</rdfs:comment>
 	<rdfs:range rdf:resource="&component;component"/>
 	<rdfs:domain rdf:resource="&template;arch"/>
 </rdf:Property>
 <rdf:Property rdf:about="&spectemplate;LEFT_SUPPORT"
 	 a:maxCardinality="1"
 	 rdfs:label="spectemplate:LEFT_SUPPORT">
+	<rdfs:comment>A feature which classifies a given component as the leftmost element in a templatic structure.</rdfs:comment>
 	<rdfs:range rdf:resource="&component;component"/>
 	<rdfs:domain rdf:resource="&template;foundation"/>
 </rdf:Property>
 <rdf:Property rdf:about="&spectemplate;LEFT_VOUSSOIR"
 	 a:maxCardinality="1"
 	 rdfs:label="spectemplate:LEFT_VOUSSOIR">
+	<rdfs:comment>A feature which classifies a given component as being to the immediate left of the keystone component.</rdfs:comment>
 	<rdfs:range rdf:resource="&component;component"/>
 	<rdfs:domain rdf:resource="&template;arch"/>
 </rdf:Property>
 <rdf:Property rdf:about="&spectemplate;RESTKOMPONENT"
 	 rdfs:label="spectemplate:RESTKOMPONENT">
+	<rdfs:comment>A feature which classifies a component which does not belong to any of the specially classified structural slots of a given template type.</rdfs:comment>
 	<rdfs:range rdf:resource="&component;component"/>
 	<rdfs:domain rdf:resource="&component;restkomponentenSet"/>
 </rdf:Property>
 <rdf:Property rdf:about="&spectemplate;RESTKOMPONENTEN"
 	 a:maxCardinality="1"
 	 rdfs:label="spectemplate:RESTKOMPONENTEN">
+	<rdfs:comment>A feature which points to a container for those components which do not belong to any of the specially classified slots of a given template type.</rdfs:comment>
 	<rdfs:range rdf:resource="&component;restkomponentenSet"/>
 	<rdfs:domain rdf:resource="&template;foundation"/>
 </rdf:Property>
 <rdf:Property rdf:about="&spectemplate;RIGHT_SUPPORT"
 	 a:maxCardinality="1"
 	 rdfs:label="spectemplate:RIGHT_SUPPORT">
+	<rdfs:comment>A feature which classifies a given component as the rightmost element in a templatic structure.</rdfs:comment>
 	<rdfs:range rdf:resource="&component;component"/>
 	<rdfs:domain rdf:resource="&template;foundation"/>
 </rdf:Property>
 <rdf:Property rdf:about="&spectemplate;RIGHT_VOUSSOIR"
 	 a:maxCardinality="1"
 	 rdfs:label="spectemplate:RIGHT_VOUSSOIR">
+	<rdfs:comment>A feature which classifies a given component as being to the immediate right of the keystone component.</rdfs:comment>
 	<rdfs:range rdf:resource="&component;component"/>
 	<rdfs:domain rdf:resource="&template;arch"/>
 </rdf:Property>
@@ -757,6 +752,7 @@
 <rdfs:Class rdf:about="&template;foundation"
 	 a:role="abstract"
 	 rdfs:label="template:foundation">
+	<rdfs:comment>A supertype for subtypes that classify the nature of the relationships among a template's components, including some indication of their relative order and what sorts of dependencies might hold among them.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;freeViolabiliy"
@@ -787,6 +783,7 @@
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;length"
 	 rdfs:label="template:length">
+	<rdfs:comment>A type for classifying a template whose stipulation involves a restriction on the size of a constituent</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&template;stricture"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;lexicalViolability"
@@ -807,6 +804,7 @@
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;order"
 	 rdfs:label="template:order">
+	<rdfs:comment>A type for classifying a template whose stipulation involves a restriction in the order of a set of elements</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&template;stricture"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;reparable"
@@ -816,16 +814,19 @@
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;span"
 	 rdfs:label="template:span">
+	<rdfs:comment>A type of template without a privileged component around which the other components are organized. Its only predefined structural positions are the left and right supports.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&template;foundation"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;stricture"
 	 a:role="abstract"
 	 rdfs:label="template:stricture">
+	<rdfs:comment>A supertype for subtypes that give a high-level classification of the nature of the linearization specifications associated with a given template, in particular whether they involve restrictions on the length of a constituent or the order of its components.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;violability"
 	 a:role="abstract"
 	 rdfs:label="template:violability">
+	<rdfs:comment>A supertype for subtypes that  characterizr whether or not the linearization restrictions of a given template can be violated or not and what repair strategiesmay be activated in cases of potential violation.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;violable"

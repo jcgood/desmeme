@@ -431,7 +431,7 @@ class tdag ( ):
 		
 
 	# Makes dot files just for the components of a graph
-	# BUG: prints out floating digit nodes for digity things that aren't part of components
+	# BUG: prints out floating digit nodes for digity things that aren't part of components also floats lexico-constructional conditioning position
 	def to_dot_components(dag, weighted=False):
 
 		# These are the nodes that can be in components

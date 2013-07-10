@@ -23,6 +23,8 @@ myPfxs = ["http://purl.org/linguistics/jcgood/template#",
 protege = Namespace("http://protege.stanford.edu/system#")
 
 outfile = open('/Volumes/Obang/MyDocuments/Linearity/TemplatesBook/TemplateOntology.tex', 'w')
+propfile = open('/Volumes/Obang/MyDocuments/Linearity/TemplatesBook/TemplateProps.tex', 'w')
+
 
 #=========Begin Functions============#
 
@@ -94,7 +96,7 @@ def processClass(classURI,embedding=0):
 			# If the value is an integer, then don't give class specification
 			if propertyRangeType == Literal('integer'):
 				propertyRangeClass = ""
-				propertyRangeType = "\\emph{integer}"
+				propertyRangeType = "{integer}"
 							
 			# If the range is a class, not an instance, get the allowed classes using the protege property
 			if propertyRangeType == Literal('cls'):
@@ -133,15 +135,29 @@ def processClass(classURI,embedding=0):
 			# Here be recursion
 			processClass(subClassURI,embedding)
 		print >> outfile,  "\t"*embedding+"\\end{classlist}\n"
+
+
+# Called recursively, gets subclasses of classes, and their properties, wraps LaTeX code around
+def processProp(propURI,embedding=0):
+
+	print >> propfile, "\t"*embedding+"\item \\textsc{"+getPropertyLabel(propURI)+"}"
+	
+	# Get documentation, if it exists, and print it
+	RDFSdocumentation = rdfsTemplates.value(subject=propURI,predicate=RDFS['comment'])
+	if RDFSdocumentation:
+		print >> propfile, "\t"*embedding+"\\hspace{1em}\\parbox[t]{\\linegoal}{\\footnotesize "+RDFSdocumentation+"}"
+	
+	print >> propfile, "\n"
 		
 #=========End Functions============#
 
 
 
-# Get template IDs from RDF
-classGenerator = rdfsTemplates.subjects(RDFS['subClassOf'], RDFS['Resource'])
 
 # I can't use the singular "class" since it's a reserved word in python
+
+# First do the various types of the typology
+classGenerator = rdfsTemplates.subjects(RDFS['subClassOf'], RDFS['Resource'])
 classes = {}
 for classURI in classGenerator:
 	label = getClassLabel(classURI)
@@ -156,3 +172,19 @@ for classLabel in sorted(classes.iterkeys()):
 print >> outfile,  "\\end{ontologytop}"
 
 
+slotGenerator = rdfsTemplates.subjects(RDF['type'], RDF['Property'])
+props = {}
+for propURI in slotGenerator:
+	label = getPropertyLabel(propURI)
+	props[label] = propURI
+
+# The name type is a special case for sorting and other things
+print >> propfile,  "\\def\\name{name {\\rm \hspace{1em}\\parbox[t]{\\linegoal}{\\footnotesize A string representation of a the name of a type used for purposes of reference.}}}\n" # Name is a special case since it's a built-in protege property that can't be altered in protege
+print >> propfile, "\\begin{proplist}\n"
+for propLabel in sorted(props.iterkeys()):
+ 	propURI = props[propLabel]
+ 	processProp(propURI)
+print >> propfile,  "\\end{proplist}"
+
+
+# Now do all the different features of the typology
