@@ -1,4 +1,4 @@
-; Wed Jul 10 15:11:51 EDT 2013
+; Thu Jul 11 14:57:15 EDT 2013
 ; 
 ;+ (version "3.3.1")
 ;+ (build "Build 430")
@@ -20,10 +20,10 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[template_ProjectKB_Instance_80170]
-		[template_ProjectKB_Instance_80171]
-		[template_ProjectKB_Instance_80172]
-		[template_ProjectKB_Instance_80173]))
+		[template_ProjectKB_Instance_70196]
+		[template_ProjectKB_Instance_70197]
+		[template_ProjectKB_Instance_70198]
+		[template_ProjectKB_Instance_70199]))
 
 ([CLSES_TAB] of  Widget
 
@@ -77,7 +77,7 @@
 ([KB_092927_Instance_2] of  String
 
 	(name "namespace_name")
-	(string_value "http://example.org/"))
+	(string_value "http://linguistics-ontology.org/jcgood/templates#"))
 
 ([LAYOUT_PROPERTIES] of  Property_List
 
@@ -152,21 +152,21 @@
 	(browser_slot_names [BROWSER_SLOT_NAMES])
 	(customized_instance_widgets
 		[PAL_FORM_WIDGET]
-		[INSTANCE_ANNOTATION_FORM_WIDGET]
-		[template_ProjectKB_Instance_385]
-		[template_ProjectKB_Instance_225]
 		[template_ProjectKB_Instance_30074]
-		[template_ProjectKB_Instance_232]
-		[template_ProjectKB_Instance_99]
+		[INSTANCE_ANNOTATION_FORM_WIDGET]
 		[template_ProjectKB_Instance_448]
+		[template_ProjectKB_Instance_20070]
+		[template_ProjectKB_Instance_99]
+		[template_ProjectKB_Instance_232]
 		[STANDARD_CLASS_FORM_WIDGET]
 		[STANDARD_SLOT_FORM_WIDGET]
-		[template_ProjectKB_Instance_20070]
 		[STANDARD_FACET_FORM_WIDGET]
-		[template_ProjectKB_Instance_30079]
+		[template_ProjectKB_Instance_385]
+		[template_ProjectKB_Instance_225]
 		[template_ProjectKB_Instance_378]
-		[template_ProjectKB_Instance_30075]
-		[template_ProjectKB_Instance_10164])
+		[template_ProjectKB_Instance_30079]
+		[template_ProjectKB_Instance_10164]
+		[template_ProjectKB_Instance_30075])
 	(default_cls_metaclass ":STANDARD-CLASS")
 	(default_facet_metaclass ":STANDARD-FACET")
 	(default_instance_widget_class_name "edu.stanford.smi.protege.widget.FormWidget")
@@ -1488,7 +1488,7 @@
 ([template_ProjectKB_Instance_5] of  String
 
 	(name "namespaces")
-	(string_value "template http://purl.org/linguistics/jcgood/template# templates http://linguistics-ontology.org/jcgood/templates# form http://purl.org/linguistics/jcgood/form# specgeneral http://purl.org/linguistics/jcgood/specgeneral# specform http://purl.org/linguistics/jcgood/specform# general http://purl.org/linguistics/jcgood/general# localfunction http://purl.org/linguistics/jcgood/localfunction# function http://purl.org/linguistics/jcgood/function# rdfs http://www.w3.org/2000/01/rdf-schema# speccomponent http://purl.org/linguistics/jcgood/speccomponent# component http://purl.org/linguistics/jcgood/component# spectemplate http://purl.org/linguistics/jcgood/spectemplate# rdf http://www.w3.org/1999/02/22-rdf-syntax-ns# gold http://purl.org/linguistics/gold# notes http://purl.org/linguistics/jcgood/notes# "))
+	(string_value "template http://purl.org/linguistics/jcgood/template# form http://purl.org/linguistics/jcgood/form# specgeneral http://purl.org/linguistics/jcgood/specgeneral# specform http://purl.org/linguistics/jcgood/specform# general http://purl.org/linguistics/jcgood/general# localfunction http://purl.org/linguistics/jcgood/localfunction# function http://purl.org/linguistics/jcgood/function# rdfs http://www.w3.org/2000/01/rdf-schema# speccomponent http://purl.org/linguistics/jcgood/speccomponent# component http://purl.org/linguistics/jcgood/component# spectemplate http://purl.org/linguistics/jcgood/spectemplate# rdf http://www.w3.org/1999/02/22-rdf-syntax-ns# gold http://purl.org/linguistics/gold# notes http://purl.org/linguistics/jcgood/notes# "))
 
 ([template_ProjectKB_Instance_50079] of  Boolean
 
@@ -1718,6 +1718,99 @@
 	(boolean_value FALSE)
 	(name "ButtonDisplayed-Delete Instance"))
 
+([template_ProjectKB_Instance_70103] of  Widget
+
+	(height 180)
+	(is_hidden FALSE)
+	(name "template:VIOLABILITY")
+	(property_list [template_ProjectKB_Instance_70104])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
+	(width 200)
+	(x 200)
+	(y 60))
+
+([template_ProjectKB_Instance_70104] of  Property_List
+
+	(properties
+		[template_ProjectKB_Instance_70105]
+		[template_ProjectKB_Instance_70106]))
+
+([template_ProjectKB_Instance_70105] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([template_ProjectKB_Instance_70106] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([template_ProjectKB_Instance_70127] of  Widget
+
+	(is_hidden FALSE)
+	(name "general:consonantalConditioning")
+	(property_list [template_ProjectKB_Instance_70130])
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
+
+([template_ProjectKB_Instance_70130] of  Property_List
+
+	(properties
+		[template_ProjectKB_Instance_70131]
+		[template_ProjectKB_Instance_70132]
+		[template_ProjectKB_Instance_70134]))
+
+([template_ProjectKB_Instance_70131] of  Property_List
+
+	(name "layout properties"))
+
+([template_ProjectKB_Instance_70132] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name ":NAME")
+	(property_list [template_ProjectKB_Instance_70133])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceNameWidget")
+	(width 200)
+	(x 0)
+	(y 0))
+
+([template_ProjectKB_Instance_70133] of  Property_List
+)
+
+([template_ProjectKB_Instance_70134] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "notes:CONDITIONS")
+	(property_list [template_ProjectKB_Instance_70135])
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 200)
+	(x 0)
+	(y 60))
+
+([template_ProjectKB_Instance_70135] of  Property_List
+)
+
+([template_ProjectKB_Instance_70196] of  String
+
+	(name "form:transcription")
+	(string_value "specform%3ATRANSCRIPTION_STRING"))
+
+([template_ProjectKB_Instance_70197] of  String
+
+	(name ":PAL-CONSTRAINT")
+	(string_value "%3APAL-NAME"))
+
+([template_ProjectKB_Instance_70198] of  String
+
+	(name ":INSTANCE-ANNOTATION")
+	(string_value "%3AANNOTATION-TEXT"))
+
+([template_ProjectKB_Instance_70199] of  String
+
+	(name ":META-CLASS")
+	(string_value "%3ANAME"))
+
 ([template_ProjectKB_Instance_77] of  Property_List
 
 	(properties
@@ -1736,26 +1829,6 @@
 
 ([template_ProjectKB_Instance_80] of  Property_List
 )
-
-([template_ProjectKB_Instance_80170] of  String
-
-	(name ":PAL-CONSTRAINT")
-	(string_value "%3APAL-NAME"))
-
-([template_ProjectKB_Instance_80171] of  String
-
-	(name ":INSTANCE-ANNOTATION")
-	(string_value "%3AANNOTATION-TEXT"))
-
-([template_ProjectKB_Instance_80172] of  String
-
-	(name ":META-CLASS")
-	(string_value "%3ANAME"))
-
-([template_ProjectKB_Instance_80173] of  String
-
-	(name "form:transcription")
-	(string_value "specform%3ATRANSCRIPTION_STRING"))
 
 ([template_ProjectKB_Instance_81] of  Property_List
 )

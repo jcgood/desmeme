@@ -45,6 +45,7 @@
 	<rdfs:domain rdf:resource="&general;position"/>
 	<rdfs:domain rdf:resource="&template;foundation"/>
 	<rdfs:domain rdf:resource="&template;stricture"/>
+	<rdfs:domain rdf:resource="&template;violability"/>
 </rdf:Property>
 <rdfs:Class rdf:about="&gold;Auxiliary"
 	 rdfs:label="gold:Auxiliary">
@@ -315,10 +316,6 @@
 	<rdfs:comment>A supertype for subtypes that characterizing the type of grammatical environment where the template is found, for instance, whether it appears in a specific morphosyntactic context of phonological one.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
-<rdfs:Class rdf:about="&general;consonantalConditioning"
-	 rdfs:label="general:consonantalConditioning">
-	<rdfs:subClassOf rdf:resource="&general;segmentalConditioning"/>
-</rdfs:Class>
 <rdfs:Class rdf:about="&general;constituent"
 	 a:role="abstract"
 	 rdfs:label="general:constituent">
@@ -393,6 +390,10 @@ a given template. This feature does not enter into the typological comparison at
 	 rdfs:label="general:position">
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
+<rdfs:Class rdf:about="&general;prosodicConditioning"
+	 rdfs:label="general:prosodicConditioning">
+	<rdfs:subClassOf rdf:resource="&general;phonologicalConditioning"/>
+</rdfs:Class>
 <rdfs:Class rdf:about="&general;prosodicConstituent"
 	 a:role="abstract"
 	 rdfs:label="general:prosodicConstituent">
@@ -426,11 +427,6 @@ a given template. This feature does not enter into the typological comparison at
 	 a:role="abstract"
 	 rdfs:label="general:segment">
 	<rdfs:subClassOf rdf:resource="&general;phonologicalConstituent"/>
-</rdfs:Class>
-<rdfs:Class rdf:about="&general;segmentalConditioning"
-	 a:role="abstract"
-	 rdfs:label="general:segmentalConditioning">
-	<rdfs:subClassOf rdf:resource="&general;phonologicalConditioning"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;simple"
 	 a:role="abstract"
@@ -647,7 +643,7 @@ a given template. This feature does not enter into the typological comparison at
 	 rdfs:label="specgeneral:CONDITIONING">
 	<rdfs:range rdf:resource="&general;conditioning"/>
 	<rdfs:domain rdf:resource="&template;desmeme"/>
-	<rdfs:domain rdf:resource="&template;violable"/>
+	<rdfs:domain rdf:resource="&template;exceptionality"/>
 </rdf:Property>
 <rdf:Property rdf:about="&spectemplate;FILLED_COMPONENT"
 	 a:maxCardinality="1"
@@ -715,6 +711,14 @@ a given template. This feature does not enter into the typological comparison at
 	<rdfs:domain rdf:resource="&template;desmeme"/>
 	<rdfs:range rdf:resource="&template;stricture"/>
 </rdf:Property>
+<rdf:Property rdf:about="&template;EXCEPTIONALITY"
+	 a:maxCardinality="1"
+	 a:range="cls"
+	 rdfs:label="template:EXCEPTIONALITY">
+	<a:allowedParents rdf:resource="&template;exceptionality"/>
+	<rdfs:domain rdf:resource="&template;potentiallyViolable"/>
+	<rdfs:range rdf:resource="&rdfs;Class"/>
+</rdf:Property>
 <rdf:Property rdf:about="&template;FILLER_POSITION"
 	 a:maxCardinality="1"
 	 a:range="cls"
@@ -723,31 +727,32 @@ a given template. This feature does not enter into the typological comparison at
 	<a:allowedParents rdf:resource="&general;position"/>
 	<rdfs:range rdf:resource="&rdfs;Class"/>
 </rdf:Property>
-<rdf:Property rdf:about="&template;VIOLABILITY"
+<rdf:Property rdf:about="&template;REPARABILITY"
 	 a:maxCardinality="1"
 	 a:range="cls"
+	 rdfs:label="template:REPARABILITY">
+	<rdfs:domain rdf:resource="&template;potentiallyViolable"/>
+	<a:allowedParents rdf:resource="&template;reparability"/>
+	<rdfs:range rdf:resource="&rdfs;Class"/>
+</rdf:Property>
+<rdf:Property rdf:about="&template;VIOLABILITY"
+	 a:maxCardinality="1"
 	 rdfs:label="template:VIOLABILITY">
 	<rdfs:domain rdf:resource="&template;desmeme"/>
-	<a:allowedParents rdf:resource="&template;violability"/>
-	<rdfs:range rdf:resource="&rdfs;Class"/>
+	<rdfs:range rdf:resource="&template;violability"/>
 </rdf:Property>
 <rdfs:Class rdf:about="&template;arch"
 	 rdfs:label="template:arch">
 	<rdfs:subClassOf rdf:resource="&template;foundation"/>
 </rdfs:Class>
-<rdfs:Class rdf:about="&template;blocking"
-	 a:role="abstract"
-	 rdfs:label="template:blocking">
-	<rdfs:subClassOf rdf:resource="&template;inviolable"/>
-</rdfs:Class>
-<rdfs:Class rdf:about="&template;constructionalViolability"
-	 a:role="abstract"
-	 rdfs:label="template:constructionalViolability">
-	<rdfs:subClassOf rdf:resource="&template;violable"/>
-</rdfs:Class>
 <rdfs:Class rdf:about="&template;desmeme"
 	 rdfs:label="template:desmeme">
 	<rdfs:subClassOf rdf:resource="&form;lineate"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&template;exceptionality"
+	 a:role="abstract"
+	 rdfs:label="template:exceptionality">
+	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;foundation"
 	 a:role="abstract"
@@ -755,20 +760,15 @@ a given template. This feature does not enter into the typological comparison at
 	<rdfs:comment>A supertype for subtypes that classify the nature of the relationships among a template's components, including some indication of their relative order and what sorts of dependencies might hold among them.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
-<rdfs:Class rdf:about="&template;freeViolabiliy"
-	 a:role="abstract"
-	 rdfs:label="template:freeViolabiliy">
-	<rdfs:subClassOf rdf:resource="&template;violable"/>
-</rdfs:Class>
 <rdfs:Class rdf:about="&template;homophonic"
 	 a:role="abstract"
 	 rdfs:label="template:homophonic">
-	<rdfs:subClassOf rdf:resource="&template;blocking"/>
+	<rdfs:subClassOf rdf:resource="&template;irreparable"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;ineffable"
 	 a:role="abstract"
 	 rdfs:label="template:ineffable">
-	<rdfs:subClassOf rdf:resource="&template;blocking"/>
+	<rdfs:subClassOf rdf:resource="&template;irreparable"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;insertion"
 	 a:role="abstract"
@@ -776,41 +776,59 @@ a given template. This feature does not enter into the typological comparison at
 	 rdfs:label="template:insertion">
 	<rdfs:subClassOf rdf:resource="&template;reparable"/>
 </rdfs:Class>
-<rdfs:Class rdf:about="&template;inviolable"
+<rdfs:Class rdf:about="&template;irreparable"
 	 a:role="abstract"
-	 rdfs:label="template:inviolable">
-	<rdfs:subClassOf rdf:resource="&template;violability"/>
+	 rdfs:label="template:irreparable">
+	<rdfs:subClassOf rdf:resource="&template;reparability"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;length"
 	 rdfs:label="template:length">
 	<rdfs:comment>A type for classifying a template whose stipulation involves a restriction on the size of a constituent</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&template;stricture"/>
 </rdfs:Class>
-<rdfs:Class rdf:about="&template;lexicalViolability"
+<rdfs:Class rdf:about="&template;lexical"
 	 a:role="abstract"
-	 rdfs:label="template:lexicalViolability">
-	<rdfs:subClassOf rdf:resource="&template;violable"/>
+	 rdfs:label="template:lexical">
+	<rdfs:subClassOf rdf:resource="&template;exceptionality"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;metathesis"
 	 a:role="abstract"
 	 rdfs:label="template:metathesis">
 	<rdfs:subClassOf rdf:resource="&template;reparable"/>
 </rdfs:Class>
-<rdfs:Class rdf:about="&template;neutral"
+<rdfs:Class rdf:about="&template;noKnownContexts"
 	 a:role="abstract"
-	 rdfs:label="template:neutral">
-	<rdfs:comment>For cases of surface patterns (e.g., German clause) where the template does not impinge upon semantic expression at all)</rdfs:comment>
-	<rdfs:subClassOf rdf:resource="&template;inviolable"/>
+	 rdfs:comment="A type for ..."
+	 rdfs:label="template:noKnownContexts">
+	<rdfs:subClassOf rdf:resource="&template;reparability"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&template;noKnownExceptions"
+	 a:role="abstract"
+	 rdfs:label="template:noKnownExceptions">
+	<rdfs:subClassOf rdf:resource="&template;exceptionality"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&template;notViolable"
+	 rdfs:label="template:notViolable">
+	<rdfs:subClassOf rdf:resource="&template;violability"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;order"
 	 rdfs:label="template:order">
 	<rdfs:comment>A type for classifying a template whose stipulation involves a restriction in the order of a set of elements</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&template;stricture"/>
 </rdfs:Class>
+<rdfs:Class rdf:about="&template;potentiallyViolable"
+	 rdfs:label="template:potentiallyViolable">
+	<rdfs:subClassOf rdf:resource="&template;violability"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&template;reparability"
+	 a:role="abstract"
+	 rdfs:label="template:reparability">
+	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
+</rdfs:Class>
 <rdfs:Class rdf:about="&template;reparable"
 	 a:role="abstract"
 	 rdfs:label="template:reparable">
-	<rdfs:subClassOf rdf:resource="&template;inviolable"/>
+	<rdfs:subClassOf rdf:resource="&template;reparability"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;span"
 	 rdfs:label="template:span">
@@ -826,12 +844,7 @@ a given template. This feature does not enter into the typological comparison at
 <rdfs:Class rdf:about="&template;violability"
 	 a:role="abstract"
 	 rdfs:label="template:violability">
-	<rdfs:comment>A supertype for subtypes that  characterizr whether or not the linearization restrictions of a given template can be violated or not and what repair strategiesmay be activated in cases of potential violation.</rdfs:comment>
+	<rdfs:comment>A supertype for subtypes that  characterizes whether or not the linearization restrictions of a given template can be violated or not and what repair strategies may be activated in cases of potential violation.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
-</rdfs:Class>
-<rdfs:Class rdf:about="&template;violable"
-	 a:role="abstract"
-	 rdfs:label="template:violable">
-	<rdfs:subClassOf rdf:resource="&template;violability"/>
 </rdfs:Class>
 </rdf:RDF>
