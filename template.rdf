@@ -239,7 +239,7 @@
 </template:desmeme>
 <template:potentiallyViolable rdf:about="&templates;Bantu_CA-violable"
 	 rdfs:label="Bantu_CA-violable">
-	<template:REPARABILITY rdf:resource="&template;homophonic"/>
+	<template:REPARABILITY rdf:resource="&template;metathesis"/>
 	<template:EXCEPTIONALITY rdf:resource="&template;noKnownExceptions"/>
 </template:potentiallyViolable>
 <component:component rdf:about="&templates;Bantu_Causative"
@@ -367,7 +367,7 @@
 	 rdfs:label="Bantu_y_Component_Stability-Stable"/>
 <template:potentiallyViolable rdf:about="&templates;Banty_y-VC-violability"
 	 rdfs:label="Banty_y-VC-violability">
-	<template:REPARABILITY rdf:resource="&template;homophonic"/>
+	<template:REPARABILITY rdf:resource="&template;metathesis"/>
 	<template:EXCEPTIONALITY rdf:resource="&template;noKnownExceptions"/>
 </template:potentiallyViolable>
 <template:potentiallyViolable rdf:about="&templates;Checehn_preverbal_a-violability"
@@ -945,17 +945,14 @@
 	 rdfs:label="Mande_X_Stability"/>
 <template:desmeme rdf:about="&templates;Mande_clause"
 	 rdfs:label="Mande_clause">
-	<template:VIOLABILITY rdf:resource="&templates;Mande_clause-violability"/>
+	<template:VIOLABILITY rdf:resource="&templates;Mande_clause-violablity-NotViolated"/>
 	<specgeneral:CONDITIONING rdf:resource="&templates;Mande_clause_Conditioning"/>
 	<spectemplate:FOUNDATION rdf:resource="&templates;Mande_clause_Foundation"/>
 	<spectemplate:STRICTURE rdf:resource="&templates;Mande_clause_Order"/>
 	<function:FUNCTION rdf:resource="&gold;MainClause"/>
 </template:desmeme>
-<template:potentiallyViolable rdf:about="&templates;Mande_clause-violability"
-	 rdfs:label="Mande_clause-violability">
-	<template:EXCEPTIONALITY rdf:resource="&template;lexical"/>
-	<template:REPARABILITY rdf:resource="&template;noKnownContexts"/>
-</template:potentiallyViolable>
+<template:notViolable rdf:about="&templates;Mande_clause-violablity-NotViolated"
+	 rdfs:label="Mande_clause-violablity-NotViolated"/>
 <general:constructionalConditioning rdf:about="&templates;Mande_clause_Conditioning"
 	 rdfs:label="Mande_clause_Conditioning">
 	<notes:CONDITIONS>This template describes the linearization of the Mande clause.</notes:CONDITIONS>
@@ -1325,7 +1322,7 @@
 	 rdfs:label="SerboCroation_je_finality"/>
 <template:potentiallyViolable rdf:about="&templates;SerboCroation_topicalization-Violability"
 	 rdfs:label="SerboCroation_topicalization-Violability">
-	<template:REPARABILITY rdf:resource="&template;ineffable"/>
+	<template:REPARABILITY rdf:resource="&template;irreparable"/>
 	<template:EXCEPTIONALITY rdf:resource="&template;noKnownExceptions"/>
 </template:potentiallyViolable>
 <template:desmeme rdf:about="&templates;Tiene_verb"

@@ -763,12 +763,7 @@ a given template. This feature does not enter into the typological comparison at
 <rdfs:Class rdf:about="&template;homophonic"
 	 a:role="abstract"
 	 rdfs:label="template:homophonic">
-	<rdfs:subClassOf rdf:resource="&template;irreparable"/>
-</rdfs:Class>
-<rdfs:Class rdf:about="&template;ineffable"
-	 a:role="abstract"
-	 rdfs:label="template:ineffable">
-	<rdfs:subClassOf rdf:resource="&template;irreparable"/>
+	<rdfs:subClassOf rdf:resource="&template;reparable"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;insertion"
 	 a:role="abstract"
@@ -795,12 +790,6 @@ a given template. This feature does not enter into the typological comparison at
 	 a:role="abstract"
 	 rdfs:label="template:metathesis">
 	<rdfs:subClassOf rdf:resource="&template;reparable"/>
-</rdfs:Class>
-<rdfs:Class rdf:about="&template;noKnownContexts"
-	 a:role="abstract"
-	 rdfs:comment="A type for ..."
-	 rdfs:label="template:noKnownContexts">
-	<rdfs:subClassOf rdf:resource="&template;reparability"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;noKnownExceptions"
 	 a:role="abstract"
