@@ -100,15 +100,17 @@
 <rdfs:Class rdf:about="&component;coherence"
 	 a:role="abstract"
 	 rdfs:label="component:coherence">
-	<rdfs:comment>Specification for whether a component's possible fillers comprise a functionally coherent or incoherent set of items.</rdfs:comment>
+	<rdfs:comment>A supertype for characterizing whether or not the elements that can fill a given component are of a coherent functional class or not.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&component;coherent"
 	 rdfs:label="component:coherent">
+	<rdfs:comment>A type that specifies that a given component is filled with a functionally coherent class of elements. It is associated with a feature specifying that class.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&component;coherence"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&component;component"
 	 rdfs:label="component:component">
+	<rdfs:comment>A type for templatic components. This is one of the fundamental types to the typology.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&component;elastic"
@@ -118,7 +120,7 @@
 <rdfs:Class rdf:about="&component;elasticity"
 	 a:role="abstract"
 	 rdfs:label="component:elasticity">
-	<rdfs:comment>A xxx type (check for 'feature' used where 'type' should be) for characterizing the overall size of a component, including whether or not its size is fixed or variable.</rdfs:comment>
+	<rdfs:comment>A supertype for characterizing the overall size of a component, including whether or not its size is fixed or variable.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&component;filled"
@@ -128,11 +130,12 @@
 <rdfs:Class rdf:about="&component;filledness"
 	 a:role="abstract"
 	 rdfs:label="component:filledness">
-	<rdfs:comment>A feature for characterizing the nature of the class of elements that is found within a given component, for instance whether it can be occupied by only one morpheme or an entire class of morphemes.</rdfs:comment>
+	<rdfs:comment>A supertype for characterizing the nature of the class of elements that is found within a given component, for instance whether it can be occupied by only one morpheme or an entire class of morphemes.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&component;incoherent"
 	 rdfs:label="component:incoherent">
+	<rdfs:comment>A type that specifies that a given component is not filled with a functionally coherent class of elements. It is associated with a feature allowing a list of the functional classes it is associated with to be specified.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&component;coherence"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&component;inelastic"
@@ -154,13 +157,13 @@
 </rdfs:Class>
 <rdfs:Class rdf:about="&component;restkomponentenSet"
 	 rdfs:label="component:restkomponentenSet">
-	<rdfs:comment>I need to hack in a Restkomponenten container to get the set functionality of Restkomponenten.</rdfs:comment>
+	<rdfs:comment>A type creating a container where those components not occupying predefined structural slots in a template can be indicated.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&component;stability"
 	 a:role="abstract"
 	 rdfs:label="component:stability">
-	<rdfs:comment>A feature for characterizing dependencies among components, in particular for cases where the nature of the content of one component is somehow dependent on what is found in another component.</rdfs:comment>
+	<rdfs:comment>A supertype for characterizing dependencies among components, in particular for cases where the nature of the content of one component is somehow dependent on what is found in another component.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&component;stable"
@@ -743,6 +746,7 @@ a given template. This feature does not enter into the typological comparison at
 </rdf:Property>
 <rdfs:Class rdf:about="&template;arch"
 	 rdfs:label="template:arch">
+	<rdfs:comment>A type of template whose components are analyzed as organized around a single privileged component. It has five predefined structural positions, the keystone (for the privileged component), the left and right voussoirs, and the left and right supports.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&template;foundation"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;desmeme"
@@ -752,6 +756,7 @@ a given template. This feature does not enter into the typological comparison at
 <rdfs:Class rdf:about="&template;exceptionality"
 	 a:role="abstract"
 	 rdfs:label="template:exceptionality">
+	<rdfs:comment>A supertype for characterizing the nature of observed exceptions to a given templatic pattern.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;foundation"
@@ -784,6 +789,7 @@ a given template. This feature does not enter into the typological comparison at
 <rdfs:Class rdf:about="&template;lexical"
 	 a:role="abstract"
 	 rdfs:label="template:lexical">
+	<rdfs:comment>A type for cases where the exceptions to a templatic pattern are lexically conditioned.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&template;exceptionality"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;metathesis"
@@ -794,10 +800,12 @@ a given template. This feature does not enter into the typological comparison at
 <rdfs:Class rdf:about="&template;noKnownExceptions"
 	 a:role="abstract"
 	 rdfs:label="template:noKnownExceptions">
+	<rdfs:comment>A type for cases where there are potential surface violations but where no actual surface violations are attested.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&template;exceptionality"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;notViolable"
 	 rdfs:label="template:notViolable">
+	<rdfs:comment>A type for indicating that, given other aspects of a language's grammar, there is not the potential for a specific template to be violated.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&template;violability"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;order"
@@ -807,6 +815,7 @@ a given template. This feature does not enter into the typological comparison at
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;potentiallyViolable"
 	 rdfs:label="template:potentiallyViolable">
+	<rdfs:comment>A type for indicating that, given other aspects of a language's grammar, there is the potential for a specific template to be violated, in which case further specification is given regarding the nature of exceptions to the template and what repair strategies (if any) may be applied to those exceptions.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&template;violability"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;reparability"
