@@ -415,6 +415,7 @@ a given template. This feature does not enter into the typological comparison at
 <rdfs:Class rdf:about="&general;relations"
 	 a:role="abstract"
 	 rdfs:label="general:relations">
+	<rdfs:comment>A supertype for subtypes classifying the nature of the relations holding among a template's components (though the notions could be applied more generally).</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;relativePositions"
@@ -434,6 +435,7 @@ a given template. This feature does not enter into the typological comparison at
 <rdfs:Class rdf:about="&general;simple"
 	 a:role="abstract"
 	 rdfs:label="general:simple">
+	<rdfs:comment>A type for classifying sets of components where their categorial relationship to each other is simply that they are part of the same template.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&general;relations"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;syntacticConstituent"
@@ -444,6 +446,7 @@ a given template. This feature does not enter into the typological comparison at
 <rdfs:Class rdf:about="&general;taxonomic"
 	 a:role="abstract"
 	 rdfs:label="general:taxonomic">
+	<rdfs:comment>A type for classifying sets of components which can be divided up into distinct categories creating taxonomic relationships among them.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&general;relations"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&localfunction;TenseMoodAspect"
