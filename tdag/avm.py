@@ -385,15 +385,15 @@ class avm ( ):
 		# If re-entered and not primary, just print a tag			
 		if self.reentered and not(self.primary):
 			tag = topavm.tags[id]
-			print >> outfile, "\t"*embedding+"\\phantom{\\@"+str(0)+"}"+"\\@"+str(tag)+"\\raisebox{-.5em}{\\rule{0pt}{1.5em}}"
+			print >> outfile, "\t"*embedding+"\\phantom{\\@{\\text{"+str(0)+"}}}"+"\\@{\\text{"+str(tag)+"}}"+"\\raisebox{-.5em}{\\rule{0pt}{1.5em}}"
 
 		else:
 			if self.primary:
 				tag = self.tag
-				print >> outfile, "\t"*embedding+"\\@"+str(tag), "\\[\t\\emph{"+type+"} \\cr"
+				print >> outfile, "\t"*embedding+"\\@{\\text{"+str(tag)+"}}", "\\[\t\\emph{"+type+"} \\cr"
 
 			else:
-				print >> outfile, "\t"*embedding+"\\phantom{\\@"+str(0)+"}", "\\[\t\\emph{"+type+"} \\cr"
+				print >> outfile, "\t"*embedding+"\\phantom{\\@{\\text{"+str(0)+"}}}", "\\[\t\\emph{"+type+"} \\cr"
 		
 			for featval in featvals:
 					
@@ -409,13 +409,13 @@ class avm ( ):
 						float(val)
 						
 						if val == '100':
-							print >> outfile, "\t"*embedding, "\\textsc{"+prettyfeat+"}\t&\t", "\\phantom{\\@"+str(0)+"}"+"$\infty$", "\\raisebox{-.5em}{\\rule{0pt}{1.5em}}\\cr"
+							print >> outfile, "\t"*embedding, "\\textsc{"+prettyfeat+"}\t&\t", "\\phantom{\\@{\\text{"+str(0)+"}}}"+"$\infty$", "\\raisebox{-.5em}{\\rule{0pt}{1.5em}}\\cr"
 						
 						else:
-							print >> outfile, "\t"*embedding, "\\textsc{"+prettyfeat+"}\t&\t", "\\phantom{\\@"+str(0)+"}"+val, "\\raisebox{-.5em}{\\rule{0pt}{1.5em}}\\cr"
+							print >> outfile, "\t"*embedding, "\\textsc{"+prettyfeat+"}\t&\t", "\\phantom{\\@{\\text{"+str(0)+"}}}"+val, "\\raisebox{-.5em}{\\rule{0pt}{1.5em}}\\cr"
 					
 					except:
-						print >> outfile, "\t"*embedding, "\\textsc{"+prettyfeat+"}\t&\t", "\\phantom{\\@"+str(0)+"}"+"\\emph{"+val+"}", "\\raisebox{-.5em}{\\rule{0pt}{1.5em}}\\cr"
+						print >> outfile, "\t"*embedding, "\\textsc{"+prettyfeat+"}\t&\t", "\\phantom{\\@{\\text{"+str(0)+"}}}"+"\\emph{"+val+"}", "\\raisebox{-.5em}{\\rule{0pt}{1.5em}}\\cr"
 
 				else:
 					print >> outfile, "\t"*embedding, "\\textsc{"+prettyfeat+"}"+"\t&\t",
