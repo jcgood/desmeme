@@ -133,7 +133,7 @@ class tdag ( ):
 				nodeName = node + str(componentNumber)
 				self.components.append(URI)
 				self.componentMapping[URI] = nodeName # This is the nodename with the number on it to make sure it can be identified properly for pydot.
-				self.core.add_node(nodeName, attrs=[("label", "component")]) # Now we add the node to the internal graph, giving it a label without the extra digit.
+				self.core.add_node(nodeName, attrs=[("label", "<<i>component</i>>")]) # Now we add the node to the internal graph, giving it a label without the extra digit.
 
 		elif node == "elastic":
 			if URI in self.elastics:
@@ -143,7 +143,7 @@ class tdag ( ):
 				nodeName = node + str(elasticNumber)
 				self.elastics.append(URI)
 				self.elasticMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", "elastic")])
+				self.core.add_node(nodeName, attrs=[("label", "<<i>elastic</i>>")])
 		
 		elif node == "inelastic":		
 			
@@ -154,7 +154,7 @@ class tdag ( ):
 				nodeName = node + str(inelasticNumber)
 				self.inelastics.append(URI)
 				self.inelasticMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", "inelastic")])
+				self.core.add_node(nodeName, attrs=[("label", "<<i>inelastic</i>>")])
 
 		elif node == "stable":
 			if URI in self.stabilities:
@@ -164,7 +164,7 @@ class tdag ( ):
 				nodeName = node + str(stabilityNumber)
 				self.stabilities.append(URI)
 				self.stabilityMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", "stable")])
+				self.core.add_node(nodeName, attrs=[("label", "<<i>stable</i>>")])
 
 		elif node == "unstable":
 			if URI in self.unstabilities:
@@ -174,7 +174,7 @@ class tdag ( ):
 				nodeName = node + str(unstabilityNumber)
 				self.unstabilities.append(URI)
 				self.unstabilityMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", "unstable")])
+				self.core.add_node(nodeName, attrs=[("label", "<<i>unstable</i>>")])
 
 		elif node == "filled":
 			if URI in self.filleds:
@@ -184,7 +184,7 @@ class tdag ( ):
 				nodeName = node + str(filledNumber)
 				self.filleds.append(URI)
 				self.filledMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", "filled")])
+				self.core.add_node(nodeName, attrs=[("label", "<<i>filled</i>>")])
 
 		elif node == "open":
 			if URI in self.opens:
@@ -194,7 +194,7 @@ class tdag ( ):
 				nodeName = node + str(openNumber)
 				self.opens.append(URI)
 				self.openMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", "open")])
+				self.core.add_node(nodeName, attrs=[("label", "<<i>open</i>>")])
 
 		elif node == "partiallyFilled":
 			if URI in self.partialfilleds:
@@ -204,7 +204,7 @@ class tdag ( ):
 				nodeName = node + str(partialfilledNumber)
 				self.partialfilleds.append(URI)
 				self.partialfilledMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", "partially filled")])
+				self.core.add_node(nodeName, attrs=[("label", "<<i>partiallyFilled</i>>")])
 
 		elif node == "final":
 			if URI in self.finals:
@@ -214,7 +214,7 @@ class tdag ( ):
 				nodeName = node + str(finalNumber)
 				self.finals.append(URI)
 				self.finalMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", "final")])
+				self.core.add_node(nodeName, attrs=[("label", "<<i>final</i>>")])
 
 		elif node == "null":
 			if URI in self.nulls:
@@ -224,7 +224,7 @@ class tdag ( ):
 				nodeName = node + str(nullNumber)
 				self.nulls.append(URI)
 				self.nullMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", "null")])
+				self.core.add_node(nodeName, attrs=[("label", "<<i>null</i>>")])
 
 		elif node == "coherent":
 			if URI in self.coherents:
@@ -234,7 +234,7 @@ class tdag ( ):
 				nodeName = node + str(coherentNumber)
 				self.coherents.append(URI)
 				self.coherentMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", "coherent")])
+				self.core.add_node(nodeName, attrs=[("label", "<<i>coherent</i>>")])
 
 		elif node == "incoherent":
 			if URI in self.incoherents:
@@ -244,7 +244,7 @@ class tdag ( ):
 				nodeName = node + str(incoherentNumber)
 				self.incoherents.append(URI)
 				self.incoherentMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", "incoherent")])
+				self.core.add_node(nodeName, attrs=[("label", "<<i>incoherent</i>>")])
 
 		elif node == "canonicalLineate":
 			if URI in self.canonicals:
@@ -254,7 +254,7 @@ class tdag ( ):
 				nodeName = node + str(canonicalNumber)
 				self.canonicals.append(URI)
 				self.canonicalMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", "canonicalLineate")])
+				self.core.add_node(nodeName, attrs=[("label", "<<i>canonicalLineate</i>>")])
 
 		# Slightly different scenario for integer values.
 		elif node.isdigit():
@@ -285,8 +285,7 @@ class tdag ( ):
 		
 		# If we've made it this far, it's a non-repeatable, generic node.		
 		else:
-			self.core.add_node(nodeName)
-		
+			self.core.add_node(nodeName, attrs=[("label", "<<i>"+node+"</i>>")])
 		return nodeName
 
 			

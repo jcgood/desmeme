@@ -31,16 +31,16 @@
 	 xmlns:notes="&notes;"
 	 xmlns:rdf="&rdf;"
 	 xmlns:specform="&specform;">
-<template:notViolable rdf:about="&templates;Algonquian_Clause-Violability-notViolable"
-	 rdfs:label="Algonquian_Clause-Violability-notViolable"/>
-<template:desmeme rdf:about="&templates;Algonquian_clause"
-	 rdfs:label="Algonquian_clause">
+<template:desmeme rdf:about="&templates;AlgonquianClause"
+	 rdfs:label="AlgonquianClause">
 	<template:VIOLABILITY rdf:resource="&templates;Algonquian_Clause-Violability-notViolable"/>
 	<specgeneral:CONDITIONING rdf:resource="&templates;Algonquian_clause_Conditioning"/>
 	<spectemplate:FOUNDATION rdf:resource="&templates;Algonquian_clause_Foundation"/>
 	<spectemplate:STRICTURE rdf:resource="&templates;Algonquian_clause_order"/>
 	<function:FUNCTION rdf:resource="&gold;MainClause"/>
 </template:desmeme>
+<template:notViolable rdf:about="&templates;Algonquian_Clause-Violability-notViolable"
+	 rdfs:label="Algonquian_Clause-Violability-notViolable"/>
 <component:component rdf:about="&templates;Algonquian_clause-Negative"
 	 rdfs:label="Algonquian_clause-Negative">
 	<speccomponent:ELASTICITY rdf:resource="&templates;Algonquian_clause-Negative_Elasticity"/>
@@ -177,93 +177,231 @@
 	<general:RELATIONS rdf:resource="&general;simple"/>
 	<general:CONSTITUENT rdf:resource="&general;syntacticConstituent"/>
 </template:order>
-<component:coherent rdf:about="&templates;Bantu-verbStem_Coherence"
-	 rdfs:label="Bantu-verbStem_Coherence">
-	<function:CLASS rdf:resource="&gold;Verbal"/>
-</component:coherent>
+<component:component rdf:about="&templates;Bantu-Transitive"
+	 rdfs:label="Bantu-Transitive">
+	<speccomponent:ELASTICITY rdf:resource="&templates;Bantu-Transitive-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;Bantu-Transitive-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;Bantu-Transitive-Stability"/>
+</component:component>
+<component:elastic rdf:about="&templates;Bantu-Transitive-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="Bantu-Transitive-Elasticity"/>
+<component:filled rdf:about="&templates;Bantu-Transitive-Filledness"
+	 rdfs:label="Bantu-Transitive-Filledness">
+	<speccomponent:FORM rdf:resource="&templates;Bantu_Transitive"/>
+	<function:FILLER_CLASS rdf:resource="&localfunction;valency"/>
+</component:filled>
+<component:stable rdf:about="&templates;Bantu-Transitive-Stability"
+	 rdfs:label="Bantu-Transitive-Stability"/>
+<component:component rdf:about="&templates;Bantu-VCExtension"
+	 rdfs:label="Bantu-VCExtension">
+	<speccomponent:ELASTICITY rdf:resource="&templates;Bantu-VCExtension-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;Bantu-VCExtension-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;Bantu-VCExtension-Stability"/>
+</component:component>
+<component:elastic rdf:about="&templates;Bantu-VCExtension-Elasticity"
+	 general:MAXIMUM="100"
+	 general:MINIMUM="0"
+	 rdfs:label="Bantu-VCExtension-Elasticity"/>
+<component:open rdf:about="&templates;Bantu-VCExtension-Filledness"
+	 rdfs:label="Bantu-VCExtension-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;Bantu_VC_Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;Bantu-VCExtension-Stability"
+	 rdfs:label="Bantu-VCExtension-Stability"/>
 <form:transcription rdf:about="&templates;Bantu-y-transcription"
 	 specform:TRANSCRIPTION_STRING="-y-"
 	 rdfs:label="-y-"/>
-<general:lexicoconstructionalConditioning rdf:about="&templates;Bantu_AC_Conditioning"
-	 rdfs:label="Bantu_AC_Conditioning">
-	<notes:CONDITIONS>The Applicative is being treated as the "cause" of the restriction.</notes:CONDITIONS>
-	<spectemplate:FILLED_COMPONENT rdf:resource="&templates;Bantu_Applicative"/>
-	<template:FILLER_POSITION rdf:resource="&general;final"/>
-</general:lexicoconstructionalConditioning>
-<template:arch rdf:about="&templates;Bantu_AC_Foundation"
-	 rdfs:label="Bantu_AC_Foundation">
-	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;Bantu_Applicative"/>
-	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;Bantu_Causative"/>
-	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;Bantu_beforeVerbStem_nullComponent"/>
-	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;Bantu_verbStem"/>
-	<spectemplate:KEYSTONE rdf:resource="&templates;Bantu_verbStem"/>
-</template:arch>
-<template:order rdf:about="&templates;Bantu_AC_Stricture-Order"
-	 general:COUNT="2"
-	 rdfs:label="Bantu_AC_Stricture-Order">
-	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
-	<general:RELATIONS rdf:resource="&general;simple"/>
-</template:order>
-<component:component rdf:about="&templates;Bantu_Applicative"
-	 rdfs:label="Bantu_Applicative">
-	<speccomponent:ELASTICITY rdf:resource="&templates;Bantu_Applicative_Elasticity"/>
-	<speccomponent:FILLEDNESS rdf:resource="&templates;Bantu_Applicative_Filledness"/>
-	<speccomponent:STABILITY rdf:resource="&templates;Bantu_Applicative_Stability-Stable"/>
+<component:component rdf:about="&templates;BantuApplicative"
+	 rdfs:label="BantuApplicative">
+	<speccomponent:ELASTICITY rdf:resource="&templates;BantuApplicative-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;BantuApplicative-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;BantuApplicative-Stability"/>
 </component:component>
-<component:elastic rdf:about="&templates;Bantu_Applicative_Elasticity"
+<component:elastic rdf:about="&templates;BantuApplicative-Elasticity"
 	 general:MAXIMUM="1"
 	 general:MINIMUM="0"
-	 rdfs:label="Bantu_Applicative_Elasticity"/>
-<component:filled rdf:about="&templates;Bantu_Applicative_Filledness"
-	 rdfs:label="Bantu_Applicative_Filledness">
-	<speccomponent:FORM rdf:resource="&templates;Bantu_Applicative_Form"/>
+	 rdfs:label="BantuApplicative-Elasticity"/>
+<component:filled rdf:about="&templates;BantuApplicative-Filledness"
+	 rdfs:label="BantuApplicative-Filledness">
+	<speccomponent:FORM rdf:resource="&templates;BantuApplicative-Form"/>
 	<function:FILLER_CLASS rdf:resource="&localfunction;valency"/>
 </component:filled>
-<form:canonicalLineate rdf:about="&templates;Bantu_Applicative_Form"
-	 rdfs:label="Bantu_Applicative_Form">
+<form:canonicalLineate rdf:about="&templates;BantuApplicative-Form"
+	 rdfs:label="BantuApplicative-Form">
 	<specform:TRANSCRIPTION rdf:resource="&templates;Bantu_Applicative_Transcription"/>
 	<form:LIAISON rdf:resource="&form;sinistrous"/>
 </form:canonicalLineate>
-<component:stable rdf:about="&templates;Bantu_Applicative_Stability-Stable"
-	 rdfs:label="Bantu_Applicative_Stability-Stable"/>
-<form:transcription rdf:about="&templates;Bantu_Applicative_Transcription"
-	 specform:TRANSCRIPTION_STRING="-id-"
-	 rdfs:label="-id-"/>
-<template:desmeme rdf:about="&templates;Bantu_CA"
-	 rdfs:label="Bantu_CA">
-	<specgeneral:CONDITIONING rdf:resource="&templates;Bantu_AC_Conditioning"/>
-	<spectemplate:FOUNDATION rdf:resource="&templates;Bantu_AC_Foundation"/>
-	<spectemplate:STRICTURE rdf:resource="&templates;Bantu_AC_Stricture-Order"/>
-	<template:VIOLABILITY rdf:resource="&templates;Bantu_CA-violable"/>
+<component:stable rdf:about="&templates;BantuApplicative-Stability"
+	 rdfs:label="BantuApplicative-Stability"/>
+<component:inelastic rdf:about="&templates;BantuBeforeVerbStem-Elasticity"
+	 general:COUNT="0"
+	 rdfs:label="BantuBeforeVerbStem-Elasticity"/>
+<component:null rdf:about="&templates;BantuBeforeVerbStem-Filledness"
+	 rdfs:label="BantuBeforeVerbStem-Filledness"/>
+<component:stable rdf:about="&templates;BantuBeforeVerbStem-Stability"
+	 rdfs:label="BantuBeforeVerbStem-Stability"/>
+<component:component rdf:about="&templates;BantuBeforeVerbStemBantu-nullComponent"
+	 rdfs:label="BantuBeforeVerbStemBantu-nullComponent">
+	<speccomponent:ELASTICITY rdf:resource="&templates;BantuBeforeVerbStem-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;BantuBeforeVerbStem-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;BantuBeforeVerbStem-Stability"/>
+</component:component>
+<template:desmeme rdf:about="&templates;BantuCA"
+	 rdfs:label="BantuCA">
+	<specgeneral:CONDITIONING rdf:resource="&templates;BantuCA-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;BantuCA-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;BantuCA-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;BantuCA-Violability"/>
 	<function:FUNCTION rdf:resource="&localfunction;valency"/>
 </template:desmeme>
-<template:potentiallyViolable rdf:about="&templates;Bantu_CA-violable"
-	 rdfs:label="Bantu_CA-violable">
+<general:lexicoconstructionalConditioning rdf:about="&templates;BantuCA-Conditioning"
+	 rdfs:label="BantuCA-Conditioning">
+	<notes:CONDITIONS>The Applicative is being treated as the "cause" of the restriction.</notes:CONDITIONS>
+	<spectemplate:FILLED_COMPONENT rdf:resource="&templates;BantuApplicative"/>
+	<template:FILLER_POSITION rdf:resource="&general;final"/>
+</general:lexicoconstructionalConditioning>
+<template:arch rdf:about="&templates;BantuCA-Foundation"
+	 rdfs:label="BantuCA-Foundation">
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;BantuApplicative"/>
+	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;BantuBeforeVerbStemBantu-nullComponent"/>
+	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;BantuCausativeIndependent"/>
+	<spectemplate:KEYSTONE rdf:resource="&templates;BantuVerbStem"/>
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;BantuVerbStem"/>
+</template:arch>
+<template:order rdf:about="&templates;BantuCA-Stricture"
+	 general:COUNT="3"
+	 rdfs:label="BantuCA-Stricture">
+	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
+	<general:RELATIONS rdf:resource="&general;simple"/>
+</template:order>
+<template:potentiallyViolable rdf:about="&templates;BantuCA-Violability"
+	 rdfs:label="BantuCA-Violability">
 	<template:REPARABILITY rdf:resource="&template;metathesis"/>
 	<template:EXCEPTIONALITY rdf:resource="&template;noKnownExceptions"/>
 </template:potentiallyViolable>
-<component:component rdf:about="&templates;Bantu_Causative"
-	 rdfs:label="Bantu_Causative">
-	<speccomponent:ELASTICITY rdf:resource="&templates;Bantu_Causative_Elasticity"/>
-	<speccomponent:FILLEDNESS rdf:resource="&templates;Bantu_Causative_Filledness"/>
-	<speccomponent:STABILITY rdf:resource="&templates;Bantu_Causative_Stability-Stable"/>
-</component:component>
-<component:elastic rdf:about="&templates;Bantu_Causative_Elasticity"
+<template:desmeme rdf:about="&templates;BantuCT"
+	 rdfs:label="BantuCT">
+	<specgeneral:CONDITIONING rdf:resource="&templates;BantuCT-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;BantuCT-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;BantuCT-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;BantuCT-Violability"/>
+	<function:FUNCTION rdf:resource="&localfunction;valency"/>
+</template:desmeme>
+<general:lexicoconstructionalConditioning rdf:about="&templates;BantuCT-Conditioning"
+	 rdfs:label="BantuCT-Conditioning">
+	<notes:CONDITIONS>I am treating the Transitive as the conditioning factor in the template (analogous to Applicative in CA template).</notes:CONDITIONS>
+	<spectemplate:FILLED_COMPONENT rdf:resource="&templates;Bantu-Transitive"/>
+	<template:FILLER_POSITION rdf:resource="&general;final"/>
+</general:lexicoconstructionalConditioning>
+<template:arch rdf:about="&templates;BantuCT-Foundation"
+	 rdfs:label="BantuCT-Foundation">
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;Bantu-Transitive"/>
+	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;BantuBeforeVerbStemBantu-nullComponent"/>
+	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;BantuCausativeDependent"/>
+	<spectemplate:KEYSTONE rdf:resource="&templates;BantuVerbStem"/>
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;BantuVerbStem"/>
+</template:arch>
+<template:order rdf:about="&templates;BantuCT-Stricture"
+	 general:COUNT="3"
+	 rdfs:label="BantuCT-Stricture">
+	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
+	<general:RELATIONS rdf:resource="&general;simple"/>
+</template:order>
+<template:potentiallyViolable rdf:about="&templates;BantuCT-Violability"
+	 rdfs:label="BantuCT-Violability">
+	<template:REPARABILITY rdf:resource="&template;metathesis"/>
+	<template:EXCEPTIONALITY rdf:resource="&template;noKnownExceptions"/>
+</template:potentiallyViolable>
+<component:elastic rdf:about="&templates;BantuCausative-Elasticity"
 	 general:MAXIMUM="1"
 	 general:MINIMUM="0"
-	 rdfs:label="Bantu_Causative_Elasticity"/>
-<component:filled rdf:about="&templates;Bantu_Causative_Filledness"
-	 rdfs:label="Bantu_Causative_Filledness">
-	<speccomponent:FORM rdf:resource="&templates;Bantu_Causative_Form"/>
+	 rdfs:label="BantuCausative-Elasticity"/>
+<component:filled rdf:about="&templates;BantuCausative-Filledness"
+	 rdfs:label="BantuCausative-Filledness">
+	<speccomponent:FORM rdf:resource="&templates;BantuCausative-Form"/>
 	<function:FILLER_CLASS rdf:resource="&localfunction;valency"/>
 </component:filled>
-<form:canonicalLineate rdf:about="&templates;Bantu_Causative_Form"
-	 rdfs:label="Bantu_Causative_Form">
+<form:canonicalLineate rdf:about="&templates;BantuCausative-Form"
+	 rdfs:label="BantuCausative-Form">
 	<specform:TRANSCRIPTION rdf:resource="&templates;Bantu_Causative_Transcription"/>
 	<form:LIAISON rdf:resource="&form;sinistrous"/>
 </form:canonicalLineate>
-<component:stable rdf:about="&templates;Bantu_Causative_Stability-Stable"
-	 rdfs:label="Bantu_Causative_Stability-Stable"/>
+<component:component rdf:about="&templates;BantuCausativeDependent"
+	 rdfs:label="BantuCausativeDependent">
+	<speccomponent:ELASTICITY rdf:resource="&templates;BantuCausative-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;BantuCausative-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;BantuCausativeDependent-Stability"/>
+</component:component>
+<general:right rdf:about="&templates;BantuCausativeDependent-AssociatePosition"
+	 rdfs:label="BantuCausativeDependent-AssociatePosition"/>
+<component:unstable rdf:about="&templates;BantuCausativeDependent-Stability"
+	 rdfs:label="BantuCausativeDependent-Stability">
+	<speccomponent:ASSOCIATE rdf:resource="&templates;Bantu-Transitive"/>
+	<speccomponent:ASSOCIATE_POSITION rdf:resource="&templates;BantuCausativeDependent-AssociatePosition"/>
+</component:unstable>
+<component:component rdf:about="&templates;BantuCausativeIndependent"
+	 rdfs:label="BantuCausativeIndependent">
+	<speccomponent:ELASTICITY rdf:resource="&templates;BantuCausative-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;BantuCausative-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;BantuCausativeIndependent-Stability"/>
+</component:component>
+<component:stable rdf:about="&templates;BantuCausativeIndependent-Stability"
+	 rdfs:label="BantuCausativeIndependent-Stability"/>
+<template:desmeme rdf:about="&templates;BantuVCy"
+	 rdfs:label="BantuVCy">
+	<specgeneral:CONDITIONING rdf:resource="&templates;BantuVCy-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;BantuVCy-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;BantuVCy-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;BantuVCy-Violability"/>
+	<function:FUNCTION rdf:resource="&localfunction;valency"/>
+</template:desmeme>
+<general:lexicoconstructionalConditioning rdf:about="&templates;BantuVCy-Conditioning"
+	 rdfs:label="BantuVCy-Conditioning">
+	<notes:CONDITIONS>The template appears when certain valency suffixes are found on the verb stem.</notes:CONDITIONS>
+	<spectemplate:FILLED_COMPONENT rdf:resource="&templates;Bantu-Transitive"/>
+	<template:FILLER_POSITION rdf:resource="&general;final"/>
+</general:lexicoconstructionalConditioning>
+<template:arch rdf:about="&templates;BantuVCy-Foundation"
+	 rdfs:label="BantuVCy-Foundation">
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;Bantu-Transitive"/>
+	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;Bantu-VCExtension"/>
+	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;BantuBeforeVerbStemBantu-nullComponent"/>
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;BantuVerbStem"/>
+	<spectemplate:KEYSTONE rdf:resource="&templates;BantuVerbStem"/>
+</template:arch>
+<template:order rdf:about="&templates;BantuVCy-Stricture"
+	 general:COUNT="3"
+	 rdfs:label="BantuVCy-Stricture">
+	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
+	<general:RELATIONS rdf:resource="&general;simple"/>
+</template:order>
+<template:potentiallyViolable rdf:about="&templates;BantuVCy-Violability"
+	 rdfs:label="BantuVCy-Violability">
+	<template:REPARABILITY rdf:resource="&template;metathesis"/>
+	<template:EXCEPTIONALITY rdf:resource="&template;noKnownExceptions"/>
+</template:potentiallyViolable>
+<component:component rdf:about="&templates;BantuVerbStem"
+	 rdfs:label="BantuVerbStem">
+	<speccomponent:ELASTICITY rdf:resource="&templates;BantuVerbStem-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;BantuVerbStem-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;Bantu_verbStem_Stability-Stable"/>
+</component:component>
+<component:coherent rdf:about="&templates;BantuVerbStem-Coherence"
+	 rdfs:label="BantuVerbStem-Coherence">
+	<function:CLASS rdf:resource="&gold;Verbal"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;BantuVerbStem-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="BantuVerbStem-Elasticity"/>
+<component:open rdf:about="&templates;BantuVerbStem-Filledness"
+	 rdfs:label="BantuVerbStem-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;BantuVerbStem-Coherence"/>
+</component:open>
+<form:transcription rdf:about="&templates;Bantu_Applicative_Transcription"
+	 specform:TRANSCRIPTION_STRING="-id-"
+	 rdfs:label="-id-"/>
 <form:transcription rdf:about="&templates;Bantu_Causative_Transcription"
 	 specform:TRANSCRIPTION_STRING="-ic-"
 	 rdfs:label="-ic-"/>
@@ -272,104 +410,12 @@
 	<specform:TRANSCRIPTION rdf:resource="&templates;Bantu-y-transcription"/>
 	<form:LIAISON rdf:resource="&form;sinistrous"/>
 </form:canonicalLineate>
-<component:component rdf:about="&templates;Bantu_VC"
-	 rdfs:label="Bantu_VC">
-	<speccomponent:ELASTICITY rdf:resource="&templates;Bantu_VC_Elasticity"/>
-	<speccomponent:FILLEDNESS rdf:resource="&templates;Bantu_VC_Filledness"/>
-	<speccomponent:STABILITY rdf:resource="&templates;Bantu_VC_Stability-Stable"/>
-</component:component>
-<template:desmeme rdf:about="&templates;Bantu_VC-y"
-	 rdfs:label="Bantu_VC-y">
-	<specgeneral:CONDITIONING rdf:resource="&templates;Bantu_y-VC_Conditions"/>
-	<spectemplate:FOUNDATION rdf:resource="&templates;Bantu_y-VC_Foundation"/>
-	<spectemplate:STRICTURE rdf:resource="&templates;Bantu_y-VC_Stricture-Order"/>
-	<template:VIOLABILITY rdf:resource="&templates;Banty_y-VC-violability"/>
-	<function:FUNCTION rdf:resource="&localfunction;valency"/>
-</template:desmeme>
 <component:coherent rdf:about="&templates;Bantu_VC_Coherence"
 	 rdfs:label="Bantu_VC_Coherence">
 	<function:CLASS rdf:resource="&localfunction;valency"/>
 </component:coherent>
-<component:elastic rdf:about="&templates;Bantu_VC_Elasticity"
-	 general:MAXIMUM="100"
-	 general:MINIMUM="0"
-	 rdfs:label="Bantu_VC_Elasticity"/>
-<component:open rdf:about="&templates;Bantu_VC_Filledness"
-	 rdfs:label="Bantu_VC_Filledness">
-	<speccomponent:COHERENCE rdf:resource="&templates;Bantu_VC_Coherence"/>
-</component:open>
-<component:stable rdf:about="&templates;Bantu_VC_Stability-Stable"
-	 rdfs:label="Bantu_VC_Stability-Stable"/>
-<component:stable rdf:about="&templates;Bantu_beforeVerbStem_Stability"
-	 rdfs:label="Bantu_beforeVerbStem_Stability"/>
-<component:component rdf:about="&templates;Bantu_beforeVerbStem_nullComponent"
-	 rdfs:label="Bantu_beforeVerbStem_nullComponent">
-	<speccomponent:STABILITY rdf:resource="&templates;Bantu_beforeVerbStem_Stability"/>
-	<speccomponent:ELASTICITY rdf:resource="&templates;Bantu_beforeVerbStem_nullElasticity"/>
-	<speccomponent:FILLEDNESS rdf:resource="&templates;Bantu_beforeVerbStem_nullFilledness"/>
-</component:component>
-<component:inelastic rdf:about="&templates;Bantu_beforeVerbStem_nullElasticity"
-	 general:COUNT="0"
-	 rdfs:label="Bantu_beforeVerbStem_nullElasticity"/>
-<component:null rdf:about="&templates;Bantu_beforeVerbStem_nullFilledness"
-	 rdfs:label="Bantu_beforeVerbStem_nullFilledness"/>
-<component:component rdf:about="&templates;Bantu_verbStem"
-	 rdfs:label="Bantu_verbStem">
-	<speccomponent:ELASTICITY rdf:resource="&templates;Bantu_verbStem_Elasticity"/>
-	<speccomponent:FILLEDNESS rdf:resource="&templates;Bantu_verbStem_Filledness-Empty"/>
-	<speccomponent:STABILITY rdf:resource="&templates;Bantu_verbStem_Stability-Stable"/>
-</component:component>
-<component:inelastic rdf:about="&templates;Bantu_verbStem_Elasticity"
-	 general:COUNT="1"
-	 rdfs:label="Bantu_verbStem_Elasticity"/>
-<component:open rdf:about="&templates;Bantu_verbStem_Filledness-Empty"
-	 rdfs:label="Bantu_verbStem_Filledness-Empty">
-	<speccomponent:COHERENCE rdf:resource="&templates;Bantu-verbStem_Coherence"/>
-</component:open>
 <component:stable rdf:about="&templates;Bantu_verbStem_Stability-Stable"
 	 rdfs:label="Bantu_verbStem_Stability-Stable"/>
-<general:lexicoconstructionalConditioning rdf:about="&templates;Bantu_y-VC_Conditions"
-	 rdfs:label="Bantu_y-VC_Conditions">
-	<notes:CONDITIONS>The template appears when certain valency suffixes are found on the verb stem.</notes:CONDITIONS>
-	<spectemplate:FILLED_COMPONENT rdf:resource="&templates;Bantu_y_Component"/>
-	<template:FILLER_POSITION rdf:resource="&general;final"/>
-</general:lexicoconstructionalConditioning>
-<template:arch rdf:about="&templates;Bantu_y-VC_Foundation"
-	 rdfs:label="Bantu_y-VC_Foundation">
-	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;Bantu_VC"/>
-	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;Bantu_beforeVerbStem_nullComponent"/>
-	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;Bantu_verbStem"/>
-	<spectemplate:KEYSTONE rdf:resource="&templates;Bantu_verbStem"/>
-	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;Bantu_y_Component"/>
-</template:arch>
-<template:order rdf:about="&templates;Bantu_y-VC_Stricture-Order"
-	 general:COUNT="2"
-	 rdfs:label="Bantu_y-VC_Stricture-Order">
-	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
-	<general:RELATIONS rdf:resource="&general;simple"/>
-</template:order>
-<component:component rdf:about="&templates;Bantu_y_Component"
-	 rdfs:label="Bantu_y_Component">
-	<speccomponent:ELASTICITY rdf:resource="&templates;Bantu_y_Component_Elasticity"/>
-	<speccomponent:FILLEDNESS rdf:resource="&templates;Bantu_y_Component_Filledness"/>
-	<speccomponent:STABILITY rdf:resource="&templates;Bantu_y_Component_Stability-Stable"/>
-</component:component>
-<component:elastic rdf:about="&templates;Bantu_y_Component_Elasticity"
-	 general:MAXIMUM="1"
-	 general:MINIMUM="0"
-	 rdfs:label="Bantu_y_Component_Elasticity"/>
-<component:filled rdf:about="&templates;Bantu_y_Component_Filledness"
-	 rdfs:label="Bantu_y_Component_Filledness">
-	<speccomponent:FORM rdf:resource="&templates;Bantu_Transitive"/>
-	<function:FILLER_CLASS rdf:resource="&localfunction;valency"/>
-</component:filled>
-<component:stable rdf:about="&templates;Bantu_y_Component_Stability-Stable"
-	 rdfs:label="Bantu_y_Component_Stability-Stable"/>
-<template:potentiallyViolable rdf:about="&templates;Banty_y-VC-violability"
-	 rdfs:label="Banty_y-VC-violability">
-	<template:REPARABILITY rdf:resource="&template;metathesis"/>
-	<template:EXCEPTIONALITY rdf:resource="&template;noKnownExceptions"/>
-</template:potentiallyViolable>
 <template:potentiallyViolable rdf:about="&templates;Checehn_preverbal_a-violability"
 	 rdfs:label="Checehn_preverbal_a-violability">
 	<template:REPARABILITY rdf:resource="&template;insertion"/>
@@ -1411,6 +1457,11 @@
 	<template:EXCEPTIONALITY rdf:resource="&template;lexical"/>
 	<template:REPARABILITY rdf:resource="&template;metathesis"/>
 </template:potentiallyViolable>
+<form:transcription rdf:about="&templates;template_Instance_10007"
+	 specform:TRANSCRIPTION_STRING="-ic-"
+	 rdfs:label="-ic-"/>
+<component:stable rdf:about="&templates;template_Instance_10008"
+	 rdfs:label="template_Instance_10008"/>
 <component:incoherent rdf:about="&templates;template_Instance_13"
 	 rdfs:label="template_Instance_13">
 	<function:CLASSES rdf:resource="&localfunction;constituent"/>

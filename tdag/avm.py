@@ -377,7 +377,7 @@ class avm ( ):
 			latexLabel = id.replace("_", "")
 			id = id.replace("_", " ")
 			#print >> outfile, "\\textbf{"+id+"}\n"
-			print >> outfile, "\\begin{figure}[ht]"
+			#print >> outfile, "\\begin{figure}[ht]"
 			print >> outfile, "{\\singlespacing\\avmshrink"
 			print >> outfile, "\\begin{center}"
 			print >> outfile, "\\begin{avm}"
@@ -429,8 +429,8 @@ class avm ( ):
 			if embedding == 0:
 				print >> outfile, "\\end{avm}"
 				print >> outfile, "\\end{center}}"
-				print >> outfile, "\\caption{Attribute-value representation of", id, "template", "\\label{"+latexLabel+"}}"
-				print >> outfile, "\\end{figure}"
+				#print >> outfile, "\\caption{Attribute-value representation of", id, "template", "\\label{"+latexLabel+"}}"
+				#print >> outfile, "\\end{figure}"
 
 
 
