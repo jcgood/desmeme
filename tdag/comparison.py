@@ -180,7 +180,7 @@ def draw_graphs(graphs, outpath, format="png"):
 		dotcmd = "dot -Tsvg " + outpath + str(name) + '.dot' + " > " + outpath + str(name) + '.svg'
 		os.system(dotcmd)
 
-		imgcmd = "convert " + outpath + str(name) + '.svg' + " " + outpath + str(name) + '.pdf'
+		imgcmd = "/Applications/Inkscape.app/Contents/Resources/bin/inkscape " + outpath + str(name) + '.svg' + " --export-pdf " + outpath + str(name) + '.pdf'
 		os.system(imgcmd)
 		
 		
@@ -197,5 +197,5 @@ def draw_components(graphs, outpath, format="png"):
 		dotcmd = "dot -Tsvg " + outpath + str(name) + '.dot' + " > " + outpath + str(name) + '.svg'
 		os.system(dotcmd)
 
-		imgcmd = "convert " + outpath + str(name) + '.svg' + " " + outpath + str(name) + '.pdf'
+		imgcmd = "/Applications/Inkscape.app/Contents/Resources/bin/inkscape " + outpath + str(name) + '.svg' + " --export-pdf " + outpath + str(name) + '.pdf'
 		os.system(imgcmd)

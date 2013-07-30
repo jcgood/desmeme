@@ -156,9 +156,18 @@ class avm ( ):
 					  'restkomponentenSet'	: ["RESTKOMPONENT"] # Need this list of one to allow components in side RK to be procssed; unfortunate hack
 					}
 
-		# I want to use type() later, so I can't assign type to a string!
+		# Beware that this could screw up usage of Python's type() function
 		type = self.type
+
+		# Hackish fix: I added HTML <i> tags to values to help with the graph-based output.
+		# It was easiest to do this at the graph-construction stage. For AVMs, I need to remove them.
+		# I should probably handle this better since I repeat the same cleaning process three times.
+		type = type.replace("<<i>", "")
+		type = type.replace("</i>>", "")
+
 		ufeatvals = self.featvals # "u" stands for "unordered"
+
+
 
 		try:
 			featorder = orderings[type]
@@ -371,7 +380,6 @@ class avm ( ):
 		featvals = self.featvals
 		
 		# Check for re-entrancy conditions
-
 		if embedding == 0:
 			
 			latexLabel = id.replace("_", "")
@@ -393,6 +401,10 @@ class avm ( ):
 				print >> outfile, "\t"*embedding+"\\@{\\text{"+str(tag)+"}}", "\\[\t\\emph{"+type+"} \\cr"
 
 			else:
+				# Hackish fix: I added HTML <i> tags to values to help with the graph-based output.
+				# It was easiest to do this at the graph-construction stage. For AVMs, I need to remove them.
+				type = type.replace("<<i>", "")
+				type = type.replace("</i>>", "")
 				print >> outfile, "\t"*embedding+"\\phantom{\\@{\\text{"+str(0)+"}}}", "\\[\t\\emph{"+type+"} \\cr"
 		
 			for featval in featvals:
@@ -415,9 +427,14 @@ class avm ( ):
 							print >> outfile, "\t"*embedding, "\\textsc{"+prettyfeat+"}\t&\t", "\\phantom{\\@{\\text{"+str(0)+"}}}"+val, "\\raisebox{-.5em}{\\rule{0pt}{1.5em}}\\cr"
 					
 					except:
+						# Hackish fix: I added HTML <i> tags to values to help with the graph-based output.
+						# It was easiest to do this at the graph-construction stage. For AVMs, I need to remove them.
+						val = val.replace("<<i>", "")
+						val = val.replace("</i>>", "")
+
 						print >> outfile, "\t"*embedding, "\\textsc{"+prettyfeat+"}\t&\t", "\\phantom{\\@{\\text{"+str(0)+"}}}"+"\\emph{"+val+"}", "\\raisebox{-.5em}{\\rule{0pt}{1.5em}}\\cr"
 
-				else:
+				else:					
 					print >> outfile, "\t"*embedding, "\\textsc{"+prettyfeat+"}"+"\t&\t",
 					embedding += 1
 					val.to_latex(topavm, outfile, embedding, seencomponents, componentcount)

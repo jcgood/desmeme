@@ -417,8 +417,12 @@ class tdag ( ):
 			(edge, label) = dag.edges[dagEdgeKey]
 			(edge_from, edge_to) = edge
 			
- 			attr_list = {}
- 			attr_list['label'] = str(label)
+  			# Clean up label for printing
+ 			label = str(label)
+ 			label = label.replace("_", " ")
+
+			attr_list = {}
+ 			attr_list['label'] = label
 			
 			newEdge = pydot.Edge(str(edge_from), str(edge_to), **attr_list)
 			
@@ -470,8 +474,13 @@ class tdag ( ):
 			(edge, label) = dag.edges[dagEdgeKey]
 			(edge_from, edge_to) = edge
 			
+ 			# Clean up label for printing
+ 			label = str(label)
+ 			label = label.replace("_", " ")
+
  			attr_list = {}
- 			attr_list['label'] = str(label)
+ 			attr_list['label'] = label
+ 			
 						
 			for cat in componentcats:
 				catmatch = re.compile(cat)

@@ -540,6 +540,10 @@ a given template. This feature does not enter into the typological comparison at
 	 rdfs:label="localfunction:personReference">
 	<rdfs:subClassOf rdf:resource="&general;function"/>
 </rdfs:Class>
+<rdfs:Class rdf:about="&localfunction;phonologicalWord"
+	 rdfs:label="localfunction:phonologicalWord">
+	<rdfs:subClassOf rdf:resource="&general;function"/>
+</rdfs:Class>
 <rdfs:Class rdf:about="&localfunction;plural"
 	 a:role="abstract"
 	 rdfs:label="localfunction:plural">

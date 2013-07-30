@@ -1222,6 +1222,70 @@
 <general:constructionalConditioning rdf:about="&templates;Nimboran_verbal_conditioning"
 	 notes:CONDITIONS="These are the conditions for the Nimboran verbal template"
 	 rdfs:label="Nimboran_verbal_conditioning"/>
+<template:desmeme rdf:about="&templates;SerboCroatianTopicalization"
+	 rdfs:label="SerboCroatianTopicalization">
+	<specgeneral:CONDITIONING rdf:resource="&templates;SerboCroatianTopicalization-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;SerboCroatianTopicalization-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;SerboCroatianTopicalization-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;SerboCroatianTopicalization-Violability"/>
+	<function:FUNCTION rdf:resource="&localfunction;topicalization"/>
+</template:desmeme>
+<general:constructionalConditioning rdf:about="&templates;SerboCroatianTopicalization-Conditioning"
+	 notes:CONDITIONS="Used for left-edge topicalization."
+	 rdfs:label="SerboCroatianTopicalization-Conditioning"/>
+<template:span rdf:about="&templates;SerboCroatianTopicalization-Foundation"
+	 rdfs:label="SerboCroatianTopicalization-Foundation">
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;SerboCroatianTopicalization-LeftSupport"/>
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;SerboCroatianTopicalization-RightSupport"/>
+</template:span>
+<component:component rdf:about="&templates;SerboCroatianTopicalization-LeftSupport"
+	 rdfs:label="SerboCroatianTopicalization-LeftSupport">
+	<speccomponent:ELASTICITY rdf:resource="&templates;SerboCroatianTopicalization-LeftSupport-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;SerboCroatianTopicalization-LeftSupport-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;SerboCroatianTopicalization-LeftSupport-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;SerboCroatianTopicalization-LeftSupport-Coherence"
+	 rdfs:label="SerboCroatianTopicalization-LeftSupport-Coherence">
+	<function:CLASS rdf:resource="&localfunction;phonologicalWord"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;SerboCroatianTopicalization-LeftSupport-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="SerboCroatianTopicalization-LeftSupport-Elasticity"/>
+<component:open rdf:about="&templates;SerboCroatianTopicalization-LeftSupport-Filledness"
+	 rdfs:label="SerboCroatianTopicalization-LeftSupport-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;SerboCroatianTopicalization-LeftSupport-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;SerboCroatianTopicalization-LeftSupport-Stability"
+	 rdfs:label="SerboCroatianTopicalization-LeftSupport-Stability"/>
+<component:component rdf:about="&templates;SerboCroatianTopicalization-RightSupport"
+	 rdfs:label="SerboCroatianTopicalization-RightSupport">
+	<speccomponent:ELASTICITY rdf:resource="&templates;SerboCroatianTopicalization-RightSupport-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;SerboCroatianTopicalization-RightSupport-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;SerboCroatianTopicalization-RightSupport-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;SerboCroatianTopicalization-RightSupport-Coherence"
+	 rdfs:label="SerboCroatianTopicalization-RightSupport-Coherence">
+	<function:CLASS rdf:resource="&localfunction;phonologicalWord"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;SerboCroatianTopicalization-RightSupport-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="SerboCroatianTopicalization-RightSupport-Elasticity"/>
+<component:open rdf:about="&templates;SerboCroatianTopicalization-RightSupport-Filledness"
+	 rdfs:label="SerboCroatianTopicalization-RightSupport-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;SerboCroatianTopicalization-RightSupport-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;SerboCroatianTopicalization-RightSupport-Stability"
+	 rdfs:label="SerboCroatianTopicalization-RightSupport-Stability"/>
+<template:length rdf:about="&templates;SerboCroatianTopicalization-Stricture"
+	 general:COUNT="2"
+	 rdfs:label="SerboCroatianTopicalization-Stricture">
+	<general:CONSTITUENT rdf:resource="&general;prosodicPhrase"/>
+</template:length>
+<template:potentiallyViolable rdf:about="&templates;SerboCroatianTopicalization-Violability"
+	 rdfs:label="SerboCroatianTopicalization-Violability">
+	<template:REPARABILITY rdf:resource="&template;irreparable"/>
+	<template:EXCEPTIONALITY rdf:resource="&template;noKnownExceptions"/>
+</template:potentiallyViolable>
 <template:desmeme rdf:about="&templates;SerboCroatian_je"
 	 rdfs:label="SerboCroatian_je">
 	<template:VIOLABILITY rdf:resource="&templates;SerboCroatian_je-notViolable"/>
@@ -1305,72 +1369,8 @@
 <form:transcription rdf:about="&templates;SerboCroatian_je_Transcription"
 	 specform:TRANSCRIPTION_STRING="=je"
 	 rdfs:label="=je"/>
-<template:desmeme rdf:about="&templates;SerboCroatian_topicalization"
-	 rdfs:label="SerboCroatian_topicalization">
-	<specgeneral:CONDITIONING rdf:resource="&templates;SerboCroatian_topicalization-Conditioning"/>
-	<spectemplate:FOUNDATION rdf:resource="&templates;SerboCroatian_topicalization-Foundation"/>
-	<spectemplate:STRICTURE rdf:resource="&templates;SerboCroatian_topicalization-Stricture"/>
-	<template:VIOLABILITY rdf:resource="&templates;SerboCroation_topicalization-Violability"/>
-	<function:FUNCTION rdf:resource="&localfunction;topicalization"/>
-</template:desmeme>
-<general:constructionalConditioning rdf:about="&templates;SerboCroatian_topicalization-Conditioning"
-	 notes:CONDITIONS="Used for left-edge topicalization."
-	 rdfs:label="SerboCroatian_topicalization-Conditioning"/>
-<template:span rdf:about="&templates;SerboCroatian_topicalization-Foundation"
-	 rdfs:label="SerboCroatian_topicalization-Foundation">
-	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;SerboCroatian_topicalization-LeftSupport"/>
-	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;SerboCroatian_topicalization-RightSupport"/>
-</template:span>
-<component:component rdf:about="&templates;SerboCroatian_topicalization-LeftSupport"
-	 rdfs:label="SerboCroatian_topicalization-LeftSupport">
-	<speccomponent:ELASTICITY rdf:resource="&templates;SerboCroatian_topicalization-LeftSupportElasticity"/>
-	<speccomponent:FILLEDNESS rdf:resource="&templates;SerboCroatian_topicalization-LeftSupportFilledness"/>
-	<speccomponent:STABILITY rdf:resource="&templates;SerboCroatian_topicalization-LeftSupportStability"/>
-</component:component>
-<component:incoherent rdf:about="&templates;SerboCroatian_topicalization-LeftSupportCoherence"
-	 rdfs:label="SerboCroatian_topicalization-LeftSupportCoherence">
-	<function:CLASSES rdf:resource="&general;function"/>
-</component:incoherent>
-<component:inelastic rdf:about="&templates;SerboCroatian_topicalization-LeftSupportElasticity"
-	 general:COUNT="1"
-	 rdfs:label="SerboCroatian_topicalization-LeftSupportElasticity"/>
-<component:open rdf:about="&templates;SerboCroatian_topicalization-LeftSupportFilledness"
-	 rdfs:label="SerboCroatian_topicalization-LeftSupportFilledness">
-	<speccomponent:COHERENCE rdf:resource="&templates;SerboCroatian_topicalization-LeftSupportCoherence"/>
-</component:open>
-<component:stable rdf:about="&templates;SerboCroatian_topicalization-LeftSupportStability"
-	 rdfs:label="SerboCroatian_topicalization-LeftSupportStability"/>
-<component:component rdf:about="&templates;SerboCroatian_topicalization-RightSupport"
-	 rdfs:label="SerboCroatian_topicalization-RightSupport">
-	<speccomponent:ELASTICITY rdf:resource="&templates;SerboCroatian_topicalization-RightSupportElasticity"/>
-	<speccomponent:FILLEDNESS rdf:resource="&templates;SerboCroatian_topicalization-RightSupportFilledness"/>
-	<speccomponent:STABILITY rdf:resource="&templates;SerboCroatian_topicalization-RightSupportStability"/>
-</component:component>
-<component:incoherent rdf:about="&templates;SerboCroatian_topicalization-RightSupportCoherence"
-	 rdfs:label="SerboCroatian_topicalization-RightSupportCoherence">
-	<function:CLASSES rdf:resource="&general;function"/>
-</component:incoherent>
-<component:inelastic rdf:about="&templates;SerboCroatian_topicalization-RightSupportElasticity"
-	 general:COUNT="1"
-	 rdfs:label="SerboCroatian_topicalization-RightSupportElasticity"/>
-<component:open rdf:about="&templates;SerboCroatian_topicalization-RightSupportFilledness"
-	 rdfs:label="SerboCroatian_topicalization-RightSupportFilledness">
-	<speccomponent:COHERENCE rdf:resource="&templates;SerboCroatian_topicalization-RightSupportCoherence"/>
-</component:open>
-<component:stable rdf:about="&templates;SerboCroatian_topicalization-RightSupportStability"
-	 rdfs:label="SerboCroatian_topicalization-RightSupportStability"/>
-<template:length rdf:about="&templates;SerboCroatian_topicalization-Stricture"
-	 general:COUNT="2"
-	 rdfs:label="SerboCroatian_topicalization-Stricture">
-	<general:CONSTITUENT rdf:resource="&general;prosodicPhrase"/>
-</template:length>
 <general:final rdf:about="&templates;SerboCroation_je_finality"
 	 rdfs:label="SerboCroation_je_finality"/>
-<template:potentiallyViolable rdf:about="&templates;SerboCroation_topicalization-Violability"
-	 rdfs:label="SerboCroation_topicalization-Violability">
-	<template:REPARABILITY rdf:resource="&template;irreparable"/>
-	<template:EXCEPTIONALITY rdf:resource="&template;noKnownExceptions"/>
-</template:potentiallyViolable>
 <template:desmeme rdf:about="&templates;Tiene_verb"
 	 rdfs:label="Tiene_verb">
 	<specgeneral:CONDITIONING rdf:resource="&templates;Tiene_verb-Conditioning"/>
@@ -1462,10 +1462,6 @@
 	 rdfs:label="-ic-"/>
 <component:stable rdf:about="&templates;template_Instance_10008"
 	 rdfs:label="template_Instance_10008"/>
-<component:incoherent rdf:about="&templates;template_Instance_13"
-	 rdfs:label="template_Instance_13">
-	<function:CLASSES rdf:resource="&localfunction;constituent"/>
-</component:incoherent>
 <general:immediateLeft rdf:about="&templates;template_Instance_30"
 	 rdfs:label="template_Instance_30"/>
 <component:coherent rdf:about="&templates;template_Instance_6"
