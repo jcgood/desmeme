@@ -1,7 +1,7 @@
 # Functions for comparing graphs, once they've been properly despecified,
 # including visualization.
 
-#import gv
+import os
 
 from pygraph.readwrite.dot import write
 from pygraph.readwrite import *
@@ -168,7 +168,7 @@ def full_grid(distances):
 	
 
 # Turns a template into a .dot file for visualization, requires the special graphs
-# creadted by tdag
+# created by tdag
 def draw_graphs(graphs, outpath, format="png"):
 
 	extension = "." + format
@@ -176,13 +176,13 @@ def draw_graphs(graphs, outpath, format="png"):
 		name = graph.name
 		dot = graph.to_dot() # my hack for reentrancy from foundation
 		dot.write_dot(outpath + str(name) + '.dot')
+		
+		dotcmd = "dot -Tsvg " + outpath + str(name) + '.dot' + " > " + outpath + str(name) + '.svg'
+		os.system(dotcmd)
 
-		#f = open( str(name) + '.dot', 'w')
-		#f.write(dot)
-		# JG: Hack since gv linking no longer working; trying to work with .dot instead
-		#gvv = gv.readstring(dot)
-		#gv.layout(gvv,'dot')
-		#gv.render(gvv, format, outpath + str(name) + extension)
+		imgcmd = "convert " + outpath + str(name) + '.svg' + " " + outpath + str(name) + '.pdf'
+		os.system(imgcmd)
+		
 		
 		
 # Turns a template into a .dot file but only gives components
@@ -194,9 +194,8 @@ def draw_components(graphs, outpath, format="png"):
 		dot = graph.to_dot_components() # my hack for reentrancy from foundation
 		dot.write_dot(outpath + str(name) + '.dot')
 
-		#f = open( str(name) + '.dot', 'w')
-		#f.write(dot)
-		# JG: Hack since gv linking no longer working; trying to work with .dot instead
-		#gvv = gv.readstring(dot)
-		#gv.layout(gvv,'dot')
-		#gv.render(gvv, format, outpath + str(name) + extension)
+		dotcmd = "dot -Tsvg " + outpath + str(name) + '.dot' + " > " + outpath + str(name) + '.svg'
+		os.system(dotcmd)
+
+		imgcmd = "convert " + outpath + str(name) + '.svg' + " " + outpath + str(name) + '.pdf'
+		os.system(imgcmd)
