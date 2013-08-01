@@ -363,6 +363,11 @@ a given template. This feature does not enter into the typological comparison at
 	 rdfs:label="general:medial">
 	<rdfs:subClassOf rdf:resource="&general;absolutePositions"/>
 </rdfs:Class>
+<rdfs:Class rdf:about="&general;mora"
+	 a:role="abstract"
+	 rdfs:label="general:mora">
+	<rdfs:subClassOf rdf:resource="&general;prosodicConstituent"/>
+</rdfs:Class>
 <rdfs:Class rdf:about="&general;morphologicalConstituent"
 	 a:role="abstract"
 	 rdfs:label="general:morphologicalConstituent">
@@ -513,6 +518,10 @@ a given template. This feature does not enter into the typological comparison at
 <rdfs:Class rdf:about="&localfunction;locative"
 	 a:role="abstract"
 	 rdfs:label="localfunction:locative">
+	<rdfs:subClassOf rdf:resource="&general;function"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&localfunction;moraicUnit"
+	 rdfs:label="localfunction:moraicUnit">
 	<rdfs:subClassOf rdf:resource="&general;function"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&localfunction;negative"
@@ -834,6 +843,11 @@ a given template. This feature does not enter into the typological comparison at
 	 a:role="abstract"
 	 rdfs:label="template:reparable">
 	<rdfs:subClassOf rdf:resource="&template;reparability"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&template;shortening"
+	 a:role="abstract"
+	 rdfs:label="template:shortening">
+	<rdfs:subClassOf rdf:resource="&template;reparable"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;span"
 	 rdfs:label="template:span">
