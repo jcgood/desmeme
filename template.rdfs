@@ -5,7 +5,6 @@
 	 <!ENTITY localfunction 'http://purl.org/linguistics/jcgood/localfunction#'>
 	 <!ENTITY owl 'http://www.w3.org/2002/07/owl#'>
 	 <!ENTITY form 'http://purl.org/linguistics/jcgood/form#'>
-	 <!ENTITY terms 'http://purl.org/dc/terms#'>
 	 <!ENTITY a 'http://protege.stanford.edu/system#'>
 	 <!ENTITY general 'http://purl.org/linguistics/jcgood/general#'>
 	 <!ENTITY rdfs 'http://www.w3.org/2000/01/rdf-schema#'>
@@ -15,6 +14,7 @@
 	 <!ENTITY spectemplate 'http://purl.org/linguistics/jcgood/spectemplate#'>
 	 <!ENTITY speccomponent 'http://purl.org/linguistics/jcgood/speccomponent#'>
 	 <!ENTITY notes 'http://purl.org/linguistics/jcgood/notes#'>
+	 <!ENTITY terms 'http://purl.org/dc/terms#'>
 	 <!ENTITY rdf 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
 	 <!ENTITY specform 'http://purl.org/linguistics/jcgood/specform#'>
 ]>
@@ -23,7 +23,6 @@
 	 xmlns:localfunction="&localfunction;"
 	 xmlns:form="&form;"
 	 xmlns:owl="&owl;"
-	 xmlns:terms="&terms;"
 	 xmlns:a="&a;"
 	 xmlns:general="&general;"
 	 xmlns:component="&component;"
@@ -33,6 +32,7 @@
 	 xmlns:spectemplate="&spectemplate;"
 	 xmlns:notes="&notes;"
 	 xmlns:speccomponent="&speccomponent;"
+	 xmlns:terms="&terms;"
 	 xmlns:rdf="&rdf;"
 	 xmlns:specform="&specform;">
 <rdf:Property rdf:about="&a;_name"
