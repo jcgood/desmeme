@@ -3,7 +3,9 @@
 	 <!ENTITY template 'http://purl.org/linguistics/jcgood/template#'>
 	 <!ENTITY specgeneral 'http://purl.org/linguistics/jcgood/specgeneral#'>
 	 <!ENTITY localfunction 'http://purl.org/linguistics/jcgood/localfunction#'>
+	 <!ENTITY owl 'http://www.w3.org/2002/07/owl#'>
 	 <!ENTITY form 'http://purl.org/linguistics/jcgood/form#'>
+	 <!ENTITY terms 'http://purl.org/dc/terms#'>
 	 <!ENTITY a 'http://protege.stanford.edu/system#'>
 	 <!ENTITY general 'http://purl.org/linguistics/jcgood/general#'>
 	 <!ENTITY rdfs 'http://www.w3.org/2000/01/rdf-schema#'>
@@ -20,10 +22,12 @@
 	 xmlns:specgeneral="&specgeneral;"
 	 xmlns:localfunction="&localfunction;"
 	 xmlns:form="&form;"
+	 xmlns:owl="&owl;"
+	 xmlns:terms="&terms;"
 	 xmlns:a="&a;"
 	 xmlns:general="&general;"
-	 xmlns:rdfs="&rdfs;"
 	 xmlns:component="&component;"
+	 xmlns:rdfs="&rdfs;"
 	 xmlns:gold="&gold;"
 	 xmlns:function="&function;"
 	 xmlns:spectemplate="&spectemplate;"
@@ -43,9 +47,16 @@
 	<rdfs:domain rdf:resource="&form;transcription"/>
 	<rdfs:domain rdf:resource="&general;conditioning"/>
 	<rdfs:domain rdf:resource="&general;position"/>
+	<rdfs:domain rdf:resource="&notes;source"/>
 	<rdfs:domain rdf:resource="&template;foundation"/>
 	<rdfs:domain rdf:resource="&template;stricture"/>
 	<rdfs:domain rdf:resource="&template;violability"/>
+</rdf:Property>
+<rdf:Property rdf:about="&terms;bibliographicCitation"
+	 a:maxCardinality="1"
+	 rdfs:label="terms:bibliographicCitation">
+	<rdfs:domain rdf:resource="&notes;source"/>
+	<rdfs:range rdf:resource="&rdfs;Literal"/>
 </rdf:Property>
 <rdfs:Class rdf:about="&gold;Auxiliary"
 	 rdfs:label="gold:Auxiliary">
@@ -589,6 +600,16 @@ a given template. This feature does not enter into the typological comparison at
 	<rdfs:domain rdf:resource="&general;conditioning"/>
 	<rdfs:range rdf:resource="&rdfs;Literal"/>
 </rdf:Property>
+<rdf:Property rdf:about="&notes;HAS_SOURCE"
+	 a:maxCardinality="1"
+	 rdfs:label="notes:HAS_SOURCE">
+	<rdfs:domain rdf:resource="&template;desmeme"/>
+	<rdfs:range rdf:resource="&rdfs;Resource"/>
+</rdf:Property>
+<rdfs:Class rdf:about="&notes;source"
+	 rdfs:label="notes:source">
+	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
+</rdfs:Class>
 <rdf:Property rdf:about="&speccomponent;ASSOCIATE"
 	 a:maxCardinality="1"
 	 rdfs:label="speccomponent:ASSOCIATE">
@@ -866,4 +887,10 @@ a given template. This feature does not enter into the typological comparison at
 	<rdfs:comment>A supertype for subtypes that  characterizes whether or not the linearization restrictions of a given template can be violated or not and what repair strategies may be activated in cases of potential violation.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
+<rdf:Property rdf:about="&owl;sameAs"
+	 a:maxCardinality="1"
+	 rdfs:label="owl:sameAs">
+	<rdfs:domain rdf:resource="&notes;source"/>
+	<rdfs:range rdf:resource="&rdfs;Literal"/>
+</rdf:Property>
 </rdf:RDF>

@@ -3,7 +3,9 @@
 	 <!ENTITY template 'http://purl.org/linguistics/jcgood/template#'>
 	 <!ENTITY localfunction 'http://purl.org/linguistics/jcgood/localfunction#'>
 	 <!ENTITY specgeneral 'http://purl.org/linguistics/jcgood/specgeneral#'>
+	 <!ENTITY owl 'http://www.w3.org/2002/07/owl#'>
 	 <!ENTITY form 'http://purl.org/linguistics/jcgood/form#'>
+	 <!ENTITY terms 'http://purl.org/dc/terms#'>
 	 <!ENTITY general 'http://purl.org/linguistics/jcgood/general#'>
 	 <!ENTITY component 'http://purl.org/linguistics/jcgood/component#'>
 	 <!ENTITY rdfs 'http://www.w3.org/2000/01/rdf-schema#'>
@@ -20,6 +22,8 @@
 	 xmlns:specgeneral="&specgeneral;"
 	 xmlns:localfunction="&localfunction;"
 	 xmlns:form="&form;"
+	 xmlns:owl="&owl;"
+	 xmlns:terms="&terms;"
 	 xmlns:general="&general;"
 	 xmlns:rdfs="&rdfs;"
 	 xmlns:component="&component;"
@@ -51,6 +55,10 @@
 	 general:MAXIMUM="1"
 	 general:MINIMUM="0"
 	 rdfs:label="Algonquian_clause-Negative_Elasticity"/>
+<component:restkomponentenSet rdf:about="&templates;Algonquian_clause-RK"
+	 rdfs:label="Algonquian_clause-RK">
+	<spectemplate:RESTKOMPONENT rdf:resource="&templates;Algonquian_clause_Focus"/>
+</component:restkomponentenSet>
 <general:constructionalConditioning rdf:about="&templates;Algonquian_clause_Conditioning"
 	 rdfs:label="Algonquian_clause_Conditioning">
 	<notes:CONDITIONS>This template describes the linearization of the Algonquian clause.</notes:CONDITIONS>
@@ -78,11 +86,11 @@
 <template:arch rdf:about="&templates;Algonquian_clause_Foundation"
 	 rdfs:label="Algonquian_clause_Foundation">
 	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;Algonquian_clause-Negative"/>
+	<spectemplate:RESTKOMPONENTEN rdf:resource="&templates;Algonquian_clause-RK"/>
 	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;Algonquian_clause_Oblique"/>
 	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;Algonquian_clause_Postverbal"/>
 	<spectemplate:KEYSTONE rdf:resource="&templates;Algonquian_clause_Verb"/>
 	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;Algonquian_clause_nullComponent"/>
-	<spectemplate:RESTKOMPONENTEN rdf:resource="&template;Algonquian_clause-RK"/>
 </template:arch>
 <component:coherent rdf:about="&templates;Algonquian_clause_Keystone-coherent"
 	 rdfs:label="Algonquian_clause_Keystone-coherent">
@@ -776,139 +784,153 @@
 <component:inelastic rdf:about="&templates;English_plural_nullComponent-elasticity"
 	 general:COUNT="0"
 	 rdfs:label="English_plural_nullComponent-elasticity"/>
-<component:component rdf:about="&templates;German_cf"
-	 rdfs:label="German_cf">
-	<speccomponent:ELASTICITY rdf:resource="&templates;German_cf_Elasticity"/>
-	<speccomponent:FILLEDNESS rdf:resource="&templates;German_cf_Filledness"/>
-	<speccomponent:STABILITY rdf:resource="&templates;German_cf_Stability"/>
+<component:restkomponentenSet rdf:about="&templates;German-RK"
+	 rdfs:label="German-RK">
+	<spectemplate:RESTKOMPONENT rdf:resource="&templates;GermanVC"/>
+</component:restkomponentenSet>
+<component:component rdf:about="&templates;GermanCF"
+	 rdfs:label="GermanCF">
+	<speccomponent:ELASTICITY rdf:resource="&templates;GermanCF-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;GermanCF-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;GermanCF-Stability"/>
 </component:component>
-<component:incoherent rdf:about="&templates;German_cf_Coherence"
-	 rdfs:label="German_cf_Coherence">
+<component:incoherent rdf:about="&templates;GermanCF-Coherence"
+	 rdfs:label="GermanCF-Coherence">
 	<function:CLASSES rdf:resource="&gold;Complementizer"/>
 	<function:CLASSES rdf:resource="&localfunction;finite"/>
 </component:incoherent>
-<component:inelastic rdf:about="&templates;German_cf_Elasticity"
+<component:inelastic rdf:about="&templates;GermanCF-Elasticity"
 	 general:COUNT="1"
-	 rdfs:label="German_cf_Elasticity"/>
-<component:open rdf:about="&templates;German_cf_Filledness"
-	 rdfs:label="German_cf_Filledness">
-	<speccomponent:COHERENCE rdf:resource="&templates;German_cf_Coherence"/>
+	 rdfs:label="GermanCF-Elasticity"/>
+<component:open rdf:about="&templates;GermanCF-Filledness"
+	 rdfs:label="GermanCF-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;GermanCF-Coherence"/>
 </component:open>
-<component:stable rdf:about="&templates;German_cf_Stability"
-	 rdfs:label="German_cf_Stability"/>
-<template:desmeme rdf:about="&templates;German_clause"
-	 rdfs:label="German_clause">
-	<template:VIOLABILITY rdf:resource="&templates;German_clause-notViolable"/>
-	<specgeneral:CONDITIONING rdf:resource="&templates;German_clause_Conditioning"/>
-	<spectemplate:FOUNDATION rdf:resource="&templates;German_clause_Foundation"/>
-	<spectemplate:STRICTURE rdf:resource="&templates;German_clause_Stricture-Order"/>
+<component:stable rdf:about="&templates;GermanCF-Stability"
+	 rdfs:label="GermanCF-Stability"/>
+<template:desmeme rdf:about="&templates;GermanClause"
+	 rdfs:label="GermanClause">
+	<specgeneral:CONDITIONING rdf:resource="&templates;GermanClause-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;GermanClause-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;GermanClause-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;GermanClause-Violability"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;Kathol-2000"/>
 	<function:FUNCTION rdf:resource="&gold;MainClause"/>
 </template:desmeme>
-<template:notViolable rdf:about="&templates;German_clause-notViolable"
-	 rdfs:label="German_clause-notViolable"/>
-<general:constructionalConditioning rdf:about="&templates;German_clause_Conditioning"
-	 notes:CONDITIONS="applies to all clauses"
-	 rdfs:label="German_clause_Conditioning"/>
-<template:arch rdf:about="&templates;German_clause_Foundation"
-	 rdfs:label="German_clause_Foundation">
-	<spectemplate:KEYSTONE rdf:resource="&templates;German_cf"/>
-	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;German_mf"/>
-	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;German_nf"/>
-	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;German_vf"/>
-	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;German_vf"/>
-	<spectemplate:RESTKOMPONENTEN rdf:resource="&template;German-RK"/>
+<general:constructionalConditioning rdf:about="&templates;GermanClause-Conditioning"
+	 rdfs:label="GermanClause-Conditioning">
+	<notes:CONDITIONS>Template applies to all clauses following http://www.w3.org/2002/07/owl#'s analysis (though there are complications depending on mood, for instance that are not considered in detail here).</notes:CONDITIONS>
+</general:constructionalConditioning>
+<template:arch rdf:about="&templates;GermanClause-Foundation"
+	 rdfs:label="GermanClause-Foundation">
+	<spectemplate:RESTKOMPONENTEN rdf:resource="&templates;German-RK"/>
+	<spectemplate:KEYSTONE rdf:resource="&templates;GermanCF"/>
+	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;GermanMF"/>
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;GermanNF"/>
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;GermanVF"/>
+	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;GermanVF"/>
 </template:arch>
-<template:order rdf:about="&templates;German_clause_Stricture-Order"
+<template:order rdf:about="&templates;GermanClause-Stricture"
 	 general:COUNT="5"
-	 rdfs:label="German_clause_Stricture-Order">
+	 rdfs:label="GermanClause-Stricture">
 	<general:CONSTITUENT rdf:resource="&general;syntacticConstituent"/>
 	<general:RELATIONS rdf:resource="&general;taxonomic"/>
 </template:order>
-<component:component rdf:about="&templates;German_mf"
-	 rdfs:label="German_mf">
-	<speccomponent:ELASTICITY rdf:resource="&templates;German_mf_Elasticity"/>
-	<speccomponent:FILLEDNESS rdf:resource="&templates;German_mf_Filledness"/>
-	<speccomponent:STABILITY rdf:resource="&templates;German_mf_Stability"/>
+<template:notViolable rdf:about="&templates;GermanClause-Violability"
+	 rdfs:label="GermanClause-Violability"/>
+<component:component rdf:about="&templates;GermanMF"
+	 rdfs:label="GermanMF">
+	<speccomponent:ELASTICITY rdf:resource="&templates;GermanMF-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;GermanMF-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;GermanMF-Stability"/>
 </component:component>
-<component:incoherent rdf:about="&templates;German_mf_Coherence"
-	 rdfs:label="German_mf_Coherence">
+<component:incoherent rdf:about="&templates;GermanMF-Coherence"
+	 rdfs:label="GermanMF-Coherence">
 	<function:CLASSES rdf:resource="&localfunction;constituent"/>
 </component:incoherent>
-<component:elastic rdf:about="&templates;German_mf_Elasticity"
+<component:elastic rdf:about="&templates;GermanMF-Elasticity"
 	 general:MAXIMUM="100"
 	 general:MINIMUM="0"
-	 rdfs:label="German_mf_Elasticity"/>
-<component:open rdf:about="&templates;German_mf_Filledness"
-	 rdfs:label="German_mf_Filledness">
-	<speccomponent:COHERENCE rdf:resource="&templates;German_mf_Coherence"/>
+	 rdfs:label="GermanMF-Elasticity"/>
+<component:open rdf:about="&templates;GermanMF-Filledness"
+	 rdfs:label="GermanMF-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;GermanMF-Coherence"/>
 </component:open>
-<component:stable rdf:about="&templates;German_mf_Stability"
-	 rdfs:label="German_mf_Stability"/>
-<component:component rdf:about="&templates;German_nf"
-	 rdfs:label="German_nf">
-	<speccomponent:ELASTICITY rdf:resource="&templates;German_nf_Elasticity"/>
-	<speccomponent:FILLEDNESS rdf:resource="&templates;German_nf_Filledness"/>
-	<speccomponent:STABILITY rdf:resource="&templates;German_nf_Stability"/>
+<component:stable rdf:about="&templates;GermanMF-Stability"
+	 rdfs:label="GermanMF-Stability"/>
+<component:component rdf:about="&templates;GermanNF"
+	 rdfs:label="GermanNF">
+	<speccomponent:ELASTICITY rdf:resource="&templates;GermanNF-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;GermanNF-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;GermanNF-Stability"/>
 </component:component>
-<component:incoherent rdf:about="&templates;German_nf_Coherence"
-	 rdfs:label="German_nf_Coherence">
+<component:incoherent rdf:about="&templates;GermanNF-Coherence"
+	 rdfs:label="GermanNF-Coherence">
 	<function:CLASSES rdf:resource="&localfunction;constituent"/>
 </component:incoherent>
-<component:elastic rdf:about="&templates;German_nf_Elasticity"
+<component:elastic rdf:about="&templates;GermanNF-Elasticity"
 	 general:MAXIMUM="1"
 	 general:MINIMUM="0"
-	 rdfs:label="German_nf_Elasticity"/>
-<component:open rdf:about="&templates;German_nf_Filledness"
-	 rdfs:label="German_nf_Filledness">
-	<speccomponent:COHERENCE rdf:resource="&templates;German_nf_Coherence"/>
+	 rdfs:label="GermanNF-Elasticity"/>
+<component:open rdf:about="&templates;GermanNF-Filledness"
+	 rdfs:label="GermanNF-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;GermanNF-Coherence"/>
 </component:open>
-<component:stable rdf:about="&templates;German_nf_Stability"
-	 rdfs:label="German_nf_Stability"/>
-<component:component rdf:about="&templates;German_vc"
-	 rdfs:label="German_vc">
-	<speccomponent:ELASTICITY rdf:resource="&templates;German_vc_Elasticity"/>
-	<speccomponent:FILLEDNESS rdf:resource="&templates;German_vc_Filledness"/>
-	<speccomponent:STABILITY rdf:resource="&templates;German_vc_Stability"/>
+<component:stable rdf:about="&templates;GermanNF-Stability"
+	 rdfs:label="GermanNF-Stability"/>
+<component:component rdf:about="&templates;GermanVC"
+	 rdfs:label="GermanVC">
+	<speccomponent:ELASTICITY rdf:resource="&templates;GermanVC-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;GermanVC-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;GermanVC-Stability"/>
 </component:component>
-<component:coherent rdf:about="&templates;German_vc_Coherence"
-	 rdfs:label="German_vc_Coherence">
+<general:left rdf:about="&templates;GermanVC-AssociatePosition"
+	 rdfs:label="GermanVC-AssociatePosition"/>
+<component:coherent rdf:about="&templates;GermanVC-Coherence"
+	 rdfs:label="GermanVC-Coherence">
 	<function:CLASS rdf:resource="&gold;Verbal"/>
 </component:coherent>
-<component:elastic rdf:about="&templates;German_vc_Elasticity"
+<component:elastic rdf:about="&templates;GermanVC-Elasticity"
 	 general:MAXIMUM="100"
 	 general:MINIMUM="0"
-	 rdfs:label="German_vc_Elasticity"/>
-<component:open rdf:about="&templates;German_vc_Filledness"
-	 rdfs:label="German_vc_Filledness">
-	<speccomponent:COHERENCE rdf:resource="&templates;German_vc_Coherence"/>
+	 rdfs:label="GermanVC-Elasticity"/>
+<component:open rdf:about="&templates;GermanVC-Filledness"
+	 rdfs:label="GermanVC-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;GermanVC-Coherence"/>
 </component:open>
-<component:unstable rdf:about="&templates;German_vc_Stability"
-	 rdfs:label="German_vc_Stability">
-	<speccomponent:ASSOCIATE rdf:resource="&templates;German_cf"/>
-	<speccomponent:ASSOCIATE_POSITION rdf:resource="&templates;German_vc_Stability_support"/>
+<component:unstable rdf:about="&templates;GermanVC-Stability"
+	 rdfs:label="GermanVC-Stability">
+	<speccomponent:ASSOCIATE rdf:resource="&templates;GermanCF"/>
+	<speccomponent:ASSOCIATE_POSITION rdf:resource="&templates;GermanVC-AssociatePosition"/>
 </component:unstable>
-<general:left rdf:about="&templates;German_vc_Stability_support"
-	 rdfs:label="German_vc_Stability_support"/>
-<component:component rdf:about="&templates;German_vf"
-	 rdfs:label="German_vf">
-	<speccomponent:ELASTICITY rdf:resource="&templates;German_vf_Elasticity"/>
-	<speccomponent:FILLEDNESS rdf:resource="&templates;German_vf_Filledness"/>
-	<speccomponent:STABILITY rdf:resource="&templates;German_vf_Stability"/>
+<component:component rdf:about="&templates;GermanVF"
+	 rdfs:label="GermanVF">
+	<speccomponent:ELASTICITY rdf:resource="&templates;GermanVF-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;GermanVF-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;GermanVF-Stability"/>
 </component:component>
+<component:elastic rdf:about="&templates;GermanVF-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="GermanVF-Elasticity"/>
+<component:open rdf:about="&templates;GermanVF-Filledness"
+	 rdfs:label="GermanVF-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;German_vf_Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;GermanVF-Stability"
+	 rdfs:label="GermanVF-Stability"/>
 <component:incoherent rdf:about="&templates;German_vf_Coherence"
 	 rdfs:label="German_vf_Coherence">
 	<function:CLASSES rdf:resource="&localfunction;constituent"/>
 </component:incoherent>
-<component:elastic rdf:about="&templates;German_vf_Elasticity"
-	 general:MAXIMUM="1"
-	 general:MINIMUM="0"
-	 rdfs:label="German_vf_Elasticity"/>
-<component:open rdf:about="&templates;German_vf_Filledness"
-	 rdfs:label="German_vf_Filledness">
-	<speccomponent:COHERENCE rdf:resource="&templates;German_vf_Coherence"/>
-</component:open>
-<component:stable rdf:about="&templates;German_vf_Stability"
-	 rdfs:label="German_vf_Stability"/>
+<notes:source rdf:about="&templates;Kathol-2000"
+	 terms:bibliographicCitation="Kathol, Andreas. 2000. Linear syntax. Oxford: OUP."
+	 rdfs:label="Kathol-2000"
+	 owl:sameAs="http://www.worldcat.org/oclc/42622064"/>
+<component:restkomponentenSet rdf:about="&templates;Mande-RK"
+	 rdfs:label="Mande-RK">
+	<spectemplate:RESTKOMPONENT rdf:resource="&templates;Mande_V"/>
+</component:restkomponentenSet>
 <component:component rdf:about="&templates;Mande_O"
 	 rdfs:label="Mande_O">
 	<speccomponent:ELASTICITY rdf:resource="&templates;Mande_O_Elasticity"/>
@@ -1005,12 +1027,12 @@
 </general:constructionalConditioning>
 <template:arch rdf:about="&templates;Mande_clause_Foundation"
 	 rdfs:label="Mande_clause_Foundation">
+	<spectemplate:RESTKOMPONENTEN rdf:resource="&templates;Mande-RK"/>
 	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;Mande_O"/>
 	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;Mande_S"/>
 	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;Mande_S"/>
 	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;Mande_X"/>
 	<spectemplate:KEYSTONE rdf:resource="&templates;Mande_clause_TMA"/>
-	<spectemplate:RESTKOMPONENTEN rdf:resource="&template;Mande-RK"/>
 </template:arch>
 <template:order rdf:about="&templates;Mande_clause_Order"
 	 general:COUNT="5"
@@ -1189,6 +1211,14 @@
 	 rdfs:label="Nimboran_verb-Position7-Unfilled">
 	<speccomponent:COHERENCE rdf:resource="&templates;Nimboran_verb-Position7-Coherent"/>
 </component:open>
+<component:restkomponentenSet rdf:about="&templates;Nimboran_verb-RK"
+	 rdfs:label="Nimboran_verb-RK">
+	<spectemplate:RESTKOMPONENT rdf:resource="&templates;Nimboran_verb-Position3"/>
+	<spectemplate:RESTKOMPONENT rdf:resource="&templates;Nimboran_verb-Position4"/>
+	<spectemplate:RESTKOMPONENT rdf:resource="&templates;Nimboran_verb-Position5"/>
+	<spectemplate:RESTKOMPONENT rdf:resource="&templates;Nimboran_verb-Position6"/>
+	<spectemplate:RESTKOMPONENT rdf:resource="&templates;Nimboran_verb-Position7"/>
+</component:restkomponentenSet>
 <component:component rdf:about="&templates;Nimboran_verb-RightSupport"
 	 rdfs:label="Nimboran_verb-RightSupport">
 	<speccomponent:ELASTICITY rdf:resource="&templates;Nimboran_verb-RightSupport-inelastic"/>
@@ -1211,8 +1241,8 @@
 <template:span rdf:about="&templates;Nimboran_verb-Span"
 	 rdfs:label="Nimboran_verb-Span">
 	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;Nimboran_verb-LeftSupport"/>
+	<spectemplate:RESTKOMPONENTEN rdf:resource="&templates;Nimboran_verb-RK"/>
 	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;Nimboran_verb-RightSupport"/>
-	<spectemplate:RESTKOMPONENTEN rdf:resource="&template;Nimboran_verb-RK"/>
 </template:span>
 <template:potentiallyViolable rdf:about="&templates;Nimboran_verb-violability"
 	 rdfs:label="Nimboran_verb-violability">
@@ -1563,24 +1593,4 @@
 	 rdfs:label="template_Instance_6">
 	<function:CLASS rdf:resource="&localfunction;locative"/>
 </component:coherent>
-<component:restkomponentenSet rdf:about="&template;Algonquian_clause-RK"
-	 rdfs:label="template:Algonquian_clause-RK">
-	<spectemplate:RESTKOMPONENT rdf:resource="&templates;Algonquian_clause_Focus"/>
-</component:restkomponentenSet>
-<component:restkomponentenSet rdf:about="&template;German-RK"
-	 rdfs:label="template:German-RK">
-	<spectemplate:RESTKOMPONENT rdf:resource="&templates;German_vc"/>
-</component:restkomponentenSet>
-<component:restkomponentenSet rdf:about="&template;Mande-RK"
-	 rdfs:label="template:Mande-RK">
-	<spectemplate:RESTKOMPONENT rdf:resource="&templates;Mande_V"/>
-</component:restkomponentenSet>
-<component:restkomponentenSet rdf:about="&template;Nimboran_verb-RK"
-	 rdfs:label="template:Nimboran_verb-RK">
-	<spectemplate:RESTKOMPONENT rdf:resource="&templates;Nimboran_verb-Position3"/>
-	<spectemplate:RESTKOMPONENT rdf:resource="&templates;Nimboran_verb-Position4"/>
-	<spectemplate:RESTKOMPONENT rdf:resource="&templates;Nimboran_verb-Position5"/>
-	<spectemplate:RESTKOMPONENT rdf:resource="&templates;Nimboran_verb-Position6"/>
-	<spectemplate:RESTKOMPONENT rdf:resource="&templates;Nimboran_verb-Position7"/>
-</component:restkomponentenSet>
 </rdf:RDF>

@@ -9,6 +9,7 @@ rdfsTemplates = rdfGraph()
 rdfsTemplates.load("./template.rdfs")
 
 # Only classes in my namespaces should be paid attention to.
+# BUG: I DON'T ACTUALLY USE THIS NOW...I probably should
 myPfxs = ["http://purl.org/linguistics/jcgood/template#",
 	"http://purl.org/linguistics/gold#",
 	"http://purl.org/linguistics/jcgood/component#",
@@ -48,6 +49,11 @@ def getPropertyLabel(URI):
 
 # Called recursively, gets subclasses of classes, and their properties, wraps LaTeX code around
 def processClass(classURI,embedding=0):
+
+
+	# Keeps us from printing out the bibliographic class
+	if classURI == URIRef("http://purl.org/linguistics/jcgood/notes#source"):
+		return()
 
 	print >> outfile, "\t"*embedding+"\item \\emph{"+getClassLabel(classURI)+"}"
 	
@@ -182,6 +188,8 @@ for propURI in slotGenerator:
 print >> propfile,  "\\def\\name{name {\\rm \hspace{1em}\\parbox[t]{\\linegoal}{\\footnotesize A string representation of a the name of a type used for purposes of reference.}}}\n" # Name is a special case since it's a built-in protege property that can't be altered in protege
 print >> propfile, "\\begin{proplist}\n"
 for propLabel in sorted(props.iterkeys()):
+ 	if propLabel == "bibliographiccitation": # Hack to not print out a bib feature
+ 		continue
  	propURI = props[propLabel]
  	processProp(propURI)
 print >> propfile,  "\\end{proplist}"
