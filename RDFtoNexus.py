@@ -18,7 +18,7 @@ for template in templatesGenerator:
 	templates.append(template)
 			
 gTemplates = process_templates(templates, rdfTemplates)
-gTemplatesNoComp = process_templates_noComp(templates, rdfTemplates)
+gTemplatesNoComp = process_templates_noComp(templates, rdfTemplates) # Get rid of components for another comparison
 
 distances = get_distances(gTemplates)
 outfile = "/Volumes/Obang/MyDocuments/Linearity/TemplatesBook/template.nex"

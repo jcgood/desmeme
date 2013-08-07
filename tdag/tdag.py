@@ -109,6 +109,7 @@ class tdag ( ):
 		# Some namespaces are for properties that can be typologically compared and some are not.
 		# These are the ones that are good for comparison.
 		# This "hardcoding" of the generic prefixes in the template class may not be ideal in the long run.
+		# BUG: I DON'T SEEM TO USE THIS!
 		self.genericPredPfxs = ["http://purl.org/linguistics/jcgood/general#",
 				   "http://purl.org/linguistics/jcgood/template#",
 				   "http://purl.org/linguistics/jcgood/templates#",
@@ -282,6 +283,9 @@ class tdag ( ):
 					self.core.add_node(nodeName,  attrs=[("label", '\xe2\x88\x9e')]) # Some sort of escape sequence for infinity, got it by playing with Python on shell mode.				
 				else:
 					self.core.add_node(nodeName,  attrs=[("label", node)])
+
+		elif node == "source":
+			pass
 		
 		# If we've made it this far, it's a non-repeatable, generic node.		
 		else:

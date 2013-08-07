@@ -238,7 +238,6 @@ class avm ( ):
 
 					elif foundationfeature in attributes:
 						self.makereenteredfeature(foundationfeature)
-						print foundationfeature, component
 						
 				if priorityset == False:
 					print "Error: No prioritized feature found for", component

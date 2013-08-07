@@ -15,11 +15,15 @@ def process_template(mother,genericMother,rdfGraph,tdag):
 		prettyDName = prettyName(despecifiedD)
 		prettyPredName = prettyName(predicate)
 
+		# Need to skip source information, probably better solution out there
+		if is_metadata(predicate):
+			pass
+
 		# Here we need some special logic to make sure that (components especially)
 		# Have their potentially shared nodes "split" up so that each component points
 		# to its own nodes rather than shared nodes. This is only a problem for
 		# generic and/or conflatable nodes which may not be unique.
-		if is_generic(predicate,tdag) or conflatable(daughter,rdfGraph):
+		elif is_generic(predicate,tdag) or conflatable(daughter,rdfGraph):
 
 			# I don't understand why but, somehow, the invocation of this boolean
 			# detects cases of duplicatable nodes not yet properly handled. This seems
@@ -60,15 +64,20 @@ def process_template_noComp(mother,genericMother,rdfGraph,tdag):
 		prettyPredName = prettyName(predicate)
 
 		if despecifiedD.encode('utf-8') == "http://purl.org/linguistics/jcgood/component#component":
-			print "stopping"
+			pass
 			
 		else:
+
+			# Need to skip source information, probably better solution out there
+			if is_metadata(predicate):
+				pass
+
 
 			# Here we need some special logic to make sure that (components especially)
 			# Have their potentially shared nodes "split" up so that each component points
 			# to its own nodes rather than shared nodes. This is only a problem for
 			# generic and/or conflatable nodes which may not be unique.
-			if is_generic(predicate,tdag) or conflatable(daughter,rdfGraph):
+			elif is_generic(predicate,tdag) or conflatable(daughter,rdfGraph):
 
 				# I don't understand why but, somehow, the invocation of this boolean
 				# detects cases of duplicatable nodes not yet properly handled. This seems
@@ -130,6 +139,14 @@ def is_generic(rdfPred,tdag):
 		if rdfPred.count(genPfx) > 0:
 			return True
 	return False
+
+
+def is_metadata(rdfPred):
+
+	# Not very general yet
+	if rdfPred == URIRef("http://purl.org/linguistics/jcgood/notes#HAS_SOURCE"):
+			return True
+	return False
 	
 
 # Parses a URI of an instance to find a "pretty name", stripping off lots of prefixal material
@@ -161,7 +178,7 @@ def process_templates(templates, rdfTemplates):
 	return gTemplates
 	
 
-# Runs through a list of templates, to create a list of despecified templates
+# Runs through a list of templates, to create a list of despecified templates without components
 def process_templates_noComp(templates, rdfTemplates):
 
 	gTemplates = [ ]
