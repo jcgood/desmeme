@@ -11,6 +11,11 @@ class avm ( ):
 		self.name = name
 
 		# These are typed AVMs, after all.
+		
+		# Hackish fix: I added HTML <i> tags to values to help with the graph-based output.
+		# It was easiest to do this at the graph-construction stage. For AVMs, I need to remove them.
+		type = type.replace("<<i>", "")
+		type = type.replace("</i>>", "")
 		self.type = type
 
 		#A list for feature-value pairs
@@ -105,6 +110,10 @@ class avm ( ):
 						value = v
 
 				if self.terminal(neighbor, tgraph):
+					# Hackish fix: I added HTML <i> tags to values to help with the graph-based output.
+					# It was easiest to do this at the graph-construction stage. For AVMs, I need to remove them.
+					value = value.replace("<<i>", "")
+					value = value.replace("</i>>", "")
 					FV = featval(attribute,value)
 					self.addFV(FV)
 			
@@ -150,20 +159,16 @@ class avm ( ):
 					  'span'  				: ["LEFT_SUPPORT", "RIGHT_SUPPORT", "RESTKOMPONENTEN"],
 					  'component'		  	: ["ELASTICITY", "FILLEDNESS", "STABILITY" ],
 					  'elastic'  			: ["MINIMUM", "MAXIMUM" ],
-					  'partially filled'  	: ["FILLER_POSITION", "FORM", "COHERENCE" ],
+					  'partiallyFilled'  	: ["FILLER_POSITION", "FORM", "COHERENCE" ],
 					  'unstable'  			: ["SUPPORT", "SUPPORT_POSITION" ],
 					  'lexicoconstructionalConditioning': ["FILLER_POSITION", "FILLED_COMPONENT" ],
-					  'restkomponentenSet'	: ["RESTKOMPONENT"] # Need this list of one to allow components in side RK to be procssed; unfortunate hack
+					  'restkomponentenSet'	: ["RESTKOMPONENT"], # Need this list of one to allow components in side RK to be procssed; unfortunate hack
+					  'potentiallyViolable'	: ["EXCEPTIONALITY", "REPARABILITY"], # Need this list of one to allow components in side RK to be procssed; unfortunate hack
+					  'unstable'			: ["ASSOCIATE_POSITION", "ASSOCIATE"], # Need this list of one to allow components in side RK to be procssed; unfortunate hack
 					}
 
 		# Beware that this could screw up usage of Python's type() function
 		type = self.type
-
-		# Hackish fix: I added HTML <i> tags to values to help with the graph-based output.
-		# It was easiest to do this at the graph-construction stage. For AVMs, I need to remove them.
-		# I should probably handle this better since I repeat the same cleaning process three times.
-		type = type.replace("<<i>", "")
-		type = type.replace("</i>>", "")
 
 		ufeatvals = self.featvals # "u" stands for "unordered"
 
@@ -211,7 +216,7 @@ class avm ( ):
 
 		# A list for prioritizing which features get the full AVM and (implicitly) which just get tags.
 		# All possible features for components need to be listed here for the function to work.
-		prioritylist = [ "KEYSTONE", "LEFT_SUPPORT", "RIGHT_SUPPORT", "LEFT_VOUSSOIR", "RIGHT_VOUSSOIR", "FILLED_COMPONENT", "SUPPORT"]
+		prioritylist = [ "KEYSTONE", "LEFT_SUPPORT", "RIGHT_SUPPORT", "LEFT_VOUSSOIR", "RIGHT_VOUSSOIR", "FILLED_COMPONENT", "SUPPORT", "ASSOCIATE"]
 		
 		if components == None: components = {}
 
@@ -223,7 +228,7 @@ class avm ( ):
 			attributes = components[component]
 			
 			if len(attributes) > 1:
-				
+								
 				priorityset = False
 				for foundationfeature in prioritylist:
 				
@@ -233,6 +238,7 @@ class avm ( ):
 
 					elif foundationfeature in attributes:
 						self.makereenteredfeature(foundationfeature)
+						print foundationfeature, component
 						
 				if priorityset == False:
 					print "Error: No prioritized feature found for", component
@@ -250,6 +256,7 @@ class avm ( ):
 		featvals = self.featvals
 
 		if type == "component":
+			
 			try:
 				attributes = components[id]
 				attributes.append(feature)
@@ -401,10 +408,6 @@ class avm ( ):
 				print >> outfile, "\t"*embedding+"\\@{\\text{"+str(tag)+"}}", "\\[\t\\emph{"+type+"} \\cr"
 
 			else:
-				# Hackish fix: I added HTML <i> tags to values to help with the graph-based output.
-				# It was easiest to do this at the graph-construction stage. For AVMs, I need to remove them.
-				type = type.replace("<<i>", "")
-				type = type.replace("</i>>", "")
 				print >> outfile, "\t"*embedding+"\\phantom{\\@{\\text{"+str(0)+"}}}", "\\[\t\\emph{"+type+"} \\cr"
 		
 			for featval in featvals:
@@ -427,11 +430,6 @@ class avm ( ):
 							print >> outfile, "\t"*embedding, "\\textsc{"+prettyfeat+"}\t&\t", "\\phantom{\\@{\\text{"+str(0)+"}}}"+val, "\\raisebox{-.5em}{\\rule{0pt}{1.5em}}\\cr"
 					
 					except:
-						# Hackish fix: I added HTML <i> tags to values to help with the graph-based output.
-						# It was easiest to do this at the graph-construction stage. For AVMs, I need to remove them.
-						val = val.replace("<<i>", "")
-						val = val.replace("</i>>", "")
-
 						print >> outfile, "\t"*embedding, "\\textsc{"+prettyfeat+"}\t&\t", "\\phantom{\\@{\\text{"+str(0)+"}}}"+"\\emph{"+val+"}", "\\raisebox{-.5em}{\\rule{0pt}{1.5em}}\\cr"
 
 				else:					
