@@ -152,6 +152,7 @@ class avm ( ):
 	# Recursive
 	def order(self):
 
+		# These lists need to be exhaustive or the output won't come out right, that is, you can't, for instance, leave out the last element
 		orderings = { 'desmeme' 			: ["CONDITIONING", "VIOLABILITY", "STRICTURE", "FOUNDATION" ],
 					  'length'  			: ["CONSTITUENT", "COUNT" ],
 					  'order'  				: ["CONSTITUENT", "COUNT", "RELATIONS" ],
@@ -163,8 +164,8 @@ class avm ( ):
 					  'unstable'  			: ["SUPPORT", "SUPPORT_POSITION" ],
 					  'lexicoconstructionalConditioning': ["FILLER_POSITION", "FILLED_COMPONENT" ],
 					  'restkomponentenSet'	: ["RESTKOMPONENT"], # Need this list of one to allow components in side RK to be procssed; unfortunate hack
-					  'potentiallyViolable'	: ["EXCEPTIONALITY", "REPARABILITY"], # Need this list of one to allow components in side RK to be procssed; unfortunate hack
-					  'unstable'			: ["ASSOCIATE_POSITION", "ASSOCIATE"], # Need this list of one to allow components in side RK to be procssed; unfortunate hack
+					  'potentiallyViolable'	: ["EXCEPTIONALITY", "REPARABILITY"], 
+					  'unstable'			: ["ASSOCIATE_POSITION", "ASSOCIATE"],
 					}
 
 		# Beware that this could screw up usage of Python's type() function
