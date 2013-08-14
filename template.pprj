@@ -1,4 +1,4 @@
-; Mon Aug 05 14:18:48 EDT 2013
+; Wed Aug 07 15:39:36 EDT 2013
 ; 
 ;+ (version "3.3.1")
 ;+ (build "Build 430")
@@ -162,9 +162,9 @@
 		[template_ProjectKB_Instance_30079]
 		[template_ProjectKB_Instance_385]
 		[STANDARD_CLASS_FORM_WIDGET]
-		[template_ProjectKB_Instance_30074]
 		[template_ProjectKB_Instance_20070]
 		[STANDARD_SLOT_FORM_WIDGET]
+		[template_ProjectKB_Instance_30074]
 		[template_ProjectKB_Instance_70085]
 		[STANDARD_FACET_FORM_WIDGET]
 		[template_ProjectKB_Instance_30075])
