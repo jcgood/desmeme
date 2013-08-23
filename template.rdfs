@@ -603,8 +603,8 @@ a given template. This feature does not enter into the typological comparison at
 <rdf:Property rdf:about="&notes;HAS_SOURCE"
 	 a:maxCardinality="1"
 	 rdfs:label="notes:HAS_SOURCE">
+	<rdfs:range rdf:resource="&notes;source"/>
 	<rdfs:domain rdf:resource="&template;desmeme"/>
-	<rdfs:range rdf:resource="&rdfs;Resource"/>
 </rdf:Property>
 <rdfs:Class rdf:about="&notes;source"
 	 rdfs:label="notes:source">
