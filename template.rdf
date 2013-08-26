@@ -424,89 +424,89 @@
 </component:coherent>
 <component:stable rdf:about="&templates;Bantu_verbStem_Stability-Stable"
 	 rdfs:label="Bantu_verbStem_Stability-Stable"/>
-<template:potentiallyViolable rdf:about="&templates;Checehn_preverbal_a-violability"
-	 rdfs:label="Checehn_preverbal_a-violability">
-	<template:REPARABILITY rdf:resource="&template;insertion"/>
-	<template:EXCEPTIONALITY rdf:resource="&template;noKnownExceptions"/>
-</template:potentiallyViolable>
-<general:final rdf:about="&templates;Chechen-a-finality"
-	 rdfs:label="Chechen-a-finality"/>
 <form:transcription rdf:about="&templates;Chechen-a-transcription"
 	 specform:TRANSCRIPTION_STRING="='a"
 	 rdfs:label="='a"/>
-<form:canonicalLineate rdf:about="&templates;Chechen_a"
-	 rdfs:label="Chechen_a">
+<form:canonicalLineate rdf:about="&templates;ChechenA"
+	 rdfs:label="ChechenA">
 	<specform:TRANSCRIPTION rdf:resource="&templates;Chechen-a-transcription"/>
 	<form:LIAISON rdf:resource="&form;sinistrous"/>
 </form:canonicalLineate>
-<component:component rdf:about="&templates;Chechen_preverbal_Component"
-	 rdfs:label="Chechen_preverbal_Component">
-	<speccomponent:ELASTICITY rdf:resource="&templates;Chechen_preverbal_Component_Elasticity"/>
-	<speccomponent:FILLEDNESS rdf:resource="&templates;Chechen_preverbal_Component_Filledness"/>
-	<speccomponent:STABILITY rdf:resource="&templates;Chechen_preverbal_Component_Stability-Stable"/>
+<template:desmeme rdf:about="&templates;ChechenPreverbalA"
+	 rdfs:label="ChechenPreverbalA">
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChechenPreverbalA-Conditions"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChechenPreverbalA-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChechenPreverbalA-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChechenPreverbalA-Violability"/>
+	<function:FUNCTION rdf:resource="&localfunction;clauseChaining"/>
+</template:desmeme>
+<general:lexicoconstructionalConditioning rdf:about="&templates;ChechenPreverbalA-Conditions"
+	 rdfs:label="ChechenPreverbalA-Conditions">
+	<notes:CONDITIONS>This template appears in converbal clauses used for chaining marked with preverbal 'a.</notes:CONDITIONS>
+	<spectemplate:FILLED_COMPONENT rdf:resource="&templates;ChechenVerb"/>
+	<template:FILLER_POSITION rdf:resource="&general;medial"/>
+</general:lexicoconstructionalConditioning>
+<template:span rdf:about="&templates;ChechenPreverbalA-Foundation"
+	 rdfs:label="ChechenPreverbalA-Foundation">
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChechenPreverbalA-Preverbal"/>
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChechenVerb"/>
+</template:span>
+<component:component rdf:about="&templates;ChechenPreverbalA-Preverbal"
+	 rdfs:label="ChechenPreverbalA-Preverbal">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChechenPreverbalA-Preverbal-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChechenPreverbalA-Preverbal-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChechenPreverbalA-Preverbal-Stability"/>
 </component:component>
-<component:incoherent rdf:about="&templates;Chechen_preverbal_Component_Coherence"
-	 rdfs:label="Chechen_preverbal_Component_Coherence">
+<component:incoherent rdf:about="&templates;ChechenPreverbalA-Preverbal-Coherence"
+	 rdfs:label="ChechenPreverbalA-Preverbal-Coherence">
 	<function:CLASSES rdf:resource="&gold;DirectObject"/>
 	<function:CLASSES rdf:resource="&gold;Preverb"/>
 	<function:CLASSES rdf:resource="&localfunction;goal"/>
 	<function:CLASSES rdf:resource="&localfunction;infinitive"/>
 </component:incoherent>
-<component:inelastic rdf:about="&templates;Chechen_preverbal_Component_Elasticity"
+<component:inelastic rdf:about="&templates;ChechenPreverbalA-Preverbal-Elasticity"
 	 general:COUNT="1"
-	 rdfs:label="Chechen_preverbal_Component_Elasticity"/>
-<component:partiallyFilled rdf:about="&templates;Chechen_preverbal_Component_Filledness"
-	 rdfs:label="Chechen_preverbal_Component_Filledness">
-	<speccomponent:FILLER_POSITION rdf:resource="&templates;Chechen-a-finality"/>
-	<speccomponent:FORM rdf:resource="&templates;Chechen_a"/>
-	<speccomponent:COHERENCE rdf:resource="&templates;Chechen_preverbal_Component_Coherence"/>
+	 rdfs:label="ChechenPreverbalA-Preverbal-Elasticity"/>
+<component:partiallyFilled rdf:about="&templates;ChechenPreverbalA-Preverbal-Filledness"
+	 rdfs:label="ChechenPreverbalA-Preverbal-Filledness">
+	<speccomponent:FORM rdf:resource="&templates;ChechenA"/>
+	<speccomponent:COHERENCE rdf:resource="&templates;ChechenPreverbalA-Preverbal-Coherence"/>
+	<speccomponent:FILLER_POSITION rdf:resource="&templates;ChechenPreverbalA-Preverbal-FillerPosition"/>
 	<function:FILLER_CLASS rdf:resource="&localfunction;clauseChaining"/>
 </component:partiallyFilled>
-<component:stable rdf:about="&templates;Chechen_preverbal_Component_Stability-Stable"
-	 rdfs:label="Chechen_preverbal_Component_Stability-Stable"/>
-<template:desmeme rdf:about="&templates;Chechen_preverbal_a"
-	 rdfs:label="Chechen_preverbal_a">
-	<template:VIOLABILITY rdf:resource="&templates;Checehn_preverbal_a-violability"/>
-	<specgeneral:CONDITIONING rdf:resource="&templates;Chechen_preverbal_a_Conditions"/>
-	<spectemplate:FOUNDATION rdf:resource="&templates;Chechen_preverbal_a_Foundation"/>
-	<spectemplate:STRICTURE rdf:resource="&templates;Chechen_preverbal_a_Stricture-Length"/>
-	<function:FUNCTION rdf:resource="&localfunction;clauseChaining"/>
-</template:desmeme>
-<general:lexicoconstructionalConditioning rdf:about="&templates;Chechen_preverbal_a_Conditions"
-	 rdfs:label="Chechen_preverbal_a_Conditions">
-	<notes:CONDITIONS>This template appears in converbal clauses used for chaining marked with preverbal 'a.</notes:CONDITIONS>
-	<spectemplate:FILLED_COMPONENT rdf:resource="&templates;Chechen_verb_Component"/>
-	<template:FILLER_POSITION rdf:resource="&general;medial"/>
-</general:lexicoconstructionalConditioning>
-<template:span rdf:about="&templates;Chechen_preverbal_a_Foundation"
-	 rdfs:label="Chechen_preverbal_a_Foundation">
-	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;Chechen_preverbal_Component"/>
-	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;Chechen_verb_Component"/>
-</template:span>
-<template:length rdf:about="&templates;Chechen_preverbal_a_Stricture-Length"
+<general:final rdf:about="&templates;ChechenPreverbalA-Preverbal-FillerPosition"
+	 rdfs:label="ChechenPreverbalA-Preverbal-FillerPosition"/>
+<component:stable rdf:about="&templates;ChechenPreverbalA-Preverbal-Stability"
+	 rdfs:label="ChechenPreverbalA-Preverbal-Stability"/>
+<template:length rdf:about="&templates;ChechenPreverbalA-Stricture"
 	 general:COUNT="2"
-	 rdfs:label="Chechen_preverbal_a_Stricture-Length">
+	 rdfs:label="ChechenPreverbalA-Stricture">
 	<general:CONSTITUENT rdf:resource="&general;prosodicWord"/>
 </template:length>
-<component:component rdf:about="&templates;Chechen_verb_Component"
-	 rdfs:label="Chechen_verb_Component">
-	<speccomponent:ELASTICITY rdf:resource="&templates;Chechen_verb_Component_Elasticity"/>
-	<speccomponent:FILLEDNESS rdf:resource="&templates;Chechen_verb_Component_Filledness"/>
-	<speccomponent:STABILITY rdf:resource="&templates;Chechen_verb_Component_Stability-Stable"/>
+<template:potentiallyViolable rdf:about="&templates;ChechenPreverbalA-Violability"
+	 rdfs:label="ChechenPreverbalA-Violability">
+	<template:REPARABILITY rdf:resource="&template;insertion"/>
+	<template:EXCEPTIONALITY rdf:resource="&template;noKnownExceptions"/>
+</template:potentiallyViolable>
+<component:component rdf:about="&templates;ChechenVerb"
+	 rdfs:label="ChechenVerb">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChechenVerb-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChechenVerb-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChechenVerb-Stability"/>
 </component:component>
-<component:coherent rdf:about="&templates;Chechen_verb_Component_Coherence"
-	 rdfs:label="Chechen_verb_Component_Coherence">
+<component:coherent rdf:about="&templates;ChechenVerb-Coherence"
+	 rdfs:label="ChechenVerb-Coherence">
 	<function:CLASS rdf:resource="&gold;Verbal"/>
 </component:coherent>
-<component:inelastic rdf:about="&templates;Chechen_verb_Component_Elasticity"
+<component:inelastic rdf:about="&templates;ChechenVerb-Elasticity"
 	 general:COUNT="1"
-	 rdfs:label="Chechen_verb_Component_Elasticity"/>
-<component:open rdf:about="&templates;Chechen_verb_Component_Filledness"
-	 rdfs:label="Chechen_verb_Component_Filledness">
-	<speccomponent:COHERENCE rdf:resource="&templates;Chechen_verb_Component_Coherence"/>
+	 rdfs:label="ChechenVerb-Elasticity"/>
+<component:open rdf:about="&templates;ChechenVerb-Filledness"
+	 rdfs:label="ChechenVerb-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChechenVerb-Coherence"/>
 </component:open>
-<component:stable rdf:about="&templates;Chechen_verb_Component_Stability-Stable"
-	 rdfs:label="Chechen_verb_Component_Stability-Stable"/>
+<component:stable rdf:about="&templates;ChechenVerb-Stability"
+	 rdfs:label="ChechenVerb-Stability"/>
 <template:desmeme rdf:about="&templates;Chichewa_AR"
 	 rdfs:label="Chichewa_AR">
 	<template:VIOLABILITY rdf:resource="&templates;Chichewa_AR-Violability"/>
