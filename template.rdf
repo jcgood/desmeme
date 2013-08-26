@@ -700,6 +700,98 @@
 </component:open>
 <component:stable rdf:about="&templates;Chintang_verb_rightProsWord_Stability"
 	 rdfs:label="Chintang_verb_rightProsWord_Stability"/>
+<template:desmeme rdf:about="&templates;EnglishVP"
+	 rdfs:label="EnglishVP">
+	<specgeneral:CONDITIONING rdf:resource="&templates;EnglishVP-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;EnglishVP-Foundation"/>
+	<template:VIOLABILITY rdf:resource="&templates;EnglishVP-IO-Violability"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;EnglishVP-Source"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;EnglishVP-Stricture"/>
+	<function:FUNCTION rdf:resource="&gold;MainClause"/>
+</template:desmeme>
+<general:constructionalConditioning rdf:about="&templates;EnglishVP-Conditioning"
+	 notes:CONDITIONS='This "template" appears for main declarative clauses.'
+	 rdfs:label="EnglishVP-Conditioning"/>
+<template:span rdf:about="&templates;EnglishVP-Foundation"
+	 rdfs:label="EnglishVP-Foundation">
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;EnglishVP-LeftSupport"/>
+	<spectemplate:RESTKOMPONENTEN rdf:resource="&templates;EnglishVP-RK"/>
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;EnglishVP-RightSupport"/>
+</template:span>
+<component:component rdf:about="&templates;EnglishVP-IO"
+	 rdfs:label="EnglishVP-IO">
+	<speccomponent:ELASTICITY rdf:resource="&templates;EnglishVP-IO-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;EnglishVP-IO-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;EnglishVP-IO-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;EnglishVP-IO-Coherence"
+	 rdfs:label="EnglishVP-IO-Coherence">
+	<function:CLASS rdf:resource="&gold;IndirectObject"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;EnglishVP-IO-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="EnglishVP-IO-Elasticity"/>
+<component:open rdf:about="&templates;EnglishVP-IO-Filledness"
+	 rdfs:label="EnglishVP-IO-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;EnglishVP-IO-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;EnglishVP-IO-Stability"
+	 rdfs:label="EnglishVP-IO-Stability"/>
+<template:notViolable rdf:about="&templates;EnglishVP-IO-Violability"
+	 rdfs:label="EnglishVP-IO-Violability"/>
+<component:component rdf:about="&templates;EnglishVP-LeftSupport"
+	 rdfs:label="EnglishVP-LeftSupport">
+	<speccomponent:ELASTICITY rdf:resource="&templates;EnglishVP-LeftSupport-Elasticitiy"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;EnglishVP-LeftSupport-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;EnglishVP-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;EnglishVP-LeftSupport-Coherence"
+	 rdfs:label="EnglishVP-LeftSupport-Coherence">
+	<function:CLASS rdf:resource="&general;function"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;EnglishVP-LeftSupport-Elasticitiy"
+	 general:COUNT="1"
+	 rdfs:label="EnglishVP-LeftSupport-Elasticitiy"/>
+<component:open rdf:about="&templates;EnglishVP-LeftSupport-Filledness"
+	 rdfs:label="EnglishVP-LeftSupport-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;EnglishVP-LeftSupport-Coherence"/>
+</component:open>
+<component:restkomponentenSet rdf:about="&templates;EnglishVP-RK"
+	 rdfs:label="EnglishVP-RK">
+	<spectemplate:RESTKOMPONENT rdf:resource="&templates;EnglishVP-IO"/>
+</component:restkomponentenSet>
+<component:component rdf:about="&templates;EnglishVP-RightSupport"
+	 rdfs:label="EnglishVP-RightSupport">
+	<speccomponent:ELASTICITY rdf:resource="&templates;EnglishVP-RightSupport-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;EnglishVP-RightSupport-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;EnglishVP-RightSupport-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;EnglishVP-RightSupport-Coherence"
+	 rdfs:label="EnglishVP-RightSupport-Coherence">
+	<function:CLASS rdf:resource="&gold;DirectObject"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;EnglishVP-RightSupport-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="EnglishVP-RightSupport-Elasticity"/>
+<component:open rdf:about="&templates;EnglishVP-RightSupport-Filledness"
+	 rdfs:label="EnglishVP-RightSupport-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;EnglishVP-RightSupport-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;EnglishVP-RightSupport-Stability"
+	 rdfs:label="EnglishVP-RightSupport-Stability"/>
+<notes:source rdf:about="&templates;EnglishVP-Source"
+	 terms:bibliographicCitation="Good, Jeff. Personal knowledge."
+	 rdfs:label="EnglishVP-Source"/>
+<component:stable rdf:about="&templates;EnglishVP-Stability"
+	 rdfs:label="EnglishVP-Stability"/>
+<template:order rdf:about="&templates;EnglishVP-Stricture"
+	 general:COUNT="3"
+	 rdfs:label="EnglishVP-Stricture">
+	<general:RELATIONS rdf:resource="&general;simple"/>
+	<general:CONSTITUENT rdf:resource="&general;syntacticConstituent"/>
+</template:order>
 <component:component rdf:about="&templates;English_nounStem"
 	 rdfs:label="English_nounStem">
 	<speccomponent:ELASTICITY rdf:resource="&templates;English_nounStem_elasticity"/>
