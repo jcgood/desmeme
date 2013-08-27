@@ -1,4 +1,8 @@
-; Mon Aug 26 22:32:19 EDT 2013
+<<<<<<< HEAD
+; Mon Aug 26 18:12:49 EDT 2013
+=======
+; Fri Aug 23 14:40:35 EDT 2013
+>>>>>>> 3016db6d10037b94d36b8cf22689216fd2a22299
 ; 
 ;+ (version "3.3.1")
 ;+ (build "Build 430")
@@ -20,10 +24,17 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[template_ProjectKB_Instance_80246]
-		[template_ProjectKB_Instance_80247]
-		[template_ProjectKB_Instance_80248]
-		[template_ProjectKB_Instance_80249]))
+<<<<<<< HEAD
+		[template_ProjectKB_Instance_80168]
+		[template_ProjectKB_Instance_80169]
+		[template_ProjectKB_Instance_80170]
+		[template_ProjectKB_Instance_80171]))
+=======
+		[template_ProjectKB_Instance_80151]
+		[template_ProjectKB_Instance_80152]
+		[template_ProjectKB_Instance_80153]
+		[template_ProjectKB_Instance_80154]))
+>>>>>>> 3016db6d10037b94d36b8cf22689216fd2a22299
 
 ([CLSES_TAB] of  Widget
 
@@ -157,13 +168,21 @@
 		[template_ProjectKB_Instance_99]
 		[template_ProjectKB_Instance_232]
 		[template_ProjectKB_Instance_10164]
-		[template_ProjectKB_Instance_30079]
 		[STANDARD_CLASS_FORM_WIDGET]
-		[template_ProjectKB_Instance_20070]
+		[template_ProjectKB_Instance_30079]
+<<<<<<< HEAD
+		[template_ProjectKB_Instance_30074]
 		[STANDARD_SLOT_FORM_WIDGET]
+		[template_ProjectKB_Instance_20070]
+		[STANDARD_FACET_FORM_WIDGET]
+		[template_ProjectKB_Instance_70085]
+=======
+		[STANDARD_SLOT_FORM_WIDGET]
+		[template_ProjectKB_Instance_20070]
 		[template_ProjectKB_Instance_30074]
 		[template_ProjectKB_Instance_70085]
 		[STANDARD_FACET_FORM_WIDGET]
+>>>>>>> 3016db6d10037b94d36b8cf22689216fd2a22299
 		[template_ProjectKB_Instance_30075]
 		[template_ProjectKB_Instance_225]
 		[template_ProjectKB_Instance_378]
@@ -1924,22 +1943,38 @@
 ([template_ProjectKB_Instance_80] of  Property_List
 )
 
-([template_ProjectKB_Instance_80246] of  String
+<<<<<<< HEAD
+([template_ProjectKB_Instance_80168] of  String
+=======
+([template_ProjectKB_Instance_80151] of  String
+>>>>>>> 3016db6d10037b94d36b8cf22689216fd2a22299
 
 	(name ":PAL-CONSTRAINT")
 	(string_value "%3APAL-NAME"))
 
-([template_ProjectKB_Instance_80247] of  String
+<<<<<<< HEAD
+([template_ProjectKB_Instance_80169] of  String
+=======
+([template_ProjectKB_Instance_80152] of  String
+>>>>>>> 3016db6d10037b94d36b8cf22689216fd2a22299
 
 	(name ":INSTANCE-ANNOTATION")
 	(string_value "%3AANNOTATION-TEXT"))
 
-([template_ProjectKB_Instance_80248] of  String
+<<<<<<< HEAD
+([template_ProjectKB_Instance_80170] of  String
+=======
+([template_ProjectKB_Instance_80153] of  String
+>>>>>>> 3016db6d10037b94d36b8cf22689216fd2a22299
 
 	(name "form:transcription")
 	(string_value "specform%3ATRANSCRIPTION_STRING"))
 
-([template_ProjectKB_Instance_80249] of  String
+<<<<<<< HEAD
+([template_ProjectKB_Instance_80171] of  String
+=======
+([template_ProjectKB_Instance_80154] of  String
+>>>>>>> 3016db6d10037b94d36b8cf22689216fd2a22299
 
 	(name ":META-CLASS")
 	(string_value "%3ANAME"))

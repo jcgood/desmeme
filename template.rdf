@@ -12,8 +12,8 @@
 	 <!ENTITY gold 'http://purl.org/linguistics/gold#'>
 	 <!ENTITY function 'http://purl.org/linguistics/jcgood/function#'>
 	 <!ENTITY spectemplate 'http://purl.org/linguistics/jcgood/spectemplate#'>
-	 <!ENTITY notes 'http://purl.org/linguistics/jcgood/notes#'>
 	 <!ENTITY speccomponent 'http://purl.org/linguistics/jcgood/speccomponent#'>
+	 <!ENTITY notes 'http://purl.org/linguistics/jcgood/notes#'>
 	 <!ENTITY terms 'http://purl.org/dc/terms#'>
 	 <!ENTITY rdf 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
 	 <!ENTITY specform 'http://purl.org/linguistics/jcgood/specform#'>
@@ -30,17 +30,109 @@
 	 xmlns:templates="&templates;"
 	 xmlns:function="&function;"
 	 xmlns:spectemplate="&spectemplate;"
-	 xmlns:speccomponent="&speccomponent;"
 	 xmlns:notes="&notes;"
+	 xmlns:speccomponent="&speccomponent;"
 	 xmlns:terms="&terms;"
 	 xmlns:rdf="&rdf;"
 	 xmlns:specform="&specform;">
+<template:desmeme rdf:about="&templates;AghemClause"
+	 rdfs:label="AghemClause">
+	<specgeneral:CONDITIONING rdf:resource="&templates;AghemClause-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;AghemClause-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;AghemClause-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;AghemClause-Violability"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;Watters-1979"/>
+	<function:FUNCTION rdf:resource="&gold;MainClause"/>
+</template:desmeme>
+<general:constructionalConditioning rdf:about="&templates;AghemClause-Conditioning"
+	 rdfs:label="AghemClause-Conditioning">
+	<notes:CONDITIONS>Active for declarative main clauses depending on focus structure.</notes:CONDITIONS>
+</general:constructionalConditioning>
+<template:arch rdf:about="&templates;AghemClause-Foundation"
+	 rdfs:label="AghemClause-Foundation">
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;AghemPostverbal"/>
+	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;AghemPostverbal"/>
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;AghemPreverbal"/>
+	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;AghemPreverbal"/>
+	<spectemplate:KEYSTONE rdf:resource="&templates;AghemVerb"/>
+</template:arch>
+<template:order rdf:about="&templates;AghemClause-Stricture"
+	 general:COUNT="3"
+	 rdfs:label="AghemClause-Stricture">
+	<general:RELATIONS rdf:resource="&general;simple"/>
+	<general:CONSTITUENT rdf:resource="&general;syntacticConstituent"/>
+</template:order>
+<template:potentiallyViolable rdf:about="&templates;AghemClause-Violability"
+	 rdfs:label="AghemClause-Violability">
+	<template:REPARABILITY rdf:resource="&template;insertion"/>
+	<template:EXCEPTIONALITY rdf:resource="&template;lexical"/>
+</template:potentiallyViolable>
+<component:component rdf:about="&templates;AghemPostverbal"
+	 rdfs:label="AghemPostverbal">
+	<speccomponent:ELASTICITY rdf:resource="&templates;AghemPostverbal-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;AghemPostverbal-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;AghemPostverbal-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;AghemPostverbal-Coherence"
+	 rdfs:label="AghemPostverbal-Coherence">
+	<function:CLASS rdf:resource="&localfunction;focal"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;AghemPostverbal-Elasticity"
+	 general:MAXIMUM="100"
+	 general:MINIMUM="0"
+	 rdfs:label="AghemPostverbal-Elasticity"/>
+<component:open rdf:about="&templates;AghemPostverbal-Filledness"
+	 rdfs:label="AghemPostverbal-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;AghemPostverbal-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;AghemPostverbal-Stability"
+	 rdfs:label="AghemPostverbal-Stability"/>
+<component:component rdf:about="&templates;AghemPreverbal"
+	 rdfs:label="AghemPreverbal">
+	<speccomponent:ELASTICITY rdf:resource="&templates;AghemPreverbal-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;AghemPreverbal-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;AghemPreverbal-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;AghemPreverbal-Coherence"
+	 rdfs:label="AghemPreverbal-Coherence">
+	<function:CLASS rdf:resource="&localfunction;topical"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;AghemPreverbal-Elasticity"
+	 general:MAXIMUM="100"
+	 general:MINIMUM="1"
+	 rdfs:label="AghemPreverbal-Elasticity"/>
+<component:open rdf:about="&templates;AghemPreverbal-Filledness"
+	 rdfs:label="AghemPreverbal-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;AghemPreverbal-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;AghemPreverbal-Stability"
+	 rdfs:label="AghemPreverbal-Stability"/>
+<component:component rdf:about="&templates;AghemVerb"
+	 rdfs:label="AghemVerb">
+	<speccomponent:ELASTICITY rdf:resource="&templates;AghemVerb-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;AghemVerb-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;AghemVerb-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;AghemVerb-Coherence"
+	 rdfs:label="AghemVerb-Coherence">
+	<function:CLASS rdf:resource="&localfunction;finite"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;AghemVerb-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="AghemVerb-Elasticity"/>
+<component:open rdf:about="&templates;AghemVerb-Filledness"
+	 rdfs:label="AghemVerb-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;AghemVerb-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;AghemVerb-Stability"
+	 rdfs:label="AghemVerb-Stability"/>
 <template:desmeme rdf:about="&templates;AlgonquianClause"
 	 rdfs:label="AlgonquianClause">
 	<template:VIOLABILITY rdf:resource="&templates;Algonquian_Clause-Violability-notViolable"/>
 	<specgeneral:CONDITIONING rdf:resource="&templates;Algonquian_clause_Conditioning"/>
 	<spectemplate:FOUNDATION rdf:resource="&templates;Algonquian_clause_Foundation"/>
 	<spectemplate:STRICTURE rdf:resource="&templates;Algonquian_clause_order"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;Dahlstrom-1995"/>
 	<function:FUNCTION rdf:resource="&gold;MainClause"/>
 </template:desmeme>
 <template:notViolable rdf:about="&templates;Algonquian_Clause-Violability-notViolable"
@@ -262,6 +354,7 @@
 	<spectemplate:FOUNDATION rdf:resource="&templates;BantuCA-Foundation"/>
 	<spectemplate:STRICTURE rdf:resource="&templates;BantuCA-Stricture"/>
 	<template:VIOLABILITY rdf:resource="&templates;BantuCA-Violability"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;Good-2005"/>
 	<function:FUNCTION rdf:resource="&localfunction;valency"/>
 </template:desmeme>
 <general:lexicoconstructionalConditioning rdf:about="&templates;BantuCA-Conditioning"
@@ -295,6 +388,7 @@
 	<spectemplate:FOUNDATION rdf:resource="&templates;BantuCT-Foundation"/>
 	<spectemplate:STRICTURE rdf:resource="&templates;BantuCT-Stricture"/>
 	<template:VIOLABILITY rdf:resource="&templates;BantuCT-Violability"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;Good-2005"/>
 	<function:FUNCTION rdf:resource="&localfunction;valency"/>
 </template:desmeme>
 <general:lexicoconstructionalConditioning rdf:about="&templates;BantuCT-Conditioning"
@@ -363,6 +457,7 @@
 	<spectemplate:FOUNDATION rdf:resource="&templates;BantuVCy-Foundation"/>
 	<spectemplate:STRICTURE rdf:resource="&templates;BantuVCy-Stricture"/>
 	<template:VIOLABILITY rdf:resource="&templates;BantuVCy-Violability"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;Good-2005"/>
 	<function:FUNCTION rdf:resource="&localfunction;valency"/>
 </template:desmeme>
 <general:lexicoconstructionalConditioning rdf:about="&templates;BantuVCy-Conditioning"
@@ -507,121 +602,122 @@
 </component:open>
 <component:stable rdf:about="&templates;ChechenVerb-Stability"
 	 rdfs:label="ChechenVerb-Stability"/>
-<template:desmeme rdf:about="&templates;Chichewa_AR"
-	 rdfs:label="Chichewa_AR">
+<template:desmeme rdf:about="&templates;ChichewaAR"
+	 rdfs:label="ChichewaAR">
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChichewaAR-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChichewaAR-Foundation"/>
 	<template:VIOLABILITY rdf:resource="&templates;Chichewa_AR-Violability"/>
-	<specgeneral:CONDITIONING rdf:resource="&templates;Chichewa_AR_Conditioning"/>
-	<spectemplate:FOUNDATION rdf:resource="&templates;Chichewa_RA_Foundation"/>
 	<spectemplate:STRICTURE rdf:resource="&templates;Chichewa_Reciprocal_Stricture"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;HymanMchombo-2002"/>
 	<function:FUNCTION rdf:resource="&localfunction;valency"/>
 </template:desmeme>
+<general:lexicoconstructionalConditioning rdf:about="&templates;ChichewaAR-Conditioning"
+	 notes:CONDITIONS="I am treating the Reciprocal as the main conditioner here."
+	 rdfs:label="ChichewaAR-Conditioning">
+	<spectemplate:FILLED_COMPONENT rdf:resource="&templates;ChichewaReciprocal"/>
+	<template:FILLER_POSITION rdf:resource="&general;final"/>
+</general:lexicoconstructionalConditioning>
+<template:arch rdf:about="&templates;ChichewaAR-Foundation"
+	 rdfs:label="ChichewaAR-Foundation">
+	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;ChichewaApplicative"/>
+	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;ChichewaBeforeVerbStemNullComponent"/>
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChichewaReciprocal"/>
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChichewaVerbStem"/>
+	<spectemplate:KEYSTONE rdf:resource="&templates;ChichewaVerbStem"/>
+</template:arch>
+<component:component rdf:about="&templates;ChichewaApplicative"
+	 rdfs:label="ChichewaApplicative">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaApplicative-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaApplicative-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaApplicative-Stability"/>
+</component:component>
+<component:elastic rdf:about="&templates;ChichewaApplicative-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaApplicative-Elasticity"/>
+<component:filled rdf:about="&templates;ChichewaApplicative-Filledness"
+	 rdfs:label="ChichewaApplicative-Filledness">
+	<speccomponent:FORM rdf:resource="&templates;ChichewaApplicative-Form"/>
+	<function:FILLER_CLASS rdf:resource="&localfunction;valency"/>
+</component:filled>
+<form:canonicalLineate rdf:about="&templates;ChichewaApplicative-Form"
+	 rdfs:label="ChichewaApplicative-Form">
+	<specform:TRANSCRIPTION rdf:resource="&templates;ChichewaApplicative-Transcription"/>
+	<form:LIAISON rdf:resource="&form;sinistrous"/>
+</form:canonicalLineate>
+<component:stable rdf:about="&templates;ChichewaApplicative-Stability"
+	 rdfs:label="ChichewaApplicative-Stability"/>
+<form:transcription rdf:about="&templates;ChichewaApplicative-Transcription"
+	 specform:TRANSCRIPTION_STRING="-il-"
+	 rdfs:label="-il-"/>
+<component:component rdf:about="&templates;ChichewaBeforeVerbStemNullComponent"
+	 rdfs:label="ChichewaBeforeVerbStemNullComponent">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaBeforeVerbStemNullComponent-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaBeforeVerbStemNullComponent-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaBeforeVerbStemNullComponent-Stability"/>
+</component:component>
+<component:inelastic rdf:about="&templates;ChichewaBeforeVerbStemNullComponent-Elasticity"
+	 general:COUNT="0"
+	 rdfs:label="ChichewaBeforeVerbStemNullComponent-Elasticity"/>
+<component:null rdf:about="&templates;ChichewaBeforeVerbStemNullComponent-Filledness"
+	 rdfs:label="ChichewaBeforeVerbStemNullComponent-Filledness"/>
+<component:stable rdf:about="&templates;ChichewaBeforeVerbStemNullComponent-Stability"
+	 rdfs:label="ChichewaBeforeVerbStemNullComponent-Stability"/>
+<component:component rdf:about="&templates;ChichewaReciprocal"
+	 rdfs:label="ChichewaReciprocal">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaReciprocal-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaReciprocal-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaReciprocal-Stability"/>
+</component:component>
+<component:elastic rdf:about="&templates;ChichewaReciprocal-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaReciprocal-Elasticity"/>
+<component:filled rdf:about="&templates;ChichewaReciprocal-Filledness"
+	 rdfs:label="ChichewaReciprocal-Filledness">
+	<speccomponent:FORM rdf:resource="&templates;ChichewaReciprocal-Form"/>
+	<function:FILLER_CLASS rdf:resource="&localfunction;valency"/>
+</component:filled>
+<form:canonicalLineate rdf:about="&templates;ChichewaReciprocal-Form"
+	 rdfs:label="ChichewaReciprocal-Form">
+	<specform:TRANSCRIPTION rdf:resource="&templates;ChichewaReciprocal-Transcription"/>
+	<form:LIAISON rdf:resource="&form;sinistrous"/>
+</form:canonicalLineate>
+<component:stable rdf:about="&templates;ChichewaReciprocal-Stability"
+	 rdfs:label="ChichewaReciprocal-Stability"/>
+<form:transcription rdf:about="&templates;ChichewaReciprocal-Transcription"
+	 specform:TRANSCRIPTION_STRING="-an-"
+	 rdfs:label="-an-"/>
+<component:component rdf:about="&templates;ChichewaVerbStem"
+	 rdfs:label="ChichewaVerbStem">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaVerbStem-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaVerbStem-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaVerbStem-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;ChichewaVerbStem-Coherence"
+	 rdfs:label="ChichewaVerbStem-Coherence">
+	<function:CLASS rdf:resource="&gold;Verbal"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaVerbStem-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaVerbStem-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaVerbStem-Filledness"
+	 rdfs:label="ChichewaVerbStem-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaVerbStem-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;ChichewaVerbStem-Stability"
+	 rdfs:label="ChichewaVerbStem-Stability"/>
 <template:potentiallyViolable rdf:about="&templates;Chichewa_AR-Violability"
 	 rdfs:label="Chichewa_AR-Violability">
 	<template:REPARABILITY rdf:resource="&template;insertion"/>
 	<template:EXCEPTIONALITY rdf:resource="&template;noKnownExceptions"/>
 </template:potentiallyViolable>
-<general:lexicoconstructionalConditioning rdf:about="&templates;Chichewa_AR_Conditioning"
-	 notes:CONDITIONS="Treating the Reciprocal as the main conditioner her."
-	 rdfs:label="Chichewa_AR_Conditioning">
-	<spectemplate:FILLED_COMPONENT rdf:resource="&templates;Chichewa_Reciprocal"/>
-	<template:FILLER_POSITION rdf:resource="&general;final"/>
-</general:lexicoconstructionalConditioning>
-<component:component rdf:about="&templates;Chichewa_Applicative"
-	 rdfs:label="Chichewa_Applicative">
-	<speccomponent:ELASTICITY rdf:resource="&templates;Chichewa_Applicative_Elasticity"/>
-	<speccomponent:FILLEDNESS rdf:resource="&templates;Chichewa_Applicative_Filledness"/>
-	<speccomponent:STABILITY rdf:resource="&templates;Chichewa_Applicative_Stability"/>
-</component:component>
-<component:elastic rdf:about="&templates;Chichewa_Applicative_Elasticity"
-	 general:MAXIMUM="1"
-	 general:MINIMUM="0"
-	 rdfs:label="Chichewa_Applicative_Elasticity"/>
-<component:filled rdf:about="&templates;Chichewa_Applicative_Filledness"
-	 rdfs:label="Chichewa_Applicative_Filledness">
-	<speccomponent:FORM rdf:resource="&templates;Chichewa_Applicative_Form"/>
-	<function:FILLER_CLASS rdf:resource="&localfunction;valency"/>
-</component:filled>
-<form:canonicalLineate rdf:about="&templates;Chichewa_Applicative_Form"
-	 rdfs:label="Chichewa_Applicative_Form">
-	<specform:TRANSCRIPTION rdf:resource="&templates;Chichewa_Applicative_Transcription"/>
-	<form:LIAISON rdf:resource="&form;sinistrous"/>
-</form:canonicalLineate>
-<component:stable rdf:about="&templates;Chichewa_Applicative_Stability"
-	 rdfs:label="Chichewa_Applicative_Stability"/>
-<form:transcription rdf:about="&templates;Chichewa_Applicative_Transcription"
-	 specform:TRANSCRIPTION_STRING="-il-"
-	 rdfs:label="-il-"/>
-<template:arch rdf:about="&templates;Chichewa_RA_Foundation"
-	 rdfs:label="Chichewa_RA_Foundation">
-	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;Chichewa_Applicative"/>
-	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;Chichewa_Reciprocal"/>
-	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;Chichewa_beforeVerbStem_nullComponent"/>
-	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;Chichewa_verbStem"/>
-	<spectemplate:KEYSTONE rdf:resource="&templates;Chichewa_verbStem"/>
-</template:arch>
-<component:component rdf:about="&templates;Chichewa_Reciprocal"
-	 rdfs:label="Chichewa_Reciprocal">
-	<speccomponent:ELASTICITY rdf:resource="&templates;Chichewa_Reciprocal_Elasticity"/>
-	<speccomponent:FILLEDNESS rdf:resource="&templates;Chichewa_Reciprocal_Filledness"/>
-	<speccomponent:STABILITY rdf:resource="&templates;Chichewa_Reciprocal_Stability"/>
-</component:component>
-<component:elastic rdf:about="&templates;Chichewa_Reciprocal_Elasticity"
-	 general:MAXIMUM="1"
-	 general:MINIMUM="0"
-	 rdfs:label="Chichewa_Reciprocal_Elasticity"/>
-<component:filled rdf:about="&templates;Chichewa_Reciprocal_Filledness"
-	 rdfs:label="Chichewa_Reciprocal_Filledness">
-	<speccomponent:FORM rdf:resource="&templates;Chichewa_Reciprocal_Form"/>
-	<function:FILLER_CLASS rdf:resource="&localfunction;valency"/>
-</component:filled>
-<form:canonicalLineate rdf:about="&templates;Chichewa_Reciprocal_Form"
-	 rdfs:label="Chichewa_Reciprocal_Form">
-	<specform:TRANSCRIPTION rdf:resource="&templates;Chichewa_Reciprocal_Transcription"/>
-	<form:LIAISON rdf:resource="&form;sinistrous"/>
-</form:canonicalLineate>
-<component:stable rdf:about="&templates;Chichewa_Reciprocal_Stability"
-	 rdfs:label="Chichewa_Reciprocal_Stability"/>
 <template:order rdf:about="&templates;Chichewa_Reciprocal_Stricture"
 	 general:COUNT="2"
 	 rdfs:label="Chichewa_Reciprocal_Stricture">
 	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
 	<general:RELATIONS rdf:resource="&general;simple"/>
 </template:order>
-<form:transcription rdf:about="&templates;Chichewa_Reciprocal_Transcription"
-	 specform:TRANSCRIPTION_STRING="-an-"
-	 rdfs:label="-an-"/>
-<component:component rdf:about="&templates;Chichewa_beforeVerbStem_nullComponent"
-	 rdfs:label="Chichewa_beforeVerbStem_nullComponent">
-	<speccomponent:ELASTICITY rdf:resource="&templates;Chichewa_beforeVerbStem_nullComponent_Elasticity"/>
-	<speccomponent:FILLEDNESS rdf:resource="&templates;Chichewa_beforeVerbStem_nullComponent_Filledness"/>
-	<speccomponent:STABILITY rdf:resource="&templates;Chichewa_beforeVerbStem_nullComponent_Stability"/>
-</component:component>
-<component:inelastic rdf:about="&templates;Chichewa_beforeVerbStem_nullComponent_Elasticity"
-	 general:COUNT="0"
-	 rdfs:label="Chichewa_beforeVerbStem_nullComponent_Elasticity"/>
-<component:null rdf:about="&templates;Chichewa_beforeVerbStem_nullComponent_Filledness"
-	 rdfs:label="Chichewa_beforeVerbStem_nullComponent_Filledness"/>
-<component:stable rdf:about="&templates;Chichewa_beforeVerbStem_nullComponent_Stability"
-	 rdfs:label="Chichewa_beforeVerbStem_nullComponent_Stability"/>
-<component:component rdf:about="&templates;Chichewa_verbStem"
-	 rdfs:label="Chichewa_verbStem">
-	<speccomponent:ELASTICITY rdf:resource="&templates;Chichewa_verbStem_Elasticity"/>
-	<speccomponent:FILLEDNESS rdf:resource="&templates;Chichewa_verbStem_Filledness"/>
-	<speccomponent:STABILITY rdf:resource="&templates;Chichewa_verbStem_Stability"/>
-</component:component>
-<component:coherent rdf:about="&templates;Chichewa_verbStem_Coherence"
-	 rdfs:label="Chichewa_verbStem_Coherence">
-	<function:CLASS rdf:resource="&gold;Verbal"/>
-</component:coherent>
-<component:inelastic rdf:about="&templates;Chichewa_verbStem_Elasticity"
-	 general:COUNT="1"
-	 rdfs:label="Chichewa_verbStem_Elasticity"/>
-<component:open rdf:about="&templates;Chichewa_verbStem_Filledness"
-	 rdfs:label="Chichewa_verbStem_Filledness">
-	<speccomponent:COHERENCE rdf:resource="&templates;Chichewa_verbStem_Coherence"/>
-</component:open>
-<component:stable rdf:about="&templates;Chichewa_verbStem_Stability"
-	 rdfs:label="Chichewa_verbStem_Stability"/>
 <component:component rdf:about="&templates;Chintang_prefix"
 	 rdfs:label="Chintang_prefix">
 	<speccomponent:ELASTICITY rdf:resource="&templates;Chintang_prefix_Elasticity"/>
@@ -700,13 +796,18 @@
 </component:open>
 <component:stable rdf:about="&templates;Chintang_verb_rightProsWord_Stability"
 	 rdfs:label="Chintang_verb_rightProsWord_Stability"/>
+<notes:source rdf:about="&templates;Dahlstrom-1995"
+	 rdfs:label="Dahlstrom-1995"
+	 owl:sameAs="http://www.worldcat.org/oclc/32741831">
+	<terms:bibliographicCitation>Dahlstrom, Amy. 1995. Topic, focus, and word order problems in Algonquian: The Belcourt lecture. Winnipeg: Voices of Rupert’s Land.</terms:bibliographicCitation>
+</notes:source>
 <template:desmeme rdf:about="&templates;EnglishVP"
 	 rdfs:label="EnglishVP">
 	<specgeneral:CONDITIONING rdf:resource="&templates;EnglishVP-Conditioning"/>
 	<spectemplate:FOUNDATION rdf:resource="&templates;EnglishVP-Foundation"/>
 	<template:VIOLABILITY rdf:resource="&templates;EnglishVP-IO-Violability"/>
-	<notes:HAS_SOURCE rdf:resource="&templates;EnglishVP-Source"/>
 	<spectemplate:STRICTURE rdf:resource="&templates;EnglishVP-Stricture"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;Good-PersonalKnowledge"/>
 	<function:FUNCTION rdf:resource="&gold;MainClause"/>
 </template:desmeme>
 <general:constructionalConditioning rdf:about="&templates;EnglishVP-Conditioning"
@@ -781,9 +882,6 @@
 </component:open>
 <component:stable rdf:about="&templates;EnglishVP-RightSupport-Stability"
 	 rdfs:label="EnglishVP-RightSupport-Stability"/>
-<notes:source rdf:about="&templates;EnglishVP-Source"
-	 terms:bibliographicCitation="Good, Jeff. Personal knowledge."
-	 rdfs:label="EnglishVP-Source"/>
 <component:stable rdf:about="&templates;EnglishVP-Stability"
 	 rdfs:label="EnglishVP-Stability"/>
 <template:order rdf:about="&templates;EnglishVP-Stricture"
@@ -1015,6 +1113,24 @@
 	 rdfs:label="German_vf_Coherence">
 	<function:CLASSES rdf:resource="&localfunction;constituent"/>
 </component:incoherent>
+<notes:source rdf:about="&templates;Good-2005"
+	 rdfs:label="Good-2005"
+	 owl:sameAs="http://benjamins.com/catalog/dia.22.1.02goo">
+	<terms:bibliographicCitation>Good, Jeff. 2005. Reconstructing morpheme order in Bantu: The case of causativization and applicativization. Diachronica 22. 3–57.</terms:bibliographicCitation>
+</notes:source>
+<notes:source rdf:about="&templates;Good-PersonalKnowledge"
+	 terms:bibliographicCitation="Good, Jeff. Personal knowledge."
+	 rdfs:label="Good-PersonalKnowledge"/>
+<notes:source rdf:about="&templates;HymanMchombo-2002"
+	 rdfs:label="HymanMchombo-2002"
+	 owl:sameAs="http://elanguage.net/journals/bls/article/view/2757">
+	<terms:bibliographicCitation xml:space='preserve'><![CDATA[Hyman, Larry M. & Sam A. Mchombo. 1992. Morphotactic constraints in the Chichewa verb stem. In Laura Buszard-Welcher, Lionel Wee & William Weigel (eds.), Proceedings of the eighteenth meeting of the Berkeley Linguistics Society, general session and parassession, 350–363. Berkeley: Berkeley Linguistics Society.]]></terms:bibliographicCitation>
+</notes:source>
+<notes:source rdf:about="&templates;InkelasOrgun-1995"
+	 rdfs:label="InkelasOrgun-1995"
+	 owl:sameAs="http://jstor.org/stable/4615465">
+	<terms:bibliographicCitation xml:space='preserve'><![CDATA[Inkelas, Sharon & Cemil Orhan Orgun. 1995. Level ordering and economy in the lexical phonology of Turkish. Language 71. 763–793.]]></terms:bibliographicCitation>
+</notes:source>
 <notes:source rdf:about="&templates;Kathol-2000"
 	 terms:bibliographicCitation="Kathol, Andreas. 2000. Linear syntax. Oxford: OUP."
 	 rdfs:label="Kathol-2000"
@@ -1642,7 +1758,7 @@
 <template:length rdf:about="&templates;TieneVerbProsodic-Stricture"
 	 general:COUNT="3"
 	 rdfs:label="TieneVerbProsodic-Stricture">
-	<general:CONSTITUENT rdf:resource="&general;mora"/>
+	<general:CONSTITUENT rdf:resource="&gold;Mora"/>
 </template:length>
 <template:potentiallyViolable rdf:about="&templates;TieneVerbProsodic-Violability"
 	 rdfs:label="TieneVerbProsodic-Violability">
@@ -1674,6 +1790,93 @@
 	 rdfs:label="Tiene_verb-RightSupport-Coherence">
 	<function:CLASS rdf:resource="&localfunction;velarConsonant"/>
 </component:coherent>
+<component:component rdf:about="&templates;TurkishFirstSyllable"
+	 rdfs:label="TurkishFirstSyllable">
+	<speccomponent:ELASTICITY rdf:resource="&templates;TurkishFirstSyllable-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;TurkishFirstSyllable-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;TurkishFirstSyllable-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;TurkishFirstSyllable-Coherence"
+	 rdfs:label="TurkishFirstSyllable-Coherence">
+	<function:CLASS rdf:resource="&gold;Syllable"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;TurkishFirstSyllable-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="TurkishFirstSyllable-Elasticity"/>
+<component:open rdf:about="&templates;TurkishFirstSyllable-Filledness"
+	 rdfs:label="TurkishFirstSyllable-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;TurkishFirstSyllable-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;TurkishFirstSyllable-Stability"
+	 rdfs:label="TurkishFirstSyllable-Stability"/>
+<template:span rdf:about="&templates;TurkishMinimality-Foundation"
+	 rdfs:label="TurkishMinimality-Foundation">
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;TurkishFirstSyllable"/>
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;TurkishSecondSyllable"/>
+</template:span>
+<template:length rdf:about="&templates;TurkishMinimality-Stricture"
+	 general:COUNT="2"
+	 rdfs:label="TurkishMinimality-Stricture">
+	<general:CONSTITUENT rdf:resource="&gold;Syllable"/>
+</template:length>
+<template:desmeme rdf:about="&templates;TurkishNominalMinimality"
+	 rdfs:label="TurkishNominalMinimality">
+	<notes:HAS_SOURCE rdf:resource="&templates;InkelasOrgun-1995"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;TurkishMinimality-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;TurkishMinimality-Stricture"/>
+	<specgeneral:CONDITIONING rdf:resource="&templates;TurkishNominalMinimality-Conditioning"/>
+	<template:VIOLABILITY rdf:resource="&templates;TurkishNominalMinimality-Violability"/>
+	<function:FUNCTION rdf:resource="&gold;Stem"/>
+</template:desmeme>
+<general:prosodicConditioning rdf:about="&templates;TurkishNominalMinimality-Conditioning"
+	 notes:CONDITIONS="Applies to all morphologically derived noun stems."
+	 rdfs:label="TurkishNominalMinimality-Conditioning"/>
+<template:potentiallyViolable rdf:about="&templates;TurkishNominalMinimality-Violability"
+	 rdfs:label="TurkishNominalMinimality-Violability">
+	<template:REPARABILITY rdf:resource="&template;irreparable"/>
+	<template:EXCEPTIONALITY rdf:resource="&template;lexical"/>
+</template:potentiallyViolable>
+<component:component rdf:about="&templates;TurkishSecondSyllable"
+	 rdfs:label="TurkishSecondSyllable">
+	<speccomponent:ELASTICITY rdf:resource="&templates;TurkishSecondSyllable-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;TurkishSecondSyllable-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;TurkishSecondSyllable-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;TurkishSecondSyllable-Coherence"
+	 rdfs:label="TurkishSecondSyllable-Coherence">
+	<function:CLASS rdf:resource="&gold;Syllable"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;TurkishSecondSyllable-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="TurkishSecondSyllable-Elasticity"/>
+<component:open rdf:about="&templates;TurkishSecondSyllable-Filledness"
+	 rdfs:label="TurkishSecondSyllable-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;TurkishSecondSyllable-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;TurkishSecondSyllable-Stability"
+	 rdfs:label="TurkishSecondSyllable-Stability"/>
+<template:desmeme rdf:about="&templates;TurkishVerbalMinimality"
+	 rdfs:label="TurkishVerbalMinimality">
+	<notes:HAS_SOURCE rdf:resource="&templates;InkelasOrgun-1995"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;TurkishMinimality-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;TurkishMinimality-Stricture"/>
+	<specgeneral:CONDITIONING rdf:resource="&templates;TurkishVerbalMinimality-Conditioning"/>
+	<template:VIOLABILITY rdf:resource="&templates;TurkishVerbalMinimalityViolability"/>
+	<function:FUNCTION rdf:resource="&gold;Stem"/>
+</template:desmeme>
+<general:prosodicConditioning rdf:about="&templates;TurkishVerbalMinimality-Conditioning"
+	 notes:CONDITIONS="Applies to all morphologically derived verbal stems."
+	 rdfs:label="TurkishVerbalMinimality-Conditioning"/>
+<template:potentiallyViolable rdf:about="&templates;TurkishVerbalMinimalityViolability"
+	 rdfs:label="TurkishVerbalMinimalityViolability">
+	<template:REPARABILITY rdf:resource="&template;insertion"/>
+	<template:EXCEPTIONALITY rdf:resource="&template;lexical"/>
+</template:potentiallyViolable>
+<notes:source rdf:about="&templates;Watters-1979"
+	 rdfs:label="Watters-1979"
+	 owl:sameAs="http://www.sil.org/resources/archives/1883">
+	<terms:bibliographicCitation>Watters, John R. 1979. Focus in Aghem: A study of its formal correlates and typology. In Larry M. Hyman (ed.), Aghem grammatical structure: With special reference to noun classes, tense-aspect and focus marking Southern California Occasional Papers in Linguistics 7, 137–197. Los Angeles: University of Southern California Department of Linguistics.</terms:bibliographicCitation>
+</notes:source>
 <form:transcription rdf:about="&templates;template_Instance_10007"
 	 specform:TRANSCRIPTION_STRING="-ic-"
 	 rdfs:label="-ic-"/>

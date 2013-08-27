@@ -82,6 +82,11 @@
 	 rdfs:label="gold:MainClause">
 	<rdfs:subClassOf rdf:resource="&general;function"/>
 </rdfs:Class>
+<rdfs:Class rdf:about="&gold;Mora"
+	 a:role="abstract"
+	 rdfs:label="gold:Mora">
+	<rdfs:subClassOf rdf:resource="&general;prosodicConstituent"/>
+</rdfs:Class>
 <rdfs:Class rdf:about="&gold;Object"
 	 a:role="abstract"
 	 rdfs:label="gold:Object">
@@ -92,10 +97,21 @@
 	 rdfs:label="gold:Preverb">
 	<rdfs:subClassOf rdf:resource="&general;function"/>
 </rdfs:Class>
+<rdfs:Class rdf:about="&gold;Stem"
+	 a:role="abstract"
+	 rdfs:label="gold:Stem">
+	<rdfs:subClassOf rdf:resource="&general;function"/>
+</rdfs:Class>
 <rdfs:Class rdf:about="&gold;Subject"
 	 a:role="abstract"
 	 rdfs:label="gold:Subject">
 	<rdfs:subClassOf rdf:resource="&general;function"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&gold;Syllable"
+	 a:role="abstract"
+	 rdfs:label="gold:Syllable">
+	<rdfs:subClassOf rdf:resource="&general;function"/>
+	<rdfs:subClassOf rdf:resource="&general;prosodicConstituent"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&gold;Verbal"
 	 a:role="abstract"
@@ -374,11 +390,6 @@ a given template. This feature does not enter into the typological comparison at
 	 rdfs:label="general:medial">
 	<rdfs:subClassOf rdf:resource="&general;absolutePositions"/>
 </rdfs:Class>
-<rdfs:Class rdf:about="&general;mora"
-	 a:role="abstract"
-	 rdfs:label="general:mora">
-	<rdfs:subClassOf rdf:resource="&general;prosodicConstituent"/>
-</rdfs:Class>
 <rdfs:Class rdf:about="&general;morphologicalConstituent"
 	 a:role="abstract"
 	 rdfs:label="general:morphologicalConstituent">
@@ -511,6 +522,11 @@ a given template. This feature does not enter into the typological comparison at
 	 rdfs:label="localfunction:finite">
 	<rdfs:subClassOf rdf:resource="&gold;Verbal"/>
 </rdfs:Class>
+<rdfs:Class rdf:about="&localfunction;focal"
+	 a:role="abstract"
+	 rdfs:label="localfunction:focal">
+	<rdfs:subClassOf rdf:resource="&general;function"/>
+</rdfs:Class>
 <rdfs:Class rdf:about="&localfunction;focus"
 	 a:role="abstract"
 	 rdfs:label="localfunction:focus">
@@ -578,6 +594,11 @@ a given template. This feature does not enter into the typological comparison at
 	 a:role="abstract"
 	 rdfs:label="localfunction:tense">
 	<rdfs:subClassOf rdf:resource="&localfunction;TenseMoodAspect"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&localfunction;topical"
+	 a:role="abstract"
+	 rdfs:label="localfunction:topical">
+	<rdfs:subClassOf rdf:resource="&general;function"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&localfunction;topicalization"
 	 a:role="abstract"
