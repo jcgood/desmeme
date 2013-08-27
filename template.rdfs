@@ -142,6 +142,7 @@
 </rdfs:Class>
 <rdfs:Class rdf:about="&component;elastic"
 	 rdfs:label="component:elastic">
+	<rdfs:comment>A type that specifies that a given component can potentially be filled with a varying number of elements. It is associated with features specifying the maximum and minimum number of elements it can contain.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&component;elasticity"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&component;elasticity"
@@ -167,6 +168,7 @@
 </rdfs:Class>
 <rdfs:Class rdf:about="&component;inelastic"
 	 rdfs:label="component:inelastic">
+	<rdfs:comment>A type that specifies that a given component must be filled with a fixed number of elements (usually just one). It is associated with a feature specifying the number of elements it must contain.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&component;elasticity"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&component;null"
@@ -437,6 +439,7 @@ a given template. This feature does not enter into the typological comparison at
 <rdfs:Class rdf:about="&general;prosodicWord"
 	 a:role="abstract"
 	 rdfs:label="general:prosodicWord">
+	<rdfs:subClassOf rdf:resource="&general;function"/>
 	<rdfs:subClassOf rdf:resource="&general;prosodicConstituent"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;relations"
@@ -574,10 +577,6 @@ a given template. This feature does not enter into the typological comparison at
 <rdfs:Class rdf:about="&localfunction;personReference"
 	 a:role="abstract"
 	 rdfs:label="localfunction:personReference">
-	<rdfs:subClassOf rdf:resource="&general;function"/>
-</rdfs:Class>
-<rdfs:Class rdf:about="&localfunction;phonologicalWord"
-	 rdfs:label="localfunction:phonologicalWord">
 	<rdfs:subClassOf rdf:resource="&general;function"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&localfunction;plural"

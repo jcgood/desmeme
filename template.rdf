@@ -519,6 +519,11 @@
 </component:coherent>
 <component:stable rdf:about="&templates;Bantu_verbStem_Stability-Stable"
 	 rdfs:label="Bantu_verbStem_Stability-Stable"/>
+<notes:source rdf:about="&templates;BickelEtAl:2007"
+	 rdfs:label="BickelEtAl:2007"
+	 owl:sameAs="http://jstor.org/stable/4490337">
+	<terms:bibliographicCitation xml:space='preserve'><![CDATA[Bickel, Balthasar, Goma Banjade, Martin Gaenszle, Elena Lieven, Netra Prasad Paudyal, Ichchha Purna Rai, Manoj Rai, Novel Kishore Rai & Sabine Stoll. 2007. Free prefix ordering in Chintang. Language 83. 43–73.]]></terms:bibliographicCitation>
+</notes:source>
 <form:transcription rdf:about="&templates;Chechen-a-transcription"
 	 specform:TRANSCRIPTION_STRING="='a"
 	 rdfs:label="='a"/>
@@ -718,84 +723,85 @@
 	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
 	<general:RELATIONS rdf:resource="&general;simple"/>
 </template:order>
-<component:component rdf:about="&templates;Chintang_prefix"
-	 rdfs:label="Chintang_prefix">
-	<speccomponent:ELASTICITY rdf:resource="&templates;Chintang_prefix_Elasticity"/>
-	<speccomponent:FILLEDNESS rdf:resource="&templates;Chintang_prefix_Filledness"/>
-	<speccomponent:STABILITY rdf:resource="&templates;Chintang_prefix_Stability"/>
+<component:component rdf:about="&templates;ChintangPrefix"
+	 rdfs:label="ChintangPrefix">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChintangPrefix-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChintangPrefix-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChintangPrefix-Stability"/>
 </component:component>
-<component:coherent rdf:about="&templates;Chintang_prefix_Coherency"
-	 rdfs:label="Chintang_prefix_Coherency">
+<component:coherent rdf:about="&templates;ChintangPrefix-Coherence"
+	 rdfs:label="ChintangPrefix-Coherence">
 	<function:CLASS rdf:resource="&localfunction;personReference"/>
 </component:coherent>
-<component:inelastic rdf:about="&templates;Chintang_prefix_Elasticity"
+<component:inelastic rdf:about="&templates;ChintangPrefix-Elasticity"
 	 general:COUNT="1"
-	 rdfs:label="Chintang_prefix_Elasticity"/>
-<component:open rdf:about="&templates;Chintang_prefix_Filledness"
-	 rdfs:label="Chintang_prefix_Filledness">
-	<speccomponent:COHERENCE rdf:resource="&templates;Chintang_prefix_Coherency"/>
+	 rdfs:label="ChintangPrefix-Elasticity"/>
+<component:open rdf:about="&templates;ChintangPrefix-Filledness"
+	 rdfs:label="ChintangPrefix-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChintangPrefix-Coherence"/>
 </component:open>
-<component:stable rdf:about="&templates;Chintang_prefix_Stability"
-	 rdfs:label="Chintang_prefix_Stability"/>
-<template:desmeme rdf:about="&templates;Chintang_prefixes"
-	 rdfs:label="Chintang_prefixes">
-	<template:VIOLABILITY rdf:resource="&templates;Chintang_prefixes-notViolable"/>
-	<specgeneral:CONDITIONING rdf:resource="&templates;Chintang_prefixes_Conditioning"/>
-	<spectemplate:FOUNDATION rdf:resource="&templates;Chintang_prefixes_Foundation"/>
-	<spectemplate:STRICTURE rdf:resource="&templates;Chintang_prefixes_stricture-Order"/>
+<component:stable rdf:about="&templates;ChintangPrefix-Stability"
+	 rdfs:label="ChintangPrefix-Stability"/>
+<template:desmeme rdf:about="&templates;ChintangPrefixes"
+	 rdfs:label="ChintangPrefixes">
+	<notes:HAS_SOURCE rdf:resource="&templates;BickelEtAl:2007"/>
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChintangPrefixes-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChintangPrefixes-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChintangPrefixes-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChintangPrefixes-Violability"/>
 	<function:FUNCTION rdf:resource="&gold;Verbal"/>
 </template:desmeme>
-<template:notViolable rdf:about="&templates;Chintang_prefixes-notViolable"
-	 rdfs:label="Chintang_prefixes-notViolable"/>
-<general:constructionalConditioning rdf:about="&templates;Chintang_prefixes_Conditioning"
+<general:constructionalConditioning rdf:about="&templates;ChintangPrefixes-Conditioning"
 	 notes:CONDITIONS="Freely-ordered prefixes appear on the verb."
-	 rdfs:label="Chintang_prefixes_Conditioning"/>
-<template:arch rdf:about="&templates;Chintang_prefixes_Foundation"
-	 rdfs:label="Chintang_prefixes_Foundation">
-	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;Chintang_prefix"/>
-	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;Chintang_prefix"/>
-	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;Chintang_verb_nullComponent"/>
-	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;Chintang_verb_rightProsWord"/>
-	<spectemplate:KEYSTONE rdf:resource="&templates;Chintang_verb_rightProsWord"/>
+	 rdfs:label="ChintangPrefixes-Conditioning"/>
+<template:arch rdf:about="&templates;ChintangPrefixes-Foundation"
+	 rdfs:label="ChintangPrefixes-Foundation">
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChintangPrefix"/>
+	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;ChintangPrefix"/>
+	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;ChintangVerbNullComponent"/>
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChintangVerbRightProsWord"/>
+	<spectemplate:KEYSTONE rdf:resource="&templates;ChintangVerbRightProsWord"/>
 </template:arch>
-<template:order rdf:about="&templates;Chintang_prefixes_stricture-Order"
+<template:order rdf:about="&templates;ChintangPrefixes-Stricture"
 	 general:COUNT="2"
-	 rdfs:label="Chintang_prefixes_stricture-Order">
+	 rdfs:label="ChintangPrefixes-Stricture">
 	<general:CONSTITUENT rdf:resource="&general;prosodicWord"/>
 	<general:RELATIONS rdf:resource="&general;simple"/>
 </template:order>
-<component:component rdf:about="&templates;Chintang_verb_nullComponent"
-	 rdfs:label="Chintang_verb_nullComponent">
-	<speccomponent:ELASTICITY rdf:resource="&templates;Chintang_verb_nullComponent_Elasticity"/>
-	<speccomponent:FILLEDNESS rdf:resource="&templates;Chintang_verb_nullComponent_Filledness"/>
-	<speccomponent:STABILITY rdf:resource="&templates;Chintang_verb_nullComponent_Stability"/>
+<template:notViolable rdf:about="&templates;ChintangPrefixes-Violability"
+	 rdfs:label="ChintangPrefixes-Violability"/>
+<component:component rdf:about="&templates;ChintangVerbNullComponent"
+	 rdfs:label="ChintangVerbNullComponent">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChintangVerbNullComponent-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChintangVerbNullComponent-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChintangVerbNullComponent-Stability"/>
 </component:component>
-<component:inelastic rdf:about="&templates;Chintang_verb_nullComponent_Elasticity"
+<component:inelastic rdf:about="&templates;ChintangVerbNullComponent-Elasticity"
 	 general:COUNT="0"
-	 rdfs:label="Chintang_verb_nullComponent_Elasticity"/>
-<component:null rdf:about="&templates;Chintang_verb_nullComponent_Filledness"
-	 rdfs:label="Chintang_verb_nullComponent_Filledness"/>
-<component:stable rdf:about="&templates;Chintang_verb_nullComponent_Stability"
-	 rdfs:label="Chintang_verb_nullComponent_Stability"/>
-<component:component rdf:about="&templates;Chintang_verb_rightProsWord"
-	 rdfs:label="Chintang_verb_rightProsWord">
-	<speccomponent:ELASTICITY rdf:resource="&templates;Chintang_verb_rightProsWord_Elasticity"/>
-	<speccomponent:FILLEDNESS rdf:resource="&templates;Chintang_verb_rightProsWord_Filledness"/>
-	<speccomponent:STABILITY rdf:resource="&templates;Chintang_verb_rightProsWord_Stability"/>
+	 rdfs:label="ChintangVerbNullComponent-Elasticity"/>
+<component:null rdf:about="&templates;ChintangVerbNullComponent-Filledness"
+	 rdfs:label="ChintangVerbNullComponent-Filledness"/>
+<component:stable rdf:about="&templates;ChintangVerbNullComponent-Stability"
+	 rdfs:label="ChintangVerbNullComponent-Stability"/>
+<component:component rdf:about="&templates;ChintangVerbRightProsWord"
+	 rdfs:label="ChintangVerbRightProsWord">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChintangVerbRightProsWord-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChintangVerbRightProsWord-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChintangVerbRightProsWord-Stability"/>
 </component:component>
-<component:coherent rdf:about="&templates;Chintang_verb_rightProsWord_Coherence"
-	 rdfs:label="Chintang_verb_rightProsWord_Coherence">
+<component:coherent rdf:about="&templates;ChintangVerbRightProsWord-Coherence"
+	 rdfs:label="ChintangVerbRightProsWord-Coherence">
 	<function:CLASS rdf:resource="&general;prosodicWord"/>
 </component:coherent>
-<component:inelastic rdf:about="&templates;Chintang_verb_rightProsWord_Elasticity"
+<component:inelastic rdf:about="&templates;ChintangVerbRightProsWord-Elasticity"
 	 general:COUNT="1"
-	 rdfs:label="Chintang_verb_rightProsWord_Elasticity"/>
-<component:open rdf:about="&templates;Chintang_verb_rightProsWord_Filledness"
-	 rdfs:label="Chintang_verb_rightProsWord_Filledness">
-	<speccomponent:COHERENCE rdf:resource="&templates;Chintang_verb_rightProsWord_Coherence"/>
+	 rdfs:label="ChintangVerbRightProsWord-Elasticity"/>
+<component:open rdf:about="&templates;ChintangVerbRightProsWord-Filledness"
+	 rdfs:label="ChintangVerbRightProsWord-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChintangVerbRightProsWord-Coherence"/>
 </component:open>
-<component:stable rdf:about="&templates;Chintang_verb_rightProsWord_Stability"
-	 rdfs:label="Chintang_verb_rightProsWord_Stability"/>
+<component:stable rdf:about="&templates;ChintangVerbRightProsWord-Stability"
+	 rdfs:label="ChintangVerbRightProsWord-Stability"/>
 <notes:source rdf:about="&templates;Dahlstrom-1995"
 	 rdfs:label="Dahlstrom-1995"
 	 owl:sameAs="http://www.worldcat.org/oclc/32741831">
@@ -1484,7 +1490,7 @@
 </component:component>
 <component:coherent rdf:about="&templates;SerboCroatianTopicalization-LeftSupport-Coherence"
 	 rdfs:label="SerboCroatianTopicalization-LeftSupport-Coherence">
-	<function:CLASS rdf:resource="&localfunction;phonologicalWord"/>
+	<function:CLASS rdf:resource="&general;prosodicWord"/>
 </component:coherent>
 <component:inelastic rdf:about="&templates;SerboCroatianTopicalization-LeftSupport-Elasticity"
 	 general:COUNT="1"
@@ -1503,7 +1509,7 @@
 </component:component>
 <component:coherent rdf:about="&templates;SerboCroatianTopicalization-RightSupport-Coherence"
 	 rdfs:label="SerboCroatianTopicalization-RightSupport-Coherence">
-	<function:CLASS rdf:resource="&localfunction;phonologicalWord"/>
+	<function:CLASS rdf:resource="&general;prosodicWord"/>
 </component:coherent>
 <component:inelastic rdf:about="&templates;SerboCroatianTopicalization-RightSupport-Elasticity"
 	 general:COUNT="1"
