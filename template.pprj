@@ -1,4 +1,4 @@
-; Mon Aug 26 23:01:39 EDT 2013
+; Tue Aug 27 23:08:46 EDT 2013
 ; 
 ;+ (version "3.3.1")
 ;+ (build "Build 430")
@@ -20,10 +20,10 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[template_ProjectKB_Instance_80267]
-		[template_ProjectKB_Instance_80268]
-		[template_ProjectKB_Instance_80269]
-		[template_ProjectKB_Instance_80270]))
+		[template_ProjectKB_Instance_80176]
+		[template_ProjectKB_Instance_80177]
+		[template_ProjectKB_Instance_80178]
+		[template_ProjectKB_Instance_80179]))
 
 ([CLSES_TAB] of  Widget
 
@@ -153,21 +153,21 @@
 	(customized_instance_widgets
 		[PAL_FORM_WIDGET]
 		[INSTANCE_ANNOTATION_FORM_WIDGET]
-		[template_ProjectKB_Instance_448]
+		[template_ProjectKB_Instance_385]
+		[template_ProjectKB_Instance_20070]
+		[STANDARD_CLASS_FORM_WIDGET]
 		[template_ProjectKB_Instance_99]
+		[STANDARD_SLOT_FORM_WIDGET]
+		[template_ProjectKB_Instance_448]
+		[STANDARD_FACET_FORM_WIDGET]
 		[template_ProjectKB_Instance_232]
+		[template_ProjectKB_Instance_30075]
 		[template_ProjectKB_Instance_10164]
 		[template_ProjectKB_Instance_30079]
-		[STANDARD_CLASS_FORM_WIDGET]
-		[template_ProjectKB_Instance_20070]
-		[STANDARD_SLOT_FORM_WIDGET]
-		[template_ProjectKB_Instance_30074]
 		[template_ProjectKB_Instance_70085]
-		[STANDARD_FACET_FORM_WIDGET]
-		[template_ProjectKB_Instance_30075]
 		[template_ProjectKB_Instance_225]
-		[template_ProjectKB_Instance_378]
-		[template_ProjectKB_Instance_385])
+		[template_ProjectKB_Instance_30074]
+		[template_ProjectKB_Instance_378])
 	(default_cls_metaclass ":STANDARD-CLASS")
 	(default_facet_metaclass ":STANDARD-FACET")
 	(default_instance_widget_class_name "edu.stanford.smi.protege.widget.FormWidget")
@@ -1924,22 +1924,22 @@
 ([template_ProjectKB_Instance_80] of  Property_List
 )
 
-([template_ProjectKB_Instance_80267] of  String
-
-	(name ":PAL-CONSTRAINT")
-	(string_value "%3APAL-NAME"))
-
-([template_ProjectKB_Instance_80268] of  String
-
-	(name ":INSTANCE-ANNOTATION")
-	(string_value "%3AANNOTATION-TEXT"))
-
-([template_ProjectKB_Instance_80269] of  String
+([template_ProjectKB_Instance_80176] of  String
 
 	(name "form:transcription")
 	(string_value "specform%3ATRANSCRIPTION_STRING"))
 
-([template_ProjectKB_Instance_80270] of  String
+([template_ProjectKB_Instance_80177] of  String
+
+	(name ":PAL-CONSTRAINT")
+	(string_value "%3APAL-NAME"))
+
+([template_ProjectKB_Instance_80178] of  String
+
+	(name ":INSTANCE-ANNOTATION")
+	(string_value "%3AANNOTATION-TEXT"))
+
+([template_ProjectKB_Instance_80179] of  String
 
 	(name ":META-CLASS")
 	(string_value "%3ANAME"))

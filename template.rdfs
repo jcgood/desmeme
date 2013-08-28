@@ -87,6 +87,11 @@
 	 rdfs:label="gold:Mora">
 	<rdfs:subClassOf rdf:resource="&general;prosodicConstituent"/>
 </rdfs:Class>
+<rdfs:Class rdf:about="&gold;Noun"
+	 a:role="abstract"
+	 rdfs:label="gold:Noun">
+	<rdfs:subClassOf rdf:resource="&general;function"/>
+</rdfs:Class>
 <rdfs:Class rdf:about="&gold;Object"
 	 a:role="abstract"
 	 rdfs:label="gold:Object">
@@ -153,6 +158,7 @@
 </rdfs:Class>
 <rdfs:Class rdf:about="&component;filled"
 	 rdfs:label="component:filled">
+	<rdfs:comment>A type that specifies that a given component is always fully or partly occupied by a specific element (e.g., a specific morpheme). If the type is not specified as \type{partiallyFilled}, then the use of this type should be interpreted as ``completely filled''.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&component;filledness"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&component;filledness"
@@ -173,14 +179,17 @@
 </rdfs:Class>
 <rdfs:Class rdf:about="&component;null"
 	 rdfs:label="component:null">
+	<rdfs:comment>A placeholder value for the \feat{filledness} feature of \type{null} components.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&component;filledness"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&component;open"
 	 rdfs:label="component:open">
+	<rdfs:comment>A type that specifies that a given component's fillers are always fully or partly drawn from a class of elements (e.g., morphemes of a particular semantic type). If the type is not specified as \type{partiallyFilled}, then the use of this type should be interpreted as ``completely open''.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&component;filledness"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&component;partiallyFilled"
 	 rdfs:label="component:partiallyFilled">
+	<rdfs:comment>A subtype that inherits its properties from both the \type{filled} and \type{open} types that specifies that a given component is internally complex with part of its material always consisting of a specific element and part of its material drawn from a set of elements.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&component;filled"/>
 	<rdfs:subClassOf rdf:resource="&component;open"/>
 </rdfs:Class>
@@ -557,11 +566,6 @@ a given template. This feature does not enter into the typological comparison at
 <rdfs:Class rdf:about="&localfunction;negative"
 	 a:role="abstract"
 	 rdfs:label="localfunction:negative">
-	<rdfs:subClassOf rdf:resource="&general;function"/>
-</rdfs:Class>
-<rdfs:Class rdf:about="&localfunction;noun"
-	 a:role="abstract"
-	 rdfs:label="localfunction:noun">
 	<rdfs:subClassOf rdf:resource="&general;function"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&localfunction;objectReference"

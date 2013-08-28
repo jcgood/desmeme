@@ -807,6 +807,89 @@
 	 owl:sameAs="http://www.worldcat.org/oclc/32741831">
 	<terms:bibliographicCitation>Dahlstrom, Amy. 1995. Topic, focus, and word order problems in Algonquian: The Belcourt lecture. Winnipeg: Voices of Rupert’s Land.</terms:bibliographicCitation>
 </notes:source>
+<component:component rdf:about="&templates;EnglishNounStem"
+	 rdfs:label="EnglishNounStem">
+	<speccomponent:ELASTICITY rdf:resource="&templates;EnglishNounStem-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;EnglishNounStem-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;EnglishNounStem-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;EnglishNounStem-Coherence"
+	 rdfs:label="EnglishNounStem-Coherence">
+	<function:CLASS rdf:resource="&gold;Noun"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;EnglishNounStem-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="EnglishNounStem-Elasticity"/>
+<component:open rdf:about="&templates;EnglishNounStem-Filledness"
+	 rdfs:label="EnglishNounStem-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;EnglishNounStem-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;EnglishNounStem-Stability"
+	 rdfs:label="EnglishNounStem-Stability"/>
+<template:desmeme rdf:about="&templates;EnglishPlural"
+	 rdfs:label="EnglishPlural">
+	<specgeneral:CONDITIONING rdf:resource="&templates;EnglishPlural-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;EnglishPlural-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;EnglishPluralSuffix-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;EnglishPluralSuffix-Violability"/>
+	<function:FUNCTION rdf:resource="&localfunction;plural"/>
+</template:desmeme>
+<general:constructionalConditioning rdf:about="&templates;EnglishPlural-Conditioning"
+	 notes:CONDITIONS="Regular suffixal plural formation construction."
+	 rdfs:label="EnglishPlural-Conditioning"/>
+<template:arch rdf:about="&templates;EnglishPlural-Foundation"
+	 rdfs:label="EnglishPlural-Foundation">
+	<spectemplate:KEYSTONE rdf:resource="&templates;EnglishNounStem"/>
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;EnglishPluralNullComponent"/>
+	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;EnglishPluralNullComponent"/>
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;EnglishPluralSuffix"/>
+	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;EnglishPluralSuffix"/>
+</template:arch>
+<component:component rdf:about="&templates;EnglishPluralNullComponent"
+	 rdfs:label="EnglishPluralNullComponent">
+	<speccomponent:ELASTICITY rdf:resource="&templates;EnglishPluralNullComponent-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;EnglishPluralNullComponent-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;EnglishPluralNullComponent-Stability"/>
+</component:component>
+<component:inelastic rdf:about="&templates;EnglishPluralNullComponent-Elasticity"
+	 general:COUNT="0"
+	 rdfs:label="EnglishPluralNullComponent-Elasticity"/>
+<component:null rdf:about="&templates;EnglishPluralNullComponent-Filledness"
+	 rdfs:label="EnglishPluralNullComponent-Filledness"/>
+<component:stable rdf:about="&templates;EnglishPluralNullComponent-Stability"
+	 rdfs:label="EnglishPluralNullComponent-Stability"/>
+<component:component rdf:about="&templates;EnglishPluralSuffix"
+	 rdfs:label="EnglishPluralSuffix">
+	<speccomponent:ELASTICITY rdf:resource="&templates;EnglishPluralSuffix-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;EnglishPluralSuffix-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;EnglishPluralSuffix-Stability"/>
+</component:component>
+<component:inelastic rdf:about="&templates;EnglishPluralSuffix-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="EnglishPluralSuffix-Elasticity"/>
+<component:filled rdf:about="&templates;EnglishPluralSuffix-Filledness"
+	 rdfs:label="EnglishPluralSuffix-Filledness">
+	<speccomponent:FORM rdf:resource="&templates;EnglishPluralSuffix-Form"/>
+	<function:FILLER_CLASS rdf:resource="&localfunction;plural"/>
+</component:filled>
+<form:canonicalLineate rdf:about="&templates;EnglishPluralSuffix-Form"
+	 rdfs:label="EnglishPluralSuffix-Form">
+	<specform:TRANSCRIPTION rdf:resource="&templates;EnglishPluralSuffix-Transcription"/>
+	<form:LIAISON rdf:resource="&form;sinistrous"/>
+</form:canonicalLineate>
+<component:stable rdf:about="&templates;EnglishPluralSuffix-Stability"
+	 rdfs:label="EnglishPluralSuffix-Stability"/>
+<template:order rdf:about="&templates;EnglishPluralSuffix-Stricture"
+	 general:COUNT="2"
+	 rdfs:label="EnglishPluralSuffix-Stricture">
+	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
+	<general:RELATIONS rdf:resource="&general;simple"/>
+</template:order>
+<form:transcription rdf:about="&templates;EnglishPluralSuffix-Transcription"
+	 specform:TRANSCRIPTION_STRING="-s"
+	 rdfs:label="-s"/>
+<template:notViolable rdf:about="&templates;EnglishPluralSuffix-Violability"
+	 rdfs:label="EnglishPluralSuffix-Violability"/>
 <template:desmeme rdf:about="&templates;EnglishVP"
 	 rdfs:label="EnglishVP">
 	<specgeneral:CONDITIONING rdf:resource="&templates;EnglishVP-Conditioning"/>
@@ -896,90 +979,6 @@
 	<general:RELATIONS rdf:resource="&general;simple"/>
 	<general:CONSTITUENT rdf:resource="&general;syntacticConstituent"/>
 </template:order>
-<component:component rdf:about="&templates;English_nounStem"
-	 rdfs:label="English_nounStem">
-	<speccomponent:ELASTICITY rdf:resource="&templates;English_nounStem_elasticity"/>
-	<speccomponent:FILLEDNESS rdf:resource="&templates;English_nounStem_filledness"/>
-	<speccomponent:STABILITY rdf:resource="&templates;English_nounStem_stability"/>
-</component:component>
-<component:coherent rdf:about="&templates;English_nounStem_coherence"
-	 rdfs:label="English_nounStem_coherence">
-	<function:CLASS rdf:resource="&localfunction;noun"/>
-</component:coherent>
-<component:inelastic rdf:about="&templates;English_nounStem_elasticity"
-	 general:COUNT="1"
-	 rdfs:label="English_nounStem_elasticity"/>
-<component:open rdf:about="&templates;English_nounStem_filledness"
-	 rdfs:label="English_nounStem_filledness">
-	<speccomponent:COHERENCE rdf:resource="&templates;English_nounStem_coherence"/>
-</component:open>
-<component:stable rdf:about="&templates;English_nounStem_stability"
-	 rdfs:label="English_nounStem_stability"/>
-<template:desmeme rdf:about="&templates;English_plural"
-	 rdfs:label="English_plural">
-	<template:VIOLABILITY rdf:resource="&templates;English_plural-notViolable"/>
-	<spectemplate:FOUNDATION rdf:resource="&templates;English_plural_Foundation"/>
-	<spectemplate:STRICTURE rdf:resource="&templates;English_plural_Stricture"/>
-	<specgeneral:CONDITIONING rdf:resource="&templates;English_plural_conditioning"/>
-	<function:FUNCTION rdf:resource="&localfunction;plural"/>
-</template:desmeme>
-<template:notViolable rdf:about="&templates;English_plural-notViolable"
-	 rdfs:label="English_plural-notViolable"/>
-<component:component rdf:about="&templates;English_pluralSuffix"
-	 rdfs:label="English_pluralSuffix">
-	<speccomponent:STABILITY rdf:resource="&templates;English_pluralSuffix-stability"/>
-	<speccomponent:ELASTICITY rdf:resource="&templates;English_pluralSuffix_elasticity"/>
-	<speccomponent:FILLEDNESS rdf:resource="&templates;English_pluralSuffix_filledness"/>
-</component:component>
-<component:stable rdf:about="&templates;English_pluralSuffix-stability"
-	 rdfs:label="English_pluralSuffix-stability"/>
-<component:elastic rdf:about="&templates;English_pluralSuffix_elasticity"
-	 general:MAXIMUM="1"
-	 general:MINIMUM="0"
-	 rdfs:label="English_pluralSuffix_elasticity"/>
-<component:filled rdf:about="&templates;English_pluralSuffix_filledness"
-	 rdfs:label="English_pluralSuffix_filledness">
-	<speccomponent:FORM rdf:resource="&templates;English_pluralSuffix_form"/>
-	<function:FILLER_CLASS rdf:resource="&localfunction;plural"/>
-</component:filled>
-<form:canonicalLineate rdf:about="&templates;English_pluralSuffix_form"
-	 rdfs:label="English_pluralSuffix_form">
-	<specform:TRANSCRIPTION rdf:resource="&templates;English_pluralSuffix_transcription"/>
-	<form:LIAISON rdf:resource="&form;sinistrous"/>
-</form:canonicalLineate>
-<form:transcription rdf:about="&templates;English_pluralSuffix_transcription"
-	 specform:TRANSCRIPTION_STRING="-s"
-	 rdfs:label="-s"/>
-<template:arch rdf:about="&templates;English_plural_Foundation"
-	 rdfs:label="English_plural_Foundation">
-	<spectemplate:KEYSTONE rdf:resource="&templates;English_nounStem"/>
-	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;English_pluralSuffix"/>
-	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;English_pluralSuffix"/>
-	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;English_plural_nullComponent"/>
-	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;English_plural_nullComponent"/>
-</template:arch>
-<template:order rdf:about="&templates;English_plural_Stricture"
-	 general:COUNT="2"
-	 rdfs:label="English_plural_Stricture">
-	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
-	<general:RELATIONS rdf:resource="&general;simple"/>
-</template:order>
-<general:constructionalConditioning rdf:about="&templates;English_plural_conditioning"
-	 notes:CONDITIONS="Suffix for regular plural formation."
-	 rdfs:label="English_plural_conditioning"/>
-<component:component rdf:about="&templates;English_plural_nullComponent"
-	 rdfs:label="English_plural_nullComponent">
-	<speccomponent:FILLEDNESS rdf:resource="&templates;English_plural_nullComponent-Filledness"/>
-	<speccomponent:STABILITY rdf:resource="&templates;English_plural_nullComponent-Stability"/>
-	<speccomponent:ELASTICITY rdf:resource="&templates;English_plural_nullComponent-elasticity"/>
-</component:component>
-<component:null rdf:about="&templates;English_plural_nullComponent-Filledness"
-	 rdfs:label="English_plural_nullComponent-Filledness"/>
-<component:stable rdf:about="&templates;English_plural_nullComponent-Stability"
-	 rdfs:label="English_plural_nullComponent-Stability"/>
-<component:inelastic rdf:about="&templates;English_plural_nullComponent-elasticity"
-	 general:COUNT="0"
-	 rdfs:label="English_plural_nullComponent-elasticity"/>
 <component:restkomponentenSet rdf:about="&templates;German-RK"
 	 rdfs:label="German-RK">
 	<spectemplate:RESTKOMPONENT rdf:resource="&templates;GermanVC"/>

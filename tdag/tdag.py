@@ -289,6 +289,8 @@ class tdag ( ):
 		
 		# If we've made it this far, it's a non-repeatable, generic node.		
 		else:
+			# make first letter of type name lowercase (needed for names borrowed from GOLD)
+			node = node[0].lower() + node[1:]
 			self.core.add_node(nodeName, attrs=[("label", "<<i>"+node+"</i>>")])
 		return nodeName
 
