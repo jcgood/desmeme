@@ -765,6 +765,7 @@
 <template:order rdf:about="&templates;ChintangPrefixes-Stricture"
 	 general:COUNT="2"
 	 rdfs:label="ChintangPrefixes-Stricture">
+	<notes:ANALYTICAL_AMBIGUITY>The stricture could, in principle, be analyzed as involving a morphosyntactic category of prefix paired with a phonological category of the prosodic word. However, an alternative analysis involving two prosodic words is also possible. I choose the latter since templates involving two prosodic categories of the same type are well-attested whereas I have not yet encountered a case where one must treat a template's components as mixing morphosyntactic and prosodic types.</notes:ANALYTICAL_AMBIGUITY>
 	<general:CONSTITUENT rdf:resource="&general;prosodicWord"/>
 	<general:RELATIONS rdf:resource="&general;simple"/>
 </template:order>

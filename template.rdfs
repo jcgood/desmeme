@@ -618,6 +618,12 @@ a given template. This feature does not enter into the typological comparison at
 	 rdfs:label="localfunction:velarConsonant">
 	<rdfs:subClassOf rdf:resource="&general;function"/>
 </rdfs:Class>
+<rdf:Property rdf:about="&notes;ANALYTICAL_AMBIGUITY"
+	 a:maxCardinality="1"
+	 rdfs:label="notes:ANALYTICAL_AMBIGUITY">
+	<rdfs:domain rdf:resource="&template;stricture"/>
+	<rdfs:range rdf:resource="&rdfs;Literal"/>
+</rdf:Property>
 <rdf:Property rdf:about="&notes;CONDITIONS"
 	 a:maxCardinality="1"
 	 rdfs:label="notes:CONDITIONS">
