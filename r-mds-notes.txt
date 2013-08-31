@@ -1,0 +1,9 @@
+templates <- read.table("/Users/jcgood/Desktop/xxx.txt", sep="\t")
+templateframe = data.frame(templates,row.names=TRUE)
+templatedist = as.dist(templateframe)
+templatemds = cmdscale(templatedist, eig=TRUE, k=2)
+x <- templatemds$points[,1]
+y <- templatemds$points[,2]
+plot(x, y, xlab="Coordinate 1", ylab="Coordinate 2", 
+  main="Metric MDS",	 type="n")
+text(x, y, labels = row.names(templateframe), cex=.3)

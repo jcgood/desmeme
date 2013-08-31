@@ -162,7 +162,7 @@ def full_grid(distances):
 			distanceString += ("\t" + str(roundedDistance))
 	
 		# Write out the distances string manually
-		grid = grid + template + "\t" + distanceString + "\n"
+		grid = grid + template + distanceString + "\n"
 	
 	return grid
 	

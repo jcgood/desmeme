@@ -28,5 +28,9 @@ noCompDistances = get_distances(gTemplatesNoComp)
 noCompOutfile = "/Volumes/Obang/MyDocuments/Linearity/TemplatesBook/templateNoComp.nex"
 to_nex(noCompDistances,noCompOutfile)
 
-
 print full_grid(distances)
+
+print "NoComp"
+
+distancesNoComp = get_distances(gTemplatesNoComp)
+print full_grid(distancesNoComp)
