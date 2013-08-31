@@ -129,6 +129,12 @@
 	<rdfs:comment>I am using it for a morphologically bound particle in addition to a partly-free one.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&general;function"/>
 </rdfs:Class>
+<rdf:Property rdf:about="&gold;inLanguage"
+	 a:maxCardinality="1"
+	 rdfs:label="gold:inLanguage">
+	<rdfs:domain rdf:resource="&form;form"/>
+	<rdfs:range rdf:resource="&rdfs;Literal"/>
+</rdf:Property>
 <rdfs:Class rdf:about="&component;coherence"
 	 a:role="abstract"
 	 rdfs:label="component:coherence">
@@ -195,7 +201,7 @@
 </rdfs:Class>
 <rdfs:Class rdf:about="&component;restkomponentenSet"
 	 rdfs:label="component:restkomponentenSet">
-	<rdfs:comment>A type creating a container where those components not occupying predefined structural slots in a template can be indicated.</rdfs:comment>
+	<rdfs:comment>A type for a container where those components not occupying predefined structural slots in a template can be indicated.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&component;stability"
@@ -206,10 +212,12 @@
 </rdfs:Class>
 <rdfs:Class rdf:about="&component;stable"
 	 rdfs:label="component:stable">
+	<rdfs:comment>A type that specifies that a given component does not exhibit any  dependencies with any other component.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&component;stability"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&component;unstable"
 	 rdfs:label="component:unstable">
+	<rdfs:comment>A type that specifies that a given component exhibits a dependency with another component. Only one dependency can be specified per component since the need for me has not yet been encountered.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&component;stability"/>
 </rdfs:Class>
 <rdf:Property rdf:about="&form;LIAISON"
@@ -222,6 +230,7 @@
 </rdf:Property>
 <rdfs:Class rdf:about="&form;canonicalLineate"
 	 rdfs:label="form:canonicalLineate">
+	<rdfs:comment>A type that specifies that a given set of linearization restrictions are considered to be ``normal'' and, therefore, not templatic. The linear specifications associated with most lexical items would fall into this type.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&form;lineate"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&form;dependent"
@@ -237,6 +246,7 @@
 <rdfs:Class rdf:about="&form;form"
 	 a:role="abstract"
 	 rdfs:label="form:form">
+	<rdfs:comment>A high-level supertype encompassing various kinds of linguistic forms.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&form;independent"
@@ -252,6 +262,7 @@
 <rdfs:Class rdf:about="&form;lineate"
 	 a:role="abstract"
 	 rdfs:label="form:lineate">
+	<rdfs:comment>A type of specification of a linguistic form involving stipulaton of linear ordering. This type is associated with its own subtypes.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&form;form"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&form;sinistrous"
@@ -818,6 +829,7 @@ a given template. This feature does not enter into the typological comparison at
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;desmeme"
 	 rdfs:label="template:desmeme">
+	<rdfs:comment>A type that specifies that a given set of linearization restrictions cannot be predicted and are not associated with the ordering of segments or suprasegments of a lexical item. Templates are a subclass of desmemes.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&form;lineate"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;exceptionality"
