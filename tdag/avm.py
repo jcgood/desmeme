@@ -217,7 +217,7 @@ class avm ( ):
 
 		# A list for prioritizing which features get the full AVM and (implicitly) which just get tags.
 		# All possible features for components need to be listed here for the function to work.
-		prioritylist = [ "KEYSTONE", "LEFT_SUPPORT", "RIGHT_SUPPORT", "LEFT_VOUSSOIR", "RIGHT_VOUSSOIR", "FILLED_COMPONENT", "SUPPORT", "ASSOCIATE"]
+		prioritylist = [ "KEYSTONE", "LEFT_SUPPORT", "RIGHT_SUPPORT", "LEFT_VOUSSOIR", "RIGHT_VOUSSOIR", "RESTKOMPONENT", "FILLED_COMPONENT", "SUPPORT", "ASSOCIATE"]
 		
 		if components == None: components = {}
 
@@ -233,7 +233,15 @@ class avm ( ):
 				priorityset = False
 				for foundationfeature in prioritylist:
 				
-					if foundationfeature in attributes and priorityset == False:
+					if foundationfeature in attributes and priorityset == False and foundationfeature is "RESTKOMPONENT":
+						self.RKre = component
+						print self.RKre, "gg"
+						self.makepriorityfeature(foundationfeature, self, component)
+						print "ee", self.name, foundationfeature, component
+						priorityset = True
+						# Hack for Nimboran RK reentrancy; does not scale
+
+					elif foundationfeature in attributes and priorityset == False:
 						self.makepriorityfeature(foundationfeature, self)
 						priorityset = True
 
@@ -278,7 +286,7 @@ class avm ( ):
 	# For a given feature, set it it as being the priority feature of a re-entrant AVM
 	# We need to keep track of the highest AVM so we can set the tag numbers as appropriate
 	# Recursive
-	def makepriorityfeature(self, priorityfeature, topavm):
+	def makepriorityfeature(self, priorityfeature, topavm, componentID = False):
 
 		featvals = self.featvals
 		tagcount = topavm.totaltags
@@ -286,8 +294,28 @@ class avm ( ):
 		for featval in featvals:
 			feat = featval.feature
 			val = featval.value
+			
+			# Hack for RK reentrancy
+			try: RKre = topavm.RKre
+			except: RKre = False
+			
+			#print "ci", componentID, feat
 
-			if feat == priorityfeature:
+			# Hack to handle re-entrancy in RKset for Nimboran; breaks if reentrancy more than one
+			if feat == priorityfeature and feat == "RESTKOMPONENT" and RKre == val.name:
+				
+				id = val.name
+				val.reentered = True
+				val.primary = True
+				tagcount += 1
+				val.tag = tagcount
+				topavm.totaltags = tagcount
+				topavm.tags[id] = tagcount
+
+			# Only allow one re-entered RK per AVM--hack! not good assumption
+			elif feat == priorityfeature and feat != "RESTKOMPONENT":
+		
+				print "fff", feat
 				id = val.name
 				val.reentered = True
 				val.primary = True
@@ -301,7 +329,7 @@ class avm ( ):
 					pass
 				# Otherwise, we must have an embedded AVM to process to find what we need
 				else:
-					val.makepriorityfeature(priorityfeature, topavm)
+					val.makepriorityfeature(priorityfeature, topavm, componentID)
 
 	# For a given feature, set it it as being a non=priority re-entered feature
 	# Recursive

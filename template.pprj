@@ -1,4 +1,4 @@
-; Fri Aug 30 22:56:15 EDT 2013
+; Thu Sep 12 09:17:03 EDT 2013
 ; 
 ;+ (version "3.3.1")
 ;+ (build "Build 430")
@@ -20,10 +20,10 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[template_ProjectKB_Instance_80299]
-		[template_ProjectKB_Instance_80300]
-		[template_ProjectKB_Instance_80301]
-		[template_ProjectKB_Instance_80302]))
+		[template_ProjectKB_Instance_100163]
+		[template_ProjectKB_Instance_100164]
+		[template_ProjectKB_Instance_100165]
+		[template_ProjectKB_Instance_100166]))
 
 ([CLSES_TAB] of  Widget
 
@@ -153,21 +153,21 @@
 	(customized_instance_widgets
 		[PAL_FORM_WIDGET]
 		[INSTANCE_ANNOTATION_FORM_WIDGET]
+		[template_ProjectKB_Instance_385]
+		[template_ProjectKB_Instance_232]
+		[template_ProjectKB_Instance_99]
+		[template_ProjectKB_Instance_20070]
 		[STANDARD_CLASS_FORM_WIDGET]
 		[STANDARD_SLOT_FORM_WIDGET]
-		[STANDARD_FACET_FORM_WIDGET]
-		[template_ProjectKB_Instance_378]
-		[template_ProjectKB_Instance_225]
-		[template_ProjectKB_Instance_70085]
-		[template_ProjectKB_Instance_385]
-		[template_ProjectKB_Instance_30075]
-		[template_ProjectKB_Instance_20070]
-		[template_ProjectKB_Instance_232]
-		[template_ProjectKB_Instance_30079]
-		[template_ProjectKB_Instance_30074]
-		[template_ProjectKB_Instance_10164]
 		[template_ProjectKB_Instance_448]
-		[template_ProjectKB_Instance_99])
+		[STANDARD_FACET_FORM_WIDGET]
+		[template_ProjectKB_Instance_30079]
+		[template_ProjectKB_Instance_10164]
+		[template_ProjectKB_Instance_30075]
+		[template_ProjectKB_Instance_225]
+		[template_ProjectKB_Instance_30074]
+		[template_ProjectKB_Instance_70085]
+		[template_ProjectKB_Instance_378])
 	(default_cls_metaclass ":STANDARD-CLASS")
 	(default_facet_metaclass ":STANDARD-FACET")
 	(default_instance_widget_class_name "edu.stanford.smi.protege.widget.FormWidget")
@@ -585,6 +585,26 @@
 	(is_hidden TRUE)
 	(property_list [template_ProjectKB_Instance_10017])
 	(widget_class_name "edu.stanford.smi.protege.widget.instance_tree.InstanceTreeTab"))
+
+([template_ProjectKB_Instance_100163] of  String
+
+	(name ":PAL-CONSTRAINT")
+	(string_value "%3APAL-NAME"))
+
+([template_ProjectKB_Instance_100164] of  String
+
+	(name ":INSTANCE-ANNOTATION")
+	(string_value "%3AANNOTATION-TEXT"))
+
+([template_ProjectKB_Instance_100165] of  String
+
+	(name ":META-CLASS")
+	(string_value "%3ANAME"))
+
+([template_ProjectKB_Instance_100166] of  String
+
+	(name "form:transcription")
+	(string_value "specform%3ATRANSCRIPTION_STRING"))
 
 ([template_ProjectKB_Instance_10017] of  Property_List
 )
@@ -1938,26 +1958,6 @@
 
 ([template_ProjectKB_Instance_80088] of  Property_List
 )
-
-([template_ProjectKB_Instance_80299] of  String
-
-	(name "form:transcription")
-	(string_value "specform%3ATRANSCRIPTION_STRING"))
-
-([template_ProjectKB_Instance_80300] of  String
-
-	(name ":PAL-CONSTRAINT")
-	(string_value "%3APAL-NAME"))
-
-([template_ProjectKB_Instance_80301] of  String
-
-	(name ":INSTANCE-ANNOTATION")
-	(string_value "%3AANNOTATION-TEXT"))
-
-([template_ProjectKB_Instance_80302] of  String
-
-	(name ":META-CLASS")
-	(string_value "%3ANAME"))
 
 ([template_ProjectKB_Instance_81] of  Property_List
 )

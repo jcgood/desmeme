@@ -186,7 +186,7 @@
 	 rdfs:label="AlgonquianClauseNegative">
 	<speccomponent:ELASTICITY rdf:resource="&templates;AlgonquianClauseNegative-Elasticity"/>
 	<speccomponent:FILLEDNESS rdf:resource="&templates;AlgonquianClauseNegative-Filledness"/>
-	<speccomponent:STABILITY rdf:resource="&templates;Algonquian_clause_Negative-Stability"/>
+	<speccomponent:STABILITY rdf:resource="&templates;AlgonquianClauseNegative-Stability"/>
 </component:component>
 <component:coherent rdf:about="&templates;AlgonquianClauseNegative-Coherence"
 	 rdfs:label="AlgonquianClauseNegative-Coherence">
@@ -200,6 +200,13 @@
 	 rdfs:label="AlgonquianClauseNegative-Filledness">
 	<speccomponent:COHERENCE rdf:resource="&templates;AlgonquianClauseNegative-Coherence"/>
 </component:open>
+<component:unstable rdf:about="&templates;AlgonquianClauseNegative-Stability"
+	 rdfs:label="AlgonquianClauseNegative-Stability">
+	<speccomponent:ASSOCIATE_POSITION rdf:resource="&templates;AlgonquianClauseNegative-Support"/>
+	<speccomponent:ASSOCIATE rdf:resource="&templates;AlgonquianClauseVerb"/>
+</component:unstable>
+<general:right rdf:about="&templates;AlgonquianClauseNegative-Support"
+	 rdfs:label="AlgonquianClauseNegative-Support"/>
 <component:component rdf:about="&templates;AlgonquianClauseNullComponent"
 	 rdfs:label="AlgonquianClauseNullComponent">
 	<speccomponent:ELASTICITY rdf:resource="&templates;AlgonquianClauseNullComponent-Elasticity"/>
@@ -272,13 +279,6 @@
 </component:open>
 <component:stable rdf:about="&templates;AlgonquianClauseVerb-Stability"
 	 rdfs:label="AlgonquianClauseVerb-Stability"/>
-<component:unstable rdf:about="&templates;Algonquian_clause_Negative-Stability"
-	 rdfs:label="Algonquian_clause_Negative-Stability">
-	<speccomponent:ASSOCIATE rdf:resource="&templates;AlgonquianClauseVerb"/>
-	<speccomponent:ASSOCIATE_POSITION rdf:resource="&templates;Algonquian_clause_Negative-Support"/>
-</component:unstable>
-<general:right rdf:about="&templates;Algonquian_clause_Negative-Support"
-	 rdfs:label="Algonquian_clause_Negative-Support"/>
 <component:filled rdf:about="&templates;Bantu-Transitive-Filledness"
 	 rdfs:label="Bantu-Transitive-Filledness">
 	<speccomponent:FORM rdf:resource="&templates;BantuTransitive-Form"/>
@@ -550,6 +550,8 @@
 	<function:CLASSES rdf:resource="&localfunction;goal"/>
 	<function:CLASSES rdf:resource="&localfunction;infinitive"/>
 </component:incoherent>
+<general:final rdf:about="&templates;ChechenPreverbal-Position"
+	 rdfs:label="ChechenPreverbal-Position"/>
 <component:stable rdf:about="&templates;ChechenPreverbal-Stability"
 	 rdfs:label="ChechenPreverbal-Stability"/>
 <template:desmeme rdf:about="&templates;ChechenPreverbalA"
@@ -579,11 +581,9 @@
 	 rdfs:label="ChechenPreverbalA-Preverbal-Filledness">
 	<speccomponent:FORM rdf:resource="&templates;ChechenA-Form"/>
 	<speccomponent:COHERENCE rdf:resource="&templates;ChechenPreverbal-Coherence"/>
-	<speccomponent:FILLER_POSITION rdf:resource="&templates;ChechenPreverbalA-Preverbal-FillerPosition"/>
+	<speccomponent:FILLER_POSITION rdf:resource="&templates;ChechenPreverbal-Position"/>
 	<function:FILLER_CLASS rdf:resource="&localfunction;clauseChaining"/>
 </component:partiallyFilled>
-<general:final rdf:about="&templates;ChechenPreverbalA-Preverbal-FillerPosition"
-	 rdfs:label="ChechenPreverbalA-Preverbal-FillerPosition"/>
 <template:length rdf:about="&templates;ChechenPreverbalA-Stricture"
 	 general:COUNT="2"
 	 rdfs:label="ChechenPreverbalA-Stricture">
@@ -1149,6 +1149,11 @@
 	 owl:sameAs="http://elanguage.net/journals/bls/article/view/2757">
 	<terms:bibliographicCitation xml:space='preserve'><![CDATA[Hyman, Larry M. & Sam A. Mchombo. 1992. Morphotactic constraints in the Chichewa verb stem. In Laura Buszard-Welcher, Lionel Wee & William Weigel (eds.), Proceedings of the eighteenth meeting of the Berkeley Linguistics Society, general session and parassession, 350–363. Berkeley: Berkeley Linguistics Society.]]></terms:bibliographicCitation>
 </notes:source>
+<notes:source rdf:about="&templates;Inkelas-1993"
+	 rdfs:label="Inkelas-1993"
+	 owl:sameAs="http://jstor.org/stable/4047660">
+	<terms:bibliographicCitation>Inkelas, Sharon. 1993. Nimboran position class morphology. Natural Language and Linguistic Theory 11. 559–624.</terms:bibliographicCitation>
+</notes:source>
 <notes:source rdf:about="&templates;InkelasOrgun-1995"
 	 rdfs:label="InkelasOrgun-1995"
 	 owl:sameAs="http://jstor.org/stable/4615465">
@@ -1295,10 +1300,11 @@
 <template:desmeme rdf:about="&templates;NimboranVerb"
 	 gold:inLanguage="http://lexvo.org/id/iso639-3/nir"
 	 rdfs:label="NimboranVerb">
+	<notes:HAS_SOURCE rdf:resource="&templates;Inkelas-1993"/>
 	<specgeneral:CONDITIONING rdf:resource="&templates;NimboranVerb-Conditioning"/>
 	<spectemplate:FOUNDATION rdf:resource="&templates;NimboranVerb-Span"/>
 	<spectemplate:STRICTURE rdf:resource="&templates;NimboranVerb-Stricture"/>
-	<template:VIOLABILITY rdf:resource="&templates;NimboranVerb-violability"/>
+	<template:VIOLABILITY rdf:resource="&templates;NimboranVerb-Violability"/>
 	<function:FUNCTION rdf:resource="&localfunction;finite"/>
 </template:desmeme>
 <general:constructionalConditioning rdf:about="&templates;NimboranVerb-Conditioning"
@@ -1325,8 +1331,8 @@
 	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
 	<general:RELATIONS rdf:resource="&general;taxonomic"/>
 </template:order>
-<template:potentiallyViolable rdf:about="&templates;NimboranVerb-violability"
-	 rdfs:label="NimboranVerb-violability">
+<template:potentiallyViolable rdf:about="&templates;NimboranVerb-Violability"
+	 rdfs:label="NimboranVerb-Violability">
 	<template:REPARABILITY rdf:resource="&template;homophonic"/>
 	<template:EXCEPTIONALITY rdf:resource="&template;noKnownExceptions"/>
 </template:potentiallyViolable>
@@ -1353,26 +1359,30 @@
 	 rdfs:label="NimboranVerbLeftSupport-Stability"/>
 <component:component rdf:about="&templates;NimboranVerbPosition3"
 	 rdfs:label="NimboranVerbPosition3">
+	<speccomponent:FILLEDNESS rdf:resource="&templates;NimboranVerbPosition3-Coherence"/>
 	<speccomponent:ELASTICITY rdf:resource="&templates;NimboranVerbPosition3-Elasticity"/>
-	<speccomponent:FILLEDNESS rdf:resource="&templates;NimboranVerbPosition3-Filledness"/>
 	<speccomponent:STABILITY rdf:resource="&templates;NimboranVerbPosition3-Stability"/>
 </component:component>
-<component:incoherent rdf:about="&templates;NimboranVerbPosition3-Coherence"
+<component:filled rdf:about="&templates;NimboranVerbPosition3-Coherence"
 	 rdfs:label="NimboranVerbPosition3-Coherence">
-	<function:CLASSES rdf:resource="&gold;VerbalParticle"/>
-	<function:CLASSES rdf:resource="&localfunction;TenseMoodAspect"/>
-	<function:CLASSES rdf:resource="&localfunction;objectReference"/>
-</component:incoherent>
+	<speccomponent:FORM rdf:resource="&templates;NimboranVerbPosition3-Form"/>
+	<function:FILLER_CLASS rdf:resource="&localfunction;objectReference"/>
+</component:filled>
 <component:elastic rdf:about="&templates;NimboranVerbPosition3-Elasticity"
 	 general:MAXIMUM="1"
 	 general:MINIMUM="0"
 	 rdfs:label="NimboranVerbPosition3-Elasticity"/>
-<component:open rdf:about="&templates;NimboranVerbPosition3-Filledness"
-	 rdfs:label="NimboranVerbPosition3-Filledness">
-	<speccomponent:COHERENCE rdf:resource="&templates;NimboranVerbPosition3-Coherence"/>
-</component:open>
+<form:canonicalLineate rdf:about="&templates;NimboranVerbPosition3-Form"
+	 gold:inLanguage="http://lexvo.org/id/iso639-3/nir"
+	 rdfs:label="NimboranVerbPosition3-Form">
+	<specform:TRANSCRIPTION rdf:resource="&templates;NimboranVerbPosition3-Transcription"/>
+	<form:LIAISON rdf:resource="&form;independent"/>
+</form:canonicalLineate>
 <component:stable rdf:about="&templates;NimboranVerbPosition3-Stability"
 	 rdfs:label="NimboranVerbPosition3-Stability"/>
+<form:transcription rdf:about="&templates;NimboranVerbPosition3-Transcription"
+	 specform:TRANSCRIPTION_STRING="-rár-"
+	 rdfs:label="-rár-"/>
 <component:component rdf:about="&templates;NimboranVerbPosition4"
 	 rdfs:label="NimboranVerbPosition4">
 	<speccomponent:ELASTICITY rdf:resource="&templates;NimboranVerbPosition4-Elasticity"/>
@@ -1449,6 +1459,8 @@
 	<speccomponent:FILLEDNESS rdf:resource="&templates;NimboranVerbPosition7-Filledness"/>
 	<speccomponent:STABILITY rdf:resource="&templates;NimboranVerbPosition7-Stability"/>
 </component:component>
+<general:left rdf:about="&templates;NimboranVerbPosition7-AssociatePosition"
+	 rdfs:label="NimboranVerbPosition7-AssociatePosition"/>
 <component:coherent rdf:about="&templates;NimboranVerbPosition7-Coherence"
 	 rdfs:label="NimboranVerbPosition7-Coherence">
 	<function:CLASS rdf:resource="&localfunction;tense"/>
@@ -1460,8 +1472,11 @@
 	 rdfs:label="NimboranVerbPosition7-Filledness">
 	<speccomponent:COHERENCE rdf:resource="&templates;NimboranVerbPosition7-Coherence"/>
 </component:open>
-<component:stable rdf:about="&templates;NimboranVerbPosition7-Stability"
-	 rdfs:label="NimboranVerbPosition7-Stability"/>
+<component:unstable rdf:about="&templates;NimboranVerbPosition7-Stability"
+	 rdfs:label="NimboranVerbPosition7-Stability">
+	<speccomponent:ASSOCIATE rdf:resource="&templates;NimboranVerbPosition5"/>
+	<speccomponent:ASSOCIATE_POSITION rdf:resource="&templates;NimboranVerbPosition7-AssociatePosition"/>
+</component:unstable>
 <component:component rdf:about="&templates;NimboranVerbRightSupport"
 	 rdfs:label="NimboranVerbRightSupport">
 	<speccomponent:ELASTICITY rdf:resource="&templates;NimboranVerbRightSupport-Elasticity"/>
@@ -1904,6 +1919,4 @@
 	 owl:sameAs="http://www.sil.org/resources/archives/1883">
 	<terms:bibliographicCitation>Watters, John R. 1979. Focus in Aghem: A study of its formal correlates and typology. In Larry M. Hyman (ed.), Aghem grammatical structure: With special reference to noun classes, tense-aspect and focus marking Southern California Occasional Papers in Linguistics 7, 137–197. Los Angeles: University of Southern California Department of Linguistics.</terms:bibliographicCitation>
 </notes:source>
-<general:immediateLeft rdf:about="&templates;template_Instance_30"
-	 rdfs:label="template_Instance_30"/>
 </rdf:RDF>
