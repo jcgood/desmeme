@@ -369,8 +369,8 @@
 </template:desmeme>
 <general:lexicoconstructionalConditioning rdf:about="&templates;BantuCT-Conditioning"
 	 rdfs:label="BantuCT-Conditioning">
-	<notes:CONDITIONS>I am treating the Transitive as the conditioning factor in the template (analogous to Applicative in CA template).</notes:CONDITIONS>
-	<spectemplate:FILLED_COMPONENT rdf:resource="&templates;BantuTransitive"/>
+	<notes:CONDITIONS>I am treating the Causative as the conditioning factor in this template.</notes:CONDITIONS>
+	<spectemplate:FILLED_COMPONENT rdf:resource="&templates;BantuCausativeDependent"/>
 	<template:FILLER_POSITION rdf:resource="&general;final"/>
 </general:lexicoconstructionalConditioning>
 <template:arch rdf:about="&templates;BantuCT-Foundation"
