@@ -1,4 +1,4 @@
-; Wed Sep 18 15:46:29 EDT 2013
+; Tue Sep 24 13:47:26 EDT 2013
 ; 
 ;+ (version "3.3.1")
 ;+ (build "Build 430")
@@ -20,10 +20,10 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[template_ProjectKB_Instance_90089]
-		[template_ProjectKB_Instance_90090]
-		[template_ProjectKB_Instance_90091]
-		[template_ProjectKB_Instance_90092]))
+		[template_ProjectKB_Instance_100097]
+		[template_ProjectKB_Instance_100098]
+		[template_ProjectKB_Instance_100099]
+		[template_ProjectKB_Instance_100100]))
 
 ([CLSES_TAB] of  Widget
 
@@ -553,11 +553,31 @@
 ([template_ProjectKB_Instance_10009] of  Property_List
 )
 
+([template_ProjectKB_Instance_100097] of  String
+
+	(name ":PAL-CONSTRAINT")
+	(string_value "%3APAL-NAME"))
+
+([template_ProjectKB_Instance_100098] of  String
+
+	(name ":INSTANCE-ANNOTATION")
+	(string_value "%3AANNOTATION-TEXT"))
+
+([template_ProjectKB_Instance_100099] of  String
+
+	(name ":META-CLASS")
+	(string_value "%3ANAME"))
+
 ([template_ProjectKB_Instance_10010] of  Widget
 
 	(is_hidden TRUE)
 	(property_list [template_ProjectKB_Instance_10011])
 	(widget_class_name "ezpal.EZPalTab"))
+
+([template_ProjectKB_Instance_100100] of  String
+
+	(name "form:transcription")
+	(string_value "specform%3ATRANSCRIPTION_STRING"))
 
 ([template_ProjectKB_Instance_10011] of  Property_List
 )
@@ -1976,26 +1996,6 @@
 
 ([template_ProjectKB_Instance_90] of  Property_List
 )
-
-([template_ProjectKB_Instance_90089] of  String
-
-	(name ":PAL-CONSTRAINT")
-	(string_value "%3APAL-NAME"))
-
-([template_ProjectKB_Instance_90090] of  String
-
-	(name ":INSTANCE-ANNOTATION")
-	(string_value "%3AANNOTATION-TEXT"))
-
-([template_ProjectKB_Instance_90091] of  String
-
-	(name ":META-CLASS")
-	(string_value "%3ANAME"))
-
-([template_ProjectKB_Instance_90092] of  String
-
-	(name "form:transcription")
-	(string_value "specform%3ATRANSCRIPTION_STRING"))
 
 ([template_ProjectKB_Instance_91] of  Property_List
 )

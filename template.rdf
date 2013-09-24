@@ -354,7 +354,7 @@
 </template:order>
 <template:potentiallyViolable rdf:about="&templates;BantuCA-Violability"
 	 rdfs:label="BantuCA-Violability">
-	<template:REPARABILITY rdf:resource="&template;metathesis"/>
+	<template:REPARABILITY rdf:resource="&template;homophonic"/>
 	<template:EXCEPTIONALITY rdf:resource="&template;noKnownExceptions"/>
 </template:potentiallyViolable>
 <template:desmeme rdf:about="&templates;BantuCT"
@@ -387,8 +387,10 @@
 	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
 	<general:RELATIONS rdf:resource="&general;simple"/>
 </template:order>
-<template:potentiallyViolable rdf:about="&templates;BantuCT-Violability"
-	 rdfs:label="BantuCT-Violability">
+<template:notViolable rdf:about="&templates;BantuCT-Violability"
+	 rdfs:label="BantuCT-Violability"/>
+<template:potentiallyViolable rdf:about="&templates;BantuCT-Violability-Dep"
+	 rdfs:label="BantuCT-Violability-Dep">
 	<template:REPARABILITY rdf:resource="&template;metathesis"/>
 	<template:EXCEPTIONALITY rdf:resource="&template;noKnownExceptions"/>
 </template:potentiallyViolable>
@@ -497,8 +499,10 @@
 	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
 	<general:RELATIONS rdf:resource="&general;simple"/>
 </template:order>
-<template:potentiallyViolable rdf:about="&templates;BantuVCy-Violability"
-	 rdfs:label="BantuVCy-Violability">
+<template:notViolable rdf:about="&templates;BantuVCy-Violability"
+	 rdfs:label="BantuVCy-Violability"/>
+<template:potentiallyViolable rdf:about="&templates;BantuVCy-Violability-Dep"
+	 rdfs:label="BantuVCy-Violability-Dep">
 	<template:REPARABILITY rdf:resource="&template;metathesis"/>
 	<template:EXCEPTIONALITY rdf:resource="&template;noKnownExceptions"/>
 </template:potentiallyViolable>
