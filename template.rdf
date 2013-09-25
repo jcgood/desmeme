@@ -336,8 +336,14 @@
 	 rdfs:label="BantuCA-Conditioning">
 	<notes:CONDITIONS>The Applicative is being treated as the "cause" of the restriction.</notes:CONDITIONS>
 	<spectemplate:FILLED_COMPONENT rdf:resource="&templates;BantuApplicative"/>
+	<spectemplate:FILLED_COMPONENTS rdf:resource="&templates;BantuCA-FilledComponents"/>
 	<template:FILLER_POSITION rdf:resource="&general;final"/>
 </general:lexicoconstructionalConditioning>
+<component:filledComponentSet rdf:about="&templates;BantuCA-FilledComponents"
+	 rdfs:label="BantuCA-FilledComponents">
+	<spectemplate:FILLED_COMPONENT rdf:resource="&templates;BantuApplicative"/>
+	<spectemplate:FILLED_COMPONENT rdf:resource="&templates;BantuCausativeIndependent"/>
+</component:filledComponentSet>
 <template:arch rdf:about="&templates;BantuCA-Foundation"
 	 rdfs:label="BantuCA-Foundation">
 	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;BantuApplicative"/>
@@ -352,8 +358,10 @@
 	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
 	<general:RELATIONS rdf:resource="&general;simple"/>
 </template:order>
-<template:potentiallyViolable rdf:about="&templates;BantuCA-Violability"
-	 rdfs:label="BantuCA-Violability">
+<template:notViolable rdf:about="&templates;BantuCA-Violability"
+	 rdfs:label="BantuCA-Violability"/>
+<template:potentiallyViolable rdf:about="&templates;BantuCA-Violability_dep"
+	 rdfs:label="BantuCA-Violability_dep">
 	<template:REPARABILITY rdf:resource="&template;homophonic"/>
 	<template:EXCEPTIONALITY rdf:resource="&template;noKnownExceptions"/>
 </template:potentiallyViolable>
@@ -389,11 +397,6 @@
 </template:order>
 <template:notViolable rdf:about="&templates;BantuCT-Violability"
 	 rdfs:label="BantuCT-Violability"/>
-<template:potentiallyViolable rdf:about="&templates;BantuCT-Violability-Dep"
-	 rdfs:label="BantuCT-Violability-Dep">
-	<template:REPARABILITY rdf:resource="&template;metathesis"/>
-	<template:EXCEPTIONALITY rdf:resource="&template;noKnownExceptions"/>
-</template:potentiallyViolable>
 <component:elastic rdf:about="&templates;BantuCausative-Elasticity"
 	 general:MAXIMUM="1"
 	 general:MINIMUM="0"
@@ -501,11 +504,6 @@
 </template:order>
 <template:notViolable rdf:about="&templates;BantuVCy-Violability"
 	 rdfs:label="BantuVCy-Violability"/>
-<template:potentiallyViolable rdf:about="&templates;BantuVCy-Violability-Dep"
-	 rdfs:label="BantuVCy-Violability-Dep">
-	<template:REPARABILITY rdf:resource="&template;metathesis"/>
-	<template:EXCEPTIONALITY rdf:resource="&template;noKnownExceptions"/>
-</template:potentiallyViolable>
 <component:component rdf:about="&templates;BantuVerbStem"
 	 rdfs:label="BantuVerbStem">
 	<speccomponent:ELASTICITY rdf:resource="&templates;BantuVerbStem-Elasticity"/>
@@ -1923,4 +1921,6 @@
 	 owl:sameAs="http://www.sil.org/resources/archives/1883">
 	<terms:bibliographicCitation>Watters, John R. 1979. Focus in Aghem: A study of its formal correlates and typology. In Larry M. Hyman (ed.), Aghem grammatical structure: With special reference to noun classes, tense-aspect and focus marking Southern California Occasional Papers in Linguistics 7, 137–197. Los Angeles: University of Southern California Department of Linguistics.</terms:bibliographicCitation>
 </notes:source>
+<component:component rdf:about="&templates;template_Instance_4"
+	 rdfs:label="template_Instance_4"/>
 </rdf:RDF>

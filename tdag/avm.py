@@ -42,10 +42,13 @@ class avm ( ):
 		storedFeatvals = self.featvals
 		
 		
-		# Avoid duplication due to re-entrancy except or restkomponenten (code a bit hackish and non-general here)
+		# Avoid duplication due to re-entrancy except for restkomponenten and filledcomponents (code a bit hackish and non-general here)
 		hasFeature = False
 
 		if feat == 'RESTKOMPONENT':
+				self.featvals.append(featval)
+				
+		elif feat == 'FILLED_COMPONENT':
 				self.featvals.append(featval)
 		
 		else:
@@ -162,8 +165,9 @@ class avm ( ):
 					  'elastic'  			: ["MINIMUM", "MAXIMUM" ],
 					  'partiallyFilled'  	: ["FILLER_POSITION", "FORM", "COHERENCE" ],
 					  'unstable'  			: ["SUPPORT", "SUPPORT_POSITION" ],
-					  'lexicoconstructionalConditioning': ["FILLER_POSITION", "FILLED_COMPONENT" ],
+					  'lexicoconstructionalConditioning': ["FILLER_POSITION", "FILLED_COMPONENT", "FILLED_COMPONENTS" ],
 					  'restkomponentenSet'	: ["RESTKOMPONENT"], # Need this list of one to allow components in side RK to be procssed; unfortunate hack
+					  'filledComponentSet'	: ["FILLED_COMPONENTS"], # Need this list of one to allow components in side set to be procssed; unfortunate hack
 					  'potentiallyViolable'	: ["EXCEPTIONALITY", "REPARABILITY"], 
 					  'unstable'			: ["ASSOCIATE_POSITION", "ASSOCIATE"],
 					}
@@ -217,7 +221,7 @@ class avm ( ):
 
 		# A list for prioritizing which features get the full AVM and (implicitly) which just get tags.
 		# All possible features for components need to be listed here for the function to work.
-		prioritylist = [ "KEYSTONE", "LEFT_SUPPORT", "RIGHT_SUPPORT", "LEFT_VOUSSOIR", "RIGHT_VOUSSOIR", "RESTKOMPONENT", "FILLED_COMPONENT", "SUPPORT", "ASSOCIATE"]
+		prioritylist = [ "KEYSTONE", "LEFT_SUPPORT", "RIGHT_SUPPORT", "LEFT_VOUSSOIR", "RIGHT_VOUSSOIR", "RESTKOMPONENT", "FILLED_COMPONENT", "FILLED_COMPONENTS", "SUPPORT", "ASSOCIATE"]
 		
 		if components == None: components = {}
 
@@ -235,9 +239,7 @@ class avm ( ):
 				
 					if foundationfeature in attributes and priorityset == False and foundationfeature is "RESTKOMPONENT":
 						self.RKre = component
-						print self.RKre, "gg"
 						self.makepriorityfeature(foundationfeature, self, component)
-						print "ee", self.name, foundationfeature, component
 						priorityset = True
 						# Hack for Nimboran RK reentrancy; does not scale
 
@@ -315,7 +317,6 @@ class avm ( ):
 			# Only allow one re-entered RK per AVM--hack! not good assumption
 			elif feat == priorityfeature and feat != "RESTKOMPONENT":
 		
-				print "fff", feat
 				id = val.name
 				val.reentered = True
 				val.primary = True

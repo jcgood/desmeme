@@ -40,6 +40,7 @@
 	<rdfs:domain rdf:resource="&component;coherence"/>
 	<rdfs:domain rdf:resource="&component;component"/>
 	<rdfs:domain rdf:resource="&component;elasticity"/>
+	<rdfs:domain rdf:resource="&component;filledComponentSet"/>
 	<rdfs:domain rdf:resource="&component;filledness"/>
 	<rdfs:domain rdf:resource="&component;restkomponentenSet"/>
 	<rdfs:domain rdf:resource="&component;stability"/>
@@ -166,6 +167,10 @@
 	 rdfs:label="component:filled">
 	<rdfs:comment>A type that specifies that a given component is always fully or partly occupied by a specific element (e.g., a specific morpheme). If the type is not specified as \type{partiallyFilled}, then the use of this type should be interpreted as ``completely filled''.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&component;filledness"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&component;filledComponentSet"
+	 rdfs:label="component:filledComponentSet">
+	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&component;filledness"
 	 a:role="abstract"
@@ -727,9 +732,15 @@ a given template. This feature does not enter into the typological comparison at
 	<rdfs:domain rdf:resource="&template;exceptionality"/>
 </rdf:Property>
 <rdf:Property rdf:about="&spectemplate;FILLED_COMPONENT"
-	 a:maxCardinality="1"
 	 rdfs:label="spectemplate:FILLED_COMPONENT">
 	<rdfs:range rdf:resource="&component;component"/>
+	<rdfs:domain rdf:resource="&component;filledComponentSet"/>
+	<rdfs:domain rdf:resource="&general;lexicoconstructionalConditioning"/>
+</rdf:Property>
+<rdf:Property rdf:about="&spectemplate;FILLED_COMPONENTS"
+	 a:maxCardinality="1"
+	 rdfs:label="spectemplate:FILLED_COMPONENTS">
+	<rdfs:range rdf:resource="&component;filledComponentSet"/>
 	<rdfs:domain rdf:resource="&general;lexicoconstructionalConditioning"/>
 </rdf:Property>
 <rdf:Property rdf:about="&spectemplate;FOUNDATION"
