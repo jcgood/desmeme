@@ -432,6 +432,11 @@ a given template. This feature does not enter into the typological comparison at
 	 rdfs:label="general:morphosyntacticConstituent">
 	<rdfs:subClassOf rdf:resource="&general;constituent"/>
 </rdfs:Class>
+<rdfs:Class rdf:about="&general;multiple"
+	 rdfs:label="general:multiple">
+	<rdfs:comment>A class covering cases where more than one component is involved in a positional restriction.</rdfs:comment>
+	<rdfs:subClassOf rdf:resource="&general;position"/>
+</rdfs:Class>
 <rdfs:Class rdf:about="&general;phonologicalConditioning"
 	 a:role="abstract"
 	 rdfs:label="general:phonologicalConditioning">
@@ -735,7 +740,6 @@ a given template. This feature does not enter into the typological comparison at
 	 rdfs:label="spectemplate:FILLED_COMPONENT">
 	<rdfs:range rdf:resource="&component;component"/>
 	<rdfs:domain rdf:resource="&component;filledComponentSet"/>
-	<rdfs:domain rdf:resource="&general;lexicoconstructionalConditioning"/>
 </rdf:Property>
 <rdf:Property rdf:about="&spectemplate;FILLED_COMPONENTS"
 	 a:maxCardinality="1"

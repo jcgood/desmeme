@@ -334,10 +334,9 @@
 </template:desmeme>
 <general:lexicoconstructionalConditioning rdf:about="&templates;BantuCA-Conditioning"
 	 rdfs:label="BantuCA-Conditioning">
-	<notes:CONDITIONS>The Applicative is being treated as the "cause" of the restriction.</notes:CONDITIONS>
-	<spectemplate:FILLED_COMPONENT rdf:resource="&templates;BantuApplicative"/>
+	<notes:CONDITIONS>Both the Causative and the Applicative are treated as the trigger of the condition.</notes:CONDITIONS>
 	<spectemplate:FILLED_COMPONENTS rdf:resource="&templates;BantuCA-FilledComponents"/>
-	<template:FILLER_POSITION rdf:resource="&general;final"/>
+	<template:FILLER_POSITION rdf:resource="&general;multiple"/>
 </general:lexicoconstructionalConditioning>
 <component:filledComponentSet rdf:about="&templates;BantuCA-FilledComponents"
 	 rdfs:label="BantuCA-FilledComponents">
@@ -378,7 +377,6 @@
 <general:lexicoconstructionalConditioning rdf:about="&templates;BantuCT-Conditioning"
 	 rdfs:label="BantuCT-Conditioning">
 	<notes:CONDITIONS>I am treating the Causative as the conditioning factor in this template.</notes:CONDITIONS>
-	<spectemplate:FILLED_COMPONENT rdf:resource="&templates;BantuCausativeDependent"/>
 	<template:FILLER_POSITION rdf:resource="&general;final"/>
 </general:lexicoconstructionalConditioning>
 <template:arch rdf:about="&templates;BantuCT-Foundation"
@@ -485,7 +483,6 @@
 <general:lexicoconstructionalConditioning rdf:about="&templates;BantuVCy-Conditioning"
 	 rdfs:label="BantuVCy-Conditioning">
 	<notes:CONDITIONS>The template appears when certain valency suffixes are found on the verb stem.</notes:CONDITIONS>
-	<spectemplate:FILLED_COMPONENT rdf:resource="&templates;BantuTransitive"/>
 	<template:FILLER_POSITION rdf:resource="&general;final"/>
 </general:lexicoconstructionalConditioning>
 <template:arch rdf:about="&templates;BantuVCy-Foundation"
@@ -568,7 +565,6 @@
 <general:lexicoconstructionalConditioning rdf:about="&templates;ChechenPreverbalA-Conditioning"
 	 rdfs:label="ChechenPreverbalA-Conditioning">
 	<notes:CONDITIONS>This template appears in converbal clauses used for chaining marked with preverbal 'a.</notes:CONDITIONS>
-	<spectemplate:FILLED_COMPONENT rdf:resource="&templates;ChechenVerb"/>
 	<template:FILLER_POSITION rdf:resource="&general;medial"/>
 </general:lexicoconstructionalConditioning>
 <template:span rdf:about="&templates;ChechenPreverbalA-Foundation"
@@ -628,7 +624,6 @@
 <general:lexicoconstructionalConditioning rdf:about="&templates;ChichewaAR-Conditioning"
 	 notes:CONDITIONS="I am treating the Reciprocal as the main conditioner here."
 	 rdfs:label="ChichewaAR-Conditioning">
-	<spectemplate:FILLED_COMPONENT rdf:resource="&templates;ChichewaReciprocal"/>
 	<template:FILLER_POSITION rdf:resource="&general;final"/>
 </general:lexicoconstructionalConditioning>
 <template:arch rdf:about="&templates;ChichewaAR-Foundation"
@@ -660,6 +655,7 @@
 	<function:FILLER_CLASS rdf:resource="&localfunction;valency"/>
 </component:filled>
 <form:canonicalLineate rdf:about="&templates;ChichewaApplicative-Form"
+	 gold:inLanguage="http://www.lexvo.org/page/iso639-3/nya"
 	 rdfs:label="ChichewaApplicative-Form">
 	<specform:TRANSCRIPTION rdf:resource="&templates;ChichewaApplicative-Transcription"/>
 	<form:LIAISON rdf:resource="&form;sinistrous"/>
@@ -1299,6 +1295,152 @@
 </component:open>
 <component:stable rdf:about="&templates;MandeX-Stability"
 	 rdfs:label="MandeX-Stability"/>
+<component:component rdf:about="&templates;NdebeleApplicative"
+	 rdfs:label="NdebeleApplicative">
+	<speccomponent:ELASTICITY rdf:resource="&templates;NdebeleApplicative-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;NdebeleApplicative-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;NdebeleApplicative-Stability"/>
+</component:component>
+<component:elastic rdf:about="&templates;NdebeleApplicative-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="NdebeleApplicative-Elasticity"/>
+<component:filled rdf:about="&templates;NdebeleApplicative-Filledness"
+	 rdfs:label="NdebeleApplicative-Filledness">
+	<speccomponent:FORM rdf:resource="&templates;NdebeleApplicative-Form"/>
+	<function:FILLER_CLASS rdf:resource="&localfunction;valency"/>
+</component:filled>
+<form:canonicalLineate rdf:about="&templates;NdebeleApplicative-Form"
+	 gold:inLanguage="http://www.lexvo.org/page/iso639-3/nde"
+	 rdfs:label="NdebeleApplicative-Form">
+	<specform:TRANSCRIPTION rdf:resource="&templates;NdebeleApplicative-Transcription"/>
+	<form:LIAISON rdf:resource="&form;sinistrous"/>
+</form:canonicalLineate>
+<component:stable rdf:about="&templates;NdebeleApplicative-Stability"
+	 rdfs:label="NdebeleApplicative-Stability"/>
+<form:transcription rdf:about="&templates;NdebeleApplicative-Transcription"
+	 specform:TRANSCRIPTION_STRING="-el-"
+	 rdfs:label="-el-"/>
+<component:component rdf:about="&templates;NdebeleBeforeVerbStemNullComponent"
+	 rdfs:label="NdebeleBeforeVerbStemNullComponent">
+	<speccomponent:ELASTICITY rdf:resource="&templates;NdebeleBeforeVerbStemNullComponent-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;NdebeleBeforeVerbStemNullComponent-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;NdebeleBeforeVerbStemNullComponent-Stability"/>
+</component:component>
+<component:inelastic rdf:about="&templates;NdebeleBeforeVerbStemNullComponent-Elasticity"
+	 general:COUNT="0"
+	 rdfs:label="NdebeleBeforeVerbStemNullComponent-Elasticity"/>
+<component:null rdf:about="&templates;NdebeleBeforeVerbStemNullComponent-Filledness"
+	 rdfs:label="NdebeleBeforeVerbStemNullComponent-Filledness"/>
+<component:stable rdf:about="&templates;NdebeleBeforeVerbStemNullComponent-Stability"
+	 rdfs:label="NdebeleBeforeVerbStemNullComponent-Stability"/>
+<template:desmeme rdf:about="&templates;NdebeleCA"
+	 gold:inLanguage="http://www.lexvo.org/page/iso639-3/nde"
+	 rdfs:label="NdebeleCA">
+	<specgeneral:CONDITIONING rdf:resource="&templates;NdebeleCA-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;NdebeleCA-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;NdebeleCA-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;NdebeleCA-Violability"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;Sibanda-2004"/>
+	<function:FUNCTION rdf:resource="&localfunction;valency"/>
+</template:desmeme>
+<general:lexicoconstructionalConditioning rdf:about="&templates;NdebeleCA-Conditioning"
+	 rdfs:label="NdebeleCA-Conditioning">
+	<notes:CONDITIONS>Both the Causative and the Applicative are treated as the trigger of the condition.</notes:CONDITIONS>
+	<spectemplate:FILLED_COMPONENTS rdf:resource="&templates;NdebeleCA-FilledComponents"/>
+	<template:FILLER_POSITION rdf:resource="&general;multiple"/>
+</general:lexicoconstructionalConditioning>
+<component:filledComponentSet rdf:about="&templates;NdebeleCA-FilledComponents"
+	 rdfs:label="NdebeleCA-FilledComponents">
+	<spectemplate:FILLED_COMPONENT rdf:resource="&templates;NdebeleApplicative"/>
+	<spectemplate:FILLED_COMPONENT rdf:resource="&templates;NdebeleCausative"/>
+</component:filledComponentSet>
+<template:arch rdf:about="&templates;NdebeleCA-Foundation"
+	 rdfs:label="NdebeleCA-Foundation">
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;NdebeleApplicative"/>
+	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;NdebeleBeforeVerbStemNullComponent"/>
+	<spectemplate:RESTKOMPONENTEN rdf:resource="&templates;NdebeleCA-Restkomponenten"/>
+	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;NdebeleCausative"/>
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;NdebeleVerbStem"/>
+	<spectemplate:KEYSTONE rdf:resource="&templates;NdebeleVerbStem"/>
+</template:arch>
+<component:restkomponentenSet rdf:about="&templates;NdebeleCA-Restkomponenten"
+	 rdfs:label="NdebeleCA-Restkomponenten">
+	<spectemplate:RESTKOMPONENT rdf:resource="&templates;NdebeleVCExtension"/>
+</component:restkomponentenSet>
+<template:order rdf:about="&templates;NdebeleCA-Stricture"
+	 general:COUNT="4"
+	 rdfs:label="NdebeleCA-Stricture">
+	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
+	<general:RELATIONS rdf:resource="&general;simple"/>
+</template:order>
+<template:notViolable rdf:about="&templates;NdebeleCA-Violability"
+	 rdfs:label="NdebeleCA-Violability"/>
+<component:component rdf:about="&templates;NdebeleCausative"
+	 rdfs:label="NdebeleCausative">
+	<speccomponent:ELASTICITY rdf:resource="&templates;NdebeleCausative-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;NdebeleCausative-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;NdebeleCausative-Stability"/>
+</component:component>
+<component:elastic rdf:about="&templates;NdebeleCausative-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="NdebeleCausative-Elasticity"/>
+<component:filled rdf:about="&templates;NdebeleCausative-Filledness"
+	 rdfs:label="NdebeleCausative-Filledness">
+	<speccomponent:FORM rdf:resource="&templates;NdebeleCausative-Form"/>
+	<function:FILLER_CLASS rdf:resource="&localfunction;valency"/>
+</component:filled>
+<form:canonicalLineate rdf:about="&templates;NdebeleCausative-Form"
+	 gold:inLanguage="http://www.lexvo.org/page/iso639-3/nde"
+	 rdfs:label="NdebeleCausative-Form">
+	<specform:TRANSCRIPTION rdf:resource="&templates;NdebeleCaustive-Transcription"/>
+	<form:LIAISON rdf:resource="&form;sinistrous"/>
+</form:canonicalLineate>
+<component:stable rdf:about="&templates;NdebeleCausative-Stability"
+	 rdfs:label="NdebeleCausative-Stability"/>
+<form:transcription rdf:about="&templates;NdebeleCaustive-Transcription"
+	 specform:TRANSCRIPTION_STRING="-is-"
+	 rdfs:label="-is-"/>
+<component:component rdf:about="&templates;NdebeleVCExtension"
+	 rdfs:label="NdebeleVCExtension">
+	<speccomponent:ELASTICITY rdf:resource="&templates;NdebeleVCExtension-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;NdebeleVCExtension-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;NdebeleVCExtension-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;NdebeleVCExtension-Coherence"
+	 rdfs:label="NdebeleVCExtension-Coherence">
+	<function:CLASS rdf:resource="&localfunction;valency"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;NdebeleVCExtension-Elasticity"
+	 general:MAXIMUM="100"
+	 general:MINIMUM="0"
+	 rdfs:label="NdebeleVCExtension-Elasticity"/>
+<component:open rdf:about="&templates;NdebeleVCExtension-Filledness"
+	 rdfs:label="NdebeleVCExtension-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;NdebeleVCExtension-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;NdebeleVCExtension-Stability"
+	 rdfs:label="NdebeleVCExtension-Stability"/>
+<component:component rdf:about="&templates;NdebeleVerbStem"
+	 rdfs:label="NdebeleVerbStem">
+	<speccomponent:ELASTICITY rdf:resource="&templates;NdebeleVerbStem-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;NdebeleVerbStem-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;NdebeleVerbStem-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;NdebeleVerbStem-Coherence"
+	 rdfs:label="NdebeleVerbStem-Coherence">
+	<function:CLASS rdf:resource="&gold;Verbal"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;NdebeleVerbStem-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="NdebeleVerbStem-Elasticity"/>
+<component:open rdf:about="&templates;NdebeleVerbStem-Filledness"
+	 rdfs:label="NdebeleVerbStem-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;NdebeleVerbStem-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;NdebeleVerbStem-Stability"
+	 rdfs:label="NdebeleVerbStem-Stability"/>
 <template:desmeme rdf:about="&templates;NimboranVerb"
 	 gold:inLanguage="http://lexvo.org/id/iso639-3/nir"
 	 rdfs:label="NimboranVerb">
@@ -1510,7 +1652,6 @@
 <general:lexicoconstructionalConditioning rdf:about="&templates;SerboCroatianJe-Conditioning"
 	 rdfs:label="SerboCroatianJe-Conditioning">
 	<notes:CONDITIONS>This template appears when a particular clitic is found in a clause.</notes:CONDITIONS>
-	<spectemplate:FILLED_COMPONENT rdf:resource="&templates;SerboCroatianJeLeftSupport"/>
 	<template:FILLER_POSITION rdf:resource="&general;medial"/>
 </general:lexicoconstructionalConditioning>
 <form:canonicalLineate rdf:about="&templates;SerboCroatianJe-Form"
@@ -1649,6 +1790,11 @@
 	 rdfs:label="SerboCroatianTopicalizationRightSupport-Stability"/>
 <general:final rdf:about="&templates;SerboCroationJe-Position"
 	 rdfs:label="SerboCroationJe-Position"/>
+<notes:source rdf:about="&templates;Sibanda-2004"
+	 rdfs:label="Sibanda-2004"
+	 owl:sameAs="http://www.worldcat.org/oclc/212765768">
+	<terms:bibliographicCitation>Sibanda, Galen. 2004. Verbal phonology and morphology of Ndebele. Berkeley: UC Berkeley Ph.D. Dissertation.</terms:bibliographicCitation>
+</notes:source>
 <template:desmeme rdf:about="&templates;TieneVerb"
 	 gold:inLanguage="http://lexvo.org/id/iso639-3/tii"
 	 rdfs:label="TieneVerb">
@@ -1921,6 +2067,4 @@
 	 owl:sameAs="http://www.sil.org/resources/archives/1883">
 	<terms:bibliographicCitation>Watters, John R. 1979. Focus in Aghem: A study of its formal correlates and typology. In Larry M. Hyman (ed.), Aghem grammatical structure: With special reference to noun classes, tense-aspect and focus marking Southern California Occasional Papers in Linguistics 7, 137–197. Los Angeles: University of Southern California Department of Linguistics.</terms:bibliographicCitation>
 </notes:source>
-<component:component rdf:about="&templates;template_Instance_4"
-	 rdfs:label="template_Instance_4"/>
 </rdf:RDF>

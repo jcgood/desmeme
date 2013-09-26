@@ -1,4 +1,4 @@
-; Wed Sep 25 14:25:30 EDT 2013
+; Thu Sep 26 14:26:22 EDT 2013
 ; 
 ;+ (version "3.3.1")
 ;+ (build "Build 430")
@@ -20,10 +20,10 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[template_ProjectKB_Instance_90463]
-		[template_ProjectKB_Instance_90464]
-		[template_ProjectKB_Instance_90465]
-		[template_ProjectKB_Instance_90466]))
+		[template_ProjectKB_Instance_90211]
+		[template_ProjectKB_Instance_90212]
+		[template_ProjectKB_Instance_90213]
+		[template_ProjectKB_Instance_90214]))
 
 ([CLSES_TAB] of  Widget
 
@@ -153,21 +153,21 @@
 	(customized_instance_widgets
 		[PAL_FORM_WIDGET]
 		[INSTANCE_ANNOTATION_FORM_WIDGET]
-		[template_ProjectKB_Instance_30075]
-		[template_ProjectKB_Instance_30074]
 		[template_ProjectKB_Instance_225]
-		[template_ProjectKB_Instance_70085]
-		[template_ProjectKB_Instance_385]
-		[template_ProjectKB_Instance_232]
-		[template_ProjectKB_Instance_99]
-		[template_ProjectKB_Instance_20070]
 		[STANDARD_CLASS_FORM_WIDGET]
 		[STANDARD_SLOT_FORM_WIDGET]
-		[template_ProjectKB_Instance_448]
 		[STANDARD_FACET_FORM_WIDGET]
-		[template_ProjectKB_Instance_30079]
+		[template_ProjectKB_Instance_378]
+		[template_ProjectKB_Instance_385]
+		[template_ProjectKB_Instance_20070]
+		[template_ProjectKB_Instance_232]
+		[template_ProjectKB_Instance_448]
+		[template_ProjectKB_Instance_99]
+		[template_ProjectKB_Instance_30074]
 		[template_ProjectKB_Instance_10164]
-		[template_ProjectKB_Instance_378])
+		[template_ProjectKB_Instance_30079]
+		[template_ProjectKB_Instance_70085]
+		[template_ProjectKB_Instance_30075])
 	(default_cls_metaclass ":STANDARD-CLASS")
 	(default_facet_metaclass ":STANDARD-FACET")
 	(default_instance_widget_class_name "edu.stanford.smi.protege.widget.FormWidget")
@@ -1601,6 +1601,33 @@
 	(undo_enabled TRUE)
 	(update_modification_slots FALSE))
 
+([template_ProjectKB_Instance_60081] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "spectemplate:FILLED_COMPONENT")
+	(property_list [template_ProjectKB_Instance_60082])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
+	(width 200)
+	(x 0)
+	(y 240))
+
+([template_ProjectKB_Instance_60082] of  Property_List
+
+	(properties
+		[template_ProjectKB_Instance_60083]
+		[template_ProjectKB_Instance_60084]))
+
+([template_ProjectKB_Instance_60083] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([template_ProjectKB_Instance_60084] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
 ([template_ProjectKB_Instance_60085] of  Boolean
 
 	(boolean_value FALSE)
@@ -1977,144 +2004,22 @@
 ([template_ProjectKB_Instance_90] of  Property_List
 )
 
-([template_ProjectKB_Instance_90127] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "spectemplate:FILLED_COMPONENTS")
-	(property_list [template_ProjectKB_Instance_90128])
-	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
-	(width 200)
-	(x 0)
-	(y 180))
-
-([template_ProjectKB_Instance_90128] of  Property_List
-)
-
-([template_ProjectKB_Instance_90133] of  Property_List
-)
-
-([template_ProjectKB_Instance_90170] of  Property_List
-)
-
-([template_ProjectKB_Instance_90203] of  Property_List
-)
-
-([template_ProjectKB_Instance_90236] of  Property_List
-)
-
-([template_ProjectKB_Instance_90261] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "spectemplate:FILLED_COMPONENTS")
-	(property_list [template_ProjectKB_Instance_90262])
-	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
-	(width 200)
-	(x 0)
-	(y 180))
-
-([template_ProjectKB_Instance_90262] of  Property_List
-
-	(properties
-		[template_ProjectKB_Instance_90263]
-		[template_ProjectKB_Instance_90264]))
-
-([template_ProjectKB_Instance_90263] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-View References to Value"))
-
-([template_ProjectKB_Instance_90264] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-Delete Instance"))
-
-([template_ProjectKB_Instance_90269] of  Property_List
-)
-
-([template_ProjectKB_Instance_90306] of  Property_List
-)
-
-([template_ProjectKB_Instance_90339] of  Property_List
-)
-
-([template_ProjectKB_Instance_90364] of  Widget
-
-	(height 120)
-	(is_hidden FALSE)
-	(name "spectemplate:FILLED_COMPONENTS")
-	(property_list [template_ProjectKB_Instance_90365])
-	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
-	(width 200)
-	(x 0)
-	(y 180))
-
-([template_ProjectKB_Instance_90365] of  Property_List
-
-	(properties
-		[template_ProjectKB_Instance_90366]
-		[template_ProjectKB_Instance_90367]))
-
-([template_ProjectKB_Instance_90366] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-View References to Value"))
-
-([template_ProjectKB_Instance_90367] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-Delete Instance"))
-
-([template_ProjectKB_Instance_90372] of  Property_List
-)
-
-([template_ProjectKB_Instance_90405] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "spectemplate:FILLED_COMPONENT")
-	(property_list [template_ProjectKB_Instance_90406])
-	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
-	(width 200)
-	(x 0)
-	(y 240))
-
-([template_ProjectKB_Instance_90406] of  Property_List
-
-	(properties
-		[template_ProjectKB_Instance_90407]
-		[template_ProjectKB_Instance_90408]))
-
-([template_ProjectKB_Instance_90407] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-View References to Value"))
-
-([template_ProjectKB_Instance_90408] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-Delete Instance"))
-
-([template_ProjectKB_Instance_90409] of  Property_List
-)
-
-([template_ProjectKB_Instance_90463] of  String
+([template_ProjectKB_Instance_90211] of  String
 
 	(name ":PAL-CONSTRAINT")
 	(string_value "%3APAL-NAME"))
 
-([template_ProjectKB_Instance_90464] of  String
+([template_ProjectKB_Instance_90212] of  String
 
 	(name ":INSTANCE-ANNOTATION")
 	(string_value "%3AANNOTATION-TEXT"))
 
-([template_ProjectKB_Instance_90465] of  String
+([template_ProjectKB_Instance_90213] of  String
 
 	(name ":META-CLASS")
 	(string_value "%3ANAME"))
 
-([template_ProjectKB_Instance_90466] of  String
+([template_ProjectKB_Instance_90214] of  String
 
 	(name "form:transcription")
 	(string_value "specform%3ATRANSCRIPTION_STRING"))
