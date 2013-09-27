@@ -136,6 +136,24 @@
 	<rdfs:domain rdf:resource="&form;form"/>
 	<rdfs:range rdf:resource="&rdfs;Literal"/>
 </rdf:Property>
+<rdf:Property rdf:about="&component;ASSOCIATE_POSITION"
+	 a:maxCardinality="1"
+	 a:range="cls"
+	 rdfs:comment="This is just some filler. SEE NOTES FOR FILLER POSITION."
+	 rdfs:label="component:ASSOCIATE_POSITION">
+	<rdfs:domain rdf:resource="&component;unstable"/>
+	<a:allowedParents rdf:resource="&general;relativePositions"/>
+	<rdfs:range rdf:resource="&rdfs;Class"/>
+</rdf:Property>
+<rdf:Property rdf:about="&component;FILLER_POSITION"
+	 a:maxCardinality="1"
+	 a:range="cls"
+	 rdfs:label="component:FILLER_POSITION">
+	<rdfs:comment>Needed this to point to instances since this is a typologized category and, therefore, duplicates need to be copied in processing. (DOCUMENTATION OUT OF DATE BUT RETAINED IN CASE I REALIZE I NEED TO GO BACK. NOT SURE IF THIS EVER COMES UP MORE THAN ONCE IN A TEMPLATE AS OF NOW. BUT PROBABLY SHOULD GO BACK TO INSTANCES--i.e., I made a mistake. If I do that, then the "component:" prefix on this slot and the ASSOCIATE POSITION slot should revert to "speccomponent" since the change was made to allow for processing. WHAT STARTED THIS WAS WANTING POSITIONS TO BE ABSTRACT CLASSES. THAT WAS AN ERROR, I THINK.)</rdfs:comment>
+	<rdfs:domain rdf:resource="&component;partiallyFilled"/>
+	<a:allowedParents rdf:resource="&general;position"/>
+	<rdfs:range rdf:resource="&rdfs;Class"/>
+</rdf:Property>
 <rdfs:Class rdf:about="&component;coherence"
 	 a:role="abstract"
 	 rdfs:label="component:coherence">
@@ -383,6 +401,7 @@
 	<rdfs:subClassOf rdf:resource="&general;morphosyntacticConditioning"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;final"
+	 a:role="abstract"
 	 rdfs:label="general:final">
 	<rdfs:subClassOf rdf:resource="&general;absolutePositions"/>
 </rdfs:Class>
@@ -394,18 +413,22 @@ a given template. This feature does not enter into the typological comparison at
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;immediateLeft"
+	 a:role="abstract"
 	 rdfs:label="general:immediateLeft">
 	<rdfs:subClassOf rdf:resource="&general;adjacentPosition"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;immediateRight"
+	 a:role="abstract"
 	 rdfs:label="general:immediateRight">
 	<rdfs:subClassOf rdf:resource="&general;adjacentPosition"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;initial"
+	 a:role="abstract"
 	 rdfs:label="general:initial">
 	<rdfs:subClassOf rdf:resource="&general;absolutePositions"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;left"
+	 a:role="abstract"
 	 rdfs:label="general:left">
 	<rdfs:subClassOf rdf:resource="&general;relativePositions"/>
 </rdfs:Class>
@@ -414,6 +437,7 @@ a given template. This feature does not enter into the typological comparison at
 	<rdfs:subClassOf rdf:resource="&general;morphosyntacticConditioning"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;medial"
+	 a:role="abstract"
 	 rdfs:label="general:medial">
 	<rdfs:subClassOf rdf:resource="&general;absolutePositions"/>
 </rdfs:Class>
@@ -433,6 +457,7 @@ a given template. This feature does not enter into the typological comparison at
 	<rdfs:subClassOf rdf:resource="&general;constituent"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;multiple"
+	 a:role="abstract"
 	 rdfs:label="general:multiple">
 	<rdfs:comment>A class covering cases where more than one component is involved in a positional restriction.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&general;position"/>
@@ -450,6 +475,7 @@ a given template. This feature does not enter into the typological comparison at
 <rdfs:Class rdf:about="&general;position"
 	 a:role="abstract"
 	 rdfs:label="general:position">
+	<rdfs:comment>The structure of this might need to be changed. It's important to bear in mind they're being used for Associates and Fillers, but maybe that can be split up. See not on FILLER POSITION slot for why abstract classes probably need to be made concrete using instances in the template. ALSO, maybe delete some unused position?</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;prosodicConditioning"
@@ -484,6 +510,7 @@ a given template. This feature does not enter into the typological comparison at
 	<rdfs:subClassOf rdf:resource="&general;position"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;right"
+	 a:role="abstract"
 	 rdfs:label="general:right">
 	<rdfs:subClassOf rdf:resource="&general;relativePositions"/>
 </rdfs:Class>
@@ -667,13 +694,6 @@ a given template. This feature does not enter into the typological comparison at
 	<rdfs:range rdf:resource="&component;component"/>
 	<rdfs:domain rdf:resource="&component;unstable"/>
 </rdf:Property>
-<rdf:Property rdf:about="&speccomponent;ASSOCIATE_POSITION"
-	 a:maxCardinality="1"
-	 rdfs:comment="This is just some filler."
-	 rdfs:label="speccomponent:ASSOCIATE_POSITION">
-	<rdfs:domain rdf:resource="&component;unstable"/>
-	<rdfs:range rdf:resource="&general;relativePositions"/>
-</rdf:Property>
 <rdf:Property rdf:about="&speccomponent;COHERENCE"
 	 a:maxCardinality="1"
 	 rdfs:label="speccomponent:COHERENCE">
@@ -697,13 +717,6 @@ a given template. This feature does not enter into the typological comparison at
 	 rdfs:label="speccomponent:FILLEDNESS">
 	<rdfs:domain rdf:resource="&component;component"/>
 	<rdfs:range rdf:resource="&component;filledness"/>
-</rdf:Property>
-<rdf:Property rdf:about="&speccomponent;FILLER_POSITION"
-	 a:maxCardinality="1"
-	 rdfs:label="speccomponent:FILLER_POSITION">
-	<rdfs:comment>Needed this to point to instances since this is a typologized category and, therefore, duplicates need to be copied in processing.</rdfs:comment>
-	<rdfs:domain rdf:resource="&component;partiallyFilled"/>
-	<rdfs:range rdf:resource="&general;position"/>
 </rdf:Property>
 <rdf:Property rdf:about="&speccomponent;FORM"
 	 a:maxCardinality="1"
@@ -921,6 +934,11 @@ a given template. This feature does not enter into the typological comparison at
 	 a:role="abstract"
 	 rdfs:label="template:reparable">
 	<rdfs:subClassOf rdf:resource="&template;reparability"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&template;semantic"
+	 a:role="abstract"
+	 rdfs:label="template:semantic">
+	<rdfs:subClassOf rdf:resource="&template;exceptionality"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;shortening"
 	 a:role="abstract"

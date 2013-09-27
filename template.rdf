@@ -202,11 +202,9 @@
 </component:open>
 <component:unstable rdf:about="&templates;AlgonquianClauseNegative-Stability"
 	 rdfs:label="AlgonquianClauseNegative-Stability">
-	<speccomponent:ASSOCIATE_POSITION rdf:resource="&templates;AlgonquianClauseNegative-Support"/>
 	<speccomponent:ASSOCIATE rdf:resource="&templates;AlgonquianClauseVerb"/>
+	<component:ASSOCIATE_POSITION rdf:resource="&general;right"/>
 </component:unstable>
-<general:right rdf:about="&templates;AlgonquianClauseNegative-Support"
-	 rdfs:label="AlgonquianClauseNegative-Support"/>
 <component:component rdf:about="&templates;AlgonquianClauseNullComponent"
 	 rdfs:label="AlgonquianClauseNullComponent">
 	<speccomponent:ELASTICITY rdf:resource="&templates;AlgonquianClauseNullComponent-Elasticity"/>
@@ -377,8 +375,13 @@
 <general:lexicoconstructionalConditioning rdf:about="&templates;BantuCT-Conditioning"
 	 rdfs:label="BantuCT-Conditioning">
 	<notes:CONDITIONS>I am treating the Causative as the conditioning factor in this template.</notes:CONDITIONS>
+	<spectemplate:FILLED_COMPONENTS rdf:resource="&templates;BantuCT-FilledComponents"/>
 	<template:FILLER_POSITION rdf:resource="&general;final"/>
 </general:lexicoconstructionalConditioning>
+<component:filledComponentSet rdf:about="&templates;BantuCT-FilledComponents"
+	 rdfs:label="BantuCT-FilledComponents">
+	<spectemplate:FILLED_COMPONENT rdf:resource="&templates;BantuCausativeDependent"/>
+</component:filledComponentSet>
 <template:arch rdf:about="&templates;BantuCT-Foundation"
 	 rdfs:label="BantuCT-Foundation">
 	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;BantuBeforeVerbStemBantuNullComponent"/>
@@ -418,12 +421,10 @@
 	<speccomponent:FILLEDNESS rdf:resource="&templates;BantuCausative-Filledness"/>
 	<speccomponent:STABILITY rdf:resource="&templates;BantuCausativeDependent-Stability"/>
 </component:component>
-<general:right rdf:about="&templates;BantuCausativeDependent-AssociatePosition"
-	 rdfs:label="BantuCausativeDependent-AssociatePosition"/>
 <component:unstable rdf:about="&templates;BantuCausativeDependent-Stability"
 	 rdfs:label="BantuCausativeDependent-Stability">
-	<speccomponent:ASSOCIATE_POSITION rdf:resource="&templates;BantuCausativeDependent-AssociatePosition"/>
 	<speccomponent:ASSOCIATE rdf:resource="&templates;BantuTransitive"/>
+	<component:ASSOCIATE_POSITION rdf:resource="&general;right"/>
 </component:unstable>
 <component:component rdf:about="&templates;BantuCausativeIndependent"
 	 rdfs:label="BantuCausativeIndependent">
@@ -483,8 +484,13 @@
 <general:lexicoconstructionalConditioning rdf:about="&templates;BantuVCy-Conditioning"
 	 rdfs:label="BantuVCy-Conditioning">
 	<notes:CONDITIONS>The template appears when certain valency suffixes are found on the verb stem.</notes:CONDITIONS>
+	<spectemplate:FILLED_COMPONENTS rdf:resource="&templates;BantuVCy-FilledComponents"/>
 	<template:FILLER_POSITION rdf:resource="&general;final"/>
 </general:lexicoconstructionalConditioning>
+<component:filledComponentSet rdf:about="&templates;BantuVCy-FilledComponents"
+	 rdfs:label="BantuVCy-FilledComponents">
+	<spectemplate:FILLED_COMPONENT rdf:resource="&templates;BantuTransitive"/>
+</component:filledComponentSet>
 <template:arch rdf:about="&templates;BantuVCy-Foundation"
 	 rdfs:label="BantuVCy-Foundation">
 	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;BantuBeforeVerbStemBantuNullComponent"/>
@@ -549,8 +555,6 @@
 	<function:CLASSES rdf:resource="&localfunction;goal"/>
 	<function:CLASSES rdf:resource="&localfunction;infinitive"/>
 </component:incoherent>
-<general:final rdf:about="&templates;ChechenPreverbal-Position"
-	 rdfs:label="ChechenPreverbal-Position"/>
 <component:stable rdf:about="&templates;ChechenPreverbal-Stability"
 	 rdfs:label="ChechenPreverbal-Stability"/>
 <template:desmeme rdf:about="&templates;ChechenPreverbalA"
@@ -565,8 +569,13 @@
 <general:lexicoconstructionalConditioning rdf:about="&templates;ChechenPreverbalA-Conditioning"
 	 rdfs:label="ChechenPreverbalA-Conditioning">
 	<notes:CONDITIONS>This template appears in converbal clauses used for chaining marked with preverbal 'a.</notes:CONDITIONS>
+	<spectemplate:FILLED_COMPONENTS rdf:resource="&templates;ChechenPreverbalA-FilledComponents"/>
 	<template:FILLER_POSITION rdf:resource="&general;medial"/>
 </general:lexicoconstructionalConditioning>
+<component:filledComponentSet rdf:about="&templates;ChechenPreverbalA-FilledComponents"
+	 rdfs:label="ChechenPreverbalA-FilledComponents">
+	<spectemplate:FILLED_COMPONENT rdf:resource="&templates;ChechenPreverbal"/>
+</component:filledComponentSet>
 <template:span rdf:about="&templates;ChechenPreverbalA-Foundation"
 	 rdfs:label="ChechenPreverbalA-Foundation">
 	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChechenPreverbal"/>
@@ -579,7 +588,7 @@
 	 rdfs:label="ChechenPreverbalA-Preverbal-Filledness">
 	<speccomponent:FORM rdf:resource="&templates;ChechenA-Form"/>
 	<speccomponent:COHERENCE rdf:resource="&templates;ChechenPreverbal-Coherence"/>
-	<speccomponent:FILLER_POSITION rdf:resource="&templates;ChechenPreverbal-Position"/>
+	<component:FILLER_POSITION rdf:resource="&general;final"/>
 	<function:FILLER_CLASS rdf:resource="&localfunction;clauseChaining"/>
 </component:partiallyFilled>
 <template:length rdf:about="&templates;ChechenPreverbalA-Stricture"
@@ -622,10 +631,15 @@
 	<function:FUNCTION rdf:resource="&localfunction;valency"/>
 </template:desmeme>
 <general:lexicoconstructionalConditioning rdf:about="&templates;ChichewaAR-Conditioning"
-	 notes:CONDITIONS="I am treating the Reciprocal as the main conditioner here."
 	 rdfs:label="ChichewaAR-Conditioning">
-	<template:FILLER_POSITION rdf:resource="&general;final"/>
+	<spectemplate:FILLED_COMPONENTS rdf:resource="&templates;ChichewaAR-Conditioning-FilledComponents"/>
+	<template:FILLER_POSITION rdf:resource="&general;multiple"/>
 </general:lexicoconstructionalConditioning>
+<component:filledComponentSet rdf:about="&templates;ChichewaAR-Conditioning-FilledComponents"
+	 rdfs:label="ChichewaAR-Conditioning-FilledComponents">
+	<spectemplate:FILLED_COMPONENT rdf:resource="&templates;ChichewaApplicative"/>
+	<spectemplate:FILLED_COMPONENT rdf:resource="&templates;ChichewaReciprocal"/>
+</component:filledComponentSet>
 <template:arch rdf:about="&templates;ChichewaAR-Foundation"
 	 rdfs:label="ChichewaAR-Foundation">
 	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;ChichewaApplicative"/>
@@ -637,7 +651,7 @@
 <template:potentiallyViolable rdf:about="&templates;ChichewaAR-Violability"
 	 rdfs:label="ChichewaAR-Violability">
 	<template:REPARABILITY rdf:resource="&template;insertion"/>
-	<template:EXCEPTIONALITY rdf:resource="&template;noKnownExceptions"/>
+	<template:EXCEPTIONALITY rdf:resource="&template;semantic"/>
 </template:potentiallyViolable>
 <component:component rdf:about="&templates;ChichewaApplicative"
 	 rdfs:label="ChichewaApplicative">
@@ -1095,8 +1109,6 @@
 	<speccomponent:FILLEDNESS rdf:resource="&templates;GermanVC-Filledness"/>
 	<speccomponent:STABILITY rdf:resource="&templates;GermanVC-Stability"/>
 </component:component>
-<general:left rdf:about="&templates;GermanVC-AssociatePosition"
-	 rdfs:label="GermanVC-AssociatePosition"/>
 <component:coherent rdf:about="&templates;GermanVC-Coherence"
 	 rdfs:label="GermanVC-Coherence">
 	<function:CLASS rdf:resource="&gold;Verbal"/>
@@ -1112,7 +1124,7 @@
 <component:unstable rdf:about="&templates;GermanVC-Stability"
 	 rdfs:label="GermanVC-Stability">
 	<speccomponent:ASSOCIATE rdf:resource="&templates;GermanCF"/>
-	<speccomponent:ASSOCIATE_POSITION rdf:resource="&templates;GermanVC-AssociatePosition"/>
+	<component:ASSOCIATE_POSITION rdf:resource="&general;left"/>
 </component:unstable>
 <component:component rdf:about="&templates;GermanVF"
 	 rdfs:label="GermanVF">
@@ -1603,8 +1615,6 @@
 	<speccomponent:FILLEDNESS rdf:resource="&templates;NimboranVerbPosition7-Filledness"/>
 	<speccomponent:STABILITY rdf:resource="&templates;NimboranVerbPosition7-Stability"/>
 </component:component>
-<general:left rdf:about="&templates;NimboranVerbPosition7-AssociatePosition"
-	 rdfs:label="NimboranVerbPosition7-AssociatePosition"/>
 <component:coherent rdf:about="&templates;NimboranVerbPosition7-Coherence"
 	 rdfs:label="NimboranVerbPosition7-Coherence">
 	<function:CLASS rdf:resource="&localfunction;tense"/>
@@ -1619,7 +1629,7 @@
 <component:unstable rdf:about="&templates;NimboranVerbPosition7-Stability"
 	 rdfs:label="NimboranVerbPosition7-Stability">
 	<speccomponent:ASSOCIATE rdf:resource="&templates;NimboranVerbPosition5"/>
-	<speccomponent:ASSOCIATE_POSITION rdf:resource="&templates;NimboranVerbPosition7-AssociatePosition"/>
+	<component:ASSOCIATE_POSITION rdf:resource="&general;left"/>
 </component:unstable>
 <component:component rdf:about="&templates;NimboranVerbRightSupport"
 	 rdfs:label="NimboranVerbRightSupport">
@@ -1652,8 +1662,13 @@
 <general:lexicoconstructionalConditioning rdf:about="&templates;SerboCroatianJe-Conditioning"
 	 rdfs:label="SerboCroatianJe-Conditioning">
 	<notes:CONDITIONS>This template appears when a particular clitic is found in a clause.</notes:CONDITIONS>
+	<spectemplate:FILLED_COMPONENTS rdf:resource="&templates;SerboCroatianJe-FilledComponents"/>
 	<template:FILLER_POSITION rdf:resource="&general;medial"/>
 </general:lexicoconstructionalConditioning>
+<component:filledComponentSet rdf:about="&templates;SerboCroatianJe-FilledComponents"
+	 rdfs:label="SerboCroatianJe-FilledComponents">
+	<spectemplate:FILLED_COMPONENT rdf:resource="&templates;SerboCroatianJeLeftSupport"/>
+</component:filledComponentSet>
 <form:canonicalLineate rdf:about="&templates;SerboCroatianJe-Form"
 	 rdfs:label="SerboCroatianJe-Form">
 	<specform:TRANSCRIPTION rdf:resource="&templates;SerboCroatianJe-Transcription"/>
@@ -1679,8 +1694,8 @@
 	 rdfs:label="SerboCroatianJeLefSupport-Filledness">
 	<speccomponent:FORM rdf:resource="&templates;SerboCroatianJe-Form"/>
 	<speccomponent:COHERENCE rdf:resource="&templates;SerboCroatianJeLeftSupport-Coherence"/>
-	<speccomponent:FILLER_POSITION rdf:resource="&templates;SerboCroationJe-Position"/>
 	<function:FILLER_CLASS rdf:resource="&gold;Auxiliary"/>
+	<component:FILLER_POSITION rdf:resource="&general;final"/>
 </component:partiallyFilled>
 <component:component rdf:about="&templates;SerboCroatianJeLeftSupport"
 	 rdfs:label="SerboCroatianJeLeftSupport">
@@ -1788,8 +1803,6 @@
 </component:open>
 <component:stable rdf:about="&templates;SerboCroatianTopicalizationRightSupport-Stability"
 	 rdfs:label="SerboCroatianTopicalizationRightSupport-Stability"/>
-<general:final rdf:about="&templates;SerboCroationJe-Position"
-	 rdfs:label="SerboCroationJe-Position"/>
 <notes:source rdf:about="&templates;Sibanda-2004"
 	 rdfs:label="Sibanda-2004"
 	 owl:sameAs="http://www.worldcat.org/oclc/212765768">
@@ -2067,4 +2080,6 @@
 	 owl:sameAs="http://www.sil.org/resources/archives/1883">
 	<terms:bibliographicCitation>Watters, John R. 1979. Focus in Aghem: A study of its formal correlates and typology. In Larry M. Hyman (ed.), Aghem grammatical structure: With special reference to noun classes, tense-aspect and focus marking Southern California Occasional Papers in Linguistics 7, 137–197. Los Angeles: University of Southern California Department of Linguistics.</terms:bibliographicCitation>
 </notes:source>
+<component:component rdf:about="&templates;template_Instance_3"
+	 rdfs:label="template_Instance_3"/>
 </rdf:RDF>
