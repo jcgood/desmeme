@@ -136,20 +136,11 @@
 	<rdfs:domain rdf:resource="&form;form"/>
 	<rdfs:range rdf:resource="&rdfs;Literal"/>
 </rdf:Property>
-<rdf:Property rdf:about="&component;ASSOCIATE_POSITION"
-	 a:maxCardinality="1"
-	 a:range="cls"
-	 rdfs:comment="This is just some filler. SEE NOTES FOR FILLER POSITION."
-	 rdfs:label="component:ASSOCIATE_POSITION">
-	<rdfs:domain rdf:resource="&component;unstable"/>
-	<a:allowedParents rdf:resource="&general;relativePositions"/>
-	<rdfs:range rdf:resource="&rdfs;Class"/>
-</rdf:Property>
 <rdf:Property rdf:about="&component;FILLER_POSITION"
 	 a:maxCardinality="1"
 	 a:range="cls"
+	 rdfs:comment="This points to a type not an instance."
 	 rdfs:label="component:FILLER_POSITION">
-	<rdfs:comment>Needed this to point to instances since this is a typologized category and, therefore, duplicates need to be copied in processing. (DOCUMENTATION OUT OF DATE BUT RETAINED IN CASE I REALIZE I NEED TO GO BACK. NOT SURE IF THIS EVER COMES UP MORE THAN ONCE IN A TEMPLATE AS OF NOW. BUT PROBABLY SHOULD GO BACK TO INSTANCES--i.e., I made a mistake. If I do that, then the "component:" prefix on this slot and the ASSOCIATE POSITION slot should revert to "speccomponent" since the change was made to allow for processing. WHAT STARTED THIS WAS WANTING POSITIONS TO BE ABSTRACT CLASSES. THAT WAS AN ERROR, I THINK.)</rdfs:comment>
 	<rdfs:domain rdf:resource="&component;partiallyFilled"/>
 	<a:allowedParents rdf:resource="&general;position"/>
 	<rdfs:range rdf:resource="&rdfs;Class"/>
@@ -375,15 +366,11 @@
 	<rdfs:domain rdf:resource="&template;order"/>
 	<rdfs:range rdf:resource="&rdfs;Class"/>
 </rdf:Property>
-<rdfs:Class rdf:about="&general;absolutePositions"
+<rdfs:Class rdf:about="&general;associatePositions"
 	 a:role="abstract"
-	 rdfs:label="general:absolutePositions">
+	 rdfs:label="general:associatePositions">
+	<rdfs:comment>In principle, there can be multiple associates in a template. So, these need to be instanceable.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&general;position"/>
-</rdfs:Class>
-<rdfs:Class rdf:about="&general;adjacentPosition"
-	 a:role="abstract"
-	 rdfs:label="general:adjacentPosition">
-	<rdfs:subClassOf rdf:resource="&general;relativePositions"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;conditioning"
 	 a:role="abstract"
@@ -400,10 +387,16 @@
 	 rdfs:label="general:constructionalConditioning">
 	<rdfs:subClassOf rdf:resource="&general;morphosyntacticConditioning"/>
 </rdfs:Class>
+<rdfs:Class rdf:about="&general;fillerPositions"
+	 a:role="abstract"
+	 rdfs:label="general:fillerPositions">
+	<rdfs:comment>A lexicoconstructional template can only one have one of these, so it is abstract.</rdfs:comment>
+	<rdfs:subClassOf rdf:resource="&general;position"/>
+</rdfs:Class>
 <rdfs:Class rdf:about="&general;final"
 	 a:role="abstract"
 	 rdfs:label="general:final">
-	<rdfs:subClassOf rdf:resource="&general;absolutePositions"/>
+	<rdfs:subClassOf rdf:resource="&general;fillerPositions"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;function"
 	 a:role="abstract"
@@ -412,25 +405,9 @@
 a given template. This feature does not enter into the typological comparison at present but is included due its potential interest for purposes of reference and for future studies.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
-<rdfs:Class rdf:about="&general;immediateLeft"
-	 a:role="abstract"
-	 rdfs:label="general:immediateLeft">
-	<rdfs:subClassOf rdf:resource="&general;adjacentPosition"/>
-</rdfs:Class>
-<rdfs:Class rdf:about="&general;immediateRight"
-	 a:role="abstract"
-	 rdfs:label="general:immediateRight">
-	<rdfs:subClassOf rdf:resource="&general;adjacentPosition"/>
-</rdfs:Class>
-<rdfs:Class rdf:about="&general;initial"
-	 a:role="abstract"
-	 rdfs:label="general:initial">
-	<rdfs:subClassOf rdf:resource="&general;absolutePositions"/>
-</rdfs:Class>
 <rdfs:Class rdf:about="&general;left"
-	 a:role="abstract"
 	 rdfs:label="general:left">
-	<rdfs:subClassOf rdf:resource="&general;relativePositions"/>
+	<rdfs:subClassOf rdf:resource="&general;associatePositions"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;lexicoconstructionalConditioning"
 	 rdfs:label="general:lexicoconstructionalConditioning">
@@ -439,7 +416,7 @@ a given template. This feature does not enter into the typological comparison at
 <rdfs:Class rdf:about="&general;medial"
 	 a:role="abstract"
 	 rdfs:label="general:medial">
-	<rdfs:subClassOf rdf:resource="&general;absolutePositions"/>
+	<rdfs:subClassOf rdf:resource="&general;fillerPositions"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;morphologicalConstituent"
 	 a:role="abstract"
@@ -460,7 +437,7 @@ a given template. This feature does not enter into the typological comparison at
 	 a:role="abstract"
 	 rdfs:label="general:multiple">
 	<rdfs:comment>A class covering cases where more than one component is involved in a positional restriction.</rdfs:comment>
-	<rdfs:subClassOf rdf:resource="&general;position"/>
+	<rdfs:subClassOf rdf:resource="&general;fillerPositions"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;phonologicalConditioning"
 	 a:role="abstract"
@@ -475,7 +452,6 @@ a given template. This feature does not enter into the typological comparison at
 <rdfs:Class rdf:about="&general;position"
 	 a:role="abstract"
 	 rdfs:label="general:position">
-	<rdfs:comment>The structure of this might need to be changed. It's important to bear in mind they're being used for Associates and Fillers, but maybe that can be split up. See not on FILLER POSITION slot for why abstract classes probably need to be made concrete using instances in the template. ALSO, maybe delete some unused position?</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;prosodicConditioning"
@@ -504,15 +480,9 @@ a given template. This feature does not enter into the typological comparison at
 	<rdfs:comment>A supertype for subtypes classifying the nature of the relations holding among a template's components (though the notions could be applied more generally).</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
-<rdfs:Class rdf:about="&general;relativePositions"
-	 a:role="abstract"
-	 rdfs:label="general:relativePositions">
-	<rdfs:subClassOf rdf:resource="&general;position"/>
-</rdfs:Class>
 <rdfs:Class rdf:about="&general;right"
-	 a:role="abstract"
 	 rdfs:label="general:right">
-	<rdfs:subClassOf rdf:resource="&general;relativePositions"/>
+	<rdfs:subClassOf rdf:resource="&general;associatePositions"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;segment"
 	 a:role="abstract"
@@ -694,6 +664,12 @@ a given template. This feature does not enter into the typological comparison at
 	<rdfs:range rdf:resource="&component;component"/>
 	<rdfs:domain rdf:resource="&component;unstable"/>
 </rdf:Property>
+<rdf:Property rdf:about="&speccomponent;ASSOCIATE_POSITION"
+	 a:maxCardinality="1"
+	 rdfs:label="speccomponent:ASSOCIATE_POSITION">
+	<rdfs:domain rdf:resource="&component;unstable"/>
+	<rdfs:range rdf:resource="&general;associatePositions"/>
+</rdf:Property>
 <rdf:Property rdf:about="&speccomponent;COHERENCE"
 	 a:maxCardinality="1"
 	 rdfs:label="speccomponent:COHERENCE">
@@ -872,16 +848,10 @@ a given template. This feature does not enter into the typological comparison at
 	<rdfs:comment>A supertype for subtypes that classify the nature of the relationships among a template's components, including some indication of their relative order and what sorts of dependencies might hold among them.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
-<rdfs:Class rdf:about="&template;homophonic"
+<rdfs:Class rdf:about="&template;homophony"
 	 a:role="abstract"
-	 rdfs:label="template:homophonic">
-	<rdfs:subClassOf rdf:resource="&template;reparable"/>
-</rdfs:Class>
-<rdfs:Class rdf:about="&template;insertion"
-	 a:role="abstract"
-	 rdfs:comment="I am not, for now, coding the specifics of what is inserted."
-	 rdfs:label="template:insertion">
-	<rdfs:subClassOf rdf:resource="&template;reparable"/>
+	 rdfs:label="template:homophony">
+	<rdfs:subClassOf rdf:resource="&template;morphosyntacticRepair"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;irreparable"
 	 a:role="abstract"
@@ -899,9 +869,15 @@ a given template. This feature does not enter into the typological comparison at
 	<rdfs:comment>A type for cases where the exceptions to a templatic pattern are lexically conditioned.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&template;exceptionality"/>
 </rdfs:Class>
-<rdfs:Class rdf:about="&template;metathesis"
+<rdfs:Class rdf:about="&template;morphologicalInsertion"
 	 a:role="abstract"
-	 rdfs:label="template:metathesis">
+	 rdfs:comment="I am not, for now, coding the specifics of what is inserted."
+	 rdfs:label="template:morphologicalInsertion">
+	<rdfs:subClassOf rdf:resource="&template;morphosyntacticRepair"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&template;morphosyntacticRepair"
+	 a:role="abstract"
+	 rdfs:label="template:morphosyntacticRepair">
 	<rdfs:subClassOf rdf:resource="&template;reparable"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;noKnownExceptions"
@@ -919,6 +895,11 @@ a given template. This feature does not enter into the typological comparison at
 	 rdfs:label="template:order">
 	<rdfs:comment>A type for classifying a template whose stipulation involves a restriction in the order of a set of elements</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&template;stricture"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&template;phonologicalRepair"
+	 a:role="abstract"
+	 rdfs:label="template:phonologicalRepair">
+	<rdfs:subClassOf rdf:resource="&template;reparable"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;potentiallyViolable"
 	 rdfs:label="template:potentiallyViolable">
@@ -943,7 +924,7 @@ a given template. This feature does not enter into the typological comparison at
 <rdfs:Class rdf:about="&template;shortening"
 	 a:role="abstract"
 	 rdfs:label="template:shortening">
-	<rdfs:subClassOf rdf:resource="&template;reparable"/>
+	<rdfs:subClassOf rdf:resource="&template;phonologicalRepair"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;span"
 	 rdfs:label="template:span">

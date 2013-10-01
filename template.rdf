@@ -65,8 +65,8 @@
 </template:order>
 <template:potentiallyViolable rdf:about="&templates;AghemClause-Violability"
 	 rdfs:label="AghemClause-Violability">
-	<template:REPARABILITY rdf:resource="&template;insertion"/>
 	<template:EXCEPTIONALITY rdf:resource="&template;lexical"/>
+	<template:REPARABILITY rdf:resource="&template;morphologicalInsertion"/>
 </template:potentiallyViolable>
 <component:component rdf:about="&templates;AghemPostverbal"
 	 rdfs:label="AghemPostverbal">
@@ -188,6 +188,8 @@
 	<speccomponent:FILLEDNESS rdf:resource="&templates;AlgonquianClauseNegative-Filledness"/>
 	<speccomponent:STABILITY rdf:resource="&templates;AlgonquianClauseNegative-Stability"/>
 </component:component>
+<general:right rdf:about="&templates;AlgonquianClauseNegative-AssociatePosition"
+	 rdfs:label="AlgonquianClauseNegative-AssociatePosition"/>
 <component:coherent rdf:about="&templates;AlgonquianClauseNegative-Coherence"
 	 rdfs:label="AlgonquianClauseNegative-Coherence">
 	<function:CLASS rdf:resource="&localfunction;negative"/>
@@ -202,8 +204,8 @@
 </component:open>
 <component:unstable rdf:about="&templates;AlgonquianClauseNegative-Stability"
 	 rdfs:label="AlgonquianClauseNegative-Stability">
+	<speccomponent:ASSOCIATE_POSITION rdf:resource="&templates;AlgonquianClauseNegative-AssociatePosition"/>
 	<speccomponent:ASSOCIATE rdf:resource="&templates;AlgonquianClauseVerb"/>
-	<component:ASSOCIATE_POSITION rdf:resource="&general;right"/>
 </component:unstable>
 <component:component rdf:about="&templates;AlgonquianClauseNullComponent"
 	 rdfs:label="AlgonquianClauseNullComponent">
@@ -359,7 +361,7 @@
 	 rdfs:label="BantuCA-Violability"/>
 <template:potentiallyViolable rdf:about="&templates;BantuCA-Violability_dep"
 	 rdfs:label="BantuCA-Violability_dep">
-	<template:REPARABILITY rdf:resource="&template;homophonic"/>
+	<template:REPARABILITY rdf:resource="&template;homophony"/>
 	<template:EXCEPTIONALITY rdf:resource="&template;noKnownExceptions"/>
 </template:potentiallyViolable>
 <template:desmeme rdf:about="&templates;BantuCT"
@@ -421,10 +423,12 @@
 	<speccomponent:FILLEDNESS rdf:resource="&templates;BantuCausative-Filledness"/>
 	<speccomponent:STABILITY rdf:resource="&templates;BantuCausativeDependent-Stability"/>
 </component:component>
+<general:right rdf:about="&templates;BantuCausativeDependent-AssociatePosition"
+	 rdfs:label="BantuCausativeDependent-AssociatePosition"/>
 <component:unstable rdf:about="&templates;BantuCausativeDependent-Stability"
 	 rdfs:label="BantuCausativeDependent-Stability">
+	<speccomponent:ASSOCIATE_POSITION rdf:resource="&templates;BantuCausativeDependent-AssociatePosition"/>
 	<speccomponent:ASSOCIATE rdf:resource="&templates;BantuTransitive"/>
-	<component:ASSOCIATE_POSITION rdf:resource="&general;right"/>
 </component:unstable>
 <component:component rdf:about="&templates;BantuCausativeIndependent"
 	 rdfs:label="BantuCausativeIndependent">
@@ -598,7 +602,7 @@
 </template:length>
 <template:potentiallyViolable rdf:about="&templates;ChechenPreverbalA-Violability"
 	 rdfs:label="ChechenPreverbalA-Violability">
-	<template:REPARABILITY rdf:resource="&template;insertion"/>
+	<template:REPARABILITY rdf:resource="&template;morphologicalInsertion"/>
 	<template:EXCEPTIONALITY rdf:resource="&template;noKnownExceptions"/>
 </template:potentiallyViolable>
 <component:component rdf:about="&templates;ChechenVerb"
@@ -650,7 +654,7 @@
 </template:arch>
 <template:potentiallyViolable rdf:about="&templates;ChichewaAR-Violability"
 	 rdfs:label="ChichewaAR-Violability">
-	<template:REPARABILITY rdf:resource="&template;insertion"/>
+	<template:REPARABILITY rdf:resource="&template;morphologicalInsertion"/>
 	<template:EXCEPTIONALITY rdf:resource="&template;semantic"/>
 </template:potentiallyViolable>
 <component:component rdf:about="&templates;ChichewaApplicative"
@@ -1109,6 +1113,8 @@
 	<speccomponent:FILLEDNESS rdf:resource="&templates;GermanVC-Filledness"/>
 	<speccomponent:STABILITY rdf:resource="&templates;GermanVC-Stability"/>
 </component:component>
+<general:right rdf:about="&templates;GermanVC-AssociatePosition"
+	 rdfs:label="GermanVC-AssociatePosition"/>
 <component:coherent rdf:about="&templates;GermanVC-Coherence"
 	 rdfs:label="GermanVC-Coherence">
 	<function:CLASS rdf:resource="&gold;Verbal"/>
@@ -1124,7 +1130,7 @@
 <component:unstable rdf:about="&templates;GermanVC-Stability"
 	 rdfs:label="GermanVC-Stability">
 	<speccomponent:ASSOCIATE rdf:resource="&templates;GermanCF"/>
-	<component:ASSOCIATE_POSITION rdf:resource="&general;left"/>
+	<speccomponent:ASSOCIATE_POSITION rdf:resource="&templates;GermanVC-AssociatePosition"/>
 </component:unstable>
 <component:component rdf:about="&templates;GermanVF"
 	 rdfs:label="GermanVF">
@@ -1154,6 +1160,11 @@
 <notes:source rdf:about="&templates;Good-PersonalKnowledge"
 	 terms:bibliographicCitation="Good, Jeff. Personal knowledge."
 	 rdfs:label="Good-PersonalKnowledge"/>
+<notes:source rdf:about="&templates;Hyman-2011"
+	 rdfs:label="Hyman-2011"
+	 owl:sameAs="http://worldcat.org/oclc/696688374">
+	<terms:bibliographicCitation xml:space='preserve'><![CDATA[Hyman, Larry M. 2010a. Affixation by place of articulation: The case of Tiene. In Jan Wohlgemuth & Michael Cysouw (eds.), Rara and rarissima: Collecting and interpreting unusual characteristics of human languages, 145–184. Berlin: de Gruyter Mouton.]]></terms:bibliographicCitation>
+</notes:source>
 <notes:source rdf:about="&templates;HymanMchombo-2002"
 	 rdfs:label="HymanMchombo-2002"
 	 owl:sameAs="http://elanguage.net/journals/bls/article/view/2757">
@@ -1489,7 +1500,7 @@
 </template:order>
 <template:potentiallyViolable rdf:about="&templates;NimboranVerb-Violability"
 	 rdfs:label="NimboranVerb-Violability">
-	<template:REPARABILITY rdf:resource="&template;homophonic"/>
+	<template:REPARABILITY rdf:resource="&template;homophony"/>
 	<template:EXCEPTIONALITY rdf:resource="&template;noKnownExceptions"/>
 </template:potentiallyViolable>
 <component:component rdf:about="&templates;NimboranVerbLeftSupport"
@@ -1615,6 +1626,8 @@
 	<speccomponent:FILLEDNESS rdf:resource="&templates;NimboranVerbPosition7-Filledness"/>
 	<speccomponent:STABILITY rdf:resource="&templates;NimboranVerbPosition7-Stability"/>
 </component:component>
+<general:left rdf:about="&templates;NimboranVerbPosition7-AssociatePosition"
+	 rdfs:label="NimboranVerbPosition7-AssociatePosition"/>
 <component:coherent rdf:about="&templates;NimboranVerbPosition7-Coherence"
 	 rdfs:label="NimboranVerbPosition7-Coherence">
 	<function:CLASS rdf:resource="&localfunction;tense"/>
@@ -1629,7 +1642,7 @@
 <component:unstable rdf:about="&templates;NimboranVerbPosition7-Stability"
 	 rdfs:label="NimboranVerbPosition7-Stability">
 	<speccomponent:ASSOCIATE rdf:resource="&templates;NimboranVerbPosition5"/>
-	<component:ASSOCIATE_POSITION rdf:resource="&general;left"/>
+	<speccomponent:ASSOCIATE_POSITION rdf:resource="&templates;NimboranVerbPosition7-AssociatePosition"/>
 </component:unstable>
 <component:component rdf:about="&templates;NimboranVerbRightSupport"
 	 rdfs:label="NimboranVerbRightSupport">
@@ -1811,6 +1824,7 @@
 <template:desmeme rdf:about="&templates;TieneVerb"
 	 gold:inLanguage="http://lexvo.org/id/iso639-3/tii"
 	 rdfs:label="TieneVerb">
+	<notes:HAS_SOURCE rdf:resource="&templates;Hyman-2011"/>
 	<specgeneral:CONDITIONING rdf:resource="&templates;TieneVerb-Conditioning"/>
 	<spectemplate:FOUNDATION rdf:resource="&templates;TieneVerb-Foundation"/>
 	<spectemplate:STRICTURE rdf:resource="&templates;TieneVerb-Stricture"/>
@@ -1846,7 +1860,7 @@
 <template:potentiallyViolable rdf:about="&templates;TieneVerb-Violability"
 	 rdfs:label="TieneVerb-Violability">
 	<template:EXCEPTIONALITY rdf:resource="&template;lexical"/>
-	<template:REPARABILITY rdf:resource="&template;metathesis"/>
+	<template:REPARABILITY rdf:resource="&template;phonologicalRepair"/>
 </template:potentiallyViolable>
 <component:component rdf:about="&templates;TieneVerbLeftSupport"
 	 rdfs:label="TieneVerbLeftSupport">
@@ -1888,30 +1902,28 @@
 <template:desmeme rdf:about="&templates;TieneVerbProsodic"
 	 gold:inLanguage="http://lexvo.org/id/iso639-3/tii"
 	 rdfs:label="TieneVerbProsodic">
+	<notes:HAS_SOURCE rdf:resource="&templates;Hyman-2011"/>
 	<specgeneral:CONDITIONING rdf:resource="&templates;TieneVerbProsodic-Conditioning"/>
 	<spectemplate:FOUNDATION rdf:resource="&templates;TieneVerbProsodic-Foundation"/>
 	<spectemplate:STRICTURE rdf:resource="&templates;TieneVerbProsodic-Stricture"/>
 	<template:VIOLABILITY rdf:resource="&templates;TieneVerbProsodic-Violability"/>
-	<function:FUNCTION rdf:resource="&localfunction;valency"/>
+	<function:FUNCTION rdf:resource="&gold;Verbal"/>
 </template:desmeme>
 <general:prosodicConditioning rdf:about="&templates;TieneVerbProsodic-Conditioning"
 	 rdfs:label="TieneVerbProsodic-Conditioning"/>
 <template:span rdf:about="&templates;TieneVerbProsodic-Foundation"
 	 rdfs:label="TieneVerbProsodic-Foundation">
-	<spectemplate:RESTKOMPONENTEN rdf:resource="&templates;TieneVerbProsodic-RK"/>
 	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;TieneVerbProsodicLeftSupport"/>
 	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;TieneVerbProsodicRightSupport"/>
 </template:span>
 <component:stable rdf:about="&templates;TieneVerbProsodic-MiddleMora-Stability"
 	 rdfs:label="TieneVerbProsodic-MiddleMora-Stability"/>
 <component:restkomponentenSet rdf:about="&templates;TieneVerbProsodic-RK"
-	 rdfs:label="TieneVerbProsodic-RK">
-	<spectemplate:RESTKOMPONENT rdf:resource="&templates;TieneVerbProsodicMiddleMora"/>
-</component:restkomponentenSet>
+	 rdfs:label="TieneVerbProsodic-RK"/>
 <component:stable rdf:about="&templates;TieneVerbProsodic-RightSupport-Stability"
 	 rdfs:label="TieneVerbProsodic-RightSupport-Stability"/>
 <template:length rdf:about="&templates;TieneVerbProsodic-Stricture"
-	 general:COUNT="3"
+	 general:COUNT="2"
 	 rdfs:label="TieneVerbProsodic-Stricture">
 	<general:CONSTITUENT rdf:resource="&gold;Mora"/>
 </template:length>
@@ -1937,12 +1949,6 @@
 	 rdfs:label="TieneVerbProsodicLeftSupport-Filledness">
 	<speccomponent:COHERENCE rdf:resource="&templates;TieneVerbProsodicLeftSupport-Coherence"/>
 </component:open>
-<component:component rdf:about="&templates;TieneVerbProsodicMiddleMora"
-	 rdfs:label="TieneVerbProsodicMiddleMora">
-	<speccomponent:STABILITY rdf:resource="&templates;TieneVerbProsodic-MiddleMora-Stability"/>
-	<speccomponent:ELASTICITY rdf:resource="&templates;TieneVerbProsodicMiddleMora-Elasticity"/>
-	<speccomponent:FILLEDNESS rdf:resource="&templates;TieneVerbProsodicMiddleMora-Filledness"/>
-</component:component>
 <component:coherent rdf:about="&templates;TieneVerbProsodicMiddleMora-Coherent"
 	 rdfs:label="TieneVerbProsodicMiddleMora-Coherent">
 	<function:CLASS rdf:resource="&localfunction;moraicUnit"/>
@@ -1965,9 +1971,8 @@
 	 rdfs:label="TieneVerbProsodicRightSupport-Coherence">
 	<function:CLASS rdf:resource="&localfunction;moraicUnit"/>
 </component:coherent>
-<component:elastic rdf:about="&templates;TieneVerbProsodicRightSupport-Elasticity"
-	 general:MAXIMUM="1"
-	 general:MINIMUM="0"
+<component:inelastic rdf:about="&templates;TieneVerbProsodicRightSupport-Elasticity"
+	 general:COUNT="1"
 	 rdfs:label="TieneVerbProsodicRightSupport-Elasticity"/>
 <component:open rdf:about="&templates;TieneVerbProsodicRightSupport-Filledness"
 	 rdfs:label="TieneVerbProsodicRightSupport-Filledness">
@@ -2072,14 +2077,12 @@
 	 rdfs:label="TurkishVerbalMinimality-Conditioning"/>
 <template:potentiallyViolable rdf:about="&templates;TurkishVerbalMinimalityViolability"
 	 rdfs:label="TurkishVerbalMinimalityViolability">
-	<template:REPARABILITY rdf:resource="&template;insertion"/>
 	<template:EXCEPTIONALITY rdf:resource="&template;lexical"/>
+	<template:REPARABILITY rdf:resource="&template;morphologicalInsertion"/>
 </template:potentiallyViolable>
 <notes:source rdf:about="&templates;Watters-1979"
 	 rdfs:label="Watters-1979"
 	 owl:sameAs="http://www.sil.org/resources/archives/1883">
 	<terms:bibliographicCitation>Watters, John R. 1979. Focus in Aghem: A study of its formal correlates and typology. In Larry M. Hyman (ed.), Aghem grammatical structure: With special reference to noun classes, tense-aspect and focus marking Southern California Occasional Papers in Linguistics 7, 137–197. Los Angeles: University of Southern California Department of Linguistics.</terms:bibliographicCitation>
 </notes:source>
-<component:component rdf:about="&templates;template_Instance_3"
-	 rdfs:label="template_Instance_3"/>
 </rdf:RDF>
