@@ -383,6 +383,7 @@
 <component:filledComponentSet rdf:about="&templates;BantuCT-FilledComponents"
 	 rdfs:label="BantuCT-FilledComponents">
 	<spectemplate:FILLED_COMPONENT rdf:resource="&templates;BantuCausativeDependent"/>
+	<spectemplate:FILLED_COMPONENT rdf:resource="&templates;BantuTransitive"/>
 </component:filledComponentSet>
 <template:arch rdf:about="&templates;BantuCT-Foundation"
 	 rdfs:label="BantuCT-Foundation">
@@ -1835,22 +1836,24 @@
 	 rdfs:label="TieneVerb-Conditioning">
 	<notes:CONDITIONS>Prosodic conditioning is used broadly as a cover term for higher-level phonological conditioning here.</notes:CONDITIONS>
 </general:prosodicConditioning>
-<template:span rdf:about="&templates;TieneVerb-Foundation"
+<template:arch rdf:about="&templates;TieneVerb-Foundation"
 	 rdfs:label="TieneVerb-Foundation">
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;TieneVerbC1"/>
+	<spectemplate:KEYSTONE rdf:resource="&templates;TieneVerbC1"/>
+	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;TieneVerbC2"/>
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;TieneVerbC3"/>
+	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;TieneVerbNullComponent"/>
+</template:arch>
+<template:span rdf:about="&templates;TieneVerb-Foundation_dep"
+	 rdfs:label="TieneVerb-Foundation_dep">
 	<spectemplate:RESTKOMPONENTEN rdf:resource="&templates;TieneVerb-RK"/>
-	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;TieneVerbLeftSupport"/>
-	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;TieneVerbRightSupport"/>
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;TieneVerbC1"/>
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;TieneVerbC3"/>
 </template:span>
-<component:stable rdf:about="&templates;TieneVerb-LeftSupport-Stability"
-	 rdfs:label="TieneVerb-LeftSupport-Stability"/>
-<component:stable rdf:about="&templates;TieneVerb-MiddleConsonant-Stability"
-	 rdfs:label="TieneVerb-MiddleConsonant-Stability"/>
 <component:restkomponentenSet rdf:about="&templates;TieneVerb-RK"
 	 rdfs:label="TieneVerb-RK">
-	<spectemplate:RESTKOMPONENT rdf:resource="&templates;TieneVerbMiddleConsonant"/>
+	<spectemplate:RESTKOMPONENT rdf:resource="&templates;TieneVerbC2"/>
 </component:restkomponentenSet>
-<component:stable rdf:about="&templates;TieneVerb-RightSupport-Stable"
-	 rdfs:label="TieneVerb-RightSupport-Stable"/>
 <template:order rdf:about="&templates;TieneVerb-Stricture"
 	 general:COUNT="3"
 	 rdfs:label="TieneVerb-Stricture">
@@ -1862,43 +1865,94 @@
 	<template:EXCEPTIONALITY rdf:resource="&template;lexical"/>
 	<template:REPARABILITY rdf:resource="&template;phonologicalRepair"/>
 </template:potentiallyViolable>
-<component:component rdf:about="&templates;TieneVerbLeftSupport"
-	 rdfs:label="TieneVerbLeftSupport">
-	<speccomponent:STABILITY rdf:resource="&templates;TieneVerb-LeftSupport-Stability"/>
-	<speccomponent:ELASTICITY rdf:resource="&templates;TieneVerbLeftSupport-Elasticity"/>
-	<speccomponent:FILLEDNESS rdf:resource="&templates;TieneVerbLeftSupport-Filledness"/>
+<component:component rdf:about="&templates;TieneVerbC1"
+	 rdfs:label="TieneVerbC1">
+	<speccomponent:ELASTICITY rdf:resource="&templates;TieneVerbC1-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;TieneVerbC1-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;TieneVerbC1-Stability"/>
 </component:component>
-<component:coherent rdf:about="&templates;TieneVerbLeftSupport-Coherence"
-	 rdfs:label="TieneVerbLeftSupport-Coherence">
+<component:coherent rdf:about="&templates;TieneVerbC1-Coherence"
+	 rdfs:label="TieneVerbC1-Coherence">
 	<function:CLASS rdf:resource="&localfunction;consonant"/>
 </component:coherent>
-<component:inelastic rdf:about="&templates;TieneVerbLeftSupport-Elasticity"
+<component:inelastic rdf:about="&templates;TieneVerbC1-Elasticity"
 	 general:COUNT="1"
-	 rdfs:label="TieneVerbLeftSupport-Elasticity"/>
-<component:open rdf:about="&templates;TieneVerbLeftSupport-Filledness"
-	 rdfs:label="TieneVerbLeftSupport-Filledness">
-	<speccomponent:COHERENCE rdf:resource="&templates;TieneVerbLeftSupport-Coherence"/>
+	 rdfs:label="TieneVerbC1-Elasticity"/>
+<component:open rdf:about="&templates;TieneVerbC1-Filledness"
+	 rdfs:label="TieneVerbC1-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;TieneVerbC1-Coherence"/>
 </component:open>
-<component:stable rdf:about="&templates;TieneVerbLeftSupport-Stability"
-	 rdfs:label="TieneVerbLeftSupport-Stability"/>
-<component:component rdf:about="&templates;TieneVerbMiddleConsonant"
-	 rdfs:label="TieneVerbMiddleConsonant">
-	<speccomponent:STABILITY rdf:resource="&templates;TieneVerb-MiddleConsonant-Stability"/>
-	<speccomponent:ELASTICITY rdf:resource="&templates;TieneVerbMiddleConsonant-Elasticity"/>
-	<speccomponent:FILLEDNESS rdf:resource="&templates;TieneVerbMiddleConsonant-Filledness"/>
+<component:stable rdf:about="&templates;TieneVerbC1-Stability"
+	 rdfs:label="TieneVerbC1-Stability"/>
+<component:component rdf:about="&templates;TieneVerbC2"
+	 rdfs:label="TieneVerbC2">
+	<speccomponent:ELASTICITY rdf:resource="&templates;TieneVerbC2-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;TieneVerbC2-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;TieneVerbC2-Stability"/>
 </component:component>
-<component:coherent rdf:about="&templates;TieneVerbMiddleConsonant-Coherence"
-	 rdfs:label="TieneVerbMiddleConsonant-Coherence">
-	<function:CLASS rdf:resource="&localfunction;alveolarConsonant"/>
+<general:right rdf:about="&templates;TieneVerbC2-AssociatePosition"
+	 rdfs:label="TieneVerbC2-AssociatePosition"/>
+<component:coherent rdf:about="&templates;TieneVerbC2-Coherence"
+	 rdfs:label="TieneVerbC2-Coherence">
+	<function:CLASS rdf:resource="&localfunction;coronalConsonant"/>
 </component:coherent>
-<component:elastic rdf:about="&templates;TieneVerbMiddleConsonant-Elasticity"
+<component:elastic rdf:about="&templates;TieneVerbC2-Elasticity"
 	 general:MAXIMUM="1"
 	 general:MINIMUM="0"
-	 rdfs:label="TieneVerbMiddleConsonant-Elasticity"/>
-<component:open rdf:about="&templates;TieneVerbMiddleConsonant-Filledness"
-	 rdfs:label="TieneVerbMiddleConsonant-Filledness">
-	<speccomponent:COHERENCE rdf:resource="&templates;TieneVerbMiddleConsonant-Coherence"/>
+	 rdfs:label="TieneVerbC2-Elasticity"/>
+<component:open rdf:about="&templates;TieneVerbC2-Filledness"
+	 rdfs:label="TieneVerbC2-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;TieneVerbC2-Coherence"/>
 </component:open>
+<component:unstable rdf:about="&templates;TieneVerbC2-Stability"
+	 rdfs:label="TieneVerbC2-Stability">
+	<speccomponent:ASSOCIATE_POSITION rdf:resource="&templates;TieneVerbC2-AssociatePosition"/>
+	<speccomponent:ASSOCIATE rdf:resource="&templates;TieneVerbC3"/>
+</component:unstable>
+<component:stable rdf:about="&templates;TieneVerbC2-Stability_dep"
+	 rdfs:label="TieneVerbC2-Stability_dep"/>
+<component:component rdf:about="&templates;TieneVerbC3"
+	 rdfs:label="TieneVerbC3">
+	<speccomponent:ELASTICITY rdf:resource="&templates;TieneVerbC3-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;TieneVerbC3-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;TieneVerbC3-Stability"/>
+</component:component>
+<general:left rdf:about="&templates;TieneVerbC3-AssociatePosition"
+	 rdfs:label="TieneVerbC3-AssociatePosition"/>
+<component:coherent rdf:about="&templates;TieneVerbC3-Coherence"
+	 rdfs:label="TieneVerbC3-Coherence">
+	<function:CLASS rdf:resource="&localfunction;nonCoronalConsonant"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;TieneVerbC3-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="TieneVerbC3-Elasticity"/>
+<component:open rdf:about="&templates;TieneVerbC3-Filledness"
+	 rdfs:label="TieneVerbC3-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;TieneVerbC3-Coherence"/>
+</component:open>
+<component:unstable rdf:about="&templates;TieneVerbC3-Stability"
+	 rdfs:label="TieneVerbC3-Stability">
+	<speccomponent:ASSOCIATE rdf:resource="&templates;TieneVerbC2"/>
+	<speccomponent:ASSOCIATE_POSITION rdf:resource="&templates;TieneVerbC3-AssociatePosition"/>
+</component:unstable>
+<component:stable rdf:about="&templates;TieneVerbCX-Stability_dep"
+	 rdfs:label="TieneVerbCX-Stability_dep"/>
+<component:stable rdf:about="&templates;TieneVerbLeftSupport-Stability"
+	 rdfs:label="TieneVerbLeftSupport-Stability"/>
+<component:component rdf:about="&templates;TieneVerbNullComponent"
+	 rdfs:label="TieneVerbNullComponent">
+	<speccomponent:ELASTICITY rdf:resource="&templates;TieneVerbNullComponent-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;TieneVerbNullComponent-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;TieneVerbNullComponent-Stability"/>
+</component:component>
+<component:inelastic rdf:about="&templates;TieneVerbNullComponent-Elasticity"
+	 general:COUNT="0"
+	 rdfs:label="TieneVerbNullComponent-Elasticity"/>
+<component:null rdf:about="&templates;TieneVerbNullComponent-Filledness"
+	 rdfs:label="TieneVerbNullComponent-Filledness"/>
+<component:stable rdf:about="&templates;TieneVerbNullComponent-Stability"
+	 rdfs:label="TieneVerbNullComponent-Stability"/>
 <template:desmeme rdf:about="&templates;TieneVerbProsodic"
 	 gold:inLanguage="http://lexvo.org/id/iso639-3/tii"
 	 rdfs:label="TieneVerbProsodic">
@@ -1977,24 +2031,6 @@
 <component:open rdf:about="&templates;TieneVerbProsodicRightSupport-Filledness"
 	 rdfs:label="TieneVerbProsodicRightSupport-Filledness">
 	<speccomponent:COHERENCE rdf:resource="&templates;TieneVerbProsodicRightSupport-Coherence"/>
-</component:open>
-<component:component rdf:about="&templates;TieneVerbRightSupport"
-	 rdfs:label="TieneVerbRightSupport">
-	<speccomponent:STABILITY rdf:resource="&templates;TieneVerb-RightSupport-Stable"/>
-	<speccomponent:ELASTICITY rdf:resource="&templates;TieneVerbRightSupport-Elasticity"/>
-	<speccomponent:FILLEDNESS rdf:resource="&templates;TieneVerbRightSupport-Filledness"/>
-</component:component>
-<component:coherent rdf:about="&templates;TieneVerbRightSupport-Coherence"
-	 rdfs:label="TieneVerbRightSupport-Coherence">
-	<function:CLASS rdf:resource="&localfunction;velarConsonant"/>
-</component:coherent>
-<component:elastic rdf:about="&templates;TieneVerbRightSupport-Elasticity"
-	 general:MAXIMUM="1"
-	 general:MINIMUM="0"
-	 rdfs:label="TieneVerbRightSupport-Elasticity"/>
-<component:open rdf:about="&templates;TieneVerbRightSupport-Filledness"
-	 rdfs:label="TieneVerbRightSupport-Filledness">
-	<speccomponent:COHERENCE rdf:resource="&templates;TieneVerbRightSupport-Coherence"/>
 </component:open>
 <component:component rdf:about="&templates;TurkishFirstSyllable"
 	 rdfs:label="TurkishFirstSyllable">

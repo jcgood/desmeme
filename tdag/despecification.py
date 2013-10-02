@@ -15,9 +15,29 @@ def process_template(mother,genericMother,rdfGraph,tdag):
 		prettyDName = prettyName(despecifiedD)
 		prettyPredName = prettyName(predicate)
 
+		# Here is a hack to deal with the fact that, at least for Tiene, associates can criss-cross
+		# This results in infinite recursion. So, we need special treatment
+		if is_associate(predicate):
+			
+			# If I'm already in the graph, just add my edge if it's not already there.
+			if daughter in tdag.components:
+				prettyDName = tdag.add_node(prettyDName,daughter,mother,predicate)
+				if tdag.has_edge((genericMother, prettyDName), prettyPredName):
+					pass
+				else:
+					# Now we are using the special tdag methods to add an edge with a label for multiple arcs from/to same nodes
+					tdag.add_edge((genericMother, prettyDName), label=prettyPredName)
+
+			# Otherwise, add me per usual	
+			else:
+				prettyDName = tdag.add_node(prettyDName,daughter,mother,predicate)
+				tdag.add_edge((genericMother, prettyDName), label=prettyPredName)
+				process_template(daughter, prettyDName, rdfGraph, tdag)
+		
 		# Need to skip source information, probably better solution out there
-		if is_metadata(predicate):
+		elif is_metadata(predicate):
 			pass
+
 
 		# Here we need some special logic to make sure that (components especially)
 		# Have their potentially shared nodes "split" up so that each component points
@@ -30,7 +50,7 @@ def process_template(mother,genericMother,rdfGraph,tdag):
 			# to be an accident, but a useful one. So, I am keeping it.
 			if tdag.has_node(prettyDName,daughter):
 				prettyDName = tdag.has_node(prettyDName,daughter)
-				print "Warning ", prettyDName, daughter, mother, "may be a case of a duplicatable node not yet properly handled. Examine the template using it and the class function in tdag and add a case for this if graph does not properly duplicate nodes."
+				print "Warning ", daughter, "may be a case of a duplicatable node not yet properly handled. Examine the template using it and the class function in tdag and add a case for this if graph does not properly duplicate nodes. A known raising of this error which is not a problem occurs when a component with an Associate is also a filler for a lexicoconstructional template."
 			else:
 				prettyDName = tdag.add_node(prettyDName,daughter,mother,predicate)
 			
@@ -50,6 +70,8 @@ def process_template(mother,genericMother,rdfGraph,tdag):
 	# We've been passing the same tdag around adding nodes and edges.
 	# It should be all built up by now. So, we return it.
 	return tdag
+
+
 
 # This takes in a regular template and outputs a despecified one, removing
 # RDF bits not important for the comparative analysis.
@@ -145,6 +167,13 @@ def is_metadata(rdfPred):
 
 	# Not very general yet
 	if rdfPred == URIRef("http://purl.org/linguistics/jcgood/notes#HAS_SOURCE"):
+			return True
+	return False
+
+def is_associate(rdfPred):
+
+	# Not very general yet
+	if rdfPred == URIRef("http://purl.org/linguistics/jcgood/speccomponent#ASSOCIATE"):
 			return True
 	return False
 	

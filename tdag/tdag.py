@@ -119,6 +119,7 @@ class tdag ( ):
 	# Adds desired RDF node to internal graph and does some processing for readability.
 	# Includes special logic for dealing with "repeatable" nodes (in components).
 	# This function returns a nodeName with an integer for disambiguation purposes, if needed.
+	# If the same node is attempted to be added twice, just returns graph nodename as side effect
 	def add_node(self, node, URI, mother="", predicate=""):
 				
 		nodeName = node

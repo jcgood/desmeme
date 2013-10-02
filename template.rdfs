@@ -521,11 +521,6 @@ a given template. This feature does not enter into the typological comparison at
 	 rdfs:label="localfunction:adpositionalPhrase">
 	<rdfs:subClassOf rdf:resource="&general;function"/>
 </rdfs:Class>
-<rdfs:Class rdf:about="&localfunction;alveolarConsonant"
-	 a:role="abstract"
-	 rdfs:label="localfunction:alveolarConsonant">
-	<rdfs:subClassOf rdf:resource="&general;function"/>
-</rdfs:Class>
 <rdfs:Class rdf:about="&localfunction;argument"
 	 a:role="abstract"
 	 rdfs:comment="Check Gold later, when new website up."
@@ -545,6 +540,11 @@ a given template. This feature does not enter into the typological comparison at
 <rdfs:Class rdf:about="&localfunction;constituent"
 	 a:role="abstract"
 	 rdfs:label="localfunction:constituent">
+	<rdfs:subClassOf rdf:resource="&general;function"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&localfunction;coronalConsonant"
+	 a:role="abstract"
+	 rdfs:label="localfunction:coronalConsonant">
 	<rdfs:subClassOf rdf:resource="&general;function"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&localfunction;finite"
@@ -584,6 +584,11 @@ a given template. This feature does not enter into the typological comparison at
 <rdfs:Class rdf:about="&localfunction;negative"
 	 a:role="abstract"
 	 rdfs:label="localfunction:negative">
+	<rdfs:subClassOf rdf:resource="&general;function"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&localfunction;nonCoronalConsonant"
+	 a:role="abstract"
+	 rdfs:label="localfunction:nonCoronalConsonant">
 	<rdfs:subClassOf rdf:resource="&general;function"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&localfunction;objectReference"
@@ -629,11 +634,6 @@ a given template. This feature does not enter into the typological comparison at
 <rdfs:Class rdf:about="&localfunction;valency"
 	 a:role="abstract"
 	 rdfs:label="localfunction:valency">
-	<rdfs:subClassOf rdf:resource="&general;function"/>
-</rdfs:Class>
-<rdfs:Class rdf:about="&localfunction;velarConsonant"
-	 a:role="abstract"
-	 rdfs:label="localfunction:velarConsonant">
 	<rdfs:subClassOf rdf:resource="&general;function"/>
 </rdfs:Class>
 <rdf:Property rdf:about="&notes;ANALYTICAL_AMBIGUITY"

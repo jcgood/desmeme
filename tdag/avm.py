@@ -120,6 +120,14 @@ class avm ( ):
 					FV = featval(attribute,value)
 					self.addFV(FV)
 			
+				# We need a special condition to deal with criss-crossing Associates, as with Tiene.
+				# This is a semi-hack.
+				elif attribute == "ASSOCIATE":
+					embeddedAVM = avm(neighbor, value)
+					FV = featval(attribute, embeddedAVM)
+					self.addFV(FV)
+					pass
+				
 				else:
 					embeddedAVM = avm(neighbor, value)
 					embeddedAVM.graph_toAVM(tgraph, neighbor)
