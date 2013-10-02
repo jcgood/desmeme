@@ -1,3 +1,5 @@
+USE AUTOMATICALLY PRINTED FULL GRID OUTPUT FROM SCRIPT THEN RUN FOLLOWING IN R.
+
 templates <- read.table("/Users/jcgood/Desktop/xxx.txt", sep="\t")
 templateframe = data.frame(templates,row.names=TRUE)
 templatedist = as.dist(templateframe)
