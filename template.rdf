@@ -599,7 +599,7 @@
 <template:length rdf:about="&templates;ChechenPreverbalA-Stricture"
 	 general:COUNT="2"
 	 rdfs:label="ChechenPreverbalA-Stricture">
-	<general:CONSTITUENT rdf:resource="&general;prosodicWord"/>
+	<general:CONSTITUENT rdf:resource="&general;syntacticConstituent"/>
 </template:length>
 <template:potentiallyViolable rdf:about="&templates;ChechenPreverbalA-Violability"
 	 rdfs:label="ChechenPreverbalA-Violability">
@@ -1822,16 +1822,6 @@
 	 owl:sameAs="http://www.worldcat.org/oclc/212765768">
 	<terms:bibliographicCitation>Sibanda, Galen. 2004. Verbal phonology and morphology of Ndebele. Berkeley: UC Berkeley Ph.D. Dissertation.</terms:bibliographicCitation>
 </notes:source>
-<template:desmeme rdf:about="&templates;TieneVerb"
-	 gold:inLanguage="http://lexvo.org/id/iso639-3/tii"
-	 rdfs:label="TieneVerb">
-	<notes:HAS_SOURCE rdf:resource="&templates;Hyman-2011"/>
-	<specgeneral:CONDITIONING rdf:resource="&templates;TieneVerb-Conditioning"/>
-	<spectemplate:FOUNDATION rdf:resource="&templates;TieneVerb-Foundation"/>
-	<spectemplate:STRICTURE rdf:resource="&templates;TieneVerb-Stricture"/>
-	<template:VIOLABILITY rdf:resource="&templates;TieneVerb-Violability"/>
-	<function:FUNCTION rdf:resource="&localfunction;valency"/>
-</template:desmeme>
 <general:prosodicConditioning rdf:about="&templates;TieneVerb-Conditioning"
 	 rdfs:label="TieneVerb-Conditioning">
 	<notes:CONDITIONS>Prosodic conditioning is used broadly as a cover term for higher-level phonological conditioning here.</notes:CONDITIONS>
@@ -1862,7 +1852,7 @@
 </template:order>
 <template:potentiallyViolable rdf:about="&templates;TieneVerb-Violability"
 	 rdfs:label="TieneVerb-Violability">
-	<template:EXCEPTIONALITY rdf:resource="&template;lexical"/>
+	<template:EXCEPTIONALITY rdf:resource="&template;noKnownExceptions"/>
 	<template:REPARABILITY rdf:resource="&template;phonologicalRepair"/>
 </template:potentiallyViolable>
 <component:component rdf:about="&templates;TieneVerbC1"
@@ -2032,6 +2022,16 @@
 	 rdfs:label="TieneVerbProsodicRightSupport-Filledness">
 	<speccomponent:COHERENCE rdf:resource="&templates;TieneVerbProsodicRightSupport-Coherence"/>
 </component:open>
+<template:desmeme rdf:about="&templates;TieneVerbSegments"
+	 gold:inLanguage="http://lexvo.org/id/iso639-3/tii"
+	 rdfs:label="TieneVerbSegments">
+	<notes:HAS_SOURCE rdf:resource="&templates;Hyman-2011"/>
+	<specgeneral:CONDITIONING rdf:resource="&templates;TieneVerb-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;TieneVerb-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;TieneVerb-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;TieneVerb-Violability"/>
+	<function:FUNCTION rdf:resource="&localfunction;valency"/>
+</template:desmeme>
 <component:component rdf:about="&templates;TurkishFirstSyllable"
 	 rdfs:label="TurkishFirstSyllable">
 	<speccomponent:ELASTICITY rdf:resource="&templates;TurkishFirstSyllable-Elasticity"/>
