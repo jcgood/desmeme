@@ -171,7 +171,7 @@ class avm ( ):
 					  'span'  				: ["LEFT_SUPPORT", "RIGHT_SUPPORT", "RESTKOMPONENTEN"],
 					  'component'		  	: ["ELASTICITY", "FILLEDNESS", "STABILITY" ],
 					  'elastic'  			: ["MINIMUM", "MAXIMUM" ],
-					  'partiallyFilled'  	: ["FILLER_POSITION", "FORM", "COHERENCE" ],
+					  'partiallyFilled'  	: ["FILLER_PLACEMENT", "FORM", "COHERENCE" ],
 					  'unstable'  			: ["SUPPORT", "SUPPORT_POSITION" ],
 					  'lexicoconstructionalConditioning': ["FILLER_POSITION", "FILLED_COMPONENT", "FILLED_COMPONENTS" ],
 					  'restkomponentenSet'	: ["RESTKOMPONENT"], # Need this list of one to allow components in side RK to be procssed; unfortunate hack

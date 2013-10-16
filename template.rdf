@@ -66,7 +66,7 @@
 <template:potentiallyViolable rdf:about="&templates;AghemClause-Violability"
 	 rdfs:label="AghemClause-Violability">
 	<template:EXCEPTIONALITY rdf:resource="&template;lexical"/>
-	<template:REPARABILITY rdf:resource="&template;morphologicalInsertion"/>
+	<template:REPARABILITY rdf:resource="&template;morphosyntacticInsertion"/>
 </template:potentiallyViolable>
 <component:component rdf:about="&templates;AghemPostverbal"
 	 rdfs:label="AghemPostverbal">
@@ -593,7 +593,7 @@
 	 rdfs:label="ChechenPreverbalA-Preverbal-Filledness">
 	<speccomponent:FORM rdf:resource="&templates;ChechenA-Form"/>
 	<speccomponent:COHERENCE rdf:resource="&templates;ChechenPreverbal-Coherence"/>
-	<component:FILLER_POSITION rdf:resource="&general;final"/>
+	<component:FILLER_PLACEMENT rdf:resource="&general;final"/>
 	<function:FILLER_CLASS rdf:resource="&localfunction;clauseChaining"/>
 </component:partiallyFilled>
 <template:length rdf:about="&templates;ChechenPreverbalA-Stricture"
@@ -603,7 +603,7 @@
 </template:length>
 <template:potentiallyViolable rdf:about="&templates;ChechenPreverbalA-Violability"
 	 rdfs:label="ChechenPreverbalA-Violability">
-	<template:REPARABILITY rdf:resource="&template;morphologicalInsertion"/>
+	<template:REPARABILITY rdf:resource="&template;morphosyntacticInsertion"/>
 	<template:EXCEPTIONALITY rdf:resource="&template;noKnownExceptions"/>
 </template:potentiallyViolable>
 <component:component rdf:about="&templates;ChechenVerb"
@@ -655,7 +655,7 @@
 </template:arch>
 <template:potentiallyViolable rdf:about="&templates;ChichewaAR-Violability"
 	 rdfs:label="ChichewaAR-Violability">
-	<template:REPARABILITY rdf:resource="&template;morphologicalInsertion"/>
+	<template:REPARABILITY rdf:resource="&template;morphosyntacticInsertion"/>
 	<template:EXCEPTIONALITY rdf:resource="&template;semantic"/>
 </template:potentiallyViolable>
 <component:component rdf:about="&templates;ChichewaApplicative"
@@ -1709,7 +1709,7 @@
 	<speccomponent:FORM rdf:resource="&templates;SerboCroatianJe-Form"/>
 	<speccomponent:COHERENCE rdf:resource="&templates;SerboCroatianJeLeftSupport-Coherence"/>
 	<function:FILLER_CLASS rdf:resource="&gold;Auxiliary"/>
-	<component:FILLER_POSITION rdf:resource="&general;final"/>
+	<component:FILLER_PLACEMENT rdf:resource="&general;final"/>
 </component:partiallyFilled>
 <component:component rdf:about="&templates;SerboCroatianJeLeftSupport"
 	 rdfs:label="SerboCroatianJeLeftSupport">
@@ -2114,7 +2114,7 @@
 <template:potentiallyViolable rdf:about="&templates;TurkishVerbalMinimalityViolability"
 	 rdfs:label="TurkishVerbalMinimalityViolability">
 	<template:EXCEPTIONALITY rdf:resource="&template;lexical"/>
-	<template:REPARABILITY rdf:resource="&template;morphologicalInsertion"/>
+	<template:REPARABILITY rdf:resource="&template;morphosyntacticInsertion"/>
 </template:potentiallyViolable>
 <notes:source rdf:about="&templates;Watters-1979"
 	 rdfs:label="Watters-1979"

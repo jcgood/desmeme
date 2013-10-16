@@ -136,11 +136,11 @@
 	<rdfs:domain rdf:resource="&form;form"/>
 	<rdfs:range rdf:resource="&rdfs;Literal"/>
 </rdf:Property>
-<rdf:Property rdf:about="&component;FILLER_POSITION"
+<rdf:Property rdf:about="&component;FILLER_PLACEMENT"
 	 a:maxCardinality="1"
 	 a:range="cls"
 	 rdfs:comment="This points to a type not an instance."
-	 rdfs:label="component:FILLER_POSITION">
+	 rdfs:label="component:FILLER_PLACEMENT">
 	<rdfs:domain rdf:resource="&component;partiallyFilled"/>
 	<a:allowedParents rdf:resource="&general;position"/>
 	<rdfs:range rdf:resource="&rdfs;Class"/>
@@ -869,10 +869,10 @@ a given template. This feature does not enter into the typological comparison at
 	<rdfs:comment>A type for cases where the exceptions to a templatic pattern are lexically conditioned.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&template;exceptionality"/>
 </rdfs:Class>
-<rdfs:Class rdf:about="&template;morphologicalInsertion"
+<rdfs:Class rdf:about="&template;morphosyntacticInsertion"
 	 a:role="abstract"
 	 rdfs:comment="I am not, for now, coding the specifics of what is inserted."
-	 rdfs:label="template:morphologicalInsertion">
+	 rdfs:label="template:morphosyntacticInsertion">
 	<rdfs:subClassOf rdf:resource="&template;morphosyntacticRepair"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;morphosyntacticRepair"
@@ -906,6 +906,12 @@ a given template. This feature does not enter into the typological comparison at
 	<rdfs:comment>A type for indicating that, given other aspects of a language's grammar, there is the potential for a specific template to be violated, in which case further specification is given regarding the nature of exceptions to the template and what repair strategies (if any) may be applied to those exceptions.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&template;violability"/>
 </rdfs:Class>
+<rdfs:Class rdf:about="&template;pragmatic"
+	 a:role="abstract"
+	 rdfs:label="template:pragmatic">
+	<rdfs:comment>MAKE SURE THIS REALLY GETS USED. Originally added to deal with Chechen, but then taken away.</rdfs:comment>
+	<rdfs:subClassOf rdf:resource="&template;semantopragmatic"/>
+</rdfs:Class>
 <rdfs:Class rdf:about="&template;reparability"
 	 a:role="abstract"
 	 rdfs:label="template:reparability">
@@ -919,6 +925,11 @@ a given template. This feature does not enter into the typological comparison at
 <rdfs:Class rdf:about="&template;semantic"
 	 a:role="abstract"
 	 rdfs:label="template:semantic">
+	<rdfs:subClassOf rdf:resource="&template;semantopragmatic"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&template;semantopragmatic"
+	 a:role="abstract"
+	 rdfs:label="template:semantopragmatic">
 	<rdfs:subClassOf rdf:resource="&template;exceptionality"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;shortening"
