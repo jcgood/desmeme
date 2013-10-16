@@ -836,6 +836,11 @@ a given template. This feature does not enter into the typological comparison at
 	<rdfs:comment>A type that specifies that a given set of linearization restrictions cannot be predicted and are not associated with the ordering of segments or suprasegments of a lexical item. Templates are a subclass of desmemes.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&form;lineate"/>
 </rdfs:Class>
+<rdfs:Class rdf:about="&template;embeddedDesmeme"
+	 rdfs:comment="For Serbo-Croatian"
+	 rdfs:label="template:embeddedDesmeme">
+	<rdfs:subClassOf rdf:resource="&template;desmeme"/>
+</rdfs:Class>
 <rdfs:Class rdf:about="&template;exceptionality"
 	 a:role="abstract"
 	 rdfs:label="template:exceptionality">

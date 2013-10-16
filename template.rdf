@@ -599,7 +599,7 @@
 <template:length rdf:about="&templates;ChechenPreverbalA-Stricture"
 	 general:COUNT="2"
 	 rdfs:label="ChechenPreverbalA-Stricture">
-	<general:CONSTITUENT rdf:resource="&general;syntacticConstituent"/>
+	<general:CONSTITUENT rdf:resource="&general;prosodicWord"/>
 </template:length>
 <template:potentiallyViolable rdf:about="&templates;ChechenPreverbalA-Violability"
 	 rdfs:label="ChechenPreverbalA-Violability">
@@ -1664,6 +1664,8 @@
 </component:open>
 <component:stable rdf:about="&templates;NimboranVerbRightSupport-Stability"
 	 rdfs:label="NimboranVerbRightSupport-Stability"/>
+<template:embeddedDesmeme rdf:about="&templates;SerboCroatianCliticCluster"
+	 rdfs:label="SerboCroatianCliticCluster"/>
 <template:desmeme rdf:about="&templates;SerboCroatianJe"
 	 gold:inLanguage="http://lexvo.org/id/iso639-3/hbr"
 	 rdfs:label="SerboCroatianJe">
@@ -1671,6 +1673,7 @@
 	<spectemplate:FOUNDATION rdf:resource="&templates;SerboCroatianJe-Foundation"/>
 	<spectemplate:STRICTURE rdf:resource="&templates;SerboCroatianJe-Stricture"/>
 	<template:VIOLABILITY rdf:resource="&templates;SerboCroatianJe-Violability"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;ZecInkelas-1990"/>
 	<function:FUNCTION rdf:resource="&gold;MainClause"/>
 </template:desmeme>
 <general:lexicoconstructionalConditioning rdf:about="&templates;SerboCroatianJe-Conditioning"
@@ -1696,25 +1699,18 @@
 <template:order rdf:about="&templates;SerboCroatianJe-Stricture"
 	 general:COUNT="2"
 	 rdfs:label="SerboCroatianJe-Stricture">
+	<general:CONSTITUENT rdf:resource="&general;prosodicWord"/>
 	<general:RELATIONS rdf:resource="&general;simple"/>
-	<general:CONSTITUENT rdf:resource="&general;syntacticConstituent"/>
 </template:order>
 <form:transcription rdf:about="&templates;SerboCroatianJe-Transcription"
 	 specform:TRANSCRIPTION_STRING="=je"
 	 rdfs:label="=je"/>
 <template:notViolable rdf:about="&templates;SerboCroatianJe-Violability"
 	 rdfs:label="SerboCroatianJe-Violability"/>
-<component:partiallyFilled rdf:about="&templates;SerboCroatianJeLefSupport-Filledness"
-	 rdfs:label="SerboCroatianJeLefSupport-Filledness">
-	<speccomponent:FORM rdf:resource="&templates;SerboCroatianJe-Form"/>
-	<speccomponent:COHERENCE rdf:resource="&templates;SerboCroatianJeLeftSupport-Coherence"/>
-	<function:FILLER_CLASS rdf:resource="&gold;Auxiliary"/>
-	<component:FILLER_PLACEMENT rdf:resource="&general;final"/>
-</component:partiallyFilled>
 <component:component rdf:about="&templates;SerboCroatianJeLeftSupport"
 	 rdfs:label="SerboCroatianJeLeftSupport">
-	<speccomponent:FILLEDNESS rdf:resource="&templates;SerboCroatianJeLefSupport-Filledness"/>
 	<speccomponent:ELASTICITY rdf:resource="&templates;SerboCroatianJeLeftSupport-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;SerboCroatianJeLeftSupport-Filledness"/>
 	<speccomponent:STABILITY rdf:resource="&templates;SerboCroatianJeLeftSupport-Stability"/>
 </component:component>
 <component:incoherent rdf:about="&templates;SerboCroatianJeLeftSupport-Coherence"
@@ -1727,6 +1723,13 @@
 <component:inelastic rdf:about="&templates;SerboCroatianJeLeftSupport-Elasticity"
 	 general:COUNT="1"
 	 rdfs:label="SerboCroatianJeLeftSupport-Elasticity"/>
+<component:partiallyFilled rdf:about="&templates;SerboCroatianJeLeftSupport-Filledness"
+	 rdfs:label="SerboCroatianJeLeftSupport-Filledness">
+	<speccomponent:FORM rdf:resource="&templates;SerboCroatianCliticCluster"/>
+	<speccomponent:COHERENCE rdf:resource="&templates;SerboCroatianJeLeftSupport-Coherence"/>
+	<function:FILLER_CLASS rdf:resource="&gold;Auxiliary"/>
+	<component:FILLER_PLACEMENT rdf:resource="&general;final"/>
+</component:partiallyFilled>
 <component:stable rdf:about="&templates;SerboCroatianJeLeftSupport-Stability"
 	 rdfs:label="SerboCroatianJeLeftSupport-Stability"/>
 <component:component rdf:about="&templates;SerboCroatianJeRightSupport"
@@ -2120,5 +2123,10 @@
 	 rdfs:label="Watters-1979"
 	 owl:sameAs="http://www.sil.org/resources/archives/1883">
 	<terms:bibliographicCitation>Watters, John R. 1979. Focus in Aghem: A study of its formal correlates and typology. In Larry M. Hyman (ed.), Aghem grammatical structure: With special reference to noun classes, tense-aspect and focus marking Southern California Occasional Papers in Linguistics 7, 137–197. Los Angeles: University of Southern California Department of Linguistics.</terms:bibliographicCitation>
+</notes:source>
+<notes:source rdf:about="&templates;ZecInkelas-1990"
+	 rdfs:label="ZecInkelas-1990"
+	 owl:sameAs="http://www.worldcat.org/oclc/20753938">
+	<terms:bibliographicCitation xml:space='preserve'><![CDATA[Zec, Draga & Sharon Inkelas. 1990. Prosodically constrained syntax. In Sharon Inkelas & Draga Zec (eds.), The phonology-syntax connection, 365–378. Stanford: CSLI.]]></terms:bibliographicCitation>
 </notes:source>
 </rdf:RDF>
