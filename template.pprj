@@ -1,4 +1,4 @@
-; Wed Oct 16 12:58:04 EDT 2013
+; Thu Oct 17 14:18:41 EDT 2013
 ; 
 ;+ (version "3.3.1")
 ;+ (build "Build 430")
@@ -20,10 +20,10 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[template_ProjectKB_Instance_110219]
-		[template_ProjectKB_Instance_110220]
-		[template_ProjectKB_Instance_110221]
-		[template_ProjectKB_Instance_110222]))
+		[template_ProjectKB_Instance_90091]
+		[template_ProjectKB_Instance_90092]
+		[template_ProjectKB_Instance_90093]
+		[template_ProjectKB_Instance_90094]))
 
 ([CLSES_TAB] of  Widget
 
@@ -164,8 +164,8 @@
 		[STANDARD_SLOT_FORM_WIDGET]
 		[template_ProjectKB_Instance_30074]
 		[template_ProjectKB_Instance_232]
-		[STANDARD_FACET_FORM_WIDGET]
 		[template_ProjectKB_Instance_99]
+		[STANDARD_FACET_FORM_WIDGET]
 		[template_ProjectKB_Instance_10164]
 		[template_ProjectKB_Instance_30079])
 	(default_cls_metaclass ":STANDARD-CLASS")
@@ -912,26 +912,6 @@
 
 ([template_ProjectKB_Instance_10172] of  Property_List
 )
-
-([template_ProjectKB_Instance_110219] of  String
-
-	(name ":PAL-CONSTRAINT")
-	(string_value "%3APAL-NAME"))
-
-([template_ProjectKB_Instance_110220] of  String
-
-	(name ":INSTANCE-ANNOTATION")
-	(string_value "%3AANNOTATION-TEXT"))
-
-([template_ProjectKB_Instance_110221] of  String
-
-	(name ":META-CLASS")
-	(string_value "%3ANAME"))
-
-([template_ProjectKB_Instance_110222] of  String
-
-	(name "form:transcription")
-	(string_value "specform%3ATRANSCRIPTION_STRING"))
 
 ([template_ProjectKB_Instance_114] of  Widget
 
@@ -1969,6 +1949,26 @@
 
 ([template_ProjectKB_Instance_90] of  Property_List
 )
+
+([template_ProjectKB_Instance_90091] of  String
+
+	(name ":PAL-CONSTRAINT")
+	(string_value "%3APAL-NAME"))
+
+([template_ProjectKB_Instance_90092] of  String
+
+	(name ":INSTANCE-ANNOTATION")
+	(string_value "%3AANNOTATION-TEXT"))
+
+([template_ProjectKB_Instance_90093] of  String
+
+	(name ":META-CLASS")
+	(string_value "%3ANAME"))
+
+([template_ProjectKB_Instance_90094] of  String
+
+	(name "form:transcription")
+	(string_value "specform%3ATRANSCRIPTION_STRING"))
 
 ([template_ProjectKB_Instance_90162] of  Widget
 

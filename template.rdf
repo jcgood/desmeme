@@ -1747,7 +1747,7 @@
 </component:incoherent>
 <component:elastic rdf:about="&templates;SerboCroatianJeRightSupport-Elasticity"
 	 general:MAXIMUM="100"
-	 general:MINIMUM="1"
+	 general:MINIMUM="0"
 	 rdfs:label="SerboCroatianJeRightSupport-Elasticity"/>
 <component:open rdf:about="&templates;SerboCroatianJeRightSupport-Filledness"
 	 rdfs:label="SerboCroatianJeRightSupport-Filledness">
