@@ -1762,11 +1762,14 @@
 	<spectemplate:FOUNDATION rdf:resource="&templates;SerboCroatianTopicalization-Foundation"/>
 	<spectemplate:STRICTURE rdf:resource="&templates;SerboCroatianTopicalization-Stricture"/>
 	<template:VIOLABILITY rdf:resource="&templates;SerboCroatianTopicalization-Violability"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;ZecInkelas-1990"/>
 	<function:FUNCTION rdf:resource="&localfunction;topicalization"/>
 </template:desmeme>
-<general:constructionalConditioning rdf:about="&templates;SerboCroatianTopicalization-Conditioning"
-	 notes:CONDITIONS="Used for left-edge topicalization."
+<general:prosodicConditioning rdf:about="&templates;SerboCroatianTopicalization-Conditioning"
 	 rdfs:label="SerboCroatianTopicalization-Conditioning"/>
+<general:constructionalConditioning rdf:about="&templates;SerboCroatianTopicalization-Conditioning_dep"
+	 notes:CONDITIONS="Used for left-edge topicalization."
+	 rdfs:label="SerboCroatianTopicalization-Conditioning_dep"/>
 <template:span rdf:about="&templates;SerboCroatianTopicalization-Foundation"
 	 rdfs:label="SerboCroatianTopicalization-Foundation">
 	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;SerboCroatianTopicalizationLeftSupport"/>
@@ -1777,7 +1780,7 @@
 <template:length rdf:about="&templates;SerboCroatianTopicalization-Stricture"
 	 general:COUNT="2"
 	 rdfs:label="SerboCroatianTopicalization-Stricture">
-	<general:CONSTITUENT rdf:resource="&general;prosodicPhrase"/>
+	<general:CONSTITUENT rdf:resource="&general;prosodicWord"/>
 </template:length>
 <template:potentiallyViolable rdf:about="&templates;SerboCroatianTopicalization-Violability"
 	 rdfs:label="SerboCroatianTopicalization-Violability">
@@ -1794,9 +1797,13 @@
 	 rdfs:label="SerboCroatianTopicalizationLeftSupport-Coherence">
 	<function:CLASS rdf:resource="&general;prosodicWord"/>
 </component:coherent>
-<component:inelastic rdf:about="&templates;SerboCroatianTopicalizationLeftSupport-Elasticity"
-	 general:COUNT="1"
+<component:elastic rdf:about="&templates;SerboCroatianTopicalizationLeftSupport-Elasticity"
+	 general:MAXIMUM="100"
+	 general:MINIMUM="1"
 	 rdfs:label="SerboCroatianTopicalizationLeftSupport-Elasticity"/>
+<component:inelastic rdf:about="&templates;SerboCroatianTopicalizationLeftSupport-Elasticity_dep"
+	 general:COUNT="1"
+	 rdfs:label="SerboCroatianTopicalizationLeftSupport-Elasticity_dep"/>
 <component:open rdf:about="&templates;SerboCroatianTopicalizationLeftSupport-Filledness"
 	 rdfs:label="SerboCroatianTopicalizationLeftSupport-Filledness">
 	<speccomponent:COHERENCE rdf:resource="&templates;SerboCroatianTopicalizationLeftSupport-Coherence"/>
@@ -1811,9 +1818,13 @@
 	 rdfs:label="SerboCroatianTopicalizationRightSupport-Coherence">
 	<function:CLASS rdf:resource="&general;prosodicWord"/>
 </component:coherent>
-<component:inelastic rdf:about="&templates;SerboCroatianTopicalizationRightSupport-Elasticity"
-	 general:COUNT="1"
+<component:elastic rdf:about="&templates;SerboCroatianTopicalizationRightSupport-Elasticity"
+	 general:MAXIMUM="100"
+	 general:MINIMUM="1"
 	 rdfs:label="SerboCroatianTopicalizationRightSupport-Elasticity"/>
+<component:inelastic rdf:about="&templates;SerboCroatianTopicalizationRightSupport-Elasticity_dep"
+	 general:COUNT="1"
+	 rdfs:label="SerboCroatianTopicalizationRightSupport-Elasticity_dep"/>
 <component:open rdf:about="&templates;SerboCroatianTopicalizationRightSupport-Filledness"
 	 rdfs:label="SerboCroatianTopicalizationRightSupport-Filledness">
 	<speccomponent:COHERENCE rdf:resource="&templates;SerboCroatianTopicalizationRightSupport-Coherence"/>

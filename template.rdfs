@@ -375,7 +375,7 @@
 <rdfs:Class rdf:about="&general;conditioning"
 	 a:role="abstract"
 	 rdfs:label="general:conditioning">
-	<rdfs:comment>A supertype for subtypes that characterizing the type of grammatical environment where the template is found, for instance, whether it appears in a specific morphosyntactic context of phonological one.</rdfs:comment>
+	<rdfs:comment>A supertype for subtypes that characterizing the grammatical locus of the templatic constraints, for instance, whether they target phonological elements or morphosyntactic ones.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;constituent"
@@ -488,6 +488,10 @@ a given template. This feature does not enter into the typological comparison at
 	 a:role="abstract"
 	 rdfs:label="general:segment">
 	<rdfs:subClassOf rdf:resource="&general;phonologicalConstituent"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&general;segmentalConditioning"
+	 rdfs:label="general:segmentalConditioning">
+	<rdfs:subClassOf rdf:resource="&general;phonologicalConditioning"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;simple"
 	 a:role="abstract"
@@ -837,9 +841,8 @@ a given template. This feature does not enter into the typological comparison at
 	<rdfs:subClassOf rdf:resource="&form;lineate"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;embeddedDesmeme"
-	 rdfs:comment="For Serbo-Croatian"
 	 rdfs:label="template:embeddedDesmeme">
-	<rdfs:subClassOf rdf:resource="&template;desmeme"/>
+	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;exceptionality"
 	 a:role="abstract"
