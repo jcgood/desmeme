@@ -46,9 +46,9 @@
 	<rdfs:domain rdf:resource="&component;stability"/>
 	<rdfs:domain rdf:resource="&form;form"/>
 	<rdfs:domain rdf:resource="&form;transcription"/>
-	<rdfs:domain rdf:resource="&general;conditioning"/>
 	<rdfs:domain rdf:resource="&general;position"/>
 	<rdfs:domain rdf:resource="&notes;source"/>
+	<rdfs:domain rdf:resource="&template;conditioning"/>
 	<rdfs:domain rdf:resource="&template;foundation"/>
 	<rdfs:domain rdf:resource="&template;stricture"/>
 	<rdfs:domain rdf:resource="&template;violability"/>
@@ -372,12 +372,6 @@
 	<rdfs:comment>In principle, there can be multiple associates in a template. So, these need to be instanceable.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&general;position"/>
 </rdfs:Class>
-<rdfs:Class rdf:about="&general;conditioning"
-	 a:role="abstract"
-	 rdfs:label="general:conditioning">
-	<rdfs:comment>A supertype for subtypes that characterizing the grammatical locus of the templatic constraints, for instance, whether they target phonological elements or morphosyntactic ones.</rdfs:comment>
-	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
-</rdfs:Class>
 <rdfs:Class rdf:about="&general;constituent"
 	 a:role="abstract"
 	 rdfs:label="general:constituent">
@@ -426,7 +420,7 @@ a given template. This feature does not enter into the typological comparison at
 <rdfs:Class rdf:about="&general;morphosyntacticConditioning"
 	 a:role="abstract"
 	 rdfs:label="general:morphosyntacticConditioning">
-	<rdfs:subClassOf rdf:resource="&general;conditioning"/>
+	<rdfs:subClassOf rdf:resource="&template;conditioning"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;morphosyntacticConstituent"
 	 a:role="abstract"
@@ -442,7 +436,7 @@ a given template. This feature does not enter into the typological comparison at
 <rdfs:Class rdf:about="&general;phonologicalConditioning"
 	 a:role="abstract"
 	 rdfs:label="general:phonologicalConditioning">
-	<rdfs:subClassOf rdf:resource="&general;conditioning"/>
+	<rdfs:subClassOf rdf:resource="&template;conditioning"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;phonologicalConstituent"
 	 a:role="abstract"
@@ -649,7 +643,7 @@ a given template. This feature does not enter into the typological comparison at
 <rdf:Property rdf:about="&notes;CONDITIONS"
 	 a:maxCardinality="1"
 	 rdfs:label="notes:CONDITIONS">
-	<rdfs:domain rdf:resource="&general;conditioning"/>
+	<rdfs:domain rdf:resource="&template;conditioning"/>
 	<rdfs:range rdf:resource="&rdfs;Literal"/>
 </rdf:Property>
 <rdf:Property rdf:about="&notes;HAS_SOURCE"
@@ -725,7 +719,7 @@ a given template. This feature does not enter into the typological comparison at
 <rdf:Property rdf:about="&specgeneral;CONDITIONING"
 	 a:maxCardinality="1"
 	 rdfs:label="specgeneral:CONDITIONING">
-	<rdfs:range rdf:resource="&general;conditioning"/>
+	<rdfs:range rdf:resource="&template;conditioning"/>
 	<rdfs:domain rdf:resource="&template;desmeme"/>
 	<rdfs:domain rdf:resource="&template;exceptionality"/>
 </rdf:Property>
@@ -834,6 +828,12 @@ a given template. This feature does not enter into the typological comparison at
 	 rdfs:label="template:arch">
 	<rdfs:comment>A type of template whose components are analyzed as organized around a single privileged component. It has five predefined structural positions, the keystone (for the privileged component), the left and right voussoirs, and the left and right supports.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&template;foundation"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&template;conditioning"
+	 a:role="abstract"
+	 rdfs:label="template:conditioning">
+	<rdfs:comment>A supertype for subtypes that characterizing the grammatical locus of the templatic constraints, for instance, whether they target phonological elements or morphosyntactic ones.</rdfs:comment>
+	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;desmeme"
 	 rdfs:label="template:desmeme">

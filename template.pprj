@@ -1,4 +1,4 @@
-; Fri Oct 18 12:16:25 EDT 2013
+; Fri Oct 18 12:30:34 EDT 2013
 ; 
 ;+ (version "3.3.1")
 ;+ (build "Build 430")
@@ -20,10 +20,10 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[template_ProjectKB_Instance_10070]
-		[template_ProjectKB_Instance_10071]
-		[template_ProjectKB_Instance_10072]
-		[template_ProjectKB_Instance_10073]))
+		[template_ProjectKB_Instance_60083]
+		[template_ProjectKB_Instance_60084]
+		[template_ProjectKB_Instance_80085]
+		[template_ProjectKB_Instance_80086]))
 
 ([CLSES_TAB] of  Widget
 
@@ -850,26 +850,6 @@
 ([template_ProjectKB_Instance_10069] of  Property_List
 )
 
-([template_ProjectKB_Instance_10070] of  String
-
-	(name ":PAL-CONSTRAINT")
-	(string_value "%3APAL-NAME"))
-
-([template_ProjectKB_Instance_10071] of  String
-
-	(name ":INSTANCE-ANNOTATION")
-	(string_value "%3AANNOTATION-TEXT"))
-
-([template_ProjectKB_Instance_10072] of  String
-
-	(name ":META-CLASS")
-	(string_value "%3ANAME"))
-
-([template_ProjectKB_Instance_10073] of  String
-
-	(name "form:transcription")
-	(string_value "specform%3ATRANSCRIPTION_STRING"))
-
 ([template_ProjectKB_Instance_10074] of  Widget
 
 	(height 120)
@@ -1020,7 +1000,7 @@
 ([template_ProjectKB_Instance_225] of  Widget
 
 	(is_hidden FALSE)
-	(name "general:conditioning")
+	(name "template:conditioning")
 	(property_list [template_ProjectKB_Instance_226])
 	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
 
@@ -1594,6 +1574,16 @@
 	(undo_enabled TRUE)
 	(update_modification_slots FALSE))
 
+([template_ProjectKB_Instance_60083] of  String
+
+	(name ":PAL-CONSTRAINT")
+	(string_value "%3APAL-NAME"))
+
+([template_ProjectKB_Instance_60084] of  String
+
+	(name ":INSTANCE-ANNOTATION")
+	(string_value "%3AANNOTATION-TEXT"))
+
 ([template_ProjectKB_Instance_60085] of  Boolean
 
 	(boolean_value FALSE)
@@ -1917,6 +1907,16 @@
 
 ([template_ProjectKB_Instance_80] of  Property_List
 )
+
+([template_ProjectKB_Instance_80085] of  String
+
+	(name ":META-CLASS")
+	(string_value "%3ANAME"))
+
+([template_ProjectKB_Instance_80086] of  String
+
+	(name "form:transcription")
+	(string_value "specform%3ATRANSCRIPTION_STRING"))
 
 ([template_ProjectKB_Instance_80087] of  Widget
 
