@@ -1,19 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE rdf:RDF [
 	 <!ENTITY template 'http://purl.org/linguistics/jcgood/template#'>
-	 <!ENTITY localfunction 'http://purl.org/linguistics/jcgood/localfunction#'>
 	 <!ENTITY specgeneral 'http://purl.org/linguistics/jcgood/specgeneral#'>
+	 <!ENTITY localfunction 'http://purl.org/linguistics/jcgood/localfunction#'>
 	 <!ENTITY owl 'http://www.w3.org/2002/07/owl#'>
 	 <!ENTITY form 'http://purl.org/linguistics/jcgood/form#'>
 	 <!ENTITY general 'http://purl.org/linguistics/jcgood/general#'>
-	 <!ENTITY component 'http://purl.org/linguistics/jcgood/component#'>
 	 <!ENTITY rdfs 'http://www.w3.org/2000/01/rdf-schema#'>
-	 <!ENTITY templates 'http://linguistics-ontology.org/jcgood/templates#'>
+	 <!ENTITY component 'http://purl.org/linguistics/jcgood/component#'>
 	 <!ENTITY gold 'http://purl.org/linguistics/gold#'>
+	 <!ENTITY templates 'http://linguistics-ontology.org/jcgood/templates#'>
 	 <!ENTITY function 'http://purl.org/linguistics/jcgood/function#'>
 	 <!ENTITY spectemplate 'http://purl.org/linguistics/jcgood/spectemplate#'>
-	 <!ENTITY speccomponent 'http://purl.org/linguistics/jcgood/speccomponent#'>
 	 <!ENTITY notes 'http://purl.org/linguistics/jcgood/notes#'>
+	 <!ENTITY speccomponent 'http://purl.org/linguistics/jcgood/speccomponent#'>
 	 <!ENTITY terms 'http://purl.org/dc/terms#'>
 	 <!ENTITY rdf 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
 	 <!ENTITY specform 'http://purl.org/linguistics/jcgood/specform#'>
@@ -26,15 +26,35 @@
 	 xmlns:general="&general;"
 	 xmlns:rdfs="&rdfs;"
 	 xmlns:component="&component;"
-	 xmlns:gold="&gold;"
 	 xmlns:templates="&templates;"
+	 xmlns:gold="&gold;"
 	 xmlns:function="&function;"
 	 xmlns:spectemplate="&spectemplate;"
-	 xmlns:notes="&notes;"
 	 xmlns:speccomponent="&speccomponent;"
+	 xmlns:notes="&notes;"
 	 xmlns:terms="&terms;"
 	 xmlns:rdf="&rdf;"
 	 xmlns:specform="&specform;">
+<component:component rdf:about="&templates;AghemAux"
+	 rdfs:label="AghemAux">
+	<speccomponent:ELASTICITY rdf:resource="&templates;AghemAux-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;AghemAux-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;AghemAux-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;AghemAux-Coherence"
+	 rdfs:label="AghemAux-Coherence">
+	<function:CLASS rdf:resource="&localfunction;TenseMoodAspect"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;AghemAux-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="AghemAux-Elasticity"/>
+<component:open rdf:about="&templates;AghemAux-Filledness"
+	 rdfs:label="AghemAux-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;AghemAux-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;AghemAux-Stability"
+	 rdfs:label="AghemAux-Stability"/>
 <template:desmeme rdf:about="&templates;AghemClause"
 	 gold:inLanguage="http://lexvo.org/id/iso639-3/agq"
 	 rdfs:label="AghemClause">
@@ -51,14 +71,15 @@
 </general:constructionalConditioning>
 <template:arch rdf:about="&templates;AghemClause-Foundation"
 	 rdfs:label="AghemClause-Foundation">
-	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;AghemPostverbal"/>
-	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;AghemPostverbal"/>
-	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;AghemPreverbal"/>
-	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;AghemPreverbal"/>
+	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;AghemIAV"/>
+	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;AghemIBV"/>
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;AghemPostIAV"/>
+	<spectemplate:RESTKOMPONENTEN rdf:resource="&templates;AghemRestkomponenten"/>
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;AghemSubject"/>
 	<spectemplate:KEYSTONE rdf:resource="&templates;AghemVerb"/>
 </template:arch>
 <template:order rdf:about="&templates;AghemClause-Stricture"
-	 general:COUNT="3"
+	 general:COUNT="5"
 	 rdfs:label="AghemClause-Stricture">
 	<general:RELATIONS rdf:resource="&general;simple"/>
 	<general:CONSTITUENT rdf:resource="&general;syntacticConstituent"/>
@@ -68,46 +89,99 @@
 	<template:EXCEPTIONALITY rdf:resource="&template;lexical"/>
 	<template:REPARABILITY rdf:resource="&template;morphosyntacticInsertion"/>
 </template:potentiallyViolable>
-<component:component rdf:about="&templates;AghemPostverbal"
-	 rdfs:label="AghemPostverbal">
-	<speccomponent:ELASTICITY rdf:resource="&templates;AghemPostverbal-Elasticity"/>
-	<speccomponent:FILLEDNESS rdf:resource="&templates;AghemPostverbal-Filledness"/>
-	<speccomponent:STABILITY rdf:resource="&templates;AghemPostverbal-Stability"/>
+<component:component rdf:about="&templates;AghemIAV"
+	 rdfs:label="AghemIAV">
+	<speccomponent:ELASTICITY rdf:resource="&templates;AghemIAV-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;AghemIAV-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;AghemIAV-Stability"/>
 </component:component>
-<component:coherent rdf:about="&templates;AghemPostverbal-Coherence"
-	 rdfs:label="AghemPostverbal-Coherence">
+<general:left rdf:about="&templates;AghemIAV-AssociatePosition"
+	 rdfs:label="AghemIAV-AssociatePosition"/>
+<component:coherent rdf:about="&templates;AghemIAV-Coherence"
+	 rdfs:label="AghemIAV-Coherence">
 	<function:CLASS rdf:resource="&localfunction;focal"/>
 </component:coherent>
-<component:elastic rdf:about="&templates;AghemPostverbal-Elasticity"
+<component:inelastic rdf:about="&templates;AghemIAV-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="AghemIAV-Elasticity"/>
+<component:elastic rdf:about="&templates;AghemIAV-Elasticity_dep"
 	 general:MAXIMUM="100"
 	 general:MINIMUM="0"
-	 rdfs:label="AghemPostverbal-Elasticity"/>
-<component:open rdf:about="&templates;AghemPostverbal-Filledness"
-	 rdfs:label="AghemPostverbal-Filledness">
-	<speccomponent:COHERENCE rdf:resource="&templates;AghemPostverbal-Coherence"/>
+	 rdfs:label="AghemIAV-Elasticity_dep"/>
+<component:open rdf:about="&templates;AghemIAV-Filledness"
+	 rdfs:label="AghemIAV-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;AghemIAV-Coherence"/>
 </component:open>
-<component:stable rdf:about="&templates;AghemPostverbal-Stability"
-	 rdfs:label="AghemPostverbal-Stability"/>
-<component:component rdf:about="&templates;AghemPreverbal"
-	 rdfs:label="AghemPreverbal">
-	<speccomponent:ELASTICITY rdf:resource="&templates;AghemPreverbal-Elasticity"/>
-	<speccomponent:FILLEDNESS rdf:resource="&templates;AghemPreverbal-Filledness"/>
-	<speccomponent:STABILITY rdf:resource="&templates;AghemPreverbal-Stability"/>
+<component:unstable rdf:about="&templates;AghemIAV-Stability"
+	 rdfs:label="AghemIAV-Stability">
+	<speccomponent:ASSOCIATE rdf:resource="&templates;AghemAux"/>
+	<speccomponent:ASSOCIATE_POSITION rdf:resource="&templates;AghemIAV-AssociatePosition"/>
+</component:unstable>
+<component:stable rdf:about="&templates;AghemIAV-Stability_dep"
+	 rdfs:label="AghemIAV-Stability_dep"/>
+<component:component rdf:about="&templates;AghemIBV"
+	 rdfs:label="AghemIBV">
+	<speccomponent:ELASTICITY rdf:resource="&templates;AghemIBV-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;AghemIBV-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;AghemIBV-Stability"/>
 </component:component>
-<component:coherent rdf:about="&templates;AghemPreverbal-Coherence"
-	 rdfs:label="AghemPreverbal-Coherence">
+<component:coherent rdf:about="&templates;AghemIBV-Coherence"
+	 rdfs:label="AghemIBV-Coherence">
 	<function:CLASS rdf:resource="&localfunction;topical"/>
 </component:coherent>
-<component:elastic rdf:about="&templates;AghemPreverbal-Elasticity"
+<component:elastic rdf:about="&templates;AghemIBV-Elasticity"
 	 general:MAXIMUM="100"
-	 general:MINIMUM="1"
-	 rdfs:label="AghemPreverbal-Elasticity"/>
-<component:open rdf:about="&templates;AghemPreverbal-Filledness"
-	 rdfs:label="AghemPreverbal-Filledness">
-	<speccomponent:COHERENCE rdf:resource="&templates;AghemPreverbal-Coherence"/>
+	 general:MINIMUM="0"
+	 rdfs:label="AghemIBV-Elasticity"/>
+<component:open rdf:about="&templates;AghemIBV-Filledness"
+	 rdfs:label="AghemIBV-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;AghemIBV-Coherence"/>
 </component:open>
-<component:stable rdf:about="&templates;AghemPreverbal-Stability"
-	 rdfs:label="AghemPreverbal-Stability"/>
+<component:stable rdf:about="&templates;AghemIBV-Stability"
+	 rdfs:label="AghemIBV-Stability"/>
+<component:component rdf:about="&templates;AghemPostIAV"
+	 rdfs:label="AghemPostIAV">
+	<speccomponent:ELASTICITY rdf:resource="&templates;AghemPostIAV-Elasiticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;AghemPostIAV-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;AghemPostIAV-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;AghemPostIAV-Coherence"
+	 rdfs:label="AghemPostIAV-Coherence">
+	<function:CLASS rdf:resource="&localfunction;focal"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;AghemPostIAV-Elasiticity"
+	 general:MAXIMUM="100"
+	 general:MINIMUM="0"
+	 rdfs:label="AghemPostIAV-Elasiticity"/>
+<component:open rdf:about="&templates;AghemPostIAV-Filledness"
+	 rdfs:label="AghemPostIAV-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;AghemPostIAV-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;AghemPostIAV-Stability"
+	 rdfs:label="AghemPostIAV-Stability"/>
+<component:restkomponentenSet rdf:about="&templates;AghemRestkomponenten"
+	 rdfs:label="AghemRestkomponenten">
+	<spectemplate:RESTKOMPONENT rdf:resource="&templates;AghemAux"/>
+</component:restkomponentenSet>
+<component:component rdf:about="&templates;AghemSubject"
+	 rdfs:label="AghemSubject">
+	<speccomponent:ELASTICITY rdf:resource="&templates;AghemSubject-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;AghemSubject-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;AghemSubject-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;AghemSubject-Coherence"
+	 rdfs:label="AghemSubject-Coherence">
+	<function:CLASS rdf:resource="&localfunction;topical"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;AghemSubject-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="AghemSubject-Elasticity"/>
+<component:open rdf:about="&templates;AghemSubject-Filledness"
+	 rdfs:label="AghemSubject-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;AghemSubject-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;AghemSubject-Stability"
+	 rdfs:label="AghemSubject-Stability"/>
 <component:component rdf:about="&templates;AghemVerb"
 	 rdfs:label="AghemVerb">
 	<speccomponent:ELASTICITY rdf:resource="&templates;AghemVerb-Elasticity"/>
