@@ -1,4 +1,4 @@
-; Mon Oct 21 12:27:56 EDT 2013
+; Wed Oct 23 13:05:36 EDT 2013
 ; 
 ;+ (version "3.3.1")
 ;+ (build "Build 430")
@@ -20,10 +20,10 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[template_ProjectKB_Instance_90156]
-		[template_ProjectKB_Instance_90157]
-		[template_ProjectKB_Instance_90158]
-		[template_ProjectKB_Instance_90159]))
+		[template_ProjectKB_Instance_90087]
+		[template_ProjectKB_Instance_90088]
+		[template_ProjectKB_Instance_90089]
+		[template_ProjectKB_Instance_90090]))
 
 ([CLSES_TAB] of  Widget
 
@@ -153,8 +153,12 @@
 	(customized_instance_widgets
 		[PAL_FORM_WIDGET]
 		[INSTANCE_ANNOTATION_FORM_WIDGET]
+		[template_ProjectKB_Instance_30075]
+		[template_ProjectKB_Instance_70085]
 		[template_ProjectKB_Instance_385]
 		[template_ProjectKB_Instance_20070]
+		[template_ProjectKB_Instance_225]
+		[template_ProjectKB_Instance_378]
 		[STANDARD_CLASS_FORM_WIDGET]
 		[template_ProjectKB_Instance_448]
 		[STANDARD_SLOT_FORM_WIDGET]
@@ -163,11 +167,7 @@
 		[template_ProjectKB_Instance_30074]
 		[template_ProjectKB_Instance_99]
 		[template_ProjectKB_Instance_10164]
-		[template_ProjectKB_Instance_30079]
-		[template_ProjectKB_Instance_30075]
-		[template_ProjectKB_Instance_70085]
-		[template_ProjectKB_Instance_225]
-		[template_ProjectKB_Instance_378])
+		[template_ProjectKB_Instance_30079])
 	(default_cls_metaclass ":STANDARD-CLASS")
 	(default_facet_metaclass ":STANDARD-FACET")
 	(default_instance_widget_class_name "edu.stanford.smi.protege.widget.FormWidget")
@@ -1950,22 +1950,22 @@
 ([template_ProjectKB_Instance_90] of  Property_List
 )
 
-([template_ProjectKB_Instance_90156] of  String
+([template_ProjectKB_Instance_90087] of  String
 
 	(name ":PAL-CONSTRAINT")
 	(string_value "%3APAL-NAME"))
 
-([template_ProjectKB_Instance_90157] of  String
+([template_ProjectKB_Instance_90088] of  String
 
 	(name ":INSTANCE-ANNOTATION")
 	(string_value "%3AANNOTATION-TEXT"))
 
-([template_ProjectKB_Instance_90158] of  String
+([template_ProjectKB_Instance_90089] of  String
 
 	(name ":META-CLASS")
 	(string_value "%3ANAME"))
 
-([template_ProjectKB_Instance_90159] of  String
+([template_ProjectKB_Instance_90090] of  String
 
 	(name "form:transcription")
 	(string_value "specform%3ATRANSCRIPTION_STRING"))

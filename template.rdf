@@ -79,7 +79,7 @@
 	<spectemplate:KEYSTONE rdf:resource="&templates;AghemVerb"/>
 </template:arch>
 <template:order rdf:about="&templates;AghemClause-Stricture"
-	 general:COUNT="5"
+	 general:COUNT="6"
 	 rdfs:label="AghemClause-Stricture">
 	<general:RELATIONS rdf:resource="&general;simple"/>
 	<general:CONSTITUENT rdf:resource="&general;syntacticConstituent"/>
