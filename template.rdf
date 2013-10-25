@@ -1261,7 +1261,7 @@
 	 owl:sameAs="http://www.worldcat.org/oclc/42622064"/>
 <component:restkomponentenSet rdf:about="&templates;Mande-RK"
 	 rdfs:label="Mande-RK">
-	<spectemplate:RESTKOMPONENT rdf:resource="&templates;MandeV"/>
+	<spectemplate:RESTKOMPONENT rdf:resource="&templates;MandeTMA"/>
 </component:restkomponentenSet>
 <template:desmeme rdf:about="&templates;MandeClause"
 	 gold:inLanguage="http://lexvo.org/id/iso639-5/dmn"
@@ -1276,11 +1276,11 @@
 <template:arch rdf:about="&templates;MandeClause-Foundation"
 	 rdfs:label="MandeClause-Foundation">
 	<spectemplate:RESTKOMPONENTEN rdf:resource="&templates;Mande-RK"/>
-	<spectemplate:KEYSTONE rdf:resource="&templates;MandeClauseTMA"/>
-	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;MandeO"/>
+	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;MandeO"/>
 	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;MandeS"/>
-	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;MandeS"/>
+	<spectemplate:KEYSTONE rdf:resource="&templates;MandeV"/>
 	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;MandeX"/>
+	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;MandeX"/>
 </template:arch>
 <template:order rdf:about="&templates;MandeClause-Stricture"
 	 general:COUNT="5"
@@ -1294,25 +1294,10 @@
 	 rdfs:label="MandeClauseConditioning">
 	<notes:CONDITIONS>This template describes the linearization of the major elements of the Mande clause.</notes:CONDITIONS>
 </general:constructionalConditioning>
-<component:component rdf:about="&templates;MandeClauseTMA"
-	 rdfs:label="MandeClauseTMA">
-	<speccomponent:ELASTICITY rdf:resource="&templates;MandeClauseTMA-Elasticity"/>
-	<speccomponent:FILLEDNESS rdf:resource="&templates;MandeClauseTMA-Filledness"/>
-	<speccomponent:STABILITY rdf:resource="&templates;MandeClauseTMA-Stability"/>
-</component:component>
 <component:coherent rdf:about="&templates;MandeClauseTMA-Coherence"
 	 rdfs:label="MandeClauseTMA-Coherence">
 	<function:CLASS rdf:resource="&localfunction;TenseMoodAspect"/>
 </component:coherent>
-<component:inelastic rdf:about="&templates;MandeClauseTMA-Elasticity"
-	 general:COUNT="1"
-	 rdfs:label="MandeClauseTMA-Elasticity"/>
-<component:open rdf:about="&templates;MandeClauseTMA-Filledness"
-	 rdfs:label="MandeClauseTMA-Filledness">
-	<speccomponent:COHERENCE rdf:resource="&templates;MandeClauseTMA-Coherence"/>
-</component:open>
-<component:stable rdf:about="&templates;MandeClauseTMA-Stability"
-	 rdfs:label="MandeClauseTMA-Stability"/>
 <component:component rdf:about="&templates;MandeO"
 	 rdfs:label="MandeO">
 	<speccomponent:ELASTICITY rdf:resource="&templates;MandeO-Elasticity"/>
@@ -1352,6 +1337,25 @@
 </component:open>
 <component:stable rdf:about="&templates;MandeS-Stability"
 	 rdfs:label="MandeS-Stability"/>
+<component:component rdf:about="&templates;MandeTMA"
+	 rdfs:label="MandeTMA">
+	<speccomponent:ELASTICITY rdf:resource="&templates;MandeTMA-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;MandeTMA-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;MandeTMA-Stability"/>
+</component:component>
+<component:elastic rdf:about="&templates;MandeTMA-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="MandeTMA-Elasticity"/>
+<component:inelastic rdf:about="&templates;MandeTMA-Elasticity_dep"
+	 general:COUNT="1"
+	 rdfs:label="MandeTMA-Elasticity_dep"/>
+<component:open rdf:about="&templates;MandeTMA-Filledness"
+	 rdfs:label="MandeTMA-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;MandeClauseTMA-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;MandeTMA-Stability"
+	 rdfs:label="MandeTMA-Stability"/>
 <component:component rdf:about="&templates;MandeV"
 	 rdfs:label="MandeV">
 	<speccomponent:ELASTICITY rdf:resource="&templates;MandeV-Elasticity"/>
