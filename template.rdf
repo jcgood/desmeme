@@ -219,8 +219,8 @@
 	 rdfs:label="AlgonquianClause-Foundation">
 	<spectemplate:RESTKOMPONENTEN rdf:resource="&templates;AlgonquianClause-RK"/>
 	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;AlgonquianClauseNegative"/>
-	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;AlgonquianClauseNullComponent"/>
 	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;AlgonquianClauseOblique"/>
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;AlgonquianClausePostverbal"/>
 	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;AlgonquianClausePostverbal"/>
 	<spectemplate:KEYSTONE rdf:resource="&templates;AlgonquianClauseVerb"/>
 </template:arch>
@@ -281,12 +281,6 @@
 	<speccomponent:ASSOCIATE_POSITION rdf:resource="&templates;AlgonquianClauseNegative-AssociatePosition"/>
 	<speccomponent:ASSOCIATE rdf:resource="&templates;AlgonquianClauseVerb"/>
 </component:unstable>
-<component:component rdf:about="&templates;AlgonquianClauseNullComponent"
-	 rdfs:label="AlgonquianClauseNullComponent">
-	<speccomponent:ELASTICITY rdf:resource="&templates;AlgonquianClauseNullComponent-Elasticity"/>
-	<speccomponent:FILLEDNESS rdf:resource="&templates;AlgonquianClauseNullComponent-Filledness"/>
-	<speccomponent:STABILITY rdf:resource="&templates;AlgonquianClauseNullComponent-Stability"/>
-</component:component>
 <component:inelastic rdf:about="&templates;AlgonquianClauseNullComponent-Elasticity"
 	 general:COUNT="0"
 	 rdfs:label="AlgonquianClauseNullComponent-Elasticity"/>
@@ -294,6 +288,12 @@
 	 rdfs:label="AlgonquianClauseNullComponent-Filledness"/>
 <component:stable rdf:about="&templates;AlgonquianClauseNullComponent-Stability"
 	 rdfs:label="AlgonquianClauseNullComponent-Stability"/>
+<component:component rdf:about="&templates;AlgonquianClauseNullComponent_dep"
+	 rdfs:label="AlgonquianClauseNullComponent_dep">
+	<speccomponent:ELASTICITY rdf:resource="&templates;AlgonquianClauseNullComponent-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;AlgonquianClauseNullComponent-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;AlgonquianClauseNullComponent-Stability"/>
+</component:component>
 <component:component rdf:about="&templates;AlgonquianClauseOblique"
 	 rdfs:label="AlgonquianClauseOblique">
 	<speccomponent:ELASTICITY rdf:resource="&templates;AlgonquianClauseOblique-Elasticity"/>
