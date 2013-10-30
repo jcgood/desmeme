@@ -201,158 +201,6 @@
 </component:open>
 <component:stable rdf:about="&templates;AghemVerb-Stability"
 	 rdfs:label="AghemVerb-Stability"/>
-<template:desmeme rdf:about="&templates;AlgonquianClause"
-	 gold:inLanguage="http://lexvo.org/id/iso639-5/alg"
-	 rdfs:label="AlgonquianClause">
-	<specgeneral:CONDITIONING rdf:resource="&templates;AlgonquianClause-Conditioning"/>
-	<spectemplate:FOUNDATION rdf:resource="&templates;AlgonquianClause-Foundation"/>
-	<spectemplate:STRICTURE rdf:resource="&templates;AlgonquianClause-Stricture"/>
-	<template:VIOLABILITY rdf:resource="&templates;AlgonquianClause-Violability"/>
-	<notes:HAS_SOURCE rdf:resource="&templates;Dahlstrom-1995"/>
-	<function:FUNCTION rdf:resource="&gold;MainClause"/>
-</template:desmeme>
-<general:constructionalConditioning rdf:about="&templates;AlgonquianClause-Conditioning"
-	 rdfs:label="AlgonquianClause-Conditioning">
-	<notes:CONDITIONS>This template describes the linearization of the Algonquian clause.</notes:CONDITIONS>
-</general:constructionalConditioning>
-<template:arch rdf:about="&templates;AlgonquianClause-Foundation"
-	 rdfs:label="AlgonquianClause-Foundation">
-	<spectemplate:RESTKOMPONENTEN rdf:resource="&templates;AlgonquianClause-RK"/>
-	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;AlgonquianClauseNegative"/>
-	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;AlgonquianClauseOblique"/>
-	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;AlgonquianClausePostverbal"/>
-	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;AlgonquianClausePostverbal"/>
-	<spectemplate:KEYSTONE rdf:resource="&templates;AlgonquianClauseVerb"/>
-</template:arch>
-<component:restkomponentenSet rdf:about="&templates;AlgonquianClause-RK"
-	 rdfs:label="AlgonquianClause-RK">
-	<spectemplate:RESTKOMPONENT rdf:resource="&templates;AlgonquianClauseFocus"/>
-</component:restkomponentenSet>
-<template:order rdf:about="&templates;AlgonquianClause-Stricture"
-	 general:COUNT="5"
-	 rdfs:label="AlgonquianClause-Stricture">
-	<general:RELATIONS rdf:resource="&general;simple"/>
-	<general:CONSTITUENT rdf:resource="&general;syntacticConstituent"/>
-</template:order>
-<template:notViolable rdf:about="&templates;AlgonquianClause-Violability"
-	 rdfs:label="AlgonquianClause-Violability"/>
-<component:component rdf:about="&templates;AlgonquianClauseFocus"
-	 rdfs:label="AlgonquianClauseFocus">
-	<speccomponent:ELASTICITY rdf:resource="&templates;AlgonquianClauseFocus-Elasticity"/>
-	<speccomponent:FILLEDNESS rdf:resource="&templates;AlgonquianClauseFocus-Filledness"/>
-	<speccomponent:STABILITY rdf:resource="&templates;AlgonquianClauseFocus-Stability"/>
-</component:component>
-<component:coherent rdf:about="&templates;AlgonquianClauseFocus-Coherence"
-	 rdfs:label="AlgonquianClauseFocus-Coherence">
-	<function:CLASS rdf:resource="&localfunction;focus"/>
-</component:coherent>
-<component:elastic rdf:about="&templates;AlgonquianClauseFocus-Elasticity"
-	 general:MAXIMUM="1"
-	 general:MINIMUM="0"
-	 rdfs:label="AlgonquianClauseFocus-Elasticity"/>
-<component:open rdf:about="&templates;AlgonquianClauseFocus-Filledness"
-	 rdfs:label="AlgonquianClauseFocus-Filledness">
-	<speccomponent:COHERENCE rdf:resource="&templates;AlgonquianClauseFocus-Coherence"/>
-</component:open>
-<component:stable rdf:about="&templates;AlgonquianClauseFocus-Stability"
-	 rdfs:label="AlgonquianClauseFocus-Stability"/>
-<component:component rdf:about="&templates;AlgonquianClauseNegative"
-	 rdfs:label="AlgonquianClauseNegative">
-	<speccomponent:ELASTICITY rdf:resource="&templates;AlgonquianClauseNegative-Elasticity"/>
-	<speccomponent:FILLEDNESS rdf:resource="&templates;AlgonquianClauseNegative-Filledness"/>
-	<speccomponent:STABILITY rdf:resource="&templates;AlgonquianClauseNegative-Stability"/>
-</component:component>
-<general:right rdf:about="&templates;AlgonquianClauseNegative-AssociatePosition"
-	 rdfs:label="AlgonquianClauseNegative-AssociatePosition"/>
-<component:coherent rdf:about="&templates;AlgonquianClauseNegative-Coherence"
-	 rdfs:label="AlgonquianClauseNegative-Coherence">
-	<function:CLASS rdf:resource="&localfunction;negative"/>
-</component:coherent>
-<component:elastic rdf:about="&templates;AlgonquianClauseNegative-Elasticity"
-	 general:MAXIMUM="1"
-	 general:MINIMUM="0"
-	 rdfs:label="AlgonquianClauseNegative-Elasticity"/>
-<component:open rdf:about="&templates;AlgonquianClauseNegative-Filledness"
-	 rdfs:label="AlgonquianClauseNegative-Filledness">
-	<speccomponent:COHERENCE rdf:resource="&templates;AlgonquianClauseNegative-Coherence"/>
-</component:open>
-<component:unstable rdf:about="&templates;AlgonquianClauseNegative-Stability"
-	 rdfs:label="AlgonquianClauseNegative-Stability">
-	<speccomponent:ASSOCIATE_POSITION rdf:resource="&templates;AlgonquianClauseNegative-AssociatePosition"/>
-	<speccomponent:ASSOCIATE rdf:resource="&templates;AlgonquianClauseVerb"/>
-</component:unstable>
-<component:inelastic rdf:about="&templates;AlgonquianClauseNullComponent-Elasticity"
-	 general:COUNT="0"
-	 rdfs:label="AlgonquianClauseNullComponent-Elasticity"/>
-<component:null rdf:about="&templates;AlgonquianClauseNullComponent-Filledness"
-	 rdfs:label="AlgonquianClauseNullComponent-Filledness"/>
-<component:stable rdf:about="&templates;AlgonquianClauseNullComponent-Stability"
-	 rdfs:label="AlgonquianClauseNullComponent-Stability"/>
-<component:component rdf:about="&templates;AlgonquianClauseNullComponent_dep"
-	 rdfs:label="AlgonquianClauseNullComponent_dep">
-	<speccomponent:ELASTICITY rdf:resource="&templates;AlgonquianClauseNullComponent-Elasticity"/>
-	<speccomponent:FILLEDNESS rdf:resource="&templates;AlgonquianClauseNullComponent-Filledness"/>
-	<speccomponent:STABILITY rdf:resource="&templates;AlgonquianClauseNullComponent-Stability"/>
-</component:component>
-<component:component rdf:about="&templates;AlgonquianClauseOblique"
-	 rdfs:label="AlgonquianClauseOblique">
-	<speccomponent:ELASTICITY rdf:resource="&templates;AlgonquianClauseOblique-Elasticity"/>
-	<speccomponent:FILLEDNESS rdf:resource="&templates;AlgonquianClauseOblique-Filledness"/>
-	<speccomponent:STABILITY rdf:resource="&templates;AlgonquianClauseOblique-Stability"/>
-</component:component>
-<component:coherent rdf:about="&templates;AlgonquianClauseOblique-Coherence"
-	 rdfs:label="AlgonquianClauseOblique-Coherence">
-	<function:CLASS rdf:resource="&localfunction;oblique"/>
-</component:coherent>
-<component:elastic rdf:about="&templates;AlgonquianClauseOblique-Elasticity"
-	 general:MAXIMUM="1"
-	 general:MINIMUM="0"
-	 rdfs:label="AlgonquianClauseOblique-Elasticity"/>
-<component:open rdf:about="&templates;AlgonquianClauseOblique-Filledness"
-	 rdfs:label="AlgonquianClauseOblique-Filledness">
-	<speccomponent:COHERENCE rdf:resource="&templates;AlgonquianClauseOblique-Coherence"/>
-</component:open>
-<component:stable rdf:about="&templates;AlgonquianClauseOblique-Stability"
-	 rdfs:label="AlgonquianClauseOblique-Stability"/>
-<component:component rdf:about="&templates;AlgonquianClausePostverbal"
-	 rdfs:label="AlgonquianClausePostverbal">
-	<speccomponent:ELASTICITY rdf:resource="&templates;AlgonquianClausePostverbal-Elasticity"/>
-	<speccomponent:FILLEDNESS rdf:resource="&templates;AlgonquianClausePostverbal-Filledness"/>
-	<speccomponent:STABILITY rdf:resource="&templates;AlgonquianClausePostverbal-Stability"/>
-</component:component>
-<component:coherent rdf:about="&templates;AlgonquianClausePostverbal-Coherence"
-	 rdfs:label="AlgonquianClausePostverbal-Coherence">
-	<function:CLASS rdf:resource="&localfunction;argument"/>
-</component:coherent>
-<component:elastic rdf:about="&templates;AlgonquianClausePostverbal-Elasticity"
-	 general:MAXIMUM="100"
-	 general:MINIMUM="0"
-	 rdfs:label="AlgonquianClausePostverbal-Elasticity"/>
-<component:open rdf:about="&templates;AlgonquianClausePostverbal-Filledness"
-	 rdfs:label="AlgonquianClausePostverbal-Filledness">
-	<speccomponent:COHERENCE rdf:resource="&templates;AlgonquianClausePostverbal-Coherence"/>
-</component:open>
-<component:stable rdf:about="&templates;AlgonquianClausePostverbal-Stability"
-	 rdfs:label="AlgonquianClausePostverbal-Stability"/>
-<component:component rdf:about="&templates;AlgonquianClauseVerb"
-	 rdfs:label="AlgonquianClauseVerb">
-	<speccomponent:ELASTICITY rdf:resource="&templates;AlgonquianClauseVerb-Elasticity"/>
-	<speccomponent:FILLEDNESS rdf:resource="&templates;AlgonquianClauseVerb-Filledness"/>
-	<speccomponent:STABILITY rdf:resource="&templates;AlgonquianClauseVerb-Stability"/>
-</component:component>
-<component:coherent rdf:about="&templates;AlgonquianClauseVerb-Coherence"
-	 rdfs:label="AlgonquianClauseVerb-Coherence">
-	<function:CLASS rdf:resource="&localfunction;finite"/>
-</component:coherent>
-<component:inelastic rdf:about="&templates;AlgonquianClauseVerb-Elasticity"
-	 general:COUNT="1"
-	 rdfs:label="AlgonquianClauseVerb-Elasticity"/>
-<component:open rdf:about="&templates;AlgonquianClauseVerb-Filledness"
-	 rdfs:label="AlgonquianClauseVerb-Filledness">
-	<speccomponent:COHERENCE rdf:resource="&templates;AlgonquianClauseVerb-Coherence"/>
-</component:open>
-<component:stable rdf:about="&templates;AlgonquianClauseVerb-Stability"
-	 rdfs:label="AlgonquianClauseVerb-Stability"/>
 <component:filled rdf:about="&templates;Bantu-Transitive-Filledness"
 	 rdfs:label="Bantu-Transitive-Filledness">
 	<speccomponent:FORM rdf:resource="&templates;BantuTransitive-Form"/>
@@ -1397,6 +1245,158 @@
 </component:open>
 <component:stable rdf:about="&templates;MandeX-Stability"
 	 rdfs:label="MandeX-Stability"/>
+<template:desmeme rdf:about="&templates;MeskwakiClause"
+	 gold:inLanguage="http://lexvo.org/id/iso639-3/sac"
+	 rdfs:label="MeskwakiClause">
+	<notes:HAS_SOURCE rdf:resource="&templates;Dahlstrom-1995"/>
+	<specgeneral:CONDITIONING rdf:resource="&templates;MeskwakiClause-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;MeskwakiClause-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;MeskwakiClause-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;MeskwakiClause-Violability"/>
+	<function:FUNCTION rdf:resource="&gold;MainClause"/>
+</template:desmeme>
+<general:constructionalConditioning rdf:about="&templates;MeskwakiClause-Conditioning"
+	 rdfs:label="MeskwakiClause-Conditioning">
+	<notes:CONDITIONS>This template describes the linearization of the Meskwaki clause.</notes:CONDITIONS>
+</general:constructionalConditioning>
+<template:arch rdf:about="&templates;MeskwakiClause-Foundation"
+	 rdfs:label="MeskwakiClause-Foundation">
+	<spectemplate:RESTKOMPONENTEN rdf:resource="&templates;MeskwakiClause-RK"/>
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;MeskwakiClauseNegative"/>
+	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;MeskwakiClauseOblique"/>
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;MeskwakiClausePostverbal"/>
+	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;MeskwakiClausePostverbal"/>
+	<spectemplate:KEYSTONE rdf:resource="&templates;MeskwakiClauseVerb"/>
+</template:arch>
+<component:restkomponentenSet rdf:about="&templates;MeskwakiClause-RK"
+	 rdfs:label="MeskwakiClause-RK">
+	<spectemplate:RESTKOMPONENT rdf:resource="&templates;MeskwakiClauseFocus"/>
+</component:restkomponentenSet>
+<template:order rdf:about="&templates;MeskwakiClause-Stricture"
+	 general:COUNT="5"
+	 rdfs:label="MeskwakiClause-Stricture">
+	<general:RELATIONS rdf:resource="&general;simple"/>
+	<general:CONSTITUENT rdf:resource="&general;syntacticConstituent"/>
+</template:order>
+<template:notViolable rdf:about="&templates;MeskwakiClause-Violability"
+	 rdfs:label="MeskwakiClause-Violability"/>
+<component:component rdf:about="&templates;MeskwakiClauseFocus"
+	 rdfs:label="MeskwakiClauseFocus">
+	<speccomponent:ELASTICITY rdf:resource="&templates;MeskwakiClauseFocus-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;MeskwakiClauseFocus-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;MeskwakiClauseFocus-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;MeskwakiClauseFocus-Coherence"
+	 rdfs:label="MeskwakiClauseFocus-Coherence">
+	<function:CLASS rdf:resource="&localfunction;focus"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;MeskwakiClauseFocus-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="MeskwakiClauseFocus-Elasticity"/>
+<component:open rdf:about="&templates;MeskwakiClauseFocus-Filledness"
+	 rdfs:label="MeskwakiClauseFocus-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;MeskwakiClauseFocus-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;MeskwakiClauseFocus-Stability"
+	 rdfs:label="MeskwakiClauseFocus-Stability"/>
+<component:component rdf:about="&templates;MeskwakiClauseNegative"
+	 rdfs:label="MeskwakiClauseNegative">
+	<speccomponent:ELASTICITY rdf:resource="&templates;MeskwakiClauseNegative-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;MeskwakiClauseNegative-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;MeskwakiClauseNegative-Stability"/>
+</component:component>
+<general:right rdf:about="&templates;MeskwakiClauseNegative-AssociatePosition"
+	 rdfs:label="MeskwakiClauseNegative-AssociatePosition"/>
+<component:coherent rdf:about="&templates;MeskwakiClauseNegative-Coherence"
+	 rdfs:label="MeskwakiClauseNegative-Coherence">
+	<function:CLASS rdf:resource="&localfunction;negative"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;MeskwakiClauseNegative-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="MeskwakiClauseNegative-Elasticity"/>
+<component:open rdf:about="&templates;MeskwakiClauseNegative-Filledness"
+	 rdfs:label="MeskwakiClauseNegative-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;MeskwakiClauseNegative-Coherence"/>
+</component:open>
+<component:unstable rdf:about="&templates;MeskwakiClauseNegative-Stability"
+	 rdfs:label="MeskwakiClauseNegative-Stability">
+	<speccomponent:ASSOCIATE_POSITION rdf:resource="&templates;MeskwakiClauseNegative-AssociatePosition"/>
+	<speccomponent:ASSOCIATE rdf:resource="&templates;MeskwakiClauseVerb"/>
+</component:unstable>
+<component:inelastic rdf:about="&templates;MeskwakiClauseNullComponent-Elasticity"
+	 general:COUNT="0"
+	 rdfs:label="MeskwakiClauseNullComponent-Elasticity"/>
+<component:null rdf:about="&templates;MeskwakiClauseNullComponent-Filledness"
+	 rdfs:label="MeskwakiClauseNullComponent-Filledness"/>
+<component:stable rdf:about="&templates;MeskwakiClauseNullComponent-Stability"
+	 rdfs:label="MeskwakiClauseNullComponent-Stability"/>
+<component:component rdf:about="&templates;MeskwakiClauseNullComponent_dep"
+	 rdfs:label="MeskwakiClauseNullComponent_dep">
+	<speccomponent:ELASTICITY rdf:resource="&templates;MeskwakiClauseNullComponent-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;MeskwakiClauseNullComponent-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;MeskwakiClauseNullComponent-Stability"/>
+</component:component>
+<component:component rdf:about="&templates;MeskwakiClauseOblique"
+	 rdfs:label="MeskwakiClauseOblique">
+	<speccomponent:ELASTICITY rdf:resource="&templates;MeskwakiClauseOblique-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;MeskwakiClauseOblique-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;MeskwakiClauseOblique-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;MeskwakiClauseOblique-Coherence"
+	 rdfs:label="MeskwakiClauseOblique-Coherence">
+	<function:CLASS rdf:resource="&localfunction;oblique"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;MeskwakiClauseOblique-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="MeskwakiClauseOblique-Elasticity"/>
+<component:open rdf:about="&templates;MeskwakiClauseOblique-Filledness"
+	 rdfs:label="MeskwakiClauseOblique-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;MeskwakiClauseOblique-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;MeskwakiClauseOblique-Stability"
+	 rdfs:label="MeskwakiClauseOblique-Stability"/>
+<component:component rdf:about="&templates;MeskwakiClausePostverbal"
+	 rdfs:label="MeskwakiClausePostverbal">
+	<speccomponent:ELASTICITY rdf:resource="&templates;MeskwakiClausePostverbal-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;MeskwakiClausePostverbal-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;MeskwakiClausePostverbal-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;MeskwakiClausePostverbal-Coherence"
+	 rdfs:label="MeskwakiClausePostverbal-Coherence">
+	<function:CLASS rdf:resource="&localfunction;argument"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;MeskwakiClausePostverbal-Elasticity"
+	 general:MAXIMUM="100"
+	 general:MINIMUM="0"
+	 rdfs:label="MeskwakiClausePostverbal-Elasticity"/>
+<component:open rdf:about="&templates;MeskwakiClausePostverbal-Filledness"
+	 rdfs:label="MeskwakiClausePostverbal-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;MeskwakiClausePostverbal-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;MeskwakiClausePostverbal-Stability"
+	 rdfs:label="MeskwakiClausePostverbal-Stability"/>
+<component:component rdf:about="&templates;MeskwakiClauseVerb"
+	 rdfs:label="MeskwakiClauseVerb">
+	<speccomponent:ELASTICITY rdf:resource="&templates;MeskwakiClauseVerb-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;MeskwakiClauseVerb-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;MeskwakiClauseVerb-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;MeskwakiClauseVerb-Coherence"
+	 rdfs:label="MeskwakiClauseVerb-Coherence">
+	<function:CLASS rdf:resource="&localfunction;finite"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;MeskwakiClauseVerb-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="MeskwakiClauseVerb-Elasticity"/>
+<component:open rdf:about="&templates;MeskwakiClauseVerb-Filledness"
+	 rdfs:label="MeskwakiClauseVerb-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;MeskwakiClauseVerb-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;MeskwakiClauseVerb-Stability"
+	 rdfs:label="MeskwakiClauseVerb-Stability"/>
 <component:component rdf:about="&templates;NdebeleApplicative"
 	 rdfs:label="NdebeleApplicative">
 	<speccomponent:ELASTICITY rdf:resource="&templates;NdebeleApplicative-Elasticity"/>
