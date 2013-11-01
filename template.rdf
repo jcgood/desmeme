@@ -760,6 +760,46 @@
 	 owl:sameAs="http://www.worldcat.org/oclc/32741831">
 	<terms:bibliographicCitation>Dahlstrom, Amy. 1995. Topic, focus, and word order problems in Algonquian: The Belcourt lecture. Winnipeg: Voices of Rupert’s Land.</terms:bibliographicCitation>
 </notes:source>
+<component:coherent rdf:about="&templates;EnglisIO-Coherence"
+	 rdfs:label="EnglisIO-Coherence">
+	<function:CLASS rdf:resource="&gold;IndirectObject"/>
+</component:coherent>
+<component:component rdf:about="&templates;EnglishDO"
+	 rdfs:label="EnglishDO">
+	<speccomponent:ELASTICITY rdf:resource="&templates;EnglishDO-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;EnglishDO-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;EnglishDO-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;EnglishDO-Coherence"
+	 rdfs:label="EnglishDO-Coherence">
+	<function:CLASS rdf:resource="&gold;DirectObject"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;EnglishDO-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="EnglishDO-Elasticity"/>
+<component:open rdf:about="&templates;EnglishDO-Filledness"
+	 rdfs:label="EnglishDO-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;EnglishDO-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;EnglishDO-Stability"
+	 rdfs:label="EnglishDO-Stability"/>
+<component:component rdf:about="&templates;EnglishIO"
+	 rdfs:label="EnglishIO">
+	<speccomponent:ELASTICITY rdf:resource="&templates;EnglishIO-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;EnglishIO-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;EnglishIO-Stability"/>
+</component:component>
+<component:elastic rdf:about="&templates;EnglishIO-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="EnglishIO-Elasticity"/>
+<component:open rdf:about="&templates;EnglishIO-Filledness"
+	 rdfs:label="EnglishIO-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;EnglisIO-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;EnglishIO-Stability"
+	 rdfs:label="EnglishIO-Stability"/>
 <component:component rdf:about="&templates;EnglishNounStem"
 	 rdfs:label="EnglishNounStem">
 	<speccomponent:ELASTICITY rdf:resource="&templates;EnglishNounStem-Elasticity"/>
@@ -789,9 +829,18 @@
 	<notes:HAS_SOURCE rdf:resource="&templates;Good-PersonalKnowledge"/>
 	<function:FUNCTION rdf:resource="&localfunction;plural"/>
 </template:desmeme>
-<general:constructionalConditioning rdf:about="&templates;EnglishPlural-Conditioning"
+<general:lexicoconstructionalConditioning rdf:about="&templates;EnglishPlural-Conditioning"
+	 rdfs:label="EnglishPlural-Conditioning">
+	<spectemplate:FILLED_COMPONENTS rdf:resource="&templates;EnglishPlural-FilledComponents"/>
+	<template:FILLER_POSITION rdf:resource="&general;final"/>
+</general:lexicoconstructionalConditioning>
+<general:constructionalConditioning rdf:about="&templates;EnglishPlural-Conditioning_dep"
 	 notes:CONDITIONS="Regular suffixal plural formation construction."
-	 rdfs:label="EnglishPlural-Conditioning"/>
+	 rdfs:label="EnglishPlural-Conditioning_dep"/>
+<component:filledComponentSet rdf:about="&templates;EnglishPlural-FilledComponents"
+	 rdfs:label="EnglishPlural-FilledComponents">
+	<spectemplate:FILLED_COMPONENT rdf:resource="&templates;EnglishPluralSuffix"/>
+</component:filledComponentSet>
 <template:arch rdf:about="&templates;EnglishPlural-Foundation"
 	 rdfs:label="EnglishPlural-Foundation">
 	<spectemplate:KEYSTONE rdf:resource="&templates;EnglishNounStem"/>
@@ -845,6 +894,25 @@
 	 rdfs:label="-s"/>
 <template:notViolable rdf:about="&templates;EnglishPluralSuffix-Violability"
 	 rdfs:label="EnglishPluralSuffix-Violability"/>
+<component:component rdf:about="&templates;EnglishV"
+	 rdfs:label="EnglishV">
+	<speccomponent:ELASTICITY rdf:resource="&templates;EnglishV-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;EnglishV-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;EnglishV-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;EnglishV-Coherence"
+	 rdfs:label="EnglishV-Coherence">
+	<function:CLASS rdf:resource="&general;function"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;EnglishV-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="EnglishV-Elasticity"/>
+<component:open rdf:about="&templates;EnglishV-Filledness"
+	 rdfs:label="EnglishV-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;EnglishV-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;EnglishV-Stability"
+	 rdfs:label="EnglishV-Stability"/>
 <template:desmeme rdf:about="&templates;EnglishVP"
 	 gold:inLanguage="http://lexvo.org/id/iso639-3/eng"
 	 rdfs:label="EnglishVP">
@@ -858,23 +926,37 @@
 <general:constructionalConditioning rdf:about="&templates;EnglishVP-Conditioning"
 	 notes:CONDITIONS='This "template" appears for main declarative clauses.'
 	 rdfs:label="EnglishVP-Conditioning"/>
-<template:span rdf:about="&templates;EnglishVP-Foundation"
+<template:arch rdf:about="&templates;EnglishVP-Foundation"
 	 rdfs:label="EnglishVP-Foundation">
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;EnglishDO"/>
+	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;EnglishIO"/>
+	<spectemplate:KEYSTONE rdf:resource="&templates;EnglishV"/>
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;EnglishVP-NullComponent"/>
+	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;EnglishVP-NullComponent"/>
+</template:arch>
+<template:span rdf:about="&templates;EnglishVP-Foundation_dep"
+	 rdfs:label="EnglishVP-Foundation_dep">
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;EnglishDO"/>
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;EnglishV"/>
 	<spectemplate:RESTKOMPONENTEN rdf:resource="&templates;EnglishVP-RK"/>
-	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;EnglishVPLeftSupport"/>
-	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;EnglishVPRightSupport"/>
 </template:span>
-<component:inelastic rdf:about="&templates;EnglishVP-LeftSupport-Elasticitiy"
-	 general:COUNT="1"
-	 rdfs:label="EnglishVP-LeftSupport-Elasticitiy"/>
+<component:component rdf:about="&templates;EnglishVP-NullComponent"
+	 rdfs:label="EnglishVP-NullComponent">
+	<speccomponent:ELASTICITY rdf:resource="&templates;EnglishVP-NullComponent-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;EnglishVP-NullComponent-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;EnglishVP-NullComponent-Stability"/>
+</component:component>
+<component:inelastic rdf:about="&templates;EnglishVP-NullComponent-Elasticity"
+	 general:COUNT="0"
+	 rdfs:label="EnglishVP-NullComponent-Elasticity"/>
+<component:null rdf:about="&templates;EnglishVP-NullComponent-Filledness"
+	 rdfs:label="EnglishVP-NullComponent-Filledness"/>
+<component:stable rdf:about="&templates;EnglishVP-NullComponent-Stability"
+	 rdfs:label="EnglishVP-NullComponent-Stability"/>
 <component:restkomponentenSet rdf:about="&templates;EnglishVP-RK"
 	 rdfs:label="EnglishVP-RK">
-	<spectemplate:RESTKOMPONENT rdf:resource="&templates;EnglishVPIO"/>
+	<spectemplate:RESTKOMPONENT rdf:resource="&templates;EnglishIO"/>
 </component:restkomponentenSet>
-<component:elastic rdf:about="&templates;EnglishVP-RightSupport-Elasticity"
-	 general:MAXIMUM="1"
-	 general:MINIMUM="0"
-	 rdfs:label="EnglishVP-RightSupport-Elasticity"/>
 <template:order rdf:about="&templates;EnglishVP-Stricture"
 	 general:COUNT="3"
 	 rdfs:label="EnglishVP-Stricture">
@@ -883,58 +965,6 @@
 </template:order>
 <template:notViolable rdf:about="&templates;EnglishVP-Violability"
 	 rdfs:label="EnglishVP-Violability"/>
-<component:component rdf:about="&templates;EnglishVPIO"
-	 rdfs:label="EnglishVPIO">
-	<speccomponent:ELASTICITY rdf:resource="&templates;EnglishVPIO-Elasticity"/>
-	<speccomponent:FILLEDNESS rdf:resource="&templates;EnglishVPIO-Filledness"/>
-	<speccomponent:STABILITY rdf:resource="&templates;EnglishVPIO-Stability"/>
-</component:component>
-<component:coherent rdf:about="&templates;EnglishVPIO-Coherence"
-	 rdfs:label="EnglishVPIO-Coherence">
-	<function:CLASS rdf:resource="&gold;IndirectObject"/>
-</component:coherent>
-<component:elastic rdf:about="&templates;EnglishVPIO-Elasticity"
-	 general:MAXIMUM="1"
-	 general:MINIMUM="0"
-	 rdfs:label="EnglishVPIO-Elasticity"/>
-<component:open rdf:about="&templates;EnglishVPIO-Filledness"
-	 rdfs:label="EnglishVPIO-Filledness">
-	<speccomponent:COHERENCE rdf:resource="&templates;EnglishVPIO-Coherence"/>
-</component:open>
-<component:stable rdf:about="&templates;EnglishVPIO-Stability"
-	 rdfs:label="EnglishVPIO-Stability"/>
-<component:component rdf:about="&templates;EnglishVPLeftSupport"
-	 rdfs:label="EnglishVPLeftSupport">
-	<speccomponent:ELASTICITY rdf:resource="&templates;EnglishVP-LeftSupport-Elasticitiy"/>
-	<speccomponent:FILLEDNESS rdf:resource="&templates;EnglishVPLeftSupport-Filledness"/>
-	<speccomponent:STABILITY rdf:resource="&templates;EnglishVPLeftSupport-Stability"/>
-</component:component>
-<component:coherent rdf:about="&templates;EnglishVPLeftSupport-Coherence"
-	 rdfs:label="EnglishVPLeftSupport-Coherence">
-	<function:CLASS rdf:resource="&general;function"/>
-</component:coherent>
-<component:open rdf:about="&templates;EnglishVPLeftSupport-Filledness"
-	 rdfs:label="EnglishVPLeftSupport-Filledness">
-	<speccomponent:COHERENCE rdf:resource="&templates;EnglishVPLeftSupport-Coherence"/>
-</component:open>
-<component:stable rdf:about="&templates;EnglishVPLeftSupport-Stability"
-	 rdfs:label="EnglishVPLeftSupport-Stability"/>
-<component:component rdf:about="&templates;EnglishVPRightSupport"
-	 rdfs:label="EnglishVPRightSupport">
-	<speccomponent:ELASTICITY rdf:resource="&templates;EnglishVP-RightSupport-Elasticity"/>
-	<speccomponent:FILLEDNESS rdf:resource="&templates;EnglishVPRightSupport-Filledness"/>
-	<speccomponent:STABILITY rdf:resource="&templates;EnglishVPRightSupport-Stability"/>
-</component:component>
-<component:coherent rdf:about="&templates;EnglishVPRightSupport-Coherence"
-	 rdfs:label="EnglishVPRightSupport-Coherence">
-	<function:CLASS rdf:resource="&gold;DirectObject"/>
-</component:coherent>
-<component:open rdf:about="&templates;EnglishVPRightSupport-Filledness"
-	 rdfs:label="EnglishVPRightSupport-Filledness">
-	<speccomponent:COHERENCE rdf:resource="&templates;EnglishVPRightSupport-Coherence"/>
-</component:open>
-<component:stable rdf:about="&templates;EnglishVPRightSupport-Stability"
-	 rdfs:label="EnglishVPRightSupport-Stability"/>
 <component:restkomponentenSet rdf:about="&templates;German-RK"
 	 rdfs:label="German-RK">
 	<spectemplate:RESTKOMPONENT rdf:resource="&templates;GermanVC"/>
@@ -945,6 +975,8 @@
 	<speccomponent:FILLEDNESS rdf:resource="&templates;GermanCF-Filledness"/>
 	<speccomponent:STABILITY rdf:resource="&templates;GermanCF-Stability"/>
 </component:component>
+<general:right rdf:about="&templates;GermanCF-AssociatePosition"
+	 rdfs:label="GermanCF-AssociatePosition"/>
 <component:incoherent rdf:about="&templates;GermanCF-Coherence"
 	 rdfs:label="GermanCF-Coherence">
 	<function:CLASSES rdf:resource="&gold;Complementizer"/>
@@ -957,8 +989,13 @@
 	 rdfs:label="GermanCF-Filledness">
 	<speccomponent:COHERENCE rdf:resource="&templates;GermanCF-Coherence"/>
 </component:open>
-<component:stable rdf:about="&templates;GermanCF-Stability"
-	 rdfs:label="GermanCF-Stability"/>
+<component:unstable rdf:about="&templates;GermanCF-Stability"
+	 rdfs:label="GermanCF-Stability">
+	<speccomponent:ASSOCIATE_POSITION rdf:resource="&templates;GermanCF-AssociatePosition"/>
+	<speccomponent:ASSOCIATE rdf:resource="&templates;GermanVC"/>
+</component:unstable>
+<component:stable rdf:about="&templates;GermanCF-Stability_dep"
+	 rdfs:label="GermanCF-Stability_dep"/>
 <template:desmeme rdf:about="&templates;GermanClause"
 	 gold:inLanguage="http://lexvo.org/id/iso639-3/deu"
 	 rdfs:label="GermanClause">
@@ -1021,7 +1058,7 @@
 	<function:CLASSES rdf:resource="&localfunction;constituent"/>
 </component:incoherent>
 <component:elastic rdf:about="&templates;GermanNF-Elasticity"
-	 general:MAXIMUM="1"
+	 general:MAXIMUM="100"
 	 general:MINIMUM="0"
 	 rdfs:label="GermanNF-Elasticity"/>
 <component:open rdf:about="&templates;GermanNF-Filledness"
@@ -1036,10 +1073,17 @@
 	<speccomponent:FILLEDNESS rdf:resource="&templates;GermanVC-Filledness"/>
 	<speccomponent:STABILITY rdf:resource="&templates;GermanVC-Stability"/>
 </component:component>
-<general:right rdf:about="&templates;GermanVC-AssociatePosition"
+<general:left rdf:about="&templates;GermanVC-AssociatePosition"
 	 rdfs:label="GermanVC-AssociatePosition"/>
-<component:coherent rdf:about="&templates;GermanVC-Coherence"
+<general:right rdf:about="&templates;GermanVC-AssociatePosition_dep"
+	 rdfs:label="GermanVC-AssociatePosition_dep"/>
+<component:incoherent rdf:about="&templates;GermanVC-Coherence"
 	 rdfs:label="GermanVC-Coherence">
+	<function:CLASSES rdf:resource="&gold;Verbal"/>
+	<function:CLASSES rdf:resource="&gold;VerbalParticle"/>
+</component:incoherent>
+<component:coherent rdf:about="&templates;GermanVC-Coherence_dep"
+	 rdfs:label="GermanVC-Coherence_dep">
 	<function:CLASS rdf:resource="&gold;Verbal"/>
 </component:coherent>
 <component:elastic rdf:about="&templates;GermanVC-Elasticity"
@@ -1061,6 +1105,8 @@
 	<speccomponent:FILLEDNESS rdf:resource="&templates;GermanVF-Filledness"/>
 	<speccomponent:STABILITY rdf:resource="&templates;GermanVF-Stability"/>
 </component:component>
+<general:right rdf:about="&templates;GermanVF-AssociatePosition"
+	 rdfs:label="GermanVF-AssociatePosition"/>
 <component:incoherent rdf:about="&templates;GermanVF-Coherence"
 	 rdfs:label="GermanVF-Coherence">
 	<function:CLASSES rdf:resource="&localfunction;constituent"/>
@@ -1073,8 +1119,13 @@
 	 rdfs:label="GermanVF-Filledness">
 	<speccomponent:COHERENCE rdf:resource="&templates;GermanVF-Coherence"/>
 </component:open>
-<component:stable rdf:about="&templates;GermanVF-Stability"
-	 rdfs:label="GermanVF-Stability"/>
+<component:unstable rdf:about="&templates;GermanVF-Stability"
+	 rdfs:label="GermanVF-Stability">
+	<speccomponent:ASSOCIATE rdf:resource="&templates;GermanCF"/>
+	<speccomponent:ASSOCIATE_POSITION rdf:resource="&templates;GermanVF-AssociatePosition"/>
+</component:unstable>
+<component:stable rdf:about="&templates;GermanVF-Stability_dep"
+	 rdfs:label="GermanVF-Stability_dep"/>
 <notes:source rdf:about="&templates;Good-2005"
 	 rdfs:label="Good-2005"
 	 owl:sameAs="http://benjamins.com/catalog/dia.22.1.02goo">
@@ -2218,4 +2269,6 @@
 	 owl:sameAs="http://www.worldcat.org/oclc/20753938">
 	<terms:bibliographicCitation xml:space='preserve'><![CDATA[Zec, Draga & Sharon Inkelas. 1990. Prosodically constrained syntax. In Sharon Inkelas & Draga Zec (eds.), The phonology-syntax connection, 365–378. Stanford: CSLI.]]></terms:bibliographicCitation>
 </notes:source>
+<general:left rdf:about="&templates;template_Instance_3"
+	 rdfs:label="template_Instance_3"/>
 </rdf:RDF>
