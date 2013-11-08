@@ -19,6 +19,18 @@ for template in templatesGenerator:
 			
 gTemplates = process_templates(templates, rdfTemplates)
 
-for g in gTemplates:
-	print g.core.nodes()
-	print g.core.edges()
+for tgraph in gTemplates:
+	g = tgraph.core
+	nodes = g.nodes()
+	edges = g.edges()
+	
+	labeledEdges = [ ]
+	for edge in edges:
+		edge_props =  g.get_edge_properties(edge)
+		attribute = edge_props['label']
+		n1, n2 = (edge)
+		#print n1, n2
+		labeledEdges.append([n1, n2, attribute])
+		
+	print nodes
+	print labeledEdges

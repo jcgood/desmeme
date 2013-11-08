@@ -522,6 +522,7 @@
 	 general:COUNT="2"
 	 rdfs:label="ChechenPreverbalA-Stricture">
 	<general:CONSTITUENT rdf:resource="&general;prosodicWord"/>
+	<general:RELATIONS rdf:resource="&general;simple"/>
 </template:length>
 <template:potentiallyViolable rdf:about="&templates;ChechenPreverbalA-Violability"
 	 rdfs:label="ChechenPreverbalA-Violability">
@@ -1910,6 +1911,7 @@
 	 general:COUNT="2"
 	 rdfs:label="SerboCroatianTopicalization-Stricture">
 	<general:CONSTITUENT rdf:resource="&general;prosodicWord"/>
+	<general:RELATIONS rdf:resource="&general;simple"/>
 </template:length>
 <template:potentiallyViolable rdf:about="&templates;SerboCroatianTopicalization-Violability"
 	 rdfs:label="SerboCroatianTopicalization-Violability">
@@ -2113,6 +2115,7 @@
 	 general:COUNT="2"
 	 rdfs:label="TieneVerbProsodic-Stricture">
 	<general:CONSTITUENT rdf:resource="&gold;Mora"/>
+	<general:RELATIONS rdf:resource="&general;simple"/>
 </template:length>
 <template:potentiallyViolable rdf:about="&templates;TieneVerbProsodic-Violability"
 	 rdfs:label="TieneVerbProsodic-Violability">
@@ -2203,6 +2206,7 @@
 	 general:COUNT="2"
 	 rdfs:label="TurkishMinimality-Stricture">
 	<general:CONSTITUENT rdf:resource="&gold;Syllable"/>
+	<general:RELATIONS rdf:resource="&general;simple"/>
 </template:length>
 <template:desmeme rdf:about="&templates;TurkishNominalMinimality"
 	 gold:inLanguage="http://lexvo.org/id/iso639-3/tur"

@@ -50,7 +50,7 @@ def process_template(mother,genericMother,rdfGraph,tdag):
 			# to be an accident, but a useful one. So, I am keeping it.
 			if tdag.has_node(prettyDName,daughter):
 				prettyDName = tdag.has_node(prettyDName,daughter)
-				print "Warning ", daughter, "may be a case of a duplicatable node not yet properly handled. Examine the template using it and the class function in tdag and add a case for this if graph does not properly duplicate nodes. A known raising of this error which is not a problem occurs when a component with an Associate is also a filler for a lexicoconstructional template."
+				#print "Warning ", daughter, "may be a case of a duplicatable node not yet properly handled. Examine the template using it and the class function in tdag and add a case for this if graph does not properly duplicate nodes. A known raising of this error which is not a problem occurs when a component with an Associate is also a filler for a lexicoconstructional template."
 			else:
 				prettyDName = tdag.add_node(prettyDName,daughter,mother,predicate)
 			
