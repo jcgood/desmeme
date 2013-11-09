@@ -1,5 +1,7 @@
 #!/usr/bin/python2.7
 
+import re
+
 import tdag
 from tdag import rdfGraph, Namespace, RDF, tdag, conflate, process_template, prettyName
 from tdag import simUI_d, get_distances, to_nex, draw_graphs, full_grid, process_templates, draw_components
@@ -33,15 +35,17 @@ for tgraph in gTemplates:
 		n1, n2 = (edge)
 		
 		if n1 == 'order' or n1 == 'length':
-			print n1,n2
 			
-			if True: predToEdge[str(pred)] = (n2)
-			
+			countMatch = re.compile('COUNT(\d)-(\d)')
+			matches = countMatch.match(n2)
+
+			if matches: predToEdge[str(pred)] = (matches.group(1))
 			else: predToEdge[str(pred)] = (n2)
 		
-		elif pred != 'COUNT' : predToEdge[str(pred)] = (n2)
+		elif pred != 'COUNT' :
+			predToEdge[str(pred)] = (n2)
 		
-		else: print pred
+		else: pass # Ignore component counts
 		
 	procTemps[name] = predToEdge
 
@@ -64,8 +68,6 @@ for tempName in procTemps.keys():
 	
 	try: rep = temp['REPARABILITY']
 	except: rep = "NA"
+		
+	print tempName+","+viol+","+cond+","+exc+","+rep+","+found+","+stric+","+rel+","+const+","+count
 	
-	
-	#print tempName+","+viol+","+cond+","+exc+","+rep+","+found+","+stric+","+rel+","+const+","+count
-	
-	#print temp.keys()
