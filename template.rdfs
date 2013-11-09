@@ -362,8 +362,8 @@
 	 a:maxCardinality="1"
 	 a:range="cls"
 	 rdfs:label="general:RELATIONS">
-	<a:allowedParents rdf:resource="&general;relations"/>
 	<rdfs:domain rdf:resource="&template;order"/>
+	<a:allowedParents rdf:resource="&template;relations"/>
 	<rdfs:range rdf:resource="&rdfs;Class"/>
 </rdf:Property>
 <rdfs:Class rdf:about="&general;associatePositions"
@@ -468,12 +468,6 @@ a given template. This feature does not enter into the typological comparison at
 	<rdfs:subClassOf rdf:resource="&general;function"/>
 	<rdfs:subClassOf rdf:resource="&general;prosodicConstituent"/>
 </rdfs:Class>
-<rdfs:Class rdf:about="&general;relations"
-	 a:role="abstract"
-	 rdfs:label="general:relations">
-	<rdfs:comment>A supertype for subtypes classifying the nature of the relations holding among a template's components (though the notions could be applied more generally).</rdfs:comment>
-	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
-</rdfs:Class>
 <rdfs:Class rdf:about="&general;right"
 	 rdfs:label="general:right">
 	<rdfs:subClassOf rdf:resource="&general;associatePositions"/>
@@ -491,7 +485,7 @@ a given template. This feature does not enter into the typological comparison at
 	 a:role="abstract"
 	 rdfs:label="general:simple">
 	<rdfs:comment>A type for classifying sets of components where their categorial relationship to each other is simply that they are part of the same template.</rdfs:comment>
-	<rdfs:subClassOf rdf:resource="&general;relations"/>
+	<rdfs:subClassOf rdf:resource="&template;relations"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;syntacticConstituent"
 	 a:role="abstract"
@@ -502,7 +496,7 @@ a given template. This feature does not enter into the typological comparison at
 	 a:role="abstract"
 	 rdfs:label="general:taxonomic">
 	<rdfs:comment>A type for classifying sets of components which can be divided up into distinct categories creating taxonomic relationships among them.</rdfs:comment>
-	<rdfs:subClassOf rdf:resource="&general;relations"/>
+	<rdfs:subClassOf rdf:resource="&template;relations"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&localfunction;TenseMoodAspect"
 	 a:role="abstract"
@@ -637,7 +631,6 @@ a given template. This feature does not enter into the typological comparison at
 <rdf:Property rdf:about="&notes;ANALYTICAL_AMBIGUITY"
 	 a:maxCardinality="1"
 	 rdfs:label="notes:ANALYTICAL_AMBIGUITY">
-	<rdfs:domain rdf:resource="&template;stricture"/>
 	<rdfs:range rdf:resource="&rdfs;Literal"/>
 </rdf:Property>
 <rdf:Property rdf:about="&notes;CONDITIONS"
@@ -919,6 +912,12 @@ a given template. This feature does not enter into the typological comparison at
 	 rdfs:label="template:pragmatic">
 	<rdfs:comment>MAKE SURE THIS REALLY GETS USED. Originally added to deal with Chechen, but then taken away.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&template;semantopragmatic"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&template;relations"
+	 a:role="abstract"
+	 rdfs:label="template:relations">
+	<rdfs:comment>A supertype for subtypes classifying the nature of the relations holding among a template's components (though the notions could be applied more generally).</rdfs:comment>
+	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;reparability"
 	 a:role="abstract"

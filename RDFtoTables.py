@@ -60,8 +60,10 @@ for tempName in procTemps.keys():
 	found = temp['FOUNDATION']
 	stric = temp['STRICTURE']
 	count = temp['COUNT']
-	rel = temp['RELATIONS']
 	const = temp['CONSTITUENT']
+
+	try: rel = temp['RELATIONS']
+	except: rel = "NA"
 	
 	try: exc = temp['EXCEPTIONALITY']
 	except: exc = "NA"
