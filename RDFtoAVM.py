@@ -3,12 +3,14 @@
 import tdag
 from tdag import rdfGraph, Namespace, RDF, process_templates
 from tdag.avm import avm
-import inspect
+
+import os
+dir = os.path.dirname(__file__)
 
 # Load templates, turn them into despecified graphs
 rdfTemplates = rdfGraph()
 instanceNS = Namespace("http://purl.org/linguistics/jcgood/template#")
-rdfTemplates.load("./template.rdf")
+rdfTemplates.load(dir+"/template.rdf") ## relative paths broken on laptop; see above fix with import OS, extend to other scripts
 templatesGenerator = rdfTemplates.subjects(RDF['type'], instanceNS['desmeme'])
 templates = []
 for template in templatesGenerator:
