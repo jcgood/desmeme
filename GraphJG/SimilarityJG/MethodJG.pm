@@ -39,10 +39,26 @@ sub showLargeSimilarities {
     my $epsilon = .5;
     for my $i (keys %$sim) {
         for my $j (keys %{$$sim{$i}}) {
-            print "$i - $j : $$sim{$i}{$j}\n" if $$sim{$i}{$j} > $epsilon;
+            print "$i - $j : $$sim{$i}{$j}\n" if $$sim{$i}{$j} >= $epsilon;
         }
     }
-    #print Dumper $sim;
+}
+
+
+# JG: Added this method
+sub getLargeSimilarities {
+    my $self = shift;
+    my $template1 = shift;
+    my $template2 = shift;
+    my $sim = $self->sim;
+    my $epsilon = .5;
+    
+    open (SIMS, '>>FloodingSimilarities.txt'); 
+    for my $i (keys %$sim) {
+        for my $j (keys %{$$sim{$i}}) {
+            print SIMS "$template1/$template2\t$i/$j\t$$sim{$i}{$j}\n" if $$sim{$i}{$j} >= $epsilon;
+        }
+    }
 }
 
 
