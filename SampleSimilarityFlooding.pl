@@ -1,8 +1,8 @@
-#! /opt/local/bin/perl
+#! /usr/bin/perl
 
 use FindBin;  # locate this script
-use lib "$FindBin::Bin/..";
-use Graph::Similarity;
+use lib "$FindBin::Bin/.";
+use GraphJG::SimilarityJG;
 
 
 my $g1 = Graph->new(multiedged => 1);
@@ -118,7 +118,7 @@ $g2->add_edge_by_id("open2", "coherent2", "COHERENCE");
 # $g2->add_edge_by_id("a1", "a2", "l2");
 
 
-my $s = new Graph::Similarity(graph => [$g1,$g2]);
+my $s = new GraphJG::SimilarityJG(graph => [$g1,$g2]);
 my $method = $s->use('SimilarityFlooding');
 
 $method->setNumOfIteration(100);
