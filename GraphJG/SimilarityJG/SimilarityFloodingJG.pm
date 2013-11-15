@@ -49,7 +49,7 @@ sub calculate {
             	$sim{$v1}{$v2} = 1;
             	}
             	
-            else{ $sim{$v1}{$v2} = 1; }
+            else{ $sim{$v1}{$v2} = 1; } # More points if labels match, but doesn't seem to make a big difference, at least at 1 vs. 0.
             
         }
     }
@@ -95,10 +95,10 @@ sub calculate {
                     for my $dest2 (keys %{$m2{$label}{$src2}}){
                         #print "src - $src1,$src2\n";
                         #print "dest - $dest1,$dest2\n";
-                        $pcg->add_edge_by_id("$src1/$src2", "$dest1/$dest2", $label );
+                        $pcg->add_edge_by_id("$src1/$src2", "$dest1/$dest2", $label ); # JG: The algorithm has bidirectional flooding, so we enter as two-way edge
                         $pcg->add_edge_by_id("$dest1/$dest2", "$src1/$src2", $label ); 
-                        $edges{"$src1/$src2"}{$label}++;
-                        $edges{"$dest1/$dest2"}{$label}++; # JG: Why is this done? Should destinations affect the division of the weight?
+                        $edges{"$src1/$src2"}{$label}++; #JG" For a given edge label figure out how many lead to/from that node
+                        $edges{"$dest1/$dest2"}{$label}++;
                     }
                 }
             }
@@ -117,14 +117,18 @@ sub calculate {
             for my $v2 ($g2->vertices){
 
                 my $sum=0;
-                for my $n ($pcg->neighbours("$v1/$v2")){
-                    for my $label ($pcg->get_multiedge_ids($n, "$v1/$v2")){
+                for my $n ($pcg->neighbours("$v1/$v2")){ # JG: Only resolves if the dual-label has edges
+                    my $count = 0;
+                    for my $label ($pcg->get_multiedge_ids($n, "$v1/$v2")){ # JG: In case there's more than one edge connecting to nodes
+                    	#print "$n $label\n";
                         #print 1/$edges{$n}{$label};
                         #print " * $n : neighbor of $v1/$v2\n";
                         my ($n1, $n2) = split /\//, $n;
                         $sum += $sim{$n1}{$n2} / $edges{$n}{$label};
-
+						$count++;
                     }
+                    
+                #print "Count: $count\n\n";
                 }
 
                 $next_sim{$v1}{$v2} = $sim{$v1}{$v2} + $sum; 
@@ -144,6 +148,7 @@ sub calculate {
                     $sim{$v1}{$v2} = $next_sim{$v1}{$v2} / $max;
                 }
                 else {
+                    print "I am undefined\n"; #JG: I'm not sure we ever get here.
                     $sim{$v1}{$v2} = $sim{$v1}{$v2} / $max;
                 }
                 

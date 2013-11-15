@@ -41,16 +41,23 @@ for tgraph in gTemplates:
 	name = tgraph.name
 	templateNames.append("\""+name+"\"") # quotes for perl
 	nodes = g.nodes()
-	edges = g.edges()
+	edges = tgraph.edges.values() # Important: Grab the edges of the tdag, not the embedded dag to deal with re-entrancy!
+	
+	#print name
+	#print edges
 	
 	print >> outfile, "my $"+name+" = Graph->new(multiedged => 1);"
 	print >> outfile, "$"+name+"->set_graph_attribute(\"name\", "+"\""+name+"\""+");"
 	labeledEdges = [ ]
+	
 	for edge in edges:
-		edge_props =  g.get_edge_properties(edge)
-		attribute = edge_props['label']
-		n1, n2 = (edge)
+		#edge_props =  g.get_edge_properties(edge)
+		#attribute = edge_props['label']
+		#print edge, edge_props
+		(n1, n2), attribute = (edge)
+		#print n1, n2, attribute
 		print >> outfile, "$"+name+"->add_edge_by_id(\""+n1+"\", "+"\""+n2+"\", "+"\""+attribute+"\");"
+	
 	print >> outfile, "$templateGraphs{"+name+"} = $"+name+";"
 	print >> outfile, ""
 
