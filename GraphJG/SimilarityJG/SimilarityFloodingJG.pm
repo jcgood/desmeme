@@ -49,7 +49,7 @@ sub calculate {
             	$sim{$v1}{$v2} = 1;
             	}
             	
-            else{ $sim{$v1}{$v2} = 0; }
+            else{ $sim{$v1}{$v2} = 1; }
             
         }
     }
