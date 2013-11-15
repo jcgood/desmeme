@@ -1,6 +1,6 @@
 USE AUTOMATICALLY PRINTED FULL GRID OUTPUT FROM SCRIPT THEN RUN FOLLOWING IN R.
 
-templates <- read.table("/Users/jcgood/Desktop/xxx.txt", sep="\t")
+templates <- read.table("xxx.txt", sep="\t")
 templateframe = data.frame(templates,row.names=TRUE)
 templatedist = as.dist(templateframe)
 templatemds = cmdscale(templatedist, eig=TRUE, k=2)

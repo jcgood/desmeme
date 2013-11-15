@@ -51,9 +51,9 @@ sub getLargeSimilarities {
     my $template1 = shift;
     my $template2 = shift;
     my $sim = $self->sim;
-    my $epsilon = .5;
+    my $epsilon = .001;
     
-    open (SIMS, '>>FloodingSimilarities.txt'); 
+    open (SIMS, '>>FloodingSimilarities.txt') or die "$!"; 
     for my $i (keys %$sim) {
         for my $j (keys %{$$sim{$i}}) {
             print SIMS "$template1/$template2\t$i/$j\t$$sim{$i}{$j}\n" if $$sim{$i}{$j} >= $epsilon;
