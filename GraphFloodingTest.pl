@@ -34,12 +34,19 @@ for (my $count = 1; $count <=15; $count++) {
 	my @dists;
 	for my $v (keys(%simList)) {
 		
-		my $oldSim = $simList{$v};
-		my $newSim = $newSimList{$v};
-		my $diff = $oldSim - $newSim;
-		push(@dists,$diff);
-		#print "diff: $diff\n";
-	
+		# This is messy: We run through the paired graph to see if this paired node is in any subgraph.
+		# "Free-floating" nodes get ignored for the purposes of calculating the Euclidean distance.
+		my $pcg = $method->pcg;
+		my @pairedvs = $pcg->vertices();
+		for my $pairedv (@pairedvs) {
+			if($v eq $pairedv) {
+				my $oldSim = $simList{$v};
+				my $newSim = $newSimList{$v};
+				my $diff = $oldSim - $newSim;
+				push(@dists,$diff);
+				last;			
+				}
+			}
 		}	
 	
 	my $eucSum;
@@ -51,12 +58,15 @@ for (my $count = 1; $count <=15; $count++) {
 		}
 	
 	my $eucDist = sqrt($eucSum);
+	print "Count: $count\n";	
 	print "$eucDist\n";
+
+	$method->showAllSimilarities($g1,$g2);
+	print "\n";
 	
 	if ($eucDist != 0 and $eucDist < .05) {
 	
-		$method->getLargeSimilarities($g1,$g2);
-		print "hello\n";
+		#$method->showAllSimilarities($g1,$g2);
 		
 		last;
 	

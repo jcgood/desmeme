@@ -11,6 +11,7 @@ our $VERSION = '0.02';
 
 has 'num_of_iteration'  => (is => 'rw', isa => 'Int', default => 100);
 has 'sim' => (is => 'rw', isa => 'HashRef');
+has 'pcg' => (is => 'rw');
 
 no Moose::Role;
 
@@ -83,6 +84,14 @@ sub _setSimilarity {
     my ($self, $ref) = @_; 
     $self->sim($ref);
 }
+
+# JG: This is used by the algoritm module 
+# to set the PCG hash for getting back
+sub _setPCG {
+    my ($self, $ref) = @_; 
+    $self->pcg($ref);
+}
+
 
 sub getSimilarity {
     my ($self, $a, $b) = @_;

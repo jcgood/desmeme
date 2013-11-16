@@ -57,7 +57,7 @@ sub calculate {
     # Create Pairwise Connectivity Graph
     my $pcg = Graph->new(multiedged => 1);
 
-    # Frist, collect source, destination node and label
+    # First, collect source, destination node and label
     # The is for Graph1
     my %m1;
     my %labels;
@@ -83,9 +83,9 @@ sub calculate {
         }
     }
 
-    # Secondary, add pairwise node.
+    # Second, add pairwise node.
     # Node name is src1(from graph1)/src2(from graph2) or dest1(from graph1)/dest2(from graph2)
-    # %edges used for couting the label of neighbors
+    # %edges used for counting the label of neighbors
     my %edges;
     for my $label (keys %labels) {
         #print $label, "------\n";
@@ -163,7 +163,8 @@ sub calculate {
     }
 
     $self->_setSimilarity(\%sim);
-    return \%sim;
+    $self->_setPCG($pcg)
+    #return \%sim;
     #return 1;
 }
 
