@@ -1,4 +1,3 @@
-#! /usr/bin/perl
 use strict;
 use FindBin;
 use lib "$FindBin::Bin/.";
@@ -797,16 +796,53 @@ for my $templateName1 (@templates) {
 
 	for my $templateName2 (@templatesCopy) {
 
-		if ($seenPairs{$templateName2."/".$templateName1}) { next; }
+		if ($seenPairs{$templateName2."/".$templateName1}) { print "seen you!"; next; }
 
-		my $s = new GraphJG::SimilarityJG(graph => [$templateGraphs{$templateName1}, $templateGraphs{$templateName2}]);
-		my $method = $s->use('SimilarityFlooding');
-		$method->setNumOfIteration(100);
-		$method->calculate();
+		# Initialize simList for calculating Euclidean distances.
+		my $initialS = new GraphJG::SimilarityJG(graph => [$templateGraphs{$templateName1}, $templateGraphs{$templateName2}]);
+		my $initialMethod = $initialS->use('SimilarityFlooding');
+		$initialMethod->setNumOfIteration(1);
+		$initialMethod->calculate();
+		my %simList = $initialMethod->getAllSimilarities;
+	
+		print "$templateName1/$templateName2\n";
 
-		$method->getLargeSimilarities($templateName1,$templateName2);
+		# Keep incrementing the iteration until we reach Euclidean distance of less than or equal to .05.
+		for (my $count = 1; $count <=100; $count++) {
+
+			my $s = new GraphJG::SimilarityJG(graph => [$templateGraphs{$templateName1}, $templateGraphs{$templateName2}]);
+			my $method = $s->use('SimilarityFlooding');
+			$method->setNumOfIteration($count);
+			$method->calculate();
+
+			my %newSimList = $method->getAllSimilarities;
+
+			my @dists;
+			for my $v (keys(%simList)) {
+		
+				my $oldSim = $simList{$v};
+				my $newSim = $newSimList{$v};
+				my $diff = $oldSim - $newSim;
+				push(@dists,$diff);
 	
-		$seenPairs{$templateName1."/".$templateName2} = 1;
+				}	
 	
+			my $eucSum;
+			for my $dist (@dists) {	
+				$eucSum += $dist*$dist;
+				}
+	
+			my $eucDist = sqrt($eucSum);
+			print "$eucDist\n";
+	
+			if ($eucDist != 0 and $eucDist < .05) {	
+	 			$method->getLargeSimilarities($templateName1,$templateName2);
+ 				$seenPairs{$templateName1."/".$templateName2} = 1;
+				last;
+				}
+	
+			%simList = %newSimList;
+	
+			}
 		}
 	}

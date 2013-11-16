@@ -118,14 +118,15 @@ sub calculate {
 
                 my $sum=0;
                 for my $n ($pcg->neighbours("$v1/$v2")){ # JG: Only resolves if the dual-label has edges
-                    my $count = 0;
+                    #my $count = 0;
                     for my $label ($pcg->get_multiedge_ids($n, "$v1/$v2")){ # JG: In case there's more than one edge connecting to nodes
                     	#print "$n $label\n";
                         #print 1/$edges{$n}{$label};
                         #print " * $n : neighbor of $v1/$v2\n";
+                        #print "\n";
                         my ($n1, $n2) = split /\//, $n;
                         $sum += $sim{$n1}{$n2} / $edges{$n}{$label};
-						$count++;
+						#$count++;
                     }
                     
                 #print "Count: $count\n\n";
@@ -145,17 +146,19 @@ sub calculate {
             for my $v2 ($g2->vertices){
 
                 if (defined $next_sim{$v1}{$v2}){
+                    #print "$v1/$v2 Old:".$sim{$v1}{$v2}." New: ".$next_sim{$v1}{$v2}."\n";
                     $sim{$v1}{$v2} = $next_sim{$v1}{$v2} / $max;
                 }
                 else {
                     print "I am undefined\n"; #JG: I'm not sure we ever get here.
                     $sim{$v1}{$v2} = $sim{$v1}{$v2} / $max;
                 }
-                
-            #print "Max: $max\n";
             
             }
+                   
         } 
+
+		#print "\nMax: $max\n";
 
     }
 

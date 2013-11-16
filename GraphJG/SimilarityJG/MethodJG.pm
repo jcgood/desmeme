@@ -25,10 +25,25 @@ sub showAllSimilarities {
     my $sim = $self->sim;
     for my $i (keys %$sim) {
         for my $j (keys %{$$sim{$i}}) {
-            print "$i - $j : $$sim{$i}{$j}\n";
+            print "$i/$j\t$$sim{$i}{$j}\n";
         }
     }
     #print Dumper $sim;
+}
+
+
+# JG: Added this methos
+sub getAllSimilarities {
+    my $self = shift;
+    my $sim = $self->sim;
+    my %simList;
+    for my $i (keys %$sim) {
+        for my $j (keys %{$$sim{$i}}) {
+             $simList{$i."/".$j} = $$sim{$i}{$j};
+        }
+    }
+    
+    return %simList;
 }
 
 
@@ -51,7 +66,7 @@ sub getLargeSimilarities {
     my $template1 = shift;
     my $template2 = shift;
     my $sim = $self->sim;
-    my $epsilon = .001;
+    my $epsilon = .05;
     
     open (SIMS, '>>FloodingSimilarities.txt') or die "$!"; 
     for my $i (keys %$sim) {
