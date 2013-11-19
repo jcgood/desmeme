@@ -38,7 +38,6 @@ print full_grid(distancesNoComp)
 
 # As long as here, let's generate some LaTeX--probably should put this in the module, but I'm too lazy right now
 pairwiseComps = open("/Volumes/Obang/MyDocuments/Linearity/TemplatesBook/pairwiseComps.tex", "w")
-print >> pairwiseComps, "\\begin{sidewaystable}[ht!]"
 print >> pairwiseComps, "{\\footnotesize"
 print >> pairwiseComps, "\\setlength{\\tabcolsep}{.45em}"
 print >> pairwiseComps, "\\begin{tabular}{@{}lrrrrrrrrrrrrrrrrrrrr}"
@@ -73,19 +72,11 @@ for template in distkeys:
 	templateCount += 1
 		
 print >> pairwiseComps, "\\end{tabular}}"
-print >> pairwiseComps, "\\caption{Pairwise distances among examined templates including component nodes \\label{Distances}}"
-print >> pairwiseComps, "\\end{sidewaystable}"
 
-pairwiseComps = open("/Volumes/Obang/MyDocuments/Linearity/TemplatesBook/pairwiseComps.tex", "w")
-print >> pairwiseComps, "\\begin{sidewaystable}[ht!]"
-print >> pairwiseComps, "{\\footnotesize"
-print >> pairwiseComps, "\\setlength{\\tabcolsep}{.45em}"
-print >> pairwiseComps, "\\begin{tabular}{@{}lrrrrrrrrrrrrrrrrrrrr}"
 
 
 # Now no comps distances
 pairwiseNoComps = open("/Volumes/Obang/MyDocuments/Linearity/TemplatesBook/pairwiseNoComps.tex", "w")
-print >> pairwiseNoComps, "\\begin{sidewaystable}[ht!]"
 print >> pairwiseNoComps, "{\\footnotesize"
 print >> pairwiseNoComps, "\\setlength{\\tabcolsep}{.45em}"
 print >> pairwiseNoComps, "\\begin{tabular}{@{}lrrrrrrrrrrrrrrrrrrrr}"
@@ -96,7 +87,7 @@ templateCount =  0
 for template in distkeys:
 	
 
-	tempDistances = distances[template]
+	tempDistances = noCompDistances[template]
 
 	distanceString = ""
 	gridCount = 0
@@ -120,6 +111,3 @@ for template in distkeys:
 	templateCount += 1
 		
 print >> pairwiseNoComps, "\\end{tabular}}"
-print >> pairwiseNoComps, "\\caption{Pairwise distances among examined templates excluding component nodes \\label{Distances}}"
-print >> pairwiseNoComps, "\\end{sidewaystable}"
-
