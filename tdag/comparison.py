@@ -17,7 +17,7 @@ def simUI_d(t1,t2):
 	
 	union = list(set(nodes1) | set(nodes2))
 	intersection = list(set(nodes1) & set(nodes2))
-	
+		
 	distance =  1 - (len(intersection) / float(len(union)))
 	
 	return distance
