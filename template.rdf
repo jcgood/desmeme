@@ -642,7 +642,7 @@
 <component:stable rdf:about="&templates;ChichewaReciprocal-Stability"
 	 rdfs:label="ChichewaReciprocal-Stability"/>
 <template:order rdf:about="&templates;ChichewaReciprocal-Stricture"
-	 general:COUNT="2"
+	 general:COUNT="3"
 	 rdfs:label="ChichewaReciprocal-Stricture">
 	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
 	<general:RELATIONS rdf:resource="&general;simple"/>

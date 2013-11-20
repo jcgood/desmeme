@@ -1,7 +1,8 @@
 USE AUTOMATICALLY PRINTED FULL GRID OUTPUT FROM SCRIPT THEN RUN FOLLOWING IN R.
+#TOSELF--add column names if possible
 
-templates <- read.table("xxx.txt", sep="\t")
-templateframe = data.frame(templates,row.names=TRUE)
+templates <- read.table("~/Desktop/xxx.txt", sep="\t", row.names=1)
+templateframe = data.frame(templates)
 templatedist = as.dist(templateframe)
 templatemds = cmdscale(templatedist, eig=TRUE, k=2)
 x <- templatemds$points[,1]

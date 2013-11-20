@@ -1,4 +1,4 @@
-; Fri Nov 08 22:05:22 EST 2013
+; Tue Nov 19 22:34:41 EST 2013
 ; 
 ;+ (version "3.3.1")
 ;+ (build "Build 430")
@@ -20,10 +20,10 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[template_ProjectKB_Instance_90089]
-		[template_ProjectKB_Instance_90090]
-		[template_ProjectKB_Instance_90091]
-		[template_ProjectKB_Instance_90092]))
+		[template_ProjectKB_Instance_80085]
+		[template_ProjectKB_Instance_80086]
+		[template_ProjectKB_Instance_90087]
+		[template_ProjectKB_Instance_90088]))
 
 ([CLSES_TAB] of  Widget
 
@@ -163,9 +163,9 @@
 		[template_ProjectKB_Instance_448]
 		[STANDARD_SLOT_FORM_WIDGET]
 		[template_ProjectKB_Instance_232]
-		[template_ProjectKB_Instance_99]
-		[template_ProjectKB_Instance_30074]
 		[STANDARD_FACET_FORM_WIDGET]
+		[template_ProjectKB_Instance_30074]
+		[template_ProjectKB_Instance_99]
 		[template_ProjectKB_Instance_10164]
 		[template_ProjectKB_Instance_30079])
 	(default_cls_metaclass ":STANDARD-CLASS")
@@ -1898,6 +1898,16 @@
 ([template_ProjectKB_Instance_80] of  Property_List
 )
 
+([template_ProjectKB_Instance_80085] of  String
+
+	(name ":PAL-CONSTRAINT")
+	(string_value "%3APAL-NAME"))
+
+([template_ProjectKB_Instance_80086] of  String
+
+	(name ":INSTANCE-ANNOTATION")
+	(string_value "%3AANNOTATION-TEXT"))
+
 ([template_ProjectKB_Instance_80087] of  Widget
 
 	(height 60)
@@ -1950,22 +1960,12 @@
 ([template_ProjectKB_Instance_90] of  Property_List
 )
 
-([template_ProjectKB_Instance_90089] of  String
-
-	(name ":PAL-CONSTRAINT")
-	(string_value "%3APAL-NAME"))
-
-([template_ProjectKB_Instance_90090] of  String
-
-	(name ":INSTANCE-ANNOTATION")
-	(string_value "%3AANNOTATION-TEXT"))
-
-([template_ProjectKB_Instance_90091] of  String
+([template_ProjectKB_Instance_90087] of  String
 
 	(name ":META-CLASS")
 	(string_value "%3ANAME"))
 
-([template_ProjectKB_Instance_90092] of  String
+([template_ProjectKB_Instance_90088] of  String
 
 	(name "form:transcription")
 	(string_value "specform%3ATRANSCRIPTION_STRING"))
