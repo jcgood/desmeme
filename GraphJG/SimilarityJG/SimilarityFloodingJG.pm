@@ -49,7 +49,7 @@ sub calculate {
             	$sim{$v1}{$v2} = 1;
             	}
             	
-            else{ $sim{$v1}{$v2} = 1; } # More points if labels match, but doesn't seem to make a big difference, at least at 1 vs. 0.
+            else{ $sim{$v1}{$v2} = 0; } # More points if labels match, but doesn't seem to make a big difference, at least at 1 vs. 0.
             
         }
     }
