@@ -3,6 +3,7 @@ use warnings;
 
 use Graph;
 use Moose;
+use Math::Round;
 
 # my $g1 = Graph->new(multiedged => 1);
 # $g1->add_edge_by_id("Koala", "Eucalyptus", "diet");
@@ -17,34 +18,25 @@ use Moose;
 
 my $g1 = Graph->new(multiedged => 1);
 $g1->set_graph_attribute("name", "ChichewaAR");
-$g1->add_edge_by_id("arch", "component1", "LEFT_SUPPORT");
+$g1->add_edge_by_id("span1", "component1", "LEFT_SUPPORT");
 $g1->add_edge_by_id("component1", "inelastic1", "ELASTICITY");
-$g1->add_edge_by_id("inelastic1", "COUNT1-1", "COUNT");
 $g1->add_edge_by_id("component1", "open1", "FILLEDNESS");
-$g1->add_edge_by_id("open1", "coherent1", "COHERENCE");
 $g1->add_edge_by_id("component1", "stable1", "STABILITY");
-$g1->add_edge_by_id("arch", "component2", "LEFT_VOUSSOIR");
+$g1->add_edge_by_id("span1", "component2", "RIGHT_SUPPORT");
 $g1->add_edge_by_id("component2", "inelastic2", "ELASTICITY");
-$g1->add_edge_by_id("inelastic2", "COUNT0-1", "COUNT");
-$g1->add_edge_by_id("component2", "null1", "FILLEDNESS");
-$g1->add_edge_by_id("component2", "stable2", "STABILITY");
+$g1->add_edge_by_id("component2", "open2", "FILLEDNESS");
+$g1->add_edge_by_id("component2", "unstable1", "STABILITY");
 
 
 my $g2 = Graph->new(multiedged => 1);
-$g2->add_edge_by_id("arch", "component1", "LEFT_SUPPORT");
-$g2->add_edge_by_id("component1", "elastic1", "ELASTICITY");
-$g2->add_edge_by_id("elastic1", "MINIMUM0-1", "MINIMUM");
-$g2->add_edge_by_id("elastic1", "MAXIMUM1-1", "MAXIMUM");
-$g2->add_edge_by_id("component1", "open1", "FILLEDNESS");
-$g2->add_edge_by_id("open1", "coherent1", "COHERENCE");
-$g2->add_edge_by_id("component1", "unstable1", "STABILITY");
-$g2->add_edge_by_id("unstable1", "right", "ASSOCIATE_POSITION");
-$g2->add_edge_by_id("unstable1", "component2", "ASSOCIATE");
-$g2->add_edge_by_id("component2", "inelastic1", "ELASTICITY");
-$g2->add_edge_by_id("inelastic1", "COUNT1-1", "COUNT");
-$g2->add_edge_by_id("component2", "open2", "FILLEDNESS");
-$g2->add_edge_by_id("open2", "coherent2", "COHERENCE");
-$g2->add_edge_by_id("component2", "stable1", "STABILITY");
+$g2->add_edge_by_id("span2", "component3", "LEFT_SUPPORT");
+$g2->add_edge_by_id("span2", "component4", "RIGHT_SUPPORT");
+$g2->add_edge_by_id("component3", "elastic1", "ELASTICITY");
+$g2->add_edge_by_id("component3", "filled1", "FILLEDNESS");
+$g2->add_edge_by_id("component3", "unstable2", "STABILITY");
+$g2->add_edge_by_id("component4", "elastic2", "ELASTICITY");
+$g2->add_edge_by_id("component4", "open3", "FILLEDNESS");
+$g2->add_edge_by_id("component4", "stable2", "STABILITY");
 
 
 my $pcg = Graph->new(multiedged => 1);
@@ -106,10 +98,19 @@ print DOT  "from pygraph.readwrite.markup import write\n";
 print DOT  "import pydot\n\n";
 print DOT  "import tdag\n\n";
 
-print DOT  "gr = tdag.tdag(\"\")\n\n";
+print DOT  "pcg = tdag.tdag(\"\")\n\n";
+print DOT  "g1 = tdag.tdag(\"\")\n\n";
+print DOT  "g2 = tdag.tdag(\"\")\n\n";
 
 my $printgraph = $pcg;
 my @alledges = $printgraph->edges();
+
+# Get outgoing arc counts
+my %outgoing;
+for my $edgeArray (@alledges) {
+	my ($n1, $n2) = @{$edgeArray};
+	$outgoing{$n1}++;
+	}
 
 my %seenEdges;
 for my $edgeArray (@alledges) {
@@ -119,17 +120,85 @@ for my $edgeArray (@alledges) {
 	my @edgeLabels = $printgraph->get_multiedge_ids($n1,$n2);
 
 	for my $edgeLabel (@edgeLabels) {
-		print DOT  "try: gr.add_node(\"$n1\", \"\")\n";
+		print DOT  "try: pcg.add_node(\"$n1\", \"\")\n";
 		print DOT  "except: pass\n";
-		print DOT  "try: gr.add_node(\"$n2\", \"\")\n";
+		print DOT  "try: pcg.add_node(\"$n2\", \"\")\n";
 		print DOT  "except: pass\n\n";
-		if (exists($seenEdges{"$n2/$n1"})) { print DOT  "gr.add_edge((\"$n1\", \"$n2\"), label=\" \")\n\n"; print "hellp\n";}
-		else {print "$n2/$n1 ".exists($seenEdges{"$n2/$n1"})."\n"; }
-		$seenEdges{"$n1/$n2"} = 1;
+		
+		my $numEdges = @edgeLabels;
+		my $weighting = $numEdges * (1/$outgoing{$n1});
+				
+		print DOT  "try: pcg.add_edge((\"$n1\", \"$n2\"), label=\" ".nearest(.01, $weighting)."\")\nexcept: pass\n\n";
 		
 		}
 	
 	}
+
+
+# Write out $g1 and $g2, too for display
+$printgraph = $g1;
+@alledges = $printgraph->edges();
+my %seeng1edges;
+for my $edgeArray (@alledges) {
+
+	my ($n1, $n2) = @{$edgeArray};
 	
-print DOT  "dot = gr.to_dot()\n";
-print DOT  "dot.write_dot('pcg' + '.dot')";
+	my @edgeLabels = $printgraph->get_multiedge_ids($n1,$n2);
+
+	for my $edgeLabel (@edgeLabels) {
+		print DOT  "try: g1.add_node(\"$n1\", \"\")\n";
+		print DOT  "except: pass\n";
+		print DOT  "try: g1.add_node(\"$n2\", \"\")\n";
+		print DOT  "except: pass\n\n";
+		
+		my $numEdges = @edgeLabels;
+		my $weighting = 1/$numEdges;
+				
+		unless ($seeng1edges{"$n1-$n2-$edgeLabel"})
+			{ print DOT  "try: g1.add_edge((\"$n1\", \"$n2\"), label=\" ".$edgeLabel."\")\nexcept: pass\n\n"; }
+		
+		$seeng1edges{"$n1-$n2-$edgeLabel"} = 1;
+		
+		}
+	
+	}
+
+
+
+# Write out $g1 and $g2, too for display
+$printgraph = $g2;
+@alledges = $printgraph->edges();
+my %seeng2edges;
+for my $edgeArray (@alledges) {
+
+	my ($n1, $n2) = @{$edgeArray};
+	
+	my @edgeLabels = $printgraph->get_multiedge_ids($n1,$n2);
+
+	for my $edgeLabel (@edgeLabels) {
+		print DOT  "try: g2.add_node(\"$n1\", \"\")\n";
+		print DOT  "except: pass\n";
+		print DOT  "try: g2.add_node(\"$n2\", \"\")\n";
+		print DOT  "except: pass\n\n";
+		
+		my $numEdges = @edgeLabels;
+		my $weighting = 1/$numEdges;
+				
+		unless ($seeng2edges{"$n1-$n2-$edgeLabel"})
+			{ print DOT  "try: g2.add_edge((\"$n1\", \"$n2\"), label=\" ".$edgeLabel."\")\nexcept: pass\n\n"; }
+	
+		$seeng2edges{"$n1-$n2-$edgeLabel"} = 1;
+	
+		}
+	
+	}
+
+	
+print DOT  "dot = pcg.to_dot()\n";
+print DOT  "dot.write_dot('pcg' + '.dot')\n";
+
+print DOT  "dot = g1.to_dot()\n";
+print DOT  "dot.write_dot('g1' + '.dot')\n";
+
+print DOT  "dot = g2.to_dot()\n";
+print DOT  "dot.write_dot('g2' + '.dot')\n";

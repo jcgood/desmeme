@@ -49,7 +49,8 @@ sub calculate {
             	$sim{$v1}{$v2} = 1;
             	}
             	
-            else{ $sim{$v1}{$v2} = 0; } # More points if labels match, but doesn't seem to make a big difference, at least at 1 vs. 0.
+            else{ $sim{$v1}{$v2} = .5; } # More points if labels match, makes a difference if spreading is neural-like
+            						# .5 is quasi-arbitrary, in future one could exploit ontological taxonomy
             
         }
     }
@@ -87,6 +88,7 @@ sub calculate {
     # Node name is src1(from graph1)/src2(from graph2) or dest1(from graph1)/dest2(from graph2)
     # %edges used for counting the label of neighbors
     my %edges;
+    my %outgoing; # JG: Adding to test different model
     for my $label (keys %labels) {
         #print $label, "------\n";
         for my $src1 (keys %{$m1{$label}}){
@@ -99,6 +101,9 @@ sub calculate {
                         $pcg->add_edge_by_id("$dest1/$dest2", "$src1/$src2", $label ); 
                         $edges{"$src1/$src2"}{$label}++; #JG" For a given edge label figure out how many lead to/from that node
                         $edges{"$dest1/$dest2"}{$label}++;
+                        $outgoing{"$src1/$src2"}++; # For a different algorithm than published, with all outgoing nodes counting in weight not just those from matching labels
+                        $outgoing{"$dest1/$dest2"}++;
+                        #print "src1/src2: $src1/$src2\n";
                     }
                 }
             }
@@ -125,7 +130,10 @@ sub calculate {
                         #print " * $n : neighbor of $v1/$v2\n";
                         #print "\n";
                         my ($n1, $n2) = split /\//, $n;
-                        $sum += $sim{$n1}{$n2} / $edges{$n}{$label};
+                        #$sum += $sim{$n1}{$n2} / $edges{$n}{$label}; # Original implementation, matches what is in paper (though technical report opens up possibility of different weightings)
+                        $sum += $sim{$n1}{$n2} / $outgoing{"$n"}; # JG: changing algo divide by all outgoing, more "network-like"
+						#print "n: $n, n1: $n1, n2: $n2, v1/v2: $v1/$v2\n";
+						#print $outgoing{"$n"}.", ".$edges{$n}{$label}."\n";
 						#$count++;
                     }
                     
@@ -135,6 +143,7 @@ sub calculate {
                 $next_sim{$v1}{$v2} = $sim{$v1}{$v2} + $sum; 
                 if ($max < $next_sim{$v1}{$v2}){
                     $max = $next_sim{$v1}{$v2};
+                	#print "Max: $max\n";
                 }
             }
         }
@@ -158,12 +167,11 @@ sub calculate {
                    
         } 
 
-		#print "\nMax: $max\n";
-
     }
 
     $self->_setSimilarity(\%sim);
-    $self->_setPCG($pcg)
+    $self->_setPCG($pcg);
+
     #return \%sim;
     #return 1;
 }

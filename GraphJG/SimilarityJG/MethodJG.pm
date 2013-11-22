@@ -33,6 +33,18 @@ sub showAllSimilarities {
 }
 
 
+sub showNonZeroSimilarities {
+    my $self = shift;
+    my $sim = $self->sim;
+    for my $i (keys %$sim) {
+        for my $j (keys %{$$sim{$i}}) {
+            print "$i/$j\t$$sim{$i}{$j}\n" if $$sim{$i}{$j} > 0;
+        }
+    }
+    #print Dumper $sim;
+}
+
+
 # JG: Added this methos
 sub getAllSimilarities {
     my $self = shift;
