@@ -1,14 +1,13 @@
 from pygraph.classes.digraph import digraph
 from pygraph.readwrite.markup import write
 import pydot
-
 import tdag
+from tdag import draw_graphs
 
-pcg = tdag.tdag("")
-
-g1 = tdag.tdag("")
-
-g2 = tdag.tdag("")
+pcg = tdag.tdag("pcg")
+pcgnolabels = tdag.tdag("pcgnolabels")
+g1 = tdag.tdag("g1")
+g2 = tdag.tdag("g2")
 
 try: pcg.add_node("stable1/unstable2", "")
 except: pass
@@ -234,6 +233,118 @@ except: pass
 try: pcg.add_edge(("open2/filled1", "component2/component3"), label=" 1")
 except: pass
 
+try: pcgnolabels.add_node("component1/component4", "")
+except: pass
+try: pcgnolabels.add_node("stable1/stable2", "")
+except: pass
+
+try: pcgnolabels.add_edge(("component1/component4", "stable1/stable2"), label="STABILITY")
+except: pass
+
+try: pcgnolabels.add_node("component2/component3", "")
+except: pass
+try: pcgnolabels.add_node("inelastic2/elastic1", "")
+except: pass
+
+try: pcgnolabels.add_edge(("component2/component3", "inelastic2/elastic1"), label="ELASTICITY")
+except: pass
+
+try: pcgnolabels.add_node("component2/component4", "")
+except: pass
+try: pcgnolabels.add_node("open2/open3", "")
+except: pass
+
+try: pcgnolabels.add_edge(("component2/component4", "open2/open3"), label="FILLEDNESS")
+except: pass
+
+try: pcgnolabels.add_node("component2/component3", "")
+except: pass
+try: pcgnolabels.add_node("unstable1/unstable2", "")
+except: pass
+
+try: pcgnolabels.add_edge(("component2/component3", "unstable1/unstable2"), label="STABILITY")
+except: pass
+
+try: pcgnolabels.add_node("component1/component3", "")
+except: pass
+try: pcgnolabels.add_node("inelastic1/elastic1", "")
+except: pass
+
+try: pcgnolabels.add_edge(("component1/component3", "inelastic1/elastic1"), label="ELASTICITY")
+except: pass
+
+try: pcgnolabels.add_node("component2/component4", "")
+except: pass
+try: pcgnolabels.add_node("inelastic2/elastic2", "")
+except: pass
+
+try: pcgnolabels.add_edge(("component2/component4", "inelastic2/elastic2"), label="ELASTICITY")
+except: pass
+
+try: pcgnolabels.add_node("component2/component3", "")
+except: pass
+try: pcgnolabels.add_node("open2/filled1", "")
+except: pass
+
+try: pcgnolabels.add_edge(("component2/component3", "open2/filled1"), label="FILLEDNESS")
+except: pass
+
+try: pcgnolabels.add_node("component2/component4", "")
+except: pass
+try: pcgnolabels.add_node("unstable1/stable2", "")
+except: pass
+
+try: pcgnolabels.add_edge(("component2/component4", "unstable1/stable2"), label="STABILITY")
+except: pass
+
+try: pcgnolabels.add_node("component1/component4", "")
+except: pass
+try: pcgnolabels.add_node("open1/open3", "")
+except: pass
+
+try: pcgnolabels.add_edge(("component1/component4", "open1/open3"), label="FILLEDNESS")
+except: pass
+
+try: pcgnolabels.add_node("span1/span2", "")
+except: pass
+try: pcgnolabels.add_node("component1/component3", "")
+except: pass
+
+try: pcgnolabels.add_edge(("span1/span2", "component1/component3"), label="LEFT_SUPPORT")
+except: pass
+
+try: pcgnolabels.add_node("component1/component3", "")
+except: pass
+try: pcgnolabels.add_node("open1/filled1", "")
+except: pass
+
+try: pcgnolabels.add_edge(("component1/component3", "open1/filled1"), label="FILLEDNESS")
+except: pass
+
+try: pcgnolabels.add_node("span1/span2", "")
+except: pass
+try: pcgnolabels.add_node("component2/component4", "")
+except: pass
+
+try: pcgnolabels.add_edge(("span1/span2", "component2/component4"), label="RIGHT_SUPPORT")
+except: pass
+
+try: pcgnolabels.add_node("component1/component4", "")
+except: pass
+try: pcgnolabels.add_node("inelastic1/elastic2", "")
+except: pass
+
+try: pcgnolabels.add_edge(("component1/component4", "inelastic1/elastic2"), label="ELASTICITY")
+except: pass
+
+try: pcgnolabels.add_node("component1/component3", "")
+except: pass
+try: pcgnolabels.add_node("stable1/unstable2", "")
+except: pass
+
+try: pcgnolabels.add_edge(("component1/component3", "stable1/unstable2"), label="STABILITY")
+except: pass
+
 try: g1.add_node("component2", "")
 except: pass
 try: g1.add_node("open2", "")
@@ -362,9 +473,4 @@ except: pass
 try: g2.add_edge(("component4", "elastic2"), label=" ELASTICITY")
 except: pass
 
-dot = pcg.to_dot()
-dot.write_dot('pcg' + '.dot')
-dot = g1.to_dot()
-dot.write_dot('g1' + '.dot')
-dot = g2.to_dot()
-dot.write_dot('g2' + '.dot')
+draw_graphs([pcg, pcgnolabels, g1, g2], "./")
