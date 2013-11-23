@@ -241,5 +241,14 @@ for my $edgeArray (@alledges) {
 	}
 
 	
+print DOT "# To self: I spent a long time working out why .dot files had attributes\n";
+print DOT "# such as width and pos that I didn't have in my representation.\n";
+print DOT "# This \"write_dot\" function is a special pydot feature that doesn't\n";
+print DOT "# exist as an actual method but is, rather, generated automatically based on the extension (sort of).\n";
+print DOT "# The internal representation is passed through the dot program and the output adds these extra features.\n";
+print DOT "# This seems to be the same as the \"default\" ones if they aren't added.\n";
+print DOT "# I looked into this to see how I should be customizing node placement.\n";
+print DOT "# I guess I'd have to delve deep into dot to find out at this point.\n";
+print DOT "# See comparison method in tdag for where this write_dot function is called.\n";
 
 print DOT  "draw_graphs([pcg, pcgnolabels, g1, g2], \"./\")\n";

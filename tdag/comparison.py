@@ -175,6 +175,15 @@ def draw_graphs(graphs, outpath, format="png"):
 	for graph in graphs:	
 		name = graph.name
 		dot = graph.to_dot() # my hack for reentrancy from foundation
+		
+		# To self: I spent a long time working out why .dot files had attributes
+		# such as width and pos that I didn't have in my representation.
+		# This "write_dot" function is a special pydot feature that doesn't
+		# exist as an actual method but is, rather, generated automatically based on the extension (sort of).
+		# The internal representation is passed through the dot program and the output adds these extra features.
+		# This seems to be the same as the "default" ones if they aren't added.
+		# I looked into this to see how I should be customizing node placement.
+		# I guess I'd have to delve deep into dot to find out at this point.
 		dot.write_dot(outpath + str(name) + '.dot')
 		
 		dotcmd = "dot -Tsvg " + outpath + str(name) + '.dot' + " > " + outpath + str(name) + '.svg'

@@ -64,13 +64,28 @@ sub getAllSimilarities {
 sub showLargeSimilarities {
     my $self = shift;
     my $sim = $self->sim;
-    my $epsilon = .5;
+    my $epsilon = .05;
     for my $i (keys %$sim) {
         for my $j (keys %{$$sim{$i}}) {
-            print "$i - $j : $$sim{$i}{$j}\n" if $$sim{$i}{$j} >= $epsilon;
+            print "$i/$j : $$sim{$i}{$j}\n" if $$sim{$i}{$j} >= $epsilon;
         }
     }
 }
+
+
+# JG: Added this method
+sub returnAllSimilarities {
+    my $self = shift;
+    my $sim = $self->sim;
+    my $epsilon = .05;
+    my %return;
+    for my $i (keys %$sim) {
+        for my $j (keys %{$$sim{$i}}) {
+            $return{"$i/$j"} = $$sim{$i}{$j} if $$sim{$i}{$j} >= $epsilon;
+    	    }
+    	}
+	return %return;
+	}
 
 
 # JG: Added this method

@@ -473,4 +473,13 @@ except: pass
 try: g2.add_edge(("component4", "elastic2"), label=" ELASTICITY")
 except: pass
 
+# To self: I spent a long time working out why .dot files had attributes
+# such as width and pos that I didn't have in my representation.
+# This "write_dot" function is a special pydot feature that doesn't
+# exist as an actual method but is, rather, generated automatically based on the extension (sort of).
+# The internal representation is passed through the dot program and the output adds these extra features.
+# This seems to be the same as the "default" ones if they aren't added.
+# I looked into this to see how I should be customizing node placement.
+# I guess I'd have to delve deep into dot to find out at this point.
+# See comparison method in tdag for where this write_dot function is called.
 draw_graphs([pcg, pcgnolabels, g1, g2], "./")
