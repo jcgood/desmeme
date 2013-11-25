@@ -105,7 +105,7 @@ for (my $count = 0; $count <=20; $count++) {
 	
 		}
 	
-	if ($eucDist != 0 and $eucDist < .05) {
+	if ($eucDist != 0 and $eucDist < .0001) {
 		last;	
 		}
 	
@@ -113,12 +113,12 @@ for (my $count = 0; $count <=20; $count++) {
 	
 	}
 
-print "\\begin{tabular}{lrrrrrrrrrrrrrrrrrrrr}\n";
+print "\\begin{tabular}{>{\\em}lrrrrrrrrrrrrrrrrrrrr}\n";
 print "\\Hline\n";
-print "{\\sc composite node}\t\&\t{\\sc iter 0}\&\t{\\sc iter 1}\&\t{\\sc iter 2}\&\t{\\sc iter 3}\&\t{\\sc iter 4} \\\\\n";
+print "{\\sc node\$\\downarrow\$\\\phantom{ent1/com}iter\$\\rightarrow\$}\t\&\t{\\sc  0}\&\t{\\sc  1}\&\t{\\sc  2}\&\t{\\sc  3}\&\t{\\sc  4} \\\\\n";
 print "\\Hline\n";
 for my $sim (sort(keys(%sims))) {
-	print "$sim ".join("\t&\t", @{$sims{$sim}})."\t\\\\\n" if @{$sims{$sim}}[-1] > .1;
+	print "$sim \t\&\t".join("\t&\t", @{$sims{$sim}})."\t\\\\\n" if @{$sims{$sim}}[-1] > .1;
 	}
 print "\\Hline\n";
 print "\\end{tabular}\n";
