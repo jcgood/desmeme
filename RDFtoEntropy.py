@@ -89,6 +89,7 @@ print >> rfile, "library(entropy)"
 print >> rfile, "library(parmigene)"
 print >> rfile, ""
 print >> rfile,  "templates = read.csv(\'"+dir+"/EntropyTables.txt\', header=TRUE, row.names=1)"
+print >> rfile,  ""
 
 for variable in variables:
 	print >> rfile,  variable+" = table(templates$"+variable+")"

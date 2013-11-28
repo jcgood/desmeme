@@ -3,6 +3,7 @@ library(entropy)
 library(parmigene)
 
 templates = read.csv('/Users/jcgood/gitrepos/desmeme/EntropyTables.txt', header=TRUE, row.names=1)
+
 violability = table(templates$violability)
 names(dimnames(violability)) <- list('violability')
 Hviolability = entropy(violability)
