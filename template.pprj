@@ -1,4 +1,4 @@
-; Thu Nov 21 20:14:28 EST 2013
+; Thu Nov 28 23:13:31 EST 2013
 ; 
 ;+ (version "3.3.1")
 ;+ (build "Build 430")
@@ -20,10 +20,10 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[template_ProjectKB_Instance_60079]
-		[template_ProjectKB_Instance_60080]
-		[template_ProjectKB_Instance_60081]
-		[template_ProjectKB_Instance_60082]))
+		[template_ProjectKB_Instance_90111]
+		[template_ProjectKB_Instance_90112]
+		[template_ProjectKB_Instance_90113]
+		[template_ProjectKB_Instance_90114]))
 
 ([CLSES_TAB] of  Widget
 
@@ -162,9 +162,9 @@
 		[STANDARD_CLASS_FORM_WIDGET]
 		[template_ProjectKB_Instance_448]
 		[STANDARD_SLOT_FORM_WIDGET]
+		[template_ProjectKB_Instance_30074]
 		[template_ProjectKB_Instance_232]
 		[template_ProjectKB_Instance_99]
-		[template_ProjectKB_Instance_30074]
 		[STANDARD_FACET_FORM_WIDGET]
 		[template_ProjectKB_Instance_10164]
 		[template_ProjectKB_Instance_30079])
@@ -1516,7 +1516,7 @@
 ([template_ProjectKB_Instance_5] of  String
 
 	(name "namespaces")
-	(string_value "template http://purl.org/linguistics/jcgood/template# form http://purl.org/linguistics/jcgood/form# specgeneral http://purl.org/linguistics/jcgood/specgeneral# terms http://purl.org/dc/terms# specform http://purl.org/linguistics/jcgood/specform# general http://purl.org/linguistics/jcgood/general# localfunction http://purl.org/linguistics/jcgood/localfunction# function http://purl.org/linguistics/jcgood/function# rdfs http://www.w3.org/2000/01/rdf-schema# speccomponent http://purl.org/linguistics/jcgood/speccomponent# component http://purl.org/linguistics/jcgood/component# spectemplate http://purl.org/linguistics/jcgood/spectemplate# owl http://www.w3.org/2002/07/owl# rdf http://www.w3.org/1999/02/22-rdf-syntax-ns# gold http://purl.org/linguistics/gold# notes http://purl.org/linguistics/jcgood/notes# "))
+	(string_value "template http://purl.org/linguistics/jcgood/template# form http://purl.org/linguistics/jcgood/form# specgeneral http://purl.org/linguistics/jcgood/specgeneral# terms http://purl.org/dc/terms# specform http://purl.org/linguistics/jcgood/specform# localcategory http://purl.org/linguistics/jcgood/localcategory# general http://purl.org/linguistics/jcgood/general# function http://purl.org/linguistics/jcgood/function# rdfs http://www.w3.org/2000/01/rdf-schema# speccomponent http://purl.org/linguistics/jcgood/speccomponent# component http://purl.org/linguistics/jcgood/component# spectemplate http://purl.org/linguistics/jcgood/spectemplate# owl http://www.w3.org/2002/07/owl# rdf http://www.w3.org/1999/02/22-rdf-syntax-ns# gold http://purl.org/linguistics/gold# notes http://purl.org/linguistics/jcgood/notes# "))
 
 ([template_ProjectKB_Instance_50079] of  Boolean
 
@@ -1573,26 +1573,6 @@
 	(is_readonly FALSE)
 	(undo_enabled TRUE)
 	(update_modification_slots FALSE))
-
-([template_ProjectKB_Instance_60079] of  String
-
-	(name ":PAL-CONSTRAINT")
-	(string_value "%3APAL-NAME"))
-
-([template_ProjectKB_Instance_60080] of  String
-
-	(name ":INSTANCE-ANNOTATION")
-	(string_value "%3AANNOTATION-TEXT"))
-
-([template_ProjectKB_Instance_60081] of  String
-
-	(name ":META-CLASS")
-	(string_value "%3ANAME"))
-
-([template_ProjectKB_Instance_60082] of  String
-
-	(name "form:transcription")
-	(string_value "specform%3ATRANSCRIPTION_STRING"))
 
 ([template_ProjectKB_Instance_60085] of  Boolean
 
@@ -1969,6 +1949,26 @@
 
 ([template_ProjectKB_Instance_90] of  Property_List
 )
+
+([template_ProjectKB_Instance_90111] of  String
+
+	(name ":PAL-CONSTRAINT")
+	(string_value "%3APAL-NAME"))
+
+([template_ProjectKB_Instance_90112] of  String
+
+	(name ":INSTANCE-ANNOTATION")
+	(string_value "%3AANNOTATION-TEXT"))
+
+([template_ProjectKB_Instance_90113] of  String
+
+	(name ":META-CLASS")
+	(string_value "%3ANAME"))
+
+([template_ProjectKB_Instance_90114] of  String
+
+	(name "form:transcription")
+	(string_value "specform%3ATRANSCRIPTION_STRING"))
 
 ([template_ProjectKB_Instance_90162] of  Widget
 

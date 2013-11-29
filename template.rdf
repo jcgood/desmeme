@@ -2,7 +2,6 @@
 <!DOCTYPE rdf:RDF [
 	 <!ENTITY template 'http://purl.org/linguistics/jcgood/template#'>
 	 <!ENTITY specgeneral 'http://purl.org/linguistics/jcgood/specgeneral#'>
-	 <!ENTITY localfunction 'http://purl.org/linguistics/jcgood/localfunction#'>
 	 <!ENTITY owl 'http://www.w3.org/2002/07/owl#'>
 	 <!ENTITY form 'http://purl.org/linguistics/jcgood/form#'>
 	 <!ENTITY general 'http://purl.org/linguistics/jcgood/general#'>
@@ -15,12 +14,12 @@
 	 <!ENTITY notes 'http://purl.org/linguistics/jcgood/notes#'>
 	 <!ENTITY speccomponent 'http://purl.org/linguistics/jcgood/speccomponent#'>
 	 <!ENTITY terms 'http://purl.org/dc/terms#'>
+	 <!ENTITY localcategory 'http://purl.org/linguistics/jcgood/localcategory#'>
 	 <!ENTITY rdf 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
 	 <!ENTITY specform 'http://purl.org/linguistics/jcgood/specform#'>
 ]>
 <rdf:RDF xmlns:template="&template;"
 	 xmlns:specgeneral="&specgeneral;"
-	 xmlns:localfunction="&localfunction;"
 	 xmlns:form="&form;"
 	 xmlns:owl="&owl;"
 	 xmlns:general="&general;"
@@ -32,6 +31,7 @@
 	 xmlns:spectemplate="&spectemplate;"
 	 xmlns:speccomponent="&speccomponent;"
 	 xmlns:notes="&notes;"
+	 xmlns:localcategory="&localcategory;"
 	 xmlns:terms="&terms;"
 	 xmlns:rdf="&rdf;"
 	 xmlns:specform="&specform;">
@@ -43,7 +43,7 @@
 </component:component>
 <component:coherent rdf:about="&templates;AghemAux-Coherence"
 	 rdfs:label="AghemAux-Coherence">
-	<function:CLASS rdf:resource="&localfunction;TenseMoodAspect"/>
+	<function:CLASS rdf:resource="&localcategory;TenseMoodAspect"/>
 </component:coherent>
 <component:elastic rdf:about="&templates;AghemAux-Elasticity"
 	 general:MAXIMUM="1"
@@ -99,7 +99,7 @@
 	 rdfs:label="AghemIAV-AssociatePosition"/>
 <component:coherent rdf:about="&templates;AghemIAV-Coherence"
 	 rdfs:label="AghemIAV-Coherence">
-	<function:CLASS rdf:resource="&localfunction;focal"/>
+	<function:CLASS rdf:resource="&localcategory;focal"/>
 </component:coherent>
 <component:inelastic rdf:about="&templates;AghemIAV-Elasticity"
 	 general:COUNT="1"
@@ -127,7 +127,7 @@
 </component:component>
 <component:coherent rdf:about="&templates;AghemIBV-Coherence"
 	 rdfs:label="AghemIBV-Coherence">
-	<function:CLASS rdf:resource="&localfunction;topical"/>
+	<function:CLASS rdf:resource="&localcategory;topical"/>
 </component:coherent>
 <component:elastic rdf:about="&templates;AghemIBV-Elasticity"
 	 general:MAXIMUM="100"
@@ -147,7 +147,7 @@
 </component:component>
 <component:coherent rdf:about="&templates;AghemPostIAV-Coherence"
 	 rdfs:label="AghemPostIAV-Coherence">
-	<function:CLASS rdf:resource="&localfunction;focal"/>
+	<function:CLASS rdf:resource="&localcategory;focal"/>
 </component:coherent>
 <component:elastic rdf:about="&templates;AghemPostIAV-Elasiticity"
 	 general:MAXIMUM="100"
@@ -171,7 +171,7 @@
 </component:component>
 <component:coherent rdf:about="&templates;AghemSubject-Coherence"
 	 rdfs:label="AghemSubject-Coherence">
-	<function:CLASS rdf:resource="&localfunction;topical"/>
+	<function:CLASS rdf:resource="&localcategory;topical"/>
 </component:coherent>
 <component:inelastic rdf:about="&templates;AghemSubject-Elasticity"
 	 general:COUNT="1"
@@ -190,7 +190,7 @@
 </component:component>
 <component:coherent rdf:about="&templates;AghemVerb-Coherence"
 	 rdfs:label="AghemVerb-Coherence">
-	<function:CLASS rdf:resource="&localfunction;finite"/>
+	<function:CLASS rdf:resource="&localcategory;finite"/>
 </component:coherent>
 <component:inelastic rdf:about="&templates;AghemVerb-Elasticity"
 	 general:COUNT="1"
@@ -204,7 +204,7 @@
 <component:filled rdf:about="&templates;Bantu-Transitive-Filledness"
 	 rdfs:label="Bantu-Transitive-Filledness">
 	<speccomponent:FORM rdf:resource="&templates;BantuTransitive-Form"/>
-	<function:FILLER_CLASS rdf:resource="&localfunction;valency"/>
+	<function:FILLER_CLASS rdf:resource="&localcategory;valency"/>
 </component:filled>
 <component:component rdf:about="&templates;BantuApplicative"
 	 rdfs:label="BantuApplicative">
@@ -219,7 +219,7 @@
 <component:filled rdf:about="&templates;BantuApplicative-Filledness"
 	 rdfs:label="BantuApplicative-Filledness">
 	<speccomponent:FORM rdf:resource="&templates;BantuApplicative-Form"/>
-	<function:FILLER_CLASS rdf:resource="&localfunction;valency"/>
+	<function:FILLER_CLASS rdf:resource="&localcategory;valency"/>
 </component:filled>
 <form:canonicalLineate rdf:about="&templates;BantuApplicative-Form"
 	 rdfs:label="BantuApplicative-Form">
@@ -252,7 +252,7 @@
 	<spectemplate:STRICTURE rdf:resource="&templates;BantuCA-Stricture"/>
 	<template:VIOLABILITY rdf:resource="&templates;BantuCA-Violability"/>
 	<notes:HAS_SOURCE rdf:resource="&templates;Good-2005"/>
-	<function:FUNCTION rdf:resource="&localfunction;valency"/>
+	<function:FUNCTION rdf:resource="&localcategory;valency"/>
 </template:desmeme>
 <general:lexicoconstructionalConditioning rdf:about="&templates;BantuCA-Conditioning"
 	 rdfs:label="BantuCA-Conditioning">
@@ -294,7 +294,7 @@
 	<spectemplate:STRICTURE rdf:resource="&templates;BantuCT-Stricture"/>
 	<template:VIOLABILITY rdf:resource="&templates;BantuCT-Violability"/>
 	<notes:HAS_SOURCE rdf:resource="&templates;Good-2005"/>
-	<function:FUNCTION rdf:resource="&localfunction;valency"/>
+	<function:FUNCTION rdf:resource="&localcategory;valency"/>
 </template:desmeme>
 <general:lexicoconstructionalConditioning rdf:about="&templates;BantuCT-Conditioning"
 	 rdfs:label="BantuCT-Conditioning">
@@ -330,7 +330,7 @@
 <component:filled rdf:about="&templates;BantuCausative-Filledness"
 	 rdfs:label="BantuCausative-Filledness">
 	<speccomponent:FORM rdf:resource="&templates;BantuCausative-Form"/>
-	<function:FILLER_CLASS rdf:resource="&localfunction;valency"/>
+	<function:FILLER_CLASS rdf:resource="&localcategory;valency"/>
 </component:filled>
 <form:canonicalLineate rdf:about="&templates;BantuCausative-Form"
 	 rdfs:label="BantuCausative-Form">
@@ -380,7 +380,7 @@
 	 rdfs:label="BantuTransitive-Stability"/>
 <component:coherent rdf:about="&templates;BantuVC-Coherence"
 	 rdfs:label="BantuVC-Coherence">
-	<function:CLASS rdf:resource="&localfunction;valency"/>
+	<function:CLASS rdf:resource="&localcategory;valency"/>
 </component:coherent>
 <component:component rdf:about="&templates;BantuVCExtension"
 	 rdfs:label="BantuVCExtension">
@@ -406,7 +406,7 @@
 	<spectemplate:STRICTURE rdf:resource="&templates;BantuVCy-Stricture"/>
 	<template:VIOLABILITY rdf:resource="&templates;BantuVCy-Violability"/>
 	<notes:HAS_SOURCE rdf:resource="&templates;Good-2005"/>
-	<function:FUNCTION rdf:resource="&localfunction;valency"/>
+	<function:FUNCTION rdf:resource="&localcategory;valency"/>
 </template:desmeme>
 <general:lexicoconstructionalConditioning rdf:about="&templates;BantuVCy-Conditioning"
 	 rdfs:label="BantuVCy-Conditioning">
@@ -479,8 +479,8 @@
 	 rdfs:label="ChechenPreverbal-Coherence">
 	<function:CLASSES rdf:resource="&gold;DirectObject"/>
 	<function:CLASSES rdf:resource="&gold;Preverb"/>
-	<function:CLASSES rdf:resource="&localfunction;goal"/>
-	<function:CLASSES rdf:resource="&localfunction;infinitive"/>
+	<function:CLASSES rdf:resource="&localcategory;goal"/>
+	<function:CLASSES rdf:resource="&localcategory;infinitive"/>
 </component:incoherent>
 <component:stable rdf:about="&templates;ChechenPreverbal-Stability"
 	 rdfs:label="ChechenPreverbal-Stability"/>
@@ -491,7 +491,7 @@
 	<spectemplate:FOUNDATION rdf:resource="&templates;ChechenPreverbalA-Foundation"/>
 	<spectemplate:STRICTURE rdf:resource="&templates;ChechenPreverbalA-Stricture"/>
 	<template:VIOLABILITY rdf:resource="&templates;ChechenPreverbalA-Violability"/>
-	<function:FUNCTION rdf:resource="&localfunction;clauseChaining"/>
+	<function:FUNCTION rdf:resource="&localcategory;clauseChaining"/>
 </template:desmeme>
 <general:lexicoconstructionalConditioning rdf:about="&templates;ChechenPreverbalA-Conditioning"
 	 rdfs:label="ChechenPreverbalA-Conditioning">
@@ -516,7 +516,7 @@
 	<speccomponent:FORM rdf:resource="&templates;ChechenA-Form"/>
 	<speccomponent:COHERENCE rdf:resource="&templates;ChechenPreverbal-Coherence"/>
 	<component:FILLER_PLACEMENT rdf:resource="&general;final"/>
-	<function:FILLER_CLASS rdf:resource="&localfunction;clauseChaining"/>
+	<function:FILLER_CLASS rdf:resource="&localcategory;clauseChaining"/>
 </component:partiallyFilled>
 <template:length rdf:about="&templates;ChechenPreverbalA-Stricture"
 	 general:COUNT="2"
@@ -555,7 +555,7 @@
 	<template:VIOLABILITY rdf:resource="&templates;ChichewaAR-Violability"/>
 	<spectemplate:STRICTURE rdf:resource="&templates;ChichewaReciprocal-Stricture"/>
 	<notes:HAS_SOURCE rdf:resource="&templates;HymanMchombo-2002"/>
-	<function:FUNCTION rdf:resource="&localfunction;valency"/>
+	<function:FUNCTION rdf:resource="&localcategory;valency"/>
 </template:desmeme>
 <general:lexicoconstructionalConditioning rdf:about="&templates;ChichewaAR-Conditioning"
 	 rdfs:label="ChichewaAR-Conditioning">
@@ -593,7 +593,7 @@
 <component:filled rdf:about="&templates;ChichewaApplicative-Filledness"
 	 rdfs:label="ChichewaApplicative-Filledness">
 	<speccomponent:FORM rdf:resource="&templates;ChichewaApplicative-Form"/>
-	<function:FILLER_CLASS rdf:resource="&localfunction;valency"/>
+	<function:FILLER_CLASS rdf:resource="&localcategory;valency"/>
 </component:filled>
 <form:canonicalLineate rdf:about="&templates;ChichewaApplicative-Form"
 	 gold:inLanguage="http://www.lexvo.org/page/iso639-3/nya"
@@ -632,7 +632,7 @@
 <component:filled rdf:about="&templates;ChichewaReciprocal-Filledness"
 	 rdfs:label="ChichewaReciprocal-Filledness">
 	<speccomponent:FORM rdf:resource="&templates;ChichewaReciprocal-Form"/>
-	<function:FILLER_CLASS rdf:resource="&localfunction;valency"/>
+	<function:FILLER_CLASS rdf:resource="&localcategory;valency"/>
 </component:filled>
 <form:canonicalLineate rdf:about="&templates;ChichewaReciprocal-Form"
 	 rdfs:label="ChichewaReciprocal-Form">
@@ -677,7 +677,7 @@
 </component:component>
 <component:coherent rdf:about="&templates;ChintangPrefix-Coherence"
 	 rdfs:label="ChintangPrefix-Coherence">
-	<function:CLASS rdf:resource="&localfunction;personReference"/>
+	<function:CLASS rdf:resource="&localcategory;personReference"/>
 </component:coherent>
 <component:inelastic rdf:about="&templates;ChintangPrefix-Elasticity"
 	 general:COUNT="1"
@@ -826,7 +826,7 @@
 	<spectemplate:STRICTURE rdf:resource="&templates;EnglishPluralSuffix-Stricture"/>
 	<template:VIOLABILITY rdf:resource="&templates;EnglishPluralSuffix-Violability"/>
 	<notes:HAS_SOURCE rdf:resource="&templates;Good-PersonalKnowledge"/>
-	<function:FUNCTION rdf:resource="&localfunction;plural"/>
+	<function:FUNCTION rdf:resource="&localcategory;plural"/>
 </template:desmeme>
 <general:lexicoconstructionalConditioning rdf:about="&templates;EnglishPlural-Conditioning"
 	 rdfs:label="EnglishPlural-Conditioning">
@@ -873,7 +873,7 @@
 <component:filled rdf:about="&templates;EnglishPluralSuffix-Filledness"
 	 rdfs:label="EnglishPluralSuffix-Filledness">
 	<speccomponent:FORM rdf:resource="&templates;EnglishPluralSuffix-Form"/>
-	<function:FILLER_CLASS rdf:resource="&localfunction;plural"/>
+	<function:FILLER_CLASS rdf:resource="&localcategory;plural"/>
 </component:filled>
 <form:canonicalLineate rdf:about="&templates;EnglishPluralSuffix-Form"
 	 rdfs:label="EnglishPluralSuffix-Form">
@@ -901,7 +901,7 @@
 </component:component>
 <component:coherent rdf:about="&templates;EnglishV-Coherence"
 	 rdfs:label="EnglishV-Coherence">
-	<function:CLASS rdf:resource="&general;function"/>
+	<function:CLASS rdf:resource="&general;grammaticalCategory"/>
 </component:coherent>
 <component:inelastic rdf:about="&templates;EnglishV-Elasticity"
 	 general:COUNT="1"
@@ -979,7 +979,7 @@
 <component:incoherent rdf:about="&templates;GermanCF-Coherence"
 	 rdfs:label="GermanCF-Coherence">
 	<function:CLASSES rdf:resource="&gold;Complementizer"/>
-	<function:CLASSES rdf:resource="&localfunction;finite"/>
+	<function:CLASSES rdf:resource="&localcategory;finite"/>
 </component:incoherent>
 <component:inelastic rdf:about="&templates;GermanCF-Elasticity"
 	 general:COUNT="1"
@@ -1034,7 +1034,7 @@
 </component:component>
 <component:incoherent rdf:about="&templates;GermanMF-Coherence"
 	 rdfs:label="GermanMF-Coherence">
-	<function:CLASSES rdf:resource="&localfunction;constituent"/>
+	<function:CLASSES rdf:resource="&localcategory;constituent"/>
 </component:incoherent>
 <component:elastic rdf:about="&templates;GermanMF-Elasticity"
 	 general:MAXIMUM="100"
@@ -1054,7 +1054,7 @@
 </component:component>
 <component:incoherent rdf:about="&templates;GermanNF-Coherence"
 	 rdfs:label="GermanNF-Coherence">
-	<function:CLASSES rdf:resource="&localfunction;constituent"/>
+	<function:CLASSES rdf:resource="&localcategory;constituent"/>
 </component:incoherent>
 <component:elastic rdf:about="&templates;GermanNF-Elasticity"
 	 general:MAXIMUM="100"
@@ -1108,7 +1108,7 @@
 	 rdfs:label="GermanVF-AssociatePosition"/>
 <component:incoherent rdf:about="&templates;GermanVF-Coherence"
 	 rdfs:label="GermanVF-Coherence">
-	<function:CLASSES rdf:resource="&localfunction;constituent"/>
+	<function:CLASSES rdf:resource="&localcategory;constituent"/>
 </component:incoherent>
 <component:elastic rdf:about="&templates;GermanVF-Elasticity"
 	 general:MAXIMUM="1"
@@ -1194,7 +1194,7 @@
 </general:constructionalConditioning>
 <component:coherent rdf:about="&templates;MandeClauseTMA-Coherence"
 	 rdfs:label="MandeClauseTMA-Coherence">
-	<function:CLASS rdf:resource="&localfunction;TenseMoodAspect"/>
+	<function:CLASS rdf:resource="&localcategory;TenseMoodAspect"/>
 </component:coherent>
 <component:component rdf:about="&templates;MandeO"
 	 rdfs:label="MandeO">
@@ -1282,8 +1282,8 @@
 <component:incoherent rdf:about="&templates;MandeX-Coherence"
 	 rdfs:label="MandeX-Coherence">
 	<function:CLASSES rdf:resource="&gold;IndirectObject"/>
-	<function:CLASSES rdf:resource="&localfunction;adjunct"/>
-	<function:CLASSES rdf:resource="&localfunction;adpositionalPhrase"/>
+	<function:CLASSES rdf:resource="&localcategory;adjunct"/>
+	<function:CLASSES rdf:resource="&localcategory;adpositionalPhrase"/>
 </component:incoherent>
 <component:elastic rdf:about="&templates;MandeX-Elasticity"
 	 general:MAXIMUM="100"
@@ -1338,7 +1338,7 @@
 </component:component>
 <component:coherent rdf:about="&templates;MeskwakiClauseFocus-Coherence"
 	 rdfs:label="MeskwakiClauseFocus-Coherence">
-	<function:CLASS rdf:resource="&localfunction;focus"/>
+	<function:CLASS rdf:resource="&localcategory;focus"/>
 </component:coherent>
 <component:elastic rdf:about="&templates;MeskwakiClauseFocus-Elasticity"
 	 general:MAXIMUM="1"
@@ -1360,7 +1360,7 @@
 	 rdfs:label="MeskwakiClauseNegative-AssociatePosition"/>
 <component:coherent rdf:about="&templates;MeskwakiClauseNegative-Coherence"
 	 rdfs:label="MeskwakiClauseNegative-Coherence">
-	<function:CLASS rdf:resource="&localfunction;negative"/>
+	<function:CLASS rdf:resource="&localcategory;negative"/>
 </component:coherent>
 <component:elastic rdf:about="&templates;MeskwakiClauseNegative-Elasticity"
 	 general:MAXIMUM="1"
@@ -1396,7 +1396,7 @@
 </component:component>
 <component:coherent rdf:about="&templates;MeskwakiClauseOblique-Coherence"
 	 rdfs:label="MeskwakiClauseOblique-Coherence">
-	<function:CLASS rdf:resource="&localfunction;oblique"/>
+	<function:CLASS rdf:resource="&localcategory;oblique"/>
 </component:coherent>
 <component:elastic rdf:about="&templates;MeskwakiClauseOblique-Elasticity"
 	 general:MAXIMUM="1"
@@ -1416,7 +1416,7 @@
 </component:component>
 <component:coherent rdf:about="&templates;MeskwakiClausePostverbal-Coherence"
 	 rdfs:label="MeskwakiClausePostverbal-Coherence">
-	<function:CLASS rdf:resource="&localfunction;argument"/>
+	<function:CLASS rdf:resource="&localcategory;argument"/>
 </component:coherent>
 <component:elastic rdf:about="&templates;MeskwakiClausePostverbal-Elasticity"
 	 general:MAXIMUM="100"
@@ -1436,7 +1436,7 @@
 </component:component>
 <component:coherent rdf:about="&templates;MeskwakiClauseVerb-Coherence"
 	 rdfs:label="MeskwakiClauseVerb-Coherence">
-	<function:CLASS rdf:resource="&localfunction;finite"/>
+	<function:CLASS rdf:resource="&localcategory;finite"/>
 </component:coherent>
 <component:inelastic rdf:about="&templates;MeskwakiClauseVerb-Elasticity"
 	 general:COUNT="1"
@@ -1460,7 +1460,7 @@
 <component:filled rdf:about="&templates;NdebeleApplicative-Filledness"
 	 rdfs:label="NdebeleApplicative-Filledness">
 	<speccomponent:FORM rdf:resource="&templates;NdebeleApplicative-Form"/>
-	<function:FILLER_CLASS rdf:resource="&localfunction;valency"/>
+	<function:FILLER_CLASS rdf:resource="&localcategory;valency"/>
 </component:filled>
 <form:canonicalLineate rdf:about="&templates;NdebeleApplicative-Form"
 	 gold:inLanguage="http://www.lexvo.org/page/iso639-3/nde"
@@ -1494,7 +1494,7 @@
 	<spectemplate:STRICTURE rdf:resource="&templates;NdebeleCA-Stricture"/>
 	<template:VIOLABILITY rdf:resource="&templates;NdebeleCA-Violability"/>
 	<notes:HAS_SOURCE rdf:resource="&templates;Sibanda-2004"/>
-	<function:FUNCTION rdf:resource="&localfunction;valency"/>
+	<function:FUNCTION rdf:resource="&localcategory;valency"/>
 </template:desmeme>
 <general:lexicoconstructionalConditioning rdf:about="&templates;NdebeleCA-Conditioning"
 	 rdfs:label="NdebeleCA-Conditioning">
@@ -1541,7 +1541,7 @@
 <component:filled rdf:about="&templates;NdebeleCausative-Filledness"
 	 rdfs:label="NdebeleCausative-Filledness">
 	<speccomponent:FORM rdf:resource="&templates;NdebeleCausative-Form"/>
-	<function:FILLER_CLASS rdf:resource="&localfunction;valency"/>
+	<function:FILLER_CLASS rdf:resource="&localcategory;valency"/>
 </component:filled>
 <form:canonicalLineate rdf:about="&templates;NdebeleCausative-Form"
 	 gold:inLanguage="http://www.lexvo.org/page/iso639-3/nde"
@@ -1562,7 +1562,7 @@
 </component:component>
 <component:coherent rdf:about="&templates;NdebeleVCExtension-Coherence"
 	 rdfs:label="NdebeleVCExtension-Coherence">
-	<function:CLASS rdf:resource="&localfunction;valency"/>
+	<function:CLASS rdf:resource="&localcategory;valency"/>
 </component:coherent>
 <component:elastic rdf:about="&templates;NdebeleVCExtension-Elasticity"
 	 general:MAXIMUM="100"
@@ -1601,7 +1601,7 @@
 	<spectemplate:FOUNDATION rdf:resource="&templates;NimboranVerb-Span"/>
 	<spectemplate:STRICTURE rdf:resource="&templates;NimboranVerb-Stricture"/>
 	<template:VIOLABILITY rdf:resource="&templates;NimboranVerb-Violability"/>
-	<function:FUNCTION rdf:resource="&localfunction;finite"/>
+	<function:FUNCTION rdf:resource="&localcategory;finite"/>
 </template:desmeme>
 <general:constructionalConditioning rdf:about="&templates;NimboranVerb-Conditioning"
 	 rdfs:label="NimboranVerb-Conditioning">
@@ -1640,8 +1640,8 @@
 </component:component>
 <component:incoherent rdf:about="&templates;NimboranVerbLeftSupport-Coherence"
 	 rdfs:label="NimboranVerbLeftSupport-Coherence">
-	<function:CLASSES rdf:resource="&localfunction;objectReference"/>
-	<function:CLASSES rdf:resource="&localfunction;subjectReference"/>
+	<function:CLASSES rdf:resource="&localcategory;objectReference"/>
+	<function:CLASSES rdf:resource="&localcategory;subjectReference"/>
 </component:incoherent>
 <component:elastic rdf:about="&templates;NimboranVerbLeftSupport-Elasticity"
 	 general:MAXIMUM="1"
@@ -1662,7 +1662,7 @@
 <component:filled rdf:about="&templates;NimboranVerbPosition3-Coherence"
 	 rdfs:label="NimboranVerbPosition3-Coherence">
 	<speccomponent:FORM rdf:resource="&templates;NimboranVerbPosition3-Form"/>
-	<function:FILLER_CLASS rdf:resource="&localfunction;objectReference"/>
+	<function:FILLER_CLASS rdf:resource="&localcategory;objectReference"/>
 </component:filled>
 <component:elastic rdf:about="&templates;NimboranVerbPosition3-Elasticity"
 	 general:MAXIMUM="1"
@@ -1692,7 +1692,7 @@
 <component:filled rdf:about="&templates;NimboranVerbPosition4-Filledness"
 	 rdfs:label="NimboranVerbPosition4-Filledness">
 	<speccomponent:FORM rdf:resource="&templates;NimboranVerbPosition4-Form"/>
-	<function:FILLER_CLASS rdf:resource="&localfunction;subjectReference"/>
+	<function:FILLER_CLASS rdf:resource="&localcategory;subjectReference"/>
 </component:filled>
 <form:canonicalLineate rdf:about="&templates;NimboranVerbPosition4-Form"
 	 rdfs:label="NimboranVerbPosition4-Form">
@@ -1712,7 +1712,7 @@
 </component:component>
 <component:coherent rdf:about="&templates;NimboranVerbPosition5-Coherence"
 	 rdfs:label="NimboranVerbPosition5-Coherence">
-	<function:CLASS rdf:resource="&localfunction;locative"/>
+	<function:CLASS rdf:resource="&localcategory;locative"/>
 </component:coherent>
 <component:elastic rdf:about="&templates;NimboranVerbPosition5-Elasticity"
 	 general:MAXIMUM="1"
@@ -1740,7 +1740,7 @@
 <component:filled rdf:about="&templates;NimboranVerbPosition6-Filledness"
 	 rdfs:label="NimboranVerbPosition6-Filledness">
 	<speccomponent:FORM rdf:resource="&templates;NimboranVerbPosition6-Form"/>
-	<function:FILLER_CLASS rdf:resource="&localfunction;TenseMoodAspect"/>
+	<function:FILLER_CLASS rdf:resource="&localcategory;TenseMoodAspect"/>
 </component:filled>
 <form:canonicalLineate rdf:about="&templates;NimboranVerbPosition6-Form"
 	 rdfs:label="NimboranVerbPosition6-Form">
@@ -1759,7 +1759,7 @@
 	 rdfs:label="NimboranVerbPosition7-AssociatePosition"/>
 <component:coherent rdf:about="&templates;NimboranVerbPosition7-Coherence"
 	 rdfs:label="NimboranVerbPosition7-Coherence">
-	<function:CLASS rdf:resource="&localfunction;tense"/>
+	<function:CLASS rdf:resource="&localcategory;tense"/>
 </component:coherent>
 <component:inelastic rdf:about="&templates;NimboranVerbPosition7-Elasticity"
 	 general:COUNT="1"
@@ -1781,7 +1781,7 @@
 </component:component>
 <component:coherent rdf:about="&templates;NimboranVerbRightSupport-Coherence"
 	 rdfs:label="NimboranVerbRightSupport-Coherence">
-	<function:CLASS rdf:resource="&localfunction;subjectReference"/>
+	<function:CLASS rdf:resource="&localcategory;subjectReference"/>
 </component:coherent>
 <component:inelastic rdf:about="&templates;NimboranVerbRightSupport-Elasticity"
 	 general:COUNT="1"
@@ -1846,7 +1846,7 @@
 	<function:CLASSES rdf:resource="&gold;Object"/>
 	<function:CLASSES rdf:resource="&gold;Subject"/>
 	<function:CLASSES rdf:resource="&gold;Verbal"/>
-	<function:CLASSES rdf:resource="&localfunction;adpositionalPhrase"/>
+	<function:CLASSES rdf:resource="&localcategory;adpositionalPhrase"/>
 </component:incoherent>
 <component:inelastic rdf:about="&templates;SerboCroatianJeLeftSupport-Elasticity"
 	 general:COUNT="1"
@@ -1871,7 +1871,7 @@
 	<function:CLASSES rdf:resource="&gold;Object"/>
 	<function:CLASSES rdf:resource="&gold;Subject"/>
 	<function:CLASSES rdf:resource="&gold;Verbal"/>
-	<function:CLASSES rdf:resource="&localfunction;adpositionalPhrase"/>
+	<function:CLASSES rdf:resource="&localcategory;adpositionalPhrase"/>
 </component:incoherent>
 <component:elastic rdf:about="&templates;SerboCroatianJeRightSupport-Elasticity"
 	 general:MAXIMUM="100"
@@ -1891,7 +1891,7 @@
 	<spectemplate:STRICTURE rdf:resource="&templates;SerboCroatianTopicalization-Stricture"/>
 	<template:VIOLABILITY rdf:resource="&templates;SerboCroatianTopicalization-Violability"/>
 	<notes:HAS_SOURCE rdf:resource="&templates;ZecInkelas-1990"/>
-	<function:FUNCTION rdf:resource="&localfunction;topicalization"/>
+	<function:FUNCTION rdf:resource="&localcategory;topicalization"/>
 </template:desmeme>
 <general:prosodicConditioning rdf:about="&templates;SerboCroatianTopicalization-Conditioning"
 	 rdfs:label="SerboCroatianTopicalization-Conditioning"/>
@@ -1989,7 +1989,7 @@
 <template:order rdf:about="&templates;TieneVerb-Stricture"
 	 general:COUNT="3"
 	 rdfs:label="TieneVerb-Stricture">
-	<general:CONSTITUENT rdf:resource="&general;segment"/>
+	<general:CONSTITUENT rdf:resource="&general;segments"/>
 	<general:RELATIONS rdf:resource="&general;simple"/>
 </template:order>
 <template:potentiallyViolable rdf:about="&templates;TieneVerb-Violability"
@@ -2005,7 +2005,7 @@
 </component:component>
 <component:coherent rdf:about="&templates;TieneVerbC1-Coherence"
 	 rdfs:label="TieneVerbC1-Coherence">
-	<function:CLASS rdf:resource="&localfunction;consonant"/>
+	<function:CLASS rdf:resource="&localcategory;consonant"/>
 </component:coherent>
 <component:inelastic rdf:about="&templates;TieneVerbC1-Elasticity"
 	 general:COUNT="1"
@@ -2026,7 +2026,7 @@
 	 rdfs:label="TieneVerbC2-AssociatePosition"/>
 <component:coherent rdf:about="&templates;TieneVerbC2-Coherence"
 	 rdfs:label="TieneVerbC2-Coherence">
-	<function:CLASS rdf:resource="&localfunction;coronalConsonant"/>
+	<function:CLASS rdf:resource="&localcategory;coronalConsonant"/>
 </component:coherent>
 <component:elastic rdf:about="&templates;TieneVerbC2-Elasticity"
 	 general:MAXIMUM="1"
@@ -2053,7 +2053,7 @@
 	 rdfs:label="TieneVerbC3-AssociatePosition"/>
 <component:coherent rdf:about="&templates;TieneVerbC3-Coherence"
 	 rdfs:label="TieneVerbC3-Coherence">
-	<function:CLASS rdf:resource="&localfunction;nonCoronalConsonant"/>
+	<function:CLASS rdf:resource="&localcategory;nonCoronalConsonant"/>
 </component:coherent>
 <component:elastic rdf:about="&templates;TieneVerbC3-Elasticity"
 	 general:MAXIMUM="1"
@@ -2126,7 +2126,7 @@
 </component:component>
 <component:coherent rdf:about="&templates;TieneVerbProsodicLeftSupport-Coherence"
 	 rdfs:label="TieneVerbProsodicLeftSupport-Coherence">
-	<function:CLASS rdf:resource="&localfunction;moraicUnit"/>
+	<function:CLASS rdf:resource="&localcategory;moraicUnit"/>
 </component:coherent>
 <component:inelastic rdf:about="&templates;TieneVerbProsodicLeftSupport-Elasticity"
 	 general:COUNT="1"
@@ -2137,7 +2137,7 @@
 </component:open>
 <component:coherent rdf:about="&templates;TieneVerbProsodicMiddleMora-Coherent"
 	 rdfs:label="TieneVerbProsodicMiddleMora-Coherent">
-	<function:CLASS rdf:resource="&localfunction;moraicUnit"/>
+	<function:CLASS rdf:resource="&localcategory;moraicUnit"/>
 </component:coherent>
 <component:elastic rdf:about="&templates;TieneVerbProsodicMiddleMora-Elasticity"
 	 general:MAXIMUM="1"
@@ -2155,7 +2155,7 @@
 </component:component>
 <component:coherent rdf:about="&templates;TieneVerbProsodicRightSupport-Coherence"
 	 rdfs:label="TieneVerbProsodicRightSupport-Coherence">
-	<function:CLASS rdf:resource="&localfunction;moraicUnit"/>
+	<function:CLASS rdf:resource="&localcategory;moraicUnit"/>
 </component:coherent>
 <component:inelastic rdf:about="&templates;TieneVerbProsodicRightSupport-Elasticity"
 	 general:COUNT="1"
@@ -2172,7 +2172,7 @@
 	<spectemplate:FOUNDATION rdf:resource="&templates;TieneVerb-Foundation"/>
 	<spectemplate:STRICTURE rdf:resource="&templates;TieneVerb-Stricture"/>
 	<template:VIOLABILITY rdf:resource="&templates;TieneVerb-Violability"/>
-	<function:FUNCTION rdf:resource="&localfunction;valency"/>
+	<function:FUNCTION rdf:resource="&localcategory;valency"/>
 </template:desmeme>
 <component:component rdf:about="&templates;TurkishFirstSyllable"
 	 rdfs:label="TurkishFirstSyllable">
