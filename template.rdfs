@@ -128,7 +128,6 @@
 <rdfs:Class rdf:about="&gold;VerbalParticle"
 	 a:role="abstract"
 	 rdfs:label="gold:VerbalParticle">
-	<rdfs:comment>I am using it for a morphologically bound particle in addition to a partly-free one.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&general;grammaticalCategory"/>
 </rdfs:Class>
 <rdf:Property rdf:about="&gold;inLanguage"
@@ -377,11 +376,12 @@
 <rdfs:Class rdf:about="&general;constituent"
 	 a:role="abstract"
 	 rdfs:label="general:constituent">
-	<rdfs:comment>A supertype for characterizing the kind of constituent that a given set of templatic restrictions applies over.</rdfs:comment>
+	<rdfs:comment>A supertype for characterizing the kind of constituents that a given set of templatic restrictions applies over.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;constructionalConditioning"
 	 rdfs:label="general:constructionalConditioning">
+	<rdfs:comment>A type for characterizing cases where a template's conditioning environment is constructional (i.e., morphological or syntactic) in nature.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&general;morphosyntacticConditioning"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;fillerPositions"
@@ -407,6 +407,7 @@
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;lexicoconstructionalConditioning"
 	 rdfs:label="general:lexicoconstructionalConditioning">
+	<rdfs:comment>A type for characterizing cases where a template's conditioning environment is lexicoconstructional in nature, that is where it involves a constructional environment where a specific lexical item or set of lexical items must also appear.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&general;morphosyntacticConditioning"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;medial"
@@ -417,18 +418,19 @@
 <rdfs:Class rdf:about="&general;morphologicalConstituent"
 	 a:role="abstract"
 	 rdfs:label="general:morphologicalConstituent">
-	<rdfs:comment>A types for specifying that the linguistic constituent a set of templatic restrictions applies over is morphological in nature (e.g., a word).</rdfs:comment>
+	<rdfs:comment>A types for specifying that the linguistic constituent a set of templatic restrictions applies over are morphological in nature (e.g., morphemes within a word).</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&general;morphosyntacticConstituent"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;morphosyntacticConditioning"
 	 a:role="abstract"
 	 rdfs:label="general:morphosyntacticConditioning">
+	<rdfs:comment>A type for characterizing cases where a template's conditioning environment is morphosyntactic in nature.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&template;conditioning"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;morphosyntacticConstituent"
 	 a:role="abstract"
 	 rdfs:label="general:morphosyntacticConstituent">
-	<rdfs:comment>A supertype for specifying that the linguistic constituent a set of templatic restrictions applies over is morphosyntactic in nature.</rdfs:comment>
+	<rdfs:comment>A supertype for specifying that the linguistic constituents a set of templatic restrictions applies over are morphosyntactic in nature.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&general;constituent"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;multiple"
@@ -440,12 +442,13 @@
 <rdfs:Class rdf:about="&general;phonologicalConditioning"
 	 a:role="abstract"
 	 rdfs:label="general:phonologicalConditioning">
+	<rdfs:comment>A type for characterizing cases where a template's conditioning environment is phonological in nature.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&template;conditioning"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;phonologicalConstituent"
 	 a:role="abstract"
 	 rdfs:label="general:phonologicalConstituent">
-	<rdfs:comment>A supertype for specifying that the linguistic constituent a set of templatic restrictions applies over is phonological in nature.</rdfs:comment>
+	<rdfs:comment>A supertype for specifying that the linguistic constituents a set of templatic restrictions applies over are phonological in nature.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&general;constituent"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;position"
@@ -455,18 +458,14 @@
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;prosodicConditioning"
 	 rdfs:label="general:prosodicConditioning">
+	<rdfs:comment>A type for characterizing cases where a template's conditioning environment is prosodic in nature.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&general;phonologicalConditioning"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;prosodicConstituent"
 	 a:role="abstract"
 	 rdfs:label="general:prosodicConstituent">
-	<rdfs:comment>A type for specifying that the linguistic constituent a set of templatic restrictions applies over is prosodic in nature (e.g., a phonological phrase).</rdfs:comment>
+	<rdfs:comment>A type for specifying that the linguistic constituents a set of templatic restrictions applies over are prosodic in nature (e.g., a phonological phrase). The labels of the subtypes should be readily interpretable for their category.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&general;phonologicalConstituent"/>
-</rdfs:Class>
-<rdfs:Class rdf:about="&general;prosodicPhrase"
-	 a:role="abstract"
-	 rdfs:label="general:prosodicPhrase">
-	<rdfs:subClassOf rdf:resource="&general;prosodicConstituent"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;prosodicWord"
 	 a:role="abstract"
@@ -478,14 +477,16 @@
 	 rdfs:label="general:right">
 	<rdfs:subClassOf rdf:resource="&general;associatePositions"/>
 </rdfs:Class>
+<rdfs:Class rdf:about="&general;segment"
+	 a:role="abstract"
+	 rdfs:label="general:segment">
+	<rdfs:comment>A type for specifying that the linguistic constituents a set of templatic restrictions applies over consist of segments</rdfs:comment>
+	<rdfs:subClassOf rdf:resource="&general;phonologicalConstituent"/>
+</rdfs:Class>
 <rdfs:Class rdf:about="&general;segmentalConditioning"
 	 rdfs:label="general:segmentalConditioning">
+	<rdfs:comment>A type for characterizing cases where a template's conditioning environment is segmental in nature.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&general;phonologicalConditioning"/>
-</rdfs:Class>
-<rdfs:Class rdf:about="&general;segments"
-	 a:role="abstract"
-	 rdfs:label="general:segments">
-	<rdfs:subClassOf rdf:resource="&general;phonologicalConstituent"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;simple"
 	 a:role="abstract"
@@ -496,7 +497,7 @@
 <rdfs:Class rdf:about="&general;syntacticConstituent"
 	 a:role="abstract"
 	 rdfs:label="general:syntacticConstituent">
-	<rdfs:comment>A types for specifying that the linguistic constituent a set of templatic restrictions applies over is syntactic in nature (e.g., a clause).</rdfs:comment>
+	<rdfs:comment>A types for specifying that the linguistic constituents a set of templatic restrictions applies over are syntactic in nature (e.g., phrases in a clause).</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&general;morphosyntacticConstituent"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;taxonomic"
@@ -654,6 +655,7 @@
 </rdf:Property>
 <rdfs:Class rdf:about="&notes;source"
 	 rdfs:label="notes:source">
+	<rdfs:comment>A metadata class for specifying the  source of the description for a given templatic construction in the database.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
 <rdf:Property rdf:about="&speccomponent;ASSOCIATE"
@@ -832,7 +834,7 @@
 <rdfs:Class rdf:about="&template;conditioning"
 	 a:role="abstract"
 	 rdfs:label="template:conditioning">
-	<rdfs:comment>A supertype for subtypes that characterizing the grammatical locus of the templatic constraints, for instance, whether they target phonological elements or morphosyntactic ones.</rdfs:comment>
+	<rdfs:comment>A supertype for  characterizing the grammatical locus of the templatic constraints, for instance, whether they target phonological elements or morphosyntactic ones.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;desmeme"
@@ -842,7 +844,8 @@
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;embeddedDesmeme"
 	 rdfs:label="template:embeddedDesmeme">
-	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
+	<rdfs:comment>A subtype of desmeme used for cases where components are themselves desmemes. This category does not logically require its own type, but this is useful in the present database since it does not actually fully encode the templatic properties of embedded desmemes.</rdfs:comment>
+	<rdfs:subClassOf rdf:resource="&template;desmeme"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;exceptionality"
 	 a:role="abstract"
@@ -859,11 +862,13 @@
 <rdfs:Class rdf:about="&template;homophony"
 	 a:role="abstract"
 	 rdfs:label="template:homophony">
+	<rdfs:comment>A type indicating that potential violations to the template, when they occur, can be repaired by allowing a surface construction to exhibit otherwise unexpected homophony.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&template;morphosyntacticRepair"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;irreparable"
 	 a:role="abstract"
 	 rdfs:label="template:irreparable">
+	<rdfs:comment>A type indicating that potential violations to the template, when they occur, cannot be repaired.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&template;reparability"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;length"
@@ -879,13 +884,14 @@
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;morphosyntacticInsertion"
 	 a:role="abstract"
-	 rdfs:comment="I am not, for now, coding the specifics of what is inserted."
 	 rdfs:label="template:morphosyntacticInsertion">
+	<rdfs:comment>A type indicating that potential violations to the template, when they occur, can be repaired via the insertion of a morphosyntactic element whose appearance would not otherwise be predicted.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&template;morphosyntacticRepair"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;morphosyntacticRepair"
 	 a:role="abstract"
 	 rdfs:label="template:morphosyntacticRepair">
+	<rdfs:comment>A type indicating that potential violations to the template, when they occur, can be repaired using a morphosyntactic strategy.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&template;reparable"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;noKnownExceptions"
@@ -907,18 +913,13 @@
 <rdfs:Class rdf:about="&template;phonologicalRepair"
 	 a:role="abstract"
 	 rdfs:label="template:phonologicalRepair">
+	<rdfs:comment>A type indicating that potential violations to the template, when they occur, can be repaired using a phonological strategy.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&template;reparable"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;potentiallyViolable"
 	 rdfs:label="template:potentiallyViolable">
 	<rdfs:comment>A type for indicating that, given other aspects of a language's grammar, there is the potential for a specific template to be violated, in which case further specification is given regarding the nature of exceptions to the template and what repair strategies (if any) may be applied to those exceptions.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&template;violability"/>
-</rdfs:Class>
-<rdfs:Class rdf:about="&template;pragmatic"
-	 a:role="abstract"
-	 rdfs:label="template:pragmatic">
-	<rdfs:comment>MAKE SURE THIS REALLY GETS USED. Originally added to deal with Chechen, but then taken away.</rdfs:comment>
-	<rdfs:subClassOf rdf:resource="&template;semantopragmatic"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;relations"
 	 a:role="abstract"
@@ -929,26 +930,25 @@
 <rdfs:Class rdf:about="&template;reparability"
 	 a:role="abstract"
 	 rdfs:label="template:reparability">
+	<rdfs:comment>A supertype for characterizing kinds of possible repair strategies for potential violations of templatic restrictions.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;reparable"
 	 a:role="abstract"
 	 rdfs:label="template:reparable">
+	<rdfs:comment>A supertype indicating that potential violations to the template, when they occur, can be repaired.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&template;reparability"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;semantic"
 	 a:role="abstract"
 	 rdfs:label="template:semantic">
-	<rdfs:subClassOf rdf:resource="&template;semantopragmatic"/>
-</rdfs:Class>
-<rdfs:Class rdf:about="&template;semantopragmatic"
-	 a:role="abstract"
-	 rdfs:label="template:semantopragmatic">
+	<rdfs:comment>A type for cases where the exceptions to a templatic pattern are semantically conditioned.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&template;exceptionality"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;shortening"
 	 a:role="abstract"
 	 rdfs:label="template:shortening">
+	<rdfs:comment>A type indicating that potential violations to the template, when they occur, can be repaired by shortening a constituent that would otherwise be expected to have a longer form than the one that appears on the surface.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&template;phonologicalRepair"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;span"

@@ -1989,7 +1989,7 @@
 <template:order rdf:about="&templates;TieneVerb-Stricture"
 	 general:COUNT="3"
 	 rdfs:label="TieneVerb-Stricture">
-	<general:CONSTITUENT rdf:resource="&general;segments"/>
+	<general:CONSTITUENT rdf:resource="&general;segment"/>
 	<general:RELATIONS rdf:resource="&general;simple"/>
 </template:order>
 <template:potentiallyViolable rdf:about="&templates;TieneVerb-Violability"
