@@ -27,6 +27,7 @@ outfile = open('/Volumes/Obang/MyDocuments/Linearity/TemplatesBook/TemplateOntol
 propfile = open('/Volumes/Obang/MyDocuments/Linearity/TemplatesBook/TemplateProps.tex', 'w')
 
 
+
 #=========Begin Functions============#
 
 # Get readable labels from URIs; different conditions for Classes and Properties
@@ -44,6 +45,7 @@ def getPropertyLabel(URI):
 	prettyName = prettyName.lower()
 	prettyName = prettyName.replace("_", " ")
 	prettyName = prettyName.replace(" name", "\\name")
+	prettyName = prettyName.replace("inlanguage", "{\\rm gold:inLanguage}")
 	return prettyName
 
 
@@ -51,8 +53,8 @@ def getPropertyLabel(URI):
 def processClass(classURI,embedding=0):
 
 
-	# Keeps us from printing out the bibliographic class
-	if classURI == URIRef("http://purl.org/linguistics/jcgood/notes#source"):
+	# Keeps us from printing out classes in the notes namespace
+	if classURI.find("http://purl.org/linguistics/jcgood/notes") > -1:
 		return()
 
 	print >> outfile, "\t"*embedding+"\item \\emph{"+getClassLabel(classURI)+"}"
@@ -76,9 +78,13 @@ def processClass(classURI,embedding=0):
 	if propertyCount > 0:
 
 		properties = {}
-		for propertyURI in RDFSpropertiesURIs:
-			label = getPropertyLabel(propertyURI)
-			properties[label] = propertyURI
+		for propertyURI in RDFSpropertiesURIs:			
+			# Ignore properties in notes namespace
+			if 	propertyURI.find("http://purl.org/linguistics/jcgood/notes") > -1:
+				pass
+			else:
+				label = getPropertyLabel(propertyURI)
+				properties[label] = propertyURI
 		
 		print >> outfile,  "\t"+"\t"*embedding+"\\begin{proplist}\n"		
 		
@@ -98,6 +104,11 @@ def processClass(classURI,embedding=0):
 			if RDFSpropertyURI == URIRef('http://protege.stanford.edu/system#_name'):
 				propertyRangeClass = "name"
 				propertyRangeType = "string representation of"
+
+			# The gold:inLanguage property is also a special case
+			if RDFSpropertyURI == URIRef('http://purl.org/linguistics/gold#inLanguage'):
+				propertyRangeClass = "language identifier"
+				propertyRangeType = "instance of"
 				
 			# If the value is an integer, then don't give class specification
 			if propertyRangeType == Literal('integer'):
@@ -146,7 +157,12 @@ def processClass(classURI,embedding=0):
 # Called recursively, gets subclasses of classes, and their properties, wraps LaTeX code around
 def processProp(propURI,embedding=0):
 
-	print >> propfile, "\t"*embedding+"\item \\textsc{"+getPropertyLabel(propURI)+"}"
+	# Special logic for gold:inLanguage
+	if str(propURI) == "http://purl.org/linguistics/gold#inLanguage":
+		print >> propfile, "\t"*embedding+"\item {gold:inLanguage}"
+
+	else:
+		print >> propfile, "\t"*embedding+"\item \\textsc{"+getPropertyLabel(propURI)+"}"
 	
 	# Get documentation, if it exists, and print it
 	RDFSdocumentation = rdfsTemplates.value(subject=propURI,predicate=RDFS['comment'])
@@ -181,8 +197,12 @@ print >> outfile,  "\\end{ontologytop}"
 slotGenerator = rdfsTemplates.subjects(RDF['type'], RDF['Property'])
 props = {}
 for propURI in slotGenerator:
-	label = getPropertyLabel(propURI)
-	props[label] = propURI
+	# Ignore properties in notes namespace
+	if 	propURI.find("http://purl.org/linguistics/jcgood/notes") > -1:
+		pass
+	else:
+		label = getPropertyLabel(propURI)
+		props[label] = propURI
 
 # The name type is a special case for sorting and other things
 print >> propfile,  "\\def\\name{name {\\rm \hspace{1em}\\parbox[t]{\\linegoal}{\\footnotesize A string representation of a the name of a type used for purposes of reference.}}}\n" # Name is a special case since it's a built-in protege property that can't be altered in protege
@@ -194,5 +214,3 @@ for propLabel in sorted(props.iterkeys()):
  	processProp(propURI)
 print >> propfile,  "\\end{proplist}"
 
-
-# Now do all the different features of the typology

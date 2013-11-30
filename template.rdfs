@@ -56,6 +56,7 @@
 <rdf:Property rdf:about="&terms;bibliographicCitation"
 	 a:maxCardinality="1"
 	 rdfs:label="terms:bibliographicCitation">
+	<rdfs:comment>A feature that characterizes a given element as a bibliographic citation.</rdfs:comment>
 	<rdfs:domain rdf:resource="&notes;source"/>
 	<rdfs:range rdf:resource="&rdfs;Literal"/>
 </rdf:Property>
@@ -139,8 +140,8 @@
 <rdf:Property rdf:about="&component;FILLER_PLACEMENT"
 	 a:maxCardinality="1"
 	 a:range="cls"
-	 rdfs:comment="This points to a type not an instance."
 	 rdfs:label="component:FILLER_PLACEMENT">
+	<rdfs:comment>A feature for specifying where in a lexicoconstructional template filler elements appear.</rdfs:comment>
 	<rdfs:domain rdf:resource="&component;partiallyFilled"/>
 	<a:allowedParents rdf:resource="&general;position"/>
 	<rdfs:range rdf:resource="&rdfs;Class"/>
@@ -239,6 +240,7 @@
 	 a:maxCardinality="1"
 	 a:range="cls"
 	 rdfs:label="form:LIAISON">
+	<rdfs:comment>A feature for specifying the prosodic dependency (or lack thereof) of a specific linguistic form.</rdfs:comment>
 	<rdfs:domain rdf:resource="&form;canonicalLineate"/>
 	<a:allowedParents rdf:resource="&form;liaison"/>
 	<rdfs:range rdf:resource="&rdfs;Class"/>
@@ -293,6 +295,7 @@
 	 a:maxCardinality="1"
 	 a:range="cls"
 	 rdfs:label="function:CLASS">
+	<rdfs:comment>A feature for specifying the class of elements which appear in a coherent component.</rdfs:comment>
 	<rdfs:domain rdf:resource="&component;coherent"/>
 	<a:allowedParents rdf:resource="&general;grammaticalCategory"/>
 	<rdfs:range rdf:resource="&rdfs;Class"/>
@@ -300,6 +303,7 @@
 <rdf:Property rdf:about="&function;CLASSES"
 	 a:range="cls"
 	 rdfs:label="function:CLASSES">
+	<rdfs:comment>A feature for specifying a set of classes for the elements which can appear in a incoherent component.</rdfs:comment>
 	<rdfs:domain rdf:resource="&component;incoherent"/>
 	<a:allowedParents rdf:resource="&general;grammaticalCategory"/>
 	<rdfs:range rdf:resource="&rdfs;Class"/>
@@ -308,6 +312,7 @@
 	 a:maxCardinality="1"
 	 a:range="cls"
 	 rdfs:label="function:FILLER_CLASS">
+	<rdfs:comment>A feature for specifying the class of an element which serves as a filler for a component.</rdfs:comment>
 	<rdfs:domain rdf:resource="&component;filled"/>
 	<a:allowedParents rdf:resource="&general;grammaticalCategory"/>
 	<rdfs:range rdf:resource="&rdfs;Class"/>
@@ -316,6 +321,7 @@
 	 a:maxCardinality="1"
 	 a:range="cls"
 	 rdfs:label="function:FUNCTION">
+	<rdfs:comment>A feature for specifying the general function of a given template in the context of a language's grammar.</rdfs:comment>
 	<a:allowedParents rdf:resource="&general;grammaticalCategory"/>
 	<rdfs:domain rdf:resource="&template;desmeme"/>
 	<rdfs:range rdf:resource="&rdfs;Class"/>
@@ -324,7 +330,7 @@
 	 a:maxCardinality="1"
 	 a:range="cls"
 	 rdfs:label="general:CONSTITUENT">
-	<rdfs:comment>A general feature for cases where a given type can be associated with some constituent, for instance when a length restriction applies to a constituent of a certain type.</rdfs:comment>
+	<rdfs:comment>A feature for specifying the kind of constituent a set of templatic restrictions operates over.</rdfs:comment>
 	<a:allowedParents rdf:resource="&general;constituent"/>
 	<rdfs:domain rdf:resource="&template;stricture"/>
 	<rdfs:range rdf:resource="&rdfs;Class"/>
@@ -333,7 +339,7 @@
 	 a:maxCardinality="1"
 	 a:range="integer"
 	 rdfs:label="general:COUNT">
-	<rdfs:comment>A general feature for cases where a given type can be associated with a fixed countable number of subunits. Its precise interpretation is dependent on the type it is associated with.</rdfs:comment>
+	<rdfs:comment>A feature for cases where a given type can be associated with a fixed countable number of subunits. Its precise interpretation is dependent on the type it is associated with (e.g., a component versus a stricture).</rdfs:comment>
 	<rdfs:domain rdf:resource="&component;inelastic"/>
 	<rdfs:domain rdf:resource="&template;stricture"/>
 	<rdfs:range rdf:resource="&rdfs;Literal"/>
@@ -342,6 +348,7 @@
 	 a:maxCardinality="1"
 	 a:range="integer"
 	 rdfs:label="general:MAXIMUM">
+	<rdfs:comment>A feature for specifying the maximum size of an elastic template. In the database itself, this is set to 100 for cases where there is no templatically-prescribed limit on the size of a component.</rdfs:comment>
 	<rdfs:domain rdf:resource="&component;elastic"/>
 	<rdfs:range rdf:resource="&rdfs;Literal"/>
 </rdf:Property>
@@ -349,20 +356,15 @@
 	 a:maxCardinality="1"
 	 a:range="integer"
 	 rdfs:label="general:MINIMUM">
+	<rdfs:comment>A feature for specifying the minimum size of an elastic template.</rdfs:comment>
 	<rdfs:domain rdf:resource="&component;elastic"/>
 	<rdfs:range rdf:resource="&rdfs;Literal"/>
-</rdf:Property>
-<rdf:Property rdf:about="&general;POSITION"
-	 a:maxCardinality="1"
-	 a:range="cls"
-	 rdfs:label="general:POSITION">
-	<a:allowedParents rdf:resource="&general;position"/>
-	<rdfs:range rdf:resource="&rdfs;Class"/>
 </rdf:Property>
 <rdf:Property rdf:about="&general;RELATIONS"
 	 a:maxCardinality="1"
 	 a:range="cls"
 	 rdfs:label="general:RELATIONS">
+	<rdfs:comment>A feature for specifying the nature of the  relations holding among the components of a template (e.g., whether there are taxonomic relations holding among them).</rdfs:comment>
 	<rdfs:domain rdf:resource="&template;order"/>
 	<a:allowedParents rdf:resource="&template;relations"/>
 	<rdfs:range rdf:resource="&rdfs;Class"/>
@@ -370,7 +372,7 @@
 <rdfs:Class rdf:about="&general;associatePositions"
 	 a:role="abstract"
 	 rdfs:label="general:associatePositions">
-	<rdfs:comment>In principle, there can be multiple associates in a template. So, these need to be instanceable.</rdfs:comment>
+	<rdfs:comment>A supertype for the positional specifications of components with dependencies on other components.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&general;position"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;constituent"
@@ -387,12 +389,13 @@
 <rdfs:Class rdf:about="&general;fillerPositions"
 	 a:role="abstract"
 	 rdfs:label="general:fillerPositions">
-	<rdfs:comment>A lexicoconstructional template can only one have one of these, so it is abstract.</rdfs:comment>
+	<rdfs:comment>A supertype for the position of a filler element in a lexicoconstructional template. This position is evaluated with respect to the whole template, not just the component the filler is found in.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&general;position"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;final"
 	 a:role="abstract"
 	 rdfs:label="general:final">
+	<rdfs:comment>A type specifying that the filler of a lexicoconstructional template is in the final position of the template.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&general;fillerPositions"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;grammaticalCategory"
@@ -403,6 +406,7 @@
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;left"
 	 rdfs:label="general:left">
+	<rdfs:comment>A type specifying that a component is dependent on a component appearing before it in the template.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&general;associatePositions"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;lexicoconstructionalConditioning"
@@ -413,6 +417,7 @@
 <rdfs:Class rdf:about="&general;medial"
 	 a:role="abstract"
 	 rdfs:label="general:medial">
+	<rdfs:comment>A type specifying that the filler of a lexicoconstructional template is in a medial position in the template.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&general;fillerPositions"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;morphologicalConstituent"
@@ -436,7 +441,7 @@
 <rdfs:Class rdf:about="&general;multiple"
 	 a:role="abstract"
 	 rdfs:label="general:multiple">
-	<rdfs:comment>A class covering cases where more than one component is involved in a positional restriction.</rdfs:comment>
+	<rdfs:comment>A type specifying that there are multiple fillers in a template and, therefore, no single position for a filler can be straightforwardly determined.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&general;fillerPositions"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;phonologicalConditioning"
@@ -454,6 +459,7 @@
 <rdfs:Class rdf:about="&general;position"
 	 a:role="abstract"
 	 rdfs:label="general:position">
+	<rdfs:comment>A supertype for referring to linear positions as needed in the description of the templates.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;prosodicConditioning"
@@ -475,6 +481,7 @@
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;right"
 	 rdfs:label="general:right">
+	<rdfs:comment>A type specifying that a component is dependent on a component appearing after it in the template.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&general;associatePositions"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;segment"
@@ -636,20 +643,17 @@
 	 rdfs:label="localcategory:valency">
 	<rdfs:subClassOf rdf:resource="&general;grammaticalCategory"/>
 </rdfs:Class>
-<rdf:Property rdf:about="&notes;ANALYTICAL_AMBIGUITY"
-	 a:maxCardinality="1"
-	 rdfs:label="notes:ANALYTICAL_AMBIGUITY">
-	<rdfs:range rdf:resource="&rdfs;Literal"/>
-</rdf:Property>
 <rdf:Property rdf:about="&notes;CONDITIONS"
 	 a:maxCardinality="1"
 	 rdfs:label="notes:CONDITIONS">
+	<rdfs:comment>A notes field listing for describing anything deemed to be of relevance regarding the conditions where a template appears.</rdfs:comment>
 	<rdfs:domain rdf:resource="&template;conditioning"/>
 	<rdfs:range rdf:resource="&rdfs;Literal"/>
 </rdf:Property>
 <rdf:Property rdf:about="&notes;HAS_SOURCE"
 	 a:maxCardinality="1"
 	 rdfs:label="notes:HAS_SOURCE">
+	<rdfs:comment>A feature for specifying the scholarly source of the description of a templatic construction.</rdfs:comment>
 	<rdfs:range rdf:resource="&notes;source"/>
 	<rdfs:domain rdf:resource="&template;desmeme"/>
 </rdf:Property>
@@ -661,47 +665,48 @@
 <rdf:Property rdf:about="&speccomponent;ASSOCIATE"
 	 a:maxCardinality="1"
 	 rdfs:label="speccomponent:ASSOCIATE">
+	<rdfs:comment>A feature for specifying the component that another component is dependent upon.</rdfs:comment>
 	<rdfs:range rdf:resource="&component;component"/>
 	<rdfs:domain rdf:resource="&component;unstable"/>
 </rdf:Property>
 <rdf:Property rdf:about="&speccomponent;ASSOCIATE_POSITION"
 	 a:maxCardinality="1"
 	 rdfs:label="speccomponent:ASSOCIATE_POSITION">
+	<rdfs:comment>A feature for specifying the position of a component's dependent with respect to the component itself.</rdfs:comment>
 	<rdfs:domain rdf:resource="&component;unstable"/>
 	<rdfs:range rdf:resource="&general;associatePositions"/>
 </rdf:Property>
 <rdf:Property rdf:about="&speccomponent;COHERENCE"
 	 a:maxCardinality="1"
 	 rdfs:label="speccomponent:COHERENCE">
+	<rdfs:comment>A feature for specifying whether or not a component is coherent.</rdfs:comment>
 	<rdfs:range rdf:resource="&component;coherence"/>
 	<rdfs:domain rdf:resource="&component;open"/>
-</rdf:Property>
-<rdf:Property rdf:about="&speccomponent;CONTAINS_TEMPLATE"
-	 a:maxCardinality="1"
-	 rdfs:label="speccomponent:CONTAINS_TEMPLATE">
-	<rdfs:comment>This is just some filler. This is just some filler. This is just some filler. This is just some filler. This is just some filler. This is just some filler.</rdfs:comment>
-	<rdfs:range rdf:resource="&template;desmeme"/>
 </rdf:Property>
 <rdf:Property rdf:about="&speccomponent;ELASTICITY"
 	 a:maxCardinality="1"
 	 rdfs:label="speccomponent:ELASTICITY">
+	<rdfs:comment>A feature for specifying whether or not a  component is elastic.</rdfs:comment>
 	<rdfs:domain rdf:resource="&component;component"/>
 	<rdfs:range rdf:resource="&component;elasticity"/>
 </rdf:Property>
 <rdf:Property rdf:about="&speccomponent;FILLEDNESS"
 	 a:maxCardinality="1"
 	 rdfs:label="speccomponent:FILLEDNESS">
+	<rdfs:comment>A feature for specifying whether or not a  component is filled.</rdfs:comment>
 	<rdfs:domain rdf:resource="&component;component"/>
 	<rdfs:range rdf:resource="&component;filledness"/>
 </rdf:Property>
 <rdf:Property rdf:about="&speccomponent;FORM"
 	 a:maxCardinality="1"
 	 rdfs:label="speccomponent:FORM">
+	<rdfs:comment>A feature for characterizing a given object as an instance of a linguistic form. It is primarily used to classify filler elements in a template.</rdfs:comment>
 	<rdfs:domain rdf:resource="&component;filled"/>
 	<rdfs:range rdf:resource="&form;form"/>
 </rdf:Property>
 <rdf:Property rdf:about="&speccomponent;STABILITY"
 	 a:maxCardinality="1"
+	 rdfs:comment="A feature for specifying a  component's stability."
 	 rdfs:label="speccomponent:STABILITY">
 	<rdfs:domain rdf:resource="&component;component"/>
 	<rdfs:range rdf:resource="&component;stability"/>
@@ -709,35 +714,41 @@
 <rdf:Property rdf:about="&specform;TRANSCRIPTION"
 	 a:maxCardinality="1"
 	 rdfs:label="specform:TRANSCRIPTION">
+	<rdfs:comment>A feature which specifies that a given object is an instance of a linguistic transcription.</rdfs:comment>
 	<rdfs:domain rdf:resource="&form;canonicalLineate"/>
 	<rdfs:range rdf:resource="&form;transcription"/>
 </rdf:Property>
 <rdf:Property rdf:about="&specform;TRANSCRIPTION_STRING"
 	 a:maxCardinality="1"
 	 rdfs:label="specform:TRANSCRIPTION_STRING">
+	<rdfs:comment>A feature which specifies that a string is being used to represent a transcription.</rdfs:comment>
 	<rdfs:domain rdf:resource="&form;transcription"/>
 	<rdfs:range rdf:resource="&rdfs;Literal"/>
 </rdf:Property>
 <rdf:Property rdf:about="&specgeneral;CONDITIONING"
 	 a:maxCardinality="1"
 	 rdfs:label="specgeneral:CONDITIONING">
+	<rdfs:comment>A feature which specifies the environment that conditions the appearance of a template.</rdfs:comment>
 	<rdfs:range rdf:resource="&template;conditioning"/>
 	<rdfs:domain rdf:resource="&template;desmeme"/>
 	<rdfs:domain rdf:resource="&template;exceptionality"/>
 </rdf:Property>
 <rdf:Property rdf:about="&spectemplate;FILLED_COMPONENT"
 	 rdfs:label="spectemplate:FILLED_COMPONENT">
+	<rdfs:comment>A feature which specifies that a given component in a template is filled.</rdfs:comment>
 	<rdfs:range rdf:resource="&component;component"/>
 	<rdfs:domain rdf:resource="&component;filledComponentSet"/>
 </rdf:Property>
 <rdf:Property rdf:about="&spectemplate;FILLED_COMPONENTS"
 	 a:maxCardinality="1"
 	 rdfs:label="spectemplate:FILLED_COMPONENTS">
+	<rdfs:comment>A feature which points to a container for those components which are filled within a template.</rdfs:comment>
 	<rdfs:range rdf:resource="&component;filledComponentSet"/>
 	<rdfs:domain rdf:resource="&general;lexicoconstructionalConditioning"/>
 </rdf:Property>
 <rdf:Property rdf:about="&spectemplate;FOUNDATION"
 	 a:maxCardinality="1"
+	 rdfs:comment="A feature which points to the foundation of a template."
 	 rdfs:label="spectemplate:FOUNDATION">
 	<rdfs:domain rdf:resource="&template;desmeme"/>
 	<rdfs:range rdf:resource="&template;foundation"/>
@@ -745,54 +756,55 @@
 <rdf:Property rdf:about="&spectemplate;KEYSTONE"
 	 a:maxCardinality="1"
 	 rdfs:label="spectemplate:KEYSTONE">
-	<rdfs:comment>A privileged component in an arch template which the other components are analyzed as being built around.</rdfs:comment>
+	<rdfs:comment>A feature which characterizes a component in an arch foundation as a keystone (i.e., as privileged with respect to the foundation's organization).</rdfs:comment>
 	<rdfs:range rdf:resource="&component;component"/>
 	<rdfs:domain rdf:resource="&template;arch"/>
 </rdf:Property>
 <rdf:Property rdf:about="&spectemplate;LEFT_SUPPORT"
 	 a:maxCardinality="1"
 	 rdfs:label="spectemplate:LEFT_SUPPORT">
-	<rdfs:comment>A feature which classifies a given component as the leftmost element in a templatic structure.</rdfs:comment>
+	<rdfs:comment>A feature which characterizes a component in a foundation as a left support (i.e., as the leftmost component in the template).</rdfs:comment>
 	<rdfs:range rdf:resource="&component;component"/>
 	<rdfs:domain rdf:resource="&template;foundation"/>
 </rdf:Property>
 <rdf:Property rdf:about="&spectemplate;LEFT_VOUSSOIR"
 	 a:maxCardinality="1"
 	 rdfs:label="spectemplate:LEFT_VOUSSOIR">
-	<rdfs:comment>A feature which classifies a given component as being to the immediate left of the keystone component.</rdfs:comment>
+	<rdfs:comment>A feature which characterizes a component in an arch foundation as a left voussoir (i.e., as the component immediately to the left of the keystone).</rdfs:comment>
 	<rdfs:range rdf:resource="&component;component"/>
 	<rdfs:domain rdf:resource="&template;arch"/>
 </rdf:Property>
 <rdf:Property rdf:about="&spectemplate;RESTKOMPONENT"
 	 rdfs:label="spectemplate:RESTKOMPONENT">
-	<rdfs:comment>A feature which classifies a component which does not belong to any of the specially classified structural slots of a given template type.</rdfs:comment>
+	<rdfs:comment>A feature which classifies a component as not belonging to any of the specially classified structural slots of a given template type.</rdfs:comment>
 	<rdfs:range rdf:resource="&component;component"/>
 	<rdfs:domain rdf:resource="&component;restkomponentenSet"/>
 </rdf:Property>
 <rdf:Property rdf:about="&spectemplate;RESTKOMPONENTEN"
 	 a:maxCardinality="1"
 	 rdfs:label="spectemplate:RESTKOMPONENTEN">
-	<rdfs:comment>A feature which points to a container for those components which do not belong to any of the specially classified slots of a given template type.</rdfs:comment>
+	<rdfs:comment>A feature which points to a container for those components which do not belong to any of the specially classified structural slots of a given template type.</rdfs:comment>
 	<rdfs:range rdf:resource="&component;restkomponentenSet"/>
 	<rdfs:domain rdf:resource="&template;foundation"/>
 </rdf:Property>
 <rdf:Property rdf:about="&spectemplate;RIGHT_SUPPORT"
 	 a:maxCardinality="1"
 	 rdfs:label="spectemplate:RIGHT_SUPPORT">
-	<rdfs:comment>A feature which classifies a given component as the rightmost element in a templatic structure.</rdfs:comment>
+	<rdfs:comment>A feature which characterizes a component in a foundation as a right support (i.e., as the rightmost component in the template).</rdfs:comment>
 	<rdfs:range rdf:resource="&component;component"/>
 	<rdfs:domain rdf:resource="&template;foundation"/>
 </rdf:Property>
 <rdf:Property rdf:about="&spectemplate;RIGHT_VOUSSOIR"
 	 a:maxCardinality="1"
 	 rdfs:label="spectemplate:RIGHT_VOUSSOIR">
-	<rdfs:comment>A feature which classifies a given component as being to the immediate right of the keystone component.</rdfs:comment>
+	<rdfs:comment>A feature which characterizes a component in an arch foundation as a right voussoir (i.e., as the component immediately to the right of the keystone).</rdfs:comment>
 	<rdfs:range rdf:resource="&component;component"/>
 	<rdfs:domain rdf:resource="&template;arch"/>
 </rdf:Property>
 <rdf:Property rdf:about="&spectemplate;STRICTURE"
 	 a:maxCardinality="1"
 	 rdfs:label="spectemplate:STRICTURE">
+	<rdfs:comment>A feature which points to a characterization of the stricture of a template.</rdfs:comment>
 	<rdfs:domain rdf:resource="&template;desmeme"/>
 	<rdfs:range rdf:resource="&template;stricture"/>
 </rdf:Property>
@@ -800,6 +812,7 @@
 	 a:maxCardinality="1"
 	 a:range="cls"
 	 rdfs:label="template:EXCEPTIONALITY">
+	<rdfs:comment>A feature for specifying the nature of attested exceptions to a given set of templatic restrictions.</rdfs:comment>
 	<a:allowedParents rdf:resource="&template;exceptionality"/>
 	<rdfs:domain rdf:resource="&template;potentiallyViolable"/>
 	<rdfs:range rdf:resource="&rdfs;Class"/>
@@ -808,6 +821,7 @@
 	 a:maxCardinality="1"
 	 a:range="cls"
 	 rdfs:label="template:FILLER_POSITION">
+	<rdfs:comment>A feature for specifying where in the overall structure of a template a filler is found.</rdfs:comment>
 	<rdfs:domain rdf:resource="&general;lexicoconstructionalConditioning"/>
 	<a:allowedParents rdf:resource="&general;position"/>
 	<rdfs:range rdf:resource="&rdfs;Class"/>
@@ -816,6 +830,7 @@
 	 a:maxCardinality="1"
 	 a:range="cls"
 	 rdfs:label="template:REPARABILITY">
+	<rdfs:comment>A feature for specifying the nature of any  strategies available for repairing potential violations of templatic restrictions.</rdfs:comment>
 	<rdfs:domain rdf:resource="&template;potentiallyViolable"/>
 	<a:allowedParents rdf:resource="&template;reparability"/>
 	<rdfs:range rdf:resource="&rdfs;Class"/>
@@ -823,6 +838,7 @@
 <rdf:Property rdf:about="&template;VIOLABILITY"
 	 a:maxCardinality="1"
 	 rdfs:label="template:VIOLABILITY">
+	<rdfs:comment>A feature for specifying whether or not a set of templatic restrictions is potentially violable.</rdfs:comment>
 	<rdfs:domain rdf:resource="&template;desmeme"/>
 	<rdfs:range rdf:resource="&template;violability"/>
 </rdf:Property>
@@ -971,6 +987,7 @@
 <rdf:Property rdf:about="&owl;sameAs"
 	 a:maxCardinality="1"
 	 rdfs:label="owl:sameAs">
+	<rdfs:comment>This predicate is used to state an equivalence between some text representation of a citation and a URI in an online bibliographic system.</rdfs:comment>
 	<rdfs:domain rdf:resource="&notes;source"/>
 	<rdfs:range rdf:resource="&rdfs;Literal"/>
 </rdf:Property>
