@@ -1,4 +1,4 @@
-; Sat Nov 30 17:16:43 EST 2013
+; Sat Nov 30 21:45:09 EST 2013
 ; 
 ;+ (version "3.3.1")
 ;+ (build "Build 430")
@@ -20,10 +20,10 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[template_ProjectKB_Instance_90099]
-		[template_ProjectKB_Instance_90100]
-		[template_ProjectKB_Instance_90101]
-		[template_ProjectKB_Instance_90102]))
+		[template_ProjectKB_Instance_90107]
+		[template_ProjectKB_Instance_90108]
+		[template_ProjectKB_Instance_90109]
+		[template_ProjectKB_Instance_90110]))
 
 ([CLSES_TAB] of  Widget
 
@@ -1950,22 +1950,22 @@
 ([template_ProjectKB_Instance_90] of  Property_List
 )
 
-([template_ProjectKB_Instance_90099] of  String
+([template_ProjectKB_Instance_90107] of  String
 
 	(name ":PAL-CONSTRAINT")
 	(string_value "%3APAL-NAME"))
 
-([template_ProjectKB_Instance_90100] of  String
+([template_ProjectKB_Instance_90108] of  String
 
 	(name ":INSTANCE-ANNOTATION")
 	(string_value "%3AANNOTATION-TEXT"))
 
-([template_ProjectKB_Instance_90101] of  String
+([template_ProjectKB_Instance_90109] of  String
 
 	(name "form:transcription")
 	(string_value "specform%3ATRANSCRIPTION_STRING"))
 
-([template_ProjectKB_Instance_90102] of  String
+([template_ProjectKB_Instance_90110] of  String
 
 	(name ":META-CLASS")
 	(string_value "%3ANAME"))

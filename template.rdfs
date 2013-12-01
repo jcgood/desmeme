@@ -134,6 +134,7 @@
 <rdf:Property rdf:about="&gold;inLanguage"
 	 a:maxCardinality="1"
 	 rdfs:label="gold:inLanguage">
+	<rdfs:comment>A feature for specifying the language a given form is found in.</rdfs:comment>
 	<rdfs:domain rdf:resource="&form;form"/>
 	<rdfs:range rdf:resource="&rdfs;Literal"/>
 </rdf:Property>
