@@ -2,7 +2,6 @@
 <!DOCTYPE rdf:RDF [
 	 <!ENTITY template 'http://purl.org/linguistics/jcgood/template#'>
 	 <!ENTITY specgeneral 'http://purl.org/linguistics/jcgood/specgeneral#'>
-	 <!ENTITY owl 'http://www.w3.org/2002/07/owl#'>
 	 <!ENTITY form 'http://purl.org/linguistics/jcgood/form#'>
 	 <!ENTITY a 'http://protege.stanford.edu/system#'>
 	 <!ENTITY general 'http://purl.org/linguistics/jcgood/general#'>
@@ -21,7 +20,6 @@
 <rdf:RDF xmlns:template="&template;"
 	 xmlns:specgeneral="&specgeneral;"
 	 xmlns:form="&form;"
-	 xmlns:owl="&owl;"
 	 xmlns:a="&a;"
 	 xmlns:general="&general;"
 	 xmlns:rdfs="&rdfs;"
@@ -651,6 +649,13 @@
 	<rdfs:domain rdf:resource="&template;conditioning"/>
 	<rdfs:range rdf:resource="&rdfs;Literal"/>
 </rdf:Property>
+<rdf:Property rdf:about="&notes;EXTERNALREFERENCE"
+	 a:maxCardinality="1"
+	 rdfs:label="notes:EXTERNALREFERENCE">
+	<rdfs:comment>This predicate is used to state an equivalence between some text representation of a citation and a URI in an online bibliographic system.</rdfs:comment>
+	<rdfs:domain rdf:resource="&notes;source"/>
+	<rdfs:range rdf:resource="&rdfs;Literal"/>
+</rdf:Property>
 <rdf:Property rdf:about="&notes;HAS_SOURCE"
 	 a:maxCardinality="1"
 	 rdfs:label="notes:HAS_SOURCE">
@@ -775,8 +780,8 @@
 	<rdfs:range rdf:resource="&component;component"/>
 	<rdfs:domain rdf:resource="&template;arch"/>
 </rdf:Property>
-<rdf:Property rdf:about="&spectemplate;RESTKOMPONENT"
-	 rdfs:label="spectemplate:RESTKOMPONENT">
+<rdf:Property rdf:about="&spectemplate;RESTKOMPONENTE"
+	 rdfs:label="spectemplate:RESTKOMPONENTE">
 	<rdfs:comment>A feature which classifies a component as not belonging to any of the specially classified structural slots of a given template type.</rdfs:comment>
 	<rdfs:range rdf:resource="&component;component"/>
 	<rdfs:domain rdf:resource="&component;restkomponentenSet"/>
@@ -985,11 +990,4 @@
 	<rdfs:comment>A supertype for subtypes that  characterizes whether or not the linearization restrictions of a given template can be violated or not and what repair strategies may be activated in cases of potential violation.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
-<rdf:Property rdf:about="&owl;sameAs"
-	 a:maxCardinality="1"
-	 rdfs:label="owl:sameAs">
-	<rdfs:comment>This predicate is used to state an equivalence between some text representation of a citation and a URI in an online bibliographic system.</rdfs:comment>
-	<rdfs:domain rdf:resource="&notes;source"/>
-	<rdfs:range rdf:resource="&rdfs;Literal"/>
-</rdf:Property>
 </rdf:RDF>

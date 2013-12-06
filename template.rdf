@@ -2,7 +2,6 @@
 <!DOCTYPE rdf:RDF [
 	 <!ENTITY template 'http://purl.org/linguistics/jcgood/template#'>
 	 <!ENTITY specgeneral 'http://purl.org/linguistics/jcgood/specgeneral#'>
-	 <!ENTITY owl 'http://www.w3.org/2002/07/owl#'>
 	 <!ENTITY form 'http://purl.org/linguistics/jcgood/form#'>
 	 <!ENTITY general 'http://purl.org/linguistics/jcgood/general#'>
 	 <!ENTITY rdfs 'http://www.w3.org/2000/01/rdf-schema#'>
@@ -21,7 +20,6 @@
 <rdf:RDF xmlns:template="&template;"
 	 xmlns:specgeneral="&specgeneral;"
 	 xmlns:form="&form;"
-	 xmlns:owl="&owl;"
 	 xmlns:general="&general;"
 	 xmlns:rdfs="&rdfs;"
 	 xmlns:component="&component;"
@@ -161,7 +159,7 @@
 	 rdfs:label="AghemPostIAV-Stability"/>
 <component:restkomponentenSet rdf:about="&templates;AghemRestkomponenten"
 	 rdfs:label="AghemRestkomponenten">
-	<spectemplate:RESTKOMPONENT rdf:resource="&templates;AghemAux"/>
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;AghemAux"/>
 </component:restkomponentenSet>
 <component:component rdf:about="&templates;AghemSubject"
 	 rdfs:label="AghemSubject">
@@ -457,8 +455,8 @@
 	 specform:TRANSCRIPTION_STRING="-y-"
 	 rdfs:label="-y-"/>
 <notes:source rdf:about="&templates;BickelEtAl-2007"
-	 rdfs:label="BickelEtAl-2007"
-	 owl:sameAs="http://jstor.org/stable/4490337">
+	 notes:EXTERNALREFERENCE="http://jstor.org/stable/4490337"
+	 rdfs:label="BickelEtAl-2007">
 	<terms:bibliographicCitation xml:space='preserve'><![CDATA[Bickel, Balthasar, Goma Banjade, Martin Gaenszle, Elena Lieven, Netra Prasad Paudyal, Ichchha Purna Rai, Manoj Rai, Novel Kishore Rai & Sabine Stoll. 2007. Free prefix ordering in Chintang. Language 83. 43–73.]]></terms:bibliographicCitation>
 </notes:source>
 <form:canonicalLineate rdf:about="&templates;ChechenA-Form"
@@ -750,13 +748,13 @@
 <component:stable rdf:about="&templates;ChintangVerbRightProsWord-Stability"
 	 rdfs:label="ChintangVerbRightProsWord-Stability"/>
 <notes:source rdf:about="&templates;Creissels-2006"
-	 rdfs:label="Creissels-2006"
-	 owl:sameAs="http://elanguage.net/journals/bls/article/view/894/781">
+	 notes:EXTERNALREFERENCE="http://elanguage.net/journals/bls/article/view/894/781"
+	 rdfs:label="Creissels-2006">
 	<terms:bibliographicCitation xml:space='preserve'><![CDATA[Creissels, Denis. 2006. S-O-V-X constituent order and constituent order alternations in West African languages. In Rebecca T. Cover & Yuni Kim (eds.), Proceedings of the thirty-first annual meeting of the Berkeley Linguistics Society, 37–51. Berkeley: Berkeley Linguistics Society.]]></terms:bibliographicCitation>
 </notes:source>
 <notes:source rdf:about="&templates;Dahlstrom-1995"
-	 rdfs:label="Dahlstrom-1995"
-	 owl:sameAs="http://www.worldcat.org/oclc/32741831">
+	 notes:EXTERNALREFERENCE="http://www.worldcat.org/oclc/32741831"
+	 rdfs:label="Dahlstrom-1995">
 	<terms:bibliographicCitation>Dahlstrom, Amy. 1995. Topic, focus, and word order problems in Algonquian: The Belcourt lecture. Winnipeg: Voices of Rupert’s Land.</terms:bibliographicCitation>
 </notes:source>
 <component:coherent rdf:about="&templates;EnglisIO-Coherence"
@@ -954,7 +952,7 @@
 	 rdfs:label="EnglishVP-NullComponent-Stability"/>
 <component:restkomponentenSet rdf:about="&templates;EnglishVP-RK"
 	 rdfs:label="EnglishVP-RK">
-	<spectemplate:RESTKOMPONENT rdf:resource="&templates;EnglishIO"/>
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;EnglishIO"/>
 </component:restkomponentenSet>
 <template:order rdf:about="&templates;EnglishVP-Stricture"
 	 general:COUNT="3"
@@ -966,7 +964,7 @@
 	 rdfs:label="EnglishVP-Violability"/>
 <component:restkomponentenSet rdf:about="&templates;German-RK"
 	 rdfs:label="German-RK">
-	<spectemplate:RESTKOMPONENT rdf:resource="&templates;GermanVC"/>
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;GermanVC"/>
 </component:restkomponentenSet>
 <component:component rdf:about="&templates;GermanCF"
 	 rdfs:label="GermanCF">
@@ -1126,40 +1124,40 @@
 <component:stable rdf:about="&templates;GermanVF-Stability_dep"
 	 rdfs:label="GermanVF-Stability_dep"/>
 <notes:source rdf:about="&templates;Good-2005"
-	 rdfs:label="Good-2005"
-	 owl:sameAs="http://benjamins.com/catalog/dia.22.1.02goo">
+	 notes:EXTERNALREFERENCE="http://benjamins.com/catalog/dia.22.1.02goo"
+	 rdfs:label="Good-2005">
 	<terms:bibliographicCitation>Good, Jeff. 2005. Reconstructing morpheme order in Bantu: The case of causativization and applicativization. Diachronica 22. 3–57.</terms:bibliographicCitation>
 </notes:source>
 <notes:source rdf:about="&templates;Good-PersonalKnowledge"
 	 terms:bibliographicCitation="Good, Jeff. Personal knowledge."
 	 rdfs:label="Good-PersonalKnowledge"/>
 <notes:source rdf:about="&templates;Hyman-2011"
-	 rdfs:label="Hyman-2011"
-	 owl:sameAs="http://worldcat.org/oclc/696688374">
+	 notes:EXTERNALREFERENCE="http://worldcat.org/oclc/696688374"
+	 rdfs:label="Hyman-2011">
 	<terms:bibliographicCitation xml:space='preserve'><![CDATA[Hyman, Larry M. 2010a. Affixation by place of articulation: The case of Tiene. In Jan Wohlgemuth & Michael Cysouw (eds.), Rara and rarissima: Collecting and interpreting unusual characteristics of human languages, 145–184. Berlin: de Gruyter Mouton.]]></terms:bibliographicCitation>
 </notes:source>
 <notes:source rdf:about="&templates;HymanMchombo-2002"
-	 rdfs:label="HymanMchombo-2002"
-	 owl:sameAs="http://elanguage.net/journals/bls/article/view/2757">
+	 notes:EXTERNALREFERENCE="http://elanguage.net/journals/bls/article/view/2757"
+	 rdfs:label="HymanMchombo-2002">
 	<terms:bibliographicCitation xml:space='preserve'><![CDATA[Hyman, Larry M. & Sam A. Mchombo. 1992. Morphotactic constraints in the Chichewa verb stem. In Laura Buszard-Welcher, Lionel Wee & William Weigel (eds.), Proceedings of the eighteenth meeting of the Berkeley Linguistics Society, general session and parassession, 350–363. Berkeley: Berkeley Linguistics Society.]]></terms:bibliographicCitation>
 </notes:source>
 <notes:source rdf:about="&templates;Inkelas-1993"
-	 rdfs:label="Inkelas-1993"
-	 owl:sameAs="http://jstor.org/stable/4047660">
+	 notes:EXTERNALREFERENCE="http://jstor.org/stable/4047660"
+	 rdfs:label="Inkelas-1993">
 	<terms:bibliographicCitation>Inkelas, Sharon. 1993. Nimboran position class morphology. Natural Language and Linguistic Theory 11. 559–624.</terms:bibliographicCitation>
 </notes:source>
 <notes:source rdf:about="&templates;InkelasOrgun-1995"
-	 rdfs:label="InkelasOrgun-1995"
-	 owl:sameAs="http://jstor.org/stable/4615465">
+	 notes:EXTERNALREFERENCE="http://jstor.org/stable/4615465"
+	 rdfs:label="InkelasOrgun-1995">
 	<terms:bibliographicCitation xml:space='preserve'><![CDATA[Inkelas, Sharon & Cemil Orhan Orgun. 1995. Level ordering and economy in the lexical phonology of Turkish. Language 71. 763–793.]]></terms:bibliographicCitation>
 </notes:source>
 <notes:source rdf:about="&templates;Kathol-2000"
 	 terms:bibliographicCitation="Kathol, Andreas. 2000. Linear syntax. Oxford: OUP."
-	 rdfs:label="Kathol-2000"
-	 owl:sameAs="http://www.worldcat.org/oclc/42622064"/>
+	 notes:EXTERNALREFERENCE="http://www.worldcat.org/oclc/42622064"
+	 rdfs:label="Kathol-2000"/>
 <component:restkomponentenSet rdf:about="&templates;Mande-RK"
 	 rdfs:label="Mande-RK">
-	<spectemplate:RESTKOMPONENT rdf:resource="&templates;MandeTMA"/>
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;MandeTMA"/>
 </component:restkomponentenSet>
 <template:desmeme rdf:about="&templates;MandeClause"
 	 gold:inLanguage="http://lexvo.org/id/iso639-5/dmn"
@@ -1320,7 +1318,7 @@
 </template:arch>
 <component:restkomponentenSet rdf:about="&templates;MeskwakiClause-RK"
 	 rdfs:label="MeskwakiClause-RK">
-	<spectemplate:RESTKOMPONENT rdf:resource="&templates;MeskwakiClauseFocus"/>
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;MeskwakiClauseFocus"/>
 </component:restkomponentenSet>
 <template:order rdf:about="&templates;MeskwakiClause-Stricture"
 	 general:COUNT="5"
@@ -1518,7 +1516,7 @@
 </template:arch>
 <component:restkomponentenSet rdf:about="&templates;NdebeleCA-Restkomponenten"
 	 rdfs:label="NdebeleCA-Restkomponenten">
-	<spectemplate:RESTKOMPONENT rdf:resource="&templates;NdebeleVCExtension"/>
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;NdebeleVCExtension"/>
 </component:restkomponentenSet>
 <template:order rdf:about="&templates;NdebeleCA-Stricture"
 	 general:COUNT="4"
@@ -1609,11 +1607,11 @@
 </general:constructionalConditioning>
 <component:restkomponentenSet rdf:about="&templates;NimboranVerb-RK"
 	 rdfs:label="NimboranVerb-RK">
-	<spectemplate:RESTKOMPONENT rdf:resource="&templates;NimboranVerbPosition3"/>
-	<spectemplate:RESTKOMPONENT rdf:resource="&templates;NimboranVerbPosition4"/>
-	<spectemplate:RESTKOMPONENT rdf:resource="&templates;NimboranVerbPosition5"/>
-	<spectemplate:RESTKOMPONENT rdf:resource="&templates;NimboranVerbPosition6"/>
-	<spectemplate:RESTKOMPONENT rdf:resource="&templates;NimboranVerbPosition7"/>
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;NimboranVerbPosition3"/>
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;NimboranVerbPosition4"/>
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;NimboranVerbPosition5"/>
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;NimboranVerbPosition6"/>
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;NimboranVerbPosition7"/>
 </component:restkomponentenSet>
 <template:span rdf:about="&templates;NimboranVerb-Span"
 	 rdfs:label="NimboranVerb-Span">
@@ -1960,8 +1958,8 @@
 <component:stable rdf:about="&templates;SerboCroatianTopicalizationRightSupport-Stability"
 	 rdfs:label="SerboCroatianTopicalizationRightSupport-Stability"/>
 <notes:source rdf:about="&templates;Sibanda-2004"
-	 rdfs:label="Sibanda-2004"
-	 owl:sameAs="http://www.worldcat.org/oclc/212765768">
+	 notes:EXTERNALREFERENCE="http://www.worldcat.org/oclc/212765768"
+	 rdfs:label="Sibanda-2004">
 	<terms:bibliographicCitation>Sibanda, Galen. 2004. Verbal phonology and morphology of Ndebele. Berkeley: UC Berkeley Ph.D. Dissertation.</terms:bibliographicCitation>
 </notes:source>
 <general:prosodicConditioning rdf:about="&templates;TieneVerb-Conditioning"
@@ -1984,7 +1982,7 @@
 </template:span>
 <component:restkomponentenSet rdf:about="&templates;TieneVerb-RK"
 	 rdfs:label="TieneVerb-RK">
-	<spectemplate:RESTKOMPONENT rdf:resource="&templates;TieneVerbC2"/>
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;TieneVerbC2"/>
 </component:restkomponentenSet>
 <template:order rdf:about="&templates;TieneVerb-Stricture"
 	 general:COUNT="3"
@@ -2259,13 +2257,13 @@
 	<template:REPARABILITY rdf:resource="&template;morphosyntacticInsertion"/>
 </template:potentiallyViolable>
 <notes:source rdf:about="&templates;Watters-1979"
-	 rdfs:label="Watters-1979"
-	 owl:sameAs="http://www.sil.org/resources/archives/1883">
+	 notes:EXTERNALREFERENCE="http://www.sil.org/resources/archives/1883"
+	 rdfs:label="Watters-1979">
 	<terms:bibliographicCitation>Watters, John R. 1979. Focus in Aghem: A study of its formal correlates and typology. In Larry M. Hyman (ed.), Aghem grammatical structure: With special reference to noun classes, tense-aspect and focus marking Southern California Occasional Papers in Linguistics 7, 137–197. Los Angeles: University of Southern California Department of Linguistics.</terms:bibliographicCitation>
 </notes:source>
 <notes:source rdf:about="&templates;ZecInkelas-1990"
-	 rdfs:label="ZecInkelas-1990"
-	 owl:sameAs="http://www.worldcat.org/oclc/20753938">
+	 notes:EXTERNALREFERENCE="http://www.worldcat.org/oclc/20753938"
+	 rdfs:label="ZecInkelas-1990">
 	<terms:bibliographicCitation xml:space='preserve'><![CDATA[Zec, Draga & Sharon Inkelas. 1990. Prosodically constrained syntax. In Sharon Inkelas & Draga Zec (eds.), The phonology-syntax connection, 365–378. Stanford: CSLI.]]></terms:bibliographicCitation>
 </notes:source>
 <general:left rdf:about="&templates;template_Instance_3"

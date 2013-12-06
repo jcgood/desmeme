@@ -45,7 +45,7 @@ class avm ( ):
 		# Avoid duplication due to re-entrancy except for restkomponenten and filledcomponents (code a bit hackish and non-general here)
 		hasFeature = False
 
-		if feat == 'RESTKOMPONENT':
+		if feat == 'RESTKOMPONENTE':
 				self.featvals.append(featval)
 				
 		elif feat == 'FILLED_COMPONENT':
@@ -174,7 +174,7 @@ class avm ( ):
 					  'partiallyFilled'  	: ["FILLER_PLACEMENT", "FORM", "COHERENCE" ],
 					  'unstable'  			: ["SUPPORT", "SUPPORT_POSITION" ],
 					  'lexicoconstructionalConditioning': ["FILLER_POSITION", "FILLED_COMPONENT", "FILLED_COMPONENTS" ],
-					  'restkomponentenSet'	: ["RESTKOMPONENT"], # Need this list of one to allow components in side RK to be procssed; unfortunate hack
+					  'restkomponentenSet'	: ["RESTKOMPONENTE"], # Need this list of one to allow components in side RK to be procssed; unfortunate hack
 					  'filledComponentSet'	: ["FILLED_COMPONENTS"], # Need this list of one to allow components in side set to be procssed; unfortunate hack
 					  'potentiallyViolable'	: ["EXCEPTIONALITY", "REPARABILITY"], 
 					  'unstable'			: ["ASSOCIATE_POSITION", "ASSOCIATE"],
@@ -229,7 +229,7 @@ class avm ( ):
 
 		# A list for prioritizing which features get the full AVM and (implicitly) which just get tags.
 		# All possible features for components need to be listed here for the function to work.
-		prioritylist = [ "KEYSTONE", "LEFT_SUPPORT", "RIGHT_SUPPORT", "LEFT_VOUSSOIR", "RIGHT_VOUSSOIR", "RESTKOMPONENT", "FILLED_COMPONENT", "FILLED_COMPONENTS", "SUPPORT", "ASSOCIATE"]
+		prioritylist = [ "KEYSTONE", "LEFT_SUPPORT", "RIGHT_SUPPORT", "LEFT_VOUSSOIR", "RIGHT_VOUSSOIR", "RESTKOMPONENTE", "FILLED_COMPONENT", "FILLED_COMPONENTS", "SUPPORT", "ASSOCIATE"]
 		
 		if components == None: components = {}
 
@@ -245,7 +245,7 @@ class avm ( ):
 				priorityset = False
 				for foundationfeature in prioritylist:
 				
-					if foundationfeature in attributes and priorityset == False and foundationfeature is "RESTKOMPONENT":
+					if foundationfeature in attributes and priorityset == False and foundationfeature is "RESTKOMPONENTE":
 						self.RKre = component
 						self.makepriorityfeature(foundationfeature, self, component)
 						priorityset = True
@@ -312,7 +312,7 @@ class avm ( ):
 			#print "ci", componentID, feat
 
 			# Hack to handle re-entrancy in RKset for Nimboran; breaks if reentrancy more than one
-			if feat == priorityfeature and feat == "RESTKOMPONENT" and RKre == val.name:
+			if feat == priorityfeature and feat == "RESTKOMPONENTE" and RKre == val.name:
 				
 				id = val.name
 				val.reentered = True
@@ -323,7 +323,7 @@ class avm ( ):
 				topavm.tags[id] = tagcount
 
 			# Only allow one re-entered RK per AVM--hack! not good assumption
-			elif feat == priorityfeature and feat != "RESTKOMPONENT":
+			elif feat == priorityfeature and feat != "RESTKOMPONENTE":
 		
 				id = val.name
 				val.reentered = True
@@ -430,7 +430,7 @@ class avm ( ):
 			id = id.replace("_", " ")
 			#print >> outfile, "\\textbf{"+id+"}\n"
 			#print >> outfile, "\\begin{figure}[ht]"
-			print >> outfile, "{\\singlespacing\\avmshrink"
+			print >> outfile, "{\\singlespacing"
 			print >> outfile, "\\begin{center}"
 			print >> outfile, "\\begin{avm}"
 
