@@ -423,6 +423,14 @@ class avm ( ):
 		primary = self.primary
 		featvals = self.featvals
 		
+		# Don't recall logic for these, factoring out for now
+		heightSpacing = "\\phantom{\\@{\\text{"+str(0)+"}}}"
+		#heightSpacing = ""
+		
+		#otherHeightSpacing = "\\raisebox{-.5em}{\\rule{0pt}{1.5em}}"
+		otherHeightSpacing = ""
+
+
 		# Check for re-entrancy conditions
 		if embedding == 0:
 			
@@ -430,16 +438,17 @@ class avm ( ):
 			id = id.replace("_", " ")
 			#print >> outfile, "\\textbf{"+id+"}\n"
 			#print >> outfile, "\\begin{figure}[ht]"
-			print >> outfile, "{\\singlespacing"
+			print >> outfile, "{\\setstretch{.5}\\def\\avmjvskip{.2em}"
 			print >> outfile, "\\begin{center}"
 			print >> outfile, "\\begin{avm}"
 
 		# If re-entered and not primary, just print a tag			
 		if self.reentered and not(self.primary):
 			tag = topavm.tags[id]
-			print >> outfile, "\t"*embedding+"\\phantom{\\@{\\text{"+str(0)+"}}}"+"\\@{\\text{"+str(tag)+"}}"+"\\raisebox{-.5em}{\\rule{0pt}{1.5em}}"
+			print >> outfile, "\t"*embedding+heightSpacing+"\\@{\\text{"+str(tag)+"}}"+otherHeightSpacing
 
 		else:
+
 			if self.primary:
 				tag = self.tag
 				print >> outfile, "\t"*embedding+"\\@{\\text{"+str(tag)+"}}", "\\[\t\\emph{"+type+"} \\cr"
@@ -461,13 +470,13 @@ class avm ( ):
 						float(val)
 						
 						if val == '100':
-							print >> outfile, "\t"*embedding, "\\textsc{"+prettyfeat+"}\t&\t", "\\phantom{\\@{\\text{"+str(0)+"}}}"+"$\infty$", "\\raisebox{-.5em}{\\rule{0pt}{1.5em}}\\cr"
+							print >> outfile, "\t"*embedding, "\\textsc{"+prettyfeat+"}\t&\t", heightSpacing+"$\infty$", otherHeightSpacing+"\\cr"
 						
 						else:
-							print >> outfile, "\t"*embedding, "\\textsc{"+prettyfeat+"}\t&\t", "\\phantom{\\@{\\text{"+str(0)+"}}}"+val, "\\raisebox{-.5em}{\\rule{0pt}{1.5em}}\\cr"
+							print >> outfile, "\t"*embedding, "\\textsc{"+prettyfeat+"}\t&\t", heightSpacing+val, otherHeightSpacing+"\\cr"
 					
 					except:
-						print >> outfile, "\t"*embedding, "\\textsc{"+prettyfeat+"}\t&\t", "\\phantom{\\@{\\text{"+str(0)+"}}}"+"\\emph{"+val+"}", "\\raisebox{-.5em}{\\rule{0pt}{1.5em}}\\cr"
+						print >> outfile, "\t"*embedding, "\\textsc{"+prettyfeat+"}\t&\t", "\\phantom{\\@{\\text{"+str(0)+"}}}"+"\\emph{"+val+"}", otherHeightSpacing+"\\cr"
 
 				else:					
 					print >> outfile, "\t"*embedding, "\\textsc{"+prettyfeat+"}"+"\t&\t",
@@ -480,7 +489,7 @@ class avm ( ):
 
 			if embedding == 0:
 				print >> outfile, "\\end{avm}"
-				print >> outfile, "\\end{center}}"
+				print >> outfile, "\\end{center}}\\vspace{-.75em}"
 				#print >> outfile, "\\caption{Attribute-value representation of", id, "template", "\\label{"+latexLabel+"}}"
 				#print >> outfile, "\\end{figure}"
 
