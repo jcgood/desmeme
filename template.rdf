@@ -242,6 +242,8 @@
 </component:component>
 <component:null rdf:about="&templates;BantuBeforeVerbStemNullComponent-Filledness"
 	 rdfs:label="BantuBeforeVerbStemNullComponent-Filledness"/>
+<component:component rdf:about="&templates;BantuC"
+	 rdfs:label="BantuC"/>
 <template:desmeme rdf:about="&templates;BantuCA"
 	 gold:inLanguage="http://lexvo.org/id/iso639-5/bnt"
 	 rdfs:label="BantuCA">
@@ -308,13 +310,18 @@
 <template:arch rdf:about="&templates;BantuCT-Foundation"
 	 rdfs:label="BantuCT-Foundation">
 	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;BantuBeforeVerbStemBantuNullComponent"/>
+	<spectemplate:RESTKOMPONENTEN rdf:resource="&templates;BantuCT-Restkomponenten"/>
 	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;BantuCausativeDependent"/>
 	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;BantuTransitive"/>
 	<spectemplate:KEYSTONE rdf:resource="&templates;BantuVerbStem"/>
 	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;BantuVerbStem"/>
 </template:arch>
+<component:restkomponentenSet rdf:about="&templates;BantuCT-Restkomponenten"
+	 rdfs:label="BantuCT-Restkomponenten">
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;BantuVCExtension"/>
+</component:restkomponentenSet>
 <template:order rdf:about="&templates;BantuCT-Stricture"
-	 general:COUNT="3"
+	 general:COUNT="4"
 	 rdfs:label="BantuCT-Stricture">
 	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
 	<general:RELATIONS rdf:resource="&general;simple"/>
