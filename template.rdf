@@ -480,13 +480,10 @@
 	<speccomponent:ELASTICITY rdf:resource="&templates;ChechenPreverbalA-Preverbal-Elasticity"/>
 	<speccomponent:FILLEDNESS rdf:resource="&templates;ChechenPreverbalA-Preverbal-Filledness"/>
 </component:component>
-<component:incoherent rdf:about="&templates;ChechenPreverbal-Coherence"
+<component:coherent rdf:about="&templates;ChechenPreverbal-Coherence"
 	 rdfs:label="ChechenPreverbal-Coherence">
-	<function:CLASSES rdf:resource="&gold;DirectObject"/>
-	<function:CLASSES rdf:resource="&gold;Preverb"/>
-	<function:CLASSES rdf:resource="&localcategory;goal"/>
-	<function:CLASSES rdf:resource="&localcategory;infinitive"/>
-</component:incoherent>
+	<function:CLASS rdf:resource="&general;prosodicWord"/>
+</component:coherent>
 <component:stable rdf:about="&templates;ChechenPreverbal-Stability"
 	 rdfs:label="ChechenPreverbal-Stability"/>
 <template:desmeme rdf:about="&templates;ChechenPreverbalA"
@@ -541,7 +538,7 @@
 </component:component>
 <component:coherent rdf:about="&templates;ChechenVerb-Coherence"
 	 rdfs:label="ChechenVerb-Coherence">
-	<function:CLASS rdf:resource="&gold;Verbal"/>
+	<function:CLASS rdf:resource="&general;prosodicWord"/>
 </component:coherent>
 <component:inelastic rdf:about="&templates;ChechenVerb-Elasticity"
 	 general:COUNT="1"
@@ -1846,13 +1843,10 @@
 	<speccomponent:FILLEDNESS rdf:resource="&templates;SerboCroatianJeLeftSupport-Filledness"/>
 	<speccomponent:STABILITY rdf:resource="&templates;SerboCroatianJeLeftSupport-Stability"/>
 </component:component>
-<component:incoherent rdf:about="&templates;SerboCroatianJeLeftSupport-Coherence"
+<component:coherent rdf:about="&templates;SerboCroatianJeLeftSupport-Coherence"
 	 rdfs:label="SerboCroatianJeLeftSupport-Coherence">
-	<function:CLASSES rdf:resource="&gold;Object"/>
-	<function:CLASSES rdf:resource="&gold;Subject"/>
-	<function:CLASSES rdf:resource="&gold;Verbal"/>
-	<function:CLASSES rdf:resource="&localcategory;adpositionalPhrase"/>
-</component:incoherent>
+	<function:CLASS rdf:resource="&general;prosodicWord"/>
+</component:coherent>
 <component:inelastic rdf:about="&templates;SerboCroatianJeLeftSupport-Elasticity"
 	 general:COUNT="1"
 	 rdfs:label="SerboCroatianJeLeftSupport-Elasticity"/>
@@ -1871,13 +1865,10 @@
 	<speccomponent:FILLEDNESS rdf:resource="&templates;SerboCroatianJeRightSupport-Filledness"/>
 	<speccomponent:STABILITY rdf:resource="&templates;SerboCroatianJeRightSupport-Stability"/>
 </component:component>
-<component:incoherent rdf:about="&templates;SerboCroatianJeRightSupport-Coherence"
+<component:coherent rdf:about="&templates;SerboCroatianJeRightSupport-Coherence"
 	 rdfs:label="SerboCroatianJeRightSupport-Coherence">
-	<function:CLASSES rdf:resource="&gold;Object"/>
-	<function:CLASSES rdf:resource="&gold;Subject"/>
-	<function:CLASSES rdf:resource="&gold;Verbal"/>
-	<function:CLASSES rdf:resource="&localcategory;adpositionalPhrase"/>
-</component:incoherent>
+	<function:CLASS rdf:resource="&general;prosodicWord"/>
+</component:coherent>
 <component:elastic rdf:about="&templates;SerboCroatianJeRightSupport-Elasticity"
 	 general:MAXIMUM="100"
 	 general:MINIMUM="0"
