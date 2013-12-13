@@ -40,9 +40,15 @@ sub calculate {
             my $normv1 = $v1;
             my $normv2 = $v2;
             
+            
             $normv1 =~ s/(\w+?)(\d*)(-\d*)?$/$1/;
             $normv2 =~ s/(\w+?)(\d*)(-\d*)?$/$1/;
             
+            # Try to handle "-a1" style suffixes, too--not tested!
+            #$normv1 =~ s/(\w+?)(-\w\d*)(-\d*)?$/$1/;
+            #$normv2 =~ s/(\w+?)(-\w\d*)(-\d*)?$/$1/;
+
+
             #print "Normed: $normv1, $normv2\n";
             
             if ($normv1 eq $normv2) {

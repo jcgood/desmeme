@@ -5,6 +5,9 @@ use Graph;
 use Moose;
 use Math::Round;
 
+#I've been adding the template-specific suffixes by hand
+#And cutting and pasting the templates in, too
+
 my $AghemClause = Graph->new(multiedged => 1);
 $AghemClause->set_graph_attribute("name", "AghemClause");
 $AghemClause->add_edge_by_id("desmeme", "order", "STRICTURE");

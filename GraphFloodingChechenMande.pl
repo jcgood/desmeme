@@ -4,6 +4,7 @@ use lib "$FindBin::Bin/.";
 use GraphJG::SimilarityJG;
 use Math::Round;
 
+
 my $MandeClause = Graph->new(multiedged => 1);
 $MandeClause->set_graph_attribute("name", "MandeClause");
 $MandeClause->add_edge_by_id("desmeme", "order", "STRICTURE");
@@ -52,35 +53,35 @@ $MandeClause->add_edge_by_id("desmeme", "notViolable", "VIOLABILITY");
 
 my $ChechenPreverbalA = Graph->new(multiedged => 1);
 $ChechenPreverbalA->set_graph_attribute("name", "ChechenPreverbalA");
+$ChechenPreverbalA->add_edge_by_id("desmeme", "span", "FOUNDATION");
+$ChechenPreverbalA->add_edge_by_id("span", "component1", "RIGHT_SUPPORT");
+$ChechenPreverbalA->add_edge_by_id("component1", "open1", "FILLEDNESS");
+$ChechenPreverbalA->add_edge_by_id("open1", "coherent1", "COHERENCE");
+$ChechenPreverbalA->add_edge_by_id("component1", "stable1", "STABILITY");
+$ChechenPreverbalA->add_edge_by_id("component1", "inelastic1", "ELASTICITY");
+$ChechenPreverbalA->add_edge_by_id("inelastic1", "COUNT1-1", "COUNT");
+$ChechenPreverbalA->add_edge_by_id("span", "component2", "LEFT_SUPPORT");
+$ChechenPreverbalA->add_edge_by_id("component2", "stable2", "STABILITY");
+$ChechenPreverbalA->add_edge_by_id("component2", "partiallyFilled1", "FILLEDNESS");
+$ChechenPreverbalA->add_edge_by_id("partiallyFilled1", "canonicalLineate1", "FORM");
+$ChechenPreverbalA->add_edge_by_id("partiallyFilled1", "coherent2", "COHERENCE");
+$ChechenPreverbalA->add_edge_by_id("partiallyFilled1", "final1", "FILLER_PLACEMENT");
+$ChechenPreverbalA->add_edge_by_id("component2", "inelastic2", "ELASTICITY");
+$ChechenPreverbalA->add_edge_by_id("inelastic2", "COUNT1-2", "COUNT");
+$ChechenPreverbalA->add_edge_by_id("desmeme", "lexicoconstructionalConditioning", "CONDITIONING");
+$ChechenPreverbalA->add_edge_by_id("lexicoconstructionalConditioning", "filledComponentSet", "FILLED_COMPONENTS");
+$ChechenPreverbalA->add_edge_by_id("filledComponentSet", "component2", "FILLED_COMPONENT");
+$ChechenPreverbalA->add_edge_by_id("lexicoconstructionalConditioning", "medial", "FILLER_POSITION");
 $ChechenPreverbalA->add_edge_by_id("desmeme", "length", "STRICTURE");
 $ChechenPreverbalA->add_edge_by_id("length", "prosodicWord", "CONSTITUENT");
 $ChechenPreverbalA->add_edge_by_id("length", "COUNT2-1", "COUNT");
-$ChechenPreverbalA->add_edge_by_id("desmeme", "span", "FOUNDATION");
-$ChechenPreverbalA->add_edge_by_id("span", "component1", "LEFT_SUPPORT");
-$ChechenPreverbalA->add_edge_by_id("component1", "inelastic1", "ELASTICITY");
-$ChechenPreverbalA->add_edge_by_id("inelastic1", "COUNT1-1", "COUNT");
-$ChechenPreverbalA->add_edge_by_id("component1", "partiallyFilled1", "FILLEDNESS");
-$ChechenPreverbalA->add_edge_by_id("partiallyFilled1", "final1", "FILLER_PLACEMENT");
-$ChechenPreverbalA->add_edge_by_id("partiallyFilled1", "incoherent1", "COHERENCE");
-$ChechenPreverbalA->add_edge_by_id("partiallyFilled1", "canonicalLineate1", "FORM");
-$ChechenPreverbalA->add_edge_by_id("component1", "stable1", "STABILITY");
-$ChechenPreverbalA->add_edge_by_id("span", "component2", "RIGHT_SUPPORT");
-$ChechenPreverbalA->add_edge_by_id("component2", "inelastic2", "ELASTICITY");
-$ChechenPreverbalA->add_edge_by_id("inelastic2", "COUNT1-2", "COUNT");
-$ChechenPreverbalA->add_edge_by_id("component2", "open1", "FILLEDNESS");
-$ChechenPreverbalA->add_edge_by_id("open1", "coherent1", "COHERENCE");
-$ChechenPreverbalA->add_edge_by_id("component2", "stable2", "STABILITY");
-$ChechenPreverbalA->add_edge_by_id("desmeme", "lexicoconstructionalConditioning", "CONDITIONING");
-$ChechenPreverbalA->add_edge_by_id("lexicoconstructionalConditioning", "filledComponentSet", "FILLED_COMPONENTS");
-$ChechenPreverbalA->add_edge_by_id("filledComponentSet", "component1", "FILLED_COMPONENT");
-$ChechenPreverbalA->add_edge_by_id("lexicoconstructionalConditioning", "medial", "FILLER_POSITION");
 $ChechenPreverbalA->add_edge_by_id("desmeme", "potentiallyViolable", "VIOLABILITY");
-$ChechenPreverbalA->add_edge_by_id("potentiallyViolable", "morphosyntacticInsertion", "REPARABILITY");
 $ChechenPreverbalA->add_edge_by_id("potentiallyViolable", "noKnownExceptions", "EXCEPTIONALITY");
+$ChechenPreverbalA->add_edge_by_id("potentiallyViolable", "morphosyntacticInsertion", "REPARABILITY");
 
 
 # Initialize simList
-my $initialS = new GraphJG::SimilarityJG(graph => [$MandeClause,$ChechenPreverbalA]);
+my $initialS = new GraphJG::SimilarityJG(graph => [$ChechenPreverbalA,$MandeClause]);
 my $initialMethod = $initialS->use('SimilarityFlooding');
 $initialMethod->setNumOfIteration(1);
 $initialMethod->calculate();
@@ -90,7 +91,7 @@ my %simList = $initialMethod->getAllSimilarities;
 my %sims;
 for (my $count = 0; $count <=20; $count++) {
 
-	my $s = new GraphJG::SimilarityJG(graph => [$MandeClause,$ChechenPreverbalA]);
+	my $s = new GraphJG::SimilarityJG(graph => [$ChechenPreverbalA,$MandeClause]);
 	my $method = $s->use('SimilarityFlooding');
 	$method->setNumOfIteration($count);
 	$method->calculate();
@@ -127,8 +128,8 @@ for (my $count = 0; $count <=20; $count++) {
 	#print "Count: $count\n";	
 	#print "$eucDist\n";
 
-	#$method->showNonZeroSimilarities($MandeClause,$ChechenPreverbalA);
-	my %newSims = $method->returnAllSimilarities($MandeClause,$ChechenPreverbalA);
+	#$method->showNonZeroSimilarities($ChechenPreverbalA,$MandeClause);
+	my %newSims = $method->returnAllSimilarities($ChechenPreverbalA,$MandeClause);
 	for my $node (keys(%newSims)) {
 	
 		if (exists($sims{$node})) {
@@ -146,7 +147,7 @@ for (my $count = 0; $count <=20; $count++) {
 	
 		}
 	
-	if ($eucDist != 0 and $eucDist < .0001) {
+	if ($eucDist != 0 and $eucDist < .05) {
 		last;	
 		}
 	
@@ -154,12 +155,16 @@ for (my $count = 0; $count <=20; $count++) {
 	
 	}
 
+# We collected the whole list, but we'll only report the last iteration for now, hence the [-1]
 print "\\begin{tabular}{>{\\em}lrrrrrrrrrrrrrrrrrrrr}\n";
 print "\\Hline\n";
-print "{\\sc node\$\\downarrow\$\\\phantom{ent1/com}iter\$\\rightarrow\$}\t\&\t{\\sc  0}\&\t{\\sc  1}\&\t{\\sc  2}\&\t{\\sc  3}\&\t{\\sc  4} \\\\\n";
+#print "{\\sc node\$\\downarrow\$\\\phantom{ent1/com}iter\$\\rightarrow\$}\t\&\t{\\sc  0}\&\t{\\sc  1}\&\t{\\sc  2}\&\t{\\sc  3}\&\t{\\sc  4} \\\\\n";
+print "{\\sc chechen/mande}\t\&\t{\\sc  similarity}\\\\\n";
 print "\\Hline\n";
-for my $sim (sort(keys(%sims))) {
-	print "$sim \t\&\t".join("\t&\t", @{$sims{$sim}})."\t\\\\\n" if @{$sims{$sim}}[-1] > .1;
+my @orderedSims = sort { @{$sims{$b}}[-1] <=>  @{$sims{$a}}[-1] } keys(%sims);
+for my $sim (@orderedSims) {
+	#print "$sim \t\&\t".join("\t&\t", @{$sims{$sim}})."\t\\\\\n" if @{$sims{$sim}}[-1] > .1;
+	print "$sim \t\&\t".@{$sims{$sim}}[-1]."\t\\\\\n" if @{$sims{$sim}}[-1] > .1;
 	}
 print "\\Hline\n";
 print "\\end{tabular}\n";

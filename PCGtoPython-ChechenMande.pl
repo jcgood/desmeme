@@ -5,6 +5,9 @@ use Graph;
 use Moose;
 use Math::Round;
 
+#I've been adding the template-specific suffixes by hand
+#And cutting and pasting the templates in, too
+
 my $MandeClause = Graph->new(multiedged => 1);
 $MandeClause->set_graph_attribute("name", "MandeClause");
 $MandeClause->add_edge_by_id("desmeme", "order", "STRICTURE");
@@ -53,31 +56,31 @@ $MandeClause->add_edge_by_id("desmeme", "notViolable", "VIOLABILITY");
 
 my $ChechenPreverbalA = Graph->new(multiedged => 1);
 $ChechenPreverbalA->set_graph_attribute("name", "ChechenPreverbalA");
-$ChechenPreverbalA->add_edge_by_id("desmeme", "length", "STRICTURE");
-$ChechenPreverbalA->add_edge_by_id("length", "prosodicWord", "CONSTITUENT");
-$ChechenPreverbalA->add_edge_by_id("length", "count2-c1", "COUNT");
 $ChechenPreverbalA->add_edge_by_id("desmeme", "span", "FOUNDATION");
-$ChechenPreverbalA->add_edge_by_id("span", "component-c1", "LEFT_SUPPORT");
-$ChechenPreverbalA->add_edge_by_id("component-c1", "inelastic-c1", "ELASTICITY");
-$ChechenPreverbalA->add_edge_by_id("inelastic-c1", "count1-c1", "COUNT");
-$ChechenPreverbalA->add_edge_by_id("component-c1", "partiallyFilled-c1", "FILLEDNESS");
-$ChechenPreverbalA->add_edge_by_id("partiallyFilled-c1", "final-c1", "FILLER_PLACEMENT");
-$ChechenPreverbalA->add_edge_by_id("partiallyFilled-c1", "incoherent-c1", "COHERENCE");
-$ChechenPreverbalA->add_edge_by_id("partiallyFilled-c1", "canonicalLineate-c1", "FORM");
-$ChechenPreverbalA->add_edge_by_id("component-c1", "stable-c1", "STABILITY");
-$ChechenPreverbalA->add_edge_by_id("span", "component-c2", "RIGHT_SUPPORT");
-$ChechenPreverbalA->add_edge_by_id("component-c2", "inelastic-c2", "ELASTICITY");
-$ChechenPreverbalA->add_edge_by_id("inelastic-c2", "count1-c2", "COUNT");
-$ChechenPreverbalA->add_edge_by_id("component-c2", "open-c1", "FILLEDNESS");
+$ChechenPreverbalA->add_edge_by_id("span", "component-c1", "RIGHT_SUPPORT");
+$ChechenPreverbalA->add_edge_by_id("component-c1", "open-c1", "FILLEDNESS");
 $ChechenPreverbalA->add_edge_by_id("open-c1", "coherent-c1", "COHERENCE");
+$ChechenPreverbalA->add_edge_by_id("component-c1", "stable-c1", "STABILITY");
+$ChechenPreverbalA->add_edge_by_id("component-c1", "inelastic-c1", "ELASTICITY");
+$ChechenPreverbalA->add_edge_by_id("inelastic-c1", "count1-c1", "count");
+$ChechenPreverbalA->add_edge_by_id("span", "component-c2", "LEFT_SUPPORT");
 $ChechenPreverbalA->add_edge_by_id("component-c2", "stable-c2", "STABILITY");
+$ChechenPreverbalA->add_edge_by_id("component-c2", "partiallyFilled-c1", "FILLEDNESS");
+$ChechenPreverbalA->add_edge_by_id("partiallyFilled-c1", "canonicalLineate-c1", "FORM");
+$ChechenPreverbalA->add_edge_by_id("partiallyFilled-c1", "coherent-c2", "COHERENCE");
+$ChechenPreverbalA->add_edge_by_id("partiallyFilled-c1", "final-c1", "FILLER_PLACEMENT");
+$ChechenPreverbalA->add_edge_by_id("component-c2", "inelastic-c2", "ELASTICITY");
+$ChechenPreverbalA->add_edge_by_id("inelastic-c2", "count1-c2", "count");
 $ChechenPreverbalA->add_edge_by_id("desmeme", "lexicoconstructionalConditioning", "CONDITIONING");
 $ChechenPreverbalA->add_edge_by_id("lexicoconstructionalConditioning", "filledComponentSet", "FILLED_COMPONENTS");
-$ChechenPreverbalA->add_edge_by_id("filledComponentSet", "component-c1", "FILLED_COMPONENT");
+$ChechenPreverbalA->add_edge_by_id("filledComponentSet", "component-c2", "FILLED_COMPONENT");
 $ChechenPreverbalA->add_edge_by_id("lexicoconstructionalConditioning", "medial", "FILLER_POSITION");
+$ChechenPreverbalA->add_edge_by_id("desmeme", "length", "STRICTURE");
+$ChechenPreverbalA->add_edge_by_id("length", "prosodicWord", "CONSTITUENT");
+$ChechenPreverbalA->add_edge_by_id("length", "count2-c1", "count");
 $ChechenPreverbalA->add_edge_by_id("desmeme", "potentiallyViolable", "VIOLABILITY");
-$ChechenPreverbalA->add_edge_by_id("potentiallyViolable", "morphosyntacticInsertion", "REPARABILITY");
 $ChechenPreverbalA->add_edge_by_id("potentiallyViolable", "noKnownExceptions", "EXCEPTIONALITY");
+$ChechenPreverbalA->add_edge_by_id("potentiallyViolable", "morphosyntacticInsertion", "REPARABILITY");
 
 
 

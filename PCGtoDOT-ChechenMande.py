@@ -9,404 +9,28 @@ pcglabels = tdag.tdag("ChechenMande-labels")
 ChechenPreverbalA = tdag.tdag("ChechenPreverbalA")
 MandeClause = tdag.tdag("MandeClause")
 
-try: pcgweighted.add_node("count1-c2/count1-m1", "")
+try: pcgweighted.add_node("partiallyFilled-c1/open-m5", "")
 except: pass
-try: pcgweighted.add_node("inelastic-c2/inelastic-m1", "")
-except: pass
-
-try: pcgweighted.add_edge(("count1-c2/count1-m1", "inelastic-c2/inelastic-m1"), label=" 1")
+try: pcgweighted.add_node("component-c2/component-m5", "")
 except: pass
 
-try: pcgweighted.add_node("inelastic-c2/inelastic-m1", "")
-except: pass
-try: pcgweighted.add_node("count1-c2/count1-m1", "")
-except: pass
-
-try: pcgweighted.add_edge(("inelastic-c2/inelastic-m1", "count1-c2/count1-m1"), label=" 0.5")
-except: pass
-
-try: pcgweighted.add_node("desmeme/desmeme", "")
-except: pass
-try: pcgweighted.add_node("potentiallyViolable/notViolable", "")
-except: pass
-
-try: pcgweighted.add_edge(("desmeme/desmeme", "potentiallyViolable/notViolable"), label=" 0.25")
-except: pass
-
-try: pcgweighted.add_node("partiallyFilled-c1/open-m2", "")
-except: pass
-try: pcgweighted.add_node("component-c1/component-m2", "")
-except: pass
-
-try: pcgweighted.add_edge(("partiallyFilled-c1/open-m2", "component-c1/component-m2"), label=" 0.5")
-except: pass
-
-try: pcgweighted.add_node("inelastic-c1/elastic-m1", "")
-except: pass
-try: pcgweighted.add_node("component-c1/component-m2", "")
-except: pass
-
-try: pcgweighted.add_edge(("inelastic-c1/elastic-m1", "component-c1/component-m2"), label=" 1")
-except: pass
-
-try: pcgweighted.add_node("stable-c2/stable-m2", "")
-except: pass
-try: pcgweighted.add_node("component-c2/component-m2", "")
-except: pass
-
-try: pcgweighted.add_edge(("stable-c2/stable-m2", "component-c2/component-m2"), label=" 1")
-except: pass
-
-try: pcgweighted.add_node("partiallyFilled-c1/open-m4", "")
-except: pass
-try: pcgweighted.add_node("incoherent-c1/incoherent-m1", "")
-except: pass
-
-try: pcgweighted.add_edge(("partiallyFilled-c1/open-m4", "incoherent-c1/incoherent-m1"), label=" 0.5")
-except: pass
-
-try: pcgweighted.add_node("prosodicWord/syntacticConstituent", "")
-except: pass
-try: pcgweighted.add_node("length/order", "")
-except: pass
-
-try: pcgweighted.add_edge(("prosodicWord/syntacticConstituent", "length/order"), label=" 1")
-except: pass
-
-try: pcgweighted.add_node("component-c1/component-m2", "")
-except: pass
-try: pcgweighted.add_node("stable-c1/stable-m2", "")
-except: pass
-
-try: pcgweighted.add_edge(("component-c1/component-m2", "stable-c1/stable-m2"), label=" 0.33")
-except: pass
-
-try: pcgweighted.add_node("component-c1/component-m3", "")
-except: pass
-try: pcgweighted.add_node("inelastic-c1/elastic-m2", "")
-except: pass
-
-try: pcgweighted.add_edge(("component-c1/component-m3", "inelastic-c1/elastic-m2"), label=" 0.33")
-except: pass
-
-try: pcgweighted.add_node("coherent-c1/coherent-m4", "")
-except: pass
-try: pcgweighted.add_node("open-c1/open-m5", "")
-except: pass
-
-try: pcgweighted.add_edge(("coherent-c1/coherent-m4", "open-c1/open-m5"), label=" 1")
-except: pass
-
-try: pcgweighted.add_node("component-c1/component-m5", "")
-except: pass
-try: pcgweighted.add_node("inelastic-c1/inelastic-m2", "")
-except: pass
-
-try: pcgweighted.add_edge(("component-c1/component-m5", "inelastic-c1/inelastic-m2"), label=" 0.33")
+try: pcgweighted.add_edge(("partiallyFilled-c1/open-m5", "component-c2/component-m5"), label=" 0.5")
 except: pass
 
 try: pcgweighted.add_node("component-c2/component-m5", "")
 except: pass
-try: pcgweighted.add_node("stable-c2/stable-m5", "")
+try: pcgweighted.add_node("partiallyFilled-c1/open-m5", "")
 except: pass
 
-try: pcgweighted.add_edge(("component-c2/component-m5", "stable-c2/stable-m5"), label=" 0.33")
-except: pass
-
-try: pcgweighted.add_node("component-c2/component-m3", "")
-except: pass
-try: pcgweighted.add_node("inelastic-c2/elastic-m2", "")
-except: pass
-
-try: pcgweighted.add_edge(("component-c2/component-m3", "inelastic-c2/elastic-m2"), label=" 0.33")
-except: pass
-
-try: pcgweighted.add_node("inelastic-c1/inelastic-m1", "")
-except: pass
-try: pcgweighted.add_node("count1-c1/count1-m1", "")
-except: pass
-
-try: pcgweighted.add_edge(("inelastic-c1/inelastic-m1", "count1-c1/count1-m1"), label=" 0.5")
-except: pass
-
-try: pcgweighted.add_node("open-c1/open-m4", "")
-except: pass
-try: pcgweighted.add_node("component-c2/component-m4", "")
-except: pass
-
-try: pcgweighted.add_edge(("open-c1/open-m4", "component-c2/component-m4"), label=" 0.5")
-except: pass
-
-try: pcgweighted.add_node("component-c1/component-m4", "")
-except: pass
-try: pcgweighted.add_node("stable-c1/stable-m4", "")
-except: pass
-
-try: pcgweighted.add_edge(("component-c1/component-m4", "stable-c1/stable-m4"), label=" 0.33")
-except: pass
-
-try: pcgweighted.add_node("component-c2/component-m4", "")
-except: pass
-try: pcgweighted.add_node("stable-c2/stable-m4", "")
-except: pass
-
-try: pcgweighted.add_edge(("component-c2/component-m4", "stable-c2/stable-m4"), label=" 0.25")
-except: pass
-
-try: pcgweighted.add_node("inelastic-c1/elastic-m2", "")
-except: pass
-try: pcgweighted.add_node("component-c1/component-m3", "")
-except: pass
-
-try: pcgweighted.add_edge(("inelastic-c1/elastic-m2", "component-c1/component-m3"), label=" 1")
-except: pass
-
-try: pcgweighted.add_node("coherent-c1/coherent-m3", "")
-except: pass
-try: pcgweighted.add_node("open-c1/open-m3", "")
-except: pass
-
-try: pcgweighted.add_edge(("coherent-c1/coherent-m3", "open-c1/open-m3"), label=" 1")
-except: pass
-
-try: pcgweighted.add_node("open-c1/open-m1", "")
-except: pass
-try: pcgweighted.add_node("component-c2/component-m1", "")
-except: pass
-
-try: pcgweighted.add_edge(("open-c1/open-m1", "component-c2/component-m1"), label=" 0.5")
+try: pcgweighted.add_edge(("component-c2/component-m5", "partiallyFilled-c1/open-m5"), label=" 0.33")
 except: pass
 
 try: pcgweighted.add_node("partiallyFilled-c1/open-m5", "")
 except: pass
-try: pcgweighted.add_node("component-c1/component-m5", "")
+try: pcgweighted.add_node("coherent-c2/coherent-m4", "")
 except: pass
 
-try: pcgweighted.add_edge(("partiallyFilled-c1/open-m5", "component-c1/component-m5"), label=" 0.5")
-except: pass
-
-try: pcgweighted.add_node("partiallyFilled-c1/open-m5", "")
-except: pass
-try: pcgweighted.add_node("incoherent-c1/coherent-m4", "")
-except: pass
-
-try: pcgweighted.add_edge(("partiallyFilled-c1/open-m5", "incoherent-c1/coherent-m4"), label=" 0.5")
-except: pass
-
-try: pcgweighted.add_node("component-c1/component-m2", "")
-except: pass
-try: pcgweighted.add_node("inelastic-c1/elastic-m1", "")
-except: pass
-
-try: pcgweighted.add_edge(("component-c1/component-m2", "inelastic-c1/elastic-m1"), label=" 0.33")
-except: pass
-
-try: pcgweighted.add_node("incoherent-c1/coherent-m4", "")
-except: pass
-try: pcgweighted.add_node("partiallyFilled-c1/open-m5", "")
-except: pass
-
-try: pcgweighted.add_edge(("incoherent-c1/coherent-m4", "partiallyFilled-c1/open-m5"), label=" 1")
-except: pass
-
-try: pcgweighted.add_node("open-c1/open-m4", "")
-except: pass
-try: pcgweighted.add_node("coherent-c1/incoherent-m1", "")
-except: pass
-
-try: pcgweighted.add_edge(("open-c1/open-m4", "coherent-c1/incoherent-m1"), label=" 0.5")
-except: pass
-
-try: pcgweighted.add_node("incoherent-c1/incoherent-m1", "")
-except: pass
-try: pcgweighted.add_node("partiallyFilled-c1/open-m4", "")
-except: pass
-
-try: pcgweighted.add_edge(("incoherent-c1/incoherent-m1", "partiallyFilled-c1/open-m4"), label=" 1")
-except: pass
-
-try: pcgweighted.add_node("stable-c1/stable-m3", "")
-except: pass
-try: pcgweighted.add_node("component-c1/component-m3", "")
-except: pass
-
-try: pcgweighted.add_edge(("stable-c1/stable-m3", "component-c1/component-m3"), label=" 1")
-except: pass
-
-try: pcgweighted.add_node("component-c2/component-m2", "")
-except: pass
-try: pcgweighted.add_node("inelastic-c2/elastic-m1", "")
-except: pass
-
-try: pcgweighted.add_edge(("component-c2/component-m2", "inelastic-c2/elastic-m1"), label=" 0.33")
-except: pass
-
-try: pcgweighted.add_node("count1-c2/count5-m1", "")
-except: pass
-try: pcgweighted.add_node("inelastic-c2/order", "")
-except: pass
-
-try: pcgweighted.add_edge(("count1-c2/count5-m1", "inelastic-c2/order"), label=" 1")
-except: pass
-
-try: pcgweighted.add_node("count2-c1/count1-m2", "")
-except: pass
-try: pcgweighted.add_node("length/inelastic-m2", "")
-except: pass
-
-try: pcgweighted.add_edge(("count2-c1/count1-m2", "length/inelastic-m2"), label=" 1")
-except: pass
-
-try: pcgweighted.add_node("inelastic-c2/elastic-m1", "")
-except: pass
-try: pcgweighted.add_node("component-c2/component-m2", "")
-except: pass
-
-try: pcgweighted.add_edge(("inelastic-c2/elastic-m1", "component-c2/component-m2"), label=" 1")
-except: pass
-
-try: pcgweighted.add_node("potentiallyViolable/notViolable", "")
-except: pass
-try: pcgweighted.add_node("desmeme/desmeme", "")
-except: pass
-
-try: pcgweighted.add_edge(("potentiallyViolable/notViolable", "desmeme/desmeme"), label=" 1")
-except: pass
-
-try: pcgweighted.add_node("component-c2/component-m3", "")
-except: pass
-try: pcgweighted.add_node("stable-c2/stable-m3", "")
-except: pass
-
-try: pcgweighted.add_edge(("component-c2/component-m3", "stable-c2/stable-m3"), label=" 0.33")
-except: pass
-
-try: pcgweighted.add_node("incoherent-c1/coherent-m1", "")
-except: pass
-try: pcgweighted.add_node("partiallyFilled-c1/open-m1", "")
-except: pass
-
-try: pcgweighted.add_edge(("incoherent-c1/coherent-m1", "partiallyFilled-c1/open-m1"), label=" 1")
-except: pass
-
-try: pcgweighted.add_node("desmeme/desmeme", "")
-except: pass
-try: pcgweighted.add_node("span/arch", "")
-except: pass
-
-try: pcgweighted.add_edge(("desmeme/desmeme", "span/arch"), label=" 0.25")
-except: pass
-
-try: pcgweighted.add_node("stable-c1/stable-m1", "")
-except: pass
-try: pcgweighted.add_node("component-c1/component-m1", "")
-except: pass
-
-try: pcgweighted.add_edge(("stable-c1/stable-m1", "component-c1/component-m1"), label=" 1")
-except: pass
-
-try: pcgweighted.add_node("coherent-c1/incoherent-m1", "")
-except: pass
-try: pcgweighted.add_node("open-c1/open-m4", "")
-except: pass
-
-try: pcgweighted.add_edge(("coherent-c1/incoherent-m1", "open-c1/open-m4"), label=" 1")
-except: pass
-
-try: pcgweighted.add_node("stable-c2/stable-m1", "")
-except: pass
-try: pcgweighted.add_node("component-c2/component-m1", "")
-except: pass
-
-try: pcgweighted.add_edge(("stable-c2/stable-m1", "component-c2/component-m1"), label=" 1")
-except: pass
-
-try: pcgweighted.add_node("partiallyFilled-c1/open-m1", "")
-except: pass
-try: pcgweighted.add_node("incoherent-c1/coherent-m1", "")
-except: pass
-
-try: pcgweighted.add_edge(("partiallyFilled-c1/open-m1", "incoherent-c1/coherent-m1"), label=" 0.5")
-except: pass
-
-try: pcgweighted.add_node("partiallyFilled-c1/open-m4", "")
-except: pass
-try: pcgweighted.add_node("component-c1/component-m4", "")
-except: pass
-
-try: pcgweighted.add_edge(("partiallyFilled-c1/open-m4", "component-c1/component-m4"), label=" 0.5")
-except: pass
-
-try: pcgweighted.add_node("count1-c2/count1-m2", "")
-except: pass
-try: pcgweighted.add_node("inelastic-c2/inelastic-m2", "")
-except: pass
-
-try: pcgweighted.add_edge(("count1-c2/count1-m2", "inelastic-c2/inelastic-m2"), label=" 1")
-except: pass
-
-try: pcgweighted.add_node("component-c2/component-m5", "")
-except: pass
-try: pcgweighted.add_node("open-c1/open-m5", "")
-except: pass
-
-try: pcgweighted.add_edge(("component-c2/component-m5", "open-c1/open-m5"), label=" 0.33")
-except: pass
-
-try: pcgweighted.add_node("count2-c1/count1-m1", "")
-except: pass
-try: pcgweighted.add_node("length/inelastic-m1", "")
-except: pass
-
-try: pcgweighted.add_edge(("count2-c1/count1-m1", "length/inelastic-m1"), label=" 1")
-except: pass
-
-try: pcgweighted.add_node("component-c1/component-m4", "")
-except: pass
-try: pcgweighted.add_node("partiallyFilled-c1/open-m4", "")
-except: pass
-
-try: pcgweighted.add_edge(("component-c1/component-m4", "partiallyFilled-c1/open-m4"), label=" 0.33")
-except: pass
-
-try: pcgweighted.add_node("coherent-c1/coherent-m1", "")
-except: pass
-try: pcgweighted.add_node("open-c1/open-m1", "")
-except: pass
-
-try: pcgweighted.add_edge(("coherent-c1/coherent-m1", "open-c1/open-m1"), label=" 1")
-except: pass
-
-try: pcgweighted.add_node("component-c2/component-m3", "")
-except: pass
-try: pcgweighted.add_node("open-c1/open-m3", "")
-except: pass
-
-try: pcgweighted.add_edge(("component-c2/component-m3", "open-c1/open-m3"), label=" 0.33")
-except: pass
-
-try: pcgweighted.add_node("count1-c1/count1-m2", "")
-except: pass
-try: pcgweighted.add_node("inelastic-c1/inelastic-m2", "")
-except: pass
-
-try: pcgweighted.add_edge(("count1-c1/count1-m2", "inelastic-c1/inelastic-m2"), label=" 1")
-except: pass
-
-try: pcgweighted.add_node("component-c2/component-m4", "")
-except: pass
-try: pcgweighted.add_node("inelastic-c2/elastic-m3", "")
-except: pass
-
-try: pcgweighted.add_edge(("component-c2/component-m4", "inelastic-c2/elastic-m3"), label=" 0.25")
-except: pass
-
-try: pcgweighted.add_node("inelastic-c2/inelastic-m1", "")
-except: pass
-try: pcgweighted.add_node("component-c2/component-m1", "")
-except: pass
-
-try: pcgweighted.add_edge(("inelastic-c2/inelastic-m1", "component-c2/component-m1"), label=" 0.5")
+try: pcgweighted.add_edge(("partiallyFilled-c1/open-m5", "coherent-c2/coherent-m4"), label=" 0.5")
 except: pass
 
 try: pcgweighted.add_node("stable-c1/stable-m2", "")
@@ -417,36 +41,76 @@ except: pass
 try: pcgweighted.add_edge(("stable-c1/stable-m2", "component-c1/component-m2"), label=" 1")
 except: pass
 
-try: pcgweighted.add_node("component-c2/component-m2", "")
+try: pcgweighted.add_node("inelastic-c1/elastic-m1", "")
 except: pass
-try: pcgweighted.add_node("open-c1/open-m2", "")
+try: pcgweighted.add_node("component-c1/component-m2", "")
 except: pass
 
-try: pcgweighted.add_edge(("component-c2/component-m2", "open-c1/open-m2"), label=" 0.33")
+try: pcgweighted.add_edge(("inelastic-c1/elastic-m1", "component-c1/component-m2"), label=" 1")
+except: pass
+
+try: pcgweighted.add_node("stable-c1/stable-m3", "")
+except: pass
+try: pcgweighted.add_node("component-c1/component-m3", "")
+except: pass
+
+try: pcgweighted.add_edge(("stable-c1/stable-m3", "component-c1/component-m3"), label=" 1")
+except: pass
+
+try: pcgweighted.add_node("prosodicWord/syntacticConstituent", "")
+except: pass
+try: pcgweighted.add_node("length/order", "")
+except: pass
+
+try: pcgweighted.add_edge(("prosodicWord/syntacticConstituent", "length/order"), label=" 1")
+except: pass
+
+try: pcgweighted.add_node("open-c1/open-m5", "")
+except: pass
+try: pcgweighted.add_node("coherent-c1/coherent-m4", "")
+except: pass
+
+try: pcgweighted.add_edge(("open-c1/open-m5", "coherent-c1/coherent-m4"), label=" 0.5")
+except: pass
+
+try: pcgweighted.add_node("component-c1/component-m3", "")
+except: pass
+try: pcgweighted.add_node("inelastic-c1/elastic-m2", "")
+except: pass
+
+try: pcgweighted.add_edge(("component-c1/component-m3", "inelastic-c1/elastic-m2"), label=" 0.33")
 except: pass
 
 try: pcgweighted.add_node("component-c1/component-m5", "")
 except: pass
-try: pcgweighted.add_node("partiallyFilled-c1/open-m5", "")
+try: pcgweighted.add_node("inelastic-c1/inelastic-m2", "")
 except: pass
 
-try: pcgweighted.add_edge(("component-c1/component-m5", "partiallyFilled-c1/open-m5"), label=" 0.33")
+try: pcgweighted.add_edge(("component-c1/component-m5", "inelastic-c1/inelastic-m2"), label=" 0.33")
 except: pass
 
-try: pcgweighted.add_node("component-c2/component-m1", "")
+try: pcgweighted.add_node("desmeme/desmeme", "")
 except: pass
-try: pcgweighted.add_node("open-c1/open-m1", "")
-except: pass
-
-try: pcgweighted.add_edge(("component-c2/component-m1", "open-c1/open-m1"), label=" 0.33")
+try: pcgweighted.add_node("potentiallyViolable/notViolable", "")
 except: pass
 
-try: pcgweighted.add_node("coherent-c1/coherent-m2", "")
+try: pcgweighted.add_edge(("desmeme/desmeme", "potentiallyViolable/notViolable"), label=" 0.25")
+except: pass
+
+try: pcgweighted.add_node("component-c2/component-m3", "")
+except: pass
+try: pcgweighted.add_node("inelastic-c2/elastic-m2", "")
+except: pass
+
+try: pcgweighted.add_edge(("component-c2/component-m3", "inelastic-c2/elastic-m2"), label=" 0.33")
+except: pass
+
+try: pcgweighted.add_node("component-c1/component-m2", "")
 except: pass
 try: pcgweighted.add_node("open-c1/open-m2", "")
 except: pass
 
-try: pcgweighted.add_edge(("coherent-c1/coherent-m2", "open-c1/open-m2"), label=" 1")
+try: pcgweighted.add_edge(("component-c1/component-m2", "open-c1/open-m2"), label=" 0.33")
 except: pass
 
 try: pcgweighted.add_node("stable-c2/stable-m5", "")
@@ -457,172 +121,28 @@ except: pass
 try: pcgweighted.add_edge(("stable-c2/stable-m5", "component-c2/component-m5"), label=" 1")
 except: pass
 
-try: pcgweighted.add_node("component-c1/component-m1", "")
+try: pcgweighted.add_node("partiallyFilled-c1/open-m4", "")
 except: pass
-try: pcgweighted.add_node("partiallyFilled-c1/open-m1", "")
-except: pass
-
-try: pcgweighted.add_edge(("component-c1/component-m1", "partiallyFilled-c1/open-m1"), label=" 0.25")
+try: pcgweighted.add_node("coherent-c2/incoherent-m1", "")
 except: pass
 
-try: pcgweighted.add_node("count1-c1/count1-m1", "")
-except: pass
-try: pcgweighted.add_node("inelastic-c1/inelastic-m1", "")
+try: pcgweighted.add_edge(("partiallyFilled-c1/open-m4", "coherent-c2/incoherent-m1"), label=" 0.5")
 except: pass
 
-try: pcgweighted.add_edge(("count1-c1/count1-m1", "inelastic-c1/inelastic-m1"), label=" 1")
-except: pass
-
-try: pcgweighted.add_node("component-c1/component-m1", "")
-except: pass
-try: pcgweighted.add_node("stable-c1/stable-m1", "")
-except: pass
-
-try: pcgweighted.add_edge(("component-c1/component-m1", "stable-c1/stable-m1"), label=" 0.25")
-except: pass
-
-try: pcgweighted.add_node("component-c2/component-m1", "")
-except: pass
-try: pcgweighted.add_node("stable-c2/stable-m1", "")
-except: pass
-
-try: pcgweighted.add_edge(("component-c2/component-m1", "stable-c2/stable-m1"), label=" 0.33")
-except: pass
-
-try: pcgweighted.add_node("inelastic-c1/inelastic-m2", "")
-except: pass
-try: pcgweighted.add_node("component-c1/component-m5", "")
-except: pass
-
-try: pcgweighted.add_edge(("inelastic-c1/inelastic-m2", "component-c1/component-m5"), label=" 0.5")
-except: pass
-
-try: pcgweighted.add_node("component-c1/component-m2", "")
-except: pass
-try: pcgweighted.add_node("partiallyFilled-c1/open-m2", "")
-except: pass
-
-try: pcgweighted.add_edge(("component-c1/component-m2", "partiallyFilled-c1/open-m2"), label=" 0.33")
-except: pass
-
-try: pcgweighted.add_node("component-c2/component-m4", "")
-except: pass
 try: pcgweighted.add_node("open-c1/open-m4", "")
 except: pass
-
-try: pcgweighted.add_edge(("component-c2/component-m4", "open-c1/open-m4"), label=" 0.25")
+try: pcgweighted.add_node("coherent-c1/incoherent-m1", "")
 except: pass
 
-try: pcgweighted.add_node("partiallyFilled-c1/open-m1", "")
-except: pass
-try: pcgweighted.add_node("component-c1/component-m1", "")
+try: pcgweighted.add_edge(("open-c1/open-m4", "coherent-c1/incoherent-m1"), label=" 0.5")
 except: pass
 
-try: pcgweighted.add_edge(("partiallyFilled-c1/open-m1", "component-c1/component-m1"), label=" 0.5")
+try: pcgweighted.add_node("inelastic-c1/elastic-m2", "")
 except: pass
-
-try: pcgweighted.add_node("component-c2/component-m2", "")
-except: pass
-try: pcgweighted.add_node("stable-c2/stable-m2", "")
-except: pass
-
-try: pcgweighted.add_edge(("component-c2/component-m2", "stable-c2/stable-m2"), label=" 0.33")
-except: pass
-
 try: pcgweighted.add_node("component-c1/component-m3", "")
 except: pass
-try: pcgweighted.add_node("partiallyFilled-c1/open-m3", "")
-except: pass
 
-try: pcgweighted.add_edge(("component-c1/component-m3", "partiallyFilled-c1/open-m3"), label=" 0.33")
-except: pass
-
-try: pcgweighted.add_node("span/arch", "")
-except: pass
-try: pcgweighted.add_node("component-c2/component-m4", "")
-except: pass
-
-try: pcgweighted.add_edge(("span/arch", "component-c2/component-m4"), label=" 0.33")
-except: pass
-
-try: pcgweighted.add_node("inelastic-c2/elastic-m2", "")
-except: pass
-try: pcgweighted.add_node("component-c2/component-m3", "")
-except: pass
-
-try: pcgweighted.add_edge(("inelastic-c2/elastic-m2", "component-c2/component-m3"), label=" 1")
-except: pass
-
-try: pcgweighted.add_node("component-c1/component-m1", "")
-except: pass
-try: pcgweighted.add_node("span/arch", "")
-except: pass
-
-try: pcgweighted.add_edge(("component-c1/component-m1", "span/arch"), label=" 0.25")
-except: pass
-
-try: pcgweighted.add_node("component-c1/component-m3", "")
-except: pass
-try: pcgweighted.add_node("stable-c1/stable-m3", "")
-except: pass
-
-try: pcgweighted.add_edge(("component-c1/component-m3", "stable-c1/stable-m3"), label=" 0.33")
-except: pass
-
-try: pcgweighted.add_node("inelastic-c2/order", "")
-except: pass
-try: pcgweighted.add_node("count1-c2/count5-m1", "")
-except: pass
-
-try: pcgweighted.add_edge(("inelastic-c2/order", "count1-c2/count5-m1"), label=" 1")
-except: pass
-
-try: pcgweighted.add_node("open-c1/open-m2", "")
-except: pass
-try: pcgweighted.add_node("coherent-c1/coherent-m2", "")
-except: pass
-
-try: pcgweighted.add_edge(("open-c1/open-m2", "coherent-c1/coherent-m2"), label=" 0.5")
-except: pass
-
-try: pcgweighted.add_node("partiallyFilled-c1/open-m2", "")
-except: pass
-try: pcgweighted.add_node("incoherent-c1/coherent-m2", "")
-except: pass
-
-try: pcgweighted.add_edge(("partiallyFilled-c1/open-m2", "incoherent-c1/coherent-m2"), label=" 0.5")
-except: pass
-
-try: pcgweighted.add_node("component-c1/component-m5", "")
-except: pass
-try: pcgweighted.add_node("stable-c1/stable-m5", "")
-except: pass
-
-try: pcgweighted.add_edge(("component-c1/component-m5", "stable-c1/stable-m5"), label=" 0.33")
-except: pass
-
-try: pcgweighted.add_node("inelastic-c1/inelastic-m1", "")
-except: pass
-try: pcgweighted.add_node("component-c1/component-m1", "")
-except: pass
-
-try: pcgweighted.add_edge(("inelastic-c1/inelastic-m1", "component-c1/component-m1"), label=" 0.5")
-except: pass
-
-try: pcgweighted.add_node("inelastic-c2/inelastic-m2", "")
-except: pass
-try: pcgweighted.add_node("count1-c2/count1-m2", "")
-except: pass
-
-try: pcgweighted.add_edge(("inelastic-c2/inelastic-m2", "count1-c2/count1-m2"), label=" 0.5")
-except: pass
-
-try: pcgweighted.add_node("stable-c1/stable-m5", "")
-except: pass
-try: pcgweighted.add_node("component-c1/component-m5", "")
-except: pass
-
-try: pcgweighted.add_edge(("stable-c1/stable-m5", "component-c1/component-m5"), label=" 1")
+try: pcgweighted.add_edge(("inelastic-c1/elastic-m2", "component-c1/component-m3"), label=" 1")
 except: pass
 
 try: pcgweighted.add_node("stable-c2/stable-m4", "")
@@ -633,36 +153,44 @@ except: pass
 try: pcgweighted.add_edge(("stable-c2/stable-m4", "component-c2/component-m4"), label=" 1")
 except: pass
 
-try: pcgweighted.add_node("inelastic-c1/inelastic-m2", "")
-except: pass
-try: pcgweighted.add_node("count1-c1/count1-m2", "")
-except: pass
-
-try: pcgweighted.add_edge(("inelastic-c1/inelastic-m2", "count1-c1/count1-m2"), label=" 0.5")
-except: pass
-
-try: pcgweighted.add_node("component-c2/component-m1", "")
-except: pass
-try: pcgweighted.add_node("inelastic-c2/inelastic-m1", "")
-except: pass
-
-try: pcgweighted.add_edge(("component-c2/component-m1", "inelastic-c2/inelastic-m1"), label=" 0.33")
-except: pass
-
-try: pcgweighted.add_node("partiallyFilled-c1/open-m3", "")
-except: pass
-try: pcgweighted.add_node("component-c1/component-m3", "")
-except: pass
-
-try: pcgweighted.add_edge(("partiallyFilled-c1/open-m3", "component-c1/component-m3"), label=" 0.5")
-except: pass
-
-try: pcgweighted.add_node("open-c1/open-m3", "")
+try: pcgweighted.add_node("stable-c2/stable-m3", "")
 except: pass
 try: pcgweighted.add_node("component-c2/component-m3", "")
 except: pass
 
-try: pcgweighted.add_edge(("open-c1/open-m3", "component-c2/component-m3"), label=" 0.5")
+try: pcgweighted.add_edge(("stable-c2/stable-m3", "component-c2/component-m3"), label=" 1")
+except: pass
+
+try: pcgweighted.add_node("component-c1/component-m2", "")
+except: pass
+try: pcgweighted.add_node("inelastic-c1/elastic-m1", "")
+except: pass
+
+try: pcgweighted.add_edge(("component-c1/component-m2", "inelastic-c1/elastic-m1"), label=" 0.33")
+except: pass
+
+try: pcgweighted.add_node("partiallyFilled-c1/open-m2", "")
+except: pass
+try: pcgweighted.add_node("coherent-c2/coherent-m2", "")
+except: pass
+
+try: pcgweighted.add_edge(("partiallyFilled-c1/open-m2", "coherent-c2/coherent-m2"), label=" 0.5")
+except: pass
+
+try: pcgweighted.add_node("coherent-c2/coherent-m1", "")
+except: pass
+try: pcgweighted.add_node("partiallyFilled-c1/open-m1", "")
+except: pass
+
+try: pcgweighted.add_edge(("coherent-c2/coherent-m1", "partiallyFilled-c1/open-m1"), label=" 1")
+except: pass
+
+try: pcgweighted.add_node("component-c2/component-m2", "")
+except: pass
+try: pcgweighted.add_node("inelastic-c2/elastic-m1", "")
+except: pass
+
+try: pcgweighted.add_edge(("component-c2/component-m2", "inelastic-c2/elastic-m1"), label=" 0.33")
 except: pass
 
 try: pcgweighted.add_node("span/arch", "")
@@ -673,60 +201,316 @@ except: pass
 try: pcgweighted.add_edge(("span/arch", "desmeme/desmeme"), label=" 0.33")
 except: pass
 
-try: pcgweighted.add_node("component-c1/component-m1", "")
-except: pass
-try: pcgweighted.add_node("inelastic-c1/inelastic-m1", "")
-except: pass
-
-try: pcgweighted.add_edge(("component-c1/component-m1", "inelastic-c1/inelastic-m1"), label=" 0.25")
-except: pass
-
-try: pcgweighted.add_node("partiallyFilled-c1/open-m3", "")
-except: pass
-try: pcgweighted.add_node("incoherent-c1/coherent-m3", "")
-except: pass
-
-try: pcgweighted.add_edge(("partiallyFilled-c1/open-m3", "incoherent-c1/coherent-m3"), label=" 0.5")
-except: pass
-
-try: pcgweighted.add_node("open-c1/open-m2", "")
+try: pcgweighted.add_node("partiallyFilled-c1/open-m2", "")
 except: pass
 try: pcgweighted.add_node("component-c2/component-m2", "")
 except: pass
 
-try: pcgweighted.add_edge(("open-c1/open-m2", "component-c2/component-m2"), label=" 0.5")
+try: pcgweighted.add_edge(("partiallyFilled-c1/open-m2", "component-c2/component-m2"), label=" 0.5")
 except: pass
 
-try: pcgweighted.add_node("stable-c2/stable-m3", "")
+try: pcgweighted.add_node("inelastic-c2/elastic-m1", "")
+except: pass
+try: pcgweighted.add_node("component-c2/component-m2", "")
+except: pass
+
+try: pcgweighted.add_edge(("inelastic-c2/elastic-m1", "component-c2/component-m2"), label=" 1")
+except: pass
+
+try: pcgweighted.add_node("coherent-c2/coherent-m4", "")
+except: pass
+try: pcgweighted.add_node("partiallyFilled-c1/open-m5", "")
+except: pass
+
+try: pcgweighted.add_edge(("coherent-c2/coherent-m4", "partiallyFilled-c1/open-m5"), label=" 1")
+except: pass
+
+try: pcgweighted.add_node("open-c1/open-m1", "")
+except: pass
+try: pcgweighted.add_node("coherent-c1/coherent-m1", "")
+except: pass
+
+try: pcgweighted.add_edge(("open-c1/open-m1", "coherent-c1/coherent-m1"), label=" 0.5")
+except: pass
+
+try: pcgweighted.add_node("component-c1/component-m1", "")
+except: pass
+try: pcgweighted.add_node("open-c1/open-m1", "")
+except: pass
+
+try: pcgweighted.add_edge(("component-c1/component-m1", "open-c1/open-m1"), label=" 0.33")
+except: pass
+
+try: pcgweighted.add_node("coherent-c2/coherent-m3", "")
+except: pass
+try: pcgweighted.add_node("partiallyFilled-c1/open-m3", "")
+except: pass
+
+try: pcgweighted.add_edge(("coherent-c2/coherent-m3", "partiallyFilled-c1/open-m3"), label=" 1")
+except: pass
+
+try: pcgweighted.add_node("coherent-c2/coherent-m2", "")
+except: pass
+try: pcgweighted.add_node("partiallyFilled-c1/open-m2", "")
+except: pass
+
+try: pcgweighted.add_edge(("coherent-c2/coherent-m2", "partiallyFilled-c1/open-m2"), label=" 1")
+except: pass
+
+try: pcgweighted.add_node("coherent-c1/coherent-m3", "")
+except: pass
+try: pcgweighted.add_node("open-c1/open-m3", "")
+except: pass
+
+try: pcgweighted.add_edge(("coherent-c1/coherent-m3", "open-c1/open-m3"), label=" 1")
+except: pass
+
+try: pcgweighted.add_node("stable-c1/stable-m5", "")
+except: pass
+try: pcgweighted.add_node("component-c1/component-m5", "")
+except: pass
+
+try: pcgweighted.add_edge(("stable-c1/stable-m5", "component-c1/component-m5"), label=" 1")
+except: pass
+
+try: pcgweighted.add_node("lexicoconstructionalConditioning/constructionalConditioning", "")
+except: pass
+try: pcgweighted.add_node("desmeme/desmeme", "")
+except: pass
+
+try: pcgweighted.add_edge(("lexicoconstructionalConditioning/constructionalConditioning", "desmeme/desmeme"), label=" 1")
+except: pass
+
+try: pcgweighted.add_node("component-c1/component-m3", "")
+except: pass
+try: pcgweighted.add_node("open-c1/open-m3", "")
+except: pass
+
+try: pcgweighted.add_edge(("component-c1/component-m3", "open-c1/open-m3"), label=" 0.33")
+except: pass
+
+try: pcgweighted.add_node("partiallyFilled-c1/open-m1", "")
+except: pass
+try: pcgweighted.add_node("component-c2/component-m1", "")
+except: pass
+
+try: pcgweighted.add_edge(("partiallyFilled-c1/open-m1", "component-c2/component-m1"), label=" 0.5")
+except: pass
+
+try: pcgweighted.add_node("component-c1/component-m5", "")
+except: pass
+try: pcgweighted.add_node("stable-c1/stable-m5", "")
+except: pass
+
+try: pcgweighted.add_edge(("component-c1/component-m5", "stable-c1/stable-m5"), label=" 0.33")
+except: pass
+
+try: pcgweighted.add_node("component-c2/component-m1", "")
+except: pass
+try: pcgweighted.add_node("stable-c2/stable-m1", "")
+except: pass
+
+try: pcgweighted.add_edge(("component-c2/component-m1", "stable-c2/stable-m1"), label=" 0.25")
+except: pass
+
+try: pcgweighted.add_node("partiallyFilled-c1/open-m3", "")
 except: pass
 try: pcgweighted.add_node("component-c2/component-m3", "")
 except: pass
 
-try: pcgweighted.add_edge(("stable-c2/stable-m3", "component-c2/component-m3"), label=" 1")
+try: pcgweighted.add_edge(("partiallyFilled-c1/open-m3", "component-c2/component-m3"), label=" 0.5")
+except: pass
+
+try: pcgweighted.add_node("component-c2/component-m4", "")
+except: pass
+try: pcgweighted.add_node("inelastic-c2/elastic-m3", "")
+except: pass
+
+try: pcgweighted.add_edge(("component-c2/component-m4", "inelastic-c2/elastic-m3"), label=" 0.33")
+except: pass
+
+try: pcgweighted.add_node("inelastic-c2/inelastic-m1", "")
+except: pass
+try: pcgweighted.add_node("component-c2/component-m1", "")
+except: pass
+
+try: pcgweighted.add_edge(("inelastic-c2/inelastic-m1", "component-c2/component-m1"), label=" 1")
+except: pass
+
+try: pcgweighted.add_node("coherent-c1/coherent-m4", "")
+except: pass
+try: pcgweighted.add_node("open-c1/open-m5", "")
+except: pass
+
+try: pcgweighted.add_edge(("coherent-c1/coherent-m4", "open-c1/open-m5"), label=" 1")
+except: pass
+
+try: pcgweighted.add_node("component-c2/component-m2", "")
+except: pass
+try: pcgweighted.add_node("stable-c2/stable-m2", "")
+except: pass
+
+try: pcgweighted.add_edge(("component-c2/component-m2", "stable-c2/stable-m2"), label=" 0.33")
+except: pass
+
+try: pcgweighted.add_node("component-c2/component-m3", "")
+except: pass
+try: pcgweighted.add_node("stable-c2/stable-m3", "")
+except: pass
+
+try: pcgweighted.add_edge(("component-c2/component-m3", "stable-c2/stable-m3"), label=" 0.33")
+except: pass
+
+try: pcgweighted.add_node("component-c2/component-m4", "")
+except: pass
+try: pcgweighted.add_node("stable-c2/stable-m4", "")
+except: pass
+
+try: pcgweighted.add_edge(("component-c2/component-m4", "stable-c2/stable-m4"), label=" 0.33")
+except: pass
+
+try: pcgweighted.add_node("potentiallyViolable/notViolable", "")
+except: pass
+try: pcgweighted.add_node("desmeme/desmeme", "")
+except: pass
+
+try: pcgweighted.add_edge(("potentiallyViolable/notViolable", "desmeme/desmeme"), label=" 1")
 except: pass
 
 try: pcgweighted.add_node("component-c1/component-m4", "")
 except: pass
-try: pcgweighted.add_node("inelastic-c1/elastic-m3", "")
+try: pcgweighted.add_node("stable-c1/stable-m4", "")
 except: pass
 
-try: pcgweighted.add_edge(("component-c1/component-m4", "inelastic-c1/elastic-m3"), label=" 0.33")
+try: pcgweighted.add_edge(("component-c1/component-m4", "stable-c1/stable-m4"), label=" 0.25")
 except: pass
 
-try: pcgweighted.add_node("inelastic-c1/order", "")
+try: pcgweighted.add_node("open-c1/open-m2", "")
 except: pass
-try: pcgweighted.add_node("count1-c1/count5-m1", "")
+try: pcgweighted.add_node("component-c1/component-m2", "")
 except: pass
 
-try: pcgweighted.add_edge(("inelastic-c1/order", "count1-c1/count5-m1"), label=" 1")
+try: pcgweighted.add_edge(("open-c1/open-m2", "component-c1/component-m2"), label=" 0.5")
+except: pass
+
+try: pcgweighted.add_node("partiallyFilled-c1/open-m3", "")
+except: pass
+try: pcgweighted.add_node("coherent-c2/coherent-m3", "")
+except: pass
+
+try: pcgweighted.add_edge(("partiallyFilled-c1/open-m3", "coherent-c2/coherent-m3"), label=" 0.5")
+except: pass
+
+try: pcgweighted.add_node("open-c1/open-m3", "")
+except: pass
+try: pcgweighted.add_node("coherent-c1/coherent-m3", "")
+except: pass
+
+try: pcgweighted.add_edge(("open-c1/open-m3", "coherent-c1/coherent-m3"), label=" 0.5")
+except: pass
+
+try: pcgweighted.add_node("inelastic-c1/inelastic-m2", "")
+except: pass
+try: pcgweighted.add_node("component-c1/component-m5", "")
+except: pass
+
+try: pcgweighted.add_edge(("inelastic-c1/inelastic-m2", "component-c1/component-m5"), label=" 1")
+except: pass
+
+try: pcgweighted.add_node("component-c1/component-m2", "")
+except: pass
+try: pcgweighted.add_node("stable-c1/stable-m2", "")
+except: pass
+
+try: pcgweighted.add_edge(("component-c1/component-m2", "stable-c1/stable-m2"), label=" 0.33")
+except: pass
+
+try: pcgweighted.add_node("component-c2/component-m5", "")
+except: pass
+try: pcgweighted.add_node("stable-c2/stable-m5", "")
+except: pass
+
+try: pcgweighted.add_edge(("component-c2/component-m5", "stable-c2/stable-m5"), label=" 0.33")
+except: pass
+
+try: pcgweighted.add_node("stable-c1/stable-m4", "")
+except: pass
+try: pcgweighted.add_node("component-c1/component-m4", "")
+except: pass
+
+try: pcgweighted.add_edge(("stable-c1/stable-m4", "component-c1/component-m4"), label=" 1")
+except: pass
+
+try: pcgweighted.add_node("component-c1/component-m3", "")
+except: pass
+try: pcgweighted.add_node("stable-c1/stable-m3", "")
+except: pass
+
+try: pcgweighted.add_edge(("component-c1/component-m3", "stable-c1/stable-m3"), label=" 0.33")
+except: pass
+
+try: pcgweighted.add_node("component-c1/component-m1", "")
+except: pass
+try: pcgweighted.add_node("stable-c1/stable-m1", "")
+except: pass
+
+try: pcgweighted.add_edge(("component-c1/component-m1", "stable-c1/stable-m1"), label=" 0.33")
 except: pass
 
 try: pcgweighted.add_node("span/arch", "")
 except: pass
+try: pcgweighted.add_node("component-c1/component-m4", "")
+except: pass
+
+try: pcgweighted.add_edge(("span/arch", "component-c1/component-m4"), label=" 0.33")
+except: pass
+
+try: pcgweighted.add_node("inelastic-c2/elastic-m2", "")
+except: pass
+try: pcgweighted.add_node("component-c2/component-m3", "")
+except: pass
+
+try: pcgweighted.add_edge(("inelastic-c2/elastic-m2", "component-c2/component-m3"), label=" 1")
+except: pass
+
+try: pcgweighted.add_node("component-c2/component-m1", "")
+except: pass
+try: pcgweighted.add_node("span/arch", "")
+except: pass
+
+try: pcgweighted.add_edge(("component-c2/component-m1", "span/arch"), label=" 0.25")
+except: pass
+
+try: pcgweighted.add_node("partiallyFilled-c1/open-m1", "")
+except: pass
+try: pcgweighted.add_node("coherent-c2/coherent-m1", "")
+except: pass
+
+try: pcgweighted.add_edge(("partiallyFilled-c1/open-m1", "coherent-c2/coherent-m1"), label=" 0.5")
+except: pass
+
+try: pcgweighted.add_node("desmeme/desmeme", "")
+except: pass
+try: pcgweighted.add_node("span/arch", "")
+except: pass
+
+try: pcgweighted.add_edge(("desmeme/desmeme", "span/arch"), label=" 0.25")
+except: pass
+
+try: pcgweighted.add_node("open-c1/open-m2", "")
+except: pass
+try: pcgweighted.add_node("coherent-c1/coherent-m2", "")
+except: pass
+
+try: pcgweighted.add_edge(("open-c1/open-m2", "coherent-c1/coherent-m2"), label=" 0.5")
+except: pass
+
+try: pcgweighted.add_node("inelastic-c1/inelastic-m1", "")
+except: pass
 try: pcgweighted.add_node("component-c1/component-m1", "")
 except: pass
 
-try: pcgweighted.add_edge(("span/arch", "component-c1/component-m1"), label=" 0.33")
+try: pcgweighted.add_edge(("inelastic-c1/inelastic-m1", "component-c1/component-m1"), label=" 1")
 except: pass
 
 try: pcgweighted.add_node("desmeme/desmeme", "")
@@ -735,6 +519,118 @@ try: pcgweighted.add_node("lexicoconstructionalConditioning/constructionalCondit
 except: pass
 
 try: pcgweighted.add_edge(("desmeme/desmeme", "lexicoconstructionalConditioning/constructionalConditioning"), label=" 0.25")
+except: pass
+
+try: pcgweighted.add_node("coherent-c1/coherent-m2", "")
+except: pass
+try: pcgweighted.add_node("open-c1/open-m2", "")
+except: pass
+
+try: pcgweighted.add_edge(("coherent-c1/coherent-m2", "open-c1/open-m2"), label=" 1")
+except: pass
+
+try: pcgweighted.add_node("coherent-c1/incoherent-m1", "")
+except: pass
+try: pcgweighted.add_node("open-c1/open-m4", "")
+except: pass
+
+try: pcgweighted.add_edge(("coherent-c1/incoherent-m1", "open-c1/open-m4"), label=" 1")
+except: pass
+
+try: pcgweighted.add_node("component-c2/component-m3", "")
+except: pass
+try: pcgweighted.add_node("partiallyFilled-c1/open-m3", "")
+except: pass
+
+try: pcgweighted.add_edge(("component-c2/component-m3", "partiallyFilled-c1/open-m3"), label=" 0.33")
+except: pass
+
+try: pcgweighted.add_node("component-c2/component-m1", "")
+except: pass
+try: pcgweighted.add_node("inelastic-c2/inelastic-m1", "")
+except: pass
+
+try: pcgweighted.add_edge(("component-c2/component-m1", "inelastic-c2/inelastic-m1"), label=" 0.25")
+except: pass
+
+try: pcgweighted.add_node("stable-c1/stable-m1", "")
+except: pass
+try: pcgweighted.add_node("component-c1/component-m1", "")
+except: pass
+
+try: pcgweighted.add_edge(("stable-c1/stable-m1", "component-c1/component-m1"), label=" 1")
+except: pass
+
+try: pcgweighted.add_node("stable-c2/stable-m1", "")
+except: pass
+try: pcgweighted.add_node("component-c2/component-m1", "")
+except: pass
+
+try: pcgweighted.add_edge(("stable-c2/stable-m1", "component-c2/component-m1"), label=" 1")
+except: pass
+
+try: pcgweighted.add_node("open-c1/open-m1", "")
+except: pass
+try: pcgweighted.add_node("component-c1/component-m1", "")
+except: pass
+
+try: pcgweighted.add_edge(("open-c1/open-m1", "component-c1/component-m1"), label=" 0.5")
+except: pass
+
+try: pcgweighted.add_node("component-c1/component-m1", "")
+except: pass
+try: pcgweighted.add_node("inelastic-c1/inelastic-m1", "")
+except: pass
+
+try: pcgweighted.add_edge(("component-c1/component-m1", "inelastic-c1/inelastic-m1"), label=" 0.33")
+except: pass
+
+try: pcgweighted.add_node("stable-c2/stable-m2", "")
+except: pass
+try: pcgweighted.add_node("component-c2/component-m2", "")
+except: pass
+
+try: pcgweighted.add_edge(("stable-c2/stable-m2", "component-c2/component-m2"), label=" 1")
+except: pass
+
+try: pcgweighted.add_node("coherent-c1/coherent-m1", "")
+except: pass
+try: pcgweighted.add_node("open-c1/open-m1", "")
+except: pass
+
+try: pcgweighted.add_edge(("coherent-c1/coherent-m1", "open-c1/open-m1"), label=" 1")
+except: pass
+
+try: pcgweighted.add_node("component-c1/component-m4", "")
+except: pass
+try: pcgweighted.add_node("inelastic-c1/elastic-m3", "")
+except: pass
+
+try: pcgweighted.add_edge(("component-c1/component-m4", "inelastic-c1/elastic-m3"), label=" 0.25")
+except: pass
+
+try: pcgweighted.add_node("component-c1/component-m5", "")
+except: pass
+try: pcgweighted.add_node("open-c1/open-m5", "")
+except: pass
+
+try: pcgweighted.add_edge(("component-c1/component-m5", "open-c1/open-m5"), label=" 0.33")
+except: pass
+
+try: pcgweighted.add_node("span/arch", "")
+except: pass
+try: pcgweighted.add_node("component-c2/component-m1", "")
+except: pass
+
+try: pcgweighted.add_edge(("span/arch", "component-c2/component-m1"), label=" 0.33")
+except: pass
+
+try: pcgweighted.add_node("component-c1/component-m4", "")
+except: pass
+try: pcgweighted.add_node("open-c1/open-m4", "")
+except: pass
+
+try: pcgweighted.add_edge(("component-c1/component-m4", "open-c1/open-m4"), label=" 0.25")
 except: pass
 
 try: pcgweighted.add_node("inelastic-c1/elastic-m3", "")
@@ -753,68 +649,36 @@ except: pass
 try: pcgweighted.add_edge(("inelastic-c2/elastic-m3", "component-c2/component-m4"), label=" 1")
 except: pass
 
-try: pcgweighted.add_node("incoherent-c1/coherent-m3", "")
-except: pass
-try: pcgweighted.add_node("partiallyFilled-c1/open-m3", "")
-except: pass
-
-try: pcgweighted.add_edge(("incoherent-c1/coherent-m3", "partiallyFilled-c1/open-m3"), label=" 1")
-except: pass
-
-try: pcgweighted.add_node("open-c1/open-m1", "")
-except: pass
-try: pcgweighted.add_node("coherent-c1/coherent-m1", "")
-except: pass
-
-try: pcgweighted.add_edge(("open-c1/open-m1", "coherent-c1/coherent-m1"), label=" 0.5")
-except: pass
-
 try: pcgweighted.add_node("length/order", "")
 except: pass
 try: pcgweighted.add_node("prosodicWord/syntacticConstituent", "")
 except: pass
 
-try: pcgweighted.add_edge(("length/order", "prosodicWord/syntacticConstituent"), label=" 0.33")
+try: pcgweighted.add_edge(("length/order", "prosodicWord/syntacticConstituent"), label=" 0.5")
 except: pass
 
-try: pcgweighted.add_node("stable-c1/stable-m4", "")
+try: pcgweighted.add_node("coherent-c2/incoherent-m1", "")
 except: pass
+try: pcgweighted.add_node("partiallyFilled-c1/open-m4", "")
+except: pass
+
+try: pcgweighted.add_edge(("coherent-c2/incoherent-m1", "partiallyFilled-c1/open-m4"), label=" 1")
+except: pass
+
 try: pcgweighted.add_node("component-c1/component-m4", "")
-except: pass
-
-try: pcgweighted.add_edge(("stable-c1/stable-m4", "component-c1/component-m4"), label=" 1")
-except: pass
-
-try: pcgweighted.add_node("component-c2/component-m4", "")
 except: pass
 try: pcgweighted.add_node("span/arch", "")
 except: pass
 
-try: pcgweighted.add_edge(("component-c2/component-m4", "span/arch"), label=" 0.25")
+try: pcgweighted.add_edge(("component-c1/component-m4", "span/arch"), label=" 0.25")
 except: pass
 
-try: pcgweighted.add_node("length/order", "")
+try: pcgweighted.add_node("component-c2/component-m4", "")
 except: pass
-try: pcgweighted.add_node("count2-c1/count5-m1", "")
-except: pass
-
-try: pcgweighted.add_edge(("length/order", "count2-c1/count5-m1"), label=" 0.33")
+try: pcgweighted.add_node("partiallyFilled-c1/open-m4", "")
 except: pass
 
-try: pcgweighted.add_node("open-c1/open-m3", "")
-except: pass
-try: pcgweighted.add_node("coherent-c1/coherent-m3", "")
-except: pass
-
-try: pcgweighted.add_edge(("open-c1/open-m3", "coherent-c1/coherent-m3"), label=" 0.5")
-except: pass
-
-try: pcgweighted.add_node("incoherent-c1/coherent-m2", "")
-except: pass
-try: pcgweighted.add_node("partiallyFilled-c1/open-m2", "")
-except: pass
-
-try: pcgweighted.add_edge(("incoherent-c1/coherent-m2", "partiallyFilled-c1/open-m2"), label=" 1")
+try: pcgweighted.add_edge(("component-c2/component-m4", "partiallyFilled-c1/open-m4"), label=" 0.33")
 except: pass
 
 try: pcgweighted.add_node("inelastic-c2/inelastic-m2", "")
@@ -822,23 +686,23 @@ except: pass
 try: pcgweighted.add_node("component-c2/component-m5", "")
 except: pass
 
-try: pcgweighted.add_edge(("inelastic-c2/inelastic-m2", "component-c2/component-m5"), label=" 0.5")
+try: pcgweighted.add_edge(("inelastic-c2/inelastic-m2", "component-c2/component-m5"), label=" 1")
 except: pass
 
-try: pcgweighted.add_node("open-c1/open-m5", "")
+try: pcgweighted.add_node("open-c1/open-m3", "")
 except: pass
-try: pcgweighted.add_node("component-c2/component-m5", "")
-except: pass
-
-try: pcgweighted.add_edge(("open-c1/open-m5", "component-c2/component-m5"), label=" 0.5")
+try: pcgweighted.add_node("component-c1/component-m3", "")
 except: pass
 
-try: pcgweighted.add_node("lexicoconstructionalConditioning/constructionalConditioning", "")
-except: pass
-try: pcgweighted.add_node("desmeme/desmeme", "")
+try: pcgweighted.add_edge(("open-c1/open-m3", "component-c1/component-m3"), label=" 0.5")
 except: pass
 
-try: pcgweighted.add_edge(("lexicoconstructionalConditioning/constructionalConditioning", "desmeme/desmeme"), label=" 1")
+try: pcgweighted.add_node("open-c1/open-m4", "")
+except: pass
+try: pcgweighted.add_node("component-c1/component-m4", "")
+except: pass
+
+try: pcgweighted.add_edge(("open-c1/open-m4", "component-c1/component-m4"), label=" 0.5")
 except: pass
 
 try: pcgweighted.add_node("component-c2/component-m5", "")
@@ -849,20 +713,12 @@ except: pass
 try: pcgweighted.add_edge(("component-c2/component-m5", "inelastic-c2/inelastic-m2"), label=" 0.33")
 except: pass
 
-try: pcgweighted.add_node("length/inelastic-m1", "")
+try: pcgweighted.add_node("component-c2/component-m1", "")
 except: pass
-try: pcgweighted.add_node("count2-c1/count1-m1", "")
-except: pass
-
-try: pcgweighted.add_edge(("length/inelastic-m1", "count2-c1/count1-m1"), label=" 1")
+try: pcgweighted.add_node("partiallyFilled-c1/open-m1", "")
 except: pass
 
-try: pcgweighted.add_node("open-c1/open-m5", "")
-except: pass
-try: pcgweighted.add_node("coherent-c1/coherent-m4", "")
-except: pass
-
-try: pcgweighted.add_edge(("open-c1/open-m5", "coherent-c1/coherent-m4"), label=" 0.5")
+try: pcgweighted.add_edge(("component-c2/component-m1", "partiallyFilled-c1/open-m1"), label=" 0.25")
 except: pass
 
 try: pcgweighted.add_node("desmeme/desmeme", "")
@@ -873,28 +729,28 @@ except: pass
 try: pcgweighted.add_edge(("desmeme/desmeme", "length/order"), label=" 0.25")
 except: pass
 
-try: pcgweighted.add_node("length/inelastic-m2", "")
+try: pcgweighted.add_node("component-c2/component-m2", "")
 except: pass
-try: pcgweighted.add_node("count2-c1/count1-m2", "")
-except: pass
-
-try: pcgweighted.add_edge(("length/inelastic-m2", "count2-c1/count1-m2"), label=" 1")
+try: pcgweighted.add_node("partiallyFilled-c1/open-m2", "")
 except: pass
 
-try: pcgweighted.add_node("count2-c1/count5-m1", "")
-except: pass
-try: pcgweighted.add_node("length/order", "")
+try: pcgweighted.add_edge(("component-c2/component-m2", "partiallyFilled-c1/open-m2"), label=" 0.33")
 except: pass
 
-try: pcgweighted.add_edge(("count2-c1/count5-m1", "length/order"), label=" 1")
+try: pcgweighted.add_node("partiallyFilled-c1/open-m4", "")
+except: pass
+try: pcgweighted.add_node("component-c2/component-m4", "")
 except: pass
 
-try: pcgweighted.add_node("count1-c1/count5-m1", "")
-except: pass
-try: pcgweighted.add_node("inelastic-c1/order", "")
+try: pcgweighted.add_edge(("partiallyFilled-c1/open-m4", "component-c2/component-m4"), label=" 0.5")
 except: pass
 
-try: pcgweighted.add_edge(("count1-c1/count5-m1", "inelastic-c1/order"), label=" 1")
+try: pcgweighted.add_node("open-c1/open-m5", "")
+except: pass
+try: pcgweighted.add_node("component-c1/component-m5", "")
+except: pass
+
+try: pcgweighted.add_edge(("open-c1/open-m5", "component-c1/component-m5"), label=" 0.5")
 except: pass
 
 try: pcgweighted.add_node("length/order", "")
@@ -902,39 +758,39 @@ except: pass
 try: pcgweighted.add_node("desmeme/desmeme", "")
 except: pass
 
-try: pcgweighted.add_edge(("length/order", "desmeme/desmeme"), label=" 0.33")
+try: pcgweighted.add_edge(("length/order", "desmeme/desmeme"), label=" 0.5")
 except: pass
 
-try: pcglabels.add_node("count1-c2/count1-m1", "")
+try: pcglabels.add_node("partiallyFilled-c1/open-m5", "")
 except: pass
-try: pcglabels.add_node("inelastic-c2/inelastic-m1", "")
-except: pass
-
-try: pcglabels.add_edge(("count1-c2/count1-m1", "inelastic-c2/inelastic-m1"), label="COUNT")
+try: pcglabels.add_node("component-c2/component-m5", "")
 except: pass
 
-try: pcglabels.add_node("inelastic-c2/inelastic-m1", "")
-except: pass
-try: pcglabels.add_node("count1-c2/count1-m1", "")
+try: pcglabels.add_edge(("partiallyFilled-c1/open-m5", "component-c2/component-m5"), label="FILLEDNESS")
 except: pass
 
-try: pcglabels.add_edge(("inelastic-c2/inelastic-m1", "count1-c2/count1-m1"), label="COUNT")
+try: pcglabels.add_node("component-c2/component-m5", "")
+except: pass
+try: pcglabels.add_node("partiallyFilled-c1/open-m5", "")
 except: pass
 
-try: pcglabels.add_node("desmeme/desmeme", "")
-except: pass
-try: pcglabels.add_node("potentiallyViolable/notViolable", "")
+try: pcglabels.add_edge(("component-c2/component-m5", "partiallyFilled-c1/open-m5"), label="FILLEDNESS")
 except: pass
 
-try: pcglabels.add_edge(("desmeme/desmeme", "potentiallyViolable/notViolable"), label="VIOLABILITY")
+try: pcglabels.add_node("partiallyFilled-c1/open-m5", "")
+except: pass
+try: pcglabels.add_node("coherent-c2/coherent-m4", "")
 except: pass
 
-try: pcglabels.add_node("partiallyFilled-c1/open-m2", "")
+try: pcglabels.add_edge(("partiallyFilled-c1/open-m5", "coherent-c2/coherent-m4"), label="COHERENCE")
+except: pass
+
+try: pcglabels.add_node("stable-c1/stable-m2", "")
 except: pass
 try: pcglabels.add_node("component-c1/component-m2", "")
 except: pass
 
-try: pcglabels.add_edge(("partiallyFilled-c1/open-m2", "component-c1/component-m2"), label="FILLEDNESS")
+try: pcglabels.add_edge(("stable-c1/stable-m2", "component-c1/component-m2"), label="STABILITY")
 except: pass
 
 try: pcglabels.add_node("inelastic-c1/elastic-m1", "")
@@ -945,20 +801,12 @@ except: pass
 try: pcglabels.add_edge(("inelastic-c1/elastic-m1", "component-c1/component-m2"), label="ELASTICITY")
 except: pass
 
-try: pcglabels.add_node("stable-c2/stable-m2", "")
+try: pcglabels.add_node("stable-c1/stable-m3", "")
 except: pass
-try: pcglabels.add_node("component-c2/component-m2", "")
-except: pass
-
-try: pcglabels.add_edge(("stable-c2/stable-m2", "component-c2/component-m2"), label="STABILITY")
+try: pcglabels.add_node("component-c1/component-m3", "")
 except: pass
 
-try: pcglabels.add_node("partiallyFilled-c1/open-m4", "")
-except: pass
-try: pcglabels.add_node("incoherent-c1/incoherent-m1", "")
-except: pass
-
-try: pcglabels.add_edge(("partiallyFilled-c1/open-m4", "incoherent-c1/incoherent-m1"), label="COHERENCE")
+try: pcglabels.add_edge(("stable-c1/stable-m3", "component-c1/component-m3"), label="STABILITY")
 except: pass
 
 try: pcglabels.add_node("prosodicWord/syntacticConstituent", "")
@@ -969,12 +817,12 @@ except: pass
 try: pcglabels.add_edge(("prosodicWord/syntacticConstituent", "length/order"), label="CONSTITUENT")
 except: pass
 
-try: pcglabels.add_node("component-c1/component-m2", "")
+try: pcglabels.add_node("open-c1/open-m5", "")
 except: pass
-try: pcglabels.add_node("stable-c1/stable-m2", "")
+try: pcglabels.add_node("coherent-c1/coherent-m4", "")
 except: pass
 
-try: pcglabels.add_edge(("component-c1/component-m2", "stable-c1/stable-m2"), label="STABILITY")
+try: pcglabels.add_edge(("open-c1/open-m5", "coherent-c1/coherent-m4"), label="COHERENCE")
 except: pass
 
 try: pcglabels.add_node("component-c1/component-m3", "")
@@ -985,14 +833,6 @@ except: pass
 try: pcglabels.add_edge(("component-c1/component-m3", "inelastic-c1/elastic-m2"), label="ELASTICITY")
 except: pass
 
-try: pcglabels.add_node("coherent-c1/coherent-m4", "")
-except: pass
-try: pcglabels.add_node("open-c1/open-m5", "")
-except: pass
-
-try: pcglabels.add_edge(("coherent-c1/coherent-m4", "open-c1/open-m5"), label="COHERENCE")
-except: pass
-
 try: pcglabels.add_node("component-c1/component-m5", "")
 except: pass
 try: pcglabels.add_node("inelastic-c1/inelastic-m2", "")
@@ -1001,12 +841,12 @@ except: pass
 try: pcglabels.add_edge(("component-c1/component-m5", "inelastic-c1/inelastic-m2"), label="ELASTICITY")
 except: pass
 
-try: pcglabels.add_node("component-c2/component-m5", "")
+try: pcglabels.add_node("desmeme/desmeme", "")
 except: pass
-try: pcglabels.add_node("stable-c2/stable-m5", "")
+try: pcglabels.add_node("potentiallyViolable/notViolable", "")
 except: pass
 
-try: pcglabels.add_edge(("component-c2/component-m5", "stable-c2/stable-m5"), label="STABILITY")
+try: pcglabels.add_edge(("desmeme/desmeme", "potentiallyViolable/notViolable"), label="VIOLABILITY")
 except: pass
 
 try: pcglabels.add_node("component-c2/component-m3", "")
@@ -1017,92 +857,28 @@ except: pass
 try: pcglabels.add_edge(("component-c2/component-m3", "inelastic-c2/elastic-m2"), label="ELASTICITY")
 except: pass
 
-try: pcglabels.add_node("inelastic-c1/inelastic-m1", "")
-except: pass
-try: pcglabels.add_node("count1-c1/count1-m1", "")
-except: pass
-
-try: pcglabels.add_edge(("inelastic-c1/inelastic-m1", "count1-c1/count1-m1"), label="COUNT")
-except: pass
-
-try: pcglabels.add_node("open-c1/open-m4", "")
-except: pass
-try: pcglabels.add_node("component-c2/component-m4", "")
-except: pass
-
-try: pcglabels.add_edge(("open-c1/open-m4", "component-c2/component-m4"), label="FILLEDNESS")
-except: pass
-
-try: pcglabels.add_node("component-c1/component-m4", "")
-except: pass
-try: pcglabels.add_node("stable-c1/stable-m4", "")
-except: pass
-
-try: pcglabels.add_edge(("component-c1/component-m4", "stable-c1/stable-m4"), label="STABILITY")
-except: pass
-
-try: pcglabels.add_node("component-c2/component-m4", "")
-except: pass
-try: pcglabels.add_node("stable-c2/stable-m4", "")
-except: pass
-
-try: pcglabels.add_edge(("component-c2/component-m4", "stable-c2/stable-m4"), label="STABILITY")
-except: pass
-
-try: pcglabels.add_node("inelastic-c1/elastic-m2", "")
-except: pass
-try: pcglabels.add_node("component-c1/component-m3", "")
-except: pass
-
-try: pcglabels.add_edge(("inelastic-c1/elastic-m2", "component-c1/component-m3"), label="ELASTICITY")
-except: pass
-
-try: pcglabels.add_node("coherent-c1/coherent-m3", "")
-except: pass
-try: pcglabels.add_node("open-c1/open-m3", "")
-except: pass
-
-try: pcglabels.add_edge(("coherent-c1/coherent-m3", "open-c1/open-m3"), label="COHERENCE")
-except: pass
-
-try: pcglabels.add_node("open-c1/open-m1", "")
-except: pass
-try: pcglabels.add_node("component-c2/component-m1", "")
-except: pass
-
-try: pcglabels.add_edge(("open-c1/open-m1", "component-c2/component-m1"), label="FILLEDNESS")
-except: pass
-
-try: pcglabels.add_node("partiallyFilled-c1/open-m5", "")
-except: pass
-try: pcglabels.add_node("component-c1/component-m5", "")
-except: pass
-
-try: pcglabels.add_edge(("partiallyFilled-c1/open-m5", "component-c1/component-m5"), label="FILLEDNESS")
-except: pass
-
-try: pcglabels.add_node("partiallyFilled-c1/open-m5", "")
-except: pass
-try: pcglabels.add_node("incoherent-c1/coherent-m4", "")
-except: pass
-
-try: pcglabels.add_edge(("partiallyFilled-c1/open-m5", "incoherent-c1/coherent-m4"), label="COHERENCE")
-except: pass
-
 try: pcglabels.add_node("component-c1/component-m2", "")
 except: pass
-try: pcglabels.add_node("inelastic-c1/elastic-m1", "")
+try: pcglabels.add_node("open-c1/open-m2", "")
 except: pass
 
-try: pcglabels.add_edge(("component-c1/component-m2", "inelastic-c1/elastic-m1"), label="ELASTICITY")
+try: pcglabels.add_edge(("component-c1/component-m2", "open-c1/open-m2"), label="FILLEDNESS")
 except: pass
 
-try: pcglabels.add_node("incoherent-c1/coherent-m4", "")
+try: pcglabels.add_node("stable-c2/stable-m5", "")
 except: pass
-try: pcglabels.add_node("partiallyFilled-c1/open-m5", "")
+try: pcglabels.add_node("component-c2/component-m5", "")
 except: pass
 
-try: pcglabels.add_edge(("incoherent-c1/coherent-m4", "partiallyFilled-c1/open-m5"), label="COHERENCE")
+try: pcglabels.add_edge(("stable-c2/stable-m5", "component-c2/component-m5"), label="STABILITY")
+except: pass
+
+try: pcglabels.add_node("partiallyFilled-c1/open-m4", "")
+except: pass
+try: pcglabels.add_node("coherent-c2/incoherent-m1", "")
+except: pass
+
+try: pcglabels.add_edge(("partiallyFilled-c1/open-m4", "coherent-c2/incoherent-m1"), label="COHERENCE")
 except: pass
 
 try: pcglabels.add_node("open-c1/open-m4", "")
@@ -1113,20 +889,52 @@ except: pass
 try: pcglabels.add_edge(("open-c1/open-m4", "coherent-c1/incoherent-m1"), label="COHERENCE")
 except: pass
 
-try: pcglabels.add_node("incoherent-c1/incoherent-m1", "")
-except: pass
-try: pcglabels.add_node("partiallyFilled-c1/open-m4", "")
-except: pass
-
-try: pcglabels.add_edge(("incoherent-c1/incoherent-m1", "partiallyFilled-c1/open-m4"), label="COHERENCE")
-except: pass
-
-try: pcglabels.add_node("stable-c1/stable-m3", "")
+try: pcglabels.add_node("inelastic-c1/elastic-m2", "")
 except: pass
 try: pcglabels.add_node("component-c1/component-m3", "")
 except: pass
 
-try: pcglabels.add_edge(("stable-c1/stable-m3", "component-c1/component-m3"), label="STABILITY")
+try: pcglabels.add_edge(("inelastic-c1/elastic-m2", "component-c1/component-m3"), label="ELASTICITY")
+except: pass
+
+try: pcglabels.add_node("stable-c2/stable-m4", "")
+except: pass
+try: pcglabels.add_node("component-c2/component-m4", "")
+except: pass
+
+try: pcglabels.add_edge(("stable-c2/stable-m4", "component-c2/component-m4"), label="STABILITY")
+except: pass
+
+try: pcglabels.add_node("stable-c2/stable-m3", "")
+except: pass
+try: pcglabels.add_node("component-c2/component-m3", "")
+except: pass
+
+try: pcglabels.add_edge(("stable-c2/stable-m3", "component-c2/component-m3"), label="STABILITY")
+except: pass
+
+try: pcglabels.add_node("component-c1/component-m2", "")
+except: pass
+try: pcglabels.add_node("inelastic-c1/elastic-m1", "")
+except: pass
+
+try: pcglabels.add_edge(("component-c1/component-m2", "inelastic-c1/elastic-m1"), label="ELASTICITY")
+except: pass
+
+try: pcglabels.add_node("partiallyFilled-c1/open-m2", "")
+except: pass
+try: pcglabels.add_node("coherent-c2/coherent-m2", "")
+except: pass
+
+try: pcglabels.add_edge(("partiallyFilled-c1/open-m2", "coherent-c2/coherent-m2"), label="COHERENCE")
+except: pass
+
+try: pcglabels.add_node("coherent-c2/coherent-m1", "")
+except: pass
+try: pcglabels.add_node("partiallyFilled-c1/open-m1", "")
+except: pass
+
+try: pcglabels.add_edge(("coherent-c2/coherent-m1", "partiallyFilled-c1/open-m1"), label="COHERENCE")
 except: pass
 
 try: pcglabels.add_node("component-c2/component-m2", "")
@@ -1137,20 +945,20 @@ except: pass
 try: pcglabels.add_edge(("component-c2/component-m2", "inelastic-c2/elastic-m1"), label="ELASTICITY")
 except: pass
 
-try: pcglabels.add_node("count1-c2/count5-m1", "")
+try: pcglabels.add_node("span/arch", "")
 except: pass
-try: pcglabels.add_node("inelastic-c2/order", "")
-except: pass
-
-try: pcglabels.add_edge(("count1-c2/count5-m1", "inelastic-c2/order"), label="COUNT")
+try: pcglabels.add_node("desmeme/desmeme", "")
 except: pass
 
-try: pcglabels.add_node("count2-c1/count1-m2", "")
-except: pass
-try: pcglabels.add_node("length/inelastic-m2", "")
+try: pcglabels.add_edge(("span/arch", "desmeme/desmeme"), label="FOUNDATION")
 except: pass
 
-try: pcglabels.add_edge(("count2-c1/count1-m2", "length/inelastic-m2"), label="COUNT")
+try: pcglabels.add_node("partiallyFilled-c1/open-m2", "")
+except: pass
+try: pcglabels.add_node("component-c2/component-m2", "")
+except: pass
+
+try: pcglabels.add_edge(("partiallyFilled-c1/open-m2", "component-c2/component-m2"), label="FILLEDNESS")
 except: pass
 
 try: pcglabels.add_node("inelastic-c2/elastic-m1", "")
@@ -1161,132 +969,108 @@ except: pass
 try: pcglabels.add_edge(("inelastic-c2/elastic-m1", "component-c2/component-m2"), label="ELASTICITY")
 except: pass
 
-try: pcglabels.add_node("potentiallyViolable/notViolable", "")
+try: pcglabels.add_node("coherent-c2/coherent-m4", "")
 except: pass
-try: pcglabels.add_node("desmeme/desmeme", "")
-except: pass
-
-try: pcglabels.add_edge(("potentiallyViolable/notViolable", "desmeme/desmeme"), label="VIOLABILITY")
+try: pcglabels.add_node("partiallyFilled-c1/open-m5", "")
 except: pass
 
-try: pcglabels.add_node("component-c2/component-m3", "")
-except: pass
-try: pcglabels.add_node("stable-c2/stable-m3", "")
+try: pcglabels.add_edge(("coherent-c2/coherent-m4", "partiallyFilled-c1/open-m5"), label="COHERENCE")
 except: pass
 
-try: pcglabels.add_edge(("component-c2/component-m3", "stable-c2/stable-m3"), label="STABILITY")
+try: pcglabels.add_node("open-c1/open-m1", "")
 except: pass
-
-try: pcglabels.add_node("incoherent-c1/coherent-m1", "")
-except: pass
-try: pcglabels.add_node("partiallyFilled-c1/open-m1", "")
-except: pass
-
-try: pcglabels.add_edge(("incoherent-c1/coherent-m1", "partiallyFilled-c1/open-m1"), label="COHERENCE")
-except: pass
-
-try: pcglabels.add_node("desmeme/desmeme", "")
-except: pass
-try: pcglabels.add_node("span/arch", "")
-except: pass
-
-try: pcglabels.add_edge(("desmeme/desmeme", "span/arch"), label="FOUNDATION")
-except: pass
-
-try: pcglabels.add_node("stable-c1/stable-m1", "")
-except: pass
-try: pcglabels.add_node("component-c1/component-m1", "")
-except: pass
-
-try: pcglabels.add_edge(("stable-c1/stable-m1", "component-c1/component-m1"), label="STABILITY")
-except: pass
-
-try: pcglabels.add_node("coherent-c1/incoherent-m1", "")
-except: pass
-try: pcglabels.add_node("open-c1/open-m4", "")
-except: pass
-
-try: pcglabels.add_edge(("coherent-c1/incoherent-m1", "open-c1/open-m4"), label="COHERENCE")
-except: pass
-
-try: pcglabels.add_node("stable-c2/stable-m1", "")
-except: pass
-try: pcglabels.add_node("component-c2/component-m1", "")
-except: pass
-
-try: pcglabels.add_edge(("stable-c2/stable-m1", "component-c2/component-m1"), label="STABILITY")
-except: pass
-
-try: pcglabels.add_node("partiallyFilled-c1/open-m1", "")
-except: pass
-try: pcglabels.add_node("incoherent-c1/coherent-m1", "")
-except: pass
-
-try: pcglabels.add_edge(("partiallyFilled-c1/open-m1", "incoherent-c1/coherent-m1"), label="COHERENCE")
-except: pass
-
-try: pcglabels.add_node("partiallyFilled-c1/open-m4", "")
-except: pass
-try: pcglabels.add_node("component-c1/component-m4", "")
-except: pass
-
-try: pcglabels.add_edge(("partiallyFilled-c1/open-m4", "component-c1/component-m4"), label="FILLEDNESS")
-except: pass
-
-try: pcglabels.add_node("count1-c2/count1-m2", "")
-except: pass
-try: pcglabels.add_node("inelastic-c2/inelastic-m2", "")
-except: pass
-
-try: pcglabels.add_edge(("count1-c2/count1-m2", "inelastic-c2/inelastic-m2"), label="COUNT")
-except: pass
-
-try: pcglabels.add_node("component-c2/component-m5", "")
-except: pass
-try: pcglabels.add_node("open-c1/open-m5", "")
-except: pass
-
-try: pcglabels.add_edge(("component-c2/component-m5", "open-c1/open-m5"), label="FILLEDNESS")
-except: pass
-
-try: pcglabels.add_node("count2-c1/count1-m1", "")
-except: pass
-try: pcglabels.add_node("length/inelastic-m1", "")
-except: pass
-
-try: pcglabels.add_edge(("count2-c1/count1-m1", "length/inelastic-m1"), label="COUNT")
-except: pass
-
-try: pcglabels.add_node("component-c1/component-m4", "")
-except: pass
-try: pcglabels.add_node("partiallyFilled-c1/open-m4", "")
-except: pass
-
-try: pcglabels.add_edge(("component-c1/component-m4", "partiallyFilled-c1/open-m4"), label="FILLEDNESS")
-except: pass
-
 try: pcglabels.add_node("coherent-c1/coherent-m1", "")
+except: pass
+
+try: pcglabels.add_edge(("open-c1/open-m1", "coherent-c1/coherent-m1"), label="COHERENCE")
+except: pass
+
+try: pcglabels.add_node("component-c1/component-m1", "")
 except: pass
 try: pcglabels.add_node("open-c1/open-m1", "")
 except: pass
 
-try: pcglabels.add_edge(("coherent-c1/coherent-m1", "open-c1/open-m1"), label="COHERENCE")
+try: pcglabels.add_edge(("component-c1/component-m1", "open-c1/open-m1"), label="FILLEDNESS")
 except: pass
 
-try: pcglabels.add_node("component-c2/component-m3", "")
+try: pcglabels.add_node("coherent-c2/coherent-m3", "")
+except: pass
+try: pcglabels.add_node("partiallyFilled-c1/open-m3", "")
+except: pass
+
+try: pcglabels.add_edge(("coherent-c2/coherent-m3", "partiallyFilled-c1/open-m3"), label="COHERENCE")
+except: pass
+
+try: pcglabels.add_node("coherent-c2/coherent-m2", "")
+except: pass
+try: pcglabels.add_node("partiallyFilled-c1/open-m2", "")
+except: pass
+
+try: pcglabels.add_edge(("coherent-c2/coherent-m2", "partiallyFilled-c1/open-m2"), label="COHERENCE")
+except: pass
+
+try: pcglabels.add_node("coherent-c1/coherent-m3", "")
 except: pass
 try: pcglabels.add_node("open-c1/open-m3", "")
 except: pass
 
-try: pcglabels.add_edge(("component-c2/component-m3", "open-c1/open-m3"), label="FILLEDNESS")
+try: pcglabels.add_edge(("coherent-c1/coherent-m3", "open-c1/open-m3"), label="COHERENCE")
 except: pass
 
-try: pcglabels.add_node("count1-c1/count1-m2", "")
+try: pcglabels.add_node("stable-c1/stable-m5", "")
 except: pass
-try: pcglabels.add_node("inelastic-c1/inelastic-m2", "")
+try: pcglabels.add_node("component-c1/component-m5", "")
 except: pass
 
-try: pcglabels.add_edge(("count1-c1/count1-m2", "inelastic-c1/inelastic-m2"), label="COUNT")
+try: pcglabels.add_edge(("stable-c1/stable-m5", "component-c1/component-m5"), label="STABILITY")
+except: pass
+
+try: pcglabels.add_node("lexicoconstructionalConditioning/constructionalConditioning", "")
+except: pass
+try: pcglabels.add_node("desmeme/desmeme", "")
+except: pass
+
+try: pcglabels.add_edge(("lexicoconstructionalConditioning/constructionalConditioning", "desmeme/desmeme"), label="CONDITIONING")
+except: pass
+
+try: pcglabels.add_node("component-c1/component-m3", "")
+except: pass
+try: pcglabels.add_node("open-c1/open-m3", "")
+except: pass
+
+try: pcglabels.add_edge(("component-c1/component-m3", "open-c1/open-m3"), label="FILLEDNESS")
+except: pass
+
+try: pcglabels.add_node("partiallyFilled-c1/open-m1", "")
+except: pass
+try: pcglabels.add_node("component-c2/component-m1", "")
+except: pass
+
+try: pcglabels.add_edge(("partiallyFilled-c1/open-m1", "component-c2/component-m1"), label="FILLEDNESS")
+except: pass
+
+try: pcglabels.add_node("component-c1/component-m5", "")
+except: pass
+try: pcglabels.add_node("stable-c1/stable-m5", "")
+except: pass
+
+try: pcglabels.add_edge(("component-c1/component-m5", "stable-c1/stable-m5"), label="STABILITY")
+except: pass
+
+try: pcglabels.add_node("component-c2/component-m1", "")
+except: pass
+try: pcglabels.add_node("stable-c2/stable-m1", "")
+except: pass
+
+try: pcglabels.add_edge(("component-c2/component-m1", "stable-c2/stable-m1"), label="STABILITY")
+except: pass
+
+try: pcglabels.add_node("partiallyFilled-c1/open-m3", "")
+except: pass
+try: pcglabels.add_node("component-c2/component-m3", "")
+except: pass
+
+try: pcglabels.add_edge(("partiallyFilled-c1/open-m3", "component-c2/component-m3"), label="FILLEDNESS")
 except: pass
 
 try: pcglabels.add_node("component-c2/component-m4", "")
@@ -1305,84 +1089,76 @@ except: pass
 try: pcglabels.add_edge(("inelastic-c2/inelastic-m1", "component-c2/component-m1"), label="ELASTICITY")
 except: pass
 
-try: pcglabels.add_node("stable-c1/stable-m2", "")
+try: pcglabels.add_node("coherent-c1/coherent-m4", "")
 except: pass
-try: pcglabels.add_node("component-c1/component-m2", "")
+try: pcglabels.add_node("open-c1/open-m5", "")
 except: pass
 
-try: pcglabels.add_edge(("stable-c1/stable-m2", "component-c1/component-m2"), label="STABILITY")
+try: pcglabels.add_edge(("coherent-c1/coherent-m4", "open-c1/open-m5"), label="COHERENCE")
 except: pass
 
 try: pcglabels.add_node("component-c2/component-m2", "")
 except: pass
+try: pcglabels.add_node("stable-c2/stable-m2", "")
+except: pass
+
+try: pcglabels.add_edge(("component-c2/component-m2", "stable-c2/stable-m2"), label="STABILITY")
+except: pass
+
+try: pcglabels.add_node("component-c2/component-m3", "")
+except: pass
+try: pcglabels.add_node("stable-c2/stable-m3", "")
+except: pass
+
+try: pcglabels.add_edge(("component-c2/component-m3", "stable-c2/stable-m3"), label="STABILITY")
+except: pass
+
+try: pcglabels.add_node("component-c2/component-m4", "")
+except: pass
+try: pcglabels.add_node("stable-c2/stable-m4", "")
+except: pass
+
+try: pcglabels.add_edge(("component-c2/component-m4", "stable-c2/stable-m4"), label="STABILITY")
+except: pass
+
+try: pcglabels.add_node("potentiallyViolable/notViolable", "")
+except: pass
+try: pcglabels.add_node("desmeme/desmeme", "")
+except: pass
+
+try: pcglabels.add_edge(("potentiallyViolable/notViolable", "desmeme/desmeme"), label="VIOLABILITY")
+except: pass
+
+try: pcglabels.add_node("component-c1/component-m4", "")
+except: pass
+try: pcglabels.add_node("stable-c1/stable-m4", "")
+except: pass
+
+try: pcglabels.add_edge(("component-c1/component-m4", "stable-c1/stable-m4"), label="STABILITY")
+except: pass
+
 try: pcglabels.add_node("open-c1/open-m2", "")
 except: pass
-
-try: pcglabels.add_edge(("component-c2/component-m2", "open-c1/open-m2"), label="FILLEDNESS")
+try: pcglabels.add_node("component-c1/component-m2", "")
 except: pass
 
-try: pcglabels.add_node("component-c1/component-m5", "")
-except: pass
-try: pcglabels.add_node("partiallyFilled-c1/open-m5", "")
+try: pcglabels.add_edge(("open-c1/open-m2", "component-c1/component-m2"), label="FILLEDNESS")
 except: pass
 
-try: pcglabels.add_edge(("component-c1/component-m5", "partiallyFilled-c1/open-m5"), label="FILLEDNESS")
+try: pcglabels.add_node("partiallyFilled-c1/open-m3", "")
+except: pass
+try: pcglabels.add_node("coherent-c2/coherent-m3", "")
 except: pass
 
-try: pcglabels.add_node("component-c2/component-m1", "")
-except: pass
-try: pcglabels.add_node("open-c1/open-m1", "")
+try: pcglabels.add_edge(("partiallyFilled-c1/open-m3", "coherent-c2/coherent-m3"), label="COHERENCE")
 except: pass
 
-try: pcglabels.add_edge(("component-c2/component-m1", "open-c1/open-m1"), label="FILLEDNESS")
+try: pcglabels.add_node("open-c1/open-m3", "")
+except: pass
+try: pcglabels.add_node("coherent-c1/coherent-m3", "")
 except: pass
 
-try: pcglabels.add_node("coherent-c1/coherent-m2", "")
-except: pass
-try: pcglabels.add_node("open-c1/open-m2", "")
-except: pass
-
-try: pcglabels.add_edge(("coherent-c1/coherent-m2", "open-c1/open-m2"), label="COHERENCE")
-except: pass
-
-try: pcglabels.add_node("stable-c2/stable-m5", "")
-except: pass
-try: pcglabels.add_node("component-c2/component-m5", "")
-except: pass
-
-try: pcglabels.add_edge(("stable-c2/stable-m5", "component-c2/component-m5"), label="STABILITY")
-except: pass
-
-try: pcglabels.add_node("component-c1/component-m1", "")
-except: pass
-try: pcglabels.add_node("partiallyFilled-c1/open-m1", "")
-except: pass
-
-try: pcglabels.add_edge(("component-c1/component-m1", "partiallyFilled-c1/open-m1"), label="FILLEDNESS")
-except: pass
-
-try: pcglabels.add_node("count1-c1/count1-m1", "")
-except: pass
-try: pcglabels.add_node("inelastic-c1/inelastic-m1", "")
-except: pass
-
-try: pcglabels.add_edge(("count1-c1/count1-m1", "inelastic-c1/inelastic-m1"), label="COUNT")
-except: pass
-
-try: pcglabels.add_node("component-c1/component-m1", "")
-except: pass
-try: pcglabels.add_node("stable-c1/stable-m1", "")
-except: pass
-
-try: pcglabels.add_edge(("component-c1/component-m1", "stable-c1/stable-m1"), label="STABILITY")
-except: pass
-
-try: pcglabels.add_node("component-c2/component-m1", "")
-except: pass
-try: pcglabels.add_node("stable-c2/stable-m1", "")
-except: pass
-
-try: pcglabels.add_edge(("component-c2/component-m1", "stable-c2/stable-m1"), label="STABILITY")
+try: pcglabels.add_edge(("open-c1/open-m3", "coherent-c1/coherent-m3"), label="COHERENCE")
 except: pass
 
 try: pcglabels.add_node("inelastic-c1/inelastic-m2", "")
@@ -1395,66 +1171,26 @@ except: pass
 
 try: pcglabels.add_node("component-c1/component-m2", "")
 except: pass
-try: pcglabels.add_node("partiallyFilled-c1/open-m2", "")
+try: pcglabels.add_node("stable-c1/stable-m2", "")
 except: pass
 
-try: pcglabels.add_edge(("component-c1/component-m2", "partiallyFilled-c1/open-m2"), label="FILLEDNESS")
+try: pcglabels.add_edge(("component-c1/component-m2", "stable-c1/stable-m2"), label="STABILITY")
 except: pass
 
-try: pcglabels.add_node("component-c2/component-m4", "")
+try: pcglabels.add_node("component-c2/component-m5", "")
 except: pass
-try: pcglabels.add_node("open-c1/open-m4", "")
-except: pass
-
-try: pcglabels.add_edge(("component-c2/component-m4", "open-c1/open-m4"), label="FILLEDNESS")
+try: pcglabels.add_node("stable-c2/stable-m5", "")
 except: pass
 
-try: pcglabels.add_node("partiallyFilled-c1/open-m1", "")
-except: pass
-try: pcglabels.add_node("component-c1/component-m1", "")
+try: pcglabels.add_edge(("component-c2/component-m5", "stable-c2/stable-m5"), label="STABILITY")
 except: pass
 
-try: pcglabels.add_edge(("partiallyFilled-c1/open-m1", "component-c1/component-m1"), label="FILLEDNESS")
+try: pcglabels.add_node("stable-c1/stable-m4", "")
+except: pass
+try: pcglabels.add_node("component-c1/component-m4", "")
 except: pass
 
-try: pcglabels.add_node("component-c2/component-m2", "")
-except: pass
-try: pcglabels.add_node("stable-c2/stable-m2", "")
-except: pass
-
-try: pcglabels.add_edge(("component-c2/component-m2", "stable-c2/stable-m2"), label="STABILITY")
-except: pass
-
-try: pcglabels.add_node("component-c1/component-m3", "")
-except: pass
-try: pcglabels.add_node("partiallyFilled-c1/open-m3", "")
-except: pass
-
-try: pcglabels.add_edge(("component-c1/component-m3", "partiallyFilled-c1/open-m3"), label="FILLEDNESS")
-except: pass
-
-try: pcglabels.add_node("span/arch", "")
-except: pass
-try: pcglabels.add_node("component-c2/component-m4", "")
-except: pass
-
-try: pcglabels.add_edge(("span/arch", "component-c2/component-m4"), label="RIGHT_SUPPORT")
-except: pass
-
-try: pcglabels.add_node("inelastic-c2/elastic-m2", "")
-except: pass
-try: pcglabels.add_node("component-c2/component-m3", "")
-except: pass
-
-try: pcglabels.add_edge(("inelastic-c2/elastic-m2", "component-c2/component-m3"), label="ELASTICITY")
-except: pass
-
-try: pcglabels.add_node("component-c1/component-m1", "")
-except: pass
-try: pcglabels.add_node("span/arch", "")
-except: pass
-
-try: pcglabels.add_edge(("component-c1/component-m1", "span/arch"), label="LEFT_SUPPORT")
+try: pcglabels.add_edge(("stable-c1/stable-m4", "component-c1/component-m4"), label="STABILITY")
 except: pass
 
 try: pcglabels.add_node("component-c1/component-m3", "")
@@ -1465,12 +1201,52 @@ except: pass
 try: pcglabels.add_edge(("component-c1/component-m3", "stable-c1/stable-m3"), label="STABILITY")
 except: pass
 
-try: pcglabels.add_node("inelastic-c2/order", "")
+try: pcglabels.add_node("component-c1/component-m1", "")
 except: pass
-try: pcglabels.add_node("count1-c2/count5-m1", "")
+try: pcglabels.add_node("stable-c1/stable-m1", "")
 except: pass
 
-try: pcglabels.add_edge(("inelastic-c2/order", "count1-c2/count5-m1"), label="COUNT")
+try: pcglabels.add_edge(("component-c1/component-m1", "stable-c1/stable-m1"), label="STABILITY")
+except: pass
+
+try: pcglabels.add_node("span/arch", "")
+except: pass
+try: pcglabels.add_node("component-c1/component-m4", "")
+except: pass
+
+try: pcglabels.add_edge(("span/arch", "component-c1/component-m4"), label="RIGHT_SUPPORT")
+except: pass
+
+try: pcglabels.add_node("inelastic-c2/elastic-m2", "")
+except: pass
+try: pcglabels.add_node("component-c2/component-m3", "")
+except: pass
+
+try: pcglabels.add_edge(("inelastic-c2/elastic-m2", "component-c2/component-m3"), label="ELASTICITY")
+except: pass
+
+try: pcglabels.add_node("component-c2/component-m1", "")
+except: pass
+try: pcglabels.add_node("span/arch", "")
+except: pass
+
+try: pcglabels.add_edge(("component-c2/component-m1", "span/arch"), label="LEFT_SUPPORT")
+except: pass
+
+try: pcglabels.add_node("partiallyFilled-c1/open-m1", "")
+except: pass
+try: pcglabels.add_node("coherent-c2/coherent-m1", "")
+except: pass
+
+try: pcglabels.add_edge(("partiallyFilled-c1/open-m1", "coherent-c2/coherent-m1"), label="COHERENCE")
+except: pass
+
+try: pcglabels.add_node("desmeme/desmeme", "")
+except: pass
+try: pcglabels.add_node("span/arch", "")
+except: pass
+
+try: pcglabels.add_edge(("desmeme/desmeme", "span/arch"), label="FOUNDATION")
 except: pass
 
 try: pcglabels.add_node("open-c1/open-m2", "")
@@ -1481,22 +1257,6 @@ except: pass
 try: pcglabels.add_edge(("open-c1/open-m2", "coherent-c1/coherent-m2"), label="COHERENCE")
 except: pass
 
-try: pcglabels.add_node("partiallyFilled-c1/open-m2", "")
-except: pass
-try: pcglabels.add_node("incoherent-c1/coherent-m2", "")
-except: pass
-
-try: pcglabels.add_edge(("partiallyFilled-c1/open-m2", "incoherent-c1/coherent-m2"), label="COHERENCE")
-except: pass
-
-try: pcglabels.add_node("component-c1/component-m5", "")
-except: pass
-try: pcglabels.add_node("stable-c1/stable-m5", "")
-except: pass
-
-try: pcglabels.add_edge(("component-c1/component-m5", "stable-c1/stable-m5"), label="STABILITY")
-except: pass
-
 try: pcglabels.add_node("inelastic-c1/inelastic-m1", "")
 except: pass
 try: pcglabels.add_node("component-c1/component-m1", "")
@@ -1505,36 +1265,36 @@ except: pass
 try: pcglabels.add_edge(("inelastic-c1/inelastic-m1", "component-c1/component-m1"), label="ELASTICITY")
 except: pass
 
-try: pcglabels.add_node("inelastic-c2/inelastic-m2", "")
+try: pcglabels.add_node("desmeme/desmeme", "")
 except: pass
-try: pcglabels.add_node("count1-c2/count1-m2", "")
-except: pass
-
-try: pcglabels.add_edge(("inelastic-c2/inelastic-m2", "count1-c2/count1-m2"), label="COUNT")
+try: pcglabels.add_node("lexicoconstructionalConditioning/constructionalConditioning", "")
 except: pass
 
-try: pcglabels.add_node("stable-c1/stable-m5", "")
-except: pass
-try: pcglabels.add_node("component-c1/component-m5", "")
+try: pcglabels.add_edge(("desmeme/desmeme", "lexicoconstructionalConditioning/constructionalConditioning"), label="CONDITIONING")
 except: pass
 
-try: pcglabels.add_edge(("stable-c1/stable-m5", "component-c1/component-m5"), label="STABILITY")
+try: pcglabels.add_node("coherent-c1/coherent-m2", "")
+except: pass
+try: pcglabels.add_node("open-c1/open-m2", "")
 except: pass
 
-try: pcglabels.add_node("stable-c2/stable-m4", "")
-except: pass
-try: pcglabels.add_node("component-c2/component-m4", "")
+try: pcglabels.add_edge(("coherent-c1/coherent-m2", "open-c1/open-m2"), label="COHERENCE")
 except: pass
 
-try: pcglabels.add_edge(("stable-c2/stable-m4", "component-c2/component-m4"), label="STABILITY")
+try: pcglabels.add_node("coherent-c1/incoherent-m1", "")
+except: pass
+try: pcglabels.add_node("open-c1/open-m4", "")
 except: pass
 
-try: pcglabels.add_node("inelastic-c1/inelastic-m2", "")
-except: pass
-try: pcglabels.add_node("count1-c1/count1-m2", "")
+try: pcglabels.add_edge(("coherent-c1/incoherent-m1", "open-c1/open-m4"), label="COHERENCE")
 except: pass
 
-try: pcglabels.add_edge(("inelastic-c1/inelastic-m2", "count1-c1/count1-m2"), label="COUNT")
+try: pcglabels.add_node("component-c2/component-m3", "")
+except: pass
+try: pcglabels.add_node("partiallyFilled-c1/open-m3", "")
+except: pass
+
+try: pcglabels.add_edge(("component-c2/component-m3", "partiallyFilled-c1/open-m3"), label="FILLEDNESS")
 except: pass
 
 try: pcglabels.add_node("component-c2/component-m1", "")
@@ -1545,28 +1305,28 @@ except: pass
 try: pcglabels.add_edge(("component-c2/component-m1", "inelastic-c2/inelastic-m1"), label="ELASTICITY")
 except: pass
 
-try: pcglabels.add_node("partiallyFilled-c1/open-m3", "")
+try: pcglabels.add_node("stable-c1/stable-m1", "")
 except: pass
-try: pcglabels.add_node("component-c1/component-m3", "")
-except: pass
-
-try: pcglabels.add_edge(("partiallyFilled-c1/open-m3", "component-c1/component-m3"), label="FILLEDNESS")
+try: pcglabels.add_node("component-c1/component-m1", "")
 except: pass
 
-try: pcglabels.add_node("open-c1/open-m3", "")
-except: pass
-try: pcglabels.add_node("component-c2/component-m3", "")
+try: pcglabels.add_edge(("stable-c1/stable-m1", "component-c1/component-m1"), label="STABILITY")
 except: pass
 
-try: pcglabels.add_edge(("open-c1/open-m3", "component-c2/component-m3"), label="FILLEDNESS")
+try: pcglabels.add_node("stable-c2/stable-m1", "")
+except: pass
+try: pcglabels.add_node("component-c2/component-m1", "")
 except: pass
 
-try: pcglabels.add_node("span/arch", "")
-except: pass
-try: pcglabels.add_node("desmeme/desmeme", "")
+try: pcglabels.add_edge(("stable-c2/stable-m1", "component-c2/component-m1"), label="STABILITY")
 except: pass
 
-try: pcglabels.add_edge(("span/arch", "desmeme/desmeme"), label="FOUNDATION")
+try: pcglabels.add_node("open-c1/open-m1", "")
+except: pass
+try: pcglabels.add_node("component-c1/component-m1", "")
+except: pass
+
+try: pcglabels.add_edge(("open-c1/open-m1", "component-c1/component-m1"), label="FILLEDNESS")
 except: pass
 
 try: pcglabels.add_node("component-c1/component-m1", "")
@@ -1577,28 +1337,20 @@ except: pass
 try: pcglabels.add_edge(("component-c1/component-m1", "inelastic-c1/inelastic-m1"), label="ELASTICITY")
 except: pass
 
-try: pcglabels.add_node("partiallyFilled-c1/open-m3", "")
-except: pass
-try: pcglabels.add_node("incoherent-c1/coherent-m3", "")
-except: pass
-
-try: pcglabels.add_edge(("partiallyFilled-c1/open-m3", "incoherent-c1/coherent-m3"), label="COHERENCE")
-except: pass
-
-try: pcglabels.add_node("open-c1/open-m2", "")
+try: pcglabels.add_node("stable-c2/stable-m2", "")
 except: pass
 try: pcglabels.add_node("component-c2/component-m2", "")
 except: pass
 
-try: pcglabels.add_edge(("open-c1/open-m2", "component-c2/component-m2"), label="FILLEDNESS")
+try: pcglabels.add_edge(("stable-c2/stable-m2", "component-c2/component-m2"), label="STABILITY")
 except: pass
 
-try: pcglabels.add_node("stable-c2/stable-m3", "")
+try: pcglabels.add_node("coherent-c1/coherent-m1", "")
 except: pass
-try: pcglabels.add_node("component-c2/component-m3", "")
+try: pcglabels.add_node("open-c1/open-m1", "")
 except: pass
 
-try: pcglabels.add_edge(("stable-c2/stable-m3", "component-c2/component-m3"), label="STABILITY")
+try: pcglabels.add_edge(("coherent-c1/coherent-m1", "open-c1/open-m1"), label="COHERENCE")
 except: pass
 
 try: pcglabels.add_node("component-c1/component-m4", "")
@@ -1609,28 +1361,28 @@ except: pass
 try: pcglabels.add_edge(("component-c1/component-m4", "inelastic-c1/elastic-m3"), label="ELASTICITY")
 except: pass
 
-try: pcglabels.add_node("inelastic-c1/order", "")
+try: pcglabels.add_node("component-c1/component-m5", "")
 except: pass
-try: pcglabels.add_node("count1-c1/count5-m1", "")
+try: pcglabels.add_node("open-c1/open-m5", "")
 except: pass
 
-try: pcglabels.add_edge(("inelastic-c1/order", "count1-c1/count5-m1"), label="COUNT")
+try: pcglabels.add_edge(("component-c1/component-m5", "open-c1/open-m5"), label="FILLEDNESS")
 except: pass
 
 try: pcglabels.add_node("span/arch", "")
 except: pass
-try: pcglabels.add_node("component-c1/component-m1", "")
+try: pcglabels.add_node("component-c2/component-m1", "")
 except: pass
 
-try: pcglabels.add_edge(("span/arch", "component-c1/component-m1"), label="LEFT_SUPPORT")
+try: pcglabels.add_edge(("span/arch", "component-c2/component-m1"), label="LEFT_SUPPORT")
 except: pass
 
-try: pcglabels.add_node("desmeme/desmeme", "")
+try: pcglabels.add_node("component-c1/component-m4", "")
 except: pass
-try: pcglabels.add_node("lexicoconstructionalConditioning/constructionalConditioning", "")
+try: pcglabels.add_node("open-c1/open-m4", "")
 except: pass
 
-try: pcglabels.add_edge(("desmeme/desmeme", "lexicoconstructionalConditioning/constructionalConditioning"), label="CONDITIONING")
+try: pcglabels.add_edge(("component-c1/component-m4", "open-c1/open-m4"), label="FILLEDNESS")
 except: pass
 
 try: pcglabels.add_node("inelastic-c1/elastic-m3", "")
@@ -1649,22 +1401,6 @@ except: pass
 try: pcglabels.add_edge(("inelastic-c2/elastic-m3", "component-c2/component-m4"), label="ELASTICITY")
 except: pass
 
-try: pcglabels.add_node("incoherent-c1/coherent-m3", "")
-except: pass
-try: pcglabels.add_node("partiallyFilled-c1/open-m3", "")
-except: pass
-
-try: pcglabels.add_edge(("incoherent-c1/coherent-m3", "partiallyFilled-c1/open-m3"), label="COHERENCE")
-except: pass
-
-try: pcglabels.add_node("open-c1/open-m1", "")
-except: pass
-try: pcglabels.add_node("coherent-c1/coherent-m1", "")
-except: pass
-
-try: pcglabels.add_edge(("open-c1/open-m1", "coherent-c1/coherent-m1"), label="COHERENCE")
-except: pass
-
 try: pcglabels.add_node("length/order", "")
 except: pass
 try: pcglabels.add_node("prosodicWord/syntacticConstituent", "")
@@ -1673,44 +1409,28 @@ except: pass
 try: pcglabels.add_edge(("length/order", "prosodicWord/syntacticConstituent"), label="CONSTITUENT")
 except: pass
 
-try: pcglabels.add_node("stable-c1/stable-m4", "")
+try: pcglabels.add_node("coherent-c2/incoherent-m1", "")
 except: pass
+try: pcglabels.add_node("partiallyFilled-c1/open-m4", "")
+except: pass
+
+try: pcglabels.add_edge(("coherent-c2/incoherent-m1", "partiallyFilled-c1/open-m4"), label="COHERENCE")
+except: pass
+
 try: pcglabels.add_node("component-c1/component-m4", "")
-except: pass
-
-try: pcglabels.add_edge(("stable-c1/stable-m4", "component-c1/component-m4"), label="STABILITY")
-except: pass
-
-try: pcglabels.add_node("component-c2/component-m4", "")
 except: pass
 try: pcglabels.add_node("span/arch", "")
 except: pass
 
-try: pcglabels.add_edge(("component-c2/component-m4", "span/arch"), label="RIGHT_SUPPORT")
+try: pcglabels.add_edge(("component-c1/component-m4", "span/arch"), label="RIGHT_SUPPORT")
 except: pass
 
-try: pcglabels.add_node("length/order", "")
+try: pcglabels.add_node("component-c2/component-m4", "")
 except: pass
-try: pcglabels.add_node("count2-c1/count5-m1", "")
-except: pass
-
-try: pcglabels.add_edge(("length/order", "count2-c1/count5-m1"), label="COUNT")
+try: pcglabels.add_node("partiallyFilled-c1/open-m4", "")
 except: pass
 
-try: pcglabels.add_node("open-c1/open-m3", "")
-except: pass
-try: pcglabels.add_node("coherent-c1/coherent-m3", "")
-except: pass
-
-try: pcglabels.add_edge(("open-c1/open-m3", "coherent-c1/coherent-m3"), label="COHERENCE")
-except: pass
-
-try: pcglabels.add_node("incoherent-c1/coherent-m2", "")
-except: pass
-try: pcglabels.add_node("partiallyFilled-c1/open-m2", "")
-except: pass
-
-try: pcglabels.add_edge(("incoherent-c1/coherent-m2", "partiallyFilled-c1/open-m2"), label="COHERENCE")
+try: pcglabels.add_edge(("component-c2/component-m4", "partiallyFilled-c1/open-m4"), label="FILLEDNESS")
 except: pass
 
 try: pcglabels.add_node("inelastic-c2/inelastic-m2", "")
@@ -1721,20 +1441,20 @@ except: pass
 try: pcglabels.add_edge(("inelastic-c2/inelastic-m2", "component-c2/component-m5"), label="ELASTICITY")
 except: pass
 
-try: pcglabels.add_node("open-c1/open-m5", "")
+try: pcglabels.add_node("open-c1/open-m3", "")
 except: pass
-try: pcglabels.add_node("component-c2/component-m5", "")
-except: pass
-
-try: pcglabels.add_edge(("open-c1/open-m5", "component-c2/component-m5"), label="FILLEDNESS")
+try: pcglabels.add_node("component-c1/component-m3", "")
 except: pass
 
-try: pcglabels.add_node("lexicoconstructionalConditioning/constructionalConditioning", "")
-except: pass
-try: pcglabels.add_node("desmeme/desmeme", "")
+try: pcglabels.add_edge(("open-c1/open-m3", "component-c1/component-m3"), label="FILLEDNESS")
 except: pass
 
-try: pcglabels.add_edge(("lexicoconstructionalConditioning/constructionalConditioning", "desmeme/desmeme"), label="CONDITIONING")
+try: pcglabels.add_node("open-c1/open-m4", "")
+except: pass
+try: pcglabels.add_node("component-c1/component-m4", "")
+except: pass
+
+try: pcglabels.add_edge(("open-c1/open-m4", "component-c1/component-m4"), label="FILLEDNESS")
 except: pass
 
 try: pcglabels.add_node("component-c2/component-m5", "")
@@ -1745,20 +1465,12 @@ except: pass
 try: pcglabels.add_edge(("component-c2/component-m5", "inelastic-c2/inelastic-m2"), label="ELASTICITY")
 except: pass
 
-try: pcglabels.add_node("length/inelastic-m1", "")
+try: pcglabels.add_node("component-c2/component-m1", "")
 except: pass
-try: pcglabels.add_node("count2-c1/count1-m1", "")
-except: pass
-
-try: pcglabels.add_edge(("length/inelastic-m1", "count2-c1/count1-m1"), label="COUNT")
+try: pcglabels.add_node("partiallyFilled-c1/open-m1", "")
 except: pass
 
-try: pcglabels.add_node("open-c1/open-m5", "")
-except: pass
-try: pcglabels.add_node("coherent-c1/coherent-m4", "")
-except: pass
-
-try: pcglabels.add_edge(("open-c1/open-m5", "coherent-c1/coherent-m4"), label="COHERENCE")
+try: pcglabels.add_edge(("component-c2/component-m1", "partiallyFilled-c1/open-m1"), label="FILLEDNESS")
 except: pass
 
 try: pcglabels.add_node("desmeme/desmeme", "")
@@ -1769,28 +1481,28 @@ except: pass
 try: pcglabels.add_edge(("desmeme/desmeme", "length/order"), label="STRICTURE")
 except: pass
 
-try: pcglabels.add_node("length/inelastic-m2", "")
+try: pcglabels.add_node("component-c2/component-m2", "")
 except: pass
-try: pcglabels.add_node("count2-c1/count1-m2", "")
-except: pass
-
-try: pcglabels.add_edge(("length/inelastic-m2", "count2-c1/count1-m2"), label="COUNT")
+try: pcglabels.add_node("partiallyFilled-c1/open-m2", "")
 except: pass
 
-try: pcglabels.add_node("count2-c1/count5-m1", "")
-except: pass
-try: pcglabels.add_node("length/order", "")
+try: pcglabels.add_edge(("component-c2/component-m2", "partiallyFilled-c1/open-m2"), label="FILLEDNESS")
 except: pass
 
-try: pcglabels.add_edge(("count2-c1/count5-m1", "length/order"), label="COUNT")
+try: pcglabels.add_node("partiallyFilled-c1/open-m4", "")
+except: pass
+try: pcglabels.add_node("component-c2/component-m4", "")
 except: pass
 
-try: pcglabels.add_node("count1-c1/count5-m1", "")
-except: pass
-try: pcglabels.add_node("inelastic-c1/order", "")
+try: pcglabels.add_edge(("partiallyFilled-c1/open-m4", "component-c2/component-m4"), label="FILLEDNESS")
 except: pass
 
-try: pcglabels.add_edge(("count1-c1/count5-m1", "inelastic-c1/order"), label="COUNT")
+try: pcglabels.add_node("open-c1/open-m5", "")
+except: pass
+try: pcglabels.add_node("component-c1/component-m5", "")
+except: pass
+
+try: pcglabels.add_edge(("open-c1/open-m5", "component-c1/component-m5"), label="FILLEDNESS")
 except: pass
 
 try: pcglabels.add_node("length/order", "")
@@ -1801,36 +1513,12 @@ except: pass
 try: pcglabels.add_edge(("length/order", "desmeme/desmeme"), label="STRICTURE")
 except: pass
 
-try: ChechenPreverbalA.add_node("component-c1", "")
-except: pass
-try: ChechenPreverbalA.add_node("stable-c1", "")
-except: pass
-
-try: ChechenPreverbalA.add_edge(("component-c1", "stable-c1"), label=" STABILITY")
-except: pass
-
-try: ChechenPreverbalA.add_node("lexicoconstructionalConditioning", "")
-except: pass
-try: ChechenPreverbalA.add_node("medial", "")
-except: pass
-
-try: ChechenPreverbalA.add_edge(("lexicoconstructionalConditioning", "medial"), label=" FILLER_POSITION")
-except: pass
-
-try: ChechenPreverbalA.add_node("component-c1", "")
-except: pass
 try: ChechenPreverbalA.add_node("partiallyFilled-c1", "")
 except: pass
-
-try: ChechenPreverbalA.add_edge(("component-c1", "partiallyFilled-c1"), label=" FILLEDNESS")
+try: ChechenPreverbalA.add_node("coherent-c2", "")
 except: pass
 
-try: ChechenPreverbalA.add_node("component-c2", "")
-except: pass
-try: ChechenPreverbalA.add_node("stable-c2", "")
-except: pass
-
-try: ChechenPreverbalA.add_edge(("component-c2", "stable-c2"), label=" STABILITY")
+try: ChechenPreverbalA.add_edge(("partiallyFilled-c1", "coherent-c2"), label=" COHERENCE")
 except: pass
 
 try: ChechenPreverbalA.add_node("length", "")
@@ -1838,7 +1526,31 @@ except: pass
 try: ChechenPreverbalA.add_node("count2-c1", "")
 except: pass
 
-try: ChechenPreverbalA.add_edge(("length", "count2-c1"), label=" COUNT")
+try: ChechenPreverbalA.add_edge(("length", "count2-c1"), label=" count")
+except: pass
+
+try: ChechenPreverbalA.add_node("span", "")
+except: pass
+try: ChechenPreverbalA.add_node("component-c2", "")
+except: pass
+
+try: ChechenPreverbalA.add_edge(("span", "component-c2"), label=" LEFT_SUPPORT")
+except: pass
+
+try: ChechenPreverbalA.add_node("filledComponentSet", "")
+except: pass
+try: ChechenPreverbalA.add_node("component-c2", "")
+except: pass
+
+try: ChechenPreverbalA.add_edge(("filledComponentSet", "component-c2"), label=" FILLED_COMPONENT")
+except: pass
+
+try: ChechenPreverbalA.add_node("component-c1", "")
+except: pass
+try: ChechenPreverbalA.add_node("open-c1", "")
+except: pass
+
+try: ChechenPreverbalA.add_edge(("component-c1", "open-c1"), label=" FILLEDNESS")
 except: pass
 
 try: ChechenPreverbalA.add_node("desmeme", "")
@@ -1849,60 +1561,20 @@ except: pass
 try: ChechenPreverbalA.add_edge(("desmeme", "potentiallyViolable"), label=" VIOLABILITY")
 except: pass
 
-try: ChechenPreverbalA.add_node("length", "")
+try: ChechenPreverbalA.add_node("span", "")
 except: pass
-try: ChechenPreverbalA.add_node("prosodicWord", "")
-except: pass
-
-try: ChechenPreverbalA.add_edge(("length", "prosodicWord"), label=" CONSTITUENT")
+try: ChechenPreverbalA.add_node("component-c1", "")
 except: pass
 
-try: ChechenPreverbalA.add_node("desmeme", "")
+try: ChechenPreverbalA.add_edge(("span", "component-c1"), label=" RIGHT_SUPPORT")
 except: pass
+
 try: ChechenPreverbalA.add_node("lexicoconstructionalConditioning", "")
 except: pass
-
-try: ChechenPreverbalA.add_edge(("desmeme", "lexicoconstructionalConditioning"), label=" CONDITIONING")
+try: ChechenPreverbalA.add_node("medial", "")
 except: pass
 
-try: ChechenPreverbalA.add_node("desmeme", "")
-except: pass
-try: ChechenPreverbalA.add_node("length", "")
-except: pass
-
-try: ChechenPreverbalA.add_edge(("desmeme", "length"), label=" STRICTURE")
-except: pass
-
-try: ChechenPreverbalA.add_node("potentiallyViolable", "")
-except: pass
-try: ChechenPreverbalA.add_node("morphosyntacticInsertion", "")
-except: pass
-
-try: ChechenPreverbalA.add_edge(("potentiallyViolable", "morphosyntacticInsertion"), label=" REPARABILITY")
-except: pass
-
-try: ChechenPreverbalA.add_node("open-c1", "")
-except: pass
-try: ChechenPreverbalA.add_node("coherent-c1", "")
-except: pass
-
-try: ChechenPreverbalA.add_edge(("open-c1", "coherent-c1"), label=" COHERENCE")
-except: pass
-
-try: ChechenPreverbalA.add_node("component-c2", "")
-except: pass
-try: ChechenPreverbalA.add_node("inelastic-c2", "")
-except: pass
-
-try: ChechenPreverbalA.add_edge(("component-c2", "inelastic-c2"), label=" ELASTICITY")
-except: pass
-
-try: ChechenPreverbalA.add_node("inelastic-c1", "")
-except: pass
-try: ChechenPreverbalA.add_node("count1-c1", "")
-except: pass
-
-try: ChechenPreverbalA.add_edge(("inelastic-c1", "count1-c1"), label=" COUNT")
+try: ChechenPreverbalA.add_edge(("lexicoconstructionalConditioning", "medial"), label=" FILLER_POSITION")
 except: pass
 
 try: ChechenPreverbalA.add_node("desmeme", "")
@@ -1911,62 +1583,6 @@ try: ChechenPreverbalA.add_node("span", "")
 except: pass
 
 try: ChechenPreverbalA.add_edge(("desmeme", "span"), label=" FOUNDATION")
-except: pass
-
-try: ChechenPreverbalA.add_node("partiallyFilled-c1", "")
-except: pass
-try: ChechenPreverbalA.add_node("incoherent-c1", "")
-except: pass
-
-try: ChechenPreverbalA.add_edge(("partiallyFilled-c1", "incoherent-c1"), label=" COHERENCE")
-except: pass
-
-try: ChechenPreverbalA.add_node("span", "")
-except: pass
-try: ChechenPreverbalA.add_node("component-c2", "")
-except: pass
-
-try: ChechenPreverbalA.add_edge(("span", "component-c2"), label=" RIGHT_SUPPORT")
-except: pass
-
-try: ChechenPreverbalA.add_node("filledComponentSet", "")
-except: pass
-try: ChechenPreverbalA.add_node("component-c1", "")
-except: pass
-
-try: ChechenPreverbalA.add_edge(("filledComponentSet", "component-c1"), label=" FILLED_COMPONENT")
-except: pass
-
-try: ChechenPreverbalA.add_node("inelastic-c2", "")
-except: pass
-try: ChechenPreverbalA.add_node("count1-c2", "")
-except: pass
-
-try: ChechenPreverbalA.add_edge(("inelastic-c2", "count1-c2"), label=" COUNT")
-except: pass
-
-try: ChechenPreverbalA.add_node("component-c2", "")
-except: pass
-try: ChechenPreverbalA.add_node("open-c1", "")
-except: pass
-
-try: ChechenPreverbalA.add_edge(("component-c2", "open-c1"), label=" FILLEDNESS")
-except: pass
-
-try: ChechenPreverbalA.add_node("partiallyFilled-c1", "")
-except: pass
-try: ChechenPreverbalA.add_node("final-c1", "")
-except: pass
-
-try: ChechenPreverbalA.add_edge(("partiallyFilled-c1", "final-c1"), label=" FILLER_PLACEMENT")
-except: pass
-
-try: ChechenPreverbalA.add_node("span", "")
-except: pass
-try: ChechenPreverbalA.add_node("component-c1", "")
-except: pass
-
-try: ChechenPreverbalA.add_edge(("span", "component-c1"), label=" LEFT_SUPPORT")
 except: pass
 
 try: ChechenPreverbalA.add_node("potentiallyViolable", "")
@@ -1983,6 +1599,102 @@ try: ChechenPreverbalA.add_node("filledComponentSet", "")
 except: pass
 
 try: ChechenPreverbalA.add_edge(("lexicoconstructionalConditioning", "filledComponentSet"), label=" FILLED_COMPONENTS")
+except: pass
+
+try: ChechenPreverbalA.add_node("component-c2", "")
+except: pass
+try: ChechenPreverbalA.add_node("inelastic-c2", "")
+except: pass
+
+try: ChechenPreverbalA.add_edge(("component-c2", "inelastic-c2"), label=" ELASTICITY")
+except: pass
+
+try: ChechenPreverbalA.add_node("inelastic-c1", "")
+except: pass
+try: ChechenPreverbalA.add_node("count1-c1", "")
+except: pass
+
+try: ChechenPreverbalA.add_edge(("inelastic-c1", "count1-c1"), label=" count")
+except: pass
+
+try: ChechenPreverbalA.add_node("open-c1", "")
+except: pass
+try: ChechenPreverbalA.add_node("coherent-c1", "")
+except: pass
+
+try: ChechenPreverbalA.add_edge(("open-c1", "coherent-c1"), label=" COHERENCE")
+except: pass
+
+try: ChechenPreverbalA.add_node("component-c2", "")
+except: pass
+try: ChechenPreverbalA.add_node("partiallyFilled-c1", "")
+except: pass
+
+try: ChechenPreverbalA.add_edge(("component-c2", "partiallyFilled-c1"), label=" FILLEDNESS")
+except: pass
+
+try: ChechenPreverbalA.add_node("partiallyFilled-c1", "")
+except: pass
+try: ChechenPreverbalA.add_node("final-c1", "")
+except: pass
+
+try: ChechenPreverbalA.add_edge(("partiallyFilled-c1", "final-c1"), label=" FILLER_PLACEMENT")
+except: pass
+
+try: ChechenPreverbalA.add_node("length", "")
+except: pass
+try: ChechenPreverbalA.add_node("prosodicWord", "")
+except: pass
+
+try: ChechenPreverbalA.add_edge(("length", "prosodicWord"), label=" CONSTITUENT")
+except: pass
+
+try: ChechenPreverbalA.add_node("inelastic-c2", "")
+except: pass
+try: ChechenPreverbalA.add_node("count1-c2", "")
+except: pass
+
+try: ChechenPreverbalA.add_edge(("inelastic-c2", "count1-c2"), label=" count")
+except: pass
+
+try: ChechenPreverbalA.add_node("desmeme", "")
+except: pass
+try: ChechenPreverbalA.add_node("lexicoconstructionalConditioning", "")
+except: pass
+
+try: ChechenPreverbalA.add_edge(("desmeme", "lexicoconstructionalConditioning"), label=" CONDITIONING")
+except: pass
+
+try: ChechenPreverbalA.add_node("component-c2", "")
+except: pass
+try: ChechenPreverbalA.add_node("stable-c2", "")
+except: pass
+
+try: ChechenPreverbalA.add_edge(("component-c2", "stable-c2"), label=" STABILITY")
+except: pass
+
+try: ChechenPreverbalA.add_node("component-c1", "")
+except: pass
+try: ChechenPreverbalA.add_node("stable-c1", "")
+except: pass
+
+try: ChechenPreverbalA.add_edge(("component-c1", "stable-c1"), label=" STABILITY")
+except: pass
+
+try: ChechenPreverbalA.add_node("potentiallyViolable", "")
+except: pass
+try: ChechenPreverbalA.add_node("morphosyntacticInsertion", "")
+except: pass
+
+try: ChechenPreverbalA.add_edge(("potentiallyViolable", "morphosyntacticInsertion"), label=" REPARABILITY")
+except: pass
+
+try: ChechenPreverbalA.add_node("desmeme", "")
+except: pass
+try: ChechenPreverbalA.add_node("length", "")
+except: pass
+
+try: ChechenPreverbalA.add_edge(("desmeme", "length"), label=" STRICTURE")
 except: pass
 
 try: ChechenPreverbalA.add_node("partiallyFilled-c1", "")
