@@ -835,9 +835,6 @@
 	<spectemplate:FILLED_COMPONENTS rdf:resource="&templates;EnglishPlural-FilledComponents"/>
 	<template:FILLER_POSITION rdf:resource="&general;final"/>
 </general:lexicoconstructionalConditioning>
-<general:constructionalConditioning rdf:about="&templates;EnglishPlural-Conditioning_dep"
-	 notes:CONDITIONS="Regular suffixal plural formation construction."
-	 rdfs:label="EnglishPlural-Conditioning_dep"/>
 <component:filledComponentSet rdf:about="&templates;EnglishPlural-FilledComponents"
 	 rdfs:label="EnglishPlural-FilledComponents">
 	<spectemplate:FILLED_COMPONENT rdf:resource="&templates;EnglishPluralSuffix"/>
@@ -1891,9 +1888,6 @@
 </template:desmeme>
 <general:prosodicConditioning rdf:about="&templates;SerboCroatianTopicalization-Conditioning"
 	 rdfs:label="SerboCroatianTopicalization-Conditioning"/>
-<general:constructionalConditioning rdf:about="&templates;SerboCroatianTopicalization-Conditioning_dep"
-	 notes:CONDITIONS="Used for left-edge topicalization."
-	 rdfs:label="SerboCroatianTopicalization-Conditioning_dep"/>
 <template:span rdf:about="&templates;SerboCroatianTopicalization-Foundation"
 	 rdfs:label="SerboCroatianTopicalization-Foundation">
 	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;SerboCroatianTopicalizationLeftSupport"/>

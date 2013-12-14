@@ -140,7 +140,7 @@
 	 a:maxCardinality="1"
 	 a:range="cls"
 	 rdfs:label="component:FILLER_PLACEMENT">
-	<rdfs:comment>A feature for specifying where in a lexicoconstructional template filler elements appear.</rdfs:comment>
+	<rdfs:comment>A feature for specifying where in a partially filled component the filler element appear.</rdfs:comment>
 	<rdfs:domain rdf:resource="&component;partiallyFilled"/>
 	<a:allowedParents rdf:resource="&general;position"/>
 	<rdfs:range rdf:resource="&rdfs;Class"/>
@@ -222,7 +222,7 @@
 <rdfs:Class rdf:about="&component;stability"
 	 a:role="abstract"
 	 rdfs:label="component:stability">
-	<rdfs:comment>A supertype for characterizing dependencies among components, in particular for cases where the nature of the content of one component is somehow dependent on what is found in another component.</rdfs:comment>
+	<rdfs:comment>A supertype for characterizing dependencies among components, in particular for cases where the nature of the content of one component can be somehow dependent on what is found in another component.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&component;stable"
@@ -232,7 +232,7 @@
 </rdfs:Class>
 <rdfs:Class rdf:about="&component;unstable"
 	 rdfs:label="component:unstable">
-	<rdfs:comment>A type that specifies that a given component exhibits a dependency with another component. Only one dependency can be specified per component since the need for me has not yet been encountered.</rdfs:comment>
+	<rdfs:comment>A type that specifies that a given component exhibits a dependency with another component. Only one dependency can be specified per component since the need for more than one has not yet been needed in the database.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&component;stability"/>
 </rdfs:Class>
 <rdf:Property rdf:about="&form;LIAISON"
@@ -252,13 +252,13 @@
 <rdfs:Class rdf:about="&form;dependent"
 	 a:role="abstract"
 	 rdfs:label="form:dependent">
-	<rdfs:comment>A type for characterizing forms that are depending (e.g., affixes or clitics). Only one subtypes is defined in the present typology for characterizing suffixing elements since this is all that has been required to code the data to this point.</rdfs:comment>
+	<rdfs:comment>A type for characterizing forms that are dependent (e.g., affixes or clitics). Only one subtype is defined in the present typology for characterizing suffixing elements, since this is all that has been required to code the data to this point.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&form;liaison"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&form;form"
 	 a:role="abstract"
 	 rdfs:label="form:form">
-	<rdfs:comment>A supertype that could encompassing various kinds of linguistic forms. In the present taxonomy, it serves as the supertype only for lineates.</rdfs:comment>
+	<rdfs:comment>A supertype that could encompass various kinds of linguistic forms. In the present taxonomy, it serves as the supertype only for lineates.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&form;independent"
@@ -276,13 +276,13 @@
 <rdfs:Class rdf:about="&form;lineate"
 	 a:role="abstract"
 	 rdfs:label="form:lineate">
-	<rdfs:comment>A type of specification of a linguistic form involving stipulaton of linear ordering. A template is a subtype of lineate.</rdfs:comment>
+	<rdfs:comment>A type of specification of a linguistic form involving stipulation of linear ordering. A template is a subtype of lineate.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&form;form"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&form;sinistrous"
 	 a:role="abstract"
 	 rdfs:label="form:sinistrous">
-	<rdfs:comment>A type of dependency for elements which lean ``left'' on their hosts, e.g., suffixes and enclitics.</rdfs:comment>
+	<rdfs:comment>A type of dependence for elements which lean ``left'' on their hosts, e.g., suffixes and enclitics.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&form;dependent"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&form;transcription"
@@ -368,9 +368,9 @@
 	<a:allowedParents rdf:resource="&template;relations"/>
 	<rdfs:range rdf:resource="&rdfs;Class"/>
 </rdf:Property>
-<rdfs:Class rdf:about="&general;associatePositions"
+<rdfs:Class rdf:about="&general;associatePosition"
 	 a:role="abstract"
-	 rdfs:label="general:associatePositions">
+	 rdfs:label="general:associatePosition">
 	<rdfs:comment>A supertype for the positional specifications of components with dependencies on other components.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&general;position"/>
 </rdfs:Class>
@@ -385,9 +385,9 @@
 	<rdfs:comment>A type for characterizing cases where a template's conditioning environment is constructional (i.e., morphological or syntactic) in nature.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&general;morphosyntacticConditioning"/>
 </rdfs:Class>
-<rdfs:Class rdf:about="&general;fillerPositions"
+<rdfs:Class rdf:about="&general;fillerPosition"
 	 a:role="abstract"
-	 rdfs:label="general:fillerPositions">
+	 rdfs:label="general:fillerPosition">
 	<rdfs:comment>A supertype for the position of a filler element in a lexicoconstructional template. This position is evaluated with respect to the whole template, not just the component the filler is found in.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&general;position"/>
 </rdfs:Class>
@@ -395,29 +395,29 @@
 	 a:role="abstract"
 	 rdfs:label="general:final">
 	<rdfs:comment>A type specifying that the filler of a lexicoconstructional template is in the final position of the template.</rdfs:comment>
-	<rdfs:subClassOf rdf:resource="&general;fillerPositions"/>
+	<rdfs:subClassOf rdf:resource="&general;fillerPosition"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;grammaticalCategory"
 	 a:role="abstract"
 	 rdfs:label="general:grammaticalCategory">
-	<rdfs:comment>A supertype for general grammatical categories that can be used to specify the function of a given template or the possible fillers of components. These types do not enter into the typological comparison at present but are included due its potential interest for purposes of reference and for future studies. A number of these types are drawn from the GOLD ontology. Those that are not should be interpretable on the basis of their labels or the descriptions of the relevant templates in the book this ontology is associated with.</rdfs:comment>
+	<rdfs:comment>A supertype for general grammatical categories that can be used to specify the function of a given template or the possible fillers of components. These types do not enter into the typological comparison at present but are included due their potential interest for purposes of reference and for future studies. A number of these types are drawn from the GOLD ontology. Those that are not should be interpretable on the basis of their labels or the descriptions of the relevant templates in the book this ontology is associated with.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;left"
 	 rdfs:label="general:left">
 	<rdfs:comment>A type specifying that a component is dependent on a component appearing before it in the template.</rdfs:comment>
-	<rdfs:subClassOf rdf:resource="&general;associatePositions"/>
+	<rdfs:subClassOf rdf:resource="&general;associatePosition"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;lexicoconstructionalConditioning"
 	 rdfs:label="general:lexicoconstructionalConditioning">
-	<rdfs:comment>A type for characterizing cases where a template's conditioning environment is lexicoconstructional in nature, that is where it involves a constructional environment where a specific lexical item or set of lexical items must also appear.</rdfs:comment>
+	<rdfs:comment>A type for characterizing cases where a template's conditioning environment is lexico-constructional in nature, that is where it involves a constructional environment where a specific lexical item or set of lexical items must also appear.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&general;morphosyntacticConditioning"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;medial"
 	 a:role="abstract"
 	 rdfs:label="general:medial">
 	<rdfs:comment>A type specifying that the filler of a lexicoconstructional template is in a medial position in the template.</rdfs:comment>
-	<rdfs:subClassOf rdf:resource="&general;fillerPositions"/>
+	<rdfs:subClassOf rdf:resource="&general;fillerPosition"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;morphologicalConstituent"
 	 a:role="abstract"
@@ -441,7 +441,7 @@
 	 a:role="abstract"
 	 rdfs:label="general:multiple">
 	<rdfs:comment>A type specifying that there are multiple fillers in a template and, therefore, no single position for a filler can be straightforwardly determined.</rdfs:comment>
-	<rdfs:subClassOf rdf:resource="&general;fillerPositions"/>
+	<rdfs:subClassOf rdf:resource="&general;fillerPosition"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;phonologicalConditioning"
 	 a:role="abstract"
@@ -481,18 +481,13 @@
 <rdfs:Class rdf:about="&general;right"
 	 rdfs:label="general:right">
 	<rdfs:comment>A type specifying that a component is dependent on a component appearing after it in the template.</rdfs:comment>
-	<rdfs:subClassOf rdf:resource="&general;associatePositions"/>
+	<rdfs:subClassOf rdf:resource="&general;associatePosition"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;segment"
 	 a:role="abstract"
 	 rdfs:label="general:segment">
 	<rdfs:comment>A type for specifying that the linguistic constituents a set of templatic restrictions applies over consist of segments</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&general;phonologicalConstituent"/>
-</rdfs:Class>
-<rdfs:Class rdf:about="&general;segmentalConditioning"
-	 rdfs:label="general:segmentalConditioning">
-	<rdfs:comment>A type for characterizing cases where a template's conditioning environment is segmental in nature.</rdfs:comment>
-	<rdfs:subClassOf rdf:resource="&general;phonologicalConditioning"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;simple"
 	 a:role="abstract"
@@ -529,7 +524,6 @@
 </rdfs:Class>
 <rdfs:Class rdf:about="&localcategory;argument"
 	 a:role="abstract"
-	 rdfs:comment="Check Gold later, when new website up."
 	 rdfs:label="localcategory:argument">
 	<rdfs:subClassOf rdf:resource="&general;grammaticalCategory"/>
 </rdfs:Class>
@@ -680,7 +674,7 @@
 	 rdfs:label="speccomponent:ASSOCIATE_POSITION">
 	<rdfs:comment>A feature for specifying the position of a component's dependent with respect to the component itself.</rdfs:comment>
 	<rdfs:domain rdf:resource="&component;unstable"/>
-	<rdfs:range rdf:resource="&general;associatePositions"/>
+	<rdfs:range rdf:resource="&general;associatePosition"/>
 </rdf:Property>
 <rdf:Property rdf:about="&speccomponent;COHERENCE"
 	 a:maxCardinality="1"
@@ -720,7 +714,7 @@
 <rdf:Property rdf:about="&specform;TRANSCRIPTION"
 	 a:maxCardinality="1"
 	 rdfs:label="specform:TRANSCRIPTION">
-	<rdfs:comment>A feature which specifies that a given object is an instance of a linguistic transcription.</rdfs:comment>
+	<rdfs:comment>A feature for specifying a linguistic transcription some form is associated with.</rdfs:comment>
 	<rdfs:domain rdf:resource="&form;canonicalLineate"/>
 	<rdfs:range rdf:resource="&form;transcription"/>
 </rdf:Property>
@@ -735,9 +729,9 @@
 	 a:maxCardinality="1"
 	 rdfs:label="specgeneral:CONDITIONING">
 	<rdfs:comment>A feature which specifies the environment that conditions the appearance of a template.</rdfs:comment>
+	<rdfs:domain rdf:resource="&template;attestable"/>
 	<rdfs:range rdf:resource="&template;conditioning"/>
 	<rdfs:domain rdf:resource="&template;desmeme"/>
-	<rdfs:domain rdf:resource="&template;exceptionality"/>
 </rdf:Property>
 <rdf:Property rdf:about="&spectemplate;FILLED_COMPONENT"
 	 rdfs:label="spectemplate:FILLED_COMPONENT">
@@ -827,7 +821,7 @@
 	 a:maxCardinality="1"
 	 a:range="cls"
 	 rdfs:label="template:FILLER_POSITION">
-	<rdfs:comment>A feature for specifying where in the overall structure of a template a filler is found.</rdfs:comment>
+	<rdfs:comment>A feature for specifying where in a lexico-constructional template filler elements appear.</rdfs:comment>
 	<rdfs:domain rdf:resource="&general;lexicoconstructionalConditioning"/>
 	<a:allowedParents rdf:resource="&general;position"/>
 	<rdfs:range rdf:resource="&rdfs;Class"/>
@@ -844,19 +838,25 @@
 <rdf:Property rdf:about="&template;VIOLABILITY"
 	 a:maxCardinality="1"
 	 rdfs:label="template:VIOLABILITY">
-	<rdfs:comment>A feature for specifying whether or not a set of templatic restrictions is potentially violable.</rdfs:comment>
+	<rdfs:comment>A feature for specifying whether or not a set of templatic restrictions is potentially violable or not.</rdfs:comment>
 	<rdfs:domain rdf:resource="&template;desmeme"/>
 	<rdfs:range rdf:resource="&template;violability"/>
 </rdf:Property>
 <rdfs:Class rdf:about="&template;arch"
 	 rdfs:label="template:arch">
-	<rdfs:comment>A type of template whose components are analyzed as organized around a single privileged component. It has five predefined structural positions, the keystone (for the privileged component), the left and right voussoirs, and the left and right supports.</rdfs:comment>
+	<rdfs:comment>A type of foundation whose components are analyzed as organized around a single privileged component. It has five predefined structural positions, the keystone (for the privileged component), the left and right voussoirs, and the left and right supports.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&template;foundation"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&template;attestable"
+	 a:role="abstract"
+	 rdfs:label="template:attestable">
+	<rdfs:comment>A supertype for those cases where exceptionality appears to be possible based on a language's overall grammatical patterns.</rdfs:comment>
+	<rdfs:subClassOf rdf:resource="&template;exceptionality"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;conditioning"
 	 a:role="abstract"
 	 rdfs:label="template:conditioning">
-	<rdfs:comment>A supertype for  characterizing the grammatical locus of the templatic constraints, for instance, whether they target phonological elements or morphosyntactic ones.</rdfs:comment>
+	<rdfs:comment>A supertype for  characterizing the grammatical locus of some observable, for instance, whether a template targets phonological elements or morphosyntactic ones. All templates are associated with some conditioning.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;desmeme"
@@ -866,7 +866,7 @@
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;embeddedDesmeme"
 	 rdfs:label="template:embeddedDesmeme">
-	<rdfs:comment>A subtype of desmeme used for cases where components are themselves desmemes. This category does not logically require its own type, but this is useful in the present database since it does not actually fully encode the templatic properties of embedded desmemes.</rdfs:comment>
+	<rdfs:comment>A subtype of desmeme used for cases where a component of a template is itself a desmeme. This category does not logically require its own type, but this is useful in the present database since it does not actually fully encode the templatic properties of embedded desmemes.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&template;desmeme"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;exceptionality"
@@ -902,12 +902,12 @@
 	 a:role="abstract"
 	 rdfs:label="template:lexical">
 	<rdfs:comment>A type for cases where the exceptions to a templatic pattern are lexically conditioned.</rdfs:comment>
-	<rdfs:subClassOf rdf:resource="&template;exceptionality"/>
+	<rdfs:subClassOf rdf:resource="&template;attestable"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;morphosyntacticInsertion"
 	 a:role="abstract"
 	 rdfs:label="template:morphosyntacticInsertion">
-	<rdfs:comment>A type indicating that potential violations to the template, when they occur, can be repaired via the insertion of a morphosyntactic element whose appearance would not otherwise be predicted.</rdfs:comment>
+	<rdfs:comment>A type indicating that potential violations to the template, when they occur, can be repaired via the insertion of a morphosyntactic element whose appearance would not otherwise be expected.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&template;morphosyntacticRepair"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;morphosyntacticRepair"
@@ -919,7 +919,7 @@
 <rdfs:Class rdf:about="&template;noKnownExceptions"
 	 a:role="abstract"
 	 rdfs:label="template:noKnownExceptions">
-	<rdfs:comment>A type for cases where there are potential surface violations but where no actual surface violations are attested.</rdfs:comment>
+	<rdfs:comment>A type for cases where a language's grammar suggests there could be potential surface violations of a template, but where no actual surface violations are attested.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&template;exceptionality"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;notViolable"
@@ -929,7 +929,7 @@
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;order"
 	 rdfs:label="template:order">
-	<rdfs:comment>A type for classifying a template whose stipulation involves a restriction in the order of a set of elements</rdfs:comment>
+	<rdfs:comment>A type for classifying a template whose stipulation involves a restriction on the order of a set of elements</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&template;stricture"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;phonologicalRepair"
@@ -946,7 +946,7 @@
 <rdfs:Class rdf:about="&template;relations"
 	 a:role="abstract"
 	 rdfs:label="template:relations">
-	<rdfs:comment>A supertype for subtypes classifying the nature of the relations holding among a template's components (though the notions could be applied more generally).</rdfs:comment>
+	<rdfs:comment>A supertype for subtypes classifying the nature of the relations holding among a template's components (though these notions could be applied more generally).</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;reparability"
@@ -965,7 +965,7 @@
 	 a:role="abstract"
 	 rdfs:label="template:semantic">
 	<rdfs:comment>A type for cases where the exceptions to a templatic pattern are semantically conditioned.</rdfs:comment>
-	<rdfs:subClassOf rdf:resource="&template;exceptionality"/>
+	<rdfs:subClassOf rdf:resource="&template;attestable"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;shortening"
 	 a:role="abstract"
@@ -975,7 +975,7 @@
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;span"
 	 rdfs:label="template:span">
-	<rdfs:comment>A type of template without a privileged component around which the other components are organized. Its only predefined structural positions are the left and right supports.</rdfs:comment>
+	<rdfs:comment>A type of foundation without a privileged component around which the other components are organized. Its only predefined structural positions are the left and right supports.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&template;foundation"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;stricture"
@@ -987,7 +987,7 @@
 <rdfs:Class rdf:about="&template;violability"
 	 a:role="abstract"
 	 rdfs:label="template:violability">
-	<rdfs:comment>A supertype for subtypes that  characterizes whether or not the linearization restrictions of a given template can be violated or not and what repair strategies may be activated in cases of potential violation.</rdfs:comment>
+	<rdfs:comment>A supertype for subtypes that  characterize whether or not the linearization restrictions of a given template can be violated or not and what repair strategies may be activated in cases of potential violation.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
 </rdf:RDF>
