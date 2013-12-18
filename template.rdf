@@ -2174,9 +2174,13 @@
 	 rdfs:label="TurkishFirstSyllable-Coherence">
 	<function:CLASS rdf:resource="&gold;Syllable"/>
 </component:coherent>
-<component:inelastic rdf:about="&templates;TurkishFirstSyllable-Elasticity"
-	 general:COUNT="1"
+<component:elastic rdf:about="&templates;TurkishFirstSyllable-Elasticity"
+	 general:MAXIMUM="100"
+	 general:MINIMUM="1"
 	 rdfs:label="TurkishFirstSyllable-Elasticity"/>
+<component:inelastic rdf:about="&templates;TurkishFirstSyllable-Elasticity_dep"
+	 general:COUNT="1"
+	 rdfs:label="TurkishFirstSyllable-Elasticity_dep"/>
 <component:open rdf:about="&templates;TurkishFirstSyllable-Filledness"
 	 rdfs:label="TurkishFirstSyllable-Filledness">
 	<speccomponent:COHERENCE rdf:resource="&templates;TurkishFirstSyllable-Coherence"/>
@@ -2221,9 +2225,13 @@
 	 rdfs:label="TurkishSecondSyllable-Coherence">
 	<function:CLASS rdf:resource="&gold;Syllable"/>
 </component:coherent>
-<component:inelastic rdf:about="&templates;TurkishSecondSyllable-Elasticity"
-	 general:COUNT="1"
+<component:elastic rdf:about="&templates;TurkishSecondSyllable-Elasticity"
+	 general:MAXIMUM="100"
+	 general:MINIMUM="1"
 	 rdfs:label="TurkishSecondSyllable-Elasticity"/>
+<component:inelastic rdf:about="&templates;TurkishSecondSyllable-Elasticity_dep"
+	 general:COUNT="1"
+	 rdfs:label="TurkishSecondSyllable-Elasticity_dep"/>
 <component:open rdf:about="&templates;TurkishSecondSyllable-Filledness"
 	 rdfs:label="TurkishSecondSyllable-Filledness">
 	<speccomponent:COHERENCE rdf:resource="&templates;TurkishSecondSyllable-Coherence"/>
