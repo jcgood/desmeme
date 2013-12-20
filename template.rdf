@@ -2213,7 +2213,7 @@
 <template:potentiallyViolable rdf:about="&templates;TurkishNominalMinimality-Violability"
 	 rdfs:label="TurkishNominalMinimality-Violability">
 	<template:REPARABILITY rdf:resource="&template;irreparable"/>
-	<template:EXCEPTIONALITY rdf:resource="&template;lexical"/>
+	<template:EXCEPTIONALITY rdf:resource="&template;noKnownExceptions"/>
 </template:potentiallyViolable>
 <component:component rdf:about="&templates;TurkishSecondSyllable"
 	 rdfs:label="TurkishSecondSyllable">
@@ -2253,8 +2253,8 @@
 	 rdfs:label="TurkishVerbalMinimality-Conditioning"/>
 <template:potentiallyViolable rdf:about="&templates;TurkishVerbalMinimalityViolability"
 	 rdfs:label="TurkishVerbalMinimalityViolability">
-	<template:EXCEPTIONALITY rdf:resource="&template;lexical"/>
 	<template:REPARABILITY rdf:resource="&template;morphosyntacticInsertion"/>
+	<template:EXCEPTIONALITY rdf:resource="&template;noKnownExceptions"/>
 </template:potentiallyViolable>
 <notes:source rdf:about="&templates;Watters-1979"
 	 notes:EXTERNALREFERENCE="http://www.sil.org/resources/archives/1883"
