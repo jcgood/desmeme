@@ -115,6 +115,11 @@ def processClass(classURI,embedding=0):
 				propertyRangeClass = ""
 				propertyRangeType = "{integer}"
 							
+			# For now the CLASSES property is a special case
+			if propertyRangeType == Literal('cls') and RDFSpropertyURI == URIRef('http://purl.org/linguistics/jcgood/function#CLASSES'):
+				propertyRangeType = "set of"
+				propertyRangeClass = rdfsTemplates.value(RDFSpropertyURI, protege['allowedParents'], None)
+
 			# If the range is a class, not an instance, get the allowed classes using the protege property
 			if propertyRangeType == Literal('cls'):
 				propertyRangeType = "" # Just don't print anything in this case

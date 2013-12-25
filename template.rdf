@@ -1032,9 +1032,7 @@
 	<speccomponent:STABILITY rdf:resource="&templates;GermanMF-Stability"/>
 </component:component>
 <component:incoherent rdf:about="&templates;GermanMF-Coherence"
-	 rdfs:label="GermanMF-Coherence">
-	<function:CLASSES rdf:resource="&localcategory;constituent"/>
-</component:incoherent>
+	 rdfs:label="GermanMF-Coherence"/>
 <component:elastic rdf:about="&templates;GermanMF-Elasticity"
 	 general:MAXIMUM="100"
 	 general:MINIMUM="0"
@@ -1052,9 +1050,7 @@
 	<speccomponent:STABILITY rdf:resource="&templates;GermanNF-Stability"/>
 </component:component>
 <component:incoherent rdf:about="&templates;GermanNF-Coherence"
-	 rdfs:label="GermanNF-Coherence">
-	<function:CLASSES rdf:resource="&localcategory;constituent"/>
-</component:incoherent>
+	 rdfs:label="GermanNF-Coherence"/>
 <component:elastic rdf:about="&templates;GermanNF-Elasticity"
 	 general:MAXIMUM="100"
 	 general:MINIMUM="0"
@@ -1106,9 +1102,7 @@
 <general:right rdf:about="&templates;GermanVF-AssociatePosition"
 	 rdfs:label="GermanVF-AssociatePosition"/>
 <component:incoherent rdf:about="&templates;GermanVF-Coherence"
-	 rdfs:label="GermanVF-Coherence">
-	<function:CLASSES rdf:resource="&localcategory;constituent"/>
-</component:incoherent>
+	 rdfs:label="GermanVF-Coherence"/>
 <component:elastic rdf:about="&templates;GermanVF-Elasticity"
 	 general:MAXIMUM="1"
 	 general:MINIMUM="0"
