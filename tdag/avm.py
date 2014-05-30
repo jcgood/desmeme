@@ -438,7 +438,7 @@ class avm ( ):
 			id = id.replace("_", " ")
 			#print >> outfile, "\\textbf{"+id+"}\n"
 			#print >> outfile, "\\begin{figure}[ht]"
-			print >> outfile, "{\\setstretch{.5}\\def\\avmjvskip{.2em}"
+			#print >> outfile, "{\\setstretch{.5}\\def\\avmjvskip{.2em}"
 			print >> outfile, "\\begin{center}"
 			print >> outfile, "\\begin{avm}"
 
@@ -489,7 +489,8 @@ class avm ( ):
 
 			if embedding == 0:
 				print >> outfile, "\\end{avm}"
-				print >> outfile, "\\end{center}}\\vspace{-.75em}"
+				print >> outfile, "\\end{center}"
+				#print >> outfile, "\\end{center}}\\vspace{-.75em}"
 				#print >> outfile, "\\caption{Attribute-value representation of", id, "template", "\\label{"+latexLabel+"}}"
 				#print >> outfile, "\\end{figure}"
 
