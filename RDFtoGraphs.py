@@ -25,6 +25,7 @@ gTemplates = process_templates(templates, rdfTemplates)
 #graphfolder = "/Volumes/Obang/MyDocuments/Linearity/TemplatesBook/Graphs/"
 
 graphfolder = "/Users/jcgood/Dropbox/TemplatesBook/Graphs/"
+
 draw_graphs(gTemplates, graphfolder)
 
 

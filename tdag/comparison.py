@@ -186,11 +186,30 @@ def draw_graphs(graphs, outpath, format="png"):
 		# I guess I'd have to delve deep into dot to find out at this point.
 		dot.write_dot(outpath + str(name) + '.dot')
 		
-		dotcmd = "dot -Tsvg " + outpath + str(name) + '.dot' + " > " + outpath + str(name) + '.svg'
+		# dot's PS driver doesn't work well. Go to pdf and then to .ps
+		dotcmd = "dot -Tpdf " + outpath + str(name) + '.dot' + " > " + outpath + str(name) + '.pdf'
 		os.system(dotcmd)
+		
+		pscmd = "pdf2ps " + outpath + str(name) + '.pdf' + " " + outpath + str(name) + '.ps' 
+		print pscmd
+		os.system(pscmd)
 
-		imgcmd = "/Applications/Inkscape.app/Contents/Resources/bin/inkscape " + outpath + str(name) + '.svg' + " --export-pdf " + outpath + str(name) + '.pdf'
-		os.system(imgcmd)
+		# ps2eps has different syntax from others 
+		epscmd = "ps2eps " + outpath + str(name) + '.ps' 
+		os.system(epscmd)
+		
+		# Cleanup
+		rmdot = "rm " + outpath + str(name) + '.dot'
+		os.system(rmdot)
+		rmps = "rm " + outpath + str(name) + '.ps'
+		os.system(rmps)
+
+
+# 		pdfcmd = "/Applications/Inkscape.app/Contents/Resources/bin/inkscape " + outpath + str(name) + '.svg' + " --export-pdf " + outpath + str(name) + '.pdf'
+# 		os.system(pdfcmd)
+# 
+# 		epscmd = "/Applications/Inkscape.app/Contents/Resources/bin/inkscape " + outpath + str(name) + '.svg' + " --export-eps " + outpath + str(name) + '.eps'
+# 		os.system(epscmd)
 		
 		
 		
@@ -203,8 +222,27 @@ def draw_components(graphs, outpath, format="png"):
 		dot = graph.to_dot_components() # my hack for reentrancy from foundation
 		dot.write_dot(outpath + str(name) + '.dot')
 
-		dotcmd = "dot -Tsvg " + outpath + str(name) + '.dot' + " > " + outpath + str(name) + '.svg'
+		# dot's PS driver doesn't work well. Go to pdf and then to .ps
+		dotcmd = "dot -Tpdf " + outpath + str(name) + '.dot' + " > " + outpath + str(name) + '.pdf'
 		os.system(dotcmd)
+		
+		pscmd = "pdf2ps " + outpath + str(name) + '.pdf' + " " + outpath + str(name) + '.ps' 
+		print pscmd
+		os.system(pscmd)
 
-		imgcmd = "/Applications/Inkscape.app/Contents/Resources/bin/inkscape " + outpath + str(name) + '.svg' + " --export-pdf " + outpath + str(name) + '.pdf'
-		os.system(imgcmd)
+		# ps2eps has different syntax from others 
+		epscmd = "ps2eps " + outpath + str(name) + '.ps' 
+		os.system(epscmd)
+		
+		# Cleanup
+		rmdot = "rm " + outpath + str(name) + '.dot'
+		os.system(rmdot)
+		rmps = "rm " + outpath + str(name) + '.ps'
+		os.system(rmps)
+
+
+# 		dotcmd = "dot -Tsvg " + outpath + str(name) + '.dot' + " > " + outpath + str(name) + '.svg'
+# 		os.system(dotcmd)
+# 
+# 		imgcmd = "/Applications/Inkscape.app/Contents/Resources/bin/inkscape " + outpath + str(name) + '.svg' + " --export-pdf " + outpath + str(name) + '.pdf'
+# 		os.system(imgcmd)
