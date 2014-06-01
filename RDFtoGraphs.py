@@ -22,11 +22,11 @@ gTemplates = process_templates(templates, rdfTemplates)
 # NOTE: CAN NO LONGER GO DIRECTLY TO PNG or PDF; MUST MANUALLY PROCESS .dot FOR NOW
 #graphfolder = "/Volumes/Obang/MyDocuments/Linearity/template_ontology/Graphs/"
 #graphfolder = "/Users/jcgood/Desktop/Graphs/"
+#graphfolder = "/Volumes/Obang/MyDocuments/Linearity/TemplatesBook/Graphs/"
 
-
-graphfolder = "/Volumes/Obang/MyDocuments/Linearity/TemplatesBook/Graphs/"
+graphfolder = "/Users/jcgood/Dropbox/TemplatesBook/Graphs/"
 draw_graphs(gTemplates, graphfolder)
 
 
-graphfolder = "/Volumes/Obang/MyDocuments/Linearity/TemplatesBook/ComponentGraphs/"
+graphfolder = "/Users/jcgood/Dropbox/TemplatesBook/ComponentGraphs/"
 draw_components(gTemplates, graphfolder)

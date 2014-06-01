@@ -2068,5 +2068,6 @@ except: pass
 # I looked into this to see how I should be customizing node placement.
 # I guess I'd have to delve deep into dot to find out at this point.
 # See comparison method in tdag for where this write_dot function is called.
-pcgfolder = "/Volumes/Obang/MyDocuments/Linearity/TemplatesBook/PCGs/"
+#pcgfolder = "/Volumes/Obang/MyDocuments/Linearity/TemplatesBook/PCGs/"
+pcgfolder = "/Users/jcgood/Dropbox/TemplatesBook/PCGs/"
 draw_graphs([pcgweighted, pcglabels, ChechenPreverbalA, MandeClause], pcgfolder)

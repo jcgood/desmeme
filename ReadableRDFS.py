@@ -23,8 +23,8 @@ myPfxs = ["http://purl.org/linguistics/jcgood/template#",
 # specifying when a range is, for instance, a class or an integer.
 protege = Namespace("http://protege.stanford.edu/system#")
 
-outfile = open('/Volumes/Obang/MyDocuments/Linearity/TemplatesBook/TemplateOntology.tex', 'w')
-propfile = open('/Volumes/Obang/MyDocuments/Linearity/TemplatesBook/TemplateProps.tex', 'w')
+outfile = open('/Users/jcgood/Dropbox/TemplatesBook/TemplateOntology.tex', 'w')
+propfile = open('/Users/jcgood/Dropbox/TemplatesBook/TemplateProps.tex', 'w')
 
 
 

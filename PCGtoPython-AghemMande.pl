@@ -322,5 +322,5 @@ print DOT "# I looked into this to see how I should be customizing node placemen
 print DOT "# I guess I'd have to delve deep into dot to find out at this point.\n";
 print DOT "# See comparison method in tdag for where this write_dot function is called.\n";
 
-print DOT  "pcgfolder = \"/Volumes/Obang/MyDocuments/Linearity/TemplatesBook/PCGs/\"\n";
+print DOT  "pcgfolder = \"/Users/jcgood/Dropbox/TemplatesBook/PCGs/\"\n";
 print DOT  "draw_graphs([pcgweighted, pcglabels, AghemClause, MandeClause], pcgfolder)\n";

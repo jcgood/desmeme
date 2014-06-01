@@ -21,11 +21,11 @@ gTemplates = process_templates(templates, rdfTemplates)
 gTemplatesNoComp = process_templates_noComp(templates, rdfTemplates) # Get rid of components for another comparison
 
 distances = get_distances(gTemplates)
-outfile = "/Volumes/Obang/MyDocuments/Linearity/TemplatesBook/template.nex"
+outfile = "/Users/jcgood/Dropbox/TemplatesBook/template.nex"
 to_nex(distances,outfile)
 
 noCompDistances = get_distances(gTemplatesNoComp)
-noCompOutfile = "/Volumes/Obang/MyDocuments/Linearity/TemplatesBook/templateNoComp.nex"
+noCompOutfile = "/Users/jcgood/Dropbox/TemplatesBook/templateNoComp.nex"
 to_nex(noCompDistances,noCompOutfile)
 
 print full_grid(distances)
@@ -37,7 +37,7 @@ print full_grid(distancesNoComp)
 
 
 # As long as here, let's generate some LaTeX--probably should put this in the module, but I'm too lazy right now
-pairwiseComps = open("/Volumes/Obang/MyDocuments/Linearity/TemplatesBook/pairwiseComps.tex", "w")
+pairwiseComps = open("/Users/jcgood/Dropbox/TemplatesBook/pairwiseComps.tex", "w")
 print >> pairwiseComps, "{\\footnotesize"
 print >> pairwiseComps, "\\setlength{\\tabcolsep}{.45em}"
 print >> pairwiseComps, "\\begin{tabular}{@{}lrrrrrrrrrrrrrrrrrrrr}"
@@ -76,7 +76,7 @@ print >> pairwiseComps, "\\end{tabular}}"
 
 
 # Now no comps distances
-pairwiseNoComps = open("/Volumes/Obang/MyDocuments/Linearity/TemplatesBook/pairwiseNoComps.tex", "w")
+pairwiseNoComps = open("/Users/jcgood/Dropbox/TemplatesBook/pairwiseNoComps.tex", "w")
 print >> pairwiseNoComps, "{\\footnotesize"
 print >> pairwiseNoComps, "\\setlength{\\tabcolsep}{.45em}"
 print >> pairwiseNoComps, "\\begin{tabular}{@{}lrrrrrrrrrrrrrrrrrrrr}"
