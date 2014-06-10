@@ -62,7 +62,7 @@ def processClass(classURI,embedding=0):
 	# Get documentation, if it exists, and print it
 	RDFSdocumentation = rdfsTemplates.value(subject=classURI,predicate=RDFS['comment'])
 	if RDFSdocumentation:
-		print >> outfile, "\t"*embedding+"\\hspace{1em}\\parbox[t]{\\linegoal}{\\footnotesize "+RDFSdocumentation+"}"
+		print >> outfile, "\t"*embedding+"\\hspace{1em}\\parbox[t]{.985\\linegoal}{\\footnotesize "+RDFSdocumentation+"}"
 	
 	print >> outfile, "\n"
 	
@@ -172,7 +172,7 @@ def processProp(propURI,embedding=0):
 	# Get documentation, if it exists, and print it
 	RDFSdocumentation = rdfsTemplates.value(subject=propURI,predicate=RDFS['comment'])
 	if RDFSdocumentation:
-		print >> propfile, "\t"*embedding+"\\hspace{1em}\\parbox[t]{\\linegoal}{\\footnotesize "+RDFSdocumentation+"}"
+		print >> propfile, "\t"*embedding+"\\hspace{1em}\\parbox[t]{\\linegoal}{\\footnotesize "+RDFSdocumentation+"}\n\\smallskip"
 	
 	print >> propfile, "\n"
 		
@@ -210,7 +210,7 @@ for propURI in slotGenerator:
 		props[label] = propURI
 
 # The name type is a special case for sorting and other things
-print >> propfile,  "\\def\\name{name {\\rm \hspace{1em}\\parbox[t]{\\linegoal}{\\footnotesize A string representation of a the name of a type used for purposes of reference.}}}\n" # Name is a special case since it's a built-in protege property that can't be altered in protege
+print >> propfile,  "\\def\\name{name {\\rm \hspace{1em}\\parbox[t]{1\\linegoal}{\\footnotesize A string representation of a the name of a type used for purposes of reference.}\\smallskip}}\n" # Name is a special case since it's a built-in protege property that can't be altered in protege
 print >> propfile, "\\begin{proplist}\n"
 for propLabel in sorted(props.iterkeys()):
  	if propLabel == "bibliographiccitation": # Hack to not print out a bib feature
