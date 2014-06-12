@@ -8,39 +8,71 @@ open (BIB, "<", $bib) or die "$!";
 
 my %idtoauthors;
 
-my $bibline;
-my $authors;
 while (my $line = <BIB>) {
 
 	chomp($line);
-
 	if( $line =~ m/bibitem/) {
 	
 		my $bibline = $line;
-		if ( $line !~ m/\}$/ ) { $idtoauthors{$bibline} = 1; }
+		if ( $line =~ m/\}$/ ) { }
 
 		else {
-			while ( $line !~ m/\}$/ ) {
-				my $nextline = <BIB>;
-				chomp($nextline);
-				$nextline =~ s/^\s+//;			
+			my $nextline = <BIB>;
+			chomp($nextline);
+			$nextline =~ s/^\s+//;
+			until ( $nextline =~ m/\}$/ ) {
 				$bibline = $bibline." ".$nextline;
-				$line = <BIB>;
+				$nextline = <BIB>;
+				chomp($nextline);
+				$nextline =~ s/^\s+//;
 				}
 			
-			$bibline = $bibline." ".$line;
+			$bibline = $bibline." ".$nextline;
 			}
-	
-		$idtoauthors{$bibline} = 1;
-		}
-	
-	# We got 
+			
+		$bibline =~ m/\]\{(.*?)\}$/;
+		my $bibid = $1;
+			
+		# We know what's next is the author names
+		my $authorline = <BIB>;
+		chomp($authorline);
+		if($authorline =~ m/(.*)\.\s+\d\d\d\d/) {
+		
+			my $author = $1;
+			if($author =~ m/(\s|~)\w$/) {
+				$author .= ".";
+				}
+		
+			$idtoauthors{$bibid} = $author
+
+			}
+
+		else {
+			my $nextauthline = <BIB>;
+			chomp($nextauthline);
+			$nextauthline =~ s/^\s+//;
+			until ( $nextauthline =~ m/(.*)\.\s+\d\d\d\d\.$/ ) {
+				$authorline = $authorline." ".$nextauthline;
+				$nextauthline = <BIB>;
+				chomp($nextauthline);
+				$nextauthline =~ s/^\s+//;
+				}
+			
+			$nextauthline =~ m/(.*)\.\s+\d\d\d\d\.$/;
+			$authorline = $authorline." ".$1;
+			$idtoauthors{$bibid} = $authorline;
+			}
+
+		
+		}	
 			
 				
 	}
-	
+
+# Seem to have the ids and the authors
+# Now I need to parse the authors to get last name first in all cases to make the index...dragons
 	
 my @ids = keys(%idtoauthors);
 for my $id (@ids) {
-	print "$id\n";
+	print "$id ".$idtoauthors{$id}."\n";
 	}
