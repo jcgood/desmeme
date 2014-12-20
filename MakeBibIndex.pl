@@ -3,7 +3,6 @@
 use strict;
 
 my $bib = "/Users/jcgood/Dropbox/TemplatesBook/Cambrined.bbl";
-
 open (BIB, "<", $bib) or die "$!";
 
 my %idtoauthors;
