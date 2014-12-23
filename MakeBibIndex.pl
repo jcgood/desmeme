@@ -50,20 +50,20 @@ while (my $line = <BIB>) {
 			my $nextauthline = <BIB>;
 			chomp($nextauthline);
 			$nextauthline =~ s/^\s+//;
-			until ( $nextauthline =~ m/.*\.\s+\d\d\d\d/ ) {
+			until ( $nextauthline =~ m/.*\.\s+\d\d\d\d/ or $nextauthline =~ m/^\d\d\d\d.*?\./) {
 				$authorline = $authorline." ".$nextauthline;
 				$nextauthline = <BIB>;
 				chomp($nextauthline);
 				$nextauthline =~ s/^\s+//;
 				#special condition of year on one line
-				if ($nextauthline =~ m/^\d\d\d\d\./) {
+				if ($nextauthline =~ m/^\d\d\d\d.*?\./) {
 					$authorline =~ s/\.$//;
 					$idtoauthors{$bibid} = $authorline;
 					}
 				}
 			
 			$nextauthline =~ m/(.*)\.\s+\d\d\d\d/;
-			$authorline = $authorline." ".$1;
+			$authorline = $authorline." ".$1 if defined($1);
 			$idtoauthors{$bibid} = $authorline unless exists($idtoauthors{$bibid});
 			}
 		
@@ -82,13 +82,17 @@ for my $id (@ids) {
 	my @authorlist;
 
 	my $authorstring = $idtoauthors{$id};
-	
+
 	# Get first author
 	$authorstring =~ m/^(.*?,\s.*?)(,|\\\&|$)/;	
 	my $firstauthor = $1;
 	$firstauthor =~ s/\(ed(s?)\.\)//;
 	$firstauthor =~ s/\s+$//;
 	$firstauthor =~ s/^\s+//;
+	
+	#Random fix for one entry
+	$firstauthor =~ s/\{\\SortNoop\{Hacken\}\}//;
+	
 	push(@authorlist,"\\aindex{$firstauthor}");
 	
 	# remove first author to get other authors which are formatted differently
@@ -102,7 +106,7 @@ for my $id (@ids) {
 		$nextauthor =~ s/\s+$//;
 		$nextauthor =~ s/^\s+//;
 	 	
-	 	# Special conditions for second authors with only one inition
+	 	# Special conditions for second authors with only one initial
 	 	$nextauthor =~ s/^([A-Z]\.)~/$1 /;
 	 	
 	 	$nextauthor =~ m/^(.*)\s(.*)$/;
@@ -110,8 +114,8 @@ for my $id (@ids) {
 	 		my $first = $1;
 	 		my $last = $2;
 	 		
-	 		if(!$last) { print "xxx: $first\n$nextauthor\n"; }
-	 		if(!$first) { print "yyy: $last\n$nextauthor\n"; }
+	 		if(!$last) { print "xxx: $first\n$nextauthor $id\n"; }
+	 		if(!$first) { print "yyy: $last\n$nextauthor $id\n"; }
 	 		
 	 		
 	 		my $reversename = "\\aindex{$last, $first}";
