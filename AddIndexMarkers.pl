@@ -3,11 +3,10 @@
 use strict;
 use Storable;
 use List::MoreUtils qw(uniq);
+use ParseIndex;
 
 system("/opt/local/bin/perl -w /Users/jcgood/gitrepos/desmeme/MakeBibIndex.pl");
 
-#Read in by paragraph not line for terms that cross line breaks
-$/ = "\n\n";
 
 my %idtoauthorlist = %{retrieve("./bibindex")};
 
@@ -38,91 +37,16 @@ my @langs = (
 
 # Our system will adopt the subset principle
 # To do: Help systematize entries, maybe separate file and/or parsing structure?
-my %subjects = (
 
-	amorphophonologicaltemplate => [
-	
-		[ "morphophonological templates" => "template!morphophonological" ],
-		[ "morphophonological template" => "template!morphophonological" ],
-	
-		],
+my ($subjects,$crossrefs) = ParseIndex::parseindex();
 
-	amorphosyntactictemplate => [
-	
-		[ "morphosyntactic templates" => "template!morphosyntactic" ],
-		[ "morphosyntactic template" => "template!morphosyntactic" ],
-	
-		],
-
-	aphonologicaltemplate => [
-	
-		[ "phonological templates" => "template!phonological" ],
-		[ "phonological template" => "template!phonological" ],
-		
-		],
-
-	asyntactictemplate => [
-	
-		[ "syntactic templates" => "template!syntactic" ],
-		[ "syntactic template" => "template!syntactic" ],
-		
-		],
-
-	btemplate => [
-
-		[ templates => "template" ],
-		[ template => "template" ],
-		
-		],
-		
-
-	atemplatic => [
-		[ templatic => "templatic"]
-		],
-
-	aphonology => [
-		[ phonology => "phonology"]
-		],
-
-	amorphology => [
-		[ morphology => "morphology"]
-		],
-
-	asyntax => [
-		[ syntax => "syntax"]
-		],
-
-	awordorder => [
-		[ "word order" => "word order"]
-		],
-
-	atypology => [
-		[ "typology" => "typology"]
-		],
-
-	atypological => [
-		[ "typological" => "typological"]
-		],
-
-	agenerative => [
-		[ "generative" => "generative"]
-		],
-
-	aformallinguistics => [
-		[ "formal linguistics" => "formal linguistics"]
-		],
-
-	afunctional => [
-		[ "functional" => "functional"]
-		],
+my %subjects = %$subjects;
+my %crossrefs = %$crossrefs;
 
 
-	);
 
-
-# clausal template
-# morphological template
-
+#Read in by paragraph not line for terms that cross line breaks
+$/ = "\n\n";
 
 my %seenLangs;
 my %seenterms;
@@ -179,7 +103,7 @@ foreach my $chapter (@chapters) {
 					# A line break may "count" as a space, need to make a copy, otherwise we destroy the original with looping
 					my $texttermcopy = $textterm;
 					$texttermcopy =~ s/ /\( \|\\n\)/g;
-					my $matches = $line =~ s/(?<!(?:\\.ref\{))(?<!(?:\\ref\{))(?<!(?:\\label\{))(?<!(?:\s\())(?<!(?:\\tindex\{))\b($texttermcopy)\b(?!\\tindex)/$1\\tindex\{$indexterm\}/gi;
+					my $matches = $line =~ s/(?<!(?:\\.ref\{))(?<!(?:\\ref\{))(?<!(?:\\label\{))(?<!(?:\s\())(?<!(?:\\tindex\{))(?<!(?::))\b($texttermcopy)\b(?!\\tindex)/$1\\tindex\{$indexterm\}/gi;
 					# Do this to check for typoes--if a term never matches, why is it there? # To do fix me for nested data structure
 					if ($matches) { $seenterms{$textterm} = 1; next TERM;}
 					# If we have matched a term in a termset, we skip the rest of the set, we may lose some terms, but are assuming paragraph-level topics for laziness
@@ -208,4 +132,13 @@ foreach my $subj (keys(%subjects)) {
 		unless(exists($seenterms{$textterm})) { print "Term $textterm did not match any line.\n"; }
 	
 		}
+	}
+	
+	
+# Add the "see also" for the terms at the end of the last chapter
+
+open (C5, ">>", "/Users/jcgood/Dropbox/TemplatesBook/5-MovingForwardIndexed.tex") or die "$!";
+print C5 "\n\n";
+for my $crossref (keys(%crossrefs)) {
+	print C5 $crossrefs{$crossref}."\n";
 	}
