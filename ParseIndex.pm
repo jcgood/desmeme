@@ -132,6 +132,7 @@ while (my $termSet = <IDX>) {
 			else {
 			
 				my $sortingTerm = "a".$term;
+				$term =~ m/^(\w+) (\w+)$/;				
 				my $abbrevEntry = $term;
 				if($1) { $abbrevEntry = $1; }				
 				my @termList = ( [ $term, $topTerm."!".$abbrevEntry] );

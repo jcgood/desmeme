@@ -10,28 +10,20 @@ system("/opt/local/bin/perl -w /Users/jcgood/gitrepos/desmeme/MakeBibIndex.pl");
 
 my %idtoauthorlist = %{retrieve("./bibindex")};
 
-my @chapters = ("1-Defining","2-DescriptionLanguage","3-CaseStudies","4-Comparison","5-MovingForward");
+my @chapters = ("1-Defining","2-DescriptionLanguage","3-CaseStudies","4-Comparison","5-MovingForward", "Appendices", "TemplateOntology", "TemplateProps");
 
-my @langs = (
+# Get language list
 
-	"Ahtna",
-	"Athabaskan",
-	"Bantu",
-	"Chechen",
-	"Chichewa",
-	"English",
-	"German",
-	"Ingush",
-	"Japanese",
-	"Nimboran",
-	"Penutian",
-	"Semitic",
-	"Sierra Miwok",
-	"sign languages",
-	"Tiene",
-	"Turkish",
 
-	);
+open (LANGS, "<", "/Users/jcgood/Dropbox/TemplatesBook/languagelist.txt") or die "$!";
+my @langs;
+while (my $lang = <LANGS>) {
+	
+	chomp($lang);
+	push(@langs, $lang);
+
+	}
+
 
 @langs = uniq(@langs);
 
@@ -103,7 +95,7 @@ foreach my $chapter (@chapters) {
 					# A line break may "count" as a space, need to make a copy, otherwise we destroy the original with looping
 					my $texttermcopy = $textterm;
 					$texttermcopy =~ s/ /\( \|\\n\)/g;
-					my $matches = $line =~ s/(?<!(?:\\.ref\{))(?<!(?:\\ref\{))(?<!(?:\\label\{))(?<!(?:\s\())(?<!(?:\\tindex\{))(?<!(?::))\b($texttermcopy)\b(?!\\tindex)/$1\\tindex\{$indexterm\}/gi;
+					my $matches = $line =~ s/(?<!(?:\\.ref\{))(?<!(?:\\ref\{))(?<!(?:\\label\{))(?<!(?:\s\())(?<!(?:\\tindex\{))(?<!(?:\\cite\{))(?<!(?::))(?<!(?:chainin\())(?<!(?:COPY ))(?<!(?:\\s{))\b($texttermcopy)\b(?!\\tindex)/$1\\tindex\{$indexterm\}/gi;
 					# Do this to check for typoes--if a term never matches, why is it there? # To do fix me for nested data structure
 					if ($matches) { $seenterms{$textterm} = 1; next TERM;}
 					# If we have matched a term in a termset, we skip the rest of the set, we may lose some terms, but are assuming paragraph-level topics for laziness
