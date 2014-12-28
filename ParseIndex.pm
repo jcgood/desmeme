@@ -134,7 +134,8 @@ while (my $termSet = <IDX>) {
 				my $sortingTerm = "a".$term;
 				$term =~ m/^(\w+) (\w+)$/;				
 				my $abbrevEntry = $term;
-				if($1) { $abbrevEntry = $1; }				
+				if($1) { $abbrevEntry = $1; }	
+				if ($term eq "pairwise connectivity graph") { $abbrevEntry = "pairwise connectivity" } # = total hack			
 				my @termList = ( [ $term, $topTerm."!".$abbrevEntry] );
 				$mainTerms{$sortingTerm} = [ @termList ];				
 			

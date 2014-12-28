@@ -36,15 +36,19 @@ while (my $line = <BIB>) {
 		my $authorline = <BIB>;
 		chomp($authorline);
 		if($authorline =~ m/(.*)\.\s+\d\d\d\d/) {
-		
+			
 			my $author = $1;
 			if($author =~ m/(\s|~)\w$/) {
 				$author .= ".";
 				}
 		
-			$idtoauthors{$bibid} = $author
+			# hack for special case
+			elsif($authorline =~ m/R Core Team/) { $author = "R~Core~Team"; }
+
+			$idtoauthors{$bibid} = $author;
 
 			}
+
 
 		else {
 			my $nextauthline = <BIB>;
@@ -65,6 +69,7 @@ while (my $line = <BIB>) {
 			$nextauthline =~ m/(.*)\.\s+\d\d\d\d/;
 			$authorline = $authorline." ".$1 if defined($1);
 			$idtoauthors{$bibid} = $authorline unless exists($idtoauthors{$bibid});
+			
 			}
 		
 		}	
@@ -84,19 +89,30 @@ for my $id (@ids) {
 	my $authorstring = $idtoauthors{$id};
 
 	# Get first author
-	$authorstring =~ m/^(.*?,\s.*?)(,|\\\&|$)/;	
-	my $firstauthor = $1;
+	my $firstauthor;
+	
+	# Weird hack for weird author and because the $1 variable remains defined with
+	# previous first author despite loop (seems like a bug in this case)
+	if($authorstring eq "R~Core~Team") { $firstauthor = "R~Core~Team"; }
+	
+	else{
+		$authorstring =~ m/^(.*?,\s.*?)(,|\\\&|$)/;	
+		$firstauthor = $1;
+		}
 	$firstauthor =~ s/\(ed(s?)\.\)//;
 	$firstauthor =~ s/\s+$//;
 	$firstauthor =~ s/^\s+//;
 	
-	#Random fix for one entry
+	#Random fixes for problem entries
 	$firstauthor =~ s/\{\\SortNoop\{Hacken\}\}//;
-	
+		
+	#print "zzzz: $firstauthor\n";
 	push(@authorlist,"\\aindex{$firstauthor}");
 	
 	# remove first author to get other authors which are formatted differently
 	$authorstring =~ s/^(.*?,\s.*?)(,|\\\&|$)\s?//;
+	
+	#print "xxx: $authorstring yyy\n";
 	
 	# Get other authors	
 	while ($authorstring =~ /(.*?)(?:,|\\\&|$)/g) {
@@ -118,7 +134,14 @@ for my $id (@ids) {
 	 		if(!$first) { print "yyy: $last\n$nextauthor $id\n"; }
 	 		
 	 		
+	 		# Hack for weird author of R Core Team
+	 		if($first =~ m/Team/) { $last = ""; }
+
 	 		my $reversename = "\\aindex{$last, $first}";
+
+	 		# Continued for weird author of R Core Team
+	 		if($first =~ m/Team/) { $reversename = "\\aindex{R~Core~Team}"; $first = ""; }
+
 	 		push(@authorlist,$reversename);
 	 		}
 	 		

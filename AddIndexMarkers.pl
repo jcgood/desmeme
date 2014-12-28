@@ -6,8 +6,6 @@ use List::MoreUtils qw(uniq);
 use ParseIndex;
 
 system("/opt/local/bin/perl -w /Users/jcgood/gitrepos/desmeme/MakeBibIndex.pl");
-
-
 my %idtoauthorlist = %{retrieve("./bibindex")};
 
 my @chapters = ("1-Defining","2-DescriptionLanguage","3-CaseStudies","4-Comparison","5-MovingForward", "Appendices", "TemplateOntology", "TemplateProps");
@@ -52,22 +50,6 @@ foreach my $chapter (@chapters) {
 
 	while (my $line = <CHAP>) {
 
-		my @bibidlist = $line =~ m/(\\\w*?cite(?:\[.*?\])?\{.*?\})/g;
-	
-		for my $bibidcites (@bibidlist) {
-	
-			my $bibids = $bibidcites;
-			$bibids =~ s/^.*{//;
-			$bibids =~ s/}$//;
-		
-			for my $bibid (split(/,/, $bibids)) {
-			
-				my $indexline = join("", @{$idtoauthorlist{$bibid}});
-				$line =~ s/\Q$bibidcites/$bibidcites$indexline/;
-				
-				}
-	
-			}
 
 		# Messy conditions to avoid index markers in bad places
 		unless ($line =~ m/\\.*?section/ or $line =~ m/\\chapter/) {
@@ -101,6 +83,25 @@ foreach my $chapter (@chapters) {
 					# If we have matched a term in a termset, we skip the rest of the set, we may lose some terms, but are assuming paragraph-level topics for laziness
 					}
 				}
+			}
+
+
+		# Do last because "R" is an an initial and an index term
+		my @bibidlist = $line =~ m/(\\\w*?cite(?:\[.*?\])?\{.*?\})/g;
+	
+		for my $bibidcites (@bibidlist) {
+	
+			my $bibids = $bibidcites;
+			$bibids =~ s/^.*{//;
+			$bibids =~ s/}$//;
+		
+			for my $bibid (split(/,/, $bibids)) {
+			
+				my $indexline = join("", @{$idtoauthorlist{$bibid}});
+				$line =~ s/\Q$bibidcites/$bibidcites$indexline/;
+				
+				}
+	
 			}
 
 		print INDXCHAP $line;
