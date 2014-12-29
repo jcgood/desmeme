@@ -50,9 +50,9 @@ foreach my $chapter (@chapters) {
 
 	while (my $line = <CHAP>) {
 
-
+		print "xx$line xx";
 		# Messy conditions to avoid index markers in bad places
-		unless ($line =~ m/\\.*?section/ or $line =~ m/\\chapter/) {
+		unless ($line =~ m/\\.*?section\b/ or $line =~ m/\\chapter/) {
 			my $matched = 0;
 			foreach my $lang (@langs) {
 				# A line break may "count" as a space, need to make a copy, otherwise we destroy the original with looping
@@ -66,7 +66,7 @@ foreach my $chapter (@chapters) {
 
 
 		# Lots of special logic needed for embedded terms
-		unless ($line =~ m/\\.*?section/ or $line =~ m/\\chapter/) {
+		unless ($line =~ m/\\.*?section\b/ or $line =~ m/\\chapter/) {
 			TERM: foreach my $subj (sort(keys(%subjects))) {
 				# We are at a top-level index term, for now, we'll just go one deep, otherwise dragons
 				my @termset = @{$subjects{$subj}}; # order matters
