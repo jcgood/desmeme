@@ -100,13 +100,15 @@ for my $id (@ids) {
 		$firstauthor = $1;
 		}
 	$firstauthor =~ s/\(ed(s?)\.\)//;
-	$firstauthor =~ s/\s+$//;
-	$firstauthor =~ s/^\s+//;
+	$firstauthor =~ s/\s+$//g;
+	$firstauthor =~ s/^\s+//g;
 	
 	#Random fixes for problem entries
 	$firstauthor =~ s/\{\\SortNoop\{Hacken\}\}//;
 		
 	#print "zzzz: $firstauthor\n";
+	
+	$firstauthor =~ s/\~/ /;
 	push(@authorlist,"\\aindex{$firstauthor}");
 	
 	# remove first author to get other authors which are formatted differently
@@ -118,9 +120,12 @@ for my $id (@ids) {
 	while ($authorstring =~ /(.*?)(?:,|\\\&|$)/g) {
 	 	
 	 	my $nextauthor = $1;
+		$nextauthor =~ s/\.$//;
 		$nextauthor =~ s/\(ed(s?)\.\)//;
 		$nextauthor =~ s/\s+$//;
 		$nextauthor =~ s/^\s+//;
+		
+		print "xx $firstauthor"."Z$nextauthor"."xx\n";
 	 	
 	 	# Special conditions for second authors with only one initial
 	 	$nextauthor =~ s/^([A-Z]\.)~/$1 /;
@@ -142,6 +147,7 @@ for my $id (@ids) {
 	 		# Continued for weird author of R Core Team
 	 		if($first =~ m/Team/) { $reversename = "\\aindex{R~Core~Team}"; $first = ""; }
 
+			$reversename =~ s/\~/ /;
 	 		push(@authorlist,$reversename);
 	 		}
 	 		
