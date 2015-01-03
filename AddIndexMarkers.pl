@@ -50,7 +50,7 @@ foreach my $chapter (@chapters) {
 
 	while (my $line = <CHAP>) {
 
-		print "xx$line xx";
+		#print "xx$line xx";
 		# Messy conditions to avoid index markers in bad places
 		unless ($line =~ m/\\.*?section\b/ or $line =~ m/\\chapter/) {
 			my $matched = 0;
@@ -104,6 +104,20 @@ foreach my $chapter (@chapters) {
 	
 			}
 
+		# One last cleanup to deindex caption TOC entries
+		# Hack to reset captures
+		#"a" =~ /a/;
+		if($line =~ m/\\caption\[(.*?)\]/) {
+			#print "zzz: $1\n";
+			my $toccaption = $1;
+			my $newtoccaption = $toccaption;
+			$newtoccaption =~ s/\\[atl]index{.*?}//g;
+			#print "zyz: $toccaption\n";
+			#print "xxx: $line";
+			$line =~ s/\Q$toccaption\E/$newtoccaption/;
+			#print "yyy: $line";
+			}
+
 		print INDXCHAP $line;
 		}
 
@@ -115,7 +129,6 @@ foreach my $lang (@langs) {
 	unless(exists($seenLangs{$lang})) { print "Language $lang did not match any line.\n"; }
 	}
 	
-# to do: update for new data structure
 foreach my $subj (keys(%subjects)) {
 	# We are at a top-level index term, for now, we'll just go one deep, otherwise dragons
 	my @termset = @{$subjects{$subj}}; # order matters

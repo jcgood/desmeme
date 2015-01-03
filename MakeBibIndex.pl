@@ -105,8 +105,16 @@ for my $id (@ids) {
 	
 	#Random fixes for problem entries
 	$firstauthor =~ s/\{\\SortNoop\{Hacken\}\}//;
+	$firstauthor =~ s/\{\\SortNoop\{Hacken\}\}//;
 		
 	#print "zzzz: $firstauthor\n";
+	
+	# Hack for ten Hacken
+	if($firstauthor =~ m/Hacken/) { $firstauthor = "Hacken@".$firstauthor; }
+
+	# Hack for Stekauer
+	if($firstauthor =~ m/tekauer/) { $firstauthor = "Stekauer@".$firstauthor; }
+
 	
 	$firstauthor =~ s/\~/ /;
 	push(@authorlist,"\\aindex{$firstauthor}");
@@ -125,7 +133,7 @@ for my $id (@ids) {
 		$nextauthor =~ s/\s+$//;
 		$nextauthor =~ s/^\s+//;
 		
-		print "xx $firstauthor"."Z$nextauthor"."xx\n";
+		#print "xx $firstauthor"."Z$nextauthor"."xx\n";
 	 	
 	 	# Special conditions for second authors with only one initial
 	 	$nextauthor =~ s/^([A-Z]\.)~/$1 /;
@@ -137,8 +145,7 @@ for my $id (@ids) {
 	 		
 	 		if(!$last) { print "xxx: $first\n$nextauthor $id\n"; }
 	 		if(!$first) { print "yyy: $last\n$nextauthor $id\n"; }
-	 		
-	 		
+	 			 		
 	 		# Hack for weird author of R Core Team
 	 		if($first =~ m/Team/) { $last = ""; }
 

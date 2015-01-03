@@ -197,8 +197,8 @@ while (my $termSet = <IDX>) {
 	
 	
 # serialize the two indices--even better, make this a function and returnem
-print Dumper(\%mainTerms);
-print Dumper(\%crossrefTerms);
+#print Dumper(\%mainTerms);
+#print Dumper(\%crossrefTerms);
 
 return(\%mainTerms, \%crossrefTerms);
 
