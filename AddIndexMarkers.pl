@@ -58,6 +58,10 @@ foreach my $chapter (@chapters) {
 				# A line break may "count" as a space, need to make a copy, otherwise we destroy the original with looping
 				my $langcopy = $lang;
 				$langcopy =~ s/ /\( \|\\n\)/g;
+				
+				# Special case for accented Leggb\'o (since I don't know how to do Unicode properly in Perl)
+				if($langcopy =~ m/Leggb/) { $langcopy = "Leggb"; }
+				
 				my $matches = $line =~ s/(?<!(\\.ref\{))(?<!(\\ref\{))(?<!(\\label\{))\b$langcopy\b/$lang\\lindex\{$lang\}/g;
 				# Do this to check for typoes--if a lang never matches, why is it there?
 				if ($matches) { $seenLangs{$lang} = 1; }
