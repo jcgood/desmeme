@@ -91,7 +91,7 @@ foreach my $chapter (@chapters) {
 
 
 		# Do last because "R" is an an initial and an index term
-		my @bibidlist = $line =~ m/(\\\w*?cite(?:\[.*?\])?\{.*?\})/g;
+		my @bibidlist = $line =~ m/(\\\w*?cite\w*?(?:\[.*?\])?\{.*?\})/g;
 	
 		for my $bibidcites (@bibidlist) {
 	
@@ -99,10 +99,14 @@ foreach my $chapter (@chapters) {
 			$bibids =~ s/^.*{//;
 			$bibids =~ s/}$//;
 		
+			#print "zzz: $bibids\n";
+		
 			for my $bibid (split(/,/, $bibids)) {
 			
+				#print "yyy: $bibid\n";
+			
 				my $indexline = join("", @{$idtoauthorlist{$bibid}});
-				$line =~ s/\Q$bibidcites/$bibidcites$indexline/;
+				$line =~ s/\Q$bibidcites/$bibidcites$indexline/g;
 				
 				}
 	
