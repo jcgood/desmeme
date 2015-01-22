@@ -86,6 +86,7 @@
 <rdfs:Class rdf:about="&gold;Mora"
 	 a:role="abstract"
 	 rdfs:label="gold:Mora">
+	<rdfs:subClassOf rdf:resource="&general;grammaticalCategory"/>
 	<rdfs:subClassOf rdf:resource="&general;prosodicConstituent"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&gold;Noun"
@@ -555,10 +556,6 @@
 <rdfs:Class rdf:about="&localcategory;locative"
 	 a:role="abstract"
 	 rdfs:label="localcategory:locative">
-	<rdfs:subClassOf rdf:resource="&general;grammaticalCategory"/>
-</rdfs:Class>
-<rdfs:Class rdf:about="&localcategory;moraicUnit"
-	 rdfs:label="localcategory:moraicUnit">
 	<rdfs:subClassOf rdf:resource="&general;grammaticalCategory"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&localcategory;negative"

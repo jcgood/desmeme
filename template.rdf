@@ -2110,7 +2110,7 @@
 </component:component>
 <component:coherent rdf:about="&templates;TieneVerbProsodicLeftSupport-Coherence"
 	 rdfs:label="TieneVerbProsodicLeftSupport-Coherence">
-	<function:CLASS rdf:resource="&localcategory;moraicUnit"/>
+	<function:CLASS rdf:resource="&gold;Mora"/>
 </component:coherent>
 <component:inelastic rdf:about="&templates;TieneVerbProsodicLeftSupport-Elasticity"
 	 general:COUNT="1"
@@ -2118,18 +2118,6 @@
 <component:open rdf:about="&templates;TieneVerbProsodicLeftSupport-Filledness"
 	 rdfs:label="TieneVerbProsodicLeftSupport-Filledness">
 	<speccomponent:COHERENCE rdf:resource="&templates;TieneVerbProsodicLeftSupport-Coherence"/>
-</component:open>
-<component:coherent rdf:about="&templates;TieneVerbProsodicMiddleMora-Coherent"
-	 rdfs:label="TieneVerbProsodicMiddleMora-Coherent">
-	<function:CLASS rdf:resource="&localcategory;moraicUnit"/>
-</component:coherent>
-<component:elastic rdf:about="&templates;TieneVerbProsodicMiddleMora-Elasticity"
-	 general:MAXIMUM="1"
-	 general:MINIMUM="0"
-	 rdfs:label="TieneVerbProsodicMiddleMora-Elasticity"/>
-<component:open rdf:about="&templates;TieneVerbProsodicMiddleMora-Filledness"
-	 rdfs:label="TieneVerbProsodicMiddleMora-Filledness">
-	<speccomponent:COHERENCE rdf:resource="&templates;TieneVerbProsodicMiddleMora-Coherent"/>
 </component:open>
 <component:component rdf:about="&templates;TieneVerbProsodicRightSupport"
 	 rdfs:label="TieneVerbProsodicRightSupport">
@@ -2139,7 +2127,7 @@
 </component:component>
 <component:coherent rdf:about="&templates;TieneVerbProsodicRightSupport-Coherence"
 	 rdfs:label="TieneVerbProsodicRightSupport-Coherence">
-	<function:CLASS rdf:resource="&localcategory;moraicUnit"/>
+	<function:CLASS rdf:resource="&gold;Mora"/>
 </component:coherent>
 <component:inelastic rdf:about="&templates;TieneVerbProsodicRightSupport-Elasticity"
 	 general:COUNT="1"

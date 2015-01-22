@@ -1,4 +1,4 @@
-; Thu Jan 15 21:14:46 EST 2015
+; Thu Jan 22 00:09:19 EST 2015
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -6,10 +6,10 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[template_ProjectKB_Class10131]
-		[template_ProjectKB_Class10132]
-		[template_ProjectKB_Class10133]
-		[template_ProjectKB_Class10134]))
+		[template_ProjectKB_Class10126]
+		[template_ProjectKB_Class10127]
+		[template_ProjectKB_Class10128]
+		[template_ProjectKB_Class10129]))
 
 ([CLSES_TAB] of  Widget
 
@@ -49,7 +49,7 @@
 	(name "namespace_name")
 	(string_value "http://linguistics-ontology.org/jcgood/templates#"))
 
-([KB_218023_Class0] of  Map
+([KB_113410_Class0] of  Map
 )
 
 ([KB_542461_Class0] of  Map
@@ -526,22 +526,22 @@
 ([template_ProjectKB_Class10] of  Property_List
 )
 
-([template_ProjectKB_Class10131] of  String
+([template_ProjectKB_Class10126] of  String
 
 	(name ":INSTANCE-ANNOTATION")
 	(string_value "%3AANNOTATION-TEXT"))
 
-([template_ProjectKB_Class10132] of  String
-
-	(name ":PAL-CONSTRAINT")
-	(string_value "%3APAL-NAME"))
-
-([template_ProjectKB_Class10133] of  String
+([template_ProjectKB_Class10127] of  String
 
 	(name ":META-CLASS")
 	(string_value "%3ANAME"))
 
-([template_ProjectKB_Class10134] of  String
+([template_ProjectKB_Class10128] of  String
+
+	(name ":PAL-CONSTRAINT")
+	(string_value "%3APAL-NAME"))
+
+([template_ProjectKB_Class10129] of  String
 
 	(name "form:transcription")
 	(string_value "specform%3ATRANSCRIPTION_STRING"))
