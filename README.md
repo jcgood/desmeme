@@ -8,15 +8,39 @@ Descriptions of each file/folder are as follows, divided across categories of pr
 Primary resources
 -----------------
 
+-GraphJG
+
 -InternalMaterials: This directory contains various resources used in the creation of the book mentioned above, and included in the repository to assist my own project management, but which are only indirectly connected to the research questions that most of the materials in this repository are intended to explore. Because of this, I do not describe the individual files in this directory here.
 
 -LICENSE: The license for these materials. They are placed in the public domain to the extent that this is legally allowable. I still request that, if you use the materials here, their contribution is acknowledged, in particular in scholarly works, following usual practice.
 
+-RDFtoAVM.py
+
+-RDFtoEntropy.py
+
+-RDFtoGraphs.py
+
+-RDFtoNexus.py
+
+-RDFtoPerlGraphs.py
+
+-ReadableRDFS.py
+
 -README.md: This file.
+
+-tdag
+
+-template.parc
+
+-template.pprj
+
+-template.rdf
+
+-template.rdfs
 
 
 Secondary resources
------------------
+-------------------
 
 
 -EntropyCalcs.r
@@ -31,13 +55,6 @@ Secondary resources
 
 -GraphFloodingChechenMande.pl
 
--GraphJG
-
-
-
--MakeBibIndex.pl
-
--ParseIndex.pm
 
 -PCGtoDOT-AghemMande.py
 
@@ -51,31 +68,8 @@ Secondary resources
 
 -PCGtoPython-Example.pl
 
--r-latex-notes.txt
-
--r-mds-notes.txt
-
--RDFtoAVM.py
-
--RDFtoEntropy.py
-
--RDFtoGraphs.py
-
--RDFtoNexus.py
-
--RDFtoPerlGraphs.py
-
--ReadableRDFS.py
 
 
--tdag
 
--template.parc
-
--template.pprj
-
--template.rdf
-
--template.rdfs
 
 -updateAll.py
