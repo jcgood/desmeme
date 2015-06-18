@@ -228,7 +228,7 @@
 </rdfs:Class>
 <rdfs:Class rdf:about="&component;unstable"
 	 rdfs:label="component:unstable">
-	<rdfs:comment>A type that specifies that a given component exhibits a dependency with another component. Only one dependency can be specified per component since the need for more than one has not yet been needed in the database.</rdfs:comment>
+	<rdfs:comment>A type that specifies that a given component exhibits a dependency with another component. Only one dependency can be specified per component since the need for more than one has not yet arisen in the database.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&component;stability"/>
 </rdfs:Class>
 <rdf:Property rdf:about="&form;LIAISON"
