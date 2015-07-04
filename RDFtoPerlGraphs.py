@@ -1,6 +1,5 @@
 #!/usr/bin/python2.7
 
-
 import tdag
 from tdag import rdfGraph, Namespace, RDF, tdag, conflate, process_template, prettyName
 from tdag import simUI_d, get_distances, to_nex, draw_graphs, full_grid, process_templates, draw_components
