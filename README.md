@@ -42,6 +42,11 @@ Primary resources
 - README.md: This file.
 
 - tdag
+  - __init__.py
+  - avm.py
+  - comparison.py
+  - despecification.py
+  - tdag.py
 
 - template.parc
 
