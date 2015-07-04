@@ -12,15 +12,20 @@ Descriptions of each file/folder are as follows, divided across categories of pr
 Primary resources
 -----------------
 
-- GraphJG
+- GraphJG: Folder for a Perl module implementing the Similarity Flooding algorithm in Perl (see http://ilpubs.stanford.edu:8090/730/). The module is adapted from the Graph::Similarity module posted to CPAN by Shohei Kameda.
+My understanding of the license suggests I can distribute modifications as
+long as they are freely available.  I've added "JG" to the name of the module
+(and associated files) to make it clear that this is the edited version.
 
-  - SimilarityJG.pm
+  - SimilarityJG.pm: The file that defines the module.
 
-  - SimilarityJG
+  - SimilarityJG: Subfolder for module containing files with implementing the
+  algorithm.
 
-    - MethodJG.pm
+    - MethodJG.pm: Helper methods for accessing results of Similarity Flooding calculations.
     
-    - SimilarityFloodingJG.pm
+    - SimilarityFloodingJG.pm: Implementation of Similarity Flooding for the
+    database and parameters described in the book.
 
 
 - InternalMaterials: This directory contains various resources used in the creation of the book mentioned above, and included in the repository to assist my own project management, but which are only indirectly connected to the research questions that most of the materials in this repository are intended to explore. Because of this, I do not describe the individual files in this directory here.

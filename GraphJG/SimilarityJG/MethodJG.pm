@@ -45,7 +45,7 @@ sub showNonZeroSimilarities {
 }
 
 
-# JG: Added this methos
+# JG: Added this method
 sub getAllSimilarities {
     my $self = shift;
     my $sim = $self->sim;
@@ -112,7 +112,7 @@ sub _setSimilarity {
     $self->sim($ref);
 }
 
-# JG: This is used by the algoritm module 
+# JG: This is used by the algorithm module 
 # to set the PCG hash for getting back
 sub _setPCG {
     my ($self, $ref) = @_; 
