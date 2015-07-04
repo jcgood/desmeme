@@ -42,7 +42,7 @@ Primary resources
 - README.md: This file.
 
 - tdag
-  - __init__.py
+  - \_\_init\_\_.py
   - avm.py
   - comparison.py
   - despecification.py
