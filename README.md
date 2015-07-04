@@ -25,6 +25,14 @@ Primary resources
 
 - InternalMaterials: This directory contains various resources used in the creation of the book mentioned above, and included in the repository to assist my own project management, but which are only indirectly connected to the research questions that most of the materials in this repository are intended to explore. Because of this, I do not describe the individual files in this directory here.
 
+- tdag
+  - \_\_init\_\_.py
+  - avm.py
+  - comparison.py
+  - despecification.py
+  - tdag.py
+
+
 - LICENSE: The license for these materials. They are placed in the public domain to the extent that this is legally allowable. The author still requests that, anyone making use of the materials here, acknowledge their use, in particular in scholarly works, following usual practice.
 
 - RDFtoAVM.py
@@ -40,13 +48,6 @@ Primary resources
 - ReadableRDFS.py
 
 - README.md: This file.
-
-- tdag
-  - \_\_init\_\_.py
-  - avm.py
-  - comparison.py
-  - despecification.py
-  - tdag.py
 
 - template.parc
 
