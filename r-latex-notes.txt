@@ -1,3 +1,0 @@
-library(miscFuncs)
-latextable(round(miTemplates,2), scientific=100, rownames=rownames(miTemplates))
-Maybe I once found a better function?

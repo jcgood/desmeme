@@ -12,7 +12,8 @@
 # to test for similarities among nodes in template graphs. I have removed his
 # implementations of other similarity measures. Per my understanding of the
 # Perl Artistic License, I can distribute these modifications without problem
-# as long as they are freely available.
+# as long as they are freely available. My changes to the module are indicated
+# comments beginning with "JG:".
 
 # I'm also changing the names a bit so it's clear this is customized from the original.
 
