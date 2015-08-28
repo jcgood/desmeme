@@ -396,7 +396,7 @@
 <rdfs:Class rdf:about="&general;grammaticalCategory"
 	 a:role="abstract"
 	 rdfs:label="general:grammaticalCategory">
-	<rdfs:comment>A supertype for general grammatical categories that can be used to specify the function and conditioning of a given template or the possible fillers of components. These types do not enter into the typological comparison at present but are included due their potential interest for purposes of reference and for future studies. A number of these types are drawn from the GOLD ontology. Those that are not should be interpretable on the basis of their labels or the descriptions of the relevant templates in the book that this ontology is associated with.</rdfs:comment>
+	<rdfs:comment>A supertype for general grammatical categories that can be used to specify the function and conditioning of a given template or the possible fillers of components. These types do not enter into the typological comparison at present but are included due to their potential interest for purposes of reference and for future studies. A number of these types are drawn from the GOLD ontology. Those that are not should be interpretable on the basis of their labels or the descriptions of the relevant templates in the book that this ontology is associated with.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;left"
