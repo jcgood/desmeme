@@ -482,7 +482,7 @@
 <rdfs:Class rdf:about="&general;segment"
 	 a:role="abstract"
 	 rdfs:label="general:segment">
-	<rdfs:comment>A type for specifying that the linguistic constituents a set of templatic restrictions applies over consists of segments</rdfs:comment>
+	<rdfs:comment>A type for specifying that the linguistic constituents that a set of templatic restrictions applies over consist of segments</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&general;phonologicalConstituent"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;simple"
