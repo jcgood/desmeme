@@ -4,8 +4,6 @@ use lib "$FindBin::Bin/.";
 use GraphJG::SimilarityJG;
 use Math::Round;
 
-#I've been adding the template-specific suffixes by hand
-#And cutting and pasting the templates in, oo
 
 my $AghemClause = Graph->new(multiedged => 1);
 $AghemClause->set_graph_attribute("name", "AghemClause");
