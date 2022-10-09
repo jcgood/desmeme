@@ -2,7 +2,7 @@ library(vcd)
 library(entropy)
 library(parmigene)
 
-templates = read.csv('/Users/jcgood/gitrepos/desmeme/EntropyCalcs.r', header=TRUE, row.names=1)
+templates = read.csv('/Users/jcgood/gitrepos/desmeme/EntropyTables2.txt', header=TRUE, row.names=1)
 
 violability = table(templates$violability)
 names(dimnames(violability)) <- list('violability')

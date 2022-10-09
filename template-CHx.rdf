@@ -1,0 +1,2835 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE rdf:RDF [
+	 <!ENTITY template 'http://purl.org/linguistics/jcgood/template#'>
+	 <!ENTITY specgeneral 'http://purl.org/linguistics/jcgood/specgeneral#'>
+	 <!ENTITY form 'http://purl.org/linguistics/jcgood/form#'>
+	 <!ENTITY general 'http://purl.org/linguistics/jcgood/general#'>
+	 <!ENTITY rdfs 'http://www.w3.org/2000/01/rdf-schema#'>
+	 <!ENTITY component 'http://purl.org/linguistics/jcgood/component#'>
+	 <!ENTITY gold 'http://purl.org/linguistics/gold#'>
+	 <!ENTITY templates 'http://linguistics-ontology.org/jcgood/templates#'>
+	 <!ENTITY function 'http://purl.org/linguistics/jcgood/function#'>
+	 <!ENTITY spectemplate 'http://purl.org/linguistics/jcgood/spectemplate#'>
+	 <!ENTITY notes 'http://purl.org/linguistics/jcgood/notes#'>
+	 <!ENTITY speccomponent 'http://purl.org/linguistics/jcgood/speccomponent#'>
+	 <!ENTITY terms 'http://purl.org/dc/terms#'>
+	 <!ENTITY localcategory 'http://purl.org/linguistics/jcgood/localcategory#'>
+	 <!ENTITY rdf 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+	 <!ENTITY specform 'http://purl.org/linguistics/jcgood/specform#'>
+]>
+<rdf:RDF xmlns:template="&template;"
+	 xmlns:specgeneral="&specgeneral;"
+	 xmlns:form="&form;"
+	 xmlns:general="&general;"
+	 xmlns:rdfs="&rdfs;"
+	 xmlns:component="&component;"
+	 xmlns:templates="&templates;"
+	 xmlns:gold="&gold;"
+	 xmlns:function="&function;"
+	 xmlns:spectemplate="&spectemplate;"
+	 xmlns:speccomponent="&speccomponent;"
+	 xmlns:notes="&notes;"
+	 xmlns:localcategory="&localcategory;"
+	 xmlns:terms="&terms;"
+	 xmlns:rdf="&rdf;"
+	 xmlns:specform="&specform;">
+<component:inelastic rdf:about="&templates;BantuBeforeVerbStem-Elasticity"
+	 general:COUNT="0"
+	 rdfs:label="BantuBeforeVerbStem-Elasticity"/>
+<component:inelastic rdf:about="&templates;BantuVerbStem-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="BantuVerbStem-Elasticity"/>
+<component:component rdf:about="&templates;ChacoboBodyPartPrefix"
+	 rdfs:label="ChacoboBodyPartPrefix">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChacoboBodyPartPrefix-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChacoboBodyPartPrefix-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChacoboBodyPartPrefix-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;ChacoboBodyPartPrefix-Coherence"
+	 rdfs:label="ChacoboBodyPartPrefix-Coherence">
+	<function:CLASS rdf:resource="&localcategory;bodyPartPrefix"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;ChacoboBodyPartPrefix-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChacoboBodyPartPrefix-Elasticity"/>
+<component:open rdf:about="&templates;ChacoboBodyPartPrefix-Filledness"
+	 rdfs:label="ChacoboBodyPartPrefix-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChacoboBodyPartPrefix-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;ChacoboBodyPartPrefix-Stability"
+	 rdfs:label="ChacoboBodyPartPrefix-Stability"/>
+<component:component rdf:about="&templates;ChacoboTrans"
+	 rdfs:label="ChacoboTrans">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChacoboTrans-Elasiticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChacoboTrans-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChacoboTrans-Stability"/>
+</component:component>
+<general:left rdf:about="&templates;ChacoboTrans-AssociatePosition"
+	 rdfs:label="ChacoboTrans-AssociatePosition"/>
+<component:coherent rdf:about="&templates;ChacoboTrans-Coherence"
+	 rdfs:label="ChacoboTrans-Coherence">
+	<function:CLASS rdf:resource="&localcategory;valency"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;ChacoboTrans-Elasiticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChacoboTrans-Elasiticity"/>
+<component:open rdf:about="&templates;ChacoboTrans-Filledness"
+	 rdfs:label="ChacoboTrans-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChacoboTrans-Coherence"/>
+</component:open>
+<component:unstable rdf:about="&templates;ChacoboTrans-Stability"
+	 rdfs:label="ChacoboTrans-Stability">
+	<speccomponent:ASSOCIATE rdf:resource="&templates;ChacoboBodyPartPrefix"/>
+	<speccomponent:ASSOCIATE_POSITION rdf:resource="&templates;ChacoboTrans-AssociatePosition"/>
+</component:unstable>
+<template:desmeme rdf:about="&templates;ChacoboVerbCore"
+	 gold:inLanguage="cao"
+	 rdfs:label="ChacoboVerbCore">
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChacoboVerbCore-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChacoboVerbCore-Foundation"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;ChacoboVerbCore-Source"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChacoboVerbCore-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChacoboVerbCore-Violability"/>
+	<function:FUNCTION rdf:resource="&gold;Verbal"/>
+</template:desmeme>
+<general:constructionalConditioning rdf:about="&templates;ChacoboVerbCore-Conditioning"
+	 rdfs:label="ChacoboVerbCore-Conditioning">
+	<notes:CONDITIONS>This is a desmeme for the "verbal core" (my term) in the language.</notes:CONDITIONS>
+</general:constructionalConditioning>
+<template:arch rdf:about="&templates;ChacoboVerbCore-Foundation"
+	 rdfs:label="ChacoboVerbCore-Foundation">
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChacoboBodyPartPrefix"/>
+	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;ChacoboBodyPartPrefix"/>
+	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;ChacoboTrans"/>
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChacoboTrans"/>
+	<spectemplate:KEYSTONE rdf:resource="&templates;ChacoboVerbRoot"/>
+</template:arch>
+<notes:source rdf:about="&templates;ChacoboVerbCore-Source"
+	 terms:bibliographicCitation="Tallman (personal communication)"
+	 rdfs:label="ChacoboVerbCore-Source"/>
+<template:order rdf:about="&templates;ChacoboVerbCore-Stricture"
+	 general:COUNT="3"
+	 rdfs:label="ChacoboVerbCore-Stricture">
+	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
+	<general:RELATIONS rdf:resource="&general;simple"/>
+</template:order>
+<template:notViolable rdf:about="&templates;ChacoboVerbCore-Violability"
+	 rdfs:label="ChacoboVerbCore-Violability"/>
+<component:component rdf:about="&templates;ChacoboVerbRoot"
+	 rdfs:label="ChacoboVerbRoot">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChacoboVerbRoot-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChacoboVerbRoot-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChacoboVerbRoot-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;ChacoboVerbRoot-Coherence"
+	 rdfs:label="ChacoboVerbRoot-Coherence">
+	<function:CLASS rdf:resource="&gold;Verbal"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChacoboVerbRoot-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChacoboVerbRoot-Elasticity"/>
+<component:open rdf:about="&templates;ChacoboVerbRoot-Filledness"
+	 rdfs:label="ChacoboVerbRoot-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChacoboVerbRoot-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;ChacoboVerbRoot-Stability"
+	 rdfs:label="ChacoboVerbRoot-Stability"/>
+<template:potentiallyViolable rdf:about="&templates;ChechenPreverbalA-Violability"
+	 rdfs:label="ChechenPreverbalA-Violability">
+	<template:REPARABILITY rdf:resource="&template;morphosyntacticInsertion"/>
+	<template:EXCEPTIONALITY rdf:resource="&template;noKnownExceptions"/>
+</template:potentiallyViolable>
+<form:transcription rdf:about="&templates;ChichSecondCausative"
+	 specform:TRANSCRIPTION_STRING="-its-"
+	 rdfs:label="-its-"/>
+<component:component rdf:about="&templates;ChichewVerbNoNeg1"
+	 rdfs:label="ChichewVerbNoNeg1">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewVerbNoNeg1-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewVerbNoNeg1-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewVerbNoNeg1-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;ChichewVerbNoNeg1-Coherence"
+	 rdfs:label="ChichewVerbNoNeg1-Coherence">
+	<function:CLASS rdf:resource="&gold;Verbal"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewVerbNoNeg1-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewVerbNoNeg1-Elasticity"/>
+<component:open rdf:about="&templates;ChichewVerbNoNeg1-Filledness"
+	 rdfs:label="ChichewVerbNoNeg1-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewVerbNoNeg1-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;ChichewVerbNoNeg1-Stability"
+	 rdfs:label="ChichewVerbNoNeg1-Stability"/>
+<form:transcription rdf:about="&templates;Chichewa-Neg2-Transcription"
+	 specform:TRANSCRIPTION_STRING="sa"
+	 rdfs:label="sa"/>
+<general:lexicoconstructionalConditioning rdf:about="&templates;ChichewaAR-Conditioning"
+	 rdfs:label="ChichewaAR-Conditioning">
+	<spectemplate:FILLED_COMPONENTS rdf:resource="&templates;ChichewaAR-Conditioning-FilledComponents"/>
+	<template:FILLER_POSITION rdf:resource="&general;templateMultiple"/>
+</general:lexicoconstructionalConditioning>
+<component:filledComponentSet rdf:about="&templates;ChichewaAR-Conditioning-FilledComponents"
+	 rdfs:label="ChichewaAR-Conditioning-FilledComponents">
+	<spectemplate:FILLED_COMPONENT rdf:resource="&templates;ChichewaApplicative"/>
+	<spectemplate:FILLED_COMPONENT rdf:resource="&templates;ChichewaReciprocal"/>
+</component:filledComponentSet>
+<template:arch rdf:about="&templates;ChichewaAR-Foundation"
+	 rdfs:label="ChichewaAR-Foundation">
+	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;ChichewaApplicative"/>
+	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;ChichewaBeforeVerbStemNullComponent"/>
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChichewaReciprocal"/>
+	<spectemplate:KEYSTONE rdf:resource="&templates;ChichewaVerbStem"/>
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChichewaVerbStem"/>
+</template:arch>
+<template:desmeme rdf:about="&templates;ChichewaAR-MOR"
+	 gold:inLanguage="http://lexvo.org/id/iso639-3/nya"
+	 rdfs:label="ChichewaAR-MOR">
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChichewaAR-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChichewaAR-Foundation"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChichewaAR-Violability"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChichewaReciprocal-Stricture"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;HymanMchombo-2002"/>
+	<function:FUNCTION rdf:resource="&localcategory;valency"/>
+</template:desmeme>
+<template:potentiallyViolable rdf:about="&templates;ChichewaAR-Violability"
+	 rdfs:label="ChichewaAR-Violability">
+	<template:REPARABILITY rdf:resource="&template;morphosyntacticInsertion"/>
+	<template:EXCEPTIONALITY rdf:resource="&template;semantic"/>
+</template:potentiallyViolable>
+<component:component rdf:about="&templates;ChichewaApplicative"
+	 rdfs:label="ChichewaApplicative">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaApplicative-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaApplicative-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaApplicative-Stability"/>
+</component:component>
+<component:elastic rdf:about="&templates;ChichewaApplicative-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaApplicative-Elasticity"/>
+<component:filled rdf:about="&templates;ChichewaApplicative-Filledness"
+	 rdfs:label="ChichewaApplicative-Filledness">
+	<speccomponent:FORM rdf:resource="&templates;ChichewaApplicative-Form"/>
+	<function:FILLER_CLASS rdf:resource="&localcategory;valency"/>
+</component:filled>
+<form:canonicalLineate rdf:about="&templates;ChichewaApplicative-Form"
+	 gold:inLanguage="http://www.lexvo.org/page/iso639-3/nya"
+	 rdfs:label="ChichewaApplicative-Form">
+	<specform:TRANSCRIPTION rdf:resource="&templates;ChichewaApplicative-Transcription"/>
+	<form:LIAISON rdf:resource="&form;sinistrous"/>
+</form:canonicalLineate>
+<component:stable rdf:about="&templates;ChichewaApplicative-Stability"
+	 rdfs:label="ChichewaApplicative-Stability"/>
+<form:transcription rdf:about="&templates;ChichewaApplicative-Transcription"
+	 specform:TRANSCRIPTION_STRING="-il-"
+	 rdfs:label="-il-"/>
+<template:embeddedDesmeme rdf:about="&templates;ChichewaAssocativeMarker-UnspecifiedDesmeme"
+	 rdfs:label="ChichewaAssocativeMarker-UnspecifiedDesmeme"/>
+<general:lexicoconstructionalConditioning rdf:about="&templates;ChichewaAssociative-Conditioning"
+	 notes:CONDITIONS="This is the standard Bantu associative construction."
+	 rdfs:label="ChichewaAssociative-Conditioning"/>
+<template:span rdf:about="&templates;ChichewaAssociative-Foundation"
+	 rdfs:label="ChichewaAssociative-Foundation">
+	<spectemplate:RESTKOMPONENTEN rdf:resource="&templates;ChichewaAssociativeRK"/>
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChichewaPossessor"/>
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChichewaPossessum"/>
+</template:span>
+<template:desmeme rdf:about="&templates;ChichewaAssociative-SYN"
+	 gold:inLanguage="http://lexvo.org/id/iso639-3/nya"
+	 rdfs:label="ChichewaAssociative-SYN">
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChichewaAssociative-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChichewaAssociative-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChichewaAssociative-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChichewaAssociative-Violability"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;Mchombo-2004"/>
+	<function:FUNCTION rdf:resource="&localcategory;possessive"/>
+</template:desmeme>
+<template:order rdf:about="&templates;ChichewaAssociative-Stricture"
+	 general:COUNT="3"
+	 rdfs:label="ChichewaAssociative-Stricture">
+	<general:RELATIONS rdf:resource="&general;simple"/>
+	<general:CONSTITUENT rdf:resource="&general;syntacticConstituent"/>
+</template:order>
+<template:notViolable rdf:about="&templates;ChichewaAssociative-Violability"
+	 rdfs:label="ChichewaAssociative-Violability"/>
+<component:component rdf:about="&templates;ChichewaAssociativeMarker"
+	 rdfs:label="ChichewaAssociativeMarker">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaAssociativeMarker-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaAssociativeMarker-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaAssociatveMarker-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;ChichewaAssociativeMarker-Coherence"
+	 rdfs:label="ChichewaAssociativeMarker-Coherence">
+	<function:CLASS rdf:resource="&gold;Adposition"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaAssociativeMarker-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaAssociativeMarker-Elasticity"/>
+<component:partiallyFilled rdf:about="&templates;ChichewaAssociativeMarker-Filledness"
+	 rdfs:label="ChichewaAssociativeMarker-Filledness">
+	<speccomponent:FORM rdf:resource="&templates;ChichewaAssocativeMarker-UnspecifiedDesmeme"/>
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaAssociativeMarker-Coherence"/>
+	<component:FILLER_PLACEMENT rdf:resource="&general;componentFinal"/>
+	<function:FILLER_CLASS rdf:resource="&localcategory;adpositionalStem"/>
+</component:partiallyFilled>
+<component:restkomponentenSet rdf:about="&templates;ChichewaAssociativeRK"
+	 rdfs:label="ChichewaAssociativeRK">
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChichewaAssociativeMarker"/>
+</component:restkomponentenSet>
+<general:right rdf:about="&templates;ChichewaAssociatveMarker-AssociatePosition"
+	 rdfs:label="ChichewaAssociatveMarker-AssociatePosition"/>
+<component:unstable rdf:about="&templates;ChichewaAssociatveMarker-Stability"
+	 rdfs:label="ChichewaAssociatveMarker-Stability">
+	<speccomponent:ASSOCIATE_POSITION rdf:resource="&templates;ChichewaAssociatveMarker-AssociatePosition"/>
+	<speccomponent:ASSOCIATE rdf:resource="&templates;ChichewaPossessor"/>
+</component:unstable>
+<component:component rdf:about="&templates;ChichewaBeforeVerbStemNullComponent"
+	 rdfs:label="ChichewaBeforeVerbStemNullComponent">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaBeforeVerbStemNullComponent-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaBeforeVerbStemNullComponent-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaBeforeVerbStemNullComponent-Stability"/>
+</component:component>
+<component:inelastic rdf:about="&templates;ChichewaBeforeVerbStemNullComponent-Elasticity"
+	 general:COUNT="0"
+	 rdfs:label="ChichewaBeforeVerbStemNullComponent-Elasticity"/>
+<component:null rdf:about="&templates;ChichewaBeforeVerbStemNullComponent-Filledness"
+	 rdfs:label="ChichewaBeforeVerbStemNullComponent-Filledness"/>
+<component:stable rdf:about="&templates;ChichewaBeforeVerbStemNullComponent-Stability"
+	 rdfs:label="ChichewaBeforeVerbStemNullComponent-Stability"/>
+<component:component rdf:about="&templates;ChichewaC"
+	 rdfs:label="ChichewaC">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaC-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaC-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaC-Stability"/>
+</component:component>
+<general:right rdf:about="&templates;ChichewaC-AssociatePosition"
+	 rdfs:label="ChichewaC-AssociatePosition"/>
+<component:coherent rdf:about="&templates;ChichewaC-Coherence"
+	 rdfs:label="ChichewaC-Coherence">
+	<function:CLASS rdf:resource="&localcategory;consonant"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;ChichewaC-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaC-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaC-Filledness"
+	 rdfs:label="ChichewaC-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaC-Coherence"/>
+</component:open>
+<component:unstable rdf:about="&templates;ChichewaC-Stability"
+	 rdfs:label="ChichewaC-Stability">
+	<speccomponent:ASSOCIATE_POSITION rdf:resource="&templates;ChichewaC-AssociatePosition"/>
+	<speccomponent:ASSOCIATE rdf:resource="&templates;ChichewaC2"/>
+</component:unstable>
+<component:component rdf:about="&templates;ChichewaC2"
+	 rdfs:label="ChichewaC2">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaC2-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaC2-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaC2-Stabiity"/>
+</component:component>
+<general:left rdf:about="&templates;ChichewaC2-AssociatePosition"
+	 rdfs:label="ChichewaC2-AssociatePosition"/>
+<component:incoherent rdf:about="&templates;ChichewaC2-Coherence"
+	 rdfs:label="ChichewaC2-Coherence">
+	<function:CLASSES rdf:resource="&localcategory;glide"/>
+	<function:CLASSES rdf:resource="&localcategory;obstruent"/>
+</component:incoherent>
+<component:elastic rdf:about="&templates;ChichewaC2-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaC2-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaC2-Filledness"
+	 rdfs:label="ChichewaC2-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaC2-Coherence"/>
+</component:open>
+<component:unstable rdf:about="&templates;ChichewaC2-Stabiity"
+	 rdfs:label="ChichewaC2-Stabiity">
+	<speccomponent:ASSOCIATE rdf:resource="&templates;ChichewaC"/>
+	<speccomponent:ASSOCIATE_POSITION rdf:resource="&templates;ChichewaC2-AssociatePosition"/>
+</component:unstable>
+<general:lexicoconstructionalConditioning rdf:about="&templates;ChichewaCA-Conditioning"
+	 rdfs:label="ChichewaCA-Conditioning">
+	<notes:CONDITIONS>Both the Causative and the Applicative are treated as the trigger of the condition.</notes:CONDITIONS>
+	<spectemplate:FILLED_COMPONENTS rdf:resource="&templates;ChichewaCA-FilledComponents"/>
+	<template:FILLER_POSITION rdf:resource="&general;templateMultiple"/>
+</general:lexicoconstructionalConditioning>
+<component:filledComponentSet rdf:about="&templates;ChichewaCA-FilledComponents"
+	 rdfs:label="ChichewaCA-FilledComponents">
+	<spectemplate:FILLED_COMPONENT rdf:resource="&templates;ChichewaApplicative"/>
+	<spectemplate:FILLED_COMPONENT rdf:resource="&templates;ChichewaCausative"/>
+</component:filledComponentSet>
+<template:arch rdf:about="&templates;ChichewaCA-Foundation"
+	 rdfs:label="ChichewaCA-Foundation">
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChichewaApplicative"/>
+	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;ChichewaBeforeVerbStemNullComponent"/>
+	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;ChichewaCausative"/>
+	<spectemplate:KEYSTONE rdf:resource="&templates;ChichewaVerbStem"/>
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChichewaVerbStem"/>
+</template:arch>
+<template:desmeme rdf:about="&templates;ChichewaCA-MOR"
+	 gold:inLanguage="http://lexvo.org/id/iso639-5/nya"
+	 rdfs:label="ChichewaCA-MOR">
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChichewaCA-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChichewaCA-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChichewaCA-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChichewaCA-Violability"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;HymanMchombo-2002"/>
+	<function:FUNCTION rdf:resource="&localcategory;valency"/>
+</template:desmeme>
+<template:order rdf:about="&templates;ChichewaCA-Stricture"
+	 general:COUNT="3"
+	 rdfs:label="ChichewaCA-Stricture">
+	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
+	<general:RELATIONS rdf:resource="&general;simple"/>
+</template:order>
+<template:notViolable rdf:about="&templates;ChichewaCA-Violability"
+	 rdfs:label="ChichewaCA-Violability"/>
+<general:lexicoconstructionalConditioning rdf:about="&templates;ChichewaCP-Conditioning"
+	 rdfs:label="ChichewaCP-Conditioning">
+	<notes:CONDITIONS>Both the Causative and the Passive are treated as the trigger of the condition.</notes:CONDITIONS>
+	<spectemplate:FILLED_COMPONENTS rdf:resource="&templates;ChichewaCP-FilledComponents"/>
+	<template:FILLER_POSITION rdf:resource="&general;templateMultiple"/>
+</general:lexicoconstructionalConditioning>
+<component:filledComponentSet rdf:about="&templates;ChichewaCP-FilledComponents"
+	 rdfs:label="ChichewaCP-FilledComponents">
+	<spectemplate:FILLED_COMPONENT rdf:resource="&templates;ChichewaCausative"/>
+	<spectemplate:FILLED_COMPONENT rdf:resource="&templates;ChichewaPassive"/>
+</component:filledComponentSet>
+<template:arch rdf:about="&templates;ChichewaCP-Foundation"
+	 rdfs:label="ChichewaCP-Foundation">
+	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;ChichewaCausative"/>
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChichewaPassive"/>
+	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;ChichewaVerbNullComponent"/>
+	<spectemplate:KEYSTONE rdf:resource="&templates;ChichewaVerbStem"/>
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChichewaVerbStem"/>
+</template:arch>
+<template:desmeme rdf:about="&templates;ChichewaCP-MOR"
+	 gold:inLanguage="http://lexvo.org/id/iso639-5/nya"
+	 rdfs:label="ChichewaCP-MOR">
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChichewaCP-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChichewaCP-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChichewaPassive-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChichewaPassive-Violability"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;HymanMchombo-2002"/>
+	<function:FUNCTION rdf:resource="&localcategory;valency"/>
+</template:desmeme>
+<component:component rdf:about="&templates;ChichewaCausative"
+	 rdfs:label="ChichewaCausative">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaCausative-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaCausative-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaCausative-Stability"/>
+</component:component>
+<component:elastic rdf:about="&templates;ChichewaCausative-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaCausative-Elasticity"/>
+<component:filled rdf:about="&templates;ChichewaCausative-Filledness"
+	 rdfs:label="ChichewaCausative-Filledness">
+	<speccomponent:FORM rdf:resource="&templates;ChichewaCausative-Form"/>
+	<function:FILLER_CLASS rdf:resource="&localcategory;valency"/>
+</component:filled>
+<form:canonicalLineate rdf:about="&templates;ChichewaCausative-Form"
+	 gold:inLanguage="http://lexvo.org/page/iso639-3/nya"
+	 rdfs:label="ChichewaCausative-Form">
+	<specform:TRANSCRIPTION rdf:resource="&templates;ChichewaCausative-Transcription"/>
+	<form:LIAISON rdf:resource="&form;sinistrous"/>
+</form:canonicalLineate>
+<component:stable rdf:about="&templates;ChichewaCausative-Stability"
+	 rdfs:label="ChichewaCausative-Stability"/>
+<form:transcription rdf:about="&templates;ChichewaCausative-Transcription"
+	 specform:TRANSCRIPTION_STRING="-its-"
+	 rdfs:label="-its-"/>
+<form:canonicalLineate rdf:about="&templates;ChichewaCausativeTranscription"
+	 gold:inLanguage="http://lexvo.org/page/iso639-3/nya"
+	 rdfs:label="ChichewaCausativeTranscription">
+	<specform:TRANSCRIPTION rdf:resource="&templates;ChichSecondCausative"/>
+	<form:LIAISON rdf:resource="&form;sinistrous"/>
+</form:canonicalLineate>
+<component:coherent rdf:about="&templates;ChichewaClause-Coherence"
+	 rdfs:label="ChichewaClause-Coherence">
+	<function:CLASS rdf:resource="&gold;Object"/>
+</component:coherent>
+<component:open rdf:about="&templates;ChichewaClause-Filledness"
+	 rdfs:label="ChichewaClause-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaClause-Coherence"/>
+</component:open>
+<template:arch rdf:about="&templates;ChichewaClause-Foundation"
+	 rdfs:label="ChichewaClause-Foundation">
+	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;ChichewaClauseNullComponent"/>
+	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;ChichewaClauseO"/>
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChichewaClauseX"/>
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChichewaVerbClausal"/>
+	<spectemplate:KEYSTONE rdf:resource="&templates;ChichewaVerbClausal"/>
+</template:arch>
+<component:stable rdf:about="&templates;ChichewaClause-Stability"
+	 rdfs:label="ChichewaClause-Stability"/>
+<component:component rdf:about="&templates;ChichewaClauseComponent"
+	 rdfs:label="ChichewaClauseComponent">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaClauseComponent-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaClauseComponent-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaClauseComponent-Stability"/>
+</component:component>
+<component:inelastic rdf:about="&templates;ChichewaClauseComponent-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaClauseComponent-Elasticity"/>
+<component:filled rdf:about="&templates;ChichewaClauseComponent-Filledness"
+	 rdfs:label="ChichewaClauseComponent-Filledness">
+	<speccomponent:FORM rdf:resource="&templates;ChichewaClauseComponent-UnspecifiedDesmem"/>
+	<function:FILLER_CLASS rdf:resource="&gold;MainClause"/>
+</component:filled>
+<component:stable rdf:about="&templates;ChichewaClauseComponent-Stability"
+	 rdfs:label="ChichewaClauseComponent-Stability"/>
+<template:embeddedDesmeme rdf:about="&templates;ChichewaClauseComponent-UnspecifiedDesmem"
+	 rdfs:label="ChichewaClauseComponent-UnspecifiedDesmem"/>
+<component:component rdf:about="&templates;ChichewaClauseNullComponent"
+	 rdfs:label="ChichewaClauseNullComponent">
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaClauseNullComponent-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaClauseNullComponent-Stability"/>
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichwaClauseNullComponent-Elasticity"/>
+</component:component>
+<component:null rdf:about="&templates;ChichewaClauseNullComponent-Filledness"
+	 rdfs:label="ChichewaClauseNullComponent-Filledness"/>
+<component:stable rdf:about="&templates;ChichewaClauseNullComponent-Stability"
+	 rdfs:label="ChichewaClauseNullComponent-Stability"/>
+<component:component rdf:about="&templates;ChichewaClauseO"
+	 rdfs:label="ChichewaClauseO">
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaClause-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaClause-Stability"/>
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichwaClause-Elasticity"/>
+</component:component>
+<component:component rdf:about="&templates;ChichewaClauseX"
+	 rdfs:label="ChichewaClauseX">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaClauseX-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaClauseX-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaClauseX-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;ChichewaClauseX-Coherence"
+	 rdfs:label="ChichewaClauseX-Coherence">
+	<function:CLASS rdf:resource="&localcategory;adjunct"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;ChichewaClauseX-Elasticity"
+	 general:MAXIMUM="100"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaClauseX-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaClauseX-Filledness"
+	 rdfs:label="ChichewaClauseX-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaClauseX-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;ChichewaClauseX-Stability"
+	 rdfs:label="ChichewaClauseX-Stability"/>
+<general:constructionalConditioning rdf:about="&templates;ChichewaCleft-Conditioning"
+	 notes:CONDITIONS="This is the form of the cleft construction."
+	 rdfs:label="ChichewaCleft-Conditioning"/>
+<component:component rdf:about="&templates;ChichewaCleft-Focus"
+	 rdfs:label="ChichewaCleft-Focus">
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaCleftFocus-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaCleftFocus-Stability"/>
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaCleftRK-Elasticity"/>
+</component:component>
+<template:span rdf:about="&templates;ChichewaCleft-Foundation"
+	 rdfs:label="ChichewaCleft-Foundation">
+	<spectemplate:RESTKOMPONENTEN rdf:resource="&templates;ChichewaCleftRK"/>
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChichewaCleftRelative"/>
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChichewaNdi"/>
+</template:span>
+<template:desmeme rdf:about="&templates;ChichewaCleft-SYN"
+	 gold:inLanguage="http://lexvo.org/id/iso639-3/nya"
+	 rdfs:label="ChichewaCleft-SYN">
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChichewaCleft-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChichewaCleft-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChichewaCleft-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChichewaCleft-Violability"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;Mchombo-2004"/>
+	<function:FUNCTION rdf:resource="&localcategory;focus"/>
+</template:desmeme>
+<template:order rdf:about="&templates;ChichewaCleft-Stricture"
+	 general:COUNT="3"
+	 rdfs:label="ChichewaCleft-Stricture">
+	<general:RELATIONS rdf:resource="&general;simple"/>
+	<general:CONSTITUENT rdf:resource="&general;syntacticConstituent"/>
+</template:order>
+<template:notViolable rdf:about="&templates;ChichewaCleft-Violability"
+	 rdfs:label="ChichewaCleft-Violability"/>
+<component:coherent rdf:about="&templates;ChichewaCleftFocus-Coherent"
+	 rdfs:label="ChichewaCleftFocus-Coherent">
+	<function:CLASS rdf:resource="&localcategory;constituent"/>
+</component:coherent>
+<component:open rdf:about="&templates;ChichewaCleftFocus-Filledness"
+	 rdfs:label="ChichewaCleftFocus-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaCleftFocus-Coherent"/>
+</component:open>
+<component:stable rdf:about="&templates;ChichewaCleftFocus-Stability"
+	 rdfs:label="ChichewaCleftFocus-Stability"/>
+<component:restkomponentenSet rdf:about="&templates;ChichewaCleftRK"
+	 rdfs:label="ChichewaCleftRK">
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChichewaCleft-Focus"/>
+</component:restkomponentenSet>
+<component:inelastic rdf:about="&templates;ChichewaCleftRK-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaCleftRK-Elasticity"/>
+<component:component rdf:about="&templates;ChichewaCleftRelative"
+	 rdfs:label="ChichewaCleftRelative">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaCleftRelative-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaCleftRelative-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaCleftRelative-Stability"/>
+</component:component>
+<component:inelastic rdf:about="&templates;ChichewaCleftRelative-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaCleftRelative-Elasticity"/>
+<component:filled rdf:about="&templates;ChichewaCleftRelative-Filledness"
+	 rdfs:label="ChichewaCleftRelative-Filledness">
+	<speccomponent:FORM rdf:resource="&templates;ChichewaCleftRelative-UnspecifiedDesmeme"/>
+	<function:FILLER_CLASS rdf:resource="&localcategory;relativeClause"/>
+</component:filled>
+<component:stable rdf:about="&templates;ChichewaCleftRelative-Stability"
+	 rdfs:label="ChichewaCleftRelative-Stability"/>
+<template:embeddedDesmeme rdf:about="&templates;ChichewaCleftRelative-UnspecifiedDesmeme"
+	 rdfs:label="ChichewaCleftRelative-UnspecifiedDesmeme"/>
+<general:lexicoconstructionalConditioning rdf:about="&templates;ChichewaComplementClause-Conditioning"
+	 notes:CONDITIONS="Complement clauses with kuti"
+	 rdfs:label="ChichewaComplementClause-Conditioning"/>
+<template:span rdf:about="&templates;ChichewaComplementClause-Foundation"
+	 rdfs:label="ChichewaComplementClause-Foundation">
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChichewaComplementClauseLeftSupport"/>
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChichewaComplementClauseRightSupport"/>
+</template:span>
+<template:desmeme rdf:about="&templates;ChichewaComplementClause-SYN"
+	 gold:inLanguage="http://lexvo.org/id/iso639-3/nya"
+	 rdfs:label="ChichewaComplementClause-SYN">
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChichewaComplementClause-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChichewaComplementClause-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChichewaComplementClause-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChichewaComplementClause-Violability"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;Mchombo-2004"/>
+	<function:FUNCTION rdf:resource="&gold;ComplementSubordinate"/>
+</template:desmeme>
+<template:order rdf:about="&templates;ChichewaComplementClause-Stricture"
+	 general:COUNT="2"
+	 rdfs:label="ChichewaComplementClause-Stricture">
+	<general:RELATIONS rdf:resource="&general;simple"/>
+	<general:CONSTITUENT rdf:resource="&general;syntacticConstituent"/>
+</template:order>
+<template:notViolable rdf:about="&templates;ChichewaComplementClause-Violability"
+	 rdfs:label="ChichewaComplementClause-Violability"/>
+<component:component rdf:about="&templates;ChichewaComplementClauseLeftSupport"
+	 rdfs:label="ChichewaComplementClauseLeftSupport">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaComplementClauseLeftSupport-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaComplementClauseLeftSupport-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaComplementClauseLeftSupport-Stability"/>
+</component:component>
+<general:right rdf:about="&templates;ChichewaComplementClauseLeftSupport-AssociatePosition"
+	 rdfs:label="ChichewaComplementClauseLeftSupport-AssociatePosition"/>
+<component:inelastic rdf:about="&templates;ChichewaComplementClauseLeftSupport-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaComplementClauseLeftSupport-Elasticity"/>
+<component:filled rdf:about="&templates;ChichewaComplementClauseLeftSupport-Filledness"
+	 rdfs:label="ChichewaComplementClauseLeftSupport-Filledness">
+	<speccomponent:FORM rdf:resource="&templates;ChichewaComplementClauseLeftSupport-Filler"/>
+	<function:FILLER_CLASS rdf:resource="&gold;Complementizer"/>
+</component:filled>
+<form:canonicalLineate rdf:about="&templates;ChichewaComplementClauseLeftSupport-Filler"
+	 gold:inLanguage="http://lexvo.org/id/iso639-3/nya"
+	 rdfs:label="ChichewaComplementClauseLeftSupport-Filler">
+	<specform:TRANSCRIPTION rdf:resource="&templates;ChichewaComplementClauseLeftSupport-Form"/>
+	<form:LIAISON rdf:resource="&form;independent"/>
+</form:canonicalLineate>
+<form:transcription rdf:about="&templates;ChichewaComplementClauseLeftSupport-Form"
+	 specform:TRANSCRIPTION_STRING="kutí"
+	 rdfs:label="kutí"/>
+<component:unstable rdf:about="&templates;ChichewaComplementClauseLeftSupport-Stability"
+	 rdfs:label="ChichewaComplementClauseLeftSupport-Stability">
+	<speccomponent:ASSOCIATE_POSITION rdf:resource="&templates;ChichewaComplementClauseLeftSupport-AssociatePosition"/>
+	<speccomponent:ASSOCIATE rdf:resource="&templates;ChichewaComplementClauseRightSupport"/>
+</component:unstable>
+<component:component rdf:about="&templates;ChichewaComplementClauseRightSupport"
+	 rdfs:label="ChichewaComplementClauseRightSupport">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaComplementClauseRightSupport-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaComplementClauseRightSupport-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaComplementClauseRightSupport-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;ChichewaComplementClauseRightSupport-Coherence"
+	 rdfs:label="ChichewaComplementClauseRightSupport-Coherence">
+	<function:CLASS rdf:resource="&localcategory;finiteClause"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaComplementClauseRightSupport-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaComplementClauseRightSupport-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaComplementClauseRightSupport-Filledness"
+	 rdfs:label="ChichewaComplementClauseRightSupport-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaComplementClauseRightSupport-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;ChichewaComplementClauseRightSupport-Stability"
+	 rdfs:label="ChichewaComplementClauseRightSupport-Stability"/>
+<general:constructionalConditioning rdf:about="&templates;ChichewaCompoundStem-Conditioning"
+	 rdfs:label="ChichewaCompoundStem-Conditioning">
+	<notes:CONDITIONS>Conditioned by semantics that trigger verb stem reduplication.</notes:CONDITIONS>
+</general:constructionalConditioning>
+<template:span rdf:about="&templates;ChichewaCompoundStem-Foundation"
+	 rdfs:label="ChichewaCompoundStem-Foundation">
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChichewaProsodicDerivationalStemEmbedded"/>
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChichewaVerbalReduplicant"/>
+</template:span>
+<template:desmeme rdf:about="&templates;ChichewaCompoundStem-PHON"
+	 gold:inLanguage="http://lexvo.org/id/iso639-3/nya"
+	 rdfs:label="ChichewaCompoundStem-PHON">
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChichewaCompoundStem-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChichewaCompoundStem-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChichewaCompoundStem-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChichewaCompoundStem-Violability"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;DowningMtenje-2017"/>
+	<function:FUNCTION rdf:resource="&gold;Verbal"/>
+</template:desmeme>
+<template:order rdf:about="&templates;ChichewaCompoundStem-Stricture"
+	 general:COUNT="2"
+	 rdfs:label="ChichewaCompoundStem-Stricture">
+	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
+	<general:RELATIONS rdf:resource="&general;simple"/>
+</template:order>
+<template:notViolable rdf:about="&templates;ChichewaCompoundStem-Violability"
+	 rdfs:label="ChichewaCompoundStem-Violability"/>
+<component:component rdf:about="&templates;ChichewaCompoundStemEmbedded"
+	 rdfs:label="ChichewaCompoundStemEmbedded">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaCompoundStemEmbedded-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaCompoundStemEmbedded-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaCompoundStemEmbedded-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;ChichewaCompoundStemEmbedded-Coherence"
+	 rdfs:label="ChichewaCompoundStemEmbedded-Coherence">
+	<function:CLASS rdf:resource="&gold;Verbal"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaCompoundStemEmbedded-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaCompoundStemEmbedded-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaCompoundStemEmbedded-Filledness"
+	 rdfs:label="ChichewaCompoundStemEmbedded-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaCompoundStemEmbedded-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;ChichewaCompoundStemEmbedded-Stability"
+	 rdfs:label="ChichewaCompoundStemEmbedded-Stability"/>
+<component:component rdf:about="&templates;ChichewaDem"
+	 rdfs:label="ChichewaDem">
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaDem-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaDem-Stability"/>
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaProsodicNDem-Elasticity"/>
+</component:component>
+<component:coherent rdf:about="&templates;ChichewaDem-Coherence"
+	 rdfs:label="ChichewaDem-Coherence">
+	<function:CLASS rdf:resource="&gold;Demonstrative"/>
+</component:coherent>
+<component:open rdf:about="&templates;ChichewaDem-Filledness"
+	 rdfs:label="ChichewaDem-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaDem-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;ChichewaDem-Stability"
+	 rdfs:label="ChichewaDem-Stability"/>
+<template:desmeme rdf:about="&templates;ChichewaDerivationalStem-PhMOR"
+	 gold:inLanguage="http://www.lexvo.org/id/iso639-3/nya"
+	 rdfs:label="ChichewaDerivationalStem-PhMOR">
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChichewaProsodicDerivationalStem-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChichewaProsodicDerivationalStem-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChichewaProsodicDerivationalStem-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChichewaProsodicDerivationalStem-Violability"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;DowningMtenje-2017"/>
+	<function:FUNCTION rdf:resource="&gold;Verbal"/>
+</template:desmeme>
+<component:component rdf:about="&templates;ChichewaDerivedStemEmbedded"
+	 rdfs:label="ChichewaDerivedStemEmbedded">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaDerivedStemEmbedded-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaDerivedStemEmbedded-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaDerivedStemEmbedded-Stability"/>
+</component:component>
+<general:right rdf:about="&templates;ChichewaDerivedStemEmbedded-AssociatePosition"
+	 rdfs:label="ChichewaDerivedStemEmbedded-AssociatePosition"/>
+<component:coherent rdf:about="&templates;ChichewaDerivedStemEmbedded-Coherent"
+	 rdfs:label="ChichewaDerivedStemEmbedded-Coherent">
+	<function:CLASS rdf:resource="&gold;Verbal"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaDerivedStemEmbedded-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaDerivedStemEmbedded-Elasticity"/>
+<component:filled rdf:about="&templates;ChichewaDerivedStemEmbedded-Filledness"
+	 rdfs:label="ChichewaDerivedStemEmbedded-Filledness">
+	<speccomponent:FORM rdf:resource="&templates;ChichewaDerivedStemEmbedded-Unspecified"/>
+	<function:FILLER_CLASS rdf:resource="&gold;Verbal"/>
+</component:filled>
+<component:unstable rdf:about="&templates;ChichewaDerivedStemEmbedded-Stability"
+	 rdfs:label="ChichewaDerivedStemEmbedded-Stability">
+	<speccomponent:ASSOCIATE_POSITION rdf:resource="&templates;ChichewaDerivedStemEmbedded-AssociatePosition"/>
+	<speccomponent:ASSOCIATE rdf:resource="&templates;ChichewaFVProsodic"/>
+</component:unstable>
+<template:embeddedDesmeme rdf:about="&templates;ChichewaDerivedStemEmbedded-Unspecified"
+	 rdfs:label="ChichewaDerivedStemEmbedded-Unspecified"/>
+<component:component rdf:about="&templates;ChichewaFV"
+	 rdfs:label="ChichewaFV">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaFV-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaFV-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaFV-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;ChichewaFV-Coherence"
+	 rdfs:label="ChichewaFV-Coherence">
+	<function:CLASS rdf:resource="&gold;Verbal"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaFV-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaFV-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaFV-Filledness"
+	 rdfs:label="ChichewaFV-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaFV-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;ChichewaFV-Stability"
+	 rdfs:label="ChichewaFV-Stability"/>
+<component:component rdf:about="&templates;ChichewaFVProsodic"
+	 rdfs:label="ChichewaFVProsodic">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaFVProsodic-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaFVProsodic-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaFVProsodic-Stability"/>
+</component:component>
+<general:left rdf:about="&templates;ChichewaFVProsodic-AssociatePosition"
+	 rdfs:label="ChichewaFVProsodic-AssociatePosition"/>
+<component:coherent rdf:about="&templates;ChichewaFVProsodic-Coherent"
+	 rdfs:label="ChichewaFVProsodic-Coherent">
+	<function:CLASS rdf:resource="&gold;Verbal"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaFVProsodic-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaFVProsodic-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaFVProsodic-Filledness"
+	 rdfs:label="ChichewaFVProsodic-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaFVProsodic-Coherent"/>
+</component:open>
+<component:unstable rdf:about="&templates;ChichewaFVProsodic-Stability"
+	 rdfs:label="ChichewaFVProsodic-Stability">
+	<speccomponent:ASSOCIATE rdf:resource="&templates;ChichewaDerivedStemEmbedded"/>
+	<speccomponent:ASSOCIATE_POSITION rdf:resource="&templates;ChichewaFVProsodic-AssociatePosition"/>
+</component:unstable>
+<component:component rdf:about="&templates;ChichewaFirstSyllable"
+	 rdfs:label="ChichewaFirstSyllable">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaFirstSyllable-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaFirstSyllable-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaFirstSyllable-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;ChichewaFirstSyllable-Coherence"
+	 rdfs:label="ChichewaFirstSyllable-Coherence">
+	<function:CLASS rdf:resource="&gold;Syllable"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaFirstSyllable-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaFirstSyllable-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaFirstSyllable-Filledness"
+	 rdfs:label="ChichewaFirstSyllable-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaFirstSyllable-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;ChichewaFirstSyllable-Stability"
+	 rdfs:label="ChichewaFirstSyllable-Stability"/>
+<template:arch rdf:about="&templates;ChichewaImperative-Foundation"
+	 rdfs:label="ChichewaImperative-Foundation">
+	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;ChichewaBeforeVerbStemNullComponent"/>
+	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;ChichewaBeforeVerbStemNullComponent"/>
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChichewaVerbNullComponent"/>
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChichewaVerbStem"/>
+	<spectemplate:KEYSTONE rdf:resource="&templates;ChichewaVerbStem"/>
+</template:arch>
+<template:desmeme rdf:about="&templates;ChichewaImperative-MOR"
+	 gold:inLanguage="http://lexvo.org/id/iso639-3/nya"
+	 rdfs:label="ChichewaImperative-MOR">
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChichewaImperative-Foundation"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;ChichewaImperative-Source"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChichewaImperative-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChichewaImperative-Violability"/>
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChichewaImperativeConditioning"/>
+	<function:FUNCTION rdf:resource="&localcategory;imperative"/>
+</template:desmeme>
+<notes:source rdf:about="&templates;ChichewaImperative-Source"
+	 rdfs:label="ChichewaImperative-Source">
+	<terms:bibliographicCitation xml:space='preserve'><![CDATA[Downing & Mtenje 2017:139]]></terms:bibliographicCitation>
+</notes:source>
+<template:order rdf:about="&templates;ChichewaImperative-Stricture"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaImperative-Stricture">
+	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
+	<general:RELATIONS rdf:resource="&general;simple"/>
+</template:order>
+<template:notViolable rdf:about="&templates;ChichewaImperative-Violability"
+	 rdfs:label="ChichewaImperative-Violability"/>
+<general:constructionalConditioning rdf:about="&templates;ChichewaImperativeConditioning"
+	 notes:CONDITIONS="Imperative verbs"
+	 rdfs:label="ChichewaImperativeConditioning"/>
+<general:lexicoconstructionalConditioning rdf:about="&templates;ChichewaKodi-Conditioning"
+	 rdfs:label="ChichewaKodi-Conditioning">
+	<notes:CONDITIONS>Appears at beginning of question (this should actually be free, but I don't see that in the descriptions--this is why I treat it as violable)</notes:CONDITIONS>
+	<spectemplate:FILLED_COMPONENTS rdf:resource="&templates;ChichewaKodi-FilledComponents"/>
+	<template:FILLER_POSITION rdf:resource="&general;templateInitial"/>
+</general:lexicoconstructionalConditioning>
+<component:filledComponentSet rdf:about="&templates;ChichewaKodi-FilledComponents"
+	 rdfs:label="ChichewaKodi-FilledComponents">
+	<spectemplate:FILLED_COMPONENT rdf:resource="&templates;ChichewaKodiComponent"/>
+</component:filledComponentSet>
+<template:span rdf:about="&templates;ChichewaKodi-Foundation"
+	 rdfs:label="ChichewaKodi-Foundation">
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChichewaClauseComponent"/>
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChichewaKodiComponent"/>
+</template:span>
+<template:desmeme rdf:about="&templates;ChichewaKodi-SYN"
+	 gold:inLanguage="http://lexvo.org/id/iso639-3/nya"
+	 rdfs:label="ChichewaKodi-SYN">
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChichewaKodi-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChichewaKodi-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChichewaKodi-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChichewaKodi-Violability"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;Mchombo-2004"/>
+	<function:FUNCTION rdf:resource="&localcategory;question"/>
+</template:desmeme>
+<template:order rdf:about="&templates;ChichewaKodi-Stricture"
+	 general:COUNT="2"
+	 rdfs:label="ChichewaKodi-Stricture">
+	<general:RELATIONS rdf:resource="&general;simple"/>
+	<general:CONSTITUENT rdf:resource="&general;syntacticConstituent"/>
+</template:order>
+<template:potentiallyViolable rdf:about="&templates;ChichewaKodi-Violability"
+	 rdfs:label="ChichewaKodi-Violability">
+	<template:EXCEPTIONALITY rdf:resource="&template;pragmatic"/>
+	<template:REPARABILITY rdf:resource="&template;surfaceViolable"/>
+</template:potentiallyViolable>
+<component:component rdf:about="&templates;ChichewaKodiComponent"
+	 rdfs:label="ChichewaKodiComponent">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaKodiComponent-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaKodiComponent-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaKodiComponent-Stability"/>
+</component:component>
+<component:inelastic rdf:about="&templates;ChichewaKodiComponent-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaKodiComponent-Elasticity"/>
+<component:filled rdf:about="&templates;ChichewaKodiComponent-Filledness"
+	 rdfs:label="ChichewaKodiComponent-Filledness">
+	<speccomponent:FORM rdf:resource="&templates;ChichewaKodiComponent-Filler"/>
+	<function:FILLER_CLASS rdf:resource="&gold;InterrogativeOperator"/>
+</component:filled>
+<form:canonicalLineate rdf:about="&templates;ChichewaKodiComponent-Filler"
+	 gold:inLanguage="http://lexvo.org/id/iso639-3/nya"
+	 rdfs:label="ChichewaKodiComponent-Filler">
+	<specform:TRANSCRIPTION rdf:resource="&templates;ChichewaKodiComponent-Transcription"/>
+	<form:LIAISON rdf:resource="&form;independent"/>
+</form:canonicalLineate>
+<component:stable rdf:about="&templates;ChichewaKodiComponent-Stability"
+	 rdfs:label="ChichewaKodiComponent-Stability"/>
+<form:transcription rdf:about="&templates;ChichewaKodiComponent-Transcription"
+	 specform:TRANSCRIPTION_STRING="kodí"
+	 rdfs:label="kodí"/>
+<template:desmeme rdf:about="&templates;ChichewaLocative-CLT"
+	 gold:inLanguage="http://lexvo.org/id/iso639-3/nya"
+	 rdfs:label="ChichewaLocative-CLT">
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChichewaLocative-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChichewaLocative-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChichewaLocative-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChichewaLocative-Violability"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;Mchombo-2004"/>
+	<function:FUNCTION rdf:resource="&localcategory;adpositionalPhrase"/>
+</template:desmeme>
+<general:constructionalConditioning rdf:about="&templates;ChichewaLocative-Conditioning"
+	 notes:CONDITIONS="Triggered by one of three noun class prefixes."
+	 rdfs:label="ChichewaLocative-Conditioning"/>
+<template:span rdf:about="&templates;ChichewaLocative-Foundation"
+	 rdfs:label="ChichewaLocative-Foundation">
+	<spectemplate:RESTKOMPONENTEN rdf:resource="&templates;ChichewaAssociativeRK"/>
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChichewaLocativePrefix"/>
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChichewaLocativizedNoun"/>
+</template:span>
+<template:order rdf:about="&templates;ChichewaLocative-Stricture"
+	 general:COUNT="2"
+	 rdfs:label="ChichewaLocative-Stricture">
+	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
+	<general:RELATIONS rdf:resource="&general;simple"/>
+</template:order>
+<template:notViolable rdf:about="&templates;ChichewaLocative-Violability"
+	 rdfs:label="ChichewaLocative-Violability"/>
+<component:component rdf:about="&templates;ChichewaLocativePrefix"
+	 rdfs:label="ChichewaLocativePrefix">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaLocativePrefix-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaLocativePrefix-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaLocativePrefix-Stability"/>
+</component:component>
+<general:left rdf:about="&templates;ChichewaLocativePrefix-AssociatePosition"
+	 rdfs:label="ChichewaLocativePrefix-AssociatePosition"/>
+<component:coherent rdf:about="&templates;ChichewaLocativePrefix-Coherence"
+	 rdfs:label="ChichewaLocativePrefix-Coherence">
+	<function:CLASS rdf:resource="&localcategory;adpositionalPhrase"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaLocativePrefix-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaLocativePrefix-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaLocativePrefix-Filledness"
+	 rdfs:label="ChichewaLocativePrefix-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaLocativePrefix-Coherence"/>
+</component:open>
+<component:unstable rdf:about="&templates;ChichewaLocativePrefix-Stability"
+	 rdfs:label="ChichewaLocativePrefix-Stability">
+	<speccomponent:ASSOCIATE_POSITION rdf:resource="&templates;ChichewaLocativePrefix-AssociatePosition"/>
+	<speccomponent:ASSOCIATE rdf:resource="&templates;ChichewaLocativizedNoun"/>
+</component:unstable>
+<template:potentiallyViolable rdf:about="&templates;ChichewaLocativePrefix-Violability"
+	 rdfs:label="ChichewaLocativePrefix-Violability">
+	<template:EXCEPTIONALITY rdf:resource="&template;lexical"/>
+	<template:REPARABILITY rdf:resource="&template;surfaceViolable"/>
+</template:potentiallyViolable>
+<component:component rdf:about="&templates;ChichewaLocativizedNoun"
+	 rdfs:label="ChichewaLocativizedNoun">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaLocativizedNoun-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaLocativizedNoun-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaLocativizedNoun-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;ChichewaLocativizedNoun-Coherence"
+	 rdfs:label="ChichewaLocativizedNoun-Coherence">
+	<function:CLASS rdf:resource="&gold;Noun"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaLocativizedNoun-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaLocativizedNoun-Elasticity"/>
+<component:filled rdf:about="&templates;ChichewaLocativizedNoun-Filledness"
+	 rdfs:label="ChichewaLocativizedNoun-Filledness">
+	<speccomponent:FORM rdf:resource="&templates;ChichewaNoun-Embedded-Unspecified"/>
+	<function:FILLER_CLASS rdf:resource="&gold;Noun"/>
+</component:filled>
+<component:stable rdf:about="&templates;ChichewaLocativizedNoun-Stability"
+	 rdfs:label="ChichewaLocativizedNoun-Stability"/>
+<general:constructionalConditioning rdf:about="&templates;ChichewaMacroStem-Conditoning"
+	 rdfs:label="ChichewaMacroStem-Conditoning">
+	<notes:CONDITIONS>This is the prosodic constituent associated with OM+verb stem</notes:CONDITIONS>
+</general:constructionalConditioning>
+<template:span rdf:about="&templates;ChichewaMacroStem-Foundation"
+	 rdfs:label="ChichewaMacroStem-Foundation">
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChichewaCompoundStemEmbedded"/>
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChichewaOMProsodic"/>
+</template:span>
+<template:desmeme rdf:about="&templates;ChichewaMacroStem-PhMOR"
+	 gold:inLanguage="http://lexvo.org/id/iso639-3/nya"
+	 rdfs:label="ChichewaMacroStem-PhMOR">
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChichewaMacroStem-Conditoning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChichewaMacroStem-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChichewaMacroStem-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChichewaMacroStem-Violability"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;DowningMtenje-2017"/>
+	<function:FUNCTION rdf:resource="&gold;Verbal"/>
+</template:desmeme>
+<template:order rdf:about="&templates;ChichewaMacroStem-Stricture"
+	 general:COUNT="2"
+	 rdfs:label="ChichewaMacroStem-Stricture">
+	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
+	<general:RELATIONS rdf:resource="&general;simple"/>
+</template:order>
+<template:notViolable rdf:about="&templates;ChichewaMacroStem-Violability"
+	 rdfs:label="ChichewaMacroStem-Violability"/>
+<component:component rdf:about="&templates;ChichewaMacroStemEmbedded"
+	 rdfs:label="ChichewaMacroStemEmbedded">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaMacroStemEmbedded-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaMacroStemEmbedded-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaMacroStemEmbedded-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;ChichewaMacroStemEmbedded-Coherence"
+	 rdfs:label="ChichewaMacroStemEmbedded-Coherence">
+	<function:CLASS rdf:resource="&gold;Verbal"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaMacroStemEmbedded-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaMacroStemEmbedded-Elasticity"/>
+<component:filled rdf:about="&templates;ChichewaMacroStemEmbedded-Filledness"
+	 rdfs:label="ChichewaMacroStemEmbedded-Filledness">
+	<speccomponent:FORM rdf:resource="&templates;ChichewaMacroStemEmbedded-Unspecified"/>
+	<function:FILLER_CLASS rdf:resource="&gold;Verbal"/>
+</component:filled>
+<component:stable rdf:about="&templates;ChichewaMacroStemEmbedded-Stability"
+	 rdfs:label="ChichewaMacroStemEmbedded-Stability"/>
+<template:embeddedDesmeme rdf:about="&templates;ChichewaMacroStemEmbedded-Unspecified"
+	 rdfs:label="ChichewaMacroStemEmbedded-Unspecified"/>
+<component:component rdf:about="&templates;ChichewaModal"
+	 rdfs:label="ChichewaModal">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaModal-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaModal-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaModal-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;ChichewaModal-Coherence"
+	 rdfs:label="ChichewaModal-Coherence">
+	<function:CLASS rdf:resource="&localcategory;TenseMoodAspect"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;ChichewaModal-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaModal-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaModal-Filledness"
+	 rdfs:label="ChichewaModal-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaModal-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;ChichewaModal-Stability"
+	 rdfs:label="ChichewaModal-Stability"/>
+<template:desmeme rdf:about="&templates;ChichewaNDem-PhSYN"
+	 gold:inLanguage="http://www.lexvo.org/id/iso639-3/nya"
+	 rdfs:label="ChichewaNDem-PhSYN">
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChichewaProsodicNDem-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChichewaProsodicNDem-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChichewaProsodicNDem-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChichewaProsodicNDem-Violability"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;DowningMtenje-2017"/>
+	<function:FUNCTION rdf:resource="&gold;NounPhrase"/>
+</template:desmeme>
+<general:constructionalConditioning rdf:about="&templates;ChichewaNP-Conditioning"
+	 notes:CONDITIONS="Applies to any NP"
+	 rdfs:label="ChichewaNP-Conditioning"/>
+<template:arch rdf:about="&templates;ChichewaNP-Foundation"
+	 rdfs:label="ChichewaNP-Foundation">
+	<spectemplate:KEYSTONE rdf:resource="&templates;ChichewaNPNoun"/>
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChichewaNPNoun"/>
+	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;ChichewaNPNullComponent"/>
+	<spectemplate:RESTKOMPONENTEN rdf:resource="&templates;ChichewaNPRK"/>
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChichewaNPRightSupport"/>
+	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;ChichewaNPRightVoussoir"/>
+</template:arch>
+<template:desmeme rdf:about="&templates;ChichewaNP-SYN"
+	 gold:inLanguage="http://www.lexvo.org/id/iso639-3/nya"
+	 rdfs:label="ChichewaNP-SYN">
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChichewaNP-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChichewaNP-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChichewaNP-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChichewaNP-Violability"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;DowningMtenje-2017"/>
+	<function:FUNCTION rdf:resource="&gold;NounPhrase"/>
+</template:desmeme>
+<template:order rdf:about="&templates;ChichewaNP-Stricture"
+	 general:COUNT="4"
+	 rdfs:label="ChichewaNP-Stricture">
+	<general:RELATIONS rdf:resource="&general;simple"/>
+	<general:CONSTITUENT rdf:resource="&general;syntacticConstituent"/>
+</template:order>
+<template:potentiallyViolable rdf:about="&templates;ChichewaNP-Violability"
+	 rdfs:label="ChichewaNP-Violability">
+	<template:EXCEPTIONALITY rdf:resource="&template;pragmatic"/>
+	<template:REPARABILITY rdf:resource="&template;surfaceViolable"/>
+</template:potentiallyViolable>
+<component:component rdf:about="&templates;ChichewaNPField"
+	 rdfs:label="ChichewaNPField">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaNPField-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaNPField-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaNPField-Stability"/>
+</component:component>
+<component:incoherent rdf:about="&templates;ChichewaNPField-Coherence"
+	 rdfs:label="ChichewaNPField-Coherence">
+	<function:CLASSES rdf:resource="&gold;Adjectival"/>
+	<function:CLASSES rdf:resource="&gold;Demonstrative"/>
+	<function:CLASSES rdf:resource="&gold;Quantifier"/>
+</component:incoherent>
+<component:elastic rdf:about="&templates;ChichewaNPField-Elasticity"
+	 general:MAXIMUM="100"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaNPField-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaNPField-Filledness"
+	 rdfs:label="ChichewaNPField-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaNPField-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;ChichewaNPField-Stability"
+	 rdfs:label="ChichewaNPField-Stability"/>
+<component:component rdf:about="&templates;ChichewaNPNoun"
+	 rdfs:label="ChichewaNPNoun">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaNPNoun-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaNPNoun-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaNPNoun-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;ChichewaNPNoun-Coherent"
+	 rdfs:label="ChichewaNPNoun-Coherent">
+	<function:CLASS rdf:resource="&gold;Noun"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaNPNoun-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaNPNoun-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaNPNoun-Filledness"
+	 rdfs:label="ChichewaNPNoun-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaNPNoun-Coherent"/>
+</component:open>
+<component:stable rdf:about="&templates;ChichewaNPNoun-Stability"
+	 rdfs:label="ChichewaNPNoun-Stability"/>
+<component:component rdf:about="&templates;ChichewaNPNullComponent"
+	 rdfs:label="ChichewaNPNullComponent">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaNPNullComponent-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaNPNullComponent-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaNPNullComponent-Stability"/>
+</component:component>
+<component:inelastic rdf:about="&templates;ChichewaNPNullComponent-Elasticity"
+	 general:COUNT="0"
+	 rdfs:label="ChichewaNPNullComponent-Elasticity"/>
+<component:null rdf:about="&templates;ChichewaNPNullComponent-Filledness"
+	 rdfs:label="ChichewaNPNullComponent-Filledness"/>
+<component:stable rdf:about="&templates;ChichewaNPNullComponent-Stability"
+	 rdfs:label="ChichewaNPNullComponent-Stability"/>
+<component:restkomponentenSet rdf:about="&templates;ChichewaNPRK"
+	 rdfs:label="ChichewaNPRK">
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChichewaNPField"/>
+</component:restkomponentenSet>
+<component:component rdf:about="&templates;ChichewaNPRightSupport"
+	 rdfs:label="ChichewaNPRightSupport">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaNPRightSupport-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaNPRightSupport-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaNPRightSupport-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;ChichewaNPRightSupport-Coherence"
+	 rdfs:label="ChichewaNPRightSupport-Coherence">
+	<function:CLASS rdf:resource="&localcategory;relativeClause"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;ChichewaNPRightSupport-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaNPRightSupport-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaNPRightSupport-Filledness"
+	 rdfs:label="ChichewaNPRightSupport-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaNPRightSupport-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;ChichewaNPRightSupport-Stability"
+	 rdfs:label="ChichewaNPRightSupport-Stability"/>
+<component:component rdf:about="&templates;ChichewaNPRightVoussoir"
+	 rdfs:label="ChichewaNPRightVoussoir">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaNPRightVoussoir-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaNPRightVoussoir-Filledness"/>
+</component:component>
+<component:coherent rdf:about="&templates;ChichewaNPRightVoussoir-Coherence"
+	 rdfs:label="ChichewaNPRightVoussoir-Coherence">
+	<function:CLASS rdf:resource="&gold;PossessivePronoun"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;ChichewaNPRightVoussoir-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaNPRightVoussoir-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaNPRightVoussoir-Filledness"
+	 rdfs:label="ChichewaNPRightVoussoir-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaNPRightVoussoir-Coherence"/>
+</component:open>
+<component:component rdf:about="&templates;ChichewaNdi"
+	 rdfs:label="ChichewaNdi">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaNdi-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaNdi-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaNdi-Stability"/>
+</component:component>
+<component:inelastic rdf:about="&templates;ChichewaNdi-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaNdi-Elasticity"/>
+<component:filled rdf:about="&templates;ChichewaNdi-Filledness"
+	 rdfs:label="ChichewaNdi-Filledness">
+	<speccomponent:FORM rdf:resource="&templates;ChichewaNdi-Form"/>
+	<function:FILLER_CLASS rdf:resource="&gold;Copula"/>
+</component:filled>
+<form:canonicalLineate rdf:about="&templates;ChichewaNdi-Form"
+	 gold:inLanguage="http://lexvo.org/id/iso639-3/nya"
+	 rdfs:label="ChichewaNdi-Form">
+	<specform:TRANSCRIPTION rdf:resource="&templates;ChichewaNdi-Transcription"/>
+	<form:LIAISON rdf:resource="&form;independent"/>
+</form:canonicalLineate>
+<component:stable rdf:about="&templates;ChichewaNdi-Stability"
+	 rdfs:label="ChichewaNdi-Stability"/>
+<form:transcription rdf:about="&templates;ChichewaNdi-Transcription"
+	 specform:TRANSCRIPTION_STRING="ndi"
+	 rdfs:label="ndi"/>
+<general:constructionalConditioning rdf:about="&templates;ChichewaNeg1Verb-Conditioning"
+	 notes:CONDITIONS="This is the verb plus the first negative prefix."
+	 rdfs:label="ChichewaNeg1Verb-Conditioning"/>
+<template:span rdf:about="&templates;ChichewaNeg1Verb-Foundation"
+	 rdfs:label="ChichewaNeg1Verb-Foundation">
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChichewVerbNoNeg1"/>
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChichewaVerb-Neg1"/>
+</template:span>
+<template:desmeme rdf:about="&templates;ChichewaNeg1Verb-PhMOR"
+	 gold:inLanguage="http://lexvo.org/id/iso639-3/nya"
+	 rdfs:label="ChichewaNeg1Verb-PhMOR">
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChichewaNeg1Verb-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChichewaNeg1Verb-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChichewaNeg1Verb-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChichewaNeg1Verb-Violability"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;DowningMtenje-2017"/>
+	<function:FUNCTION rdf:resource="&gold;Verbal"/>
+</template:desmeme>
+<template:order rdf:about="&templates;ChichewaNeg1Verb-Stricture"
+	 general:COUNT="2"
+	 rdfs:label="ChichewaNeg1Verb-Stricture">
+	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
+	<general:RELATIONS rdf:resource="&general;simple"/>
+</template:order>
+<template:notViolable rdf:about="&templates;ChichewaNeg1Verb-Violability"
+	 rdfs:label="ChichewaNeg1Verb-Violability"/>
+<component:component rdf:about="&templates;ChichewaNegForImp"
+	 rdfs:label="ChichewaNegForImp">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaNegForImp-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaNegForImp-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaNegForImp-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;ChichewaNegForImp-Coherence"
+	 rdfs:label="ChichewaNegForImp-Coherence">
+	<function:CLASS rdf:resource="&localcategory;negative"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;ChichewaNegForImp-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaNegForImp-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaNegForImp-Filledness"
+	 rdfs:label="ChichewaNegForImp-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaNegForImp-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;ChichewaNegForImp-Stability"
+	 rdfs:label="ChichewaNegForImp-Stability"/>
+<component:component rdf:about="&templates;ChichewaNiComponent"
+	 rdfs:label="ChichewaNiComponent">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaNiComponent-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaNiComponent-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaNiComponent-Stability"/>
+</component:component>
+<component:inelastic rdf:about="&templates;ChichewaNiComponent-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaNiComponent-Elasticity"/>
+<component:filled rdf:about="&templates;ChichewaNiComponent-Filledness"
+	 rdfs:label="ChichewaNiComponent-Filledness">
+	<speccomponent:FORM rdf:resource="&templates;ChichewaNiComponent-Form"/>
+	<function:FILLER_CLASS rdf:resource="&localcategory;personReference"/>
+</component:filled>
+<form:canonicalLineate rdf:about="&templates;ChichewaNiComponent-Form"
+	 gold:inLanguage="http://lexvo.org/id/iso639-3/nya"
+	 rdfs:label="ChichewaNiComponent-Form">
+	<specform:TRANSCRIPTION rdf:resource="&templates;ChichewaNiComponent-Transcription"/>
+	<form:LIAISON rdf:resource="&form;sinistrous"/>
+</form:canonicalLineate>
+<component:stable rdf:about="&templates;ChichewaNiComponent-Stability"
+	 rdfs:label="ChichewaNiComponent-Stability"/>
+<form:transcription rdf:about="&templates;ChichewaNiComponent-Transcription"
+	 specform:TRANSCRIPTION_STRING="ni"
+	 rdfs:label="ni"/>
+<template:desmeme rdf:about="&templates;ChichewaNiEnclitic-CLT"
+	 gold:inLanguage="http://lexvo.org/id/iso639-3/nya"
+	 rdfs:label="ChichewaNiEnclitic-CLT">
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChichewaNiEnclitic-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChichewaNiEnclitic-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChichewaNiEnclitic-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChichewaNiEnclitic-Violability"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;Mchombo-2004"/>
+	<function:FUNCTION rdf:resource="&localcategory;imperative"/>
+</template:desmeme>
+<general:lexicoconstructionalConditioning rdf:about="&templates;ChichewaNiEnclitic-Conditioning"
+	 notes:CONDITIONS="Politive imperatives and 2pl object"
+	 rdfs:label="ChichewaNiEnclitic-Conditioning">
+	<spectemplate:FILLED_COMPONENTS rdf:resource="&templates;ChichewaNiFiller"/>
+	<template:FILLER_POSITION rdf:resource="&general;templateFinal"/>
+</general:lexicoconstructionalConditioning>
+<template:span rdf:about="&templates;ChichewaNiEnclitic-Foundation"
+	 rdfs:label="ChichewaNiEnclitic-Foundation">
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChichewaNiComponent"/>
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChichewaPreNiVerb"/>
+</template:span>
+<template:order rdf:about="&templates;ChichewaNiEnclitic-Stricture"
+	 general:COUNT="2"
+	 rdfs:label="ChichewaNiEnclitic-Stricture">
+	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
+	<general:RELATIONS rdf:resource="&general;simple"/>
+</template:order>
+<template:notViolable rdf:about="&templates;ChichewaNiEnclitic-Violability"
+	 rdfs:label="ChichewaNiEnclitic-Violability"/>
+<component:filledComponentSet rdf:about="&templates;ChichewaNiFiller"
+	 rdfs:label="ChichewaNiFiller">
+	<spectemplate:FILLED_COMPONENT rdf:resource="&templates;ChichewaNiComponent"/>
+</component:filledComponentSet>
+<component:component rdf:about="&templates;ChichewaNiWholeVerb"
+	 rdfs:label="ChichewaNiWholeVerb">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaNiWholeVerb-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaNiWholeVerb-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaNiWholeVerb-Stability"/>
+</component:component>
+<general:left rdf:about="&templates;ChichewaNiWholeVerb-AssociatePosition"
+	 rdfs:label="ChichewaNiWholeVerb-AssociatePosition"/>
+<component:elastic rdf:about="&templates;ChichewaNiWholeVerb-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaNiWholeVerb-Elasticity"/>
+<component:filled rdf:about="&templates;ChichewaNiWholeVerb-Filledness"
+	 rdfs:label="ChichewaNiWholeVerb-Filledness">
+	<speccomponent:FORM rdf:resource="&templates;ChichewaNiWholeVerb-Unspecified"/>
+	<function:FILLER_CLASS rdf:resource="&localcategory;personReference"/>
+</component:filled>
+<component:unstable rdf:about="&templates;ChichewaNiWholeVerb-Stability"
+	 rdfs:label="ChichewaNiWholeVerb-Stability">
+	<speccomponent:ASSOCIATE rdf:resource="&templates;ChichewaNegForImp"/>
+	<speccomponent:ASSOCIATE_POSITION rdf:resource="&templates;ChichewaNiWholeVerb-AssociatePosition"/>
+</component:unstable>
+<template:embeddedDesmeme rdf:about="&templates;ChichewaNiWholeVerb-Unspecified"
+	 rdfs:label="ChichewaNiWholeVerb-Unspecified"/>
+<general:prosodicConditioning rdf:about="&templates;ChichewaNominalReduplicant-Conditioning"
+	 rdfs:label="ChichewaNominalReduplicant-Conditioning">
+	<notes:CONDITIONS>Minimality and maximality requirement on its shape (disyllabic).</notes:CONDITIONS>
+</general:prosodicConditioning>
+<template:span rdf:about="&templates;ChichewaNominalReduplicant-Foundation"
+	 rdfs:label="ChichewaNominalReduplicant-Foundation">
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChichewaNominalReduplicantFirstSyllable"/>
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChichewaNominalReduplicantSecondSyllable"/>
+</template:span>
+<template:length rdf:about="&templates;ChichewaNominalReduplicant-Length"
+	 general:COUNT="2"
+	 rdfs:label="ChichewaNominalReduplicant-Length">
+	<general:CONSTITUENT rdf:resource="&gold;Syllable"/>
+</template:length>
+<template:desmeme rdf:about="&templates;ChichewaNominalReduplicant-PhMOR"
+	 gold:inLanguage="http://lexvo.org/id/iso639-3/nya"
+	 rdfs:label="ChichewaNominalReduplicant-PhMOR">
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChichewaNominalReduplicant-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChichewaNominalReduplicant-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChichewaNominalReduplicant-Length"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChichewaNominalReduplicant-Violability"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;DowningMtenje-2017"/>
+	<function:FUNCTION rdf:resource="&localcategory;intensification"/>
+</template:desmeme>
+<template:notViolable rdf:about="&templates;ChichewaNominalReduplicant-Violability"
+	 rdfs:label="ChichewaNominalReduplicant-Violability"/>
+<component:component rdf:about="&templates;ChichewaNominalReduplicantEmbedded"
+	 rdfs:label="ChichewaNominalReduplicantEmbedded">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaNominalReduplicantEmbedded-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaNominalReduplicantEmbedded-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaNominalReduplicantEmbedded-Stability"/>
+</component:component>
+<general:left rdf:about="&templates;ChichewaNominalReduplicantEmbedded-AssociatePosition"
+	 rdfs:label="ChichewaNominalReduplicantEmbedded-AssociatePosition"/>
+<component:elastic rdf:about="&templates;ChichewaNominalReduplicantEmbedded-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaNominalReduplicantEmbedded-Elasticity"/>
+<component:filled rdf:about="&templates;ChichewaNominalReduplicantEmbedded-Filledness"
+	 rdfs:label="ChichewaNominalReduplicantEmbedded-Filledness">
+	<speccomponent:FORM rdf:resource="&templates;ChichewaNominalReduplicantEmbedded-Form"/>
+	<function:FILLER_CLASS rdf:resource="&gold;Noun"/>
+</component:filled>
+<form:reduplicant rdf:about="&templates;ChichewaNominalReduplicantEmbedded-Form"
+	 gold:inLanguage="http://lexvo.org/id/iso639-3/nya"
+	 rdfs:label="ChichewaNominalReduplicantEmbedded-Form"/>
+<component:unstable rdf:about="&templates;ChichewaNominalReduplicantEmbedded-Stability"
+	 rdfs:label="ChichewaNominalReduplicantEmbedded-Stability">
+	<speccomponent:ASSOCIATE_POSITION rdf:resource="&templates;ChichewaNominalReduplicantEmbedded-AssociatePosition"/>
+	<speccomponent:ASSOCIATE rdf:resource="&templates;ChichewaProsodicNoun"/>
+</component:unstable>
+<component:component rdf:about="&templates;ChichewaNominalReduplicantFirstSyllable"
+	 rdfs:label="ChichewaNominalReduplicantFirstSyllable">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaNominalReduplicantFirstSyllable-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaNominalReduplicantFirstSyllable-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaNominalReduplicantFirstSyllable-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;ChichewaNominalReduplicantFirstSyllable-Coherence"
+	 rdfs:label="ChichewaNominalReduplicantFirstSyllable-Coherence">
+	<function:CLASS rdf:resource="&gold;Syllable"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaNominalReduplicantFirstSyllable-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaNominalReduplicantFirstSyllable-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaNominalReduplicantFirstSyllable-Filledness"
+	 rdfs:label="ChichewaNominalReduplicantFirstSyllable-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaNominalReduplicantFirstSyllable-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;ChichewaNominalReduplicantFirstSyllable-Stability"
+	 rdfs:label="ChichewaNominalReduplicantFirstSyllable-Stability"/>
+<component:component rdf:about="&templates;ChichewaNominalReduplicantSecondSyllable"
+	 rdfs:label="ChichewaNominalReduplicantSecondSyllable">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaNominalReduplicantSecondSyllable-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaNominalReduplicantSecondSyllable-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaNominalReduplicantSecondSyllable-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;ChichewaNominalReduplicantSecondSyllable-Coherence"
+	 rdfs:label="ChichewaNominalReduplicantSecondSyllable-Coherence">
+	<function:CLASS rdf:resource="&gold;Syllable"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaNominalReduplicantSecondSyllable-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaNominalReduplicantSecondSyllable-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaNominalReduplicantSecondSyllable-Filledness"
+	 rdfs:label="ChichewaNominalReduplicantSecondSyllable-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaNominalReduplicantSecondSyllable-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;ChichewaNominalReduplicantSecondSyllable-Stability"
+	 rdfs:label="ChichewaNominalReduplicantSecondSyllable-Stability"/>
+<general:constructionalConditioning rdf:about="&templates;ChichewaNominalReduplication-Conditioning"
+	 notes:CONDITIONS="Reduplication encoding an intensification construction."
+	 rdfs:label="ChichewaNominalReduplication-Conditioning"/>
+<template:span rdf:about="&templates;ChichewaNominalReduplication-Foundation"
+	 rdfs:label="ChichewaNominalReduplication-Foundation">
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChichewaNominalReduplicantEmbedded"/>
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChichewaProsodicNoun"/>
+</template:span>
+<template:desmeme rdf:about="&templates;ChichewaNominalReduplication-PhMOR"
+	 gold:inLanguage="http://lexvo.org/id/iso639-3/nya"
+	 rdfs:label="ChichewaNominalReduplication-PhMOR">
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChichewaNominalReduplication-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChichewaNominalReduplication-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChichewaNominalReduplication-Structure"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChichewaNominalReduplication-Violability"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;DowningMtenje-2017"/>
+	<function:FUNCTION rdf:resource="&localcategory;intensification"/>
+</template:desmeme>
+<template:order rdf:about="&templates;ChichewaNominalReduplication-Structure"
+	 general:COUNT="2"
+	 rdfs:label="ChichewaNominalReduplication-Structure">
+	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
+	<general:RELATIONS rdf:resource="&general;simple"/>
+</template:order>
+<template:notViolable rdf:about="&templates;ChichewaNominalReduplication-Violability"
+	 rdfs:label="ChichewaNominalReduplication-Violability"/>
+<component:component rdf:about="&templates;ChichewaNonInitialSyllables"
+	 rdfs:label="ChichewaNonInitialSyllables">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaNonInitialSyllables-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaNonInitialSyllables-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaNonInitialSyllables-Stability"/>
+</component:component>
+<general:left rdf:about="&templates;ChichewaNonInitialSyllables-AssociatePosition"
+	 rdfs:label="ChichewaNonInitialSyllables-AssociatePosition"/>
+<component:coherent rdf:about="&templates;ChichewaNonInitialSyllables-Coherence"
+	 rdfs:label="ChichewaNonInitialSyllables-Coherence">
+	<function:CLASS rdf:resource="&gold;Syllable"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;ChichewaNonInitialSyllables-Elasticity"
+	 general:MAXIMUM="100"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaNonInitialSyllables-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaNonInitialSyllables-Filledness"
+	 rdfs:label="ChichewaNonInitialSyllables-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaNonInitialSyllables-Coherence"/>
+</component:open>
+<component:unstable rdf:about="&templates;ChichewaNonInitialSyllables-Stability"
+	 rdfs:label="ChichewaNonInitialSyllables-Stability">
+	<speccomponent:ASSOCIATE rdf:resource="&templates;ChichewaFirstSyllable"/>
+	<speccomponent:ASSOCIATE_POSITION rdf:resource="&templates;ChichewaNonInitialSyllables-AssociatePosition"/>
+</component:unstable>
+<general:constructionalConditioning rdf:about="&templates;ChichewaNoun-Conditioning"
+	 rdfs:label="ChichewaNoun-Conditioning"/>
+<template:embeddedDesmeme rdf:about="&templates;ChichewaNoun-Embedded"
+	 gold:inLanguage="http://lexvo.org/id/iso639-3/nya"
+	 rdfs:label="ChichewaNoun-Embedded">
+	<template:VIOLABILITY rdf:resource="&templates;ChichewaLocativePrefix-Violability"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChichewaNoun-Embedded-Stricture"/>
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChichewaNounEmbedded-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChichewaNounEmbedded-Foundation"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;Mchombo-2004"/>
+	<function:FUNCTION rdf:resource="&gold;Noun"/>
+</template:embeddedDesmeme>
+<template:order rdf:about="&templates;ChichewaNoun-Embedded-Stricture"
+	 general:COUNT="2"
+	 rdfs:label="ChichewaNoun-Embedded-Stricture">
+	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
+	<general:RELATIONS rdf:resource="&general;simple"/>
+</template:order>
+<template:embeddedDesmeme rdf:about="&templates;ChichewaNoun-Embedded-Unspecified"
+	 rdfs:label="ChichewaNoun-Embedded-Unspecified"/>
+<template:span rdf:about="&templates;ChichewaNoun-Foundation"
+	 rdfs:label="ChichewaNoun-Foundation">
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChichewaNoun-NounStem"/>
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChichewaNoun-Prefix"/>
+</template:span>
+<component:inelastic rdf:about="&templates;ChichewaNoun-LeftSupport-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaNoun-LeftSupport-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaNoun-LeftSupport-Filledness"
+	 rdfs:label="ChichewaNoun-LeftSupport-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaNoun-LeftSupport-Filledness-Coherence"/>
+</component:open>
+<component:coherent rdf:about="&templates;ChichewaNoun-LeftSupport-Filledness-Coherence"
+	 rdfs:label="ChichewaNoun-LeftSupport-Filledness-Coherence">
+	<function:CLASS rdf:resource="&general;grammaticalCategory"/>
+</component:coherent>
+<template:desmeme rdf:about="&templates;ChichewaNoun-MOR"
+	 gold:inLanguage="http://lexvo.org/id/iso639-3/nya"
+	 rdfs:label="ChichewaNoun-MOR">
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChichewaNoun-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChichewaNoun-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChichewaNoun-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChichewaNoun-Violability"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;Mchombo-2004"/>
+	<function:FUNCTION rdf:resource="&gold;Noun"/>
+</template:desmeme>
+<general:left rdf:about="&templates;ChichewaNoun-Noun-AssociatePosition"
+	 rdfs:label="ChichewaNoun-Noun-AssociatePosition"/>
+<component:unstable rdf:about="&templates;ChichewaNoun-Noun-Stability"
+	 rdfs:label="ChichewaNoun-Noun-Stability">
+	<speccomponent:ASSOCIATE_POSITION rdf:resource="&templates;ChichewaNoun-Noun-AssociatePosition"/>
+	<speccomponent:ASSOCIATE rdf:resource="&templates;ChichewaNoun-Prefix"/>
+</component:unstable>
+<component:component rdf:about="&templates;ChichewaNoun-NounStem"
+	 rdfs:label="ChichewaNoun-NounStem">
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaNoun-Noun-Stability"/>
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaNoun-RightSupport-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaNoun-RightSupport-Filledness"/>
+</component:component>
+<component:component rdf:about="&templates;ChichewaNoun-Prefix"
+	 rdfs:label="ChichewaNoun-Prefix">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaNoun-LeftSupport-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaNoun-LeftSupport-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaNoun-Prefix-Stability"/>
+</component:component>
+<general:right rdf:about="&templates;ChichewaNoun-Prefix-AssociatePosition"
+	 rdfs:label="ChichewaNoun-Prefix-AssociatePosition"/>
+<component:unstable rdf:about="&templates;ChichewaNoun-Prefix-Stability"
+	 rdfs:label="ChichewaNoun-Prefix-Stability">
+	<speccomponent:ASSOCIATE rdf:resource="&templates;ChichewaNoun-NounStem"/>
+	<speccomponent:ASSOCIATE_POSITION rdf:resource="&templates;ChichewaNoun-Prefix-AssociatePosition"/>
+</component:unstable>
+<component:inelastic rdf:about="&templates;ChichewaNoun-RightSupport-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaNoun-RightSupport-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaNoun-RightSupport-Filledness"
+	 rdfs:label="ChichewaNoun-RightSupport-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaNoun-RightSupport-Filledness-Coherence"/>
+</component:open>
+<component:coherent rdf:about="&templates;ChichewaNoun-RightSupport-Filledness-Coherence"
+	 rdfs:label="ChichewaNoun-RightSupport-Filledness-Coherence">
+	<function:CLASS rdf:resource="&general;grammaticalCategory"/>
+</component:coherent>
+<template:order rdf:about="&templates;ChichewaNoun-Stricture"
+	 general:COUNT="2"
+	 rdfs:label="ChichewaNoun-Stricture">
+	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
+	<general:RELATIONS rdf:resource="&general;simple"/>
+</template:order>
+<template:potentiallyViolable rdf:about="&templates;ChichewaNoun-Violability"
+	 rdfs:label="ChichewaNoun-Violability">
+	<template:EXCEPTIONALITY rdf:resource="&template;lexical"/>
+	<template:REPARABILITY rdf:resource="&template;surfaceViolable"/>
+</template:potentiallyViolable>
+<general:constructionalConditioning rdf:about="&templates;ChichewaNounEmbedded-Conditioning"
+	 rdfs:label="ChichewaNounEmbedded-Conditioning"/>
+<template:span rdf:about="&templates;ChichewaNounEmbedded-Foundation"
+	 rdfs:label="ChichewaNounEmbedded-Foundation">
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChichewaNounEmbedded-LeftSupport"/>
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChichewaNounEmbedded-RightSupport"/>
+</template:span>
+<general:right rdf:about="&templates;ChichewaNounEmbedded-Foundation-LeftSupport-AssociatePosition">
+	<rdfs:label>ChichewaNounEmbedded-Foundation-LeftSupport-AssociatePosition</rdfs:label>
+</general:right>
+<component:component rdf:about="&templates;ChichewaNounEmbedded-LeftSupport"
+	 rdfs:label="ChichewaNounEmbedded-LeftSupport">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaNounEmbedded-LeftSupport-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaNounEmbedded-LeftSupport-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaNounEmbedded-LeftSupport-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;ChichewaNounEmbedded-LeftSupport-Coherence"
+	 rdfs:label="ChichewaNounEmbedded-LeftSupport-Coherence">
+	<function:CLASS rdf:resource="&general;grammaticalCategory"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaNounEmbedded-LeftSupport-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaNounEmbedded-LeftSupport-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaNounEmbedded-LeftSupport-Filledness"
+	 rdfs:label="ChichewaNounEmbedded-LeftSupport-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaNounEmbedded-LeftSupport-Coherence"/>
+</component:open>
+<component:unstable rdf:about="&templates;ChichewaNounEmbedded-LeftSupport-Stability"
+	 rdfs:label="ChichewaNounEmbedded-LeftSupport-Stability">
+	<speccomponent:ASSOCIATE_POSITION rdf:resource="&templates;ChichewaNounEmbedded-Foundation-LeftSupport-AssociatePosition"/>
+	<speccomponent:ASSOCIATE rdf:resource="&templates;ChichewaNounEmbedded-RightSupport"/>
+</component:unstable>
+<component:component rdf:about="&templates;ChichewaNounEmbedded-RightSupport"
+	 rdfs:label="ChichewaNounEmbedded-RightSupport">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaNounEmbedded-RightSupport-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaNounEmbedded-RightSupport-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaNounEmbedded-RightSupport-Stability"/>
+</component:component>
+<general:left rdf:about="&templates;ChichewaNounEmbedded-RightSupport-AssociatePosition"
+	 rdfs:label="ChichewaNounEmbedded-RightSupport-AssociatePosition"/>
+<component:coherent rdf:about="&templates;ChichewaNounEmbedded-RightSupport-Coherence"
+	 rdfs:label="ChichewaNounEmbedded-RightSupport-Coherence">
+	<function:CLASS rdf:resource="&general;grammaticalCategory"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaNounEmbedded-RightSupport-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaNounEmbedded-RightSupport-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaNounEmbedded-RightSupport-Filledness"
+	 rdfs:label="ChichewaNounEmbedded-RightSupport-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaNounEmbedded-RightSupport-Coherence"/>
+</component:open>
+<component:unstable rdf:about="&templates;ChichewaNounEmbedded-RightSupport-Stability"
+	 rdfs:label="ChichewaNounEmbedded-RightSupport-Stability">
+	<speccomponent:ASSOCIATE rdf:resource="&templates;ChichewaNounEmbedded-LeftSupport"/>
+	<speccomponent:ASSOCIATE_POSITION rdf:resource="&templates;ChichewaNounEmbedded-RightSupport-AssociatePosition"/>
+</component:unstable>
+<template:embeddedDesmeme rdf:about="&templates;ChichewaO-UnspecifiedDesmeme"
+	 rdfs:label="ChichewaO-UnspecifiedDesmeme"/>
+<component:component rdf:about="&templates;ChichewaOM"
+	 rdfs:label="ChichewaOM">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaOM-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaVerb-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaVerb-Stability"/>
+</component:component>
+<component:elastic rdf:about="&templates;ChichewaOM-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaOM-Elasticity"/>
+<component:component rdf:about="&templates;ChichewaOMProsodic"
+	 rdfs:label="ChichewaOMProsodic">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaOMProsodic-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaOMProsodic-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaOMProsodic-Stability"/>
+</component:component>
+<general:right rdf:about="&templates;ChichewaOMProsodic-AssociatePosition"
+	 rdfs:label="ChichewaOMProsodic-AssociatePosition"/>
+<component:coherent rdf:about="&templates;ChichewaOMProsodic-Coherence"
+	 rdfs:label="ChichewaOMProsodic-Coherence">
+	<function:CLASS rdf:resource="&localcategory;objectReference"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;ChichewaOMProsodic-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaOMProsodic-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaOMProsodic-Filledness"
+	 rdfs:label="ChichewaOMProsodic-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaOMProsodic-Coherence"/>
+</component:open>
+<component:unstable rdf:about="&templates;ChichewaOMProsodic-Stability"
+	 rdfs:label="ChichewaOMProsodic-Stability">
+	<speccomponent:ASSOCIATE rdf:resource="&templates;ChichewaCompoundStemEmbedded"/>
+	<speccomponent:ASSOCIATE_POSITION rdf:resource="&templates;ChichewaOMProsodic-AssociatePosition"/>
+</component:unstable>
+<template:desmeme rdf:about="&templates;ChichewaORelative-CLT"
+	 gold:inLanguage="http://lexvo.org/id/iso639-3/nya"
+	 rdfs:label="ChichewaORelative-CLT">
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChichewaORelative-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChichewaORelative-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChichewaORelative-Violability"/>
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChichewaRelativeClauseRelativizer-Conditioning"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;Mchombo-2004"/>
+	<function:FUNCTION rdf:resource="&localcategory;relativeClause"/>
+</template:desmeme>
+<template:span rdf:about="&templates;ChichewaORelative-Foundation"
+	 rdfs:label="ChichewaORelative-Foundation">
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChichewaORelativizer"/>
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChichewaVerbClausal"/>
+</template:span>
+<template:order rdf:about="&templates;ChichewaORelative-Stricture"
+	 general:COUNT="2"
+	 rdfs:label="ChichewaORelative-Stricture">
+	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
+	<general:RELATIONS rdf:resource="&general;simple"/>
+</template:order>
+<template:notViolable rdf:about="&templates;ChichewaORelative-Violability"
+	 rdfs:label="ChichewaORelative-Violability"/>
+<component:component rdf:about="&templates;ChichewaORelativizer"
+	 rdfs:label="ChichewaORelativizer">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaORelativizer-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaORelativizer-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaORelativizer-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;ChichewaORelativizer-Coherence"
+	 rdfs:label="ChichewaORelativizer-Coherence">
+	<function:CLASS rdf:resource="&gold;Relativizer"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaORelativizer-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaORelativizer-Elasticity"/>
+<component:partiallyFilled rdf:about="&templates;ChichewaORelativizer-Filledness"
+	 rdfs:label="ChichewaORelativizer-Filledness">
+	<speccomponent:FORM rdf:resource="&templates;ChichewaO-UnspecifiedDesmeme"/>
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaORelativizer-Coherence"/>
+	<function:FILLER_CLASS rdf:resource="&gold;Relativizer"/>
+	<component:FILLER_PLACEMENT rdf:resource="&general;componentFinal"/>
+</component:partiallyFilled>
+<component:stable rdf:about="&templates;ChichewaORelativizer-Stability"
+	 rdfs:label="ChichewaORelativizer-Stability"/>
+<component:filledComponentSet rdf:about="&templates;ChichewaORelativizerFiller"
+	 rdfs:label="ChichewaORelativizerFiller">
+	<spectemplate:FILLED_COMPONENT rdf:resource="&templates;ChichewaORelativizer"/>
+</component:filledComponentSet>
+<general:lexicoconstructionalConditioning rdf:about="&templates;ChichewaOsaVerb-Conditioning"
+	 rdfs:label="ChichewaOsaVerb-Conditioning">
+	<notes:CONDITIONS>A special negative imperative form with different positional properties than regular verbs.</notes:CONDITIONS>
+	<spectemplate:FILLED_COMPONENTS rdf:resource="&templates;ChichewaOsaVerb-FilledComponents"/>
+	<template:FILLER_POSITION rdf:resource="&general;templateInitial"/>
+</general:lexicoconstructionalConditioning>
+<component:filledComponentSet rdf:about="&templates;ChichewaOsaVerb-FilledComponents"
+	 rdfs:label="ChichewaOsaVerb-FilledComponents">
+	<spectemplate:FILLED_COMPONENT rdf:resource="&templates;ChichewaOsaVerbLeftSupport"/>
+</component:filledComponentSet>
+<template:arch rdf:about="&templates;ChichewaOsaVerb-Foundation"
+	 rdfs:label="ChichewaOsaVerb-Foundation">
+	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;ChichewaOM"/>
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChichewaOsaVerbLeftSupport"/>
+	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;ChichewaVerbNullComponent"/>
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChichewaVerbStem"/>
+	<spectemplate:KEYSTONE rdf:resource="&templates;ChichewaVerbStem"/>
+</template:arch>
+<template:desmeme rdf:about="&templates;ChichewaOsaVerb-MOR"
+	 gold:inLanguage="http://www.lexvo.org/id/iso639-3/nya"
+	 rdfs:label="ChichewaOsaVerb-MOR">
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChichewaOsaVerb-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChichewaOsaVerb-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChichewaOsaVerb-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChichewaOsaVerb-Violability"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;Mchombo-2004"/>
+	<function:FUNCTION rdf:resource="&localcategory;imperative"/>
+</template:desmeme>
+<template:order rdf:about="&templates;ChichewaOsaVerb-Stricture"
+	 general:COUNT="2"
+	 rdfs:label="ChichewaOsaVerb-Stricture">
+	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
+	<general:RELATIONS rdf:resource="&general;simple"/>
+</template:order>
+<template:notViolable rdf:about="&templates;ChichewaOsaVerb-Violability"
+	 rdfs:label="ChichewaOsaVerb-Violability"/>
+<component:component rdf:about="&templates;ChichewaOsaVerbLeftSupport"
+	 rdfs:label="ChichewaOsaVerbLeftSupport">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaOsaVerbLeftSupport-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaOsaVerbLeftSupport-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaOsaVerbLeftSupport-Stability"/>
+</component:component>
+<component:inelastic rdf:about="&templates;ChichewaOsaVerbLeftSupport-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaOsaVerbLeftSupport-Elasticity"/>
+<component:filled rdf:about="&templates;ChichewaOsaVerbLeftSupport-Filledness"
+	 rdfs:label="ChichewaOsaVerbLeftSupport-Filledness">
+	<speccomponent:FORM rdf:resource="&templates;ChichewaOsaVerbLeftSupport-Filler"/>
+	<function:FILLER_CLASS rdf:resource="&localcategory;negative"/>
+</component:filled>
+<form:canonicalLineate rdf:about="&templates;ChichewaOsaVerbLeftSupport-Filler"
+	 gold:inLanguage="http://lexvo.org/id/iso639-3/nya"
+	 rdfs:label="ChichewaOsaVerbLeftSupport-Filler">
+	<specform:TRANSCRIPTION rdf:resource="&templates;ChichewaOsaVerbLeftSupport-Transcription"/>
+	<form:LIAISON rdf:resource="&form;dextrous"/>
+</form:canonicalLineate>
+<component:stable rdf:about="&templates;ChichewaOsaVerbLeftSupport-Stability"
+	 rdfs:label="ChichewaOsaVerbLeftSupport-Stability"/>
+<form:transcription rdf:about="&templates;ChichewaOsaVerbLeftSupport-Transcription"
+	 specform:TRANSCRIPTION_STRING="ósa-"
+	 rdfs:label="ósa-"/>
+<component:component rdf:about="&templates;ChichewaPassive"
+	 rdfs:label="ChichewaPassive">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaPassive-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaPassive-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaPassive-Stability"/>
+</component:component>
+<component:elastic rdf:about="&templates;ChichewaPassive-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaPassive-Elasticity"/>
+<component:filled rdf:about="&templates;ChichewaPassive-Filledness"
+	 rdfs:label="ChichewaPassive-Filledness">
+	<speccomponent:FORM rdf:resource="&templates;ChichewaPassive-Form"/>
+	<function:FILLER_CLASS rdf:resource="&localcategory;valency"/>
+</component:filled>
+<form:canonicalLineate rdf:about="&templates;ChichewaPassive-Form"
+	 gold:inLanguage="http://www.lexvo.org/page/iso639-3/nya"
+	 rdfs:label="ChichewaPassive-Form">
+	<specform:TRANSCRIPTION rdf:resource="&templates;ChichewaPassive-Transcription"/>
+	<form:LIAISON rdf:resource="&form;sinistrous"/>
+</form:canonicalLineate>
+<component:stable rdf:about="&templates;ChichewaPassive-Stability"
+	 rdfs:label="ChichewaPassive-Stability"/>
+<template:order rdf:about="&templates;ChichewaPassive-Stricture"
+	 general:COUNT="3"
+	 rdfs:label="ChichewaPassive-Stricture">
+	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
+	<general:RELATIONS rdf:resource="&general;simple"/>
+</template:order>
+<form:transcription rdf:about="&templates;ChichewaPassive-Transcription"
+	 specform:TRANSCRIPTION_STRING="-idw-"
+	 rdfs:label="-idw-"/>
+<template:notViolable rdf:about="&templates;ChichewaPassive-Violability"
+	 rdfs:label="ChichewaPassive-Violability"/>
+<template:desmeme rdf:about="&templates;ChichewaPhrase-PhSYN"
+	 gold:inLanguage="http://www.lexvo.org/id/iso639-3/nya"
+	 rdfs:label="ChichewaPhrase-PhSYN">
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChichewaProsodicPhrase-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChichewaProsodicPhrase-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChichewaProsodicPhrase-Order"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChichewaProsodicPhrase-Violability"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;DowningMtenje-2017"/>
+	<function:FUNCTION rdf:resource="&general;prosodicPhrase"/>
+</template:desmeme>
+<component:component rdf:about="&templates;ChichewaPossessor"
+	 rdfs:label="ChichewaPossessor">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaPossessor-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaPossessor-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaPossessor-Stabiity"/>
+</component:component>
+<component:coherent rdf:about="&templates;ChichewaPossessor-Coherence"
+	 rdfs:label="ChichewaPossessor-Coherence">
+	<function:CLASS rdf:resource="&gold;NounPhrase"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaPossessor-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaPossessor-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaPossessor-Filledness"
+	 rdfs:label="ChichewaPossessor-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaPossessor-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;ChichewaPossessor-Stabiity"
+	 rdfs:label="ChichewaPossessor-Stabiity"/>
+<component:component rdf:about="&templates;ChichewaPossessum"
+	 rdfs:label="ChichewaPossessum">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaPossessum-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaPossessum-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaPossessum-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;ChichewaPossessum-Coherence"
+	 rdfs:label="ChichewaPossessum-Coherence">
+	<function:CLASS rdf:resource="&gold;NounPhrase"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;ChichewaPossessum-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaPossessum-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaPossessum-Filledness"
+	 rdfs:label="ChichewaPossessum-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaPossessum-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;ChichewaPossessum-Stability"
+	 rdfs:label="ChichewaPossessum-Stability"/>
+<component:component rdf:about="&templates;ChichewaPreNiVerb"
+	 rdfs:label="ChichewaPreNiVerb">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaPreNiVerb-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaPreNiVerb-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaPreNiVerb-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;ChichewaPreNiVerb-Coherence"
+	 rdfs:label="ChichewaPreNiVerb-Coherence">
+	<function:CLASS rdf:resource="&localcategory;finite"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaPreNiVerb-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaPreNiVerb-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaPreNiVerb-Filledness"
+	 rdfs:label="ChichewaPreNiVerb-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaPreNiVerb-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;ChichewaPreNiVerb-Stability"
+	 rdfs:label="ChichewaPreNiVerb-Stability"/>
+<general:constructionalConditioning rdf:about="&templates;ChichewaProsodicDerivationalStem-Conditioning"
+	 rdfs:label="ChichewaProsodicDerivationalStem-Conditioning">
+	<notes:CONDITIONS xml:space='preserve'><![CDATA[Following Downing & Mtenje treating as a morphologically delimited prosodic domain.]]></notes:CONDITIONS>
+</general:constructionalConditioning>
+<template:span rdf:about="&templates;ChichewaProsodicDerivationalStem-Foundation"
+	 rdfs:label="ChichewaProsodicDerivationalStem-Foundation">
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChichewaProsodicExtensions"/>
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChichewaProsodicVerbRoot"/>
+</template:span>
+<template:order rdf:about="&templates;ChichewaProsodicDerivationalStem-Stricture"
+	 general:COUNT="2"
+	 rdfs:label="ChichewaProsodicDerivationalStem-Stricture">
+	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
+	<general:RELATIONS rdf:resource="&general;simple"/>
+</template:order>
+<template:notViolable rdf:about="&templates;ChichewaProsodicDerivationalStem-Violability"
+	 rdfs:label="ChichewaProsodicDerivationalStem-Violability"/>
+<component:component rdf:about="&templates;ChichewaProsodicDerivationalStemEmbedded"
+	 rdfs:label="ChichewaProsodicDerivationalStemEmbedded">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaProsodicDerivationalStemEmbedded-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaProsodicDerivationalStemEmbedded-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaProsodicDerivationalStemEmbedded-Stability"/>
+</component:component>
+<component:inelastic rdf:about="&templates;ChichewaProsodicDerivationalStemEmbedded-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaProsodicDerivationalStemEmbedded-Elasticity"/>
+<component:filled rdf:about="&templates;ChichewaProsodicDerivationalStemEmbedded-Filledness"
+	 rdfs:label="ChichewaProsodicDerivationalStemEmbedded-Filledness">
+	<speccomponent:FORM rdf:resource="&templates;ChichewaProsodicDerivationalStemEmbedded-Unspecified"/>
+	<function:FILLER_CLASS rdf:resource="&gold;Verbal"/>
+</component:filled>
+<component:stable rdf:about="&templates;ChichewaProsodicDerivationalStemEmbedded-Stability"
+	 rdfs:label="ChichewaProsodicDerivationalStemEmbedded-Stability"/>
+<template:embeddedDesmeme rdf:about="&templates;ChichewaProsodicDerivationalStemEmbedded-Unspecified"
+	 rdfs:label="ChichewaProsodicDerivationalStemEmbedded-Unspecified"/>
+<component:component rdf:about="&templates;ChichewaProsodicExtensions"
+	 rdfs:label="ChichewaProsodicExtensions">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaProsodicExtensions-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaProsodicExtensions-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaProsodicExtensions-Stability"/>
+</component:component>
+<general:left rdf:about="&templates;ChichewaProsodicExtensions-AssociatePosition"
+	 rdfs:label="ChichewaProsodicExtensions-AssociatePosition"/>
+<component:coherent rdf:about="&templates;ChichewaProsodicExtensions-Coherence"
+	 rdfs:label="ChichewaProsodicExtensions-Coherence">
+	<function:CLASS rdf:resource="&localcategory;valency"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;ChichewaProsodicExtensions-Elasticity"
+	 general:MAXIMUM="100"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaProsodicExtensions-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaProsodicExtensions-Filledness"
+	 rdfs:label="ChichewaProsodicExtensions-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaProsodicExtensions-Coherence"/>
+</component:open>
+<component:unstable rdf:about="&templates;ChichewaProsodicExtensions-Stability"
+	 rdfs:label="ChichewaProsodicExtensions-Stability">
+	<speccomponent:ASSOCIATE_POSITION rdf:resource="&templates;ChichewaProsodicExtensions-AssociatePosition"/>
+	<speccomponent:ASSOCIATE rdf:resource="&templates;ChichewaProsodicVerbRoot"/>
+</component:unstable>
+<general:constructionalConditioning rdf:about="&templates;ChichewaProsodicNDem-Conditioning"
+	 notes:CONDITIONS="Noun immediately followed by demonstrative."
+	 rdfs:label="ChichewaProsodicNDem-Conditioning"/>
+<component:elastic rdf:about="&templates;ChichewaProsodicNDem-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaProsodicNDem-Elasticity"/>
+<template:span rdf:about="&templates;ChichewaProsodicNDem-Foundation"
+	 rdfs:label="ChichewaProsodicNDem-Foundation">
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChichewaDem"/>
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChichewaNPNoun"/>
+</template:span>
+<template:order rdf:about="&templates;ChichewaProsodicNDem-Stricture"
+	 general:COUNT="2"
+	 rdfs:label="ChichewaProsodicNDem-Stricture">
+	<general:RELATIONS rdf:resource="&general;simple"/>
+	<general:CONSTITUENT rdf:resource="&general;syntacticConstituent"/>
+</template:order>
+<template:potentiallyViolable rdf:about="&templates;ChichewaProsodicNDem-Violability"
+	 rdfs:label="ChichewaProsodicNDem-Violability">
+	<template:EXCEPTIONALITY rdf:resource="&template;morphosyntactic"/>
+	<template:REPARABILITY rdf:resource="&template;surfaceViolable"/>
+</template:potentiallyViolable>
+<component:component rdf:about="&templates;ChichewaProsodicNoun"
+	 rdfs:label="ChichewaProsodicNoun">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaProsodicNoun-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaProsodicNoun-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaProsodicNoun-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;ChichewaProsodicNoun-Coherent"
+	 rdfs:label="ChichewaProsodicNoun-Coherent">
+	<function:CLASS rdf:resource="&gold;Noun"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaProsodicNoun-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaProsodicNoun-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaProsodicNoun-Filledness"
+	 rdfs:label="ChichewaProsodicNoun-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaProsodicNoun-Coherent"/>
+</component:open>
+<component:stable rdf:about="&templates;ChichewaProsodicNoun-Stability"
+	 rdfs:label="ChichewaProsodicNoun-Stability"/>
+<general:prosodicConditioning rdf:about="&templates;ChichewaProsodicPhrase-Conditioning"
+	 rdfs:label="ChichewaProsodicPhrase-Conditioning">
+	<notes:CONDITIONS>Various analyses of where boundaries lie, roughly after an XP</notes:CONDITIONS>
+</general:prosodicConditioning>
+<template:span rdf:about="&templates;ChichewaProsodicPhrase-Foundation"
+	 rdfs:label="ChichewaProsodicPhrase-Foundation">
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChichewaProsodicPhraseLeftSupport"/>
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChichewaProsodicPhraseRightSupport"/>
+</template:span>
+<template:order rdf:about="&templates;ChichewaProsodicPhrase-Order"
+	 general:COUNT="2"
+	 rdfs:label="ChichewaProsodicPhrase-Order">
+	<general:CONSTITUENT rdf:resource="&general;prosodicPhrase"/>
+	<general:RELATIONS rdf:resource="&general;simple"/>
+</template:order>
+<template:notViolable rdf:about="&templates;ChichewaProsodicPhrase-Violability"
+	 rdfs:label="ChichewaProsodicPhrase-Violability"/>
+<component:component rdf:about="&templates;ChichewaProsodicPhraseLeftSupport"
+	 rdfs:label="ChichewaProsodicPhraseLeftSupport">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaProsodicPhraseLeftSupport-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaProsodicPhraseLeftSupport-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaProsodicPhraseLeftSupport-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;ChichewaProsodicPhraseLeftSupport-Coherence"
+	 rdfs:label="ChichewaProsodicPhraseLeftSupport-Coherence">
+	<function:CLASS rdf:resource="&general;prosodicWord"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;ChichewaProsodicPhraseLeftSupport-Elasticity"
+	 general:MAXIMUM="100"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaProsodicPhraseLeftSupport-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaProsodicPhraseLeftSupport-Filledness"
+	 rdfs:label="ChichewaProsodicPhraseLeftSupport-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaProsodicPhraseLeftSupport-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;ChichewaProsodicPhraseLeftSupport-Stability"
+	 rdfs:label="ChichewaProsodicPhraseLeftSupport-Stability"/>
+<component:component rdf:about="&templates;ChichewaProsodicPhraseRightSupport"
+	 rdfs:label="ChichewaProsodicPhraseRightSupport">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaProsodicPhraseRightSupport-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaProsodicPhraseRightSupport-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaProsodicPhraseRightSupport-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;ChichewaProsodicPhraseRightSupport-Coherence"
+	 rdfs:label="ChichewaProsodicPhraseRightSupport-Coherence">
+	<function:CLASS rdf:resource="&general;prosodicWord"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaProsodicPhraseRightSupport-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaProsodicPhraseRightSupport-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaProsodicPhraseRightSupport-Filledness"
+	 rdfs:label="ChichewaProsodicPhraseRightSupport-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaProsodicPhraseRightSupport-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;ChichewaProsodicPhraseRightSupport-Stability"
+	 rdfs:label="ChichewaProsodicPhraseRightSupport-Stability"/>
+<template:span rdf:about="&templates;ChichewaProsodicSTAMP-Foundation"
+	 rdfs:label="ChichewaProsodicSTAMP-Foundation">
+	<spectemplate:RESTKOMPONENTEN rdf:resource="&templates;ChichewaProsodicSTAMP-RK"/>
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChichewaSM"/>
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChichewaVerb-Neg2"/>
+</template:span>
+<component:restkomponentenSet rdf:about="&templates;ChichewaProsodicSTAMP-RK"
+	 rdfs:label="ChichewaProsodicSTAMP-RK">
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChichewaModal"/>
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChichewaTM"/>
+</component:restkomponentenSet>
+<template:order rdf:about="&templates;ChichewaProsodicSTAMP-Stricture"
+	 general:COUNT="4"
+	 rdfs:label="ChichewaProsodicSTAMP-Stricture">
+	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
+	<general:RELATIONS rdf:resource="&general;simple"/>
+</template:order>
+<template:notViolable rdf:about="&templates;ChichewaProsodicSTAMP-Violability"
+	 rdfs:label="ChichewaProsodicSTAMP-Violability"/>
+<component:component rdf:about="&templates;ChichewaProsodicVerbRoot"
+	 rdfs:label="ChichewaProsodicVerbRoot">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaProsodicVerbRoot-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaProsodicVerbRoot-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaProsodicVerbRoot-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;ChichewaProsodicVerbRoot-Coherence"
+	 rdfs:label="ChichewaProsodicVerbRoot-Coherence">
+	<function:CLASS rdf:resource="&gold;Verbal"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaProsodicVerbRoot-Elasticity"
+	 rdfs:label="ChichewaProsodicVerbRoot-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaProsodicVerbRoot-Filledness"
+	 rdfs:label="ChichewaProsodicVerbRoot-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaProsodicVerbRoot-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;ChichewaProsodicVerbRoot-Stability"
+	 rdfs:label="ChichewaProsodicVerbRoot-Stability"/>
+<general:constructionalConditioning rdf:about="&templates;ChichewaProsodicVerbStem-Conditioning"
+	 rdfs:label="ChichewaProsodicVerbStem-Conditioning">
+	<notes:CONDITIONS>While this is a phonological constituent, its domain seems to be defined in morphological terms.</notes:CONDITIONS>
+</general:constructionalConditioning>
+<template:span rdf:about="&templates;ChichewaProsodicVerbStem-Foundation"
+	 rdfs:label="ChichewaProsodicVerbStem-Foundation">
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChichewaDerivedStemEmbedded"/>
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChichewaFVProsodic"/>
+</template:span>
+<template:order rdf:about="&templates;ChichewaProsodicVerbStem-Stricture"
+	 general:COUNT="2"
+	 rdfs:label="ChichewaProsodicVerbStem-Stricture">
+	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
+	<general:RELATIONS rdf:resource="&general;simple"/>
+</template:order>
+<template:notViolable rdf:about="&templates;ChichewaProsodicVerbStem-Violability"
+	 rdfs:label="ChichewaProsodicVerbStem-Violability"/>
+<general:constructionalConditioning rdf:about="&templates;ChichewaProsodicVerbWord-Conditioning"
+	 rdfs:label="ChichewaProsodicVerbWord-Conditioning">
+	<notes:CONDITIONS>The environment for the prosodic unit associated with the entire verb.</notes:CONDITIONS>
+</general:constructionalConditioning>
+<template:span rdf:about="&templates;ChichewaProsodicVerbWord-Filledness"
+	 rdfs:label="ChichewaProsodicVerbWord-Filledness">
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChichewaMacroStemEmbedded"/>
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChichewaSTAMP"/>
+</template:span>
+<template:order rdf:about="&templates;ChichewaProsodicVerbWord-Stricture"
+	 general:COUNT="2"
+	 rdfs:label="ChichewaProsodicVerbWord-Stricture">
+	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
+	<general:RELATIONS rdf:resource="&general;simple"/>
+</template:order>
+<template:notViolable rdf:about="&templates;ChichewaProsodicVerbWord-Violability"
+	 rdfs:label="ChichewaProsodicVerbWord-Violability"/>
+<general:constructionalConditioning rdf:about="&templates;ChichewaRMC-Conditioning"
+	 rdfs:label="ChichewaRMC-Conditioning">
+	<notes:CONDITIONS xml:space='preserve'><![CDATA[This is the Repeated Morph Constraint template. Activated in presence of multiple extensions (one of which, Intensive, is not really a "valency" encoding device, but I'm not expanding the functions to encompass it at the moment.]]></notes:CONDITIONS>
+</general:constructionalConditioning>
+<template:span rdf:about="&templates;ChichewaRMC-Foundation"
+	 rdfs:label="ChichewaRMC-Foundation">
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChichewaVCExtensionRMCLeftSupport"/>
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChichewaVCExtensionRMCRightSupport"/>
+</template:span>
+<template:desmeme rdf:about="&templates;ChichewaRMC-MOR"
+	 gold:inLanguage="http://lexvo.org/id/iso639-3/nya"
+	 rdfs:label="ChichewaRMC-MOR">
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChichewaRMC-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChichewaRMC-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChichewaRMC-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChichewaRMC-Violability"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;HymanMchombo-2002"/>
+	<function:FUNCTION rdf:resource="&localcategory;valency"/>
+</template:desmeme>
+<template:order rdf:about="&templates;ChichewaRMC-Stricture"
+	 general:COUNT="2"
+	 rdfs:label="ChichewaRMC-Stricture">
+	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
+	<general:RELATIONS rdf:resource="&general;simple"/>
+</template:order>
+<template:notViolable rdf:about="&templates;ChichewaRMC-Violability"
+	 rdfs:label="ChichewaRMC-Violability"/>
+<component:component rdf:about="&templates;ChichewaReciprocal"
+	 rdfs:label="ChichewaReciprocal">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaReciprocal-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaReciprocal-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaReciprocal-Stability"/>
+</component:component>
+<component:elastic rdf:about="&templates;ChichewaReciprocal-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaReciprocal-Elasticity"/>
+<component:filled rdf:about="&templates;ChichewaReciprocal-Filledness"
+	 rdfs:label="ChichewaReciprocal-Filledness">
+	<speccomponent:FORM rdf:resource="&templates;ChichewaReciprocal-Form"/>
+	<function:FILLER_CLASS rdf:resource="&localcategory;valency"/>
+</component:filled>
+<form:canonicalLineate rdf:about="&templates;ChichewaReciprocal-Form"
+	 rdfs:label="ChichewaReciprocal-Form">
+	<specform:TRANSCRIPTION rdf:resource="&templates;ChichewaReciprocal-Transcription"/>
+	<form:LIAISON rdf:resource="&form;sinistrous"/>
+</form:canonicalLineate>
+<component:stable rdf:about="&templates;ChichewaReciprocal-Stability"
+	 rdfs:label="ChichewaReciprocal-Stability"/>
+<template:order rdf:about="&templates;ChichewaReciprocal-Stricture"
+	 general:COUNT="3"
+	 rdfs:label="ChichewaReciprocal-Stricture">
+	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
+	<general:RELATIONS rdf:resource="&general;simple"/>
+</template:order>
+<form:transcription rdf:about="&templates;ChichewaReciprocal-Transcription"
+	 specform:TRANSCRIPTION_STRING="-an-"
+	 rdfs:label="-an-"/>
+<general:right rdf:about="&templates;ChichewaReduplicant-AssociatePosition"
+	 rdfs:label="ChichewaReduplicant-AssociatePosition"/>
+<component:elastic rdf:about="&templates;ChichewaReduplicant-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaReduplicant-Elasticity"/>
+<component:filled rdf:about="&templates;ChichewaReduplicant-Filledness"
+	 rdfs:label="ChichewaReduplicant-Filledness">
+	<speccomponent:FORM rdf:resource="&templates;ChichewaReduplicant-Form"/>
+	<function:FILLER_CLASS rdf:resource="&gold;Verbal"/>
+</component:filled>
+<form:reduplicant rdf:about="&templates;ChichewaReduplicant-Form"
+	 gold:inLanguage="http://www.lexvo.org/id/iso639-3/nya"
+	 rdfs:label="ChichewaReduplicant-Form"/>
+<component:unstable rdf:about="&templates;ChichewaReduplicant-Stability"
+	 rdfs:label="ChichewaReduplicant-Stability">
+	<speccomponent:ASSOCIATE rdf:resource="&templates;ChichewaProsodicDerivationalStemEmbedded"/>
+	<speccomponent:ASSOCIATE_POSITION rdf:resource="&templates;ChichewaReduplicant-AssociatePosition"/>
+</component:unstable>
+<template:span rdf:about="&templates;ChichewaRelativeClause-Foundation"
+	 rdfs:label="ChichewaRelativeClause-Foundation">
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChichewaRelativeClauseRelativizer"/>
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChichewaRelativizedClause"/>
+</template:span>
+<template:desmeme rdf:about="&templates;ChichewaRelativeClause-SYN"
+	 gold:inLanguage="http://www.lexvo.org/id/iso639-3/nya"
+	 rdfs:label="ChichewaRelativeClause-SYN">
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChichewaRelativeClause-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChichewaRelativeClause-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChichewaRelativeClause-Violability"/>
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChichewaRelativeClauseConditioning"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;Mchombo-2004"/>
+	<function:FUNCTION rdf:resource="&localcategory;relativeClause"/>
+</template:desmeme>
+<template:order rdf:about="&templates;ChichewaRelativeClause-Stricture"
+	 general:COUNT="2"
+	 rdfs:label="ChichewaRelativeClause-Stricture">
+	<general:RELATIONS rdf:resource="&general;simple"/>
+	<general:CONSTITUENT rdf:resource="&general;syntacticConstituent"/>
+</template:order>
+<template:notViolable rdf:about="&templates;ChichewaRelativeClause-Violability"
+	 rdfs:label="ChichewaRelativeClause-Violability"/>
+<general:constructionalConditioning rdf:about="&templates;ChichewaRelativeClauseConditioning"
+	 notes:CONDITIONS="A relative clause template with the optional relativizer"
+	 rdfs:label="ChichewaRelativeClauseConditioning"/>
+<component:component rdf:about="&templates;ChichewaRelativeClauseRelativizer"
+	 rdfs:label="ChichewaRelativeClauseRelativizer">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaRelativeClauseRelativizer-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaRelativeClauseRelativizer-Filler"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaRelativeClauseRelativizer-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;ChichewaRelativeClauseRelativizer-Coherence"
+	 rdfs:label="ChichewaRelativeClauseRelativizer-Coherence">
+	<function:CLASS rdf:resource="&gold;Relativizer"/>
+</component:coherent>
+<general:lexicoconstructionalConditioning rdf:about="&templates;ChichewaRelativeClauseRelativizer-Conditioning"
+	 rdfs:label="ChichewaRelativeClauseRelativizer-Conditioning">
+	<notes:CONDITIONS>Treating this as lexicoconstructional since, unlike other strategy, relativizer is required.</notes:CONDITIONS>
+	<spectemplate:FILLED_COMPONENTS rdf:resource="&templates;ChichewaORelativizerFiller"/>
+	<template:FILLER_POSITION rdf:resource="&general;templateFinal"/>
+</general:lexicoconstructionalConditioning>
+<component:elastic rdf:about="&templates;ChichewaRelativeClauseRelativizer-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaRelativeClauseRelativizer-Elasticity"/>
+<component:partiallyFilled rdf:about="&templates;ChichewaRelativeClauseRelativizer-Filler"
+	 rdfs:label="ChichewaRelativeClauseRelativizer-Filler">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaRelativeClauseRelativizer-Coherence"/>
+	<speccomponent:FORM rdf:resource="&templates;ChichewaRelativizer-UnspecifiedDesmeme"/>
+	<component:FILLER_PLACEMENT rdf:resource="&general;componentFinal"/>
+	<function:FILLER_CLASS rdf:resource="&localcategory;relativizerStem"/>
+</component:partiallyFilled>
+<component:stable rdf:about="&templates;ChichewaRelativeClauseRelativizer-Stability"
+	 rdfs:label="ChichewaRelativeClauseRelativizer-Stability"/>
+<component:component rdf:about="&templates;ChichewaRelativizedClause"
+	 rdfs:label="ChichewaRelativizedClause">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaRelativizedClause-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaRelativizedClause-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaRelativizedClause-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;ChichewaRelativizedClause-Coherence"
+	 rdfs:label="ChichewaRelativizedClause-Coherence">
+	<function:CLASS rdf:resource="&localcategory;relativeClause"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaRelativizedClause-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaRelativizedClause-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaRelativizedClause-Filledness"
+	 rdfs:label="ChichewaRelativizedClause-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaRelativizedClause-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;ChichewaRelativizedClause-Stability"
+	 rdfs:label="ChichewaRelativizedClause-Stability"/>
+<template:embeddedDesmeme rdf:about="&templates;ChichewaRelativizer-UnspecifiedDesmeme"
+	 rdfs:label="ChichewaRelativizer-UnspecifiedDesmeme"/>
+<component:component rdf:about="&templates;ChichewaSM"
+	 rdfs:label="ChichewaSM">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaSM-Elasiticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaSM-FIlledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaSM-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;ChichewaSM-Coherence"
+	 rdfs:label="ChichewaSM-Coherence">
+	<function:CLASS rdf:resource="&localcategory;subjectReference"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaSM-Elasiticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaSM-Elasiticity"/>
+<component:open rdf:about="&templates;ChichewaSM-FIlledness"
+	 rdfs:label="ChichewaSM-FIlledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaSM-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;ChichewaSM-Stability"
+	 rdfs:label="ChichewaSM-Stability"/>
+<component:component rdf:about="&templates;ChichewaSMImp"
+	 rdfs:label="ChichewaSMImp">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaSMImp-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaSMImp-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaSMImp-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;ChichewaSMImp-Coherence"
+	 rdfs:label="ChichewaSMImp-Coherence">
+	<function:CLASS rdf:resource="&localcategory;subjectReference"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;ChichewaSMImp-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaSMImp-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaSMImp-Filledness"
+	 rdfs:label="ChichewaSMImp-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaSMImp-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;ChichewaSMImp-Stability"
+	 rdfs:label="ChichewaSMImp-Stability"/>
+<component:component rdf:about="&templates;ChichewaSTAMP"
+	 rdfs:label="ChichewaSTAMP">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaSTAMP-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaSTAMP-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaSTAMP-Stability"/>
+</component:component>
+<general:right rdf:about="&templates;ChichewaSTAMP-AssociatePosition"
+	 rdfs:label="ChichewaSTAMP-AssociatePosition"/>
+<component:incoherent rdf:about="&templates;ChichewaSTAMP-Coherence"
+	 rdfs:label="ChichewaSTAMP-Coherence">
+	<function:CLASSES rdf:resource="&localcategory;TenseMoodAspect"/>
+	<function:CLASSES rdf:resource="&localcategory;negative"/>
+	<function:CLASSES rdf:resource="&localcategory;subjectReference"/>
+</component:incoherent>
+<general:constructionalConditioning rdf:about="&templates;ChichewaSTAMP-Conditoning"
+	 notes:CONDITIONS="Phonological hiatus restriction in the STAMP complex."
+	 rdfs:label="ChichewaSTAMP-Conditoning"/>
+<component:elastic rdf:about="&templates;ChichewaSTAMP-Elasticity"
+	 general:MAXIMUM="100"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaSTAMP-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaSTAMP-Filledness"
+	 rdfs:label="ChichewaSTAMP-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaSTAMP-Coherence"/>
+</component:open>
+<template:desmeme rdf:about="&templates;ChichewaSTAMP-PhMOR"
+	 gold:inLanguage="http://www.lexvo.org/id/iso639-3/nya"
+	 rdfs:label="ChichewaSTAMP-PhMOR">
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChichewaProsodicSTAMP-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChichewaProsodicSTAMP-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChichewaProsodicSTAMP-Violability"/>
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChichewaSTAMP-Conditoning"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;DowningMtenje-2017"/>
+	<function:FUNCTION rdf:resource="&localcategory;STAMP"/>
+</template:desmeme>
+<component:unstable rdf:about="&templates;ChichewaSTAMP-Stability"
+	 rdfs:label="ChichewaSTAMP-Stability">
+	<speccomponent:ASSOCIATE rdf:resource="&templates;ChichewaMacroStemEmbedded"/>
+	<speccomponent:ASSOCIATE_POSITION rdf:resource="&templates;ChichewaSTAMP-AssociatePosition"/>
+</component:unstable>
+<general:prosodicConditioning rdf:about="&templates;ChichewaSyllable-Conditioning"
+	 notes:CONDITIONS="The basic syllable structure of the language"
+	 rdfs:label="ChichewaSyllable-Conditioning"/>
+<template:span rdf:about="&templates;ChichewaSyllable-Foundation"
+	 rdfs:label="ChichewaSyllable-Foundation">
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChichewaC"/>
+	<spectemplate:RESTKOMPONENTEN rdf:resource="&templates;ChichewaSyllableRK"/>
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChichewaV"/>
+</template:span>
+<template:desmeme rdf:about="&templates;ChichewaSyllable-PHON"
+	 gold:inLanguage="http://lexvo.org/id/iso639-3/nya"
+	 rdfs:label="ChichewaSyllable-PHON">
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChichewaSyllable-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChichewaSyllable-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChichewaSyllable-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChichewaSyllable-Violability"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;DowningMtenje-2017"/>
+	<function:FUNCTION rdf:resource="&gold;Syllable"/>
+</template:desmeme>
+<template:order rdf:about="&templates;ChichewaSyllable-Stricture"
+	 general:COUNT="2"
+	 rdfs:label="ChichewaSyllable-Stricture">
+	<general:CONSTITUENT rdf:resource="&general;segment"/>
+	<general:RELATIONS rdf:resource="&general;simple"/>
+</template:order>
+<template:potentiallyViolable rdf:about="&templates;ChichewaSyllable-Violability"
+	 rdfs:label="ChichewaSyllable-Violability">
+	<template:EXCEPTIONALITY rdf:resource="&template;noKnownExceptions"/>
+	<template:REPARABILITY rdf:resource="&template;phonologicalRepair"/>
+</template:potentiallyViolable>
+<component:restkomponentenSet rdf:about="&templates;ChichewaSyllableRK"
+	 rdfs:label="ChichewaSyllableRK">
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChichewaC2"/>
+</component:restkomponentenSet>
+<component:component rdf:about="&templates;ChichewaTM"
+	 rdfs:label="ChichewaTM">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaTM-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaTM-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaTM-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;ChichewaTM-Coherence"
+	 rdfs:label="ChichewaTM-Coherence">
+	<function:CLASS rdf:resource="&localcategory;TenseMoodAspect"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;ChichewaTM-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaTM-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaTM-Filledness"
+	 rdfs:label="ChichewaTM-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaTM-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;ChichewaTM-Stability"
+	 rdfs:label="ChichewaTM-Stability"/>
+<component:component rdf:about="&templates;ChichewaV"
+	 rdfs:label="ChichewaV">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaV-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaV-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaV-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;ChichewaV-Coherence"
+	 rdfs:label="ChichewaV-Coherence">
+	<function:CLASS rdf:resource="&localcategory;vowel"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaV-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaV-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaV-Filledness"
+	 rdfs:label="ChichewaV-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaV-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;ChichewaV-Stability"
+	 rdfs:label="ChichewaV-Stability"/>
+<component:component rdf:about="&templates;ChichewaVCExtensionRMCLeftSupport"
+	 rdfs:label="ChichewaVCExtensionRMCLeftSupport">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaVCExtensionRMCLeftSupport-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaVCExtensionRMCLeftSupport-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaVCExtensionRMCLeftSupport-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;ChichewaVCExtensionRMCLeftSupport-Coherence"
+	 rdfs:label="ChichewaVCExtensionRMCLeftSupport-Coherence">
+	<function:CLASS rdf:resource="&localcategory;valency"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaVCExtensionRMCLeftSupport-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaVCExtensionRMCLeftSupport-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaVCExtensionRMCLeftSupport-Filledness"
+	 rdfs:label="ChichewaVCExtensionRMCLeftSupport-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaVCExtensionRMCLeftSupport-Coherence"/>
+</component:open>
+<component:unstable rdf:about="&templates;ChichewaVCExtensionRMCLeftSupport-Stability"
+	 rdfs:label="ChichewaVCExtensionRMCLeftSupport-Stability">
+	<speccomponent:ASSOCIATE rdf:resource="&templates;ChichewaVCExtensionRMCRightSupport"/>
+	<speccomponent:ASSOCIATE_POSITION rdf:resource="&templates;tChichewaVCExtensionRMLeftSupport-AssociatePosition"/>
+</component:unstable>
+<component:component rdf:about="&templates;ChichewaVCExtensionRMCRightSupport"
+	 rdfs:label="ChichewaVCExtensionRMCRightSupport">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaVCExtensionRMCRightSupport-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaVCExtensionRMCRightSupport-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaVCExtensionRMCRightSupport-Stability"/>
+</component:component>
+<general:left rdf:about="&templates;ChichewaVCExtensionRMCRightSupport-AssociatePosition"
+	 rdfs:label="ChichewaVCExtensionRMCRightSupport-AssociatePosition"/>
+<component:coherent rdf:about="&templates;ChichewaVCExtensionRMCRightSupport-Coherence"
+	 rdfs:label="ChichewaVCExtensionRMCRightSupport-Coherence">
+	<function:CLASS rdf:resource="&localcategory;valency"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaVCExtensionRMCRightSupport-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaVCExtensionRMCRightSupport-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaVCExtensionRMCRightSupport-Filledness"
+	 rdfs:label="ChichewaVCExtensionRMCRightSupport-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaVCExtensionRMCRightSupport-Coherence"/>
+</component:open>
+<component:unstable rdf:about="&templates;ChichewaVCExtensionRMCRightSupport-Stability"
+	 rdfs:label="ChichewaVCExtensionRMCRightSupport-Stability">
+	<speccomponent:ASSOCIATE rdf:resource="&templates;ChichewaVCExtensionRMCLeftSupport"/>
+	<speccomponent:ASSOCIATE_POSITION rdf:resource="&templates;ChichewaVCExtensionRMCRightSupport-AssociatePosition"/>
+</component:unstable>
+<template:desmeme rdf:about="&templates;ChichewaVOX-SYN"
+	 gold:inLanguage="http://lexvo.org/id/iso639-3/nya"
+	 rdfs:label="ChichewaVOX-SYN">
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChichewaClause-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChichewaVOX-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChichewaVOX-Violability"/>
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChichewaVOXConditioning"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;Mchombo-2004"/>
+	<function:FUNCTION rdf:resource="&gold;MainClause"/>
+</template:desmeme>
+<template:order rdf:about="&templates;ChichewaVOX-Stricture"
+	 general:COUNT="3"
+	 rdfs:label="ChichewaVOX-Stricture">
+	<general:RELATIONS rdf:resource="&general;simple"/>
+	<general:CONSTITUENT rdf:resource="&general;syntacticConstituent"/>
+</template:order>
+<template:potentiallyViolable rdf:about="&templates;ChichewaVOX-Violability"
+	 rdfs:label="ChichewaVOX-Violability">
+	<template:EXCEPTIONALITY rdf:resource="&template;morphosyntactic"/>
+	<template:REPARABILITY rdf:resource="&template;surfaceViolable"/>
+</template:potentiallyViolable>
+<general:constructionalConditioning rdf:about="&templates;ChichewaVOXConditioning"
+	 notes:CONDITIONS="Word order for the VOX structure"
+	 rdfs:label="ChichewaVOXConditioning"/>
+<component:coherent rdf:about="&templates;ChichewaVerb-Coherence"
+	 rdfs:label="ChichewaVerb-Coherence">
+	<function:CLASS rdf:resource="&localcategory;objectReference"/>
+</component:coherent>
+<general:constructionalConditioning rdf:about="&templates;ChichewaVerb-Conditioning"
+	 notes:CONDITIONS="all verbs"
+	 rdfs:label="ChichewaVerb-Conditioning"/>
+<component:open rdf:about="&templates;ChichewaVerb-Filledness"
+	 rdfs:label="ChichewaVerb-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaVerb-Coherence"/>
+</component:open>
+<template:arch rdf:about="&templates;ChichewaVerb-Foundation"
+	 rdfs:label="ChichewaVerb-Foundation">
+	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;ChichewaOM"/>
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChichewaVerb-Neg1"/>
+	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;ChichewaVerbNullComponent"/>
+	<spectemplate:RESTKOMPONENTEN rdf:resource="&templates;ChichewaVerbRK"/>
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChichewaVerbStem"/>
+	<spectemplate:KEYSTONE rdf:resource="&templates;ChichewaVerbStem"/>
+</template:arch>
+<template:desmeme rdf:about="&templates;ChichewaVerb-MOR"
+	 gold:inLanguage="http://lexvo.org/id/iso639-3/nya"
+	 rdfs:label="ChichewaVerb-MOR">
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChichewaVerb-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChichewaVerb-Foundation"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;ChichewaVerb-Source"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChichewaVerb-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChichewaVerb-Violability"/>
+	<function:FUNCTION rdf:resource="&localcategory;finite"/>
+</template:desmeme>
+<component:component rdf:about="&templates;ChichewaVerb-Neg1"
+	 rdfs:label="ChichewaVerb-Neg1">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaVerbNeg1-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaVerbNeg1-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaVerbNeg1-Stability"/>
+</component:component>
+<component:component rdf:about="&templates;ChichewaVerb-Neg2"
+	 rdfs:label="ChichewaVerb-Neg2">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaVerb-Neg2-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaVerb-Neg2-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaVerbStem-Neg2-Stability"/>
+</component:component>
+<component:elastic rdf:about="&templates;ChichewaVerb-Neg2-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaVerb-Neg2-Elasticity"/>
+<component:filled rdf:about="&templates;ChichewaVerb-Neg2-Filledness"
+	 rdfs:label="ChichewaVerb-Neg2-Filledness">
+	<speccomponent:FORM rdf:resource="&templates;ChichewaVerb-Neg2-Form"/>
+	<function:FILLER_CLASS rdf:resource="&localcategory;negative"/>
+</component:filled>
+<form:canonicalLineate rdf:about="&templates;ChichewaVerb-Neg2-Form"
+	 gold:inLanguage="nya"
+	 rdfs:label="ChichewaVerb-Neg2-Form">
+	<specform:TRANSCRIPTION rdf:resource="&templates;Chichewa-Neg2-Transcription"/>
+	<form:LIAISON rdf:resource="&form;dextrous"/>
+</form:canonicalLineate>
+<notes:source rdf:about="&templates;ChichewaVerb-Source"
+	 rdfs:label="ChichewaVerb-Source">
+	<terms:bibliographicCitation xml:space='preserve'><![CDATA[Downing & Mtenje 2017:135]]></terms:bibliographicCitation>
+</notes:source>
+<component:stable rdf:about="&templates;ChichewaVerb-Stability"
+	 rdfs:label="ChichewaVerb-Stability"/>
+<template:order rdf:about="&templates;ChichewaVerb-Stricture"
+	 general:COUNT="7"
+	 rdfs:label="ChichewaVerb-Stricture">
+	<general:CONSTITUENT rdf:resource="&general;morphosyntacticConstituent"/>
+	<general:RELATIONS rdf:resource="&general;simple"/>
+</template:order>
+<template:notViolable rdf:about="&templates;ChichewaVerb-Violability"
+	 rdfs:label="ChichewaVerb-Violability"/>
+<component:component rdf:about="&templates;ChichewaVerbClausal"
+	 rdfs:label="ChichewaVerbClausal">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaVerbClausal-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaVerbClausal-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaVerbClausal-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;ChichewaVerbClausal-Coherence"
+	 rdfs:label="ChichewaVerbClausal-Coherence">
+	<function:CLASS rdf:resource="&localcategory;finite"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaVerbClausal-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaVerbClausal-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaVerbClausal-Filledness"
+	 rdfs:label="ChichewaVerbClausal-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaVerbClausal-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;ChichewaVerbClausal-Stability"
+	 rdfs:label="ChichewaVerbClausal-Stability"/>
+<component:elastic rdf:about="&templates;ChichewaVerbNeg1-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaVerbNeg1-Elasticity"/>
+<component:filled rdf:about="&templates;ChichewaVerbNeg1-Filledness"
+	 rdfs:label="ChichewaVerbNeg1-Filledness">
+	<speccomponent:FORM rdf:resource="&templates;ChichewaVerbNeg1-Form"/>
+	<function:FILLER_CLASS rdf:resource="&localcategory;negative"/>
+</component:filled>
+<form:canonicalLineate rdf:about="&templates;ChichewaVerbNeg1-Form"
+	 gold:inLanguage="nya"
+	 rdfs:label="ChichewaVerbNeg1-Form">
+	<specform:TRANSCRIPTION rdf:resource="&templates;ChichewaVerbStem-Neg1-Transcription"/>
+	<form:LIAISON rdf:resource="&form;dextrous"/>
+</form:canonicalLineate>
+<component:stable rdf:about="&templates;ChichewaVerbNeg1-Stability"
+	 rdfs:label="ChichewaVerbNeg1-Stability"/>
+<component:component rdf:about="&templates;ChichewaVerbNullComponent"
+	 rdfs:label="ChichewaVerbNullComponent">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaVerbNullComponent-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaVerbNullComponent-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaVerbNullComponent-Stability"/>
+</component:component>
+<component:inelastic rdf:about="&templates;ChichewaVerbNullComponent-Elasticity"
+	 general:COUNT="0"
+	 rdfs:label="ChichewaVerbNullComponent-Elasticity"/>
+<component:null rdf:about="&templates;ChichewaVerbNullComponent-Filledness"
+	 rdfs:label="ChichewaVerbNullComponent-Filledness"/>
+<component:stable rdf:about="&templates;ChichewaVerbNullComponent-Stability"
+	 rdfs:label="ChichewaVerbNullComponent-Stability"/>
+<component:restkomponentenSet rdf:about="&templates;ChichewaVerbRK"
+	 rdfs:label="ChichewaVerbRK">
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChichewaModal"/>
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChichewaSM"/>
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChichewaTM"/>
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChichewaVerb-Neg2"/>
+</component:restkomponentenSet>
+<component:component rdf:about="&templates;ChichewaVerbStem"
+	 rdfs:label="ChichewaVerbStem">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaVerbStem-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaVerbStem-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaVerbStem-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;ChichewaVerbStem-Coherence"
+	 rdfs:label="ChichewaVerbStem-Coherence">
+	<function:CLASS rdf:resource="&gold;Verbal"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaVerbStem-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaVerbStem-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaVerbStem-Filledness"
+	 rdfs:label="ChichewaVerbStem-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaVerbStem-Coherence"/>
+</component:open>
+<form:transcription rdf:about="&templates;ChichewaVerbStem-Neg1-Transcription"
+	 specform:TRANSCRIPTION_STRING="si"
+	 rdfs:label="si"/>
+<component:stable rdf:about="&templates;ChichewaVerbStem-Neg2-Stability"
+	 rdfs:label="ChichewaVerbStem-Neg2-Stability"/>
+<template:desmeme rdf:about="&templates;ChichewaVerbStem-PhMOR"
+	 gold:inLanguage="http://www.lexvo.org/id/iso639-3/nya"
+	 rdfs:label="ChichewaVerbStem-PhMOR">
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChichewaProsodicVerbStem-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChichewaProsodicVerbStem-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChichewaProsodicVerbStem-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChichewaProsodicVerbStem-Violability"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;DowningMtenje-2017"/>
+	<function:FUNCTION rdf:resource="&general;prosodicPhrase"/>
+</template:desmeme>
+<component:stable rdf:about="&templates;ChichewaVerbStem-Stability"
+	 rdfs:label="ChichewaVerbStem-Stability"/>
+<general:constructionalConditioning rdf:about="&templates;ChichewaVerbWithImperatives-Conditoning"
+	 rdfs:label="ChichewaVerbWithImperatives-Conditoning">
+	<notes:CONDITIONS>Encompassses imperatives and regular verb forms, including -ni and osa-forms</notes:CONDITIONS>
+</general:constructionalConditioning>
+<template:arch rdf:about="&templates;ChichewaVerbWithImperatives-Foundation"
+	 rdfs:label="ChichewaVerbWithImperatives-Foundation">
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChichewaNegForImp"/>
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChichewaNiWholeVerb"/>
+	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;ChichewaOM"/>
+	<spectemplate:KEYSTONE rdf:resource="&templates;ChichewaVerbStem"/>
+	<spectemplate:RESTKOMPONENTEN rdf:resource="&templates;ChichewaVerbWithImperativesRK"/>
+</template:arch>
+<template:desmeme rdf:about="&templates;ChichewaVerbWithImperatives-MOR"
+	 gold:inLanguage="http://lexvo.org/id/iso639-3/nya"
+	 rdfs:label="ChichewaVerbWithImperatives-MOR">
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChichewaVerbWithImperatives-Conditoning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChichewaVerbWithImperatives-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChichewaVerbWithImperatives-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChichewaVerbWithImperatives-Violability"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;Mchombo-2004"/>
+	<function:FUNCTION rdf:resource="&gold;Verbal"/>
+</template:desmeme>
+<template:order rdf:about="&templates;ChichewaVerbWithImperatives-Stricture"
+	 general:COUNT="8"
+	 rdfs:label="ChichewaVerbWithImperatives-Stricture">
+	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
+	<general:RELATIONS rdf:resource="&general;taxonomic"/>
+</template:order>
+<template:notViolable rdf:about="&templates;ChichewaVerbWithImperatives-Violability"
+	 rdfs:label="ChichewaVerbWithImperatives-Violability"/>
+<component:restkomponentenSet rdf:about="&templates;ChichewaVerbWithImperativesRK"
+	 rdfs:label="ChichewaVerbWithImperativesRK">
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChichewaModal"/>
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChichewaSMImp"/>
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChichewaTM"/>
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChichewaVerb-Neg2"/>
+</component:restkomponentenSet>
+<template:desmeme rdf:about="&templates;ChichewaVerbWord-PhMOR"
+	 gold:inLanguage="http://lexvo.org/id/iso639-3/nya"
+	 rdfs:label="ChichewaVerbWord-PhMOR">
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChichewaProsodicVerbWord-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChichewaProsodicVerbWord-Filledness"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChichewaProsodicVerbWord-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChichewaProsodicVerbWord-Violability"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;DowningMtenje-2017"/>
+	<function:FUNCTION rdf:resource="&gold;Verbal"/>
+</template:desmeme>
+<component:component rdf:about="&templates;ChichewaVerbalReduplicant"
+	 rdfs:label="ChichewaVerbalReduplicant">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaReduplicant-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaReduplicant-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaReduplicant-Stability"/>
+</component:component>
+<template:desmeme rdf:about="&templates;ChichewaVowelHarmony-PhMOR"
+	 gold:inLanguage="http://www.lexvo.org/id/iso639-3/nya"
+	 rdfs:label="ChichewaVowelHarmony-PhMOR">
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChichewaVowelHarmonyDomain-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChichewaVowelHarmonyDomain-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChichewaVowelHarmonyDomain-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChichewaVowelHarmonyDomain-Violability"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;DowningMtenje-2017"/>
+	<function:FUNCTION rdf:resource="&gold;Stem"/>
+</template:desmeme>
+<general:constructionalConditioning rdf:about="&templates;ChichewaVowelHarmonyDomain-Conditioning"
+	 rdfs:label="ChichewaVowelHarmonyDomain-Conditioning">
+	<notes:CONDITIONS>Noun and verb stems (minus last vowel) show this harmony pattern.</notes:CONDITIONS>
+</general:constructionalConditioning>
+<template:span rdf:about="&templates;ChichewaVowelHarmonyDomain-Foundation"
+	 rdfs:label="ChichewaVowelHarmonyDomain-Foundation">
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChichewaFirstSyllable"/>
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChichewaNonInitialSyllables"/>
+</template:span>
+<template:order rdf:about="&templates;ChichewaVowelHarmonyDomain-Stricture"
+	 general:COUNT="2"
+	 rdfs:label="ChichewaVowelHarmonyDomain-Stricture">
+	<general:CONSTITUENT rdf:resource="&gold;Syllable"/>
+	<general:RELATIONS rdf:resource="&general;simple"/>
+</template:order>
+<template:potentiallyViolable rdf:about="&templates;ChichewaVowelHarmonyDomain-Violability"
+	 rdfs:label="ChichewaVowelHarmonyDomain-Violability">
+	<template:EXCEPTIONALITY rdf:resource="&template;lexical"/>
+	<template:REPARABILITY rdf:resource="&template;surfaceViolable"/>
+</template:potentiallyViolable>
+<general:prosodicConditioning rdf:about="&templates;ChichewaWordMinimality-Conditioning"
+	 notes:CONDITIONS="Applies to surfacing words"
+	 rdfs:label="ChichewaWordMinimality-Conditioning"/>
+<template:span rdf:about="&templates;ChichewaWordMinimality-Foundation"
+	 rdfs:label="ChichewaWordMinimality-Foundation">
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChichewaWordMinimalityLeftSupport"/>
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChichewaWordMinimalityRightSupport"/>
+</template:span>
+<template:desmeme rdf:about="&templates;ChichewaWordMinimality-PhMOR"
+	 gold:inLanguage="http://lexvo.org/id/iso639-3/nya"
+	 rdfs:label="ChichewaWordMinimality-PhMOR">
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChichewaWordMinimality-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChichewaWordMinimality-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChichewaWordMinimality-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChichewaWordMinimality-Violability"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;DowningMtenje-2017"/>
+	<function:FUNCTION rdf:resource="&general;prosodicWord"/>
+</template:desmeme>
+<template:length rdf:about="&templates;ChichewaWordMinimality-Stricture"
+	 general:COUNT="2"
+	 rdfs:label="ChichewaWordMinimality-Stricture">
+	<general:CONSTITUENT rdf:resource="&gold;Syllable"/>
+</template:length>
+<template:potentiallyViolable rdf:about="&templates;ChichewaWordMinimality-Violability"
+	 rdfs:label="ChichewaWordMinimality-Violability">
+	<template:EXCEPTIONALITY rdf:resource="&template;noKnownExceptions"/>
+	<template:REPARABILITY rdf:resource="&template;phonologicalInsertion"/>
+</template:potentiallyViolable>
+<component:component rdf:about="&templates;ChichewaWordMinimalityLeftSupport"
+	 rdfs:label="ChichewaWordMinimalityLeftSupport">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaWordMinimalityLeftSupport-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaWordMinimalityLeftSupport-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaWordMinimalityLeftSupport-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;ChichewaWordMinimalityLeftSupport-Coherence"
+	 rdfs:label="ChichewaWordMinimalityLeftSupport-Coherence">
+	<function:CLASS rdf:resource="&gold;Syllable"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;ChichewaWordMinimalityLeftSupport-Elasticity"
+	 general:MAXIMUM="100"
+	 general:MINIMUM="1"
+	 rdfs:label="ChichewaWordMinimalityLeftSupport-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaWordMinimalityLeftSupport-Filledness"
+	 rdfs:label="ChichewaWordMinimalityLeftSupport-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaWordMinimalityLeftSupport-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;ChichewaWordMinimalityLeftSupport-Stability"
+	 rdfs:label="ChichewaWordMinimalityLeftSupport-Stability"/>
+<component:component rdf:about="&templates;ChichewaWordMinimalityRightSupport"
+	 rdfs:label="ChichewaWordMinimalityRightSupport">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChichewaWordMinimalityRightSupport-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChichewaWordMinimalityRightSupport-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChichewaWordMinimalityRightSupport-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;ChichewaWordMinimalityRightSupport-Coherence"
+	 rdfs:label="ChichewaWordMinimalityRightSupport-Coherence">
+	<function:CLASS rdf:resource="&gold;Syllable"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;ChichewaWordMinimalityRightSupport-Elasticity"
+	 general:MAXIMUM="100"
+	 general:MINIMUM="1"
+	 rdfs:label="ChichewaWordMinimalityRightSupport-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaWordMinimalityRightSupport-Filledness"
+	 rdfs:label="ChichewaWordMinimalityRightSupport-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaWordMinimalityRightSupport-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;ChichewaWordMinimalityRightSupport-Stability"
+	 rdfs:label="ChichewaWordMinimalityRightSupport-Stability"/>
+<component:elastic rdf:about="&templates;ChichwaClause-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichwaClause-Elasticity"/>
+<component:inelastic rdf:about="&templates;ChichwaClauseNullComponent-Elasticity"
+	 general:COUNT="0"
+	 rdfs:label="ChichwaClauseNullComponent-Elasticity"/>
+<notes:source rdf:about="&templates;DowningMtenje-2017"
+	 rdfs:label="DowningMtenje-2017"/>
+<notes:source rdf:about="&templates;HymanMchombo-2002"
+	 notes:EXTERNALREFERENCE="http://elanguage.net/journals/bls/article/view/2757"
+	 rdfs:label="HymanMchombo-2002">
+	<terms:bibliographicCitation xml:space='preserve'><![CDATA[Hyman, Larry M. & Sam A. Mchombo. 1992. Morphotactic constraints in the Chichewa verb stem. In Laura Buszard-Welcher, Lionel Wee & William Weigel (eds.), Proceedings of the eighteenth meeting of the Berkeley Linguistics Society, general session and parassession, 350–363. Berkeley: Berkeley Linguistics Society.]]></terms:bibliographicCitation>
+</notes:source>
+<notes:source rdf:about="&templates;Mchombo-2004"
+	 rdfs:label="Mchombo-2004"/>
+<form:transcription rdf:about="&templates;NdebeleCaustive-Transcription"
+	 specform:TRANSCRIPTION_STRING="-is-"
+	 rdfs:label="-is-"/>
+<general:right rdf:about="&templates;tChichewaVCExtensionRMLeftSupport-AssociatePosition"
+	 rdfs:label="tChichewaVCExtensionRMLeftSupport-AssociatePosition"/>
+<component:inelastic rdf:about="&templates;templateCHx_Class10035"
+	 general:COUNT="1"
+	 rdfs:label="templateCHx_Class10035"/>
+</rdf:RDF>

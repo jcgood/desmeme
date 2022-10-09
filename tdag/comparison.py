@@ -203,7 +203,8 @@ def draw_graphs(graphs, outpath, format="png"):
 		os.system(rmdot)
 		rmps = "rm " + outpath + str(name) + '.ps'
 		os.system(rmps)
-
+		rmeps = "rm " + outpath + str(name) + '.eps'
+		os.system(rmeps)
 
 # 		pdfcmd = "/Applications/Inkscape.app/Contents/Resources/bin/inkscape " + outpath + str(name) + '.svg' + " --export-pdf " + outpath + str(name) + '.pdf'
 # 		os.system(pdfcmd)

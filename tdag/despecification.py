@@ -15,6 +15,11 @@ def process_template(mother,genericMother,rdfGraph,tdag):
 		prettyDName = prettyName(despecifiedD)
 		prettyPredName = prettyName(predicate)
 
+		if prettyPredName == "CONSTITUENT":
+			#print "Skipping CONSTITUENT node to avoid circularity!"
+			#continue
+			pass
+
 		# Here is a hack to deal with the fact that, at least for Tiene, associates can criss-cross
 		# This results in infinite recursion. So, we need special treatment
 		if is_associate(predicate):
@@ -84,6 +89,8 @@ def process_template_noComp(mother,genericMother,rdfGraph,tdag):
 		despecifiedD = conflate(daughter,rdfGraph)
 		prettyDName = prettyName(despecifiedD)
 		prettyPredName = prettyName(predicate)
+
+		print prettyPredName
 
 		if despecifiedD.encode('utf-8') == "http://purl.org/linguistics/jcgood/component#component":
 			pass

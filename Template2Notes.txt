@@ -1,0 +1,107 @@
+-Replace with full ordering, remove some redundancy in coding (e.g., Associate Position)
+Is keystone really properly operationalized?
+Rethink violability
+	Seems to be hiding "true" inviolable and "vacuous" inviolable
+Chichewa minimality: repaired via epenthesis and blocking reduction, but can only code one. Make a list?
+Do I like the way I code disyllabic minimal size components?
+Not a good system for constitutent re-use now
+	Can't recycle desmeme as a component easily
+	Need to recode comparison algorithms to not traverse implicit embedded desmemes
+ChichewaNi (not sure what this note means anymore)
+Could I ever have a two-component keystone?
+	What would it look like?
+When to use localcategory:verbalParticle?
+
+
+Two approaches to Chich verb
+	Subconstructions
+	Big merged one; I'll code both
+	Hard to get imperative facts to work
+		Affirmative imperative blocks OM entirely
+			Cannot easily treat as template since a morpheme is lack
+				Need to introduce another kind of component dependence
+		Negative imperative allows it but blocks -ni
+			Treating this as templatic since it looks like blocking on right support
+	Chichewa verb with IMP requires an "open" slot for just two elements, (two negs), doesn't feel right, need a way to "quantify" openness
+	I'd like to do blocking better than simply taxonomic
+	
+Elasticity seems to be too unspecified. One needs, maybe
+Slot (1)
+Optional slot (0-1)
+Field (0/1-100)
+
+Can I rigorously define embedded desmeme and canonical lineate? I think the latter is basically "lexical lineate bundle", but I haven't specified that yet, have I? What is a simple affix-stem combination?
+
+I don't feel great about treating the regular relativizer and the -o relativizer differenlty for conditioning simply on the basis of the lack obligatoriness of the relativizer in the first case.
+	
+Count should be worked out automatically and/or verified?
+
+Have I really thought through stability?
+
+Coherence is tricky, too: I use "constituent" for the Chichewa cleft. Is that really coherent?
+
+Build out taxonomic!
+
+Start with genitive (59)...then maybe shift to phonological? Need balance.
+
+**Fixe initial/final/etc. in original file to match separation of categories in new ontology. Important for ChxX.
+
+For ANALYSIS removed the STRICTURE CONSTITUENT FEATURE since it's circular!!! This is done with some extra code in despecification.py
+	What's a long term solution to this?
+
+Need a way to include "comparison" constructions for coding checks--i.e., which did I "copy" to make a new one
+
+The associative marker component is an unspecified desmeme filled finally, but I don't ask for a transcription of the filler unlike a regular filled component. Is that intended? (I don't use the transcription, but this seems like an unintended coding choice.)
+
+Am I currently comparing the "restKomponentSet" nodes? If so, should I be?
+
+Treating conditioning of Prosodic verb stem as "constructional", not phonological. Is that a good idea?
+
+I need two Chichewa FVs, one prosodically unstable and one morphologically stable. Is this a good idea?
+
+Using gold:verbal as a wastebasket; clean up later?
+
+Border between "open" and "lexical" filledness doens't seem good. Is two fillers the same as 100? Not really. Can't code that now.
+	Similar issue when there's a filled component and it gets dextrous/sinistrous
+	Why don't we do this for similar open components (.e.g, OMs in Bantu prosodic). I coded these as "unstable", but that seems to code two things somewhat differently.
+
+System for references needs to separate page numbers as a field for multiple desmemes from a single source. Was not handled in original study.
+
+Added filler form "RED". Is that reasonable? I'm also making a reduplicant unstable and based on the thing it copies, but am I now conflating "stability" with another notion?
+
+Why is AssociatePosition an instance and not an abstract type?
+
+How do we reconcile that some analysts simply favor binary branching?
+
+What does it mean to have a "morphological" OM and a "prosodic" OM? (for example)
+
+Should Chichewa STAMP elasticity be 0-100 or something like 0-4?
+
+Stopped at Genitive constructions for Mchombo (but did extensions earlier)
+
+p.26 of Downing and Mtenje: double adjective prefixes (need to code someday)
+
+p.41 D&M: Headless relative. Did I code for the elasticity of the N in relatives?
+
+p.--50++, --69++ D&M: Positional restrictions on segments in lexemes. Code this how? Skipping for now, but is an interesting problem. Tiene-like but less categorical.
+
+p.61, (25): Should I be coding alternations like this? Can this be treated position-class style?
+
+Need to clean up/systematize "general:general" and "localcategory" for functional categories.
+
+For phonological patterns (e.g., vowel hiatus in Chichewa STAMP), probably need to build out the descriptive categories for the typology
+
+If a rule is "optional" like D&M 106 hiatus, what does that mean for violability and the template?
+
+Am I consistent about "violable" and "noKnownExceptions" in the Chichewa coding?
+
+How does elasticity work with a phonological domain? Do we treat both as obligatory or optional? I'm thinking of the ChichewaProsodicNDem desmeme now.
+	Ultimately this problems means I need to refine the coding so that I don't have to decide. (Code first, analyze later.)
+	
+Really need to handle taxonomic specificity better
+
+I changed my mind and coded the Chich Syllables as C1C2V instead of CV. Then, that resulted in changing C1's associate to C2 when I had previously decided it was V. That's clearly a problem from coding consistency.
+
+SKIPPING SOME CHAPTER 6 TONE RULES FOR NOW AND CHAPTER 7: Need to think hard about modeling this
+
+SKIPPING INTONATION SINCE DON'T KNOW HOW TO MODEL IT AT THE MOMENT.

@@ -109,7 +109,6 @@ class tdag ( ):
 		# Some namespaces are for properties that can be typologically compared and some are not.
 		# These are the ones that are good for comparison.
 		# This "hardcoding" of the generic prefixes in the template class may not be ideal in the long run.
-		# BUG: I DON'T SEEM TO USE THIS!
 		self.genericPredPfxs = ["http://purl.org/linguistics/jcgood/general#",
 				   "http://purl.org/linguistics/jcgood/template#",
 				   "http://purl.org/linguistics/jcgood/templates#",
@@ -117,7 +116,7 @@ class tdag ( ):
 	
 	
 	# Adds desired RDF node to internal graph and does some processing for readability.
-	# Includes special logic for dealing with "repeatable" nodes (in components).
+	# Includes special logic for dealing with "repeatable" nodes (in components and fillers).
 	# This function returns a nodeName with an integer for disambiguation purposes, if needed.
 	# If the same node is attempted to be added twice, just returns graph nodename as side effect
 	def add_node(self, node, URI, mother="", predicate=""):
@@ -330,6 +329,8 @@ class tdag ( ):
  					if label == storedLabel:
  						# This shouldn't happen. So, if it does, we raise an error.
  						raise AdditionError("Edge (%s, %s, %s) already in digraph" % (u, v, label))
+						print("Edge (%s, %s, %s, %s) already in digraph" % (u, v, label, self.name))
+						pass
  					else:
  						# Looks good, add the edge with the new label.
  						self.add_labeled_edge(edge, label, wt=1, attrs=[])
