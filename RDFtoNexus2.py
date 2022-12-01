@@ -8,7 +8,7 @@ from tdag import simUI_d, get_distances, to_nex, draw_graphs, full_grid, process
 rdfTemplates = rdfGraph()
 
 instanceNS = Namespace("http://purl.org/linguistics/jcgood/template#")
-rdfTemplates.load("./template-CHx.rdf")
+rdfTemplates.load("./template-cao.rdf")
 #rdfTemplates.load("./merged.rdf")
 
 # Get template IDs from RDF

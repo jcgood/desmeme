@@ -10,8 +10,8 @@
 	 <!ENTITY templates 'http://linguistics-ontology.org/jcgood/templates#'>
 	 <!ENTITY function 'http://purl.org/linguistics/jcgood/function#'>
 	 <!ENTITY spectemplate 'http://purl.org/linguistics/jcgood/spectemplate#'>
-	 <!ENTITY notes 'http://purl.org/linguistics/jcgood/notes#'>
 	 <!ENTITY speccomponent 'http://purl.org/linguistics/jcgood/speccomponent#'>
+	 <!ENTITY notes 'http://purl.org/linguistics/jcgood/notes#'>
 	 <!ENTITY terms 'http://purl.org/dc/terms#'>
 	 <!ENTITY localcategory 'http://purl.org/linguistics/jcgood/localcategory#'>
 	 <!ENTITY rdf 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
@@ -27,8 +27,8 @@
 	 xmlns:gold="&gold;"
 	 xmlns:function="&function;"
 	 xmlns:spectemplate="&spectemplate;"
-	 xmlns:speccomponent="&speccomponent;"
 	 xmlns:notes="&notes;"
+	 xmlns:speccomponent="&speccomponent;"
 	 xmlns:localcategory="&localcategory;"
 	 xmlns:terms="&terms;"
 	 xmlns:rdf="&rdf;"
@@ -39,6 +39,36 @@
 <component:inelastic rdf:about="&templates;BantuVerbStem-Elasticity"
 	 general:COUNT="1"
 	 rdfs:label="BantuVerbStem-Elasticity"/>
+<general:constructionalConditioning rdf:about="&templates;ChacoboBPVerbTrans:7-9-Conditioning"
+	 rdfs:label="ChacoboBPVerbTrans:7-9-Conditioning">
+	<notes:CONDITIONS>This is a desmeme for the "verbal core" (my term) in the language.</notes:CONDITIONS>
+</general:constructionalConditioning>
+<template:arch rdf:about="&templates;ChacoboBPVerbTrans:7-9-Foundation"
+	 rdfs:label="ChacoboBPVerbTrans:7-9-Foundation">
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChacoboBodyPartPrefix"/>
+	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;ChacoboBodyPartPrefix"/>
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChacoboTrans"/>
+	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;ChacoboTrans"/>
+	<spectemplate:KEYSTONE rdf:resource="&templates;ChacoboVerbRoot"/>
+</template:arch>
+<template:order rdf:about="&templates;ChacoboBPVerbTrans:7-9-Stricture"
+	 general:COUNT="3"
+	 rdfs:label="ChacoboBPVerbTrans:7-9-Stricture">
+	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
+	<general:RELATIONS rdf:resource="&general;simple"/>
+</template:order>
+<template:notViolable rdf:about="&templates;ChacoboBPVerbTrans:7-9-Violability"
+	 rdfs:label="ChacoboBPVerbTrans:7-9-Violability"/>
+<template:desmeme rdf:about="&templates;ChacoboBPVerbTrans_7-9"
+	 gold:inLanguage="cao"
+	 rdfs:label="ChacoboBPVerbTrans_7-9">
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChacoboBPVerbTrans:7-9-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChacoboBPVerbTrans:7-9-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChacoboBPVerbTrans:7-9-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChacoboBPVerbTrans:7-9-Violability"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;ChacoboDesmemeSource"/>
+	<function:FUNCTION rdf:resource="&gold;Verbal"/>
+</template:desmeme>
 <component:component rdf:about="&templates;ChacoboBodyPartPrefix"
 	 rdfs:label="ChacoboBodyPartPrefix">
 	<speccomponent:ELASTICITY rdf:resource="&templates;ChacoboBodyPartPrefix-Elasticity"/>
@@ -59,6 +89,30 @@
 </component:open>
 <component:stable rdf:about="&templates;ChacoboBodyPartPrefix-Stability"
 	 rdfs:label="ChacoboBodyPartPrefix-Stability"/>
+<notes:source rdf:about="&templates;ChacoboDesmemeSource"
+	 terms:bibliographicCitation="Tallman (personal communication)"
+	 rdfs:label="ChacoboDesmemeSource"/>
+<general:segmental rdf:about="&templates;ChacoboGlottalStop:7-8-Conditioning"
+	 notes:CONDITIONS="Body part prefix preceding a vowel"
+	 rdfs:label="ChacoboGlottalStop:7-8-Conditioning"/>
+<template:span rdf:about="&templates;ChacoboGlottalStop:7-8-Foundation"
+	 rdfs:label="ChacoboGlottalStop:7-8-Foundation">
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChacoboBodyPartPrefix"/>
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChacoboVerbRoot"/>
+</template:span>
+<template:juncture rdf:about="&templates;ChacoboGlottalStop:7-8-Stricture"
+	 rdfs:label="ChacoboGlottalStop:7-8-Stricture"/>
+<template:notViolable rdf:about="&templates;ChacoboGlottalStop:7-8-Violability"
+	 rdfs:label="ChacoboGlottalStop:7-8-Violability"/>
+<template:desmeme rdf:about="&templates;ChacoboGlottalStop_7-8"
+	 rdfs:label="ChacoboGlottalStop_7-8">
+	<notes:HAS_SOURCE rdf:resource="&templates;ChacoboDesmemeSource"/>
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChacoboGlottalStop:7-8-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChacoboGlottalStop:7-8-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChacoboGlottalStop:7-8-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChacoboGlottalStop:7-8-Violability"/>
+	<function:FUNCTION rdf:resource="&gold;Verbal"/>
+</template:desmeme>
 <component:component rdf:about="&templates;ChacoboTrans"
 	 rdfs:label="ChacoboTrans">
 	<speccomponent:ELASTICITY rdf:resource="&templates;ChacoboTrans-Elasiticity"/>
@@ -84,39 +138,6 @@
 	<speccomponent:ASSOCIATE rdf:resource="&templates;ChacoboBodyPartPrefix"/>
 	<speccomponent:ASSOCIATE_POSITION rdf:resource="&templates;ChacoboTrans-AssociatePosition"/>
 </component:unstable>
-<template:desmeme rdf:about="&templates;ChacoboVerbCore"
-	 gold:inLanguage="cao"
-	 rdfs:label="ChacoboVerbCore">
-	<specgeneral:CONDITIONING rdf:resource="&templates;ChacoboVerbCore-Conditioning"/>
-	<spectemplate:FOUNDATION rdf:resource="&templates;ChacoboVerbCore-Foundation"/>
-	<notes:HAS_SOURCE rdf:resource="&templates;ChacoboVerbCore-Source"/>
-	<spectemplate:STRICTURE rdf:resource="&templates;ChacoboVerbCore-Stricture"/>
-	<template:VIOLABILITY rdf:resource="&templates;ChacoboVerbCore-Violability"/>
-	<function:FUNCTION rdf:resource="&gold;Verbal"/>
-</template:desmeme>
-<general:constructionalConditioning rdf:about="&templates;ChacoboVerbCore-Conditioning"
-	 rdfs:label="ChacoboVerbCore-Conditioning">
-	<notes:CONDITIONS>This is a desmeme for the "verbal core" (my term) in the language.</notes:CONDITIONS>
-</general:constructionalConditioning>
-<template:arch rdf:about="&templates;ChacoboVerbCore-Foundation"
-	 rdfs:label="ChacoboVerbCore-Foundation">
-	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChacoboBodyPartPrefix"/>
-	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;ChacoboBodyPartPrefix"/>
-	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;ChacoboTrans"/>
-	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChacoboTrans"/>
-	<spectemplate:KEYSTONE rdf:resource="&templates;ChacoboVerbRoot"/>
-</template:arch>
-<notes:source rdf:about="&templates;ChacoboVerbCore-Source"
-	 terms:bibliographicCitation="Tallman (personal communication)"
-	 rdfs:label="ChacoboVerbCore-Source"/>
-<template:order rdf:about="&templates;ChacoboVerbCore-Stricture"
-	 general:COUNT="3"
-	 rdfs:label="ChacoboVerbCore-Stricture">
-	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
-	<general:RELATIONS rdf:resource="&general;simple"/>
-</template:order>
-<template:notViolable rdf:about="&templates;ChacoboVerbCore-Violability"
-	 rdfs:label="ChacoboVerbCore-Violability"/>
 <component:component rdf:about="&templates;ChacoboVerbRoot"
 	 rdfs:label="ChacoboVerbRoot">
 	<speccomponent:ELASTICITY rdf:resource="&templates;ChacoboVerbRoot-Elasticity"/>

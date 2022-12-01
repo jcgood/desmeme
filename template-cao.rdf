@@ -1,0 +1,1109 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE rdf:RDF [
+	 <!ENTITY template 'http://purl.org/linguistics/jcgood/template#'>
+	 <!ENTITY specgeneral 'http://purl.org/linguistics/jcgood/specgeneral#'>
+	 <!ENTITY general 'http://purl.org/linguistics/jcgood/general#'>
+	 <!ENTITY rdfs 'http://www.w3.org/2000/01/rdf-schema#'>
+	 <!ENTITY component 'http://purl.org/linguistics/jcgood/component#'>
+	 <!ENTITY gold 'http://purl.org/linguistics/gold#'>
+	 <!ENTITY templates 'http://linguistics-ontology.org/jcgood/templates#'>
+	 <!ENTITY function 'http://purl.org/linguistics/jcgood/function#'>
+	 <!ENTITY spectemplate 'http://purl.org/linguistics/jcgood/spectemplate#'>
+	 <!ENTITY speccomponent 'http://purl.org/linguistics/jcgood/speccomponent#'>
+	 <!ENTITY notes 'http://purl.org/linguistics/jcgood/notes#'>
+	 <!ENTITY terms 'http://purl.org/dc/terms#'>
+	 <!ENTITY localcategory 'http://purl.org/linguistics/jcgood/localcategory#'>
+	 <!ENTITY rdf 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+]>
+<rdf:RDF xmlns:template="&template;"
+	 xmlns:specgeneral="&specgeneral;"
+	 xmlns:general="&general;"
+	 xmlns:rdfs="&rdfs;"
+	 xmlns:component="&component;"
+	 xmlns:templates="&templates;"
+	 xmlns:gold="&gold;"
+	 xmlns:function="&function;"
+	 xmlns:spectemplate="&spectemplate;"
+	 xmlns:notes="&notes;"
+	 xmlns:speccomponent="&speccomponent;"
+	 xmlns:localcategory="&localcategory;"
+	 xmlns:terms="&terms;"
+	 xmlns:rdf="&rdf;">
+<component:inelastic rdf:about="&templates;BantuBeforeVerbStem-Elasticity"
+	 general:COUNT="0"
+	 rdfs:label="BantuBeforeVerbStem-Elasticity"/>
+<component:inelastic rdf:about="&templates;BantuVerbStem-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="BantuVerbStem-Elasticity"/>
+<general:constructionalConditioning rdf:about="&templates;ChacoboBPVerbTrans:7-9-Conditioning"
+	 rdfs:label="ChacoboBPVerbTrans:7-9-Conditioning">
+	<notes:CONDITIONS>This is a desmeme for the "verbal core" (my term) in the language.</notes:CONDITIONS>
+</general:constructionalConditioning>
+<template:arch rdf:about="&templates;ChacoboBPVerbTrans:7-9-Foundation"
+	 rdfs:label="ChacoboBPVerbTrans:7-9-Foundation">
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChacoboBodyPartPrefix"/>
+	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;ChacoboBodyPartPrefix"/>
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChacoboTrans"/>
+	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;ChacoboTrans"/>
+	<spectemplate:KEYSTONE rdf:resource="&templates;ChacoboVerbRoot"/>
+</template:arch>
+<template:order rdf:about="&templates;ChacoboBPVerbTrans:7-9-Stricture"
+	 general:COUNT="3"
+	 rdfs:label="ChacoboBPVerbTrans:7-9-Stricture">
+	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
+	<general:RELATIONS rdf:resource="&general;simple"/>
+</template:order>
+<template:notViolable rdf:about="&templates;ChacoboBPVerbTrans:7-9-Violability"
+	 rdfs:label="ChacoboBPVerbTrans:7-9-Violability"/>
+<template:desmeme rdf:about="&templates;ChacoboBPVerbTrans_7-9"
+	 gold:inLanguage="cao"
+	 rdfs:label="ChacoboBPVerbTrans_7-9">
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChacoboBPVerbTrans:7-9-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChacoboBPVerbTrans:7-9-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChacoboBPVerbTrans:7-9-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChacoboBPVerbTrans:7-9-Violability"/>
+	<notes:HAS_SOURCE rdf:resource="&templates;ChacoboDesmemeSource"/>
+	<function:FUNCTION rdf:resource="&gold;Verbal"/>
+</template:desmeme>
+<component:component rdf:about="&templates;ChacoboBodyPartPrefix"
+	 rdfs:label="ChacoboBodyPartPrefix">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChacoboBodyPartPrefix-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChacoboBodyPartPrefix-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChacoboBodyPartPrefix-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;ChacoboBodyPartPrefix-Coherence"
+	 rdfs:label="ChacoboBodyPartPrefix-Coherence">
+	<function:CLASS rdf:resource="&localcategory;bodyPartPrefix"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;ChacoboBodyPartPrefix-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChacoboBodyPartPrefix-Elasticity"/>
+<component:open rdf:about="&templates;ChacoboBodyPartPrefix-Filledness"
+	 rdfs:label="ChacoboBodyPartPrefix-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChacoboBodyPartPrefix-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;ChacoboBodyPartPrefix-Stability"
+	 rdfs:label="ChacoboBodyPartPrefix-Stability"/>
+<notes:source rdf:about="&templates;ChacoboDesmemeSource"
+	 terms:bibliographicCitation="Tallman (personal communication)"
+	 rdfs:label="ChacoboDesmemeSource"/>
+<general:segmental rdf:about="&templates;ChacoboGlottalStop:7-8-Conditioning"
+	 notes:CONDITIONS="Body part prefix preceding a vowel"
+	 rdfs:label="ChacoboGlottalStop:7-8-Conditioning"/>
+<template:span rdf:about="&templates;ChacoboGlottalStop:7-8-Foundation"
+	 rdfs:label="ChacoboGlottalStop:7-8-Foundation">
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChacoboBodyPartPrefix"/>
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChacoboVerbRoot"/>
+</template:span>
+<template:juncture rdf:about="&templates;ChacoboGlottalStop:7-8-Stricture"
+	 rdfs:label="ChacoboGlottalStop:7-8-Stricture"/>
+<template:notViolable rdf:about="&templates;ChacoboGlottalStop:7-8-Violability"
+	 rdfs:label="ChacoboGlottalStop:7-8-Violability"/>
+<template:desmeme rdf:about="&templates;ChacoboGlottalStop_7-8"
+	 gold:inLanguage="cao"
+	 rdfs:label="ChacoboGlottalStop_7-8">
+	<notes:HAS_SOURCE rdf:resource="&templates;ChacoboDesmemeSource"/>
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChacoboGlottalStop:7-8-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChacoboGlottalStop:7-8-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChacoboGlottalStop:7-8-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChacoboGlottalStop:7-8-Violability"/>
+	<function:FUNCTION rdf:resource="&gold;Verbal"/>
+</template:desmeme>
+<template:desmeme rdf:about="&templates;ChacoboMin_7-10"
+	 gold:inLanguage="cao"
+	 rdfs:label="ChacoboMin_7-10">
+	<notes:HAS_SOURCE rdf:resource="&templates;ChacoboDesmemeSource"/>
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChacoboMin_7-10-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChacoboMin_7-10-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChacoboMin_7-10-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChacoboMin_7-10-Violability"/>
+	<function:FUNCTION rdf:resource="&general;prosodicWord"/>
+</template:desmeme>
+<general:prosodicConditioning rdf:about="&templates;ChacoboMin_7-10-Conditioning"
+	 notes:CONDITIONS="Unit must be at least two moars"
+	 rdfs:label="ChacoboMin_7-10-Conditioning"/>
+<template:span rdf:about="&templates;ChacoboMin_7-10-Foundation"
+	 rdfs:label="ChacoboMin_7-10-Foundation">
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChacoboValence2"/>
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;Chacobo_7-9-Embedded"/>
+</template:span>
+<template:length rdf:about="&templates;ChacoboMin_7-10-Stricture"
+	 general:COUNT="2"
+	 rdfs:label="ChacoboMin_7-10-Stricture">
+	<general:CONSTITUENT rdf:resource="&gold;Mora"/>
+</template:length>
+<template:potentiallyViolable rdf:about="&templates;ChacoboMin_7-10-Violability"
+	 rdfs:label="ChacoboMin_7-10-Violability">
+	<template:EXCEPTIONALITY rdf:resource="&template;lexical"/>
+	<template:REPARABILITY rdf:resource="&template;surfaceViolable"/>
+</template:potentiallyViolable>
+<template:desmeme rdf:about="&templates;ChacoboNonInterSimp_7-11"
+	 gold:inLanguage="cao"
+	 rdfs:label="ChacoboNonInterSimp_7-11">
+	<notes:HAS_SOURCE rdf:resource="&templates;ChacoboDesmemeSource"/>
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChacoboNonInterSimp_7-11-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChacoboNonInterSimp_7-11-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChacoboNonInterSimp_7-11-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChacoboNonInterSimp_7-11-Violability"/>
+	<function:FUNCTION rdf:resource="&gold;Verbal"/>
+</template:desmeme>
+<general:constructionalConditioning rdf:about="&templates;ChacoboNonInterSimp_7-11-Conditioning"
+	 rdfs:label="ChacoboNonInterSimp_7-11-Conditioning">
+	<notes:CONDITIONS>Span of non-interruptability by simple elements and a free element</notes:CONDITIONS>
+</general:constructionalConditioning>
+<template:arch rdf:about="&templates;ChacoboNonInterSimp_7-11-Foundation"
+	 rdfs:label="ChacoboNonInterSimp_7-11-Foundation">
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChacoboBodyPartPrefix"/>
+	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;ChacoboBodyPartPrefix"/>
+	<spectemplate:RESTKOMPONENTEN rdf:resource="&templates;ChacoboNonInterSimp_7-11-RK"/>
+	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;ChacoboTrans"/>
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChacoboValence3"/>
+	<spectemplate:KEYSTONE rdf:resource="&templates;ChacoboVerbRoot"/>
+</template:arch>
+<component:restkomponentenSet rdf:about="&templates;ChacoboNonInterSimp_7-11-RK"
+	 rdfs:label="ChacoboNonInterSimp_7-11-RK">
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChacoboValence2"/>
+</component:restkomponentenSet>
+<template:order rdf:about="&templates;ChacoboNonInterSimp_7-11-Stricture"
+	 general:COUNT="5"
+	 rdfs:label="ChacoboNonInterSimp_7-11-Stricture">
+	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
+	<general:RELATIONS rdf:resource="&general;simple"/>
+</template:order>
+<template:notViolable rdf:about="&templates;ChacoboNonInterSimp_7-11-Violability"
+	 rdfs:label="ChacoboNonInterSimp_7-11-Violability"/>
+<template:desmeme rdf:about="&templates;ChacoboOrder_7-10"
+	 gold:inLanguage="cao"
+	 rdfs:label="ChacoboOrder_7-10">
+	<notes:HAS_SOURCE rdf:resource="&templates;ChacoboDesmemeSource"/>
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChacoboOrder_7-10-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChacoboOrder_7-10-Foundation"/>
+	<function:FUNCTION rdf:resource="&gold;Verbal"/>
+</template:desmeme>
+<general:constructionalConditioning rdf:about="&templates;ChacoboOrder_7-10-Conditioning"
+	 notes:CONDITIONS="Strict nonpermutability"
+	 rdfs:label="ChacoboOrder_7-10-Conditioning"/>
+<template:arch rdf:about="&templates;ChacoboOrder_7-10-Foundation"
+	 rdfs:label="ChacoboOrder_7-10-Foundation">
+	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;ChacoboBodyPartPrefix"/>
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChacoboBodyPartPrefix"/>
+	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;ChacoboTrans"/>
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChacoboValence2"/>
+	<spectemplate:KEYSTONE rdf:resource="&templates;ChacoboVerbRoot"/>
+</template:arch>
+<component:component rdf:about="&templates;ChacoboTrans"
+	 rdfs:label="ChacoboTrans">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChacoboTrans-Elasiticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChacoboTrans-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChacoboTrans-Stability"/>
+</component:component>
+<general:left rdf:about="&templates;ChacoboTrans-AssociatePosition"
+	 rdfs:label="ChacoboTrans-AssociatePosition"/>
+<component:coherent rdf:about="&templates;ChacoboTrans-Coherence"
+	 rdfs:label="ChacoboTrans-Coherence">
+	<function:CLASS rdf:resource="&localcategory;valency"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;ChacoboTrans-Elasiticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChacoboTrans-Elasiticity"/>
+<component:open rdf:about="&templates;ChacoboTrans-Filledness"
+	 rdfs:label="ChacoboTrans-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChacoboTrans-Coherence"/>
+</component:open>
+<component:unstable rdf:about="&templates;ChacoboTrans-Stability"
+	 rdfs:label="ChacoboTrans-Stability">
+	<speccomponent:ASSOCIATE rdf:resource="&templates;ChacoboBodyPartPrefix"/>
+	<speccomponent:ASSOCIATE_POSITION rdf:resource="&templates;ChacoboTrans-AssociatePosition"/>
+</component:unstable>
+<component:component rdf:about="&templates;ChacoboValence2"
+	 rdfs:label="ChacoboValence2">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChacoboValence2-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChacoboValence2-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChacoboValence2-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;ChacoboValence2-Coherence"
+	 rdfs:label="ChacoboValence2-Coherence">
+	<function:CLASS rdf:resource="&localcategory;valency"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;ChacoboValence2-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChacoboValence2-Elasticity"/>
+<component:open rdf:about="&templates;ChacoboValence2-Filledness"
+	 rdfs:label="ChacoboValence2-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChacoboValence2-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;ChacoboValence2-Stability"
+	 rdfs:label="ChacoboValence2-Stability"/>
+<component:component rdf:about="&templates;ChacoboValence3"
+	 rdfs:label="ChacoboValence3">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChacoboValence3-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChacoboValence3-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChacoboValence3-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;ChacoboValence3-Coherence"
+	 rdfs:label="ChacoboValence3-Coherence">
+	<function:CLASS rdf:resource="&localcategory;valency"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;ChacoboValence3-Elasticity"
+	 general:MAXIMUM="2"
+	 general:MINIMUM="0"
+	 rdfs:label="ChacoboValence3-Elasticity"/>
+<component:open rdf:about="&templates;ChacoboValence3-Filledness"
+	 rdfs:label="ChacoboValence3-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChacoboValence3-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;ChacoboValence3-Stability"
+	 rdfs:label="ChacoboValence3-Stability"/>
+<component:component rdf:about="&templates;ChacoboVerbRoot"
+	 rdfs:label="ChacoboVerbRoot">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChacoboVerbRoot-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChacoboVerbRoot-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChacoboVerbRoot-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;ChacoboVerbRoot-Coherence"
+	 rdfs:label="ChacoboVerbRoot-Coherence">
+	<function:CLASS rdf:resource="&gold;Verbal"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChacoboVerbRoot-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChacoboVerbRoot-Elasticity"/>
+<component:open rdf:about="&templates;ChacoboVerbRoot-Filledness"
+	 rdfs:label="ChacoboVerbRoot-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChacoboVerbRoot-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;ChacoboVerbRoot-Stability"
+	 rdfs:label="ChacoboVerbRoot-Stability"/>
+<component:component rdf:about="&templates;Chacobo_7-9-Embedded"
+	 rdfs:label="Chacobo_7-9-Embedded">
+	<speccomponent:ELASTICITY rdf:resource="&templates;Chacobo_7-9-Embedded-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;Chacobo_7-9-Embedded-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;Chacobo_7-9-Embedded-Stability"/>
+</component:component>
+<component:inelastic rdf:about="&templates;Chacobo_7-9-Embedded-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="Chacobo_7-9-Embedded-Elasticity"/>
+<component:filled rdf:about="&templates;Chacobo_7-9-Embedded-Filledness"
+	 rdfs:label="Chacobo_7-9-Embedded-Filledness">
+	<speccomponent:FORM rdf:resource="&templates;Chacobo_7-9-Embedded-Unspecified"/>
+	<function:FILLER_CLASS rdf:resource="&gold;Verbal"/>
+</component:filled>
+<component:stable rdf:about="&templates;Chacobo_7-9-Embedded-Stability"
+	 rdfs:label="Chacobo_7-9-Embedded-Stability"/>
+<template:embeddedDesmeme rdf:about="&templates;Chacobo_7-9-Embedded-Unspecified"
+	 rdfs:label="Chacobo_7-9-Embedded-Unspecified"/>
+<component:coherent rdf:about="&templates;ChichewVerbNoNeg1-Coherence"
+	 rdfs:label="ChichewVerbNoNeg1-Coherence">
+	<function:CLASS rdf:resource="&gold;Verbal"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewVerbNoNeg1-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewVerbNoNeg1-Elasticity"/>
+<component:open rdf:about="&templates;ChichewVerbNoNeg1-Filledness"
+	 rdfs:label="ChichewVerbNoNeg1-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewVerbNoNeg1-Coherence"/>
+</component:open>
+<component:elastic rdf:about="&templates;ChichewaApplicative-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaApplicative-Elasticity"/>
+<component:filled rdf:about="&templates;ChichewaApplicative-Filledness"
+	 rdfs:label="ChichewaApplicative-Filledness">
+	<function:FILLER_CLASS rdf:resource="&localcategory;valency"/>
+</component:filled>
+<template:embeddedDesmeme rdf:about="&templates;ChichewaAssocativeMarker-UnspecifiedDesmeme"
+	 rdfs:label="ChichewaAssocativeMarker-UnspecifiedDesmeme"/>
+<component:coherent rdf:about="&templates;ChichewaAssociativeMarker-Coherence"
+	 rdfs:label="ChichewaAssociativeMarker-Coherence">
+	<function:CLASS rdf:resource="&gold;Adposition"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaAssociativeMarker-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaAssociativeMarker-Elasticity"/>
+<component:partiallyFilled rdf:about="&templates;ChichewaAssociativeMarker-Filledness"
+	 rdfs:label="ChichewaAssociativeMarker-Filledness">
+	<speccomponent:FORM rdf:resource="&templates;ChichewaAssocativeMarker-UnspecifiedDesmeme"/>
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaAssociativeMarker-Coherence"/>
+	<component:FILLER_PLACEMENT rdf:resource="&general;componentFinal"/>
+	<function:FILLER_CLASS rdf:resource="&localcategory;adpositionalStem"/>
+</component:partiallyFilled>
+<component:inelastic rdf:about="&templates;ChichewaBeforeVerbStemNullComponent-Elasticity"
+	 general:COUNT="0"
+	 rdfs:label="ChichewaBeforeVerbStemNullComponent-Elasticity"/>
+<component:null rdf:about="&templates;ChichewaBeforeVerbStemNullComponent-Filledness"
+	 rdfs:label="ChichewaBeforeVerbStemNullComponent-Filledness"/>
+<component:coherent rdf:about="&templates;ChichewaC-Coherence"
+	 rdfs:label="ChichewaC-Coherence">
+	<function:CLASS rdf:resource="&localcategory;consonant"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;ChichewaC-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaC-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaC-Filledness"
+	 rdfs:label="ChichewaC-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaC-Coherence"/>
+</component:open>
+<component:incoherent rdf:about="&templates;ChichewaC2-Coherence"
+	 rdfs:label="ChichewaC2-Coherence">
+	<function:CLASSES rdf:resource="&localcategory;glide"/>
+	<function:CLASSES rdf:resource="&localcategory;obstruent"/>
+</component:incoherent>
+<component:elastic rdf:about="&templates;ChichewaC2-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaC2-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaC2-Filledness"
+	 rdfs:label="ChichewaC2-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaC2-Coherence"/>
+</component:open>
+<component:elastic rdf:about="&templates;ChichewaCausative-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaCausative-Elasticity"/>
+<component:filled rdf:about="&templates;ChichewaCausative-Filledness"
+	 rdfs:label="ChichewaCausative-Filledness">
+	<function:FILLER_CLASS rdf:resource="&localcategory;valency"/>
+</component:filled>
+<component:coherent rdf:about="&templates;ChichewaClause-Coherence"
+	 rdfs:label="ChichewaClause-Coherence">
+	<function:CLASS rdf:resource="&gold;Object"/>
+</component:coherent>
+<component:open rdf:about="&templates;ChichewaClause-Filledness"
+	 rdfs:label="ChichewaClause-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaClause-Coherence"/>
+</component:open>
+<component:inelastic rdf:about="&templates;ChichewaClauseComponent-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaClauseComponent-Elasticity"/>
+<component:filled rdf:about="&templates;ChichewaClauseComponent-Filledness"
+	 rdfs:label="ChichewaClauseComponent-Filledness">
+	<speccomponent:FORM rdf:resource="&templates;ChichewaClauseComponent-UnspecifiedDesmem"/>
+	<function:FILLER_CLASS rdf:resource="&gold;MainClause"/>
+</component:filled>
+<template:embeddedDesmeme rdf:about="&templates;ChichewaClauseComponent-UnspecifiedDesmem"
+	 rdfs:label="ChichewaClauseComponent-UnspecifiedDesmem"/>
+<component:null rdf:about="&templates;ChichewaClauseNullComponent-Filledness"
+	 rdfs:label="ChichewaClauseNullComponent-Filledness"/>
+<component:coherent rdf:about="&templates;ChichewaClauseX-Coherence"
+	 rdfs:label="ChichewaClauseX-Coherence">
+	<function:CLASS rdf:resource="&localcategory;adjunct"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;ChichewaClauseX-Elasticity"
+	 general:MAXIMUM="100"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaClauseX-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaClauseX-Filledness"
+	 rdfs:label="ChichewaClauseX-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaClauseX-Coherence"/>
+</component:open>
+<component:coherent rdf:about="&templates;ChichewaCleftFocus-Coherent"
+	 rdfs:label="ChichewaCleftFocus-Coherent">
+	<function:CLASS rdf:resource="&localcategory;constituent"/>
+</component:coherent>
+<component:open rdf:about="&templates;ChichewaCleftFocus-Filledness"
+	 rdfs:label="ChichewaCleftFocus-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaCleftFocus-Coherent"/>
+</component:open>
+<component:inelastic rdf:about="&templates;ChichewaCleftRK-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaCleftRK-Elasticity"/>
+<component:inelastic rdf:about="&templates;ChichewaCleftRelative-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaCleftRelative-Elasticity"/>
+<component:filled rdf:about="&templates;ChichewaCleftRelative-Filledness"
+	 rdfs:label="ChichewaCleftRelative-Filledness">
+	<speccomponent:FORM rdf:resource="&templates;ChichewaCleftRelative-UnspecifiedDesmeme"/>
+	<function:FILLER_CLASS rdf:resource="&localcategory;relativeClause"/>
+</component:filled>
+<template:embeddedDesmeme rdf:about="&templates;ChichewaCleftRelative-UnspecifiedDesmeme"
+	 rdfs:label="ChichewaCleftRelative-UnspecifiedDesmeme"/>
+<component:inelastic rdf:about="&templates;ChichewaComplementClauseLeftSupport-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaComplementClauseLeftSupport-Elasticity"/>
+<component:filled rdf:about="&templates;ChichewaComplementClauseLeftSupport-Filledness"
+	 rdfs:label="ChichewaComplementClauseLeftSupport-Filledness">
+	<function:FILLER_CLASS rdf:resource="&gold;Complementizer"/>
+</component:filled>
+<component:coherent rdf:about="&templates;ChichewaComplementClauseRightSupport-Coherence"
+	 rdfs:label="ChichewaComplementClauseRightSupport-Coherence">
+	<function:CLASS rdf:resource="&localcategory;finiteClause"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaComplementClauseRightSupport-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaComplementClauseRightSupport-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaComplementClauseRightSupport-Filledness"
+	 rdfs:label="ChichewaComplementClauseRightSupport-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaComplementClauseRightSupport-Coherence"/>
+</component:open>
+<component:coherent rdf:about="&templates;ChichewaCompoundStemEmbedded-Coherence"
+	 rdfs:label="ChichewaCompoundStemEmbedded-Coherence">
+	<function:CLASS rdf:resource="&gold;Verbal"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaCompoundStemEmbedded-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaCompoundStemEmbedded-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaCompoundStemEmbedded-Filledness"
+	 rdfs:label="ChichewaCompoundStemEmbedded-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaCompoundStemEmbedded-Coherence"/>
+</component:open>
+<component:coherent rdf:about="&templates;ChichewaDem-Coherence"
+	 rdfs:label="ChichewaDem-Coherence">
+	<function:CLASS rdf:resource="&gold;Demonstrative"/>
+</component:coherent>
+<component:open rdf:about="&templates;ChichewaDem-Filledness"
+	 rdfs:label="ChichewaDem-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaDem-Coherence"/>
+</component:open>
+<component:coherent rdf:about="&templates;ChichewaDerivedStemEmbedded-Coherent"
+	 rdfs:label="ChichewaDerivedStemEmbedded-Coherent">
+	<function:CLASS rdf:resource="&gold;Verbal"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaDerivedStemEmbedded-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaDerivedStemEmbedded-Elasticity"/>
+<component:filled rdf:about="&templates;ChichewaDerivedStemEmbedded-Filledness"
+	 rdfs:label="ChichewaDerivedStemEmbedded-Filledness">
+	<speccomponent:FORM rdf:resource="&templates;ChichewaDerivedStemEmbedded-Unspecified"/>
+	<function:FILLER_CLASS rdf:resource="&gold;Verbal"/>
+</component:filled>
+<template:embeddedDesmeme rdf:about="&templates;ChichewaDerivedStemEmbedded-Unspecified"
+	 rdfs:label="ChichewaDerivedStemEmbedded-Unspecified"/>
+<component:coherent rdf:about="&templates;ChichewaFV-Coherence"
+	 rdfs:label="ChichewaFV-Coherence">
+	<function:CLASS rdf:resource="&gold;Verbal"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaFV-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaFV-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaFV-Filledness"
+	 rdfs:label="ChichewaFV-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaFV-Coherence"/>
+</component:open>
+<component:coherent rdf:about="&templates;ChichewaFVProsodic-Coherent"
+	 rdfs:label="ChichewaFVProsodic-Coherent">
+	<function:CLASS rdf:resource="&gold;Verbal"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaFVProsodic-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaFVProsodic-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaFVProsodic-Filledness"
+	 rdfs:label="ChichewaFVProsodic-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaFVProsodic-Coherent"/>
+</component:open>
+<component:coherent rdf:about="&templates;ChichewaFirstSyllable-Coherence"
+	 rdfs:label="ChichewaFirstSyllable-Coherence">
+	<function:CLASS rdf:resource="&gold;Syllable"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaFirstSyllable-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaFirstSyllable-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaFirstSyllable-Filledness"
+	 rdfs:label="ChichewaFirstSyllable-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaFirstSyllable-Coherence"/>
+</component:open>
+<component:inelastic rdf:about="&templates;ChichewaKodiComponent-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaKodiComponent-Elasticity"/>
+<component:filled rdf:about="&templates;ChichewaKodiComponent-Filledness"
+	 rdfs:label="ChichewaKodiComponent-Filledness">
+	<function:FILLER_CLASS rdf:resource="&gold;InterrogativeOperator"/>
+</component:filled>
+<component:coherent rdf:about="&templates;ChichewaLocativePrefix-Coherence"
+	 rdfs:label="ChichewaLocativePrefix-Coherence">
+	<function:CLASS rdf:resource="&localcategory;adpositionalPhrase"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaLocativePrefix-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaLocativePrefix-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaLocativePrefix-Filledness"
+	 rdfs:label="ChichewaLocativePrefix-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaLocativePrefix-Coherence"/>
+</component:open>
+<component:coherent rdf:about="&templates;ChichewaLocativizedNoun-Coherence"
+	 rdfs:label="ChichewaLocativizedNoun-Coherence">
+	<function:CLASS rdf:resource="&gold;Noun"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaLocativizedNoun-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaLocativizedNoun-Elasticity"/>
+<component:filled rdf:about="&templates;ChichewaLocativizedNoun-Filledness"
+	 rdfs:label="ChichewaLocativizedNoun-Filledness">
+	<speccomponent:FORM rdf:resource="&templates;ChichewaNoun-Embedded-Unspecified"/>
+	<function:FILLER_CLASS rdf:resource="&gold;Noun"/>
+</component:filled>
+<component:coherent rdf:about="&templates;ChichewaMacroStemEmbedded-Coherence"
+	 rdfs:label="ChichewaMacroStemEmbedded-Coherence">
+	<function:CLASS rdf:resource="&gold;Verbal"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaMacroStemEmbedded-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaMacroStemEmbedded-Elasticity"/>
+<component:filled rdf:about="&templates;ChichewaMacroStemEmbedded-Filledness"
+	 rdfs:label="ChichewaMacroStemEmbedded-Filledness">
+	<speccomponent:FORM rdf:resource="&templates;ChichewaMacroStemEmbedded-Unspecified"/>
+	<function:FILLER_CLASS rdf:resource="&gold;Verbal"/>
+</component:filled>
+<template:embeddedDesmeme rdf:about="&templates;ChichewaMacroStemEmbedded-Unspecified"
+	 rdfs:label="ChichewaMacroStemEmbedded-Unspecified"/>
+<component:coherent rdf:about="&templates;ChichewaModal-Coherence"
+	 rdfs:label="ChichewaModal-Coherence">
+	<function:CLASS rdf:resource="&localcategory;TenseMoodAspect"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;ChichewaModal-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaModal-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaModal-Filledness"
+	 rdfs:label="ChichewaModal-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaModal-Coherence"/>
+</component:open>
+<component:incoherent rdf:about="&templates;ChichewaNPField-Coherence"
+	 rdfs:label="ChichewaNPField-Coherence">
+	<function:CLASSES rdf:resource="&gold;Adjectival"/>
+	<function:CLASSES rdf:resource="&gold;Demonstrative"/>
+	<function:CLASSES rdf:resource="&gold;Quantifier"/>
+</component:incoherent>
+<component:elastic rdf:about="&templates;ChichewaNPField-Elasticity"
+	 general:MAXIMUM="100"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaNPField-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaNPField-Filledness"
+	 rdfs:label="ChichewaNPField-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaNPField-Coherence"/>
+</component:open>
+<component:coherent rdf:about="&templates;ChichewaNPNoun-Coherent"
+	 rdfs:label="ChichewaNPNoun-Coherent">
+	<function:CLASS rdf:resource="&gold;Noun"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaNPNoun-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaNPNoun-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaNPNoun-Filledness"
+	 rdfs:label="ChichewaNPNoun-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaNPNoun-Coherent"/>
+</component:open>
+<component:inelastic rdf:about="&templates;ChichewaNPNullComponent-Elasticity"
+	 general:COUNT="0"
+	 rdfs:label="ChichewaNPNullComponent-Elasticity"/>
+<component:null rdf:about="&templates;ChichewaNPNullComponent-Filledness"
+	 rdfs:label="ChichewaNPNullComponent-Filledness"/>
+<component:coherent rdf:about="&templates;ChichewaNPRightSupport-Coherence"
+	 rdfs:label="ChichewaNPRightSupport-Coherence">
+	<function:CLASS rdf:resource="&localcategory;relativeClause"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;ChichewaNPRightSupport-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaNPRightSupport-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaNPRightSupport-Filledness"
+	 rdfs:label="ChichewaNPRightSupport-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaNPRightSupport-Coherence"/>
+</component:open>
+<component:coherent rdf:about="&templates;ChichewaNPRightVoussoir-Coherence"
+	 rdfs:label="ChichewaNPRightVoussoir-Coherence">
+	<function:CLASS rdf:resource="&gold;PossessivePronoun"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;ChichewaNPRightVoussoir-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaNPRightVoussoir-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaNPRightVoussoir-Filledness"
+	 rdfs:label="ChichewaNPRightVoussoir-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaNPRightVoussoir-Coherence"/>
+</component:open>
+<component:inelastic rdf:about="&templates;ChichewaNdi-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaNdi-Elasticity"/>
+<component:filled rdf:about="&templates;ChichewaNdi-Filledness"
+	 rdfs:label="ChichewaNdi-Filledness">
+	<function:FILLER_CLASS rdf:resource="&gold;Copula"/>
+</component:filled>
+<component:coherent rdf:about="&templates;ChichewaNegForImp-Coherence"
+	 rdfs:label="ChichewaNegForImp-Coherence">
+	<function:CLASS rdf:resource="&localcategory;negative"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;ChichewaNegForImp-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaNegForImp-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaNegForImp-Filledness"
+	 rdfs:label="ChichewaNegForImp-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaNegForImp-Coherence"/>
+</component:open>
+<component:inelastic rdf:about="&templates;ChichewaNiComponent-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaNiComponent-Elasticity"/>
+<component:filled rdf:about="&templates;ChichewaNiComponent-Filledness"
+	 rdfs:label="ChichewaNiComponent-Filledness">
+	<function:FILLER_CLASS rdf:resource="&localcategory;personReference"/>
+</component:filled>
+<component:elastic rdf:about="&templates;ChichewaNiWholeVerb-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaNiWholeVerb-Elasticity"/>
+<component:filled rdf:about="&templates;ChichewaNiWholeVerb-Filledness"
+	 rdfs:label="ChichewaNiWholeVerb-Filledness">
+	<speccomponent:FORM rdf:resource="&templates;ChichewaNiWholeVerb-Unspecified"/>
+	<function:FILLER_CLASS rdf:resource="&localcategory;personReference"/>
+</component:filled>
+<template:embeddedDesmeme rdf:about="&templates;ChichewaNiWholeVerb-Unspecified"
+	 rdfs:label="ChichewaNiWholeVerb-Unspecified"/>
+<component:elastic rdf:about="&templates;ChichewaNominalReduplicantEmbedded-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaNominalReduplicantEmbedded-Elasticity"/>
+<component:filled rdf:about="&templates;ChichewaNominalReduplicantEmbedded-Filledness"
+	 rdfs:label="ChichewaNominalReduplicantEmbedded-Filledness">
+	<function:FILLER_CLASS rdf:resource="&gold;Noun"/>
+</component:filled>
+<component:coherent rdf:about="&templates;ChichewaNominalReduplicantFirstSyllable-Coherence"
+	 rdfs:label="ChichewaNominalReduplicantFirstSyllable-Coherence">
+	<function:CLASS rdf:resource="&gold;Syllable"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaNominalReduplicantFirstSyllable-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaNominalReduplicantFirstSyllable-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaNominalReduplicantFirstSyllable-Filledness"
+	 rdfs:label="ChichewaNominalReduplicantFirstSyllable-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaNominalReduplicantFirstSyllable-Coherence"/>
+</component:open>
+<component:coherent rdf:about="&templates;ChichewaNominalReduplicantSecondSyllable-Coherence"
+	 rdfs:label="ChichewaNominalReduplicantSecondSyllable-Coherence">
+	<function:CLASS rdf:resource="&gold;Syllable"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaNominalReduplicantSecondSyllable-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaNominalReduplicantSecondSyllable-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaNominalReduplicantSecondSyllable-Filledness"
+	 rdfs:label="ChichewaNominalReduplicantSecondSyllable-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaNominalReduplicantSecondSyllable-Coherence"/>
+</component:open>
+<component:coherent rdf:about="&templates;ChichewaNonInitialSyllables-Coherence"
+	 rdfs:label="ChichewaNonInitialSyllables-Coherence">
+	<function:CLASS rdf:resource="&gold;Syllable"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;ChichewaNonInitialSyllables-Elasticity"
+	 general:MAXIMUM="100"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaNonInitialSyllables-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaNonInitialSyllables-Filledness"
+	 rdfs:label="ChichewaNonInitialSyllables-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaNonInitialSyllables-Coherence"/>
+</component:open>
+<template:embeddedDesmeme rdf:about="&templates;ChichewaNoun-Embedded"
+	 gold:inLanguage="http://lexvo.org/id/iso639-3/nya"
+	 rdfs:label="ChichewaNoun-Embedded">
+	<function:FUNCTION rdf:resource="&gold;Noun"/>
+</template:embeddedDesmeme>
+<template:embeddedDesmeme rdf:about="&templates;ChichewaNoun-Embedded-Unspecified"
+	 rdfs:label="ChichewaNoun-Embedded-Unspecified"/>
+<component:inelastic rdf:about="&templates;ChichewaNoun-LeftSupport-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaNoun-LeftSupport-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaNoun-LeftSupport-Filledness"
+	 rdfs:label="ChichewaNoun-LeftSupport-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaNoun-LeftSupport-Filledness-Coherence"/>
+</component:open>
+<component:coherent rdf:about="&templates;ChichewaNoun-LeftSupport-Filledness-Coherence"
+	 rdfs:label="ChichewaNoun-LeftSupport-Filledness-Coherence">
+	<function:CLASS rdf:resource="&general;grammaticalCategory"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaNoun-RightSupport-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaNoun-RightSupport-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaNoun-RightSupport-Filledness"
+	 rdfs:label="ChichewaNoun-RightSupport-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaNoun-RightSupport-Filledness-Coherence"/>
+</component:open>
+<component:coherent rdf:about="&templates;ChichewaNoun-RightSupport-Filledness-Coherence"
+	 rdfs:label="ChichewaNoun-RightSupport-Filledness-Coherence">
+	<function:CLASS rdf:resource="&general;grammaticalCategory"/>
+</component:coherent>
+<component:coherent rdf:about="&templates;ChichewaNounEmbedded-LeftSupport-Coherence"
+	 rdfs:label="ChichewaNounEmbedded-LeftSupport-Coherence">
+	<function:CLASS rdf:resource="&general;grammaticalCategory"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaNounEmbedded-LeftSupport-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaNounEmbedded-LeftSupport-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaNounEmbedded-LeftSupport-Filledness"
+	 rdfs:label="ChichewaNounEmbedded-LeftSupport-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaNounEmbedded-LeftSupport-Coherence"/>
+</component:open>
+<component:coherent rdf:about="&templates;ChichewaNounEmbedded-RightSupport-Coherence"
+	 rdfs:label="ChichewaNounEmbedded-RightSupport-Coherence">
+	<function:CLASS rdf:resource="&general;grammaticalCategory"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaNounEmbedded-RightSupport-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaNounEmbedded-RightSupport-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaNounEmbedded-RightSupport-Filledness"
+	 rdfs:label="ChichewaNounEmbedded-RightSupport-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaNounEmbedded-RightSupport-Coherence"/>
+</component:open>
+<template:embeddedDesmeme rdf:about="&templates;ChichewaO-UnspecifiedDesmeme"
+	 rdfs:label="ChichewaO-UnspecifiedDesmeme"/>
+<component:elastic rdf:about="&templates;ChichewaOM-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaOM-Elasticity"/>
+<component:coherent rdf:about="&templates;ChichewaOMProsodic-Coherence"
+	 rdfs:label="ChichewaOMProsodic-Coherence">
+	<function:CLASS rdf:resource="&localcategory;objectReference"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;ChichewaOMProsodic-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaOMProsodic-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaOMProsodic-Filledness"
+	 rdfs:label="ChichewaOMProsodic-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaOMProsodic-Coherence"/>
+</component:open>
+<component:coherent rdf:about="&templates;ChichewaORelativizer-Coherence"
+	 rdfs:label="ChichewaORelativizer-Coherence">
+	<function:CLASS rdf:resource="&gold;Relativizer"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaORelativizer-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaORelativizer-Elasticity"/>
+<component:partiallyFilled rdf:about="&templates;ChichewaORelativizer-Filledness"
+	 rdfs:label="ChichewaORelativizer-Filledness">
+	<speccomponent:FORM rdf:resource="&templates;ChichewaO-UnspecifiedDesmeme"/>
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaORelativizer-Coherence"/>
+	<function:FILLER_CLASS rdf:resource="&gold;Relativizer"/>
+	<component:FILLER_PLACEMENT rdf:resource="&general;componentFinal"/>
+</component:partiallyFilled>
+<component:inelastic rdf:about="&templates;ChichewaOsaVerbLeftSupport-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaOsaVerbLeftSupport-Elasticity"/>
+<component:filled rdf:about="&templates;ChichewaOsaVerbLeftSupport-Filledness"
+	 rdfs:label="ChichewaOsaVerbLeftSupport-Filledness">
+	<function:FILLER_CLASS rdf:resource="&localcategory;negative"/>
+</component:filled>
+<component:elastic rdf:about="&templates;ChichewaPassive-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaPassive-Elasticity"/>
+<component:filled rdf:about="&templates;ChichewaPassive-Filledness"
+	 rdfs:label="ChichewaPassive-Filledness">
+	<function:FILLER_CLASS rdf:resource="&localcategory;valency"/>
+</component:filled>
+<component:coherent rdf:about="&templates;ChichewaPossessor-Coherence"
+	 rdfs:label="ChichewaPossessor-Coherence">
+	<function:CLASS rdf:resource="&gold;NounPhrase"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaPossessor-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaPossessor-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaPossessor-Filledness"
+	 rdfs:label="ChichewaPossessor-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaPossessor-Coherence"/>
+</component:open>
+<component:coherent rdf:about="&templates;ChichewaPossessum-Coherence"
+	 rdfs:label="ChichewaPossessum-Coherence">
+	<function:CLASS rdf:resource="&gold;NounPhrase"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;ChichewaPossessum-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaPossessum-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaPossessum-Filledness"
+	 rdfs:label="ChichewaPossessum-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaPossessum-Coherence"/>
+</component:open>
+<component:coherent rdf:about="&templates;ChichewaPreNiVerb-Coherence"
+	 rdfs:label="ChichewaPreNiVerb-Coherence">
+	<function:CLASS rdf:resource="&localcategory;finite"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaPreNiVerb-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaPreNiVerb-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaPreNiVerb-Filledness"
+	 rdfs:label="ChichewaPreNiVerb-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaPreNiVerb-Coherence"/>
+</component:open>
+<component:inelastic rdf:about="&templates;ChichewaProsodicDerivationalStemEmbedded-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaProsodicDerivationalStemEmbedded-Elasticity"/>
+<component:filled rdf:about="&templates;ChichewaProsodicDerivationalStemEmbedded-Filledness"
+	 rdfs:label="ChichewaProsodicDerivationalStemEmbedded-Filledness">
+	<speccomponent:FORM rdf:resource="&templates;ChichewaProsodicDerivationalStemEmbedded-Unspecified"/>
+	<function:FILLER_CLASS rdf:resource="&gold;Verbal"/>
+</component:filled>
+<template:embeddedDesmeme rdf:about="&templates;ChichewaProsodicDerivationalStemEmbedded-Unspecified"
+	 rdfs:label="ChichewaProsodicDerivationalStemEmbedded-Unspecified"/>
+<component:coherent rdf:about="&templates;ChichewaProsodicExtensions-Coherence"
+	 rdfs:label="ChichewaProsodicExtensions-Coherence">
+	<function:CLASS rdf:resource="&localcategory;valency"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;ChichewaProsodicExtensions-Elasticity"
+	 general:MAXIMUM="100"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaProsodicExtensions-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaProsodicExtensions-Filledness"
+	 rdfs:label="ChichewaProsodicExtensions-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaProsodicExtensions-Coherence"/>
+</component:open>
+<component:elastic rdf:about="&templates;ChichewaProsodicNDem-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaProsodicNDem-Elasticity"/>
+<component:coherent rdf:about="&templates;ChichewaProsodicNoun-Coherent"
+	 rdfs:label="ChichewaProsodicNoun-Coherent">
+	<function:CLASS rdf:resource="&gold;Noun"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaProsodicNoun-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaProsodicNoun-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaProsodicNoun-Filledness"
+	 rdfs:label="ChichewaProsodicNoun-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaProsodicNoun-Coherent"/>
+</component:open>
+<component:coherent rdf:about="&templates;ChichewaProsodicPhraseLeftSupport-Coherence"
+	 rdfs:label="ChichewaProsodicPhraseLeftSupport-Coherence">
+	<function:CLASS rdf:resource="&general;prosodicWord"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;ChichewaProsodicPhraseLeftSupport-Elasticity"
+	 general:MAXIMUM="100"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaProsodicPhraseLeftSupport-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaProsodicPhraseLeftSupport-Filledness"
+	 rdfs:label="ChichewaProsodicPhraseLeftSupport-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaProsodicPhraseLeftSupport-Coherence"/>
+</component:open>
+<component:coherent rdf:about="&templates;ChichewaProsodicPhraseRightSupport-Coherence"
+	 rdfs:label="ChichewaProsodicPhraseRightSupport-Coherence">
+	<function:CLASS rdf:resource="&general;prosodicWord"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaProsodicPhraseRightSupport-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaProsodicPhraseRightSupport-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaProsodicPhraseRightSupport-Filledness"
+	 rdfs:label="ChichewaProsodicPhraseRightSupport-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaProsodicPhraseRightSupport-Coherence"/>
+</component:open>
+<component:coherent rdf:about="&templates;ChichewaProsodicVerbRoot-Coherence"
+	 rdfs:label="ChichewaProsodicVerbRoot-Coherence">
+	<function:CLASS rdf:resource="&gold;Verbal"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaProsodicVerbRoot-Elasticity"
+	 rdfs:label="ChichewaProsodicVerbRoot-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaProsodicVerbRoot-Filledness"
+	 rdfs:label="ChichewaProsodicVerbRoot-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaProsodicVerbRoot-Coherence"/>
+</component:open>
+<component:elastic rdf:about="&templates;ChichewaReciprocal-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaReciprocal-Elasticity"/>
+<component:filled rdf:about="&templates;ChichewaReciprocal-Filledness"
+	 rdfs:label="ChichewaReciprocal-Filledness">
+	<function:FILLER_CLASS rdf:resource="&localcategory;valency"/>
+</component:filled>
+<component:elastic rdf:about="&templates;ChichewaReduplicant-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaReduplicant-Elasticity"/>
+<component:filled rdf:about="&templates;ChichewaReduplicant-Filledness"
+	 rdfs:label="ChichewaReduplicant-Filledness">
+	<function:FILLER_CLASS rdf:resource="&gold;Verbal"/>
+</component:filled>
+<component:coherent rdf:about="&templates;ChichewaRelativeClauseRelativizer-Coherence"
+	 rdfs:label="ChichewaRelativeClauseRelativizer-Coherence">
+	<function:CLASS rdf:resource="&gold;Relativizer"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;ChichewaRelativeClauseRelativizer-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaRelativeClauseRelativizer-Elasticity"/>
+<component:partiallyFilled rdf:about="&templates;ChichewaRelativeClauseRelativizer-Filler"
+	 rdfs:label="ChichewaRelativeClauseRelativizer-Filler">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaRelativeClauseRelativizer-Coherence"/>
+	<speccomponent:FORM rdf:resource="&templates;ChichewaRelativizer-UnspecifiedDesmeme"/>
+	<component:FILLER_PLACEMENT rdf:resource="&general;componentFinal"/>
+	<function:FILLER_CLASS rdf:resource="&localcategory;relativizerStem"/>
+</component:partiallyFilled>
+<component:coherent rdf:about="&templates;ChichewaRelativizedClause-Coherence"
+	 rdfs:label="ChichewaRelativizedClause-Coherence">
+	<function:CLASS rdf:resource="&localcategory;relativeClause"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaRelativizedClause-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaRelativizedClause-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaRelativizedClause-Filledness"
+	 rdfs:label="ChichewaRelativizedClause-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaRelativizedClause-Coherence"/>
+</component:open>
+<template:embeddedDesmeme rdf:about="&templates;ChichewaRelativizer-UnspecifiedDesmeme"
+	 rdfs:label="ChichewaRelativizer-UnspecifiedDesmeme"/>
+<component:coherent rdf:about="&templates;ChichewaSM-Coherence"
+	 rdfs:label="ChichewaSM-Coherence">
+	<function:CLASS rdf:resource="&localcategory;subjectReference"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaSM-Elasiticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaSM-Elasiticity"/>
+<component:open rdf:about="&templates;ChichewaSM-FIlledness"
+	 rdfs:label="ChichewaSM-FIlledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaSM-Coherence"/>
+</component:open>
+<component:coherent rdf:about="&templates;ChichewaSMImp-Coherence"
+	 rdfs:label="ChichewaSMImp-Coherence">
+	<function:CLASS rdf:resource="&localcategory;subjectReference"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;ChichewaSMImp-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaSMImp-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaSMImp-Filledness"
+	 rdfs:label="ChichewaSMImp-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaSMImp-Coherence"/>
+</component:open>
+<component:incoherent rdf:about="&templates;ChichewaSTAMP-Coherence"
+	 rdfs:label="ChichewaSTAMP-Coherence">
+	<function:CLASSES rdf:resource="&localcategory;TenseMoodAspect"/>
+	<function:CLASSES rdf:resource="&localcategory;negative"/>
+	<function:CLASSES rdf:resource="&localcategory;subjectReference"/>
+</component:incoherent>
+<component:elastic rdf:about="&templates;ChichewaSTAMP-Elasticity"
+	 general:MAXIMUM="100"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaSTAMP-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaSTAMP-Filledness"
+	 rdfs:label="ChichewaSTAMP-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaSTAMP-Coherence"/>
+</component:open>
+<component:coherent rdf:about="&templates;ChichewaTM-Coherence"
+	 rdfs:label="ChichewaTM-Coherence">
+	<function:CLASS rdf:resource="&localcategory;TenseMoodAspect"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;ChichewaTM-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaTM-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaTM-Filledness"
+	 rdfs:label="ChichewaTM-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaTM-Coherence"/>
+</component:open>
+<component:coherent rdf:about="&templates;ChichewaV-Coherence"
+	 rdfs:label="ChichewaV-Coherence">
+	<function:CLASS rdf:resource="&localcategory;vowel"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaV-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaV-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaV-Filledness"
+	 rdfs:label="ChichewaV-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaV-Coherence"/>
+</component:open>
+<component:coherent rdf:about="&templates;ChichewaVCExtensionRMCLeftSupport-Coherence"
+	 rdfs:label="ChichewaVCExtensionRMCLeftSupport-Coherence">
+	<function:CLASS rdf:resource="&localcategory;valency"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaVCExtensionRMCLeftSupport-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaVCExtensionRMCLeftSupport-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaVCExtensionRMCLeftSupport-Filledness"
+	 rdfs:label="ChichewaVCExtensionRMCLeftSupport-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaVCExtensionRMCLeftSupport-Coherence"/>
+</component:open>
+<component:coherent rdf:about="&templates;ChichewaVCExtensionRMCRightSupport-Coherence"
+	 rdfs:label="ChichewaVCExtensionRMCRightSupport-Coherence">
+	<function:CLASS rdf:resource="&localcategory;valency"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaVCExtensionRMCRightSupport-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaVCExtensionRMCRightSupport-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaVCExtensionRMCRightSupport-Filledness"
+	 rdfs:label="ChichewaVCExtensionRMCRightSupport-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaVCExtensionRMCRightSupport-Coherence"/>
+</component:open>
+<component:coherent rdf:about="&templates;ChichewaVerb-Coherence"
+	 rdfs:label="ChichewaVerb-Coherence">
+	<function:CLASS rdf:resource="&localcategory;objectReference"/>
+</component:coherent>
+<component:open rdf:about="&templates;ChichewaVerb-Filledness"
+	 rdfs:label="ChichewaVerb-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaVerb-Coherence"/>
+</component:open>
+<component:elastic rdf:about="&templates;ChichewaVerb-Neg2-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaVerb-Neg2-Elasticity"/>
+<component:filled rdf:about="&templates;ChichewaVerb-Neg2-Filledness"
+	 rdfs:label="ChichewaVerb-Neg2-Filledness">
+	<function:FILLER_CLASS rdf:resource="&localcategory;negative"/>
+</component:filled>
+<component:coherent rdf:about="&templates;ChichewaVerbClausal-Coherence"
+	 rdfs:label="ChichewaVerbClausal-Coherence">
+	<function:CLASS rdf:resource="&localcategory;finite"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaVerbClausal-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaVerbClausal-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaVerbClausal-Filledness"
+	 rdfs:label="ChichewaVerbClausal-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaVerbClausal-Coherence"/>
+</component:open>
+<component:elastic rdf:about="&templates;ChichewaVerbNeg1-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichewaVerbNeg1-Elasticity"/>
+<component:filled rdf:about="&templates;ChichewaVerbNeg1-Filledness"
+	 rdfs:label="ChichewaVerbNeg1-Filledness">
+	<function:FILLER_CLASS rdf:resource="&localcategory;negative"/>
+</component:filled>
+<component:inelastic rdf:about="&templates;ChichewaVerbNullComponent-Elasticity"
+	 general:COUNT="0"
+	 rdfs:label="ChichewaVerbNullComponent-Elasticity"/>
+<component:null rdf:about="&templates;ChichewaVerbNullComponent-Filledness"
+	 rdfs:label="ChichewaVerbNullComponent-Filledness"/>
+<component:coherent rdf:about="&templates;ChichewaVerbStem-Coherence"
+	 rdfs:label="ChichewaVerbStem-Coherence">
+	<function:CLASS rdf:resource="&gold;Verbal"/>
+</component:coherent>
+<component:inelastic rdf:about="&templates;ChichewaVerbStem-Elasticity"
+	 general:COUNT="1"
+	 rdfs:label="ChichewaVerbStem-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaVerbStem-Filledness"
+	 rdfs:label="ChichewaVerbStem-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaVerbStem-Coherence"/>
+</component:open>
+<component:coherent rdf:about="&templates;ChichewaWordMinimalityLeftSupport-Coherence"
+	 rdfs:label="ChichewaWordMinimalityLeftSupport-Coherence">
+	<function:CLASS rdf:resource="&gold;Syllable"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;ChichewaWordMinimalityLeftSupport-Elasticity"
+	 general:MAXIMUM="100"
+	 general:MINIMUM="1"
+	 rdfs:label="ChichewaWordMinimalityLeftSupport-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaWordMinimalityLeftSupport-Filledness"
+	 rdfs:label="ChichewaWordMinimalityLeftSupport-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaWordMinimalityLeftSupport-Coherence"/>
+</component:open>
+<component:coherent rdf:about="&templates;ChichewaWordMinimalityRightSupport-Coherence"
+	 rdfs:label="ChichewaWordMinimalityRightSupport-Coherence">
+	<function:CLASS rdf:resource="&gold;Syllable"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;ChichewaWordMinimalityRightSupport-Elasticity"
+	 general:MAXIMUM="100"
+	 general:MINIMUM="1"
+	 rdfs:label="ChichewaWordMinimalityRightSupport-Elasticity"/>
+<component:open rdf:about="&templates;ChichewaWordMinimalityRightSupport-Filledness"
+	 rdfs:label="ChichewaWordMinimalityRightSupport-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaWordMinimalityRightSupport-Coherence"/>
+</component:open>
+<component:elastic rdf:about="&templates;ChichwaClause-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChichwaClause-Elasticity"/>
+<component:inelastic rdf:about="&templates;ChichwaClauseNullComponent-Elasticity"
+	 general:COUNT="0"
+	 rdfs:label="ChichwaClauseNullComponent-Elasticity"/>
+<component:inelastic rdf:about="&templates;templateCHx_Class10035"
+	 general:COUNT="1"
+	 rdfs:label="templateCHx_Class10035"/>
+</rdf:RDF>
