@@ -51,14 +51,14 @@
 	 rdfs:label="ChacoboAdvderbialModel-Filledness">
 	<speccomponent:COHERENCE rdf:resource="&templates;ChacoboAdvderbialModel-Coherence"/>
 </component:open>
-<component:component rdf:about="&templates;ChacoboAdverbialModel"
-	 rdfs:label="ChacoboAdverbialModel">
+<component:component rdf:about="&templates;ChacoboAdverbialModal"
+	 rdfs:label="ChacoboAdverbialModal">
 	<speccomponent:ELASTICITY rdf:resource="&templates;ChacoboAdvderbialModel-Elasticity"/>
 	<speccomponent:FILLEDNESS rdf:resource="&templates;ChacoboAdvderbialModel-Filledness"/>
-	<speccomponent:STABILITY rdf:resource="&templates;ChacoboAdverbialModel-Stability"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChacoboAdverbialModal-Stability"/>
 </component:component>
-<component:stable rdf:about="&templates;ChacoboAdverbialModel-Stability"
-	 rdfs:label="ChacoboAdverbialModel-Stability"/>
+<component:stable rdf:about="&templates;ChacoboAdverbialModal-Stability"
+	 rdfs:label="ChacoboAdverbialModal-Stability"/>
 <component:component rdf:about="&templates;ChacoboAssociatedMotion"
 	 rdfs:label="ChacoboAssociatedMotion">
 	<speccomponent:ELASTICITY rdf:resource="&templates;ChacoboAssociatedMotion-Elasticity"/>
@@ -158,6 +158,28 @@
 <notes:source rdf:about="&templates;ChacoboDesmemeSource"
 	 terms:bibliographicCitation="Tallman (personal communication)"
 	 rdfs:label="ChacoboDesmemeSource"/>
+<template:desmeme rdf:about="&templates;ChacoboDoTakeDrinkKillLatent"
+	 gold:inLanguage="cao"
+	 rdfs:label="ChacoboDoTakeDrinkKillLatent">
+	<notes:HAS_SOURCE rdf:resource="&templates;ChacoboDesmemeSource"/>
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChacoboDoTakeDrinkKillLatent-Conditioning"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChacoboDoTakeDrinkKillLatent-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChacoboDoTakeDrinkKillLatent-Violability"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;template-cao_Class4"/>
+	<function:FUNCTION rdf:resource="&general;prosodicWord"/>
+</template:desmeme>
+<general:lexicophonologicalConditioning rdf:about="&templates;ChacoboDoTakeDrinkKillLatent-Conditioning"
+	 notes:CONDITIONS="Followed by morpheme beginning with a glottal stop"
+	 rdfs:label="ChacoboDoTakeDrinkKillLatent-Conditioning">
+	<template:FILLER_POSITION rdf:resource="&general;templateInitial"/>
+</general:lexicophonologicalConditioning>
+<template:juncture rdf:about="&templates;ChacoboDoTakeDrinkKillLatent-Stricture"
+	 general:COUNT="2"
+	 rdfs:label="ChacoboDoTakeDrinkKillLatent-Stricture">
+	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
+</template:juncture>
+<template:notViolable rdf:about="&templates;ChacoboDoTakeDrinkKillLatent-Violability"
+	 rdfs:label="ChacoboDoTakeDrinkKillLatent-Violability"/>
 <component:component rdf:about="&templates;ChacoboDurativeVolitional"
 	 rdfs:label="ChacoboDurativeVolitional">
 	<speccomponent:ELASTICITY rdf:resource="&templates;ChacoboDurativeVolitional-Elasticity"/>
@@ -214,6 +236,47 @@
 </template:juncture>
 <template:notViolable rdf:about="&templates;ChacoboGlottalStop:7-8-Violability"
 	 rdfs:label="ChacoboGlottalStop:7-8-Violability"/>
+<template:desmeme rdf:about="&templates;ChacoboGlottalStopMax_7-19"
+	 gold:inLanguage="cao"
+	 rdfs:label="ChacoboGlottalStopMax_7-19">
+	<notes:HAS_SOURCE rdf:resource="&templates;ChacoboDesmemeSource"/>
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChacoboGlottalStopMax_7-19-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChacoboGlottalStopMax_7-19-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChacoboGlottalStopMax_7-19-Juncture"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChacoboGlottalStopMax_7-19-Violability"/>
+	<function:FUNCTION rdf:resource="&general;prosodicWord"/>
+</template:desmeme>
+<general:segmental rdf:about="&templates;ChacoboGlottalStopMax_7-19-Conditioning"
+	 notes:CONDITIONS="Inserted between two vowels across a morpheme boundary."
+	 rdfs:label="ChacoboGlottalStopMax_7-19-Conditioning"/>
+<template:span rdf:about="&templates;ChacoboGlottalStopMax_7-19-Foundation"
+	 rdfs:label="ChacoboGlottalStopMax_7-19-Foundation">
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChacoboBodyPartPrefix"/>
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChacoboEvidentialModal"/>
+	<spectemplate:RESTKOMPONENTEN rdf:resource="&templates;ChacoboGlottalStopMax_7-19-RK"/>
+</template:span>
+<template:juncture rdf:about="&templates;ChacoboGlottalStopMax_7-19-Juncture"
+	 general:COUNT="13"
+	 rdfs:label="ChacoboGlottalStopMax_7-19-Juncture">
+	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
+</template:juncture>
+<component:restkomponentenSet rdf:about="&templates;ChacoboGlottalStopMax_7-19-RK"
+	 rdfs:label="ChacoboGlottalStopMax_7-19-RK">
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChacoboAdverbialModal"/>
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChacoboAssociatedMotion"/>
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChacoboCompletive"/>
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChacoboDurativeVolitional"/>
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChacoboEvidentialModal"/>
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChacoboLinker"/>
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChacoboPunctual"/>
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChacoboTrans"/>
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChacoboValence2"/>
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChacoboValence3"/>
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChacoboValence4"/>
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChacoboVerbRoot"/>
+</component:restkomponentenSet>
+<template:notViolable rdf:about="&templates;ChacoboGlottalStopMax_7-19-Violability"
+	 rdfs:label="ChacoboGlottalStopMax_7-19-Violability"/>
 <template:desmeme rdf:about="&templates;ChacoboGlottalStop_7-8"
 	 gold:inLanguage="cao"
 	 rdfs:label="ChacoboGlottalStop_7-8">
@@ -394,6 +457,44 @@
 </template:edge>
 <template:notViolable rdf:about="&templates;ChacoboNonInterrupByNP_7-19-Violability"
 	 rdfs:label="ChacoboNonInterrupByNP_7-19-Violability"/>
+<template:desmeme rdf:about="&templates;ChacoboNonPermScopal_7-15"
+	 gold:inLanguage="cao"
+	 rdfs:label="ChacoboNonPermScopal_7-15">
+	<notes:HAS_SOURCE rdf:resource="&templates;ChacoboDesmemeSource"/>
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChacoboNonPermScopal_7-15-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChacoboNonPermScopal_7-15-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChacoboNonPermScopal_7-15-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChacoboNonPermScopal_7-15-Violability"/>
+	<function:FUNCTION rdf:resource="&gold;Verbal"/>
+</template:desmeme>
+<general:constructionalConditioning rdf:about="&templates;ChacoboNonPermScopal_7-15-Conditioning"
+	 notes:CONDITIONS="A verbal ordering span"
+	 rdfs:label="ChacoboNonPermScopal_7-15-Conditioning"/>
+<template:arch rdf:about="&templates;ChacoboNonPermScopal_7-15-Foundation"
+	 rdfs:label="ChacoboNonPermScopal_7-15-Foundation">
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChacoboBodyPartPrefix"/>
+	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;ChacoboBodyPartPrefix"/>
+	<spectemplate:RESTKOMPONENTEN rdf:resource="&templates;ChacoboNonPermScopal_7-15-RK"/>
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChacoboPunctual"/>
+	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;ChacoboTrans"/>
+	<spectemplate:KEYSTONE rdf:resource="&templates;ChacoboVerbRoot"/>
+</template:arch>
+<component:restkomponentenSet rdf:about="&templates;ChacoboNonPermScopal_7-15-RK"
+	 rdfs:label="ChacoboNonPermScopal_7-15-RK">
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChacoboAssociatedMotion"/>
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChacoboCompletive"/>
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChacoboValence2"/>
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChacoboValence3"/>
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChacoboValence4"/>
+</component:restkomponentenSet>
+<template:order rdf:about="&templates;ChacoboNonPermScopal_7-15-Stricture"
+	 general:COUNT="9"
+	 rdfs:label="ChacoboNonPermScopal_7-15-Stricture">
+	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
+	<general:RELATIONS rdf:resource="&general;simple"/>
+</template:order>
+<template:notViolable rdf:about="&templates;ChacoboNonPermScopal_7-15-Violability"
+	 rdfs:label="ChacoboNonPermScopal_7-15-Violability"/>
 <template:desmeme rdf:about="&templates;ChacoboOrder_7-10"
 	 gold:inLanguage="cao"
 	 rdfs:label="ChacoboOrder_7-10">
@@ -570,44 +671,6 @@
 	 rdfs:label="Chacobo_7-9-Embedded-Stability"/>
 <template:embeddedDesmeme rdf:about="&templates;Chacobo_7-9-Embedded-Unspecified"
 	 rdfs:label="Chacobo_7-9-Embedded-Unspecified"/>
-<template:desmeme rdf:about="&templates;ChacobobNonPermScopal_7-15"
-	 gold:inLanguage="cao"
-	 rdfs:label="ChacobobNonPermScopal_7-15">
-	<notes:HAS_SOURCE rdf:resource="&templates;ChacoboDesmemeSource"/>
-	<specgeneral:CONDITIONING rdf:resource="&templates;ChacobobNonPermScopal_7-15-Conditioning"/>
-	<spectemplate:FOUNDATION rdf:resource="&templates;ChacobobNonPermScopal_7-15-Foundation"/>
-	<spectemplate:STRICTURE rdf:resource="&templates;ChacobobNonPermScopal_7-15-Stricture"/>
-	<template:VIOLABILITY rdf:resource="&templates;ChacobobNonPermScopal_7-15-Violability"/>
-	<function:FUNCTION rdf:resource="&gold;Verbal"/>
-</template:desmeme>
-<general:constructionalConditioning rdf:about="&templates;ChacobobNonPermScopal_7-15-Conditioning"
-	 notes:CONDITIONS="A verbal ordering span"
-	 rdfs:label="ChacobobNonPermScopal_7-15-Conditioning"/>
-<template:arch rdf:about="&templates;ChacobobNonPermScopal_7-15-Foundation"
-	 rdfs:label="ChacobobNonPermScopal_7-15-Foundation">
-	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChacoboBodyPartPrefix"/>
-	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;ChacoboBodyPartPrefix"/>
-	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChacoboPunctual"/>
-	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;ChacoboTrans"/>
-	<spectemplate:KEYSTONE rdf:resource="&templates;ChacoboVerbRoot"/>
-	<spectemplate:RESTKOMPONENTEN rdf:resource="&templates;ChacobobNonPermScopal_7-15-RK"/>
-</template:arch>
-<component:restkomponentenSet rdf:about="&templates;ChacobobNonPermScopal_7-15-RK"
-	 rdfs:label="ChacobobNonPermScopal_7-15-RK">
-	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChacoboAssociatedMotion"/>
-	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChacoboCompletive"/>
-	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChacoboValence2"/>
-	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChacoboValence3"/>
-	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChacoboValence4"/>
-</component:restkomponentenSet>
-<template:order rdf:about="&templates;ChacobobNonPermScopal_7-15-Stricture"
-	 general:COUNT="9"
-	 rdfs:label="ChacobobNonPermScopal_7-15-Stricture">
-	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
-	<general:RELATIONS rdf:resource="&general;simple"/>
-</template:order>
-<template:notViolable rdf:about="&templates;ChacobobNonPermScopal_7-15-Violability"
-	 rdfs:label="ChacobobNonPermScopal_7-15-Violability"/>
 <component:coherent rdf:about="&templates;ChichewVerbNoNeg1-Coherence"
 	 rdfs:label="ChichewVerbNoNeg1-Coherence">
 	<function:CLASS rdf:resource="&gold;Verbal"/>
@@ -1382,6 +1445,8 @@
 <component:inelastic rdf:about="&templates;ChichwaClauseNullComponent-Elasticity"
 	 general:COUNT="0"
 	 rdfs:label="ChichwaClauseNullComponent-Elasticity"/>
+<template:span rdf:about="&templates;template-cao_Class4"
+	 rdfs:label="template-cao_Class4"/>
 <component:inelastic rdf:about="&templates;templateCHx_Class10035"
 	 general:COUNT="1"
 	 rdfs:label="templateCHx_Class10035"/>

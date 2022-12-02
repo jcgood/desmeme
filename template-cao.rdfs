@@ -491,10 +491,21 @@
 	<rdfs:comment>A type specifying that a component is dependent on a component appearing before it in the template.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&general;associatePosition"/>
 </rdfs:Class>
+<rdfs:Class rdf:about="&general;lexical"
+	 a:role="abstract"
+	 rdfs:label="general:lexical">
+	<rdfs:subClassOf rdf:resource="&template;conditioning"/>
+</rdfs:Class>
 <rdfs:Class rdf:about="&general;lexicoconstructionalConditioning"
 	 rdfs:label="general:lexicoconstructionalConditioning">
 	<rdfs:comment>A type for characterizing cases where a template's conditioning environment is lexico-constructional in nature, that is where it involves a constructional environment where a specific lexical item or set of lexical items must also appear.</rdfs:comment>
+	<rdfs:subClassOf rdf:resource="&general;lexical"/>
 	<rdfs:subClassOf rdf:resource="&general;morphosyntacticConditioning"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&general;lexicophonologicalConditioning"
+	 rdfs:label="general:lexicophonologicalConditioning">
+	<rdfs:subClassOf rdf:resource="&general;lexical"/>
+	<rdfs:subClassOf rdf:resource="&general;phonologicalConditioning"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&general;morphologicalConstituent"
 	 a:role="abstract"
@@ -923,7 +934,7 @@ another component).</rdfs:comment>
 	 rdfs:label="spectemplate:FILLED_COMPONENTS">
 	<rdfs:comment>A feature which points to a container for those components which are filled within a template.</rdfs:comment>
 	<rdfs:range rdf:resource="&component;filledComponentSet"/>
-	<rdfs:domain rdf:resource="&general;lexicoconstructionalConditioning"/>
+	<rdfs:domain rdf:resource="&general;lexical"/>
 </rdf:Property>
 <rdf:Property rdf:about="&spectemplate;FOUNDATION"
 	 a:maxCardinality="1"
@@ -1001,7 +1012,7 @@ another component).</rdfs:comment>
 	 a:range="cls"
 	 rdfs:label="template:FILLER_POSITION">
 	<rdfs:comment>A feature for specifying where, in a lexico-constructional template, filler elements appear.</rdfs:comment>
-	<rdfs:domain rdf:resource="&general;lexicoconstructionalConditioning"/>
+	<rdfs:domain rdf:resource="&general;lexical"/>
 	<a:allowedParents rdf:resource="&general;templateFillerPosition"/>
 	<rdfs:range rdf:resource="&rdfs;Class"/>
 </rdf:Property>
