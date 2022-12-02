@@ -2,6 +2,7 @@
 <!DOCTYPE rdf:RDF [
 	 <!ENTITY template 'http://purl.org/linguistics/jcgood/template#'>
 	 <!ENTITY specgeneral 'http://purl.org/linguistics/jcgood/specgeneral#'>
+	 <!ENTITY form 'http://purl.org/linguistics/jcgood/form#'>
 	 <!ENTITY general 'http://purl.org/linguistics/jcgood/general#'>
 	 <!ENTITY rdfs 'http://www.w3.org/2000/01/rdf-schema#'>
 	 <!ENTITY component 'http://purl.org/linguistics/jcgood/component#'>
@@ -9,14 +10,16 @@
 	 <!ENTITY templates 'http://linguistics-ontology.org/jcgood/templates#'>
 	 <!ENTITY function 'http://purl.org/linguistics/jcgood/function#'>
 	 <!ENTITY spectemplate 'http://purl.org/linguistics/jcgood/spectemplate#'>
-	 <!ENTITY speccomponent 'http://purl.org/linguistics/jcgood/speccomponent#'>
 	 <!ENTITY notes 'http://purl.org/linguistics/jcgood/notes#'>
+	 <!ENTITY speccomponent 'http://purl.org/linguistics/jcgood/speccomponent#'>
 	 <!ENTITY terms 'http://purl.org/dc/terms#'>
 	 <!ENTITY localcategory 'http://purl.org/linguistics/jcgood/localcategory#'>
 	 <!ENTITY rdf 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+	 <!ENTITY specform 'http://purl.org/linguistics/jcgood/specform#'>
 ]>
 <rdf:RDF xmlns:template="&template;"
 	 xmlns:specgeneral="&specgeneral;"
+	 xmlns:form="&form;"
 	 xmlns:general="&general;"
 	 xmlns:rdfs="&rdfs;"
 	 xmlns:component="&component;"
@@ -24,17 +27,58 @@
 	 xmlns:gold="&gold;"
 	 xmlns:function="&function;"
 	 xmlns:spectemplate="&spectemplate;"
-	 xmlns:notes="&notes;"
 	 xmlns:speccomponent="&speccomponent;"
+	 xmlns:notes="&notes;"
 	 xmlns:localcategory="&localcategory;"
 	 xmlns:terms="&terms;"
-	 xmlns:rdf="&rdf;">
+	 xmlns:rdf="&rdf;"
+	 xmlns:specform="&specform;">
 <component:inelastic rdf:about="&templates;BantuBeforeVerbStem-Elasticity"
 	 general:COUNT="0"
 	 rdfs:label="BantuBeforeVerbStem-Elasticity"/>
 <component:inelastic rdf:about="&templates;BantuVerbStem-Elasticity"
 	 general:COUNT="1"
 	 rdfs:label="BantuVerbStem-Elasticity"/>
+<component:coherent rdf:about="&templates;ChacoboAdvderbialModel-Coherence"
+	 rdfs:label="ChacoboAdvderbialModel-Coherence">
+	<function:CLASS rdf:resource="&localcategory;adverbial"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;ChacoboAdvderbialModel-Elasticity"
+	 general:MAXIMUM="100"
+	 general:MINIMUM="0"
+	 rdfs:label="ChacoboAdvderbialModel-Elasticity"/>
+<component:open rdf:about="&templates;ChacoboAdvderbialModel-Filledness"
+	 rdfs:label="ChacoboAdvderbialModel-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChacoboAdvderbialModel-Coherence"/>
+</component:open>
+<component:component rdf:about="&templates;ChacoboAdverbialModel"
+	 rdfs:label="ChacoboAdverbialModel">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChacoboAdvderbialModel-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChacoboAdvderbialModel-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChacoboAdverbialModel-Stability"/>
+</component:component>
+<component:stable rdf:about="&templates;ChacoboAdverbialModel-Stability"
+	 rdfs:label="ChacoboAdverbialModel-Stability"/>
+<component:component rdf:about="&templates;ChacoboAssociatedMotion"
+	 rdfs:label="ChacoboAssociatedMotion">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChacoboAssociatedMotion-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChacoboAssociatedMotion-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChacoboAssociatedMotion-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;ChacoboAssociatedMotion-Coherence"
+	 rdfs:label="ChacoboAssociatedMotion-Coherence">
+	<function:CLASS rdf:resource="&localcategory;associatedMotion"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;ChacoboAssociatedMotion-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChacoboAssociatedMotion-Elasticity"/>
+<component:open rdf:about="&templates;ChacoboAssociatedMotion-Filledness"
+	 rdfs:label="ChacoboAssociatedMotion-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChacoboAssociatedMotion-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;ChacoboAssociatedMotion-Stability"
+	 rdfs:label="ChacoboAssociatedMotion-Stability"/>
 <general:constructionalConditioning rdf:about="&templates;ChacoboBPVerbTrans:7-9-Conditioning"
 	 rdfs:label="ChacoboBPVerbTrans:7-9-Conditioning">
 	<notes:CONDITIONS>This is a desmeme for the "verbal core" (my term) in the language.</notes:CONDITIONS>
@@ -43,8 +87,8 @@
 	 rdfs:label="ChacoboBPVerbTrans:7-9-Foundation">
 	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChacoboBodyPartPrefix"/>
 	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;ChacoboBodyPartPrefix"/>
-	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChacoboTrans"/>
 	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;ChacoboTrans"/>
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChacoboTrans"/>
 	<spectemplate:KEYSTONE rdf:resource="&templates;ChacoboVerbRoot"/>
 </template:arch>
 <template:order rdf:about="&templates;ChacoboBPVerbTrans:7-9-Stricture"
@@ -85,9 +129,76 @@
 </component:open>
 <component:stable rdf:about="&templates;ChacoboBodyPartPrefix-Stability"
 	 rdfs:label="ChacoboBodyPartPrefix-Stability"/>
+<component:component rdf:about="&templates;ChacoboCompletive"
+	 rdfs:label="ChacoboCompletive">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChacoboCompletive-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChacoboCompletive-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChacoboCompletive-Stability"/>
+</component:component>
+<component:elastic rdf:about="&templates;ChacoboCompletive-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChacoboCompletive-Elasticity"/>
+<component:filled rdf:about="&templates;ChacoboCompletive-Filledness"
+	 rdfs:label="ChacoboCompletive-Filledness">
+	<speccomponent:FORM rdf:resource="&templates;ChacoboCompletive-Form"/>
+	<function:FILLER_CLASS rdf:resource="&localcategory;TenseMoodAspect"/>
+</component:filled>
+<form:canonicalLineate rdf:about="&templates;ChacoboCompletive-Form"
+	 gold:inLanguage="cao"
+	 rdfs:label="ChacoboCompletive-Form">
+	<specform:TRANSCRIPTION rdf:resource="&templates;ChacoboCompletive-Transcription"/>
+	<form:LIAISON rdf:resource="&form;sinistrous"/>
+</form:canonicalLineate>
+<component:stable rdf:about="&templates;ChacoboCompletive-Stability"
+	 rdfs:label="ChacoboCompletive-Stability"/>
+<form:transcription rdf:about="&templates;ChacoboCompletive-Transcription"
+	 specform:TRANSCRIPTION_STRING="=yó"
+	 rdfs:label="=yó"/>
 <notes:source rdf:about="&templates;ChacoboDesmemeSource"
 	 terms:bibliographicCitation="Tallman (personal communication)"
 	 rdfs:label="ChacoboDesmemeSource"/>
+<component:component rdf:about="&templates;ChacoboDurativeVolitional"
+	 rdfs:label="ChacoboDurativeVolitional">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChacoboDurativeVolitional-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChacoboDurativeVolitional-Open"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChacoboDurativeVolitional-Stability"/>
+</component:component>
+<component:incoherent rdf:about="&templates;ChacoboDurativeVolitional-Coherence"
+	 rdfs:label="ChacoboDurativeVolitional-Coherence">
+	<function:CLASSES rdf:resource="&localcategory;TenseMoodAspect"/>
+	<function:CLASSES rdf:resource="&localcategory;volitional"/>
+</component:incoherent>
+<component:elastic rdf:about="&templates;ChacoboDurativeVolitional-Elasticity"
+	 general:MAXIMUM="2"
+	 general:MINIMUM="0"
+	 rdfs:label="ChacoboDurativeVolitional-Elasticity"/>
+<component:open rdf:about="&templates;ChacoboDurativeVolitional-Open"
+	 rdfs:label="ChacoboDurativeVolitional-Open">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChacoboDurativeVolitional-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;ChacoboDurativeVolitional-Stability"
+	 rdfs:label="ChacoboDurativeVolitional-Stability"/>
+<component:component rdf:about="&templates;ChacoboEvidentialModal"
+	 rdfs:label="ChacoboEvidentialModal">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChacoboEvidentialModal-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChacoboEvidentialModal-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChacoboEvidentialModal-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;ChacoboEvidentialModal-Coherence"
+	 rdfs:label="ChacoboEvidentialModal-Coherence">
+	<function:CLASS rdf:resource="&localcategory;modal"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;ChacoboEvidentialModal-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChacoboEvidentialModal-Elasticity"/>
+<component:open rdf:about="&templates;ChacoboEvidentialModal-Filledness"
+	 rdfs:label="ChacoboEvidentialModal-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChacoboEvidentialModal-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;ChacoboEvidentialModal-Stability"
+	 rdfs:label="ChacoboEvidentialModal-Stability"/>
 <general:segmental rdf:about="&templates;ChacoboGlottalStop:7-8-Conditioning"
 	 notes:CONDITIONS="Body part prefix preceding a vowel"
 	 rdfs:label="ChacoboGlottalStop:7-8-Conditioning"/>
@@ -97,7 +208,10 @@
 	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChacoboVerbRoot"/>
 </template:span>
 <template:juncture rdf:about="&templates;ChacoboGlottalStop:7-8-Stricture"
-	 rdfs:label="ChacoboGlottalStop:7-8-Stricture"/>
+	 general:COUNT="2"
+	 rdfs:label="ChacoboGlottalStop:7-8-Stricture">
+	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
+</template:juncture>
 <template:notViolable rdf:about="&templates;ChacoboGlottalStop:7-8-Violability"
 	 rdfs:label="ChacoboGlottalStop:7-8-Violability"/>
 <template:desmeme rdf:about="&templates;ChacoboGlottalStop_7-8"
@@ -110,6 +224,63 @@
 	<template:VIOLABILITY rdf:resource="&templates;ChacoboGlottalStop:7-8-Violability"/>
 	<function:FUNCTION rdf:resource="&gold;Verbal"/>
 </template:desmeme>
+<template:desmeme rdf:about="&templates;ChacoboHighToneIns_7-13"
+	 gold:inLanguage="cao"
+	 rdfs:label="ChacoboHighToneIns_7-13">
+	<notes:HAS_SOURCE rdf:resource="&templates;ChacoboDesmemeSource"/>
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChacoboHighToneIns_7-13-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChacoboHighToneIns_7-13-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChacoboHighToneIns_7-13-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChacoboHighToneIns_7-13-Violability"/>
+	<function:FUNCTION rdf:resource="&general;prosodicWord"/>
+</template:desmeme>
+<general:prosodicConditioning rdf:about="&templates;ChacoboHighToneIns_7-13-Conditioning"
+	 notes:CONDITIONS="Insert H on first syllable if no LH in domain"
+	 rdfs:label="ChacoboHighToneIns_7-13-Conditioning"/>
+<template:span rdf:about="&templates;ChacoboHighToneIns_7-13-Foundation"
+	 rdfs:label="ChacoboHighToneIns_7-13-Foundation">
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChacoboBodyPartPrefix"/>
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChacoboCompletive"/>
+	<spectemplate:RESTKOMPONENTEN rdf:resource="&templates;ChacoboHighToneIns_7-13-RK"/>
+</template:span>
+<component:restkomponentenSet rdf:about="&templates;ChacoboHighToneIns_7-13-RK"
+	 rdfs:label="ChacoboHighToneIns_7-13-RK">
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChacoboTrans"/>
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChacoboValence2"/>
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChacoboValence3"/>
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChacoboValence4"/>
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChacoboVerbRoot"/>
+</component:restkomponentenSet>
+<template:edge rdf:about="&templates;ChacoboHighToneIns_7-13-Stricture"
+	 rdfs:label="ChacoboHighToneIns_7-13-Stricture"/>
+<template:notViolable rdf:about="&templates;ChacoboHighToneIns_7-13-Violability"
+	 rdfs:label="ChacoboHighToneIns_7-13-Violability"/>
+<component:component rdf:about="&templates;ChacoboLinker"
+	 rdfs:label="ChacoboLinker">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChacoboLinker-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChacoboLinker-Filedness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChacoboLinker-Stability"/>
+</component:component>
+<component:elastic rdf:about="&templates;ChacoboLinker-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChacoboLinker-Elasticity"/>
+<component:filled rdf:about="&templates;ChacoboLinker-Filedness"
+	 rdfs:label="ChacoboLinker-Filedness">
+	<speccomponent:FORM rdf:resource="&templates;ChacoboLinker-Form"/>
+	<function:FILLER_CLASS rdf:resource="&localcategory;clauseLinking"/>
+</component:filled>
+<form:canonicalLineate rdf:about="&templates;ChacoboLinker-Form"
+	 gold:inLanguage="cao"
+	 rdfs:label="ChacoboLinker-Form">
+	<specform:TRANSCRIPTION rdf:resource="&templates;ChacoboLinker-Transcription"/>
+	<form:LIAISON rdf:resource="&form;sinistrous"/>
+</form:canonicalLineate>
+<component:stable rdf:about="&templates;ChacoboLinker-Stability"
+	 rdfs:label="ChacoboLinker-Stability"/>
+<form:transcription rdf:about="&templates;ChacoboLinker-Transcription"
+	 specform:TRANSCRIPTION_STRING="=tsi"
+	 rdfs:label="=tsi"/>
 <template:desmeme rdf:about="&templates;ChacoboMin_7-10"
 	 gold:inLanguage="cao"
 	 rdfs:label="ChacoboMin_7-10">
@@ -138,6 +309,19 @@
 	<template:EXCEPTIONALITY rdf:resource="&template;lexical"/>
 	<template:REPARABILITY rdf:resource="&template;surfaceViolable"/>
 </template:potentiallyViolable>
+<component:component rdf:about="&templates;ChacoboNonIntNPNullComponent"
+	 rdfs:label="ChacoboNonIntNPNullComponent">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChacoboNonIntNPNullComponent-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChacoboNonIntNPNullComponent-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChacoboNonIntNPNullComponent-Stability"/>
+</component:component>
+<component:inelastic rdf:about="&templates;ChacoboNonIntNPNullComponent-Elasticity"
+	 general:COUNT="0"
+	 rdfs:label="ChacoboNonIntNPNullComponent-Elasticity"/>
+<component:null rdf:about="&templates;ChacoboNonIntNPNullComponent-Filledness"
+	 rdfs:label="ChacoboNonIntNPNullComponent-Filledness"/>
+<component:stable rdf:about="&templates;ChacoboNonIntNPNullComponent-Stability"
+	 rdfs:label="ChacoboNonIntNPNullComponent-Stability"/>
 <template:desmeme rdf:about="&templates;ChacoboNonInterSimp_7-11"
 	 gold:inLanguage="cao"
 	 rdfs:label="ChacoboNonInterSimp_7-11">
@@ -173,12 +357,50 @@
 </template:order>
 <template:notViolable rdf:about="&templates;ChacoboNonInterSimp_7-11-Violability"
 	 rdfs:label="ChacoboNonInterSimp_7-11-Violability"/>
+<template:desmeme rdf:about="&templates;ChacoboNonInterrupByNP_7-19"
+	 gold:inLanguage="cao"
+	 rdfs:label="ChacoboNonInterrupByNP_7-19">
+	<notes:HAS_SOURCE rdf:resource="&templates;ChacoboDesmemeSource"/>
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChacoboNonInterrupByNP_7-19-Conditionin"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChacoboNonInterrupByNP_7-19-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChacoboNonInterrupByNP_7-19-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChacoboNonInterrupByNP_7-19-Violability"/>
+	<function:FUNCTION rdf:resource="&gold;Verbal"/>
+</template:desmeme>
+<general:constructionalConditioning rdf:about="&templates;ChacoboNonInterrupByNP_7-19-Conditionin"
+	 notes:CONDITIONS="Span were an NP argument can't split the positions."
+	 rdfs:label="ChacoboNonInterrupByNP_7-19-Conditionin"/>
+<template:arch rdf:about="&templates;ChacoboNonInterrupByNP_7-19-Foundation"
+	 rdfs:label="ChacoboNonInterrupByNP_7-19-Foundation">
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChacoboEvidentialModal"/>
+	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;ChacoboNonIntNPNullComponent"/>
+	<spectemplate:RESTKOMPONENTEN rdf:resource="&templates;ChacoboNonInterrupByNP_7-19-RK"/>
+	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;ChacoboValence4"/>
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;Chacobo_7-9-Embedded"/>
+	<spectemplate:KEYSTONE rdf:resource="&templates;Chacobo_7-9-Embedded"/>
+</template:arch>
+<component:restkomponentenSet rdf:about="&templates;ChacoboNonInterrupByNP_7-19-RK"
+	 rdfs:label="ChacoboNonInterrupByNP_7-19-RK">
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChacoboAssociatedMotion"/>
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChacoboCompletive"/>
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChacoboDurativeVolitional"/>
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChacoboLinker"/>
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChacoboPunctual"/>
+</component:restkomponentenSet>
+<template:edge rdf:about="&templates;ChacoboNonInterrupByNP_7-19-Stricture"
+	 general:COUNT="2"
+	 rdfs:label="ChacoboNonInterrupByNP_7-19-Stricture">
+	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
+</template:edge>
+<template:notViolable rdf:about="&templates;ChacoboNonInterrupByNP_7-19-Violability"
+	 rdfs:label="ChacoboNonInterrupByNP_7-19-Violability"/>
 <template:desmeme rdf:about="&templates;ChacoboOrder_7-10"
 	 gold:inLanguage="cao"
 	 rdfs:label="ChacoboOrder_7-10">
 	<notes:HAS_SOURCE rdf:resource="&templates;ChacoboDesmemeSource"/>
 	<specgeneral:CONDITIONING rdf:resource="&templates;ChacoboOrder_7-10-Conditioning"/>
 	<spectemplate:FOUNDATION rdf:resource="&templates;ChacoboOrder_7-10-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChacoboOrder_7-10-Stricture"/>
 	<function:FUNCTION rdf:resource="&gold;Verbal"/>
 </template:desmeme>
 <general:constructionalConditioning rdf:about="&templates;ChacoboOrder_7-10-Conditioning"
@@ -186,12 +408,44 @@
 	 rdfs:label="ChacoboOrder_7-10-Conditioning"/>
 <template:arch rdf:about="&templates;ChacoboOrder_7-10-Foundation"
 	 rdfs:label="ChacoboOrder_7-10-Foundation">
-	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;ChacoboBodyPartPrefix"/>
 	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChacoboBodyPartPrefix"/>
+	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;ChacoboBodyPartPrefix"/>
 	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;ChacoboTrans"/>
 	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChacoboValence2"/>
 	<spectemplate:KEYSTONE rdf:resource="&templates;ChacoboVerbRoot"/>
 </template:arch>
+<template:order rdf:about="&templates;ChacoboOrder_7-10-Stricture"
+	 general:COUNT="4"
+	 rdfs:label="ChacoboOrder_7-10-Stricture">
+	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
+	<general:RELATIONS rdf:resource="&general;simple"/>
+</template:order>
+<component:component rdf:about="&templates;ChacoboPunctual"
+	 rdfs:label="ChacoboPunctual">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChacoboPunctual-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChacoboPunctual-FIlledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChacoboPunctual-Stability"/>
+</component:component>
+<component:elastic rdf:about="&templates;ChacoboPunctual-Elasticity"
+	 general:MAXIMUM="1"
+	 general:MINIMUM="0"
+	 rdfs:label="ChacoboPunctual-Elasticity"/>
+<component:filled rdf:about="&templates;ChacoboPunctual-FIlledness"
+	 rdfs:label="ChacoboPunctual-FIlledness">
+	<speccomponent:FORM rdf:resource="&templates;ChacoboPunctual-Form"/>
+	<function:FILLER_CLASS rdf:resource="&localcategory;TenseMoodAspect"/>
+</component:filled>
+<form:canonicalLineate rdf:about="&templates;ChacoboPunctual-Form"
+	 gold:inLanguage="cao"
+	 rdfs:label="ChacoboPunctual-Form">
+	<specform:TRANSCRIPTION rdf:resource="&templates;ChacoboPunctual-Transcription"/>
+	<form:LIAISON rdf:resource="&form;sinistrous"/>
+</form:canonicalLineate>
+<component:stable rdf:about="&templates;ChacoboPunctual-Stability"
+	 rdfs:label="ChacoboPunctual-Stability"/>
+<form:transcription rdf:about="&templates;ChacoboPunctual-Transcription"
+	 specform:TRANSCRIPTION_STRING="=tápi"
+	 rdfs:label="=tápi"/>
 <component:component rdf:about="&templates;ChacoboTrans"
 	 rdfs:label="ChacoboTrans">
 	<speccomponent:ELASTICITY rdf:resource="&templates;ChacoboTrans-Elasiticity"/>
@@ -257,6 +511,26 @@
 </component:open>
 <component:stable rdf:about="&templates;ChacoboValence3-Stability"
 	 rdfs:label="ChacoboValence3-Stability"/>
+<component:component rdf:about="&templates;ChacoboValence4"
+	 rdfs:label="ChacoboValence4">
+	<speccomponent:ELASTICITY rdf:resource="&templates;ChacoboValence4-Elasticity"/>
+	<speccomponent:FILLEDNESS rdf:resource="&templates;ChacoboValence4-Filledness"/>
+	<speccomponent:STABILITY rdf:resource="&templates;ChacoboValence4-Stability"/>
+</component:component>
+<component:coherent rdf:about="&templates;ChacoboValence4-Coherence"
+	 rdfs:label="ChacoboValence4-Coherence">
+	<function:CLASS rdf:resource="&localcategory;valency"/>
+</component:coherent>
+<component:elastic rdf:about="&templates;ChacoboValence4-Elasticity"
+	 general:MAXIMUM="3"
+	 general:MINIMUM="0"
+	 rdfs:label="ChacoboValence4-Elasticity"/>
+<component:open rdf:about="&templates;ChacoboValence4-Filledness"
+	 rdfs:label="ChacoboValence4-Filledness">
+	<speccomponent:COHERENCE rdf:resource="&templates;ChacoboValence4-Coherence"/>
+</component:open>
+<component:stable rdf:about="&templates;ChacoboValence4-Stability"
+	 rdfs:label="ChacoboValence4-Stability"/>
 <component:component rdf:about="&templates;ChacoboVerbRoot"
 	 rdfs:label="ChacoboVerbRoot">
 	<speccomponent:ELASTICITY rdf:resource="&templates;ChacoboVerbRoot-Elasticity"/>
@@ -276,6 +550,8 @@
 </component:open>
 <component:stable rdf:about="&templates;ChacoboVerbRoot-Stability"
 	 rdfs:label="ChacoboVerbRoot-Stability"/>
+<template:embeddedDesmeme rdf:about="&templates;Chacobo_7-11-Embedded-Unspecified"
+	 rdfs:label="Chacobo_7-11-Embedded-Unspecified"/>
 <component:component rdf:about="&templates;Chacobo_7-9-Embedded"
 	 rdfs:label="Chacobo_7-9-Embedded">
 	<speccomponent:ELASTICITY rdf:resource="&templates;Chacobo_7-9-Embedded-Elasticity"/>
@@ -294,6 +570,44 @@
 	 rdfs:label="Chacobo_7-9-Embedded-Stability"/>
 <template:embeddedDesmeme rdf:about="&templates;Chacobo_7-9-Embedded-Unspecified"
 	 rdfs:label="Chacobo_7-9-Embedded-Unspecified"/>
+<template:desmeme rdf:about="&templates;ChacobobNonPermScopal_7-15"
+	 gold:inLanguage="cao"
+	 rdfs:label="ChacobobNonPermScopal_7-15">
+	<notes:HAS_SOURCE rdf:resource="&templates;ChacoboDesmemeSource"/>
+	<specgeneral:CONDITIONING rdf:resource="&templates;ChacobobNonPermScopal_7-15-Conditioning"/>
+	<spectemplate:FOUNDATION rdf:resource="&templates;ChacobobNonPermScopal_7-15-Foundation"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChacobobNonPermScopal_7-15-Stricture"/>
+	<template:VIOLABILITY rdf:resource="&templates;ChacobobNonPermScopal_7-15-Violability"/>
+	<function:FUNCTION rdf:resource="&gold;Verbal"/>
+</template:desmeme>
+<general:constructionalConditioning rdf:about="&templates;ChacobobNonPermScopal_7-15-Conditioning"
+	 notes:CONDITIONS="A verbal ordering span"
+	 rdfs:label="ChacobobNonPermScopal_7-15-Conditioning"/>
+<template:arch rdf:about="&templates;ChacobobNonPermScopal_7-15-Foundation"
+	 rdfs:label="ChacobobNonPermScopal_7-15-Foundation">
+	<spectemplate:LEFT_SUPPORT rdf:resource="&templates;ChacoboBodyPartPrefix"/>
+	<spectemplate:LEFT_VOUSSOIR rdf:resource="&templates;ChacoboBodyPartPrefix"/>
+	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChacoboPunctual"/>
+	<spectemplate:RIGHT_VOUSSOIR rdf:resource="&templates;ChacoboTrans"/>
+	<spectemplate:KEYSTONE rdf:resource="&templates;ChacoboVerbRoot"/>
+	<spectemplate:RESTKOMPONENTEN rdf:resource="&templates;ChacobobNonPermScopal_7-15-RK"/>
+</template:arch>
+<component:restkomponentenSet rdf:about="&templates;ChacobobNonPermScopal_7-15-RK"
+	 rdfs:label="ChacobobNonPermScopal_7-15-RK">
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChacoboAssociatedMotion"/>
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChacoboCompletive"/>
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChacoboValence2"/>
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChacoboValence3"/>
+	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChacoboValence4"/>
+</component:restkomponentenSet>
+<template:order rdf:about="&templates;ChacobobNonPermScopal_7-15-Stricture"
+	 general:COUNT="9"
+	 rdfs:label="ChacobobNonPermScopal_7-15-Stricture">
+	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
+	<general:RELATIONS rdf:resource="&general;simple"/>
+</template:order>
+<template:notViolable rdf:about="&templates;ChacobobNonPermScopal_7-15-Violability"
+	 rdfs:label="ChacobobNonPermScopal_7-15-Violability"/>
 <component:coherent rdf:about="&templates;ChichewVerbNoNeg1-Coherence"
 	 rdfs:label="ChichewVerbNoNeg1-Coherence">
 	<function:CLASS rdf:resource="&gold;Verbal"/>
@@ -313,8 +627,6 @@
 	 rdfs:label="ChichewaApplicative-Filledness">
 	<function:FILLER_CLASS rdf:resource="&localcategory;valency"/>
 </component:filled>
-<template:embeddedDesmeme rdf:about="&templates;ChichewaAssocativeMarker-UnspecifiedDesmeme"
-	 rdfs:label="ChichewaAssocativeMarker-UnspecifiedDesmeme"/>
 <component:coherent rdf:about="&templates;ChichewaAssociativeMarker-Coherence"
 	 rdfs:label="ChichewaAssociativeMarker-Coherence">
 	<function:CLASS rdf:resource="&gold;Adposition"/>
@@ -324,7 +636,6 @@
 	 rdfs:label="ChichewaAssociativeMarker-Elasticity"/>
 <component:partiallyFilled rdf:about="&templates;ChichewaAssociativeMarker-Filledness"
 	 rdfs:label="ChichewaAssociativeMarker-Filledness">
-	<speccomponent:FORM rdf:resource="&templates;ChichewaAssocativeMarker-UnspecifiedDesmeme"/>
 	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaAssociativeMarker-Coherence"/>
 	<component:FILLER_PLACEMENT rdf:resource="&general;componentFinal"/>
 	<function:FILLER_CLASS rdf:resource="&localcategory;adpositionalStem"/>
@@ -380,11 +691,8 @@
 	 rdfs:label="ChichewaClauseComponent-Elasticity"/>
 <component:filled rdf:about="&templates;ChichewaClauseComponent-Filledness"
 	 rdfs:label="ChichewaClauseComponent-Filledness">
-	<speccomponent:FORM rdf:resource="&templates;ChichewaClauseComponent-UnspecifiedDesmem"/>
 	<function:FILLER_CLASS rdf:resource="&gold;MainClause"/>
 </component:filled>
-<template:embeddedDesmeme rdf:about="&templates;ChichewaClauseComponent-UnspecifiedDesmem"
-	 rdfs:label="ChichewaClauseComponent-UnspecifiedDesmem"/>
 <component:null rdf:about="&templates;ChichewaClauseNullComponent-Filledness"
 	 rdfs:label="ChichewaClauseNullComponent-Filledness"/>
 <component:coherent rdf:about="&templates;ChichewaClauseX-Coherence"
@@ -415,11 +723,8 @@
 	 rdfs:label="ChichewaCleftRelative-Elasticity"/>
 <component:filled rdf:about="&templates;ChichewaCleftRelative-Filledness"
 	 rdfs:label="ChichewaCleftRelative-Filledness">
-	<speccomponent:FORM rdf:resource="&templates;ChichewaCleftRelative-UnspecifiedDesmeme"/>
 	<function:FILLER_CLASS rdf:resource="&localcategory;relativeClause"/>
 </component:filled>
-<template:embeddedDesmeme rdf:about="&templates;ChichewaCleftRelative-UnspecifiedDesmeme"
-	 rdfs:label="ChichewaCleftRelative-UnspecifiedDesmeme"/>
 <component:inelastic rdf:about="&templates;ChichewaComplementClauseLeftSupport-Elasticity"
 	 general:COUNT="1"
 	 rdfs:label="ChichewaComplementClauseLeftSupport-Elasticity"/>
@@ -466,11 +771,8 @@
 	 rdfs:label="ChichewaDerivedStemEmbedded-Elasticity"/>
 <component:filled rdf:about="&templates;ChichewaDerivedStemEmbedded-Filledness"
 	 rdfs:label="ChichewaDerivedStemEmbedded-Filledness">
-	<speccomponent:FORM rdf:resource="&templates;ChichewaDerivedStemEmbedded-Unspecified"/>
 	<function:FILLER_CLASS rdf:resource="&gold;Verbal"/>
 </component:filled>
-<template:embeddedDesmeme rdf:about="&templates;ChichewaDerivedStemEmbedded-Unspecified"
-	 rdfs:label="ChichewaDerivedStemEmbedded-Unspecified"/>
 <component:coherent rdf:about="&templates;ChichewaFV-Coherence"
 	 rdfs:label="ChichewaFV-Coherence">
 	<function:CLASS rdf:resource="&gold;Verbal"/>
@@ -531,7 +833,6 @@
 	 rdfs:label="ChichewaLocativizedNoun-Elasticity"/>
 <component:filled rdf:about="&templates;ChichewaLocativizedNoun-Filledness"
 	 rdfs:label="ChichewaLocativizedNoun-Filledness">
-	<speccomponent:FORM rdf:resource="&templates;ChichewaNoun-Embedded-Unspecified"/>
 	<function:FILLER_CLASS rdf:resource="&gold;Noun"/>
 </component:filled>
 <component:coherent rdf:about="&templates;ChichewaMacroStemEmbedded-Coherence"
@@ -543,11 +844,8 @@
 	 rdfs:label="ChichewaMacroStemEmbedded-Elasticity"/>
 <component:filled rdf:about="&templates;ChichewaMacroStemEmbedded-Filledness"
 	 rdfs:label="ChichewaMacroStemEmbedded-Filledness">
-	<speccomponent:FORM rdf:resource="&templates;ChichewaMacroStemEmbedded-Unspecified"/>
 	<function:FILLER_CLASS rdf:resource="&gold;Verbal"/>
 </component:filled>
-<template:embeddedDesmeme rdf:about="&templates;ChichewaMacroStemEmbedded-Unspecified"
-	 rdfs:label="ChichewaMacroStemEmbedded-Unspecified"/>
 <component:coherent rdf:about="&templates;ChichewaModal-Coherence"
 	 rdfs:label="ChichewaModal-Coherence">
 	<function:CLASS rdf:resource="&localcategory;TenseMoodAspect"/>
@@ -646,11 +944,8 @@
 	 rdfs:label="ChichewaNiWholeVerb-Elasticity"/>
 <component:filled rdf:about="&templates;ChichewaNiWholeVerb-Filledness"
 	 rdfs:label="ChichewaNiWholeVerb-Filledness">
-	<speccomponent:FORM rdf:resource="&templates;ChichewaNiWholeVerb-Unspecified"/>
 	<function:FILLER_CLASS rdf:resource="&localcategory;personReference"/>
 </component:filled>
-<template:embeddedDesmeme rdf:about="&templates;ChichewaNiWholeVerb-Unspecified"
-	 rdfs:label="ChichewaNiWholeVerb-Unspecified"/>
 <component:elastic rdf:about="&templates;ChichewaNominalReduplicantEmbedded-Elasticity"
 	 general:MAXIMUM="1"
 	 general:MINIMUM="0"
@@ -693,13 +988,6 @@
 	 rdfs:label="ChichewaNonInitialSyllables-Filledness">
 	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaNonInitialSyllables-Coherence"/>
 </component:open>
-<template:embeddedDesmeme rdf:about="&templates;ChichewaNoun-Embedded"
-	 gold:inLanguage="http://lexvo.org/id/iso639-3/nya"
-	 rdfs:label="ChichewaNoun-Embedded">
-	<function:FUNCTION rdf:resource="&gold;Noun"/>
-</template:embeddedDesmeme>
-<template:embeddedDesmeme rdf:about="&templates;ChichewaNoun-Embedded-Unspecified"
-	 rdfs:label="ChichewaNoun-Embedded-Unspecified"/>
 <component:inelastic rdf:about="&templates;ChichewaNoun-LeftSupport-Elasticity"
 	 general:COUNT="1"
 	 rdfs:label="ChichewaNoun-LeftSupport-Elasticity"/>
@@ -744,8 +1032,6 @@
 	 rdfs:label="ChichewaNounEmbedded-RightSupport-Filledness">
 	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaNounEmbedded-RightSupport-Coherence"/>
 </component:open>
-<template:embeddedDesmeme rdf:about="&templates;ChichewaO-UnspecifiedDesmeme"
-	 rdfs:label="ChichewaO-UnspecifiedDesmeme"/>
 <component:elastic rdf:about="&templates;ChichewaOM-Elasticity"
 	 general:MAXIMUM="1"
 	 general:MINIMUM="0"
@@ -771,7 +1057,6 @@
 	 rdfs:label="ChichewaORelativizer-Elasticity"/>
 <component:partiallyFilled rdf:about="&templates;ChichewaORelativizer-Filledness"
 	 rdfs:label="ChichewaORelativizer-Filledness">
-	<speccomponent:FORM rdf:resource="&templates;ChichewaO-UnspecifiedDesmeme"/>
 	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaORelativizer-Coherence"/>
 	<function:FILLER_CLASS rdf:resource="&gold;Relativizer"/>
 	<component:FILLER_PLACEMENT rdf:resource="&general;componentFinal"/>
@@ -830,11 +1115,8 @@
 	 rdfs:label="ChichewaProsodicDerivationalStemEmbedded-Elasticity"/>
 <component:filled rdf:about="&templates;ChichewaProsodicDerivationalStemEmbedded-Filledness"
 	 rdfs:label="ChichewaProsodicDerivationalStemEmbedded-Filledness">
-	<speccomponent:FORM rdf:resource="&templates;ChichewaProsodicDerivationalStemEmbedded-Unspecified"/>
 	<function:FILLER_CLASS rdf:resource="&gold;Verbal"/>
 </component:filled>
-<template:embeddedDesmeme rdf:about="&templates;ChichewaProsodicDerivationalStemEmbedded-Unspecified"
-	 rdfs:label="ChichewaProsodicDerivationalStemEmbedded-Unspecified"/>
 <component:coherent rdf:about="&templates;ChichewaProsodicExtensions-Coherence"
 	 rdfs:label="ChichewaProsodicExtensions-Coherence">
 	<function:CLASS rdf:resource="&localcategory;valency"/>
@@ -922,7 +1204,6 @@
 <component:partiallyFilled rdf:about="&templates;ChichewaRelativeClauseRelativizer-Filler"
 	 rdfs:label="ChichewaRelativeClauseRelativizer-Filler">
 	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaRelativeClauseRelativizer-Coherence"/>
-	<speccomponent:FORM rdf:resource="&templates;ChichewaRelativizer-UnspecifiedDesmeme"/>
 	<component:FILLER_PLACEMENT rdf:resource="&general;componentFinal"/>
 	<function:FILLER_CLASS rdf:resource="&localcategory;relativizerStem"/>
 </component:partiallyFilled>
@@ -937,8 +1218,6 @@
 	 rdfs:label="ChichewaRelativizedClause-Filledness">
 	<speccomponent:COHERENCE rdf:resource="&templates;ChichewaRelativizedClause-Coherence"/>
 </component:open>
-<template:embeddedDesmeme rdf:about="&templates;ChichewaRelativizer-UnspecifiedDesmeme"
-	 rdfs:label="ChichewaRelativizer-UnspecifiedDesmeme"/>
 <component:coherent rdf:about="&templates;ChichewaSM-Coherence"
 	 rdfs:label="ChichewaSM-Coherence">
 	<function:CLASS rdf:resource="&localcategory;subjectReference"/>

@@ -634,12 +634,23 @@
 	<rdfs:subClassOf rdf:resource="&general;grammaticalCategory"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&localcategory;adpositionalStem"
+	 a:role="abstract"
 	 rdfs:label="localcategory:adpositionalStem">
+	<rdfs:subClassOf rdf:resource="&general;grammaticalCategory"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&localcategory;adverbial"
+	 a:role="abstract"
+	 rdfs:label="localcategory:adverbial">
 	<rdfs:subClassOf rdf:resource="&general;grammaticalCategory"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&localcategory;argument"
 	 a:role="abstract"
 	 rdfs:label="localcategory:argument">
+	<rdfs:subClassOf rdf:resource="&general;grammaticalCategory"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&localcategory;associatedMotion"
+	 a:role="abstract"
+	 rdfs:label="localcategory:associatedMotion">
 	<rdfs:subClassOf rdf:resource="&general;grammaticalCategory"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&localcategory;bodyPartPrefix"
@@ -650,6 +661,10 @@
 <rdfs:Class rdf:about="&localcategory;clauseChaining"
 	 a:role="abstract"
 	 rdfs:label="localcategory:clauseChaining">
+	<rdfs:subClassOf rdf:resource="&general;grammaticalCategory"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&localcategory;clauseLinking"
+	 rdfs:label="localcategory:clauseLinking">
 	<rdfs:subClassOf rdf:resource="&general;grammaticalCategory"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&localcategory;consonant"
@@ -705,6 +720,10 @@
 <rdfs:Class rdf:about="&localcategory;locative"
 	 a:role="abstract"
 	 rdfs:label="localcategory:locative">
+	<rdfs:subClassOf rdf:resource="&general;grammaticalCategory"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&localcategory;modal"
+	 rdfs:label="localcategory:modal">
 	<rdfs:subClassOf rdf:resource="&general;grammaticalCategory"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&localcategory;negative"
@@ -785,6 +804,10 @@
 <rdfs:Class rdf:about="&localcategory;valency"
 	 a:role="abstract"
 	 rdfs:label="localcategory:valency">
+	<rdfs:subClassOf rdf:resource="&general;grammaticalCategory"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&localcategory;volitional"
+	 rdfs:label="localcategory:volitional">
 	<rdfs:subClassOf rdf:resource="&general;grammaticalCategory"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&localcategory;vowel"
@@ -1025,6 +1048,10 @@ another component).</rdfs:comment>
 	 rdfs:label="template:desmeme">
 	<rdfs:comment>A type for sets of of linearization restrictions that are not predictable and are not associated with the ordering of segments or suprasegments of a lexical item. Templates can be understood as a subclass of desmemes, though they are not given formal status in this ontology due to problems with devising a precise definition for them.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&form;lineate"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&template;edge"
+	 rdfs:label="template:edge">
+	<rdfs:subClassOf rdf:resource="&template;stricture"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&template;embeddedDesmeme"
 	 rdfs:label="template:embeddedDesmeme">

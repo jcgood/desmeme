@@ -1,4 +1,4 @@
-; Wed Nov 30 23:01:22 EST 2022
+; Thu Dec 01 22:12:29 EST 2022
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -6,10 +6,10 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[template-cao_ProjectKB_Class89]
-		[template-cao_ProjectKB_Class90]
-		[template-cao_ProjectKB_Class91]
-		[template-cao_ProjectKB_Class92]))
+		[template-cao_ProjectKB_Class301]
+		[template-cao_ProjectKB_Class302]
+		[template-cao_ProjectKB_Class303]
+		[template-cao_ProjectKB_Class304]))
 
 ([CLSES_TAB] of  Widget
 
@@ -453,18 +453,18 @@
 		[STANDARD_SLOT_FORM_WIDGET]
 		[template_ProjectKB_Instance_232]
 		[template_ProjectKB_Instance_10164]
-		[template_ProjectKB_Instance_378]
 		[template_ProjectKB_Instance_385]
 		[template_ProjectKB_Instance_70085]
 		[INSTANCE_ANNOTATION_FORM_WIDGET]
+		[PAL_FORM_WIDGET]
+		[template_ProjectKB_Instance_20070]
+		[template_ProjectKB_Instance_30079]
+		[template_ProjectKB_Instance_378]
 		[template_ProjectKB_Instance_30075]
 		[template_ProjectKB_Instance_225]
 		[template_ProjectKB_Instance_30074]
-		[PAL_FORM_WIDGET]
 		[STANDARD_FACET_FORM_WIDGET]
-		[template_ProjectKB_Instance_99]
-		[template_ProjectKB_Instance_20070]
-		[template_ProjectKB_Instance_30079])
+		[template_ProjectKB_Instance_99])
 	(default_cls_metaclass ":STANDARD-CLASS")
 	(default_facet_metaclass ":STANDARD-FACET")
 	(default_instance_widget_class_name "edu.stanford.smi.protege.widget.FormWidget")
@@ -625,6 +625,26 @@
 
 ([template-cao_ProjectKB_Class30] of  Property_List
 )
+
+([template-cao_ProjectKB_Class301] of  String
+
+	(name ":INSTANCE-ANNOTATION")
+	(string_value "%3AANNOTATION-TEXT"))
+
+([template-cao_ProjectKB_Class302] of  String
+
+	(name ":PAL-CONSTRAINT")
+	(string_value "%3APAL-NAME"))
+
+([template-cao_ProjectKB_Class303] of  String
+
+	(name "form:transcription")
+	(string_value "specform%3ATRANSCRIPTION_STRING"))
+
+([template-cao_ProjectKB_Class304] of  String
+
+	(name ":META-CLASS")
+	(string_value "%3ANAME"))
 
 ([template-cao_ProjectKB_Class31] of  Widget
 
@@ -845,31 +865,11 @@
 ([template-cao_ProjectKB_Class8] of  Property_List
 )
 
-([template-cao_ProjectKB_Class89] of  String
-
-	(name ":INSTANCE-ANNOTATION")
-	(string_value "%3AANNOTATION-TEXT"))
-
 ([template-cao_ProjectKB_Class9] of  Widget
 
 	(is_hidden TRUE)
 	(property_list [template-cao_ProjectKB_Class10])
 	(widget_class_name "dfki.protege.ontoviz_tab.OntovizTab"))
-
-([template-cao_ProjectKB_Class90] of  String
-
-	(name ":PAL-CONSTRAINT")
-	(string_value "%3APAL-NAME"))
-
-([template-cao_ProjectKB_Class91] of  String
-
-	(name "form:transcription")
-	(string_value "specform%3ATRANSCRIPTION_STRING"))
-
-([template-cao_ProjectKB_Class92] of  String
-
-	(name ":META-CLASS")
-	(string_value "%3ANAME"))
 
 ([template_ProjectKB_Class75] of  Widget
 
