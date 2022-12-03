@@ -537,6 +537,11 @@
 	<rdfs:comment>A supertype for specifying that the linguistic constituents that a set of templatic restrictions applies over are phonological in nature.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="&general;constituent"/>
 </rdfs:Class>
+<rdfs:Class rdf:about="&general;phonomorphosyntacticConditioning"
+	 rdfs:label="general:phonomorphosyntacticConditioning">
+	<rdfs:subClassOf rdf:resource="&general;morphosyntacticConditioning"/>
+	<rdfs:subClassOf rdf:resource="&general;phonologicalConditioning"/>
+</rdfs:Class>
 <rdfs:Class rdf:about="&general;position"
 	 a:role="abstract"
 	 rdfs:label="general:position">
@@ -627,6 +632,10 @@
 <rdfs:Class rdf:about="&localcategory;STAMP"
 	 a:role="abstract"
 	 rdfs:label="localcategory:STAMP">
+	<rdfs:subClassOf rdf:resource="&general;grammaticalCategory"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&localcategory;TBU"
+	 rdfs:label="localcategory:TBU">
 	<rdfs:subClassOf rdf:resource="&general;grammaticalCategory"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&localcategory;TenseMoodAspect"
@@ -775,6 +784,10 @@
 <rdfs:Class rdf:about="&localcategory;possessive"
 	 a:role="abstract"
 	 rdfs:label="localcategory:possessive">
+	<rdfs:subClassOf rdf:resource="&general;grammaticalCategory"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&localcategory;prosodicElement"
+	 rdfs:label="localcategory:prosodicElement">
 	<rdfs:subClassOf rdf:resource="&general;grammaticalCategory"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&localcategory;question"
