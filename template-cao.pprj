@@ -1,4 +1,4 @@
-; Fri Dec 02 22:22:41 EST 2022
+; Wed Dec 07 18:16:13 EST 2022
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -6,10 +6,10 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[template-cao_ProjectKB_Class10435]
-		[template-cao_ProjectKB_Class10436]
-		[template-cao_ProjectKB_Class10437]
-		[template-cao_ProjectKB_Class10438]))
+		[template-cao_ProjectKB_Class10439]
+		[template-cao_ProjectKB_Class10440]
+		[template-cao_ProjectKB_Class10441]
+		[template-cao_ProjectKB_Class10442]))
 
 ([CLSES_TAB] of  Widget
 
@@ -527,22 +527,22 @@
 ([template-cao_ProjectKB_Class10] of  Property_List
 )
 
-([template-cao_ProjectKB_Class10435] of  String
+([template-cao_ProjectKB_Class10439] of  String
 
 	(name ":INSTANCE-ANNOTATION")
 	(string_value "%3AANNOTATION-TEXT"))
 
-([template-cao_ProjectKB_Class10436] of  String
+([template-cao_ProjectKB_Class10440] of  String
 
 	(name ":PAL-CONSTRAINT")
 	(string_value "%3APAL-NAME"))
 
-([template-cao_ProjectKB_Class10437] of  String
+([template-cao_ProjectKB_Class10441] of  String
 
 	(name "form:transcription")
 	(string_value "specform%3ATRANSCRIPTION_STRING"))
 
-([template-cao_ProjectKB_Class10438] of  String
+([template-cao_ProjectKB_Class10442] of  String
 
 	(name ":META-CLASS")
 	(string_value "%3ANAME"))

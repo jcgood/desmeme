@@ -17,3 +17,8 @@ from rdflib import URIRef, Literal, BNode, Namespace, RDF, RDFS
 from despecification import *
 from tdag import *
 from comparison import *
+
+print sys.modules.keys()
+print "XXX"
+print write
+print "XXX"
