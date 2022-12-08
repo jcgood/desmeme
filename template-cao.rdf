@@ -344,7 +344,7 @@
 	<notes:HAS_SOURCE rdf:resource="&templates;ChacoboDesmemeSource"/>
 	<specgeneral:CONDITIONING rdf:resource="&templates;ChacoboGlottalStopMax_7-19-Conditioning"/>
 	<spectemplate:FOUNDATION rdf:resource="&templates;ChacoboGlottalStopMax_7-19-Foundation"/>
-	<spectemplate:STRICTURE rdf:resource="&templates;ChacoboGlottalStopMax_7-19-Juncture"/>
+	<spectemplate:STRICTURE rdf:resource="&templates;ChacoboGlottalStopMax_7-19-Stricture"/>
 	<template:VIOLABILITY rdf:resource="&templates;ChacoboGlottalStopMax_7-19-Violability"/>
 	<function:FUNCTION rdf:resource="&general;prosodicWord"/>
 </template:desmeme>
@@ -357,11 +357,6 @@
 	<spectemplate:RIGHT_SUPPORT rdf:resource="&templates;ChacoboEvidentialModal"/>
 	<spectemplate:RESTKOMPONENTEN rdf:resource="&templates;ChacoboGlottalStopMax_7-19-RK"/>
 </template:span>
-<template:juncture rdf:about="&templates;ChacoboGlottalStopMax_7-19-Juncture"
-	 general:COUNT="13"
-	 rdfs:label="ChacoboGlottalStopMax_7-19-Juncture">
-	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
-</template:juncture>
 <component:restkomponentenSet rdf:about="&templates;ChacoboGlottalStopMax_7-19-RK"
 	 rdfs:label="ChacoboGlottalStopMax_7-19-RK">
 	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChacoboAdverbialModal"/>
@@ -377,6 +372,11 @@
 	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChacoboValence4"/>
 	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChacoboVerbRoot"/>
 </component:restkomponentenSet>
+<template:juncture rdf:about="&templates;ChacoboGlottalStopMax_7-19-Stricture"
+	 general:COUNT="13"
+	 rdfs:label="ChacoboGlottalStopMax_7-19-Stricture">
+	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
+</template:juncture>
 <template:notViolable rdf:about="&templates;ChacoboGlottalStopMax_7-19-Violability"
 	 rdfs:label="ChacoboGlottalStopMax_7-19-Violability"/>
 <template:desmeme rdf:about="&templates;ChacoboGlottalStopMin_7-8"
@@ -628,12 +628,11 @@
 	 rdfs:label="ChacoboNonInterSimp_7-11-RK">
 	<spectemplate:RESTKOMPONENTE rdf:resource="&templates;ChacoboValence2"/>
 </component:restkomponentenSet>
-<template:order rdf:about="&templates;ChacoboNonInterSimp_7-11-Stricture"
-	 general:COUNT="5"
+<template:edge rdf:about="&templates;ChacoboNonInterSimp_7-11-Stricture"
+	 general:COUNT="2"
 	 rdfs:label="ChacoboNonInterSimp_7-11-Stricture">
 	<general:CONSTITUENT rdf:resource="&general;morphologicalConstituent"/>
-	<general:RELATIONS rdf:resource="&general;simple"/>
-</template:order>
+</template:edge>
 <template:notViolable rdf:about="&templates;ChacoboNonInterSimp_7-11-Violability"
 	 rdfs:label="ChacoboNonInterSimp_7-11-Violability"/>
 <general:constructionalConditioning rdf:about="&templates;ChacoboNonInterrupByNP_7-19-Conditionin"

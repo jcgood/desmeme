@@ -1,4 +1,4 @@
-; Tue Nov 29 22:21:30 EST 2022
+; Thu Dec 08 12:05:52 EST 2022
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -6,10 +6,10 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[templateCHx_ProjectKB_Class165]
-		[templateCHx_ProjectKB_Class166]
-		[templateCHx_ProjectKB_Class167]
-		[templateCHx_ProjectKB_Class168]))
+		[templateCHx_ProjectKB_Class75]
+		[templateCHx_ProjectKB_Class76]
+		[templateCHx_ProjectKB_Class77]
+		[templateCHx_ProjectKB_Class78]))
 
 ([CLSES_TAB] of  Widget
 
@@ -50,6 +50,9 @@
 	(string_value "http://linguistics-ontology.org/jcgood/templates#"))
 
 ([KB_542461_Class0] of  Map
+)
+
+([KB_645146_Class0] of  Map
 )
 
 ([KB_717039_Instance_0] of  Property_List
@@ -429,9 +432,6 @@
 	(width 600)
 	(x 0)
 	(y 120))
-
-([KB_767596_Class0] of  Map
-)
 
 ([PAL_FORM_WIDGET] of  Widget
 
@@ -1735,26 +1735,6 @@
 	(boolean_value TRUE)
 	(name "use_roundtrip"))
 
-([templateCHx_ProjectKB_Class165] of  String
-
-	(name ":INSTANCE-ANNOTATION")
-	(string_value "%3AANNOTATION-TEXT"))
-
-([templateCHx_ProjectKB_Class166] of  String
-
-	(name ":PAL-CONSTRAINT")
-	(string_value "%3APAL-NAME"))
-
-([templateCHx_ProjectKB_Class167] of  String
-
-	(name "form:transcription")
-	(string_value "specform%3ATRANSCRIPTION_STRING"))
-
-([templateCHx_ProjectKB_Class168] of  String
-
-	(name ":META-CLASS")
-	(string_value "%3ANAME"))
-
 ([templateCHx_ProjectKB_Class17] of  Widget
 
 	(is_hidden TRUE)
@@ -2042,6 +2022,26 @@
 
 ([templateCHx_ProjectKB_Class74] of  Property_List
 )
+
+([templateCHx_ProjectKB_Class75] of  String
+
+	(name ":INSTANCE-ANNOTATION")
+	(string_value "%3AANNOTATION-TEXT"))
+
+([templateCHx_ProjectKB_Class76] of  String
+
+	(name ":PAL-CONSTRAINT")
+	(string_value "%3APAL-NAME"))
+
+([templateCHx_ProjectKB_Class77] of  String
+
+	(name "form:transcription")
+	(string_value "specform%3ATRANSCRIPTION_STRING"))
+
+([templateCHx_ProjectKB_Class78] of  String
+
+	(name ":META-CLASS")
+	(string_value "%3ANAME"))
 
 ([templateCHx_ProjectKB_Class8] of  Property_List
 )
