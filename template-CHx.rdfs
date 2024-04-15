@@ -386,6 +386,10 @@
 	<rdfs:domain rdf:resource="&template;desmeme"/>
 	<rdfs:range rdf:resource="&rdfs;Class"/>
 </rdf:Property>
+<rdfs:Class rdf:about="&general;Adverbial"
+	 rdfs:label="general:Adverbial">
+	<rdfs:subClassOf rdf:resource="&general;grammaticalCategory"/>
+</rdfs:Class>
 <rdf:Property rdf:about="&general;CONSTITUENT"
 	 a:maxCardinality="1"
 	 a:range="cls"
@@ -612,6 +616,10 @@
 	 a:role="abstract"
 	 rdfs:label="general:templateMultiple">
 	<rdfs:subClassOf rdf:resource="&general;templateFillerPosition"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&general;verbPhrase"
+	 rdfs:label="general:verbPhrase">
+	<rdfs:subClassOf rdf:resource="&general;grammaticalCategory"/>
 </rdfs:Class>
 <rdfs:Class rdf:about="&localcategory;STAMP"
 	 a:role="abstract"
