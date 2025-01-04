@@ -1,5 +1,10 @@
 #!/usr/bin/python2.7
 
+# See: https://stackoverflow.com/questions/18649512/unicodedecodeerror-ascii-codec-cant-decode-byte-0xe2-in-position-13-ordinal?rq=4
+import sys
+reload(sys)
+sys.setdefaultencoding('utf8')
+
 import tdag
 from tdag import rdfGraph, Namespace, RDF, tdag, conflate, process_template, prettyName
 from tdag import simUI_d, get_distances, to_nex, draw_graphs, full_grid, process_templates, draw_components

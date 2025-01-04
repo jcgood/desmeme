@@ -18,7 +18,7 @@ from despecification import *
 from tdag import *
 from comparison import *
 
-print sys.modules.keys()
+#print sys.modules.keys()
 print "XXX"
 print write
 print "XXX"
