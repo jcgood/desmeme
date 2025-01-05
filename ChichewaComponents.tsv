@@ -27,29 +27,6 @@ ELASTICITY	inelastic1
 FILLEDNESS	null
 STABILITY	stable
 
-ChichewaVerbStem
-ELASTICITY	inelastic2
-	COUNT	1
-FILLEDNESS	open1
-	COHERENCE	coherent
-STABILITY	stable
-
-ChichewaApplicative
-ELASTICITY	elastic1
-	MINIMUM	0
-	MAXIMUM	1
-FILLEDNESS	filled1
-	FORM	canonicalLineate
-STABILITY	stable
-
-ChichewaReciprocal
-ELASTICITY	elastic2
-	MINIMUM	0
-	MAXIMUM	1
-FILLEDNESS	filled2
-	FORM	canonicalLineate
-STABILITY	stable
-
 ChichewaPossessum
 ELASTICITY	elastic1
 	MINIMUM	0
@@ -75,65 +52,11 @@ FILLEDNESS	partiallyFilled1
 STABILITY	unstable1
 	ASSOCIATE_POSITION	right
 	ASSOCIATE
-		ChichewaPossessor
-
-ChichewaApplicative
-ELASTICITY	elastic1
-	MAXIMUM	1
-	MINIMUM	0
-FILLEDNESS	filled1
-	FORM	canonicalLineate
-STABILITY	stable
-
 ChichewaCausative
 ELASTICITY	elastic2
 	MAXIMUM	1
 	MINIMUM	0
 FILLEDNESS	filled2
-	FORM	canonicalLineate
-STABILITY	stable
-
-ChichewaVerbStem
-ELASTICITY	inelastic2
-	COUNT	1
-FILLEDNESS	open1
-	COHERENCE	coherent
-STABILITY	stable
-
-ChichewaBeforeVerbStemNullComponent
-ELASTICITY	inelastic1
-	COUNT	0
-FILLEDNESS	null
-STABILITY	stable
-
-ChichewaVerbStem
-ELASTICITY	inelastic2
-	COUNT	1
-FILLEDNESS	open1
-	COHERENCE	coherent
-STABILITY	stable
-
-ChichewaCausative
-ELASTICITY	elastic2
-	MINIMUM	0
-	MAXIMUM	1
-FILLEDNESS	filled2
-	FORM	canonicalLineate
-STABILITY	stable
-
-ChichewaApplicative
-ELASTICITY	elastic1
-	MINIMUM	0
-	MAXIMUM	1
-FILLEDNESS	filled1
-	FORM	canonicalLineate
-STABILITY	stable
-
-ChichewaCausative
-ELASTICITY	elastic1
-	MAXIMUM	1
-	MINIMUM	0
-FILLEDNESS	filled1
 	FORM	canonicalLineate
 STABILITY	stable
 
@@ -143,50 +66,12 @@ ELASTICITY	elastic2
 	MINIMUM	0
 FILLEDNESS	filled2
 	FORM	canonicalLineate
-STABILITY	stable
-
-ChichewaVerbStem
-ELASTICITY	inelastic2
-	COUNT	1
-FILLEDNESS	open1
-	COHERENCE	coherent
 STABILITY	stable
 
 ChichewaVerbNullComponent
 ELASTICITY	inelastic1
 	COUNT	0
 FILLEDNESS	null
-STABILITY	stable
-
-ChichewaVerbStem
-ELASTICITY	inelastic2
-	COUNT	1
-FILLEDNESS	open1
-	COHERENCE	coherent
-STABILITY	stable
-
-ChichewaCausative
-ELASTICITY	elastic1
-	MINIMUM	0
-	MAXIMUM	1
-FILLEDNESS	filled1
-	FORM	canonicalLineate
-STABILITY	stable
-
-ChichewaPassive
-ELASTICITY	elastic2
-	MINIMUM	0
-	MAXIMUM	1
-FILLEDNESS	filled2
-	FORM	canonicalLineate
-STABILITY	stable
-
-ChichewaPreverbal-Component
-ELASTICITY	elastic1
-	MINIMUM	0
-	MAXIMUM	∞
-FILLEDNESS	open1
-	COHERENCE	incoherent
 STABILITY	stable
 
 ChichewaPreverbal-Component
@@ -208,13 +93,6 @@ ChichewaClauseNullComponent
 ELASTICITY	inelastic1
 	COUNT	0
 FILLEDNESS	null
-STABILITY	stable
-
-ChichewaVOX-Component
-ELASTICITY	inelastic2
-	COUNT	1
-FILLEDNESS	filled1
-	FORM	embeddedDesmeme
 STABILITY	stable
 
 ChichewaNdi
@@ -248,13 +126,6 @@ STABILITY	unstable1
 	ASSOCIATE
 		ChichewaComplementClauseRightSupport
 
-ChichewaComplementClauseRightSupport
-ELASTICITY	inelastic2
-	COUNT	1
-FILLEDNESS	open1
-	COHERENCE	coherent
-STABILITY	stable
-
 ChichewaVerbalReduplicant
 ELASTICITY	elastic1
 	MINIMUM	0
@@ -265,13 +136,6 @@ STABILITY	unstable1
 	ASSOCIATE_POSITION	right
 	ASSOCIATE
 		ChichewaProsodicDerivationalStemEmbedded
-
-ChichewaProsodicDerivationalStemEmbedded
-ELASTICITY	inelastic1
-	COUNT	1
-FILLEDNESS	filled1
-	FORM	embeddedDesmeme
-STABILITY	stable
 
 ChichewaProsodicVerbRoot
 ELASTICITY	inelastic
@@ -288,47 +152,6 @@ FILLEDNESS	open1
 STABILITY	unstable1
 	ASSOCIATE_POSITION	left
 	ASSOCIATE
-		ChichewaProsodicVerbRoot
-
-ChichewaVerbNullComponent
-ELASTICITY	inelastic2
-	COUNT	0
-FILLEDNESS	null
-STABILITY	stable
-
-ChichewaBeforeVerbStemNullComponent
-ELASTICITY	inelastic1
-	COUNT	0
-FILLEDNESS	null
-STABILITY	stable
-
-ChichewaVerbStem
-ELASTICITY	inelastic3
-	COUNT	1
-FILLEDNESS	open1
-	COHERENCE	coherent
-STABILITY	stable
-
-ChichewaBeforeVerbStemNullComponent
-ELASTICITY	inelastic1
-	COUNT	0
-FILLEDNESS	null
-STABILITY	stable
-
-ChichewaVerbStem
-ELASTICITY	inelastic3
-	COUNT	1
-FILLEDNESS	open1
-	COHERENCE	coherent
-STABILITY	stable
-
-ChichewaKodiComponent
-ELASTICITY	inelastic1
-	COUNT	1
-FILLEDNESS	filled1
-	FORM	canonicalLineate
-STABILITY	stable
-
 ChichewaKodiComponent
 ELASTICITY	inelastic1
 	COUNT	1
@@ -353,25 +176,6 @@ STABILITY	unstable2
 	ASSOCIATE
 		ChichewaLocativizedNoun
 
-ChichewaLocativizedNoun
-ELASTICITY	inelastic4
-	COUNT	1
-FILLEDNESS	filled1
-	FORM	embeddedDesmeme
-STABILITY	stable
-
-ChichewaAssociativeMarker
-ELASTICITY	inelastic1
-	COUNT	1
-FILLEDNESS	partiallyFilled1
-	FILLER_PLACEMENT	componentFinal
-	FORM	embeddedDesmeme
-	COHERENCE	coherent
-STABILITY	unstable1
-	ASSOCIATE_POSITION	right
-	ASSOCIATE
-		ChichewaPossessor
-
 ChichewaOMProsodic
 ELASTICITY	elastic1
 	MINIMUM	0
@@ -382,13 +186,6 @@ STABILITY	unstable1
 	ASSOCIATE_POSITION	right
 	ASSOCIATE
 		ChichewaCompoundStemEmbedded
-
-ChichewaCompoundStemEmbedded
-ELASTICITY	inelastic1
-	COUNT	1
-FILLEDNESS	open1
-	COHERENCE	coherent
-STABILITY	stable
 
 ChichewaNPNoun
 ELASTICITY	inelastic1
@@ -405,24 +202,10 @@ FILLEDNESS	open1
 	COHERENCE	coherent
 STABILITY	stable
 
-ChichewaNPNoun
-ELASTICITY	inelastic1
-	COUNT	1
-FILLEDNESS	open1
-	COHERENCE	coherent
-STABILITY	stable
-
 ChichewaNPNullComponent
 ELASTICITY	inelastic2
 	COUNT	0
 FILLEDNESS	null
-STABILITY	stable
-
-ChichewaNPNoun
-ELASTICITY	inelastic1
-	COUNT	1
-FILLEDNESS	open1
-	COHERENCE	coherent
 STABILITY	stable
 
 ChichewaNPRightVoussoir
@@ -477,13 +260,6 @@ FILLEDNESS	open1
 	COHERENCE	coherent
 STABILITY	stable
 
-ChichewaNiComponent
-ELASTICITY	inelastic1
-	COUNT	1
-FILLEDNESS	filled1
-	FORM	canonicalLineate
-STABILITY	stable
-
 ChichewaNominalReduplicantFirstSyllable
 ELASTICITY	inelastic1
 	COUNT	1
@@ -514,8 +290,6 @@ FILLEDNESS	filled1
 STABILITY	unstable1
 	ASSOCIATE_POSITION	left
 	ASSOCIATE
-		ChichewaProsodicNoun
-
 ChichewaNoun-Prefix
 ELASTICITY	inelastic1
 	COUNT	1
@@ -525,16 +299,6 @@ STABILITY	unstable2
 	ASSOCIATE_POSITION	right
 	ASSOCIATE
 		ChichewaNoun-NounStem
-
-ChichewaNoun-NounStem
-ELASTICITY	inelastic2
-	COUNT	1
-FILLEDNESS	open2
-	COHERENCE	coherent
-STABILITY	unstable1
-	ASSOCIATE_POSITION	left
-	ASSOCIATE
-		ChichewaNoun-Prefix
 
 ChichewaORelativizer
 ELASTICITY	inelastic1
@@ -552,22 +316,6 @@ FILLEDNESS	open1
 	COHERENCE	coherent
 STABILITY	stable
 
-ChichewaORelativizer
-ELASTICITY	inelastic1
-	COUNT	1
-FILLEDNESS	partiallyFilled1
-	FILLER_PLACEMENT	componentFinal
-	FORM	embeddedDesmeme
-	COHERENCE	coherent
-STABILITY	stable
-
-ChichewaOsaVerbLeftSupport
-ELASTICITY	inelastic1
-	COUNT	1
-FILLEDNESS	filled1
-	FORM	canonicalLineate
-STABILITY	stable
-
 ChichewaOsaVerbLeftSupport
 ELASTICITY	inelastic1
 	COUNT	1
@@ -580,26 +328,6 @@ ELASTICITY	elastic1
 	MINIMUM	0
 	MAXIMUM	1
 FILLEDNESS	open1
-	COHERENCE	coherent
-STABILITY	stable
-
-ChichewaVerbStem
-ELASTICITY	inelastic3
-	COUNT	1
-FILLEDNESS	open2
-	COHERENCE	coherent
-STABILITY	stable
-
-ChichewaVerbNullComponent
-ELASTICITY	inelastic2
-	COUNT	0
-FILLEDNESS	null
-STABILITY	stable
-
-ChichewaVerbStem
-ELASTICITY	inelastic3
-	COUNT	1
-FILLEDNESS	open2
 	COHERENCE	coherent
 STABILITY	stable
 
@@ -627,16 +355,6 @@ STABILITY	unstable1
 	ASSOCIATE_POSITION	right
 	ASSOCIATE
 		ChichewaVCExtensionRMCRightSupport
-
-ChichewaVCExtensionRMCRightSupport
-ELASTICITY	inelastic2
-	COUNT	1
-FILLEDNESS	open2
-	COHERENCE	coherent
-STABILITY	unstable2
-	ASSOCIATE_POSITION	left
-	ASSOCIATE
-		ChichewaVCExtensionRMCLeftSupport
 
 ChichewaRelativeClauseRelativizer
 ELASTICITY	elastic1
@@ -704,37 +422,6 @@ FILLEDNESS	open3
 	COHERENCE	coherent
 STABILITY	stable
 
-ChichewaC2
-ELASTICITY	elastic2
-	MINIMUM	0
-	MAXIMUM	1
-FILLEDNESS	open2
-	COHERENCE	incoherent
-STABILITY	unstable2
-	ASSOCIATE_POSITION	left
-	ASSOCIATE
-		ChichewaC
-
-ChichewaVerbClausal
-ELASTICITY	inelastic2
-	COUNT	1
-FILLEDNESS	open3
-	COHERENCE	coherent
-STABILITY	stable
-
-ChichewaClauseNullComponent
-ELASTICITY	inelastic1
-	COUNT	0
-FILLEDNESS	null
-STABILITY	stable
-
-ChichewaVerbClausal
-ELASTICITY	inelastic2
-	COUNT	1
-FILLEDNESS	open3
-	COHERENCE	coherent
-STABILITY	stable
-
 ChichewaClauseO
 ELASTICITY	elastic1
 	MINIMUM	0
@@ -751,73 +438,6 @@ FILLEDNESS	open2
 	COHERENCE	coherent
 STABILITY	stable
 
-ChichewaVerb-Neg1
-ELASTICITY	elastic2
-	MINIMUM	0
-	MAXIMUM	1
-FILLEDNESS	filled1
-	FORM	canonicalLineate
-STABILITY	stable
-
-ChichewaOM
-ELASTICITY	elastic1
-	MINIMUM	0
-	MAXIMUM	1
-FILLEDNESS	open1
-	COHERENCE	coherent
-STABILITY	stable
-
-ChichewaVerbStem
-ELASTICITY	inelastic3
-	COUNT	1
-FILLEDNESS	open5
-	COHERENCE	coherent
-STABILITY	stable
-
-ChichewaVerbNullComponent
-ELASTICITY	inelastic1
-	COUNT	0
-FILLEDNESS	null
-STABILITY	stable
-
-ChichewaVerbStem
-ELASTICITY	inelastic3
-	COUNT	1
-FILLEDNESS	open5
-	COHERENCE	coherent
-STABILITY	stable
-
-ChichewaModal
-ELASTICITY	elastic3
-	MINIMUM	0
-	MAXIMUM	1
-FILLEDNESS	open2
-	COHERENCE	coherent
-STABILITY	stable
-
-ChichewaSM
-ELASTICITY	inelastic2
-	COUNT	1
-FILLEDNESS	open3
-	COHERENCE	coherent
-STABILITY	stable
-
-ChichewaTM
-ELASTICITY	elastic4
-	MINIMUM	0
-	MAXIMUM	1
-FILLEDNESS	open4
-	COHERENCE	coherent
-STABILITY	stable
-
-ChichewaVerb-Neg2
-ELASTICITY	elastic5
-	MINIMUM	0
-	MAXIMUM	1
-FILLEDNESS	filled2
-	FORM	canonicalLineate
-STABILITY	stable
-
 ChichewaDerivedStemEmbedded
 ELASTICITY	inelastic1
 	COUNT	1
@@ -828,36 +448,11 @@ STABILITY	unstable1
 	ASSOCIATE
 		ChichewaFVProsodic
 
-ChichewaFVProsodic
-ELASTICITY	inelastic2
-	COUNT	1
-FILLEDNESS	open1
-	COHERENCE	coherent
-STABILITY	unstable2
-	ASSOCIATE_POSITION	left
-	ASSOCIATE
-		ChichewaDerivedStemEmbedded
-
 ChichewaNegForImp
 ELASTICITY	elastic1
 	MINIMUM	0
 	MAXIMUM	1
 FILLEDNESS	open1
-	COHERENCE	coherent
-STABILITY	stable
-
-ChichewaOM
-ELASTICITY	elastic3
-	MINIMUM	0
-	MAXIMUM	1
-FILLEDNESS	open2
-	COHERENCE	coherent
-STABILITY	stable
-
-ChichewaVerbStem
-ELASTICITY	inelastic1
-	COUNT	1
-FILLEDNESS	open3
 	COHERENCE	coherent
 STABILITY	stable
 
@@ -870,38 +465,12 @@ FILLEDNESS	filled1
 STABILITY	unstable1
 	ASSOCIATE_POSITION	left
 	ASSOCIATE
-		ChichewaNegForImp
-
-ChichewaModal
-ELASTICITY	elastic4
-	MINIMUM	0
-	MAXIMUM	1
-FILLEDNESS	open4
-	COHERENCE	coherent
-STABILITY	stable
-
 ChichewaSMImp
 ELASTICITY	elastic5
 	MINIMUM	0
 	MAXIMUM	1
 FILLEDNESS	open5
 	COHERENCE	coherent
-STABILITY	stable
-
-ChichewaTM
-ELASTICITY	elastic6
-	MINIMUM	0
-	MAXIMUM	1
-FILLEDNESS	open6
-	COHERENCE	coherent
-STABILITY	stable
-
-ChichewaVerb-Neg2
-ELASTICITY	elastic7
-	MINIMUM	0
-	MAXIMUM	1
-FILLEDNESS	filled2
-	FORM	canonicalLineate
 STABILITY	stable
 
 ChichewaSTAMP
@@ -914,13 +483,6 @@ STABILITY	unstable1
 	ASSOCIATE_POSITION	right
 	ASSOCIATE
 		ChichewaMacroStemEmbedded
-
-ChichewaMacroStemEmbedded
-ELASTICITY	inelastic1
-	COUNT	1
-FILLEDNESS	filled1
-	FORM	embeddedDesmeme
-STABILITY	stable
 
 ChichewaFirstSyllable
 ELASTICITY	inelastic1
@@ -938,8 +500,6 @@ FILLEDNESS	open2
 STABILITY	unstable1
 	ASSOCIATE_POSITION	left
 	ASSOCIATE
-		ChichewaFirstSyllable
-
 ChichewaWordMinimalityLeftSupport
 ELASTICITY	elastic1
 	MINIMUM	1

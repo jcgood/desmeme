@@ -406,16 +406,23 @@ class tabbed ( ):
 					embedding -= 1
 
 
-	def to_tabbed_components(self, outfile, embedding = 0, inComponent = False):
+	def to_tabbed_components(self, outfile, seenComponents, embedding = 0, inComponent = False ):
 		
 		id = self.name
 		type = self.type
 		featvals = self.featvals
 		
+		
 		# If re-entered and not primary, just print a tag			
+
+		print(id, seenComponents)
+		if id in seenComponents:
+			print("Seen:", id)
+			return(seenComponents)
 
 		if type == "component":
 			inComponent = True
+			seenComponents.append(id)
 			# linebreak before each component
 			print("", file=outfile)
 
@@ -434,7 +441,7 @@ class tabbed ( ):
 				else:
 					print("\t"*embedding + feat, end='', file=outfile)
 					embedding += 1
-					val.to_tabbed_components(outfile, embedding, inComponent)
+					val.to_tabbed_components(outfile, seenComponents, embedding, inComponent)
 					embedding -= 1
 					
 		else:
@@ -446,7 +453,9 @@ class tabbed ( ):
 
 				else:
 					val = featval.value
-					val.to_tabbed_components(outfile, embedding)
+					val.to_tabbed_components(outfile, seenComponents, embedding)
+					
+		return(seenComponents)
 
 
 
