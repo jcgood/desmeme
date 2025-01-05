@@ -2,8 +2,8 @@
 
 # See: https://stackoverflow.com/questions/18649512/unicodedecodeerror-ascii-codec-cant-decode-byte-0xe2-in-position-13-ordinal?rq=4
 import sys
-reload(sys)
-sys.setdefaultencoding('utf8')
+#reload(sys)
+#sys.setdefaultencoding('utf8')
 
 import tdag
 from tdag import rdfGraph, Namespace, RDF, tdag, conflate, process_template, prettyName
@@ -13,7 +13,7 @@ from tdag import simUI_d, get_distances, to_nex, draw_graphs, full_grid, process
 rdfTemplates = rdfGraph()
 
 instanceNS = Namespace("http://purl.org/linguistics/jcgood/template#")
-rdfTemplates.load("./template-CHx.rdf")
+rdfTemplates.parse("./template-CHx.rdf")
 
 # Get template IDs from RDF
 templatesGenerator = rdfTemplates.subjects(RDF.type, instanceNS['desmeme'])
@@ -24,11 +24,10 @@ for template in templatesGenerator:
 			
 gTemplates = process_templates(templates, rdfTemplates)
 
-# NOTE: CAN NO LONGER GO DIRECTLY TO PNG or PDF; MUST MANUALLY PROCESS .dot FOR NOW
 
-graphfolder = "/Users/jcgood/Templates2/Graphs/"
+graphfolder = "Graphs/"
 draw_graphs(gTemplates, graphfolder)
 
 
-graphfolder = "/Users/jcgood/Templates2/ComponentGraphs/"
+graphfolder = "ComponentGraphs/"
 draw_components(gTemplates, graphfolder)

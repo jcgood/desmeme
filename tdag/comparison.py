@@ -6,8 +6,8 @@ import os
 from pygraph.readwrite.dot import write
 from pygraph.readwrite import *
 
-import despecification
-from despecification import prettyName
+import tdag.despecification
+from . despecification import prettyName
 
 # Implements simUI distance measure for templates
 def simUI_d(t1,t2):
@@ -191,7 +191,7 @@ def draw_graphs(graphs, outpath, format="png"):
 		os.system(dotcmd)
 		
 		pscmd = "pdf2ps " + outpath + str(name) + '.pdf' + " " + outpath + str(name) + '.ps' 
-		print pscmd
+		print(pscmd)
 		os.system(pscmd)
 
 		# ps2eps has different syntax from others 
@@ -200,7 +200,7 @@ def draw_graphs(graphs, outpath, format="png"):
 		
 		# Cleanup
 		rmdot = "rm " + outpath + str(name) + '.dot'
-		os.system(rmdot)
+		#os.system(rmdot)
 		rmps = "rm " + outpath + str(name) + '.ps'
 		os.system(rmps)
 		rmeps = "rm " + outpath + str(name) + '.eps'
@@ -228,7 +228,7 @@ def draw_components(graphs, outpath, format="png"):
 		os.system(dotcmd)
 		
 		pscmd = "pdf2ps " + outpath + str(name) + '.pdf' + " " + outpath + str(name) + '.ps' 
-		print pscmd
+		print(pscmd)
 		os.system(pscmd)
 
 		# ps2eps has different syntax from others 
@@ -240,6 +240,8 @@ def draw_components(graphs, outpath, format="png"):
 		os.system(rmdot)
 		rmps = "rm " + outpath + str(name) + '.ps'
 		os.system(rmps)
+		rmeps = "rm " + outpath + str(name) + '.eps'
+		os.system(rmeps)
 
 
 # 		dotcmd = "dot -Tsvg " + outpath + str(name) + '.dot' + " > " + outpath + str(name) + '.svg'

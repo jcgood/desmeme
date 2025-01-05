@@ -108,7 +108,7 @@ digraph graphname {
 		lp="399.16,239.25",
 		pos="e,343.11,213.29 409.13,274.07 392.03,268.88 373.41,260.61 360.16,247.5 353.79,241.19 349.4,232.62 346.4,224.28"];
 	filled1	[height=0.5,
-		label=<{<i>filled</i>}>,
+		label=<<i>f</i> illed>,
 		pos="452.16,195",
 		width=0.82932];
 	component2 -> filled1	[label=FILLEDNESS,

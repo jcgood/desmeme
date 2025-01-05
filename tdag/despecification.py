@@ -1,7 +1,7 @@
 from rdflib import URIRef, Literal, BNode, Namespace, RDF, RDFS
 from rdflib import BNode as rdfNode
 
-from tdag import tdag
+from . tdag import tdag
 
 # This takes in a regular template and outputs a despecified one, removing
 # RDF bits not important for the comparative analysis.
@@ -90,7 +90,7 @@ def process_template_noComp(mother,genericMother,rdfGraph,tdag):
 		prettyDName = prettyName(despecifiedD)
 		prettyPredName = prettyName(predicate)
 
-		print prettyPredName
+		print(prettyPredName)
 
 		if despecifiedD.encode('utf-8') == "http://purl.org/linguistics/jcgood/component#component":
 			pass
@@ -113,7 +113,7 @@ def process_template_noComp(mother,genericMother,rdfGraph,tdag):
 				# to be an accident, but a useful one. So, I am keeping it.
 				if tdag.has_node(prettyDName,daughter):
 					prettyDName = tdag.has_node(prettyDName,daughter)
-					print "Warning ", prettyDName, daughter, mother, "may be a case of a duplicatable node not yet properly handled. Examine the template using it and the class function in tdag and add a case for this if graph does not properly duplicate nodes."
+					print("Warning ", prettyDName, daughter, mother, "may be a case of a duplicatable node not yet properly handled. Examine the template using it and the class function in tdag and add a case for this if graph does not properly duplicate nodes.")
 				else:
 					prettyDName = tdag.add_node(prettyDName,daughter,mother,predicate)
 			

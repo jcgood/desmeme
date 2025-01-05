@@ -1,0 +1,11 @@
+MandeClause
+CONDITIONING	constructionalConditioning
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	syntacticConstituent
+	COUNT	5
+	RELATIONS	simpleRelations
+FOUNDATION	arch
+	KEYSTONE	MandeXX
+	COMPONENTS	[xxx]
+	

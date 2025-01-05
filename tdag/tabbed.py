@@ -1,16 +1,17 @@
+"""
+Adapting AVM export to a simple tabbed format for a migration from RDF.
+"""
+
 from tdag import tdag
 
-# Possible improvement: Make subclass of "topAVM" adding features (e.g., totaltags, tags) just for that class.
-class avm ( ):
+class tabbed ( ):
 
 	def __init__(self, name, type):
 		"""
-		Initialize an AVM.
+		Initialize an tabbed graph.
 		"""
 		
 		self.name = name
-
-		# These are typed AVMs, after all.
 		
 		# Hackish fix: I added HTML <i> tags to values to help with the graph-based output.
 		# It was easiest to do this at the graph-construction stage. For AVMs, I need to remove them.
@@ -41,7 +42,6 @@ class avm ( ):
 		feat = featval.feature
 		storedFeatvals = self.featvals
 		
-		
 		# Avoid duplication due to re-entrancy except for restkomponenten and filledcomponents (code a bit hackish and non-general here)
 		hasFeature = False
 
@@ -64,7 +64,7 @@ class avm ( ):
 
 
 	# Will need recursion
-	def graph_toAVM(self, tgraph, root="desmeme"):
+	def graph_toTabbed(self, tgraph, root="desmeme"):
 	
 		pygraph = tgraph.core
 		nodes = pygraph.nodes()
@@ -96,8 +96,8 @@ class avm ( ):
 							value = v
 							
 					# Should only point to components
-					embeddedAVM = avm(n2, value)
-					embeddedAVM.graph_toAVM(tgraph, n2)
+					embeddedAVM = tabbed(n2, value)
+					embeddedAVM.graph_toTabbed(tgraph, n2)
 					FV = featval(attribute, embeddedAVM)
 					self.addFV(FV)
 			
@@ -123,14 +123,14 @@ class avm ( ):
 				# We need a special condition to deal with criss-crossing Associates, as with Tiene.
 				# This is a semi-hack.
 				elif attribute == "ASSOCIATE":
-					embeddedAVM = avm(neighbor, value)
+					embeddedAVM = tabbed(neighbor, value)
 					FV = featval(attribute, embeddedAVM)
 					self.addFV(FV)
 					pass
 				
 				else:
-					embeddedAVM = avm(neighbor, value)
-					embeddedAVM.graph_toAVM(tgraph, neighbor)
+					embeddedAVM = tabbed(neighbor, value)
+					embeddedAVM.graph_toTabbed(tgraph, neighbor)
 					FV = featval(attribute, embeddedAVM)
 					self.addFV(FV)
 
@@ -208,7 +208,7 @@ class avm ( ):
 					uval = ufeatval.value
 					if ofeat == ufeat:
 						# We've found the feature we want in the unordered list; add it to the ordered list and delete from the unordered one.
-						if isinstance(uval, avm):
+						if isinstance(uval, tabbed):
 							uval.order()
 							ofeatvals.append(ufeatval)
 							ufeatvals.remove(ufeatval)
@@ -245,7 +245,7 @@ class avm ( ):
 				priorityset = False
 				for foundationfeature in prioritylist:
 				
-					if foundationfeature in attributes and priorityset == False and foundationfeature is "RESTKOMPONENTE":
+					if foundationfeature in attributes and priorityset == False and foundationfeature == "RESTKOMPONENTE":
 						self.RKre = component
 						self.makepriorityfeature(foundationfeature, self, component)
 						priorityset = True
@@ -266,7 +266,7 @@ class avm ( ):
 	# Recursive
 	def buildcomponentlist(self, feature = None, components = None):
 		
-		# Mutable defaults fix!
+		# Mutable defaults fix
 		if components == None: components = {}
 
 		id = self.name
@@ -373,127 +373,80 @@ class avm ( ):
 			return True
 
 
-	# Recursive
+	# Used recursively
 	# Pass around topavm to keep track of tags for re-entered components
-	def to_ASCII(self, topavm, embedding = 0, seencomponents = { }, componentcount = 1):
+	def to_tabbed_desmeme(self, outfile, embedding = 0):
 		
 		id = self.name
 		type = self.type
-		reentered = self.reentered
-		primary = self.primary
 		featvals = self.featvals
 		
-		# Check for re-entrancy conditions
-
-		# If re-entered and not primary, just print a tag			
-		if self.reentered and not(self.primary):
-			tag = topavm.tags[id]
-			print("\t"*embedding+"type:", "@"+str(tag), "("+id+")")
+		# linebreak before each desmeme
+		if embedding == 0:
+			print("", file=outfile)
+		
+		if type == "component":
+			print("\t" + id, file=outfile)
 
 		else:
-			if self.primary:
-				tag = self.tag
-				print("\t"*embedding+"type:", "@"+str(tag), type, "("+id+")")
-
-			else:
-				print("\t"*embedding+"type:", type, "("+id+")")
-		
+			print("\t"*embedding + id, file=outfile)
+	
 			for featval in featvals:
 					
 				feat = featval.feature
 				val = featval.value
 			
 				if isinstance(val, str):
-					print("\t"*embedding, feat, val)
+					print("\t"*embedding + feat + "\t" + val, file=outfile)
 
 				else:
-					print("\t"*embedding, feat)
+					print("\t"*embedding + feat, end='', file=outfile)
 					embedding += 1
-					val.to_ASCII(topavm, embedding, seencomponents, componentcount)
+					val.to_tabbed_desmeme(outfile, embedding)
 					embedding -= 1
-				
-	
-	# Recursive
-	# Pass around topavm to keep track of tags for re-entered components
-	def to_latex(self, topavm, outfile, embedding = 0, seencomponents = { }, componentcount = 1):
+
+
+	def to_tabbed_components(self, outfile, embedding = 0, inComponent = False):
 		
 		id = self.name
 		type = self.type
-		reentered = self.reentered
-		primary = self.primary
 		featvals = self.featvals
 		
-		# Don't recall logic for these, factoring out for now
-		heightSpacing = "\\phantom{\\@{\\text{"+str(0)+"}}}"
-		#heightSpacing = ""
-		
-		#otherHeightSpacing = "\\raisebox{-.5em}{\\rule{0pt}{1.5em}}"
-		otherHeightSpacing = ""
-
-
-		# Check for re-entrancy conditions
-		if embedding == 0:
-			
-			latexLabel = id.replace("_", "")
-			id = id.replace("_", " ")
-			#print("\\textbf{"+id+"}\n", file=outfile)
-			#print("\\begin{figure}[ht]", file=outfile)
-			#print("{\\setstretch{.5}\\def\\avmjvskip{.2em}", file=outfile)
-			#print("\\begin{center}", file=outfile)
-			print("\\begin{avm}", file=outfile)
-
 		# If re-entered and not primary, just print a tag			
-		if self.reentered and not(self.primary):
-			tag = topavm.tags[id]
-			print("\t"*embedding+heightSpacing+"\\@{\\text{"+str(tag)+"}}"+otherHeightSpacing, file=outfile)
 
-		else:
+		if type == "component":
+			inComponent = True
+			# linebreak before each component
+			print("", file=outfile)
 
-			if self.primary:
-				tag = self.tag
-				print("\t"*embedding+"\\@{\\text{"+str(tag)+"}}", "\\[\t\\emph{"+type+"} \\cr", file=outfile)
+		if inComponent == True:
 
-			else:
-				print("\t"*embedding+"\\phantom{\\@{\\text{"+str(0)+"}}}", "\\[\t\\emph{"+type+"} \\cr", file=outfile)
-		
+			print("\t"*embedding + id, file=outfile)
+
 			for featval in featvals:
 					
 				feat = featval.feature
 				val = featval.value
 			
-				prettyfeat = feat.lower()
-				prettyfeat = prettyfeat.replace("_", " ")
-			
 				if isinstance(val, str):
-					# Don't italicize numbers and change the "100" placeholder to infinity
-					try:
-						float(val)
-						
-						if val == '100':
-							print("\t"*embedding, "\\textsc{"+prettyfeat+"}\t&\t", heightSpacing+"$\infty$", otherHeightSpacing+"\\cr", file=outfile)
-						
-						else:
-							print("\t"*embedding, "\\textsc{"+prettyfeat+"}\t&\t", heightSpacing+val, otherHeightSpacing+"\\cr", file=outfile)
-					
-					except:
-						print("\t"*embedding, "\\textsc{"+prettyfeat+"}\t&\t", "\\phantom{\\@{\\text{"+str(0)+"}}}"+"\\emph{"+val+"}", otherHeightSpacing+"\\cr", file=outfile)
-
-				else:					
-					print("\t"*embedding, "\\textsc{"+prettyfeat+"}"+"\t&\t", file=outfile)
+					print("\t"*embedding + feat + "\t" + val, file=outfile)
+	
+				else:
+					print("\t"*embedding + feat, end='', file=outfile)
 					embedding += 1
-					val.to_latex(topavm, outfile, embedding, seencomponents, componentcount)
-					print("\t"*embedding, " \\cr", file=outfile)
+					val.to_tabbed_components(outfile, embedding, inComponent)
 					embedding -= 1
 					
-			print("\t"*embedding, "\\]", file=outfile)
+		else:
+			for featval in featvals:
+			
+				val = featval.value
 
-			if embedding == 0:
-				print("\\end{avm}", file=outfile)
-				#print("\\end{center}", file=outfile)
-				#print("\\end{center}}\\vspace{-.75em}", file=outfile)
-				#print("\\caption{Attribute-value representation of", id, "template", "\\label{"+latexLabel+"}}", file=outfile)
-				#print("\\end{figure}", file=outfile)
+				if isinstance(val, str): pass
 
+				else:
+					val = featval.value
+					val.to_tabbed_components(outfile, embedding)
 
 
 
@@ -508,5 +461,5 @@ class featval ( ):
 		self.value = value
 
 
-	def to_latex(self):
+	def to_tabbed(self):
 		print(self.type, self.feature, self.value)

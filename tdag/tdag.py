@@ -1,38 +1,45 @@
-# This set of functions helps process RDF templates to create graphs.
-# It adds a layer on top of pygraph in some cases to deal with cases of re-entrancy.
+"""
+Module for processing graphs describing templates.
+
+This module helps process templates described graphs.
+It adds a layer on top of pygraph in some cases to deal with cases of re-entrancy.
+"""
 
 from pygraph.classes.digraph import digraph
 from pygraph.classes.exceptions import AdditionError
 
-# Do I need all these?
-from pygraph.classes.exceptions import InvalidGraphType
-from pygraph.classes.graph import graph
-from pygraph.classes.hypergraph import hypergraph
-from pygraph.readwrite.markup import write
-import pydot
+# Do I need all these? (Commented out on 1/4/2025 to see if needed)
+# from pygraph.classes.exceptions import InvalidGraphType
+# from pygraph.classes.graph import graph
+# from pygraph.classes.hypergraph import hypergraph
+# from pygraph.readwrite.markup import write
 
+import pydot
 import re
 
-
 # A series of functions for abstracting away from some RDF specificities, including documentation fields
-import despecification
+import tdag.despecification as despecification
 
-# Class for DAGs for templates, these DAGs contain despecified templates because
-# process_templates only adds properly despecifed nodes.
+
 class tdag ( ):
 	
 	def __init__(self, name):
 		"""
-		Initialize a tdag.
+		Class for DAGs for templates, these DAGs contain despecified templates because
+		process_templates only adds properly despecifed nodes.
+		The code here is sensitive to the current working model of a template.
+		So, this makes it somewhat brittle.
 		"""
 		
 		self.name = name
 		
+		# to do: Add metadata fields (language, source, usw.)
+		
 		# The "core" of a template DAG is a directed graph from pygraph, allowing us to use most of its functionality.
 		# But, some extra information needs to be added on top of this core to get repeatable nodes and multiple
 		# pointing to/from the same nodes.
-		# POSSIBLE CONFUSION: In a few places, we call tdag functions and pygraph functions with the same and/or similar names.
-		# This is noted (where remembered).
+		# POSSIBLE CONFUSION: In a few places, we call tdag functions and pygraph functions
+		# with the same and/or similar names. This is noted in some places (where remembered).
 		self.core = digraph()
 		
 		# Information from here down is kept track of to deal with special properties of tdags.
@@ -43,14 +50,15 @@ class tdag ( ):
 		self.edges = { }
 		
 		
-		# The mappings relate a given component's URI to a label made unique by adding an integer
+		# To do: Generalize this to work with non-RDF template descriptions? Probably done in another function.
+		# The mappings below relate a given component's URI to a more readable
+		# label made unique by adding an integer
 
 		# Nodes that can repeat need to be created here and relevant logic needs to be added to add_node().
 		# This should be implemented for all attested cases, but not logically possible ones.
 		# So, some may need to be added, but there should be warnings when this is a problem.
 		self.components = [ ]
 		self.componentMapping = { }
-
 
 		# The next two are for component elasticity
 		self.elastics = [ ]
@@ -80,7 +88,7 @@ class tdag ( ):
 
 		# For positioning of partiallyFilled elements.
 		# Need to add other positions as coded.
-		# In fact, none are needed right now, but "final" was added as a test.
+		# In fact, none were needed initially since repetition didn't come up, but "final" was added as a test.
 		self.finals = [ ]
 		self.finalMapping = { }
 
@@ -100,26 +108,29 @@ class tdag ( ):
 
 
 		# For different integer counts in the graphs
+		# This part of the description language should be updated, probably, to fixedSlot, optionalSlot, field (see Template2Notes.txt) 
 		self.seenCounts = [ ]
 		self.counts = { }
 		self.countMapping = { }
 
 		
-		
 		# Some namespaces are for properties that can be typologically compared and some are not.
 		# These are the ones that are good for comparison.
 		# This "hardcoding" of the generic prefixes in the template class may not be ideal in the long run.
+		# This is for RDF-based processing, which I expect to be a legacy mode of processing at some point
 		self.genericPredPfxs = ["http://purl.org/linguistics/jcgood/general#",
 				   "http://purl.org/linguistics/jcgood/template#",
 				   "http://purl.org/linguistics/jcgood/templates#",
 				   "http://purl.org/linguistics/jcgood/component#"]
 	
 	
-	# Adds desired RDF node to internal graph and does some processing for readability.
-	# Includes special logic for dealing with "repeatable" nodes (in components and fillers).
-	# This function returns a nodeName with an integer for disambiguation purposes, if needed.
-	# If the same node is attempted to be added twice, just returns graph nodename as side effect
 	def add_node(self, node, URI, mother="", predicate=""):
+		"""
+		Adds desired RDF node to internal graph and does some processing for readability.
+		Includes special logic for dealing with "repeatable" nodes (in components and fillers).
+		This function returns a nodeName with an integer for disambiguation purposes, if needed.
+		If the same node is attempted to be added twice, just returns graph nodename as side effect
+		"""
 				
 		nodeName = node
 		
@@ -131,10 +142,12 @@ class tdag ( ):
 				nodeName = self.componentMapping[URI]
 			else:
 				componentNumber = len(self.components) + 1 # These increments ensure each repeatable node gets its own identifier.
-				nodeName = node + str(componentNumber)
+				nodeName = despecification.prettyName(URI) # Use actual component IDs now
+				#nodeName = node + str(componentNumber)
 				self.components.append(URI)
 				self.componentMapping[URI] = nodeName # This is the nodename with the number on it to make sure it can be identified properly for pydot.
 				self.core.add_node(nodeName, attrs=[("label", "<<i>component</i>>")]) # Now we add the node to the internal graph, giving it a label without the extra digit.
+
 
 		elif node == "elastic":
 			if URI in self.elastics:
@@ -272,7 +285,7 @@ class tdag ( ):
 
 			else:
 				self.seenCounts.append(indexName)
-				if self.counts.has_key(generalNodeName):
+				if generalNodeName in self.counts:
 					self.counts[generalNodeName] = self.counts[generalNodeName] + 1
 				else:
 					self.counts[generalNodeName] = 1
@@ -280,11 +293,12 @@ class tdag ( ):
 				self.countMapping[indexName] = nodeName
 				# If the node is "100" then that is the RDF "shorthand" for infinity. We replace it here for graph display.
 				if node == '100':
-					self.core.add_node(nodeName,  attrs=[("label", '\xe2\x88\x9e')]) # Some sort of escape sequence for infinity, got it by playing with Python on shell mode.				
+					self.core.add_node(nodeName,  attrs=[("label", '∞')]) # Some sort of escape sequence for infinity, got it by playing with Python on shell mode.				
 				else:
 					self.core.add_node(nodeName,  attrs=[("label", node)])
 
 		elif node == "source":
+			## SOURCE XXX!!!
 			pass
 		
 		# If we've made it this far, it's a non-repeatable, generic node.		
@@ -294,14 +308,17 @@ class tdag ( ):
 			self.core.add_node(nodeName, attrs=[("label", "<<i>"+node+"</i>>")])
 		return nodeName
 
+
 			
-	# This function doesn't seem to be strictly needed, and I don't really
-	# understand what it was doing. But, I found that it can be useful for
-	# error checking since it somehow finds repeatable nodes that are not
-	# being properly handled. So, I'm keeping it. It seems to work by telling
-	# us if a node with that name has already been added, which normally
-	# shouldn't happen.
 	def has_node(self, node, URI):
+		"""
+		This function doesn't seem to be strictly needed, and I don't really
+		understand what it was doing. But, I found that it can be useful for
+		error checking since it somehow finds repeatable nodes that are not
+		being properly handled. So, I'm keeping it. It seems to work by telling
+		us if a node with that name has already been added, which normally
+		shouldn't happen.
+		"""
 		if self.core.has_node(node) == True:
 			return node
 
@@ -312,34 +329,34 @@ class tdag ( ):
 		
 		# Begin hack
 		# An edge consists of a pair of nodes to be connected.
- 		u, v = edge
- 		
- 		# Do some error checking--make sure the nodes are already there.
- 		for n in [u,v]:
- 			if not n in self.core.node_neighbors:
- 				raise AdditionError( "%s is missing from the node_neighbors table" % n )
- 			if not n in self.core.node_incidence:
- 				raise AdditionError( "%s is missing from the node_incidence table" % n )
- 		
- 		# Check to see if edge exists already; if so we need to make sure we create a new one with a new label
- 		if v in self.core.node_neighbors[u] and u in self.core.node_incidence[v]:
- 			for storedEdge in self.core.edges():
- 				if edge == storedEdge:
- 					storedLabel = self.core.edge_label(storedEdge)
- 					if label == storedLabel:
- 						# This shouldn't happen. So, if it does, we raise an error.
- 						raise AdditionError("Edge (%s, %s, %s) already in digraph" % (u, v, label))
+		u, v = edge
+		
+		# Do some error checking--make sure the nodes are already there.
+		for n in [u,v]:
+			if not n in self.core.node_neighbors:
+				raise AdditionError( "%s is missing from the node_neighbors table" % n )
+			if not n in self.core.node_incidence:
+				raise AdditionError( "%s is missing from the node_incidence table" % n )
+		
+		# Check to see if edge exists already; if so we need to make sure we create a new one with a new label
+		if v in self.core.node_neighbors[u] and u in self.core.node_incidence[v]:
+			for storedEdge in self.core.edges():
+				if edge == storedEdge:
+					storedLabel = self.core.edge_label(storedEdge)
+					if label == storedLabel:
+						# This shouldn't happen. So, if it does, we raise an error.
+						raise AdditionError("Edge (%s, %s, %s) already in digraph" % (u, v, label))
 						print("Edge (%s, %s, %s, %s) already in digraph" % (u, v, label, self.name))
 						pass
- 					else:
- 						# Looks good, add the edge with the new label.
- 						self.add_labeled_edge(edge, label, wt=1, attrs=[])
- 				else:
- 					pass
- 
- 		# This is the usual case: One pair of nodes, one edge. Just add it.
- 		else:
- 			self.add_labeled_edge(edge, label, wt=1, attrs=[])
+					else:
+						# Looks good, add the edge with the new label.
+						self.add_labeled_edge(edge, label, wt=1, attrs=[])
+				else:
+					pass
+
+		# This is the usual case: One pair of nodes, one edge. Just add it.
+		else:
+			self.add_labeled_edge(edge, label, wt=1, attrs=[])
 	
 
 	# Checks to see if a labeled edge is already there.
@@ -379,10 +396,10 @@ class tdag ( ):
 		edges = self.core.edges()
 		
 		for node in nodes:
-			print node
+			print(node)
 			
 		for edge in edges:
-			print edge
+			print(edge)
 			
 			
 	# Stub--used edge system for to_dot
@@ -425,12 +442,12 @@ class tdag ( ):
 			(edge, label) = dag.edges[dagEdgeKey]
 			(edge_from, edge_to) = edge
 			
-  			# Clean up label for printing
- 			label = str(label)
- 			label = label.replace("_", " ")
+			# Clean up label for printing
+			label = str(label)
+			label = label.replace("_", " ")
 
 			attr_list = {}
- 			attr_list['label'] = label
+			attr_list['label'] = label
 			
 			newEdge = pydot.Edge(str(edge_from), str(edge_to), **attr_list)
 			
@@ -482,13 +499,13 @@ class tdag ( ):
 			(edge, label) = dag.edges[dagEdgeKey]
 			(edge_from, edge_to) = edge
 			
- 			# Clean up label for printing
- 			label = str(label)
- 			label = label.replace("_", " ")
+			# Clean up label for printing
+			label = str(label)
+			label = label.replace("_", " ")
 
- 			attr_list = {}
- 			attr_list['label'] = label
- 			
+			attr_list = {}
+			attr_list['label'] = label
+			
 						
 			for cat in componentcats:
 				catmatch = re.compile(cat)
