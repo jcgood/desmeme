@@ -1,517 +1,659 @@
-ChichewaApplicative
-ELASTICITY	elastic1
-	MAXIMUM	1
+IDENTIFIER	ChichewaApplicative
+LANGUAGE	nya
+ELASTICITY	elastic
 	MINIMUM	0
-FILLEDNESS	filled1
+	MAXIMUM	1
+FILLEDNESS	filled
 	FORM	canonicalLineate
 STABILITY	stable
 
-ChichewaReciprocal
-ELASTICITY	elastic2
-	MAXIMUM	1
+IDENTIFIER	ChichewaReciprocal
+LANGUAGE	nya
+ELASTICITY	elastic
 	MINIMUM	0
-FILLEDNESS	filled2
+	MAXIMUM	1
+FILLEDNESS	filled
 	FORM	canonicalLineate
 STABILITY	stable
 
-ChichewaVerbStem
-ELASTICITY	inelastic2
-	COUNT	1
-FILLEDNESS	open1
-	COHERENCE	coherent
-STABILITY	stable
-
-ChichewaBeforeVerbStemNullComponent
-ELASTICITY	inelastic1
-	COUNT	0
-FILLEDNESS	null
-STABILITY	stable
-
-ChichewaPossessum
-ELASTICITY	elastic1
-	MINIMUM	0
-	MAXIMUM	1
-FILLEDNESS	open2
-	COHERENCE	coherent
-STABILITY	stable
-
-ChichewaPossessor
-ELASTICITY	inelastic2
-	COUNT	1
-FILLEDNESS	open1
-	COHERENCE	coherent
-STABILITY	stable
-
-ChichewaAssociativeMarker
-ELASTICITY	inelastic1
-	COUNT	1
-FILLEDNESS	partiallyFilled1
-	FILLER_PLACEMENT	componentFinal
-	FORM	embeddedDesmeme
-	COHERENCE	coherent
-STABILITY	unstable1
-	ASSOCIATE_POSITION	right
-	ASSOCIATE
-ChichewaCausative
-ELASTICITY	elastic2
-	MAXIMUM	1
-	MINIMUM	0
-FILLEDNESS	filled2
-	FORM	canonicalLineate
-STABILITY	stable
-
-ChichewaPassive
-ELASTICITY	elastic2
-	MAXIMUM	1
-	MINIMUM	0
-FILLEDNESS	filled2
-	FORM	canonicalLineate
-STABILITY	stable
-
-ChichewaVerbNullComponent
-ELASTICITY	inelastic1
-	COUNT	0
-FILLEDNESS	null
-STABILITY	stable
-
-ChichewaPreverbal-Component
-ELASTICITY	elastic1
-	MINIMUM	0
-	MAXIMUM	∞
-FILLEDNESS	open1
-	COHERENCE	incoherent
-STABILITY	stable
-
-ChichewaVOX-Component
-ELASTICITY	inelastic2
-	COUNT	1
-FILLEDNESS	filled1
-	FORM	embeddedDesmeme
-STABILITY	stable
-
-ChichewaClauseNullComponent
-ELASTICITY	inelastic1
-	COUNT	0
-FILLEDNESS	null
-STABILITY	stable
-
-ChichewaNdi
-ELASTICITY	inelastic3
-	COUNT	1
-FILLEDNESS	filled2
-	FORM	canonicalLineate
-STABILITY	stable
-
-ChichewaCleftRelative
-ELASTICITY	inelastic2
-	COUNT	1
-FILLEDNESS	filled1
-	FORM	embeddedDesmeme
-STABILITY	stable
-
-ChichewaCleft-Focus
-ELASTICITY	inelastic1
-	COUNT	1
-FILLEDNESS	open1
-	COHERENCE	coherent
-STABILITY	stable
-
-ChichewaComplementClauseLeftSupport
-ELASTICITY	inelastic1
-	COUNT	1
-FILLEDNESS	filled1
-	FORM	canonicalLineate
-STABILITY	unstable1
-	ASSOCIATE_POSITION	right
-	ASSOCIATE
-		ChichewaComplementClauseRightSupport
-
-ChichewaVerbalReduplicant
-ELASTICITY	elastic1
-	MINIMUM	0
-	MAXIMUM	1
-FILLEDNESS	filled2
-	FORM	reduplicant
-STABILITY	unstable1
-	ASSOCIATE_POSITION	right
-	ASSOCIATE
-		ChichewaProsodicDerivationalStemEmbedded
-
-ChichewaProsodicVerbRoot
+IDENTIFIER	ChichewaVerbStem
+LANGUAGE	nya
 ELASTICITY	inelastic
-FILLEDNESS	open2
-	COHERENCE	coherent
-STABILITY	stable
-
-ChichewaProsodicExtensions
-ELASTICITY	elastic1
-	MINIMUM	0
-	MAXIMUM	∞
-FILLEDNESS	open1
-	COHERENCE	coherent
-STABILITY	unstable1
-	ASSOCIATE_POSITION	left
-	ASSOCIATE
-ChichewaKodiComponent
-ELASTICITY	inelastic1
 	COUNT	1
-FILLEDNESS	filled1
-	FORM	canonicalLineate
-STABILITY	stable
-
-ChichewaClauseComponent
-ELASTICITY	inelastic2
-	COUNT	1
-FILLEDNESS	filled2
-	FORM	embeddedDesmeme
-STABILITY	stable
-
-ChichewaLocativePrefix
-ELASTICITY	inelastic3
-	COUNT	1
-FILLEDNESS	open2
-	COHERENCE	coherent
-STABILITY	unstable2
-	ASSOCIATE_POSITION	left
-	ASSOCIATE
-		ChichewaLocativizedNoun
-
-ChichewaOMProsodic
-ELASTICITY	elastic1
-	MINIMUM	0
-	MAXIMUM	1
-FILLEDNESS	open2
-	COHERENCE	coherent
-STABILITY	unstable1
-	ASSOCIATE_POSITION	right
-	ASSOCIATE
-		ChichewaCompoundStemEmbedded
-
-ChichewaNPNoun
-ELASTICITY	inelastic1
-	COUNT	1
-FILLEDNESS	open2
+FILLEDNESS	open
 	COHERENCE	coherent
 STABILITY	stable
 
-ChichewaDem
-ELASTICITY	elastic1
-	MINIMUM	0
-	MAXIMUM	1
-FILLEDNESS	open1
-	COHERENCE	coherent
-STABILITY	stable
-
-ChichewaNPNullComponent
-ELASTICITY	inelastic2
+IDENTIFIER	ChichewaBeforeVerbStemNullComponent
+LANGUAGE	nya
+ELASTICITY	inelastic
 	COUNT	0
 FILLEDNESS	null
 STABILITY	stable
 
-ChichewaNPRightVoussoir
-ELASTICITY	elastic3
+IDENTIFIER	ChichewaPossessum
+LANGUAGE	nya
+ELASTICITY	elastic
 	MINIMUM	0
 	MAXIMUM	1
-FILLEDNESS	open4
-	COHERENCE	coherent
-
-ChichewaNPRightSupport
-ELASTICITY	elastic2
-	MINIMUM	0
-	MAXIMUM	1
-FILLEDNESS	open3
+FILLEDNESS	open
 	COHERENCE	coherent
 STABILITY	stable
 
-ChichewaNPField
-ELASTICITY	elastic1
+IDENTIFIER	ChichewaPossessor
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	open
+	COHERENCE	coherent
+STABILITY	stable
+
+IDENTIFIER	ChichewaAssociativeMarker
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	partiallyFilled
+	FILLER_PLACEMENT	componentFinal
+	FORM	embeddedDesmeme
+	COHERENCE	coherent
+STABILITY	unstable
+	ASSOCIATE_POSITION	right
+	ASSOCIATE	ChichewaPossessor
+
+IDENTIFIER	ChichewaCausative
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	1
+FILLEDNESS	filled
+	FORM	canonicalLineate
+STABILITY	stable
+
+IDENTIFIER	ChichewaPassive
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	1
+FILLEDNESS	filled
+	FORM	canonicalLineate
+STABILITY	stable
+
+IDENTIFIER	ChichewaVerbNullComponent
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	0
+FILLEDNESS	null
+STABILITY	stable
+
+IDENTIFIER	ChichewaPreverbal-Component
+LANGUAGE	nya
+ELASTICITY	elastic
 	MINIMUM	0
 	MAXIMUM	∞
-FILLEDNESS	open2
+FILLEDNESS	open
 	COHERENCE	incoherent
 STABILITY	stable
 
-ChichewaVerb-Neg1
-ELASTICITY	elastic1
-	MINIMUM	0
-	MAXIMUM	1
-FILLEDNESS	filled1
+IDENTIFIER	ChichewaVOX-Component
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	filled
+	FORM	embeddedDesmeme
+STABILITY	stable
+
+IDENTIFIER	ChichewaClauseNullComponent
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	0
+FILLEDNESS	null
+STABILITY	stable
+
+IDENTIFIER	ChichewaNdi
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	filled
 	FORM	canonicalLineate
 STABILITY	stable
 
-ChichewVerbNoNeg1
-ELASTICITY	inelastic1
+IDENTIFIER	ChichewaCleftRelative
+LANGUAGE	nya
+ELASTICITY	inelastic
 	COUNT	1
-FILLEDNESS	open1
+FILLEDNESS	filled
+	FORM	embeddedDesmeme
+STABILITY	stable
+
+IDENTIFIER	ChichewaCleft-Focus
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	open
 	COHERENCE	coherent
 STABILITY	stable
 
-ChichewaNiComponent
-ELASTICITY	inelastic1
+IDENTIFIER	ChichewaComplementClauseLeftSupport
+LANGUAGE	nya
+ELASTICITY	inelastic
 	COUNT	1
-FILLEDNESS	filled1
+FILLEDNESS	filled
 	FORM	canonicalLineate
-STABILITY	stable
+STABILITY	unstable
+	ASSOCIATE_POSITION	right
+	ASSOCIATE	ChichewaComplementClauseRightSupport
 
-ChichewaPreNiVerb
-ELASTICITY	inelastic2
+IDENTIFIER	ChichewaComplementClauseRightSupport
+LANGUAGE	nya
+ELASTICITY	inelastic
 	COUNT	1
-FILLEDNESS	open1
+FILLEDNESS	open
 	COHERENCE	coherent
 STABILITY	stable
 
-ChichewaNominalReduplicantFirstSyllable
-ELASTICITY	inelastic1
-	COUNT	1
-FILLEDNESS	open1
-	COHERENCE	coherent
-STABILITY	stable
-
-ChichewaNominalReduplicantSecondSyllable
-ELASTICITY	inelastic2
-	COUNT	1
-FILLEDNESS	open2
-	COHERENCE	coherent
-STABILITY	stable
-
-ChichewaProsodicNoun
-ELASTICITY	inelastic1
-	COUNT	1
-FILLEDNESS	open1
-	COHERENCE	coherent
-STABILITY	stable
-
-ChichewaNominalReduplicantEmbedded
-ELASTICITY	elastic1
+IDENTIFIER	ChichewaVerbalReduplicant
+LANGUAGE	nya
+ELASTICITY	elastic
 	MINIMUM	0
 	MAXIMUM	1
-FILLEDNESS	filled1
+FILLEDNESS	filled
 	FORM	reduplicant
-STABILITY	unstable1
-	ASSOCIATE_POSITION	left
-	ASSOCIATE
-ChichewaNoun-Prefix
-ELASTICITY	inelastic1
-	COUNT	1
-FILLEDNESS	open1
-	COHERENCE	coherent
-STABILITY	unstable2
+STABILITY	unstable
 	ASSOCIATE_POSITION	right
-	ASSOCIATE
-		ChichewaNoun-NounStem
+	ASSOCIATE	ChichewaProsodicDerivationalStemEmbedded
 
-ChichewaORelativizer
-ELASTICITY	inelastic1
+IDENTIFIER	ChichewaProsodicDerivationalStemEmbedded
+LANGUAGE	nya
+ELASTICITY	inelastic
 	COUNT	1
-FILLEDNESS	partiallyFilled1
+FILLEDNESS	filled
 	FORM	embeddedDesmeme
-	COHERENCE	coherent
-	FILLER_PLACEMENT	componentFinal
 STABILITY	stable
 
-ChichewaVerbClausal
-ELASTICITY	inelastic2
-	COUNT	1
-FILLEDNESS	open1
+IDENTIFIER	ChichewaProsodicVerbRoot
+LANGUAGE	nya
+ELASTICITY	inelastic
+FILLEDNESS	open
 	COHERENCE	coherent
 STABILITY	stable
 
-ChichewaOsaVerbLeftSupport
-ELASTICITY	inelastic1
+IDENTIFIER	ChichewaProsodicExtensions
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	∞
+FILLEDNESS	open
+	COHERENCE	coherent
+STABILITY	unstable
+	ASSOCIATE_POSITION	left
+	ASSOCIATE	ChichewaProsodicVerbRoot
+
+IDENTIFIER	ChichewaKodiComponent
+LANGUAGE	nya
+ELASTICITY	inelastic
 	COUNT	1
-FILLEDNESS	filled1
+FILLEDNESS	filled
 	FORM	canonicalLineate
 STABILITY	stable
 
-ChichewaOM
-ELASTICITY	elastic1
-	MINIMUM	0
-	MAXIMUM	1
-FILLEDNESS	open1
-	COHERENCE	coherent
-STABILITY	stable
-
-ChichewaProsodicPhraseLeftSupport
-ELASTICITY	elastic1
-	MINIMUM	0
-	MAXIMUM	∞
-FILLEDNESS	open1
-	COHERENCE	coherent
-STABILITY	stable
-
-ChichewaProsodicPhraseRightSupport
-ELASTICITY	inelastic1
+IDENTIFIER	ChichewaClauseComponent
+LANGUAGE	nya
+ELASTICITY	inelastic
 	COUNT	1
-FILLEDNESS	open2
-	COHERENCE	coherent
-STABILITY	stable
-
-ChichewaVCExtensionRMCLeftSupport
-ELASTICITY	inelastic1
-	COUNT	1
-FILLEDNESS	open1
-	COHERENCE	coherent
-STABILITY	unstable1
-	ASSOCIATE_POSITION	right
-	ASSOCIATE
-		ChichewaVCExtensionRMCRightSupport
-
-ChichewaRelativeClauseRelativizer
-ELASTICITY	elastic1
-	MINIMUM	0
-	MAXIMUM	1
-FILLEDNESS	partiallyFilled1
-	FILLER_PLACEMENT	componentFinal
+FILLEDNESS	filled
 	FORM	embeddedDesmeme
-	COHERENCE	coherent
 STABILITY	stable
 
-ChichewaRelativizedClause
-ELASTICITY	inelastic1
+IDENTIFIER	ChichewaLocativePrefix
+LANGUAGE	nya
+ELASTICITY	inelastic
 	COUNT	1
-FILLEDNESS	open1
+FILLEDNESS	open
 	COHERENCE	coherent
-STABILITY	stable
-
-ChichewaSM
-ELASTICITY	inelastic1
-	COUNT	1
-FILLEDNESS	open3
-	COHERENCE	coherent
-STABILITY	stable
-
-ChichewaVerb-Neg2
-ELASTICITY	elastic3
-	MINIMUM	0
-	MAXIMUM	1
-FILLEDNESS	filled1
-	FORM	canonicalLineate
-STABILITY	stable
-
-ChichewaModal
-ELASTICITY	elastic1
-	MINIMUM	0
-	MAXIMUM	1
-FILLEDNESS	open1
-	COHERENCE	coherent
-STABILITY	stable
-
-ChichewaTM
-ELASTICITY	elastic2
-	MINIMUM	0
-	MAXIMUM	1
-FILLEDNESS	open2
-	COHERENCE	coherent
-STABILITY	stable
-
-ChichewaC
-ELASTICITY	elastic1
-	MINIMUM	0
-	MAXIMUM	1
-FILLEDNESS	open1
-	COHERENCE	coherent
-STABILITY	unstable1
-	ASSOCIATE_POSITION	right
-	ASSOCIATE
-		ChichewaC2
-
-ChichewaV
-ELASTICITY	inelastic1
-	COUNT	1
-FILLEDNESS	open3
-	COHERENCE	coherent
-STABILITY	stable
-
-ChichewaClauseO
-ELASTICITY	elastic1
-	MINIMUM	0
-	MAXIMUM	1
-FILLEDNESS	open1
-	COHERENCE	coherent
-STABILITY	stable
-
-ChichewaClauseX
-ELASTICITY	elastic2
-	MINIMUM	0
-	MAXIMUM	∞
-FILLEDNESS	open2
-	COHERENCE	coherent
-STABILITY	stable
-
-ChichewaDerivedStemEmbedded
-ELASTICITY	inelastic1
-	COUNT	1
-FILLEDNESS	filled1
-	FORM	embeddedDesmeme
-STABILITY	unstable1
-	ASSOCIATE_POSITION	right
-	ASSOCIATE
-		ChichewaFVProsodic
-
-ChichewaNegForImp
-ELASTICITY	elastic1
-	MINIMUM	0
-	MAXIMUM	1
-FILLEDNESS	open1
-	COHERENCE	coherent
-STABILITY	stable
-
-ChichewaNiWholeVerb
-ELASTICITY	elastic2
-	MINIMUM	0
-	MAXIMUM	1
-FILLEDNESS	filled1
-	FORM	embeddedDesmeme
-STABILITY	unstable1
+STABILITY	unstable
 	ASSOCIATE_POSITION	left
-	ASSOCIATE
-ChichewaSMImp
-ELASTICITY	elastic5
+	ASSOCIATE	ChichewaLocativizedNoun
+
+IDENTIFIER	ChichewaLocativizedNoun
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	filled
+	FORM	embeddedDesmeme
+STABILITY	stable
+
+IDENTIFIER	ChichewaOMProsodic
+LANGUAGE	nya
+ELASTICITY	elastic
 	MINIMUM	0
 	MAXIMUM	1
-FILLEDNESS	open5
+FILLEDNESS	open
+	COHERENCE	coherent
+STABILITY	unstable
+	ASSOCIATE_POSITION	right
+	ASSOCIATE	ChichewaCompoundStemEmbedded
+
+IDENTIFIER	ChichewaCompoundStemEmbedded
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	open
 	COHERENCE	coherent
 STABILITY	stable
 
-ChichewaSTAMP
-ELASTICITY	elastic1
+IDENTIFIER	ChichewaNPNoun
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	open
+	COHERENCE	coherent
+STABILITY	stable
+
+IDENTIFIER	ChichewaDem
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	1
+FILLEDNESS	open
+	COHERENCE	coherent
+STABILITY	stable
+
+IDENTIFIER	ChichewaNPNullComponent
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	0
+FILLEDNESS	null
+STABILITY	stable
+
+IDENTIFIER	ChichewaNPRightVoussoir
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	1
+FILLEDNESS	open
+	COHERENCE	coherent
+
+IDENTIFIER	ChichewaNPRightSupport
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	1
+FILLEDNESS	open
+	COHERENCE	coherent
+STABILITY	stable
+
+IDENTIFIER	ChichewaNPField
+LANGUAGE	nya
+ELASTICITY	elastic
 	MINIMUM	0
 	MAXIMUM	∞
-FILLEDNESS	open1
+FILLEDNESS	open
 	COHERENCE	incoherent
-STABILITY	unstable1
-	ASSOCIATE_POSITION	right
-	ASSOCIATE
-		ChichewaMacroStemEmbedded
+STABILITY	stable
 
-ChichewaFirstSyllable
-ELASTICITY	inelastic1
+IDENTIFIER	ChichewaVerb-Neg1
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	1
+FILLEDNESS	filled
+	FORM	canonicalLineate
+STABILITY	stable
+
+IDENTIFIER	ChichewVerbNoNeg1
+LANGUAGE	nya
+ELASTICITY	inelastic
 	COUNT	1
-FILLEDNESS	open1
+FILLEDNESS	open
 	COHERENCE	coherent
 STABILITY	stable
 
-ChichewaNonInitialSyllables
-ELASTICITY	elastic1
+IDENTIFIER	ChichewaNiComponent
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	filled
+	FORM	canonicalLineate
+STABILITY	stable
+
+IDENTIFIER	ChichewaPreNiVerb
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	open
+	COHERENCE	coherent
+STABILITY	stable
+
+IDENTIFIER	ChichewaNominalReduplicantFirstSyllable
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	open
+	COHERENCE	coherent
+STABILITY	stable
+
+IDENTIFIER	ChichewaNominalReduplicantSecondSyllable
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	open
+	COHERENCE	coherent
+STABILITY	stable
+
+IDENTIFIER	ChichewaProsodicNoun
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	open
+	COHERENCE	coherent
+STABILITY	stable
+
+IDENTIFIER	ChichewaNominalReduplicantEmbedded
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	1
+FILLEDNESS	filled
+	FORM	reduplicant
+STABILITY	unstable
+	ASSOCIATE_POSITION	left
+	ASSOCIATE	ChichewaProsodicNoun
+
+IDENTIFIER	ChichewaNoun-Prefix
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	open
+	COHERENCE	coherent
+STABILITY	unstable
+	ASSOCIATE_POSITION	right
+	ASSOCIATE	ChichewaNoun-NounStem
+
+IDENTIFIER	ChichewaNoun-NounStem
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	open
+	COHERENCE	coherent
+STABILITY	unstable
+	ASSOCIATE_POSITION	left
+	ASSOCIATE	ChichewaNoun-Prefix
+
+IDENTIFIER	ChichewaORelativizer
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	partiallyFilled
+	FILLER_PLACEMENT	componentFinal
+	FORM	embeddedDesmeme
+	COHERENCE	coherent
+STABILITY	stable
+
+IDENTIFIER	ChichewaVerbClausal
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	open
+	COHERENCE	coherent
+STABILITY	stable
+
+IDENTIFIER	ChichewaOsaVerbLeftSupport
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	filled
+	FORM	canonicalLineate
+STABILITY	stable
+
+IDENTIFIER	ChichewaOM
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	1
+FILLEDNESS	open
+	COHERENCE	coherent
+STABILITY	stable
+
+IDENTIFIER	ChichewaProsodicPhraseLeftSupport
+LANGUAGE	nya
+ELASTICITY	elastic
 	MINIMUM	0
 	MAXIMUM	∞
-FILLEDNESS	open2
-	COHERENCE	coherent
-STABILITY	unstable1
-	ASSOCIATE_POSITION	left
-	ASSOCIATE
-ChichewaWordMinimalityLeftSupport
-ELASTICITY	elastic1
-	MINIMUM	1
-	MAXIMUM	∞
-FILLEDNESS	open1
+FILLEDNESS	open
 	COHERENCE	coherent
 STABILITY	stable
 
-ChichewaWordMinimalityRightSupport
-ELASTICITY	elastic2
+IDENTIFIER	ChichewaProsodicPhraseRightSupport
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	open
+	COHERENCE	coherent
+STABILITY	stable
+
+IDENTIFIER	ChichewaVCExtensionRMCLeftSupport
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	open
+	COHERENCE	coherent
+STABILITY	unstable
+	ASSOCIATE_POSITION	right
+	ASSOCIATE	ChichewaVCExtensionRMCRightSupport
+
+IDENTIFIER	ChichewaVCExtensionRMCRightSupport
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	open
+	COHERENCE	coherent
+STABILITY	unstable
+	ASSOCIATE_POSITION	left
+	ASSOCIATE	ChichewaVCExtensionRMCLeftSupport
+
+IDENTIFIER	ChichewaRelativeClauseRelativizer
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	1
+FILLEDNESS	partiallyFilled
+	FILLER_PLACEMENT	componentFinal
+	FORM	embeddedDesmeme
+	COHERENCE	coherent
+STABILITY	stable
+
+IDENTIFIER	ChichewaRelativizedClause
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	open
+	COHERENCE	coherent
+STABILITY	stable
+
+IDENTIFIER	ChichewaSM
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	open
+	COHERENCE	coherent
+STABILITY	stable
+
+IDENTIFIER	ChichewaVerb-Neg2
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	1
+FILLEDNESS	filled
+	FORM	canonicalLineate
+STABILITY	stable
+
+IDENTIFIER	ChichewaModal
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	1
+FILLEDNESS	open
+	COHERENCE	coherent
+STABILITY	stable
+
+IDENTIFIER	ChichewaTM
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	1
+FILLEDNESS	open
+	COHERENCE	coherent
+STABILITY	stable
+
+IDENTIFIER	ChichewaC
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	1
+FILLEDNESS	open
+	COHERENCE	coherent
+STABILITY	unstable
+	ASSOCIATE_POSITION	right
+	ASSOCIATE	ChichewaC2
+
+IDENTIFIER	ChichewaV
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	open
+	COHERENCE	coherent
+STABILITY	stable
+
+IDENTIFIER	ChichewaC2
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	1
+FILLEDNESS	open
+	COHERENCE	incoherent
+STABILITY	unstable
+	ASSOCIATE_POSITION	left
+	ASSOCIATE	ChichewaC
+
+IDENTIFIER	ChichewaClauseO
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	1
+FILLEDNESS	open
+	COHERENCE	coherent
+STABILITY	stable
+
+IDENTIFIER	ChichewaClauseX
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	∞
+FILLEDNESS	open
+	COHERENCE	coherent
+STABILITY	stable
+
+IDENTIFIER	ChichewaDerivedStemEmbedded
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	filled
+	FORM	embeddedDesmeme
+STABILITY	unstable
+	ASSOCIATE_POSITION	right
+	ASSOCIATE	ChichewaFVProsodic
+
+IDENTIFIER	ChichewaFVProsodic
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	open
+	COHERENCE	coherent
+STABILITY	unstable
+	ASSOCIATE_POSITION	left
+	ASSOCIATE	ChichewaDerivedStemEmbedded
+
+IDENTIFIER	ChichewaNegForImp
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	1
+FILLEDNESS	open
+	COHERENCE	coherent
+STABILITY	stable
+
+IDENTIFIER	ChichewaNiWholeVerb
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	1
+FILLEDNESS	filled
+	FORM	embeddedDesmeme
+STABILITY	unstable
+	ASSOCIATE_POSITION	left
+	ASSOCIATE	ChichewaNegForImp
+
+IDENTIFIER	ChichewaSMImp
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	1
+FILLEDNESS	open
+	COHERENCE	coherent
+STABILITY	stable
+
+IDENTIFIER	ChichewaSTAMP
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	∞
+FILLEDNESS	open
+	COHERENCE	incoherent
+STABILITY	unstable
+	ASSOCIATE_POSITION	right
+	ASSOCIATE	ChichewaMacroStemEmbedded
+
+IDENTIFIER	ChichewaMacroStemEmbedded
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	filled
+	FORM	embeddedDesmeme
+STABILITY	stable
+
+IDENTIFIER	ChichewaFirstSyllable
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	open
+	COHERENCE	coherent
+STABILITY	stable
+
+IDENTIFIER	ChichewaNonInitialSyllables
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	∞
+FILLEDNESS	open
+	COHERENCE	coherent
+STABILITY	unstable
+	ASSOCIATE_POSITION	left
+	ASSOCIATE	ChichewaFirstSyllable
+
+IDENTIFIER	ChichewaWordMinimalityLeftSupport
+LANGUAGE	nya
+ELASTICITY	elastic
 	MINIMUM	1
 	MAXIMUM	∞
-FILLEDNESS	open2
+FILLEDNESS	open
+	COHERENCE	coherent
+STABILITY	stable
+
+IDENTIFIER	ChichewaWordMinimalityRightSupport
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	1
+	MAXIMUM	∞
+FILLEDNESS	open
 	COHERENCE	coherent
 STABILITY	stable

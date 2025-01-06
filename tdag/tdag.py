@@ -298,7 +298,7 @@ class tdag ( ):
 					self.core.add_node(nodeName,  attrs=[("label", node)])
 
 		elif node == "source":
-			## SOURCE XXX!!!
+			print(node, nodeName)
 			pass
 		
 		# If we've made it this far, it's a non-repeatable, generic node.		

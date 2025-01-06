@@ -1,0 +1,46 @@
+IDENTIFIER	.
+LANGUAGE	.
+CONDITIONING	constructionalConditioning
+	lexicoconstructionalConditioning
+		FILLER_POSITION	templateInitial
+			templateFinal
+			templateMultiple
+		FILLED_COMPONENTS	filledComponentSet
+				FILLED_COMPONENT*	.
+	prosodicConditioning
+VIOLABILITY	notViolable
+	potentiallyViolable
+		EXCEPTIONALITY	semantic
+			pragmatic
+			morphosyntactic
+			noKnownExceptions
+		REPARABILITY	morphosyntacticInsertion
+			surfaceViolable
+			phonologicalInsertion
+			phonologicalRepair
+			morphosyntacticInsertion
+STRICTURE	length
+		CONSTITUENT	syllable
+		COUNT	.
+	order
+		CONSTITUENT	morphologicalConstituent
+			syntacticConstituent
+			morphosyntacticConstituent
+			prosodicPhrase
+			segment
+		COUNT	.
+		RELATIONS	simple
+			taxonomic
+FOUNDATION	arch
+		LEFT_SUPPORT	.
+		LEFT_VOUSSOIR	.
+		KEYSTONE	.
+		RIGHT_VOUSSOIR	.
+		RIGHT_SUPPORT	.
+		RESTKOMPONENTEN	restkomponentenSet
+				RESTKOMPONENTE*	.
+	span
+		LEFT_SUPPORT	.
+		RIGHT_SUPPORT	.
+		RESTKOMPONENTEN	restkomponentenSet
+				RESTKOMPONENTE*	.
