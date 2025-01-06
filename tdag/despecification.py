@@ -14,7 +14,7 @@ def process_template(mother,genericMother,rdfGraph,tdag):
 		despecifiedD = conflate(daughter,rdfGraph)
 		prettyDName = prettyName(despecifiedD)
 		prettyPredName = prettyName(predicate)
-
+		
 		if prettyPredName == "CONSTITUENT":
 			#print "Skipping CONSTITUENT node to avoid circularity!"
 			#continue
@@ -41,6 +41,9 @@ def process_template(mother,genericMother,rdfGraph,tdag):
 		
 		# Need to skip source information, probably better solution out there
 		elif is_metadata(predicate):
+			# Will decide later if it is worth implementing this. I kind of doubt it. May do it by hand.
+			#print(prettyDName,daughter,mother,predicate)
+			#process_template(daughter, prettyDName, rdfGraph, tdag)
 			pass
 
 
@@ -89,8 +92,6 @@ def process_template_noComp(mother,genericMother,rdfGraph,tdag):
 		despecifiedD = conflate(daughter,rdfGraph)
 		prettyDName = prettyName(despecifiedD)
 		prettyPredName = prettyName(predicate)
-
-		print(prettyPredName)
 
 		if despecifiedD.encode('utf-8') == "http://purl.org/linguistics/jcgood/component#component":
 			pass
@@ -173,7 +174,11 @@ def is_generic(rdfPred,tdag):
 def is_metadata(rdfPred):
 
 	# Not very general yet
-	if rdfPred == URIRef("http://purl.org/linguistics/jcgood/notes#HAS_SOURCE"):
+	if (
+		rdfPred == URIRef("http://purl.org/linguistics/jcgood/notes#HAS_SOURCE") or
+	   	rdfPred == URIRef("http://purl.org/dc/terms#bibliographicCitation") or
+	    rdfPred == URIRef("http://purl.org/linguistics/jcgood/notes#")
+	   	):
 			return True
 	return False
 

@@ -1,7 +1,8 @@
-ChichewaAR-MOR
+IDENTIFIER	ChichewaAR-MOR
+LANGUAGE	nya
 CONDITIONING	lexicoconstructionalConditioning
 	FILLER_POSITION	templateMultiple
-	FILLED_COMPONENTS		filledComponentSet
+	FILLED_COMPONENTS	filledComponentSet
 		FILLED_COMPONENT	ChichewaApplicative
 		FILLED_COMPONENT	ChichewaReciprocal
 VIOLABILITY	potentiallyViolable
@@ -18,7 +19,8 @@ FOUNDATION	arch
 	RIGHT_VOUSSOIR	ChichewaApplicative
 	RIGHT_SUPPORT	ChichewaReciprocal
 
-ChichewaAssociative-SYN
+IDENTIFIER	ChichewaAssociative-SYN
+LANGUAGE	nya
 CONDITIONING	lexicoconstructionalConditioning
 VIOLABILITY	notViolable
 STRICTURE	order
@@ -28,13 +30,14 @@ STRICTURE	order
 FOUNDATION	span
 	LEFT_SUPPORT	ChichewaPossessum
 	RIGHT_SUPPORT	ChichewaPossessor
-	RESTKOMPONENTEN		restkomponentenSet
+	RESTKOMPONENTEN	restkomponentenSet
 		RESTKOMPONENTE	ChichewaAssociativeMarker
 
-ChichewaCA-MOR
+IDENTIFIER	ChichewaCA-MOR
+LANGUAGE	nya
 CONDITIONING	lexicoconstructionalConditioning
 	FILLER_POSITION	templateMultiple
-	FILLED_COMPONENTS		filledComponentSet
+	FILLED_COMPONENTS	filledComponentSet
 		FILLED_COMPONENT	ChichewaApplicative
 		FILLED_COMPONENT	ChichewaCausative
 VIOLABILITY	notViolable
@@ -49,10 +52,11 @@ FOUNDATION	arch
 	RIGHT_VOUSSOIR	ChichewaCausative
 	RIGHT_SUPPORT	ChichewaApplicative
 
-ChichewaCP-MOR
+IDENTIFIER	ChichewaCP-MOR
+LANGUAGE	nya
 CONDITIONING	lexicoconstructionalConditioning
 	FILLER_POSITION	templateMultiple
-	FILLED_COMPONENTS		filledComponentSet
+	FILLED_COMPONENTS	filledComponentSet
 		FILLED_COMPONENT	ChichewaCausative
 		FILLED_COMPONENT	ChichewaPassive
 VIOLABILITY	notViolable
@@ -67,7 +71,8 @@ FOUNDATION	arch
 	RIGHT_VOUSSOIR	ChichewaCausative
 	RIGHT_SUPPORT	ChichewaPassive
 
-ChichewaClause-SYN
+IDENTIFIER	ChichewaClause-SYN
+LANGUAGE	nya
 CONDITIONING	constructionalConditioning
 VIOLABILITY	notViolable
 STRICTURE	order
@@ -81,7 +86,8 @@ FOUNDATION	arch
 	RIGHT_VOUSSOIR	ChichewaClauseNullComponent
 	RIGHT_SUPPORT	ChichewaVOX-Component
 
-ChichewaCleft-SYN
+IDENTIFIER	ChichewaCleft-SYN
+LANGUAGE	nya
 CONDITIONING	constructionalConditioning
 VIOLABILITY	notViolable
 STRICTURE	order
@@ -91,10 +97,11 @@ STRICTURE	order
 FOUNDATION	span
 	LEFT_SUPPORT	ChichewaNdi
 	RIGHT_SUPPORT	ChichewaCleftRelative
-	RESTKOMPONENTEN		restkomponentenSet
+	RESTKOMPONENTEN	restkomponentenSet
 		RESTKOMPONENTE	ChichewaCleft-Focus
 
-ChichewaComplementClause-SYN
+IDENTIFIER	ChichewaComplementClause-SYN
+LANGUAGE	nya
 CONDITIONING	lexicoconstructionalConditioning
 VIOLABILITY	notViolable
 STRICTURE	order
@@ -105,7 +112,8 @@ FOUNDATION	span
 	LEFT_SUPPORT	ChichewaComplementClauseLeftSupport
 	RIGHT_SUPPORT	ChichewaComplementClauseRightSupport
 
-ChichewaCompoundStem-PHON
+IDENTIFIER	ChichewaCompoundStem-PHON
+LANGUAGE	nya
 CONDITIONING	constructionalConditioning
 VIOLABILITY	notViolable
 STRICTURE	order
@@ -116,7 +124,8 @@ FOUNDATION	span
 	LEFT_SUPPORT	ChichewaVerbalReduplicant
 	RIGHT_SUPPORT	ChichewaProsodicDerivationalStemEmbedded
 
-ChichewaDerivationalStem-PhMOR
+IDENTIFIER	ChichewaDerivationalStem-PhMOR
+LANGUAGE	nya
 CONDITIONING	constructionalConditioning
 VIOLABILITY	notViolable
 STRICTURE	order
@@ -127,7 +136,8 @@ FOUNDATION	span
 	LEFT_SUPPORT	ChichewaProsodicVerbRoot
 	RIGHT_SUPPORT	ChichewaProsodicExtensions
 
-ChichewaImperative-MOR
+IDENTIFIER	ChichewaImperative-MOR
+LANGUAGE	nya
 CONDITIONING	constructionalConditioning
 VIOLABILITY	notViolable
 STRICTURE	order
@@ -141,10 +151,11 @@ FOUNDATION	arch
 	RIGHT_VOUSSOIR	ChichewaBeforeVerbStemNullComponent
 	RIGHT_SUPPORT	ChichewaVerbStem
 
-ChichewaKodi-SYN
+IDENTIFIER	ChichewaKodi-SYN
+LANGUAGE	nya
 CONDITIONING	lexicoconstructionalConditioning
 	FILLER_POSITION	templateInitial
-	FILLED_COMPONENTS		filledComponentSet
+	FILLED_COMPONENTS	filledComponentSet
 		FILLED_COMPONENT	ChichewaKodiComponent
 VIOLABILITY	potentiallyViolable
 	EXCEPTIONALITY	pragmatic
@@ -157,7 +168,8 @@ FOUNDATION	span
 	LEFT_SUPPORT	ChichewaKodiComponent
 	RIGHT_SUPPORT	ChichewaClauseComponent
 
-ChichewaLocative-CLT
+IDENTIFIER	ChichewaLocative-CLT
+LANGUAGE	nya
 CONDITIONING	constructionalConditioning
 VIOLABILITY	notViolable
 STRICTURE	order
@@ -167,10 +179,11 @@ STRICTURE	order
 FOUNDATION	span
 	LEFT_SUPPORT	ChichewaLocativePrefix
 	RIGHT_SUPPORT	ChichewaLocativizedNoun
-	RESTKOMPONENTEN		restkomponentenSet
+	RESTKOMPONENTEN	restkomponentenSet
 		RESTKOMPONENTE	ChichewaAssociativeMarker
 
-ChichewaMacroStem-PhMOR
+IDENTIFIER	ChichewaMacroStem-PhMOR
+LANGUAGE	nya
 CONDITIONING	constructionalConditioning
 VIOLABILITY	notViolable
 STRICTURE	order
@@ -181,7 +194,8 @@ FOUNDATION	span
 	LEFT_SUPPORT	ChichewaOMProsodic
 	RIGHT_SUPPORT	ChichewaCompoundStemEmbedded
 
-ChichewaNDem-PhSYN
+IDENTIFIER	ChichewaNDem-PhSYN
+LANGUAGE	nya
 CONDITIONING	constructionalConditioning
 VIOLABILITY	potentiallyViolable
 	EXCEPTIONALITY	morphosyntactic
@@ -194,7 +208,8 @@ FOUNDATION	span
 	LEFT_SUPPORT	ChichewaNPNoun
 	RIGHT_SUPPORT	ChichewaDem
 
-ChichewaNP-SYN
+IDENTIFIER	ChichewaNP-SYN
+LANGUAGE	nya
 CONDITIONING	constructionalConditioning
 VIOLABILITY	potentiallyViolable
 	EXCEPTIONALITY	pragmatic
@@ -209,10 +224,11 @@ FOUNDATION	arch
 	KEYSTONE	ChichewaNPNoun
 	RIGHT_VOUSSOIR	ChichewaNPRightVoussoir
 	RIGHT_SUPPORT	ChichewaNPRightSupport
-	RESTKOMPONENTEN		restkomponentenSet
+	RESTKOMPONENTEN	restkomponentenSet
 		RESTKOMPONENTE	ChichewaNPField
 
-ChichewaNeg1Verb-PhMOR
+IDENTIFIER	ChichewaNeg1Verb-PhMOR
+LANGUAGE	nya
 CONDITIONING	constructionalConditioning
 VIOLABILITY	notViolable
 STRICTURE	order
@@ -223,10 +239,11 @@ FOUNDATION	span
 	LEFT_SUPPORT	ChichewaVerb-Neg1
 	RIGHT_SUPPORT	ChichewVerbNoNeg1
 
-ChichewaNiEnclitic-CLT
+IDENTIFIER	ChichewaNiEnclitic-CLT
+LANGUAGE	nya
 CONDITIONING	lexicoconstructionalConditioning
 	FILLER_POSITION	templateFinal
-	FILLED_COMPONENTS		filledComponentSet
+	FILLED_COMPONENTS	filledComponentSet
 		FILLED_COMPONENT	ChichewaNiComponent
 VIOLABILITY	notViolable
 STRICTURE	order
@@ -237,7 +254,8 @@ FOUNDATION	span
 	LEFT_SUPPORT	ChichewaPreNiVerb
 	RIGHT_SUPPORT	ChichewaNiComponent
 
-ChichewaNominalReduplicant-PhMOR
+IDENTIFIER	ChichewaNominalReduplicant-PhMOR
+LANGUAGE	nya
 CONDITIONING	prosodicConditioning
 VIOLABILITY	notViolable
 STRICTURE	length
@@ -247,7 +265,8 @@ FOUNDATION	span
 	LEFT_SUPPORT	ChichewaNominalReduplicantFirstSyllable
 	RIGHT_SUPPORT	ChichewaNominalReduplicantSecondSyllable
 
-ChichewaNominalReduplication-PhMOR
+IDENTIFIER	ChichewaNominalReduplication-PhMOR
+LANGUAGE	nya
 CONDITIONING	constructionalConditioning
 VIOLABILITY	notViolable
 STRICTURE	order
@@ -258,7 +277,8 @@ FOUNDATION	span
 	LEFT_SUPPORT	ChichewaProsodicNoun
 	RIGHT_SUPPORT	ChichewaNominalReduplicantEmbedded
 
-ChichewaNoun-MOR
+IDENTIFIER	ChichewaNoun-MOR
+LANGUAGE	nya
 CONDITIONING	constructionalConditioning
 VIOLABILITY	potentiallyViolable
 	EXCEPTIONALITY	lexical
@@ -271,10 +291,11 @@ FOUNDATION	span
 	LEFT_SUPPORT	ChichewaNoun-Prefix
 	RIGHT_SUPPORT	ChichewaNoun-NounStem
 
-ChichewaORelative-CLT
+IDENTIFIER	ChichewaORelative-CLT
+LANGUAGE	nya
 CONDITIONING	lexicoconstructionalConditioning
 	FILLER_POSITION	templateFinal
-	FILLED_COMPONENTS		filledComponentSet
+	FILLED_COMPONENTS	filledComponentSet
 		FILLED_COMPONENT	ChichewaORelativizer
 VIOLABILITY	notViolable
 STRICTURE	order
@@ -285,10 +306,11 @@ FOUNDATION	span
 	LEFT_SUPPORT	ChichewaVerbClausal
 	RIGHT_SUPPORT	ChichewaORelativizer
 
-ChichewaOsaVerb-MOR
+IDENTIFIER	ChichewaOsaVerb-MOR
+LANGUAGE	nya
 CONDITIONING	lexicoconstructionalConditioning
 	FILLER_POSITION	templateInitial
-	FILLED_COMPONENTS		filledComponentSet
+	FILLED_COMPONENTS	filledComponentSet
 		FILLED_COMPONENT	ChichewaOsaVerbLeftSupport
 VIOLABILITY	notViolable
 STRICTURE	order
@@ -302,7 +324,8 @@ FOUNDATION	arch
 	RIGHT_VOUSSOIR	ChichewaVerbNullComponent
 	RIGHT_SUPPORT	ChichewaVerbStem
 
-ChichewaPhrase-PhSYN
+IDENTIFIER	ChichewaPhrase-PhSYN
+LANGUAGE	nya
 CONDITIONING	prosodicConditioning
 VIOLABILITY	notViolable
 STRICTURE	order
@@ -313,7 +336,8 @@ FOUNDATION	span
 	LEFT_SUPPORT	ChichewaProsodicPhraseLeftSupport
 	RIGHT_SUPPORT	ChichewaProsodicPhraseRightSupport
 
-ChichewaRMC-MOR
+IDENTIFIER	ChichewaRMC-MOR
+LANGUAGE	nya
 CONDITIONING	constructionalConditioning
 VIOLABILITY	notViolable
 STRICTURE	order
@@ -324,7 +348,8 @@ FOUNDATION	span
 	LEFT_SUPPORT	ChichewaVCExtensionRMCLeftSupport
 	RIGHT_SUPPORT	ChichewaVCExtensionRMCRightSupport
 
-ChichewaRelativeClause-SYN
+IDENTIFIER	ChichewaRelativeClause-SYN
+LANGUAGE	nya
 CONDITIONING	constructionalConditioning
 VIOLABILITY	notViolable
 STRICTURE	order
@@ -335,7 +360,8 @@ FOUNDATION	span
 	LEFT_SUPPORT	ChichewaRelativeClauseRelativizer
 	RIGHT_SUPPORT	ChichewaRelativizedClause
 
-ChichewaSTAMP-PhMOR
+IDENTIFIER	ChichewaSTAMP-PhMOR
+LANGUAGE	nya
 CONDITIONING	constructionalConditioning
 VIOLABILITY	notViolable
 STRICTURE	order
@@ -345,11 +371,12 @@ STRICTURE	order
 FOUNDATION	span
 	LEFT_SUPPORT	ChichewaSM
 	RIGHT_SUPPORT	ChichewaVerb-Neg2
-	RESTKOMPONENTEN		restkomponentenSet
+	RESTKOMPONENTEN	restkomponentenSet
 		RESTKOMPONENTE	ChichewaModal
 		RESTKOMPONENTE	ChichewaTM
 
-ChichewaSyllable-PHON
+IDENTIFIER	ChichewaSyllable-PHON
+LANGUAGE	nya
 CONDITIONING	prosodicConditioning
 VIOLABILITY	potentiallyViolable
 	EXCEPTIONALITY	noKnownExceptions
@@ -361,10 +388,11 @@ STRICTURE	order
 FOUNDATION	span
 	LEFT_SUPPORT	ChichewaC
 	RIGHT_SUPPORT	ChichewaV
-	RESTKOMPONENTEN		restkomponentenSet
+	RESTKOMPONENTEN	restkomponentenSet
 		RESTKOMPONENTE	ChichewaC2
 
-ChichewaVOX-SYN
+IDENTIFIER	ChichewaVOX-SYN
+LANGUAGE	nya
 CONDITIONING	constructionalConditioning
 VIOLABILITY	potentiallyViolable
 	EXCEPTIONALITY	morphosyntactic
@@ -380,7 +408,8 @@ FOUNDATION	arch
 	RIGHT_VOUSSOIR	ChichewaClauseO
 	RIGHT_SUPPORT	ChichewaClauseX
 
-ChichewaVerb-MOR
+IDENTIFIER	ChichewaVerb-MOR
+LANGUAGE	nya
 CONDITIONING	constructionalConditioning
 VIOLABILITY	notViolable
 STRICTURE	order
@@ -393,13 +422,14 @@ FOUNDATION	arch
 	KEYSTONE	ChichewaVerbStem
 	RIGHT_VOUSSOIR	ChichewaVerbNullComponent
 	RIGHT_SUPPORT	ChichewaVerbStem
-	RESTKOMPONENTEN		restkomponentenSet
+	RESTKOMPONENTEN	restkomponentenSet
 		RESTKOMPONENTE	ChichewaModal
 		RESTKOMPONENTE	ChichewaSM
 		RESTKOMPONENTE	ChichewaTM
 		RESTKOMPONENTE	ChichewaVerb-Neg2
 
-ChichewaVerbStem-PhMOR
+IDENTIFIER	ChichewaVerbStem-PhMOR
+LANGUAGE	nya
 CONDITIONING	constructionalConditioning
 VIOLABILITY	notViolable
 STRICTURE	order
@@ -410,7 +440,8 @@ FOUNDATION	span
 	LEFT_SUPPORT	ChichewaDerivedStemEmbedded
 	RIGHT_SUPPORT	ChichewaFVProsodic
 
-ChichewaVerbWithImperatives-MOR
+IDENTIFIER	ChichewaVerbWithImperatives-MOR
+LANGUAGE	nya
 CONDITIONING	constructionalConditioning
 VIOLABILITY	notViolable
 STRICTURE	order
@@ -422,13 +453,14 @@ FOUNDATION	arch
 	LEFT_VOUSSOIR	ChichewaOM
 	KEYSTONE	ChichewaVerbStem
 	RIGHT_SUPPORT	ChichewaNiWholeVerb
-	RESTKOMPONENTEN		restkomponentenSet
+	RESTKOMPONENTEN	restkomponentenSet
 		RESTKOMPONENTE	ChichewaModal
 		RESTKOMPONENTE	ChichewaSMImp
 		RESTKOMPONENTE	ChichewaTM
 		RESTKOMPONENTE	ChichewaVerb-Neg2
 
-ChichewaVerbWord-PhMOR
+IDENTIFIER	ChichewaVerbWord-PhMOR
+LANGUAGE	nya
 CONDITIONING	constructionalConditioning
 VIOLABILITY	notViolable
 STRICTURE	order
@@ -439,7 +471,8 @@ FOUNDATION	span
 	LEFT_SUPPORT	ChichewaSTAMP
 	RIGHT_SUPPORT	ChichewaMacroStemEmbedded
 
-ChichewaVowelHarmony-PhMOR
+IDENTIFIER	ChichewaVowelHarmony-PhMOR
+LANGUAGE	nya
 CONDITIONING	constructionalConditioning
 VIOLABILITY	potentiallyViolable
 	EXCEPTIONALITY	lexical
@@ -452,7 +485,8 @@ FOUNDATION	span
 	LEFT_SUPPORT	ChichewaFirstSyllable
 	RIGHT_SUPPORT	ChichewaNonInitialSyllables
 
-ChichewaWordMinimality-PhMOR
+IDENTIFIER	ChichewaWordMinimality-PhMOR
+LANGUAGE	nya
 CONDITIONING	prosodicConditioning
 VIOLABILITY	potentiallyViolable
 	EXCEPTIONALITY	noKnownExceptions

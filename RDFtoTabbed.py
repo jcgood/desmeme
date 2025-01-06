@@ -32,7 +32,7 @@ seenComponents = [ ]
 for gTemplate in gTemplates:
 
 	templateTabbed = tabbed(gTemplate.name,"desmeme")
-	templateTabbed.graph_toTabbed(gTemplate)
+	templateTabbed.graph_toAVM(gTemplate)
 	templateTabbed.canonicalize()
 	
 	desfile = open(desfilename + "_temp.tsv", "a")

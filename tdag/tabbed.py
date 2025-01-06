@@ -3,6 +3,7 @@ Adapting AVM export to a simple tabbed format for a migration from RDF.
 """
 
 from tdag import tdag
+import re
 
 class tabbed ( ):
 
@@ -64,7 +65,11 @@ class tabbed ( ):
 
 
 	# Will need recursion
-	def graph_toTabbed(self, tgraph, root="desmeme"):
+	def graph_toAVM(self, tgraph, root="desmeme"):
+
+		"""
+		Turns a graph-based representation into a more AVM-oriented one.
+		"""
 	
 		pygraph = tgraph.core
 		nodes = pygraph.nodes()
@@ -97,7 +102,7 @@ class tabbed ( ):
 							
 					# Should only point to components
 					embeddedAVM = tabbed(n2, value)
-					embeddedAVM.graph_toTabbed(tgraph, n2)
+					embeddedAVM.graph_toAVM(tgraph, n2)
 					FV = featval(attribute, embeddedAVM)
 					self.addFV(FV)
 			
@@ -130,7 +135,7 @@ class tabbed ( ):
 				
 				else:
 					embeddedAVM = tabbed(neighbor, value)
-					embeddedAVM.graph_toTabbed(tgraph, neighbor)
+					embeddedAVM.graph_toAVM(tgraph, neighbor)
 					FV = featval(attribute, embeddedAVM)
 					self.addFV(FV)
 
@@ -193,8 +198,8 @@ class tabbed ( ):
 			featorder = [] # Empty list to block to the for loop below, probably not a "pythonic" way of doing things
 		
 		
-		# RKs are a special case, generalization no doubt possible, but I don't want to deal with it now.
-		if type == 'restkomponentenSet':
+		# RKs and Filled Component Sets are a special case, generalization no doubt possible, but I don't want to deal with it now.
+		if type == 'restkomponentenSet' or  type == 'filledComponentSet':
 			# RKsets only contain RKs which are themselves components. So, we just order all of them.
 			for ufeatval in ufeatvals:
 				uval = ufeatval.value
@@ -376,10 +381,16 @@ class tabbed ( ):
 	# Used recursively
 	# Pass around topavm to keep track of tags for re-entered components
 	def to_tabbed_desmeme(self, outfile, embedding = 0):
+		"""
+		Takes the AVM-oriented data structure and turns it into a simple tabbed one.
+		For data migration purposes.
+		"""
 		
 		id = self.name
 		type = self.type
 		featvals = self.featvals
+		
+		language = "nya"
 		
 		# linebreak before each desmeme
 		if embedding == 0:
@@ -389,7 +400,14 @@ class tabbed ( ):
 			print("\t" + id, file=outfile)
 
 		else:
-			print("\t"*embedding + id, file=outfile)
+			
+			# Special case for first lines
+			if embedding == 0:
+				print("IDENTIFIER\t" + id, file=outfile)
+				print("LANGUAGE\t" + language, file=outfile)
+				
+			else:
+				print("\t" + id, file=outfile)
 	
 			for featval in featvals:
 					
@@ -407,17 +425,20 @@ class tabbed ( ):
 
 
 	def to_tabbed_components(self, outfile, seenComponents, embedding = 0, inComponent = False ):
+		"""
+		Takes the AVM-oriented data structure for components and turns it into a simple tabbed one.
+		For data migration purposes.
+		"""
 		
 		id = self.name
 		type = self.type
 		featvals = self.featvals
-		
-		
+
+		language = "nya"
+			
 		# If re-entered and not primary, just print a tag			
 
-		print(id, seenComponents)
 		if id in seenComponents:
-			print("Seen:", id)
 			return(seenComponents)
 
 		if type == "component":
@@ -428,16 +449,27 @@ class tabbed ( ):
 
 		if inComponent == True:
 
-			print("\t"*embedding + id, file=outfile)
-
+			# Special case for first lines
+			if embedding == 0:
+				print("IDENTIFIER\t" + id, file=outfile)
+				print("LANGUAGE\t" + language, file=outfile)
+				
+			else:
+				id = re.sub('(?<=[a-z])[0-9]', '', id)
+				print("\t" + id, file=outfile)
+			
 			for featval in featvals:
 					
 				feat = featval.feature
 				val = featval.value
-			
+				
 				if isinstance(val, str):
 					print("\t"*embedding + feat + "\t" + val, file=outfile)
 	
+				# Since ASSOCIATE points to a component, special logic is needed
+				elif feat == "ASSOCIATE":
+					print("\t"*embedding + feat + "\t" + val.name, file=outfile)
+					
 				else:
 					print("\t"*embedding + feat, end='', file=outfile)
 					embedding += 1
@@ -445,16 +477,14 @@ class tabbed ( ):
 					embedding -= 1
 					
 		else:
-			for featval in featvals:
-			
+			for featval in featvals:			
 				val = featval.value
-
 				if isinstance(val, str): pass
 
 				else:
 					val = featval.value
 					val.to_tabbed_components(outfile, seenComponents, embedding)
-					
+									
 		return(seenComponents)
 
 
