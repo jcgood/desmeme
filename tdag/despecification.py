@@ -137,6 +137,80 @@ def process_template_noComp(mother,genericMother,rdfGraph,tdag):
 	return tdag
 
 
+# For new tabbed template structure XXX (will work this out in a script first)
+def process_tabbed(mother,genericMother,rdfGraph,tdag):
+		
+	for predicate, daughter in rdfGraph.predicate_objects(mother):
+
+		# Conflate (if applicable) the daughters of the mother if possible and create pretty names.
+		despecifiedD = conflate(daughter,rdfGraph)
+		prettyDName = prettyName(despecifiedD)
+		prettyPredName = prettyName(predicate)
+		
+		if prettyPredName == "CONSTITUENT":
+			#print "Skipping CONSTITUENT node to avoid circularity!"
+			#continue
+			pass
+
+		# Here is a hack to deal with the fact that, at least for Tiene, associates can criss-cross
+		# This results in infinite recursion. So, we need special treatment
+		if is_associate(predicate):
+			
+			# If I'm already in the graph, just add my edge if it's not already there.
+			if daughter in tdag.components:
+				prettyDName = tdag.add_node(prettyDName,daughter,mother,predicate)
+				if tdag.has_edge((genericMother, prettyDName), prettyPredName):
+					pass
+				else:
+					# Now we are using the special tdag methods to add an edge with a label for multiple arcs from/to same nodes
+					tdag.add_edge((genericMother, prettyDName), label=prettyPredName)
+
+			# Otherwise, add me per usual	
+			else:
+				prettyDName = tdag.add_node(prettyDName,daughter,mother,predicate)
+				tdag.add_edge((genericMother, prettyDName), label=prettyPredName)
+				process_template(daughter, prettyDName, rdfGraph, tdag)
+		
+		# Need to skip source information, probably better solution out there
+		elif is_metadata(predicate):
+			# Will decide later if it is worth implementing this. I kind of doubt it. May do it by hand.
+			#print(prettyDName,daughter,mother,predicate)
+			#process_template(daughter, prettyDName, rdfGraph, tdag)
+			pass
+
+
+		# Here we need some special logic to make sure that (components especially)
+		# Have their potentially shared nodes "split" up so that each component points
+		# to its own nodes rather than shared nodes. This is only a problem for
+		# generic and/or conflatable nodes which may not be unique.
+		elif is_generic(predicate,tdag) or conflatable(daughter,rdfGraph):
+
+			# I don't understand why but, somehow, the invocation of this boolean
+			# detects cases of duplicatable nodes not yet properly handled. This seems
+			# to be an accident, but a useful one. So, I am keeping it.
+			if tdag.has_node(prettyDName,daughter):
+				prettyDName = tdag.has_node(prettyDName,daughter)
+				#print "Warning ", daughter, "may be a case of a duplicatable node not yet properly handled. Examine the template using it and the class function in tdag and add a case for this if graph does not properly duplicate nodes. A known raising of this error which is not a problem occurs when a component with an Associate is also a filler for a lexicoconstructional template."
+			else:
+				prettyDName = tdag.add_node(prettyDName,daughter,mother,predicate)
+			
+			# The method used here is from the original pygraph, and does not involve labeled edges
+			if tdag.has_edge((genericMother, prettyDName), prettyPredName):
+				pass
+			else:
+				# Now we are using the special tdag methods to add an edge with a label for multiple arcs from/to same nodes
+				tdag.add_edge((genericMother, prettyDName), label=prettyPredName)
+			
+			# Now send the rest of the template, after conflation of this layer, back through the function.
+			process_template(daughter, prettyDName, rdfGraph, tdag)
+			
+		# Not a generic/conflatable node. So, we don't add anything but, instead, just cycle through.
+		else: process_template(daughter, genericMother, rdfGraph, tdag)
+	
+	# We've been passing the same tdag around adding nodes and edges.
+	# It should be all built up by now. So, we return it.
+	return tdag
+	
 
 # This function conflates/collapses an RDF node with its type if it is a typed node.
 # For instance, a specific FOUNDATION may become a type rather than a foundation ID.
