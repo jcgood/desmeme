@@ -1,6 +1,6 @@
 from tdag.tdag import tdag
 from tdag.validator import schema
-from tdag.avm import graph_toAVM
+from tdag.avm import avm
 
 import re
 
@@ -52,5 +52,10 @@ for desmeme in desmemes:
 			if (not desdag.has_node(parent, URI)): desdag.add_node(parent, URI)
 			if (not desdag.has_node(value, URI)): desdag.add_node(value, URI)
 			desdag.add_edge((parent, value), feature)
-	# Not working now since more needs to be done, but keep...		
-	print(desdag.graph_toAVM())
+	
+	
+	# proof of concept is now OK, but a lot of detailed work to be done
+	templateAVM = avm(id_, "desmeme")
+	templateAVM.graph_toAVM(desdag)
+	
+	print(templateAVM.to_ASCII(templateAVM))
