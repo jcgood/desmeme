@@ -1,5 +1,5 @@
 from tdag import tdag
-from tdag.avm import to_ASCII
+#from tdag.avm import to_ASCII
 
 # Possible improvement: Make subclass of "topAVM" adding features (e.g., totaltags, tags) just for that class.
 class avm ( ):
@@ -246,7 +246,7 @@ class avm ( ):
 				priorityset = False
 				for foundationfeature in prioritylist:
 				
-					if foundationfeature in attributes and priorityset == False and foundationfeature is "RESTKOMPONENTE":
+					if foundationfeature in attributes and priorityset == False and foundationfeature == "RESTKOMPONENTE":
 						self.RKre = component
 						self.makepriorityfeature(foundationfeature, self, component)
 						priorityset = True
@@ -471,7 +471,7 @@ class avm ( ):
 						float(val)
 						
 						if val == '100':
-							print("\t"*embedding, "\\textsc{"+prettyfeat+"}\t&\t", heightSpacing+"$\infty$", otherHeightSpacing+"\\cr", file=outfile)
+							print("\t"*embedding, "\\textsc{"+prettyfeat+"}\t&\t", heightSpacing+"$\\infty$", otherHeightSpacing+"\\cr", file=outfile)
 						
 						else:
 							print("\t"*embedding, "\\textsc{"+prettyfeat+"}\t&\t", heightSpacing+val, otherHeightSpacing+"\\cr", file=outfile)
