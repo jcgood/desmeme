@@ -4,7 +4,5 @@ schemaFileName = "DesmemeSchema.tsv"
 
 desmemeSchema = schema(schemaFileName, "desmeme")
 
-[a, b] = desmemeSchema.processSchema()
+[typesToFeatures, featuresToTypes] = desmemeSchema.processSchema()
 
-print(a)
-print(b)
