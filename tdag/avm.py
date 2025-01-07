@@ -1,4 +1,5 @@
 from tdag import tdag
+from tdag.avm import to_ASCII
 
 # Possible improvement: Make subclass of "topAVM" adding features (e.g., totaltags, tags) just for that class.
 class avm ( ):
