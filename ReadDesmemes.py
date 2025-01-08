@@ -41,7 +41,7 @@ for desmeme in desmemes:
 		else: tabCount = 0
 		featval = featval.lstrip()
 		
-		# final \n caused an esxtra empty line that broke things. will need to check this
+		# final \n caused an extra empty line that broke things. will need to check this
 		try: feature, value = featval.split('\t')
 		except: print("X", featval)
 		
