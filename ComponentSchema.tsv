@@ -1,0 +1,23 @@
+IDENTIFIER	.
+LANGUAGE	.
+ELASTICITY	elastic
+		MINIMUM	.
+		MAXIMUM	.
+	inelastic
+		COUNT	.
+FILLEDNESS	open
+		COHERENCE	coherent
+			incoherent
+	filled
+		FORM	canonicalLineate
+			embeddedDesmeme
+			reduplicant
+	partiallyFilled
+		FILLER_PLACEMENT	componentFinal
+		FORM	embeddedDesmeme
+		COHERENCE	coherent
+STABILITY	stable
+	unstable
+		ASSOCIATE_POSITION	right
+				left
+		ASSOCIATE	.
