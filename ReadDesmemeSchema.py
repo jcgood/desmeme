@@ -1,7 +1,7 @@
 from tdag.validator import schema
 
 #schemaFileName = "DesmemeSchema.tsv"
-schemaFileName = "ComponentSchema.tsv"
+schemaFileName = "CmponentSchema.tsv"
 
 #desmemeSchema = schema(schemaFileName, "desmeme")
 desmemeSchema = schema(schemaFileName, "component")
