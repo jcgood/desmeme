@@ -16,7 +16,6 @@ with open(desmemeFileName) as desmemeFile:
 	 
 for desmeme in desmemes:
 	
-
 	# * unpacks the remainder to featvals
 	[idfv, langfv, *featvals] = desmeme.split('\n')
 	
@@ -30,32 +29,66 @@ for desmeme in desmemes:
 
 	desdag = tdag(id_)
 
-	parent = "desmeme"
+	topType = "desmeme"
+	previousType = topType
 	prevtabCount = 0
-	URI = "URI" # dummy
+	URI = "URI" # dummy, need to fix to fully utilize existing code effectively
+
+	# add root
+	desdag.add_node(topType, URI)
+
+	embeddings = { }
+	#embedding = 0
 	for featval in featvals:
-	
+		
 		tabs = re.match('^\t+', featval)
 		if tabs != None:
 			tabCount = tabs[0].count('\t')
 		else: tabCount = 0
 		featval = featval.lstrip()
 		
-		# final \n caused an extra empty line that broke things. will need to check this
-		try: feature, value = featval.split('\t')
-		except: print("X", featval)
+		# Deals with a final line break issue, maybe can be handled better
+		if featval == "": pass
+		else: feature, value = featval.split('\t')
+		
+		# special logic for digits since they break python-graph somehow
+		if value.isdigit():
+			value = "no" + value
 		
 		# Was using URI's to disambiguate repeating features (e.g., in components)
 		# Will need to adapt...
 		if tabCount == prevtabCount:
-		
-			if (not desdag.has_node(parent, URI)): desdag.add_node(parent, URI)
+
+			embeddings[tabCount + 1] = value
+
 			if (not desdag.has_node(value, URI)): desdag.add_node(value, URI)
-			desdag.add_edge((parent, value), feature)
+			desdag.add_edge((previousType, value), feature)
+
+
+		# Should only ever increment by one tab
+		if tabCount > prevtabCount: 		
+
+			embeddings[tabCount + 1] = value
+			prevtabCount = tabCount
+
+			if (not desdag.has_node(value, URI)): desdag.add_node(value, URI)
+			previousType = embeddings[tabCount]
+			desdag.add_edge((previousType, value), feature)
+
+		if tabCount < prevtabCount: 		
+			embeddings[tabCount + 1] = value
+			prevtabCount = tabCount
+
+			if (not desdag.has_node(value, URI)): desdag.add_node(value, URI)
+
+			try: previousType = embeddings[tabCount - 1]
+			except: previousType = topType
+			desdag.add_edge((previousType, value), feature)
 	
 	
 	# proof of concept is now OK, but a lot of detailed work to be done
 	templateAVM = avm(id_, "desmeme")
 	templateAVM.graph_toAVM(desdag)
 	
-	print(templateAVM.to_ASCII(templateAVM))
+	templateAVM.to_ASCII()
+	print()

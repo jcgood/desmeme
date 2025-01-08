@@ -376,13 +376,16 @@ class avm ( ):
 
 	# Recursive
 	# Pass around topavm to keep track of tags for re-entered components
-	def to_ASCII(self, topavm, embedding = 0, seencomponents = { }, componentcount = 1):
+	def to_ASCII(self, topavm = None, embedding = 0, seencomponents = { }, componentcount = 1):
 		
 		id = self.name
 		type = self.type
 		reentered = self.reentered
 		primary = self.primary
 		featvals = self.featvals
+		
+		if topavm is None:
+			topavm = self
 		
 		# Check for re-entrancy conditions
 
