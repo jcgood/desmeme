@@ -87,6 +87,7 @@ for desmeme in desmemes:
 	
 	
 	# proof of concept is now OK, but a lot of detailed work to be done
+	# components are not yet done at all!!
 	templateAVM = avm(id_, "desmeme")
 	templateAVM.graph_toAVM(desdag)
 	
