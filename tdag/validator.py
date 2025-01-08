@@ -87,7 +87,7 @@ class schema ( ):
 						(newFeature, newType) = line.split("\t")
 						# Because the top type is at position "-1" in the system, we need a special logic
 						try: type_ = embeddings[tabCount - 1]
-						except: type_ = "desmeme"
+						except: type_ = self.topType
 						typesToFeatures[type_].add(newFeature)
 						featuresToTypes[newFeature].add(newType)
 						embeddings[tabCount] = newFeature
@@ -102,8 +102,13 @@ class schema ( ):
 						embeddings[tabCount] = newType
 						embedding = tabCount
 				
-
+		# level of indirection to start the recursion
 		with open(filename) as schemaFile:
 			processFile(schemaFile, embedding, type_, feature)
 
-		return([typesToFeatures, featuresToTypes])
+		# listify the sets
+		#https://stackoverflow.com/questions/43600688/turn-dictionary-of-sets-into-dictionary-of-lists
+		typesToFeaturesList = {key: list(values) for key, values in typesToFeatures.items()}
+		featuresToTypesList = {key: list(values) for key, values in featuresToTypes.items()}
+
+		return([typesToFeaturesList, featuresToTypesList])
