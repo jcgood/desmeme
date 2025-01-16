@@ -2,9 +2,13 @@ from tdag.tdag import tdag
 from tdag.validator import schema
 from tdag.avm import avm
 
+from tdag.comparison import draw_graphs
+
 import re
 
 desmemeFileName = "ChichewaDesmemes.tsv"
+
+graphfolder = "Graphs/"
 
 # For later, get the schema
 schemaFileName = "DesmemeSchema.tsv"
@@ -93,3 +97,6 @@ for desmeme in desmemes:
 	
 	templateAVM.to_ASCII()
 	print()
+	
+	# expects a list of graphs; so construct a list of one element
+	draw_graphs([desdag], graphfolder)
