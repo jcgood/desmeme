@@ -1,5 +1,5 @@
 from tdag import tdag
-#from tdag.avm import to_ASCII
+import sys
 
 # Possible improvement: Make subclass of "topAVM" adding features (e.g., totaltags, tags) just for that class.
 class avm ( ):
@@ -419,7 +419,7 @@ class avm ( ):
 	
 	# Recursive
 	# Pass around topavm to keep track of tags for re-entered components
-	def to_latex(self, topavm, outfile, embedding = 0, seencomponents = { }, componentcount = 1):
+	def to_latex(self, topavm = None, outfile = sys.stdout, embedding = 0, seencomponents = { }, componentcount = 1):
 		
 		id = self.name
 		type = self.type

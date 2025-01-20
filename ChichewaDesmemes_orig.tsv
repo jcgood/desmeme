@@ -1,7 +1,7 @@
 IDENTIFIER	ChichewaAR-MOR
 LANGUAGE	nya
 CONDITIONING	lexicoconstructionalConditioning
-	FILLER_POSITION	multiple
+	FILLER_POSITION	templateMultiple
 	FILLED_COMPONENTS	filledComponentSet
 		FILLED_COMPONENT	ChichewaApplicative
 		FILLED_COMPONENT	ChichewaReciprocal
@@ -36,7 +36,7 @@ FOUNDATION	span
 IDENTIFIER	ChichewaCA-MOR
 LANGUAGE	nya
 CONDITIONING	lexicoconstructionalConditioning
-	FILLER_POSITION	multiple
+	FILLER_POSITION	templateMultiple
 	FILLED_COMPONENTS	filledComponentSet
 		FILLED_COMPONENT	ChichewaApplicative
 		FILLED_COMPONENT	ChichewaCausative
@@ -55,7 +55,7 @@ FOUNDATION	arch
 IDENTIFIER	ChichewaCP-MOR
 LANGUAGE	nya
 CONDITIONING	lexicoconstructionalConditioning
-	FILLER_POSITION	multiple
+	FILLER_POSITION	templateMultiple
 	FILLED_COMPONENTS	filledComponentSet
 		FILLED_COMPONENT	ChichewaCausative
 		FILLED_COMPONENT	ChichewaPassive

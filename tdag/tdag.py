@@ -5,6 +5,11 @@ This module helps process templates described graphs.
 It adds a layer on top of pygraph in some cases to deal with cases of re-entrancy.
 """
 
+## To do: https://github.com/Shoobx/python-graph/tree/afd6f1cf0f04350d05ea28ad3ea567b623031ae4
+# is the library used here, but no longer maintained
+# maybe switch to NetworkX?
+# https://networkx.org/documentation/stable/index.html
+
 from pygraph.classes.digraph import digraph
 from pygraph.classes.exceptions import AdditionError
 
@@ -55,7 +60,7 @@ class tdag ( ):
 		# label made unique by adding an integer
 
 		# Nodes that can repeat need to be created here and relevant logic needs to be added to add_node().
-		# This should be implemented for all attested cases, but not logically possible ones.
+		# This has been implemented for all attested cases, but not logically possible ones.
 		# So, some may need to be added, but there should be warnings when this is a problem.
 		self.components = [ ]
 		self.componentMapping = { }
@@ -108,10 +113,13 @@ class tdag ( ):
 
 
 		# For different integer counts in the graphs
-		# This part of the description language should be updated, probably, to fixedSlot, optionalSlot, field (see Template2Notes.txt) 
-		self.seenCounts = [ ]
-		self.counts = { }
-		self.countMapping = { }
+		# This part of the description language should be updated, probably,
+		# to fixedSlot, optionalSlot, field (see Template2Notes.txt) 
+		
+		## Don't think these are needed for new implementation, 1/19/2025
+		#self.seenCounts = [ ]
+		#self.counts = { }
+		#self.countMapping = { }
 
 		
 		# Some namespaces are for properties that can be typologically compared and some are not.
@@ -134,19 +142,32 @@ class tdag ( ):
 				
 		nodeName = node
 		
+		# Originally, node names were italicized, but the dot->pdf rendering messes up
+		# the way "f" is rendered (and maybe some other characters) in Times New Roman
+		# italics. So, I am turning off italics for now, but using these variables to
+		# bring them back if that problem can be addressed.
+		it = ""
+		nt = ""
+		#it = "<<i>" # dot italics prefix
+		#nt = "</i>>" # dot italics suffix
+		
+		
 		# Cases may need to be added as new possible "duplicate" possibilities are attested.
 		
 		# Similar logic applies to all countable nodes. See comments here will help understand others.
-		if node == "component":
-			if URI in self.components:
-				nodeName = self.componentMapping[URI]
-			else:
-				componentNumber = len(self.components) + 1 # These increments ensure each repeatable node gets its own identifier.
-				nodeName = despecification.prettyName(URI) # Use actual component IDs now
-				#nodeName = node + str(componentNumber)
-				self.components.append(URI)
-				self.componentMapping[URI] = nodeName # This is the nodename with the number on it to make sure it can be identified properly for pydot.
-				self.core.add_node(nodeName, attrs=[("label", "<<i>component</i>>")]) # Now we add the node to the internal graph, giving it a label without the extra digit.
+		if "component_" in node:				
+
+			self.core.add_node(nodeName, attrs=[("label", it + "component" + nt)])
+				
+# 			if URI in self.components:
+# 				nodeName = self.componentMapping[URI]
+# 				pass
+# 			else:
+# 				componentNumber = len(self.components) + 1 # These increments ensure each repeatable node gets its own identifier.
+# 				nodeName = URI # Use actual component IDs now
+# 				self.components.append(URI)
+# 				self.componentMapping[URI] = nodeName # This is the nodename with the number on it to make sure it can be identified properly for pydot.
+# 				self.core.add_node(nodeName, attrs=[("label", it + URI + nt)]) # Now we add the node to the internal graph, giving it a label without the extra digit.
 
 
 		elif node == "elastic":
@@ -157,7 +178,7 @@ class tdag ( ):
 				nodeName = node + str(elasticNumber)
 				self.elastics.append(URI)
 				self.elasticMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", "<<i>elastic</i>>")])
+				self.core.add_node(nodeName, attrs=[("label", it + "elastic" + nt)])
 		
 		elif node == "inelastic":		
 			
@@ -168,7 +189,7 @@ class tdag ( ):
 				nodeName = node + str(inelasticNumber)
 				self.inelastics.append(URI)
 				self.inelasticMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", "<<i>inelastic</i>>")])
+				self.core.add_node(nodeName, attrs=[("label", it + "inelastic" + nt)])
 
 		elif node == "stable":
 			if URI in self.stabilities:
@@ -178,7 +199,7 @@ class tdag ( ):
 				nodeName = node + str(stabilityNumber)
 				self.stabilities.append(URI)
 				self.stabilityMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", "<<i>stable</i>>")])
+				self.core.add_node(nodeName, attrs=[("label", it + "stable" + nt)])
 
 		elif node == "unstable":
 			if URI in self.unstabilities:
@@ -188,7 +209,7 @@ class tdag ( ):
 				nodeName = node + str(unstabilityNumber)
 				self.unstabilities.append(URI)
 				self.unstabilityMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", "<<i>unstable</i>>")])
+				self.core.add_node(nodeName, attrs=[("label", it + "unstable" + nt)])
 
 		elif node == "filled":
 			if URI in self.filleds:
@@ -198,7 +219,7 @@ class tdag ( ):
 				nodeName = node + str(filledNumber)
 				self.filleds.append(URI)
 				self.filledMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", "<<i>filled</i>>")])
+				self.core.add_node(nodeName, attrs=[("label", it + "filled" + nt)])
 
 		elif node == "open":
 			if URI in self.opens:
@@ -208,7 +229,7 @@ class tdag ( ):
 				nodeName = node + str(openNumber)
 				self.opens.append(URI)
 				self.openMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", "<<i>open</i>>")])
+				self.core.add_node(nodeName, attrs=[("label", it + "open" + nt)])
 
 		elif node == "partiallyFilled":
 			if URI in self.partialfilleds:
@@ -218,7 +239,7 @@ class tdag ( ):
 				nodeName = node + str(partialfilledNumber)
 				self.partialfilleds.append(URI)
 				self.partialfilledMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", "<<i>partiallyFilled</i>>")])
+				self.core.add_node(nodeName, attrs=[("label", it + "partiallyFilled" + nt)])
 
 		elif node == "final":
 			if URI in self.finals:
@@ -228,7 +249,7 @@ class tdag ( ):
 				nodeName = node + str(finalNumber)
 				self.finals.append(URI)
 				self.finalMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", "<<i>final</i>>")])
+				self.core.add_node(nodeName, attrs=[("label", it + "final" + nt)])
 
 		elif node == "null":
 			if URI in self.nulls:
@@ -238,7 +259,7 @@ class tdag ( ):
 				nodeName = node + str(nullNumber)
 				self.nulls.append(URI)
 				self.nullMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", "<<i>null</i>>")])
+				self.core.add_node(nodeName, attrs=[("label", it + "null" + nt)])
 
 		elif node == "coherent":
 			if URI in self.coherents:
@@ -248,7 +269,7 @@ class tdag ( ):
 				nodeName = node + str(coherentNumber)
 				self.coherents.append(URI)
 				self.coherentMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", "<<i>coherent</i>>")])
+				self.core.add_node(nodeName, attrs=[("label", it + "coherent" + nt)])
 
 		elif node == "incoherent":
 			if URI in self.incoherents:
@@ -258,7 +279,7 @@ class tdag ( ):
 				nodeName = node + str(incoherentNumber)
 				self.incoherents.append(URI)
 				self.incoherentMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", "<<i>incoherent</i>>")])
+				self.core.add_node(nodeName, attrs=[("label", it + "incoherent" + nt)])
 
 		elif node == "canonicalLineate":
 			if URI in self.canonicals:
@@ -268,34 +289,22 @@ class tdag ( ):
 				nodeName = node + str(canonicalNumber)
 				self.canonicals.append(URI)
 				self.canonicalMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", "<<i>canonicalLineate</i>>")])
+				self.core.add_node(nodeName, attrs=[("label", it + "canonicalLineate" + nt)])
 
 		# Slightly different scenario for integer values.
-		elif node.isdigit():
-						
-			prettyM = despecification.prettyName(mother)
-			prettyP = despecification.prettyName(predicate)
-			
-			indexName = prettyM + "-" + prettyP
-			generalNodeName = prettyP + node
-			
-			if indexName in self.seenCounts:
-				nodeName = self.countMapping[indexName]
-				
+		# 1/19/2025, JG: Somehow this appears not to have been used in RDF parsing
+		# I did not look into why, but it causes errors for tab-based parsing and
+		# has been adjusted
+		elif "-COUNT-" in node:
 
+			# The URI is designed to contain the count value after a colon at the end of the string
+			countno = re.search(r'(?<=_)([0-9]+)$', node).group(0)
+			
+			# Use URI as nodename for digits since digits are not unique
+			if node == '100':
+				self.core.add_node(URI,  attrs=[("label", '∞')])			
 			else:
-				self.seenCounts.append(indexName)
-				if generalNodeName in self.counts:
-					self.counts[generalNodeName] = self.counts[generalNodeName] + 1
-				else:
-					self.counts[generalNodeName] = 1
-				nodeName = generalNodeName + "-" + str(self.counts[generalNodeName])
-				self.countMapping[indexName] = nodeName
-				# If the node is "100" then that is the RDF "shorthand" for infinity. We replace it here for graph display.
-				if node == '100':
-					self.core.add_node(nodeName,  attrs=[("label", '∞')]) # Some sort of escape sequence for infinity, got it by playing with Python on shell mode.				
-				else:
-					self.core.add_node(nodeName,  attrs=[("label", node)])
+				self.core.add_node(URI,  attrs=[("label", countno)])
 
 		elif node == "source":
 			print(node, nodeName)
@@ -305,7 +314,9 @@ class tdag ( ):
 		else:
 			# make first letter of type name lowercase (needed for names borrowed from GOLD)
 			node = node[0].lower() + node[1:]
-			self.core.add_node(nodeName, attrs=[("label", "<<i>"+node+"</i>>")])
+			self.core.add_node(nodeName, attrs=[("label", it + node + nt)])
+
+		# I wonder why this is here? 1/19/2025
 		return nodeName
 
 
