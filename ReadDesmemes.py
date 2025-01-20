@@ -24,9 +24,12 @@ URIs = defaultdict(int)
 # To do: Validation
 with open(desmemeFileName) as desmemeFile:
 	 desmemes = desmemeFile.read().split('\n\n')
-	 
+
+ 
 for desmeme in desmemes:
 	
+	seenComps = [ ]
+
 	# Features with component as a value since these need special treatment
 	componentFeatures = [
 							"LEFT_SUPPORT",
@@ -61,6 +64,7 @@ for desmeme in desmemes:
 
 	embeddings = { }
 	#embedding = 0
+	
 	for featval in featvals:
 		
 		# Tracks if we need to do do component parsing
@@ -129,6 +133,8 @@ for desmeme in desmemes:
 		# using can merge graphs, which is why it should probably be updated (see above)
 		if atComponent == True:
 
+			previousType = URI
+
 			with open(componentFileName) as componentFile:
 				components = componentFile.read().split('\n\n')
 			
@@ -147,34 +153,45 @@ for desmeme in desmemes:
 				if langfeat != "LANGUAGE":
 					raise(ValueError('Expected leading IDENTIFIER feature, but found {idfeat}'.format(langfeat=repr(langfeat))))
 	
+				# Maybe don't need this, overriden below?
 				adjustedID = "component_" + id_
 				if adjustedID == URI:
-					print("Found it:", id_)
+
+					#print("Found it:", id_)
+					
+					if id_ in seenComps:
+						#print("ID", id_)
+						break
+					else:
+						#print("append", id_)
+						seenComps.append(id_)
+					#print(seenComps)
+					
+					compPrevTabCount = 0
+					compTabCount = 0
+					compURIbase = adjustedID
+				
+				
+					tabEmbeddings = { }
+
+					# Do I even need this (and the above one?)
+					compURIs = defaultdict(int)
 					
 					for featval in featvals:
 					
 						tabs = re.match('^\t+', featval)
 						if tabs != None:
-							tabCount = tabs[0].count('\t')
-						else: tabCount = 0
+							compTabCount = tabs[0].count('\t')
+						else: compTabCount = 0
 						featval = featval.lstrip()
 						
 						# Deals with a final line break issue, maybe can be handled better
 						if featval == "": continue
 						else: feature, value = featval.split('\t')
 				
-						# Override component ID in node label with generic type
-						if feature in componentFeatures:
-							value = "component" + "_" + value
-							URI = value
-							atComponent = True
-					
-						else:
-							URIstem = URIbase +"-" + previousType + "-" + feature
-							featcounter = URIs[URIstem]
-							URI = URIstem + "-" + str(featcounter + 1)
-							URIs[URIstem] += 1
-				
+						value = adjustedID + "_" + value
+						URI = value
+												
 						# special logic for digits since they break python-graph somehow
 						if value.isdigit():
 							value = URI + "_" + value
@@ -183,33 +200,43 @@ for desmeme in desmemes:
 						
 						# Was using URI's to disambiguate repeating features (e.g., in components)
 						# Will need to adapt...
-						if tabCount == prevtabCount:
+						if compTabCount == compPrevTabCount:
 				
-							embeddings[tabCount + 1] = value
+							tabEmbeddings[compTabCount + 1] = value
 				
-							if (not desdag.has_node(value, URI)): desdag.add_node(value, URI)
-							desdag.add_edge((previousType, value), feature)
+							if (not desdag.has_node(value, URI)):
+								# capture the new name to disambiguate repeated features
+								adjustedName = desdag.add_node(value, URI)
+								
+							desdag.add_edge((previousType, adjustedName), feature)
 				
 				
 						# Should only ever increment by one tab
-						elif tabCount > prevtabCount: 		
+						elif compTabCount > compPrevTabCount: 		
 				
-							embeddings[tabCount + 1] = value
-							prevtabCount = tabCount
+							tabEmbeddings[compTabCount + 1] = value
+							compPrevTabCount = compTabCount
 				
-							if (not desdag.has_node(value, URI)): desdag.add_node(value, URI)
-							previousType = embeddings[tabCount]
-							desdag.add_edge((previousType, value), feature)
+							if (not desdag.has_node(value, URI)):
+								# capture the new name to disambiguate repeated features
+								adjustedName = desdag.add_node(value, URI)
+								#print("AN", adjustedName)
+
+							previousType = tabEmbeddings[compTabCount]
+							#print("xx", value, previousType, adjustedName, feature)
+							desdag.add_edge((previousType, adjustedName), feature)
 				
-						elif tabCount < prevtabCount: 		
-							embeddings[tabCount + 1] = value
-							prevtabCount = tabCount
+						elif compTabCount < compPrevTabCount: 		
+							tabEmbeddings[compTabCount + 1] = value
+							compPrevTabCount = compTabCount
 				
-							if (not desdag.has_node(value, URI)): desdag.add_node(value, URI)
+							if (not desdag.has_node(value, URI)):
+								# capture the new name to disambiguate repeated features
+								adjustedName = desdag.add_node(value, URI)
 				
-							try: previousType = embeddings[tabCount - 1]
+							try: previousType = tabEmbeddings[compTabCount - 1]
 							except: previousType = topType
-							desdag.add_edge((previousType, value), feature)
+							desdag.add_edge((previousType, adjustedName), feature)
 						
 					# No need to go further, we only need the one component
 					# I hope I got the embedding right
@@ -227,7 +254,7 @@ for desmeme in desmemes:
 	
 	# expects a list of graphs; so construct a list of one element
 	# maybe make a draw_graph function at some point?
-	#draw_graphs([desdag], graphfolder)
+	draw_graphs([desdag], graphfolder)
 
 
 """

@@ -316,7 +316,7 @@ class tdag ( ):
 			node = node[0].lower() + node[1:]
 			self.core.add_node(nodeName, attrs=[("label", it + node + nt)])
 
-		# I wonder why this is here? 1/19/2025
+		# This allows us to capture the generated name to build the edges
 		return nodeName
 
 
