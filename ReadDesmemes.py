@@ -47,10 +47,12 @@ for desmeme in desmemes:
 	[idfeat, id_] = idfv.split('\t')
 	if idfeat != "IDENTIFIER":
 		raise(ValueError('Expected leading IDENTIFIER feature, but found {idfeat}'.format(idfeat=repr(idfeat))))
-		
+	
+	print("ID", id_)
+	
 	[langfeat, lang] = langfv.split('\t')
 	if langfeat != "LANGUAGE":
-		raise(ValueError('Expected leading IDENTIFIER feature, but found {idfeat}'.format(langfeat=repr(langfeat))))
+		raise(ValueError('Expected leading LANGUAGE feature, but found {langfeat}'.format(langfeat=repr(langfeat))))
 
 	desdag = tdag(id_)
 
@@ -133,7 +135,8 @@ for desmeme in desmemes:
 		# using can merge graphs, which is why it should probably be updated (see above)
 		if atComponent == True:
 
-			previousType = URI
+			previousCompType = URI
+			topURI = URI
 
 			with open(componentFileName) as componentFile:
 				components = componentFile.read().split('\n\n')
@@ -143,105 +146,108 @@ for desmeme in desmemes:
 				# repeating a lot of code here, will need to refactor, but I want to try to get a working pass first
 	
 				# * unpacks the remainder to featvals
-				[idfv, langfv, *featvals] = component.split('\n')
+				[compidfv, complangfv, *compfeatvals] = component.split('\n')
 	
-				[idfeat, id_] = idfv.split('\t')
-				if idfeat != "IDENTIFIER":
-					raise(ValueError('Expected leading IDENTIFIER feature, but found {idfeat}'.format(idfeat=repr(idfeat))))
-					
-				[langfeat, lang] = langfv.split('\t')
-				if langfeat != "LANGUAGE":
-					raise(ValueError('Expected leading IDENTIFIER feature, but found {idfeat}'.format(langfeat=repr(langfeat))))
+				[compidfeat, compid] = compidfv.split('\t')
+				if compidfeat != "IDENTIFIER":
+					raise(ValueError('Expected leading IDENTIFIER feature, but found {compidfeat}'.format(compidfeat=repr(compidfeat))))
+				
+				# could do validation here to verify language match
+				[complangfeat, complang] = complangfv.split('\t')
+				if complangfeat != "LANGUAGE":
+					raise(ValueError('Expected leading LANGUAGE feature, but found {complangfeat}'.format(complangfeat=repr(complangfeat))))
 	
 				# Maybe don't need this, overriden below?
-				adjustedID = "component_" + id_
+				adjustedID = "component_" + compid
 				if adjustedID == URI:
 
-					#print("Found it:", id_)
+					#print("Found it:", compid)
 					
-					if id_ in seenComps:
-						#print("ID", id_)
-						break
+					if compid in seenComps:
+						continue
 					else:
-						#print("append", id_)
-						seenComps.append(id_)
-					#print(seenComps)
+						seenComps.append(compid)
+
 					
 					compPrevTabCount = 0
 					compTabCount = 0
-					compURIbase = adjustedID
-				
+					compURIbase = compid
 				
 					tabEmbeddings = { }
 
 					# Do I even need this (and the above one?)
 					compURIs = defaultdict(int)
 					
-					for featval in featvals:
+					for compfeatval in compfeatvals:
 					
-						tabs = re.match('^\t+', featval)
+						tabs = re.match('^\t+', compfeatval)
 						if tabs != None:
 							compTabCount = tabs[0].count('\t')
 						else: compTabCount = 0
-						featval = featval.lstrip()
+						compfeatval = compfeatval.lstrip()
 						
 						# Deals with a final line break issue, maybe can be handled better
-						if featval == "": continue
-						else: feature, value = featval.split('\t')
+						if compfeatval == "": continue
+						else: feature, value = compfeatval.split('\t')
 				
-						value = adjustedID + "_" + value
-						URI = value
-												
+						URI = compURIbase + "_" + value				
+						
 						# special logic for digits since they break python-graph somehow
 						if value.isdigit():
-							value = URI + "_" + value
+							value = compURIbase + "-" + feature + "_" + value
 							URI = value
-				
 						
 						# Was using URI's to disambiguate repeating features (e.g., in components)
 						# Will need to adapt...
 						if compTabCount == compPrevTabCount:
-				
-							tabEmbeddings[compTabCount + 1] = value
-				
-							if (not desdag.has_node(value, URI)):
+							
+							# I don't know when this if condition comes up
+							# It isn't good for components
+							#if (not desdag.has_node(value, URI)):
 								# capture the new name to disambiguate repeated features
-								adjustedName = desdag.add_node(value, URI)
 								
-							desdag.add_edge((previousType, adjustedName), feature)
-				
+							adjustedValue = desdag.add_node(value, URI)
+							tabEmbeddings[compTabCount + 1] = adjustedValue
+							#print("==", previousCompType, value, feature)
+							desdag.add_edge((previousCompType, adjustedValue), feature)
 				
 						# Should only ever increment by one tab
 						elif compTabCount > compPrevTabCount: 		
 				
-							tabEmbeddings[compTabCount + 1] = value
 							compPrevTabCount = compTabCount
 				
-							if (not desdag.has_node(value, URI)):
+							#if (not desdag.has_node(value, URI)):
 								# capture the new name to disambiguate repeated features
-								adjustedName = desdag.add_node(value, URI)
-								#print("AN", adjustedName)
+							adjustedValue = desdag.add_node(value, URI)
+							tabEmbeddings[compTabCount + 1] = adjustedValue
+							#print("ADJ", adjustedValue)
 
-							previousType = tabEmbeddings[compTabCount]
-							#print("xx", value, previousType, adjustedName, feature)
-							desdag.add_edge((previousType, adjustedName), feature)
+							previousCompType = tabEmbeddings[compTabCount]
+							#print(">", previousCompType, value, feature)
+							desdag.add_edge((previousCompType, adjustedValue), feature)
+
 				
 						elif compTabCount < compPrevTabCount: 		
-							tabEmbeddings[compTabCount + 1] = value
 							compPrevTabCount = compTabCount
 				
-							if (not desdag.has_node(value, URI)):
+							#if (not desdag.has_node(value, URI)):
 								# capture the new name to disambiguate repeated features
-								adjustedName = desdag.add_node(value, URI)
+							adjustedValue = desdag.add_node(value, URI)
+							tabEmbeddings[compTabCount + 1] = adjustedValue
 				
-							try: previousType = tabEmbeddings[compTabCount - 1]
-							except: previousType = topType
-							desdag.add_edge((previousType, adjustedName), feature)
+							try: previousCompType = tabEmbeddings[compTabCount - 1]
+							except: previousCompType = topURI
+							#print("<", previousCompType, value, feature)
+							desdag.add_edge((previousCompType, adjustedValue), feature)
 						
 					# No need to go further, we only need the one component
 					# I hope I got the embedding right
 					break
 
+##### getting error on a Chichewa locative-CLT construction that seems miscoded...not sure what's happening there
+##### may also be a genuine embeddeddesmeme erorr
+## Also, some data is in RDF that needs dumped, like source, notes, transcription string, usw.
+## May need to open up Protege to verify, or check book dump?
 	
 	# proof of concept is now OK, but a lot of detailed work to be done
 	# components are not yet done at all!!

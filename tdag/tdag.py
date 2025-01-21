@@ -297,7 +297,7 @@ class tdag ( ):
 		# has been adjusted
 		elif "-COUNT-" in node:
 
-			# The URI is designed to contain the count value after a colon at the end of the string
+			# The URI is designed to contain the count value after an underscore at the end of the string
 			countno = re.search(r'(?<=_)([0-9]+)$', node).group(0)
 			
 			# Use URI as nodename for digits since digits are not unique
@@ -305,6 +305,19 @@ class tdag ( ):
 				self.core.add_node(URI,  attrs=[("label", '∞')])			
 			else:
 				self.core.add_node(URI,  attrs=[("label", countno)])
+
+		# components code nodes slightly differently from desmemes
+		elif "-MAXIMUM_" in node or "-MINIMUM_" in node or "-COUNT" in node:
+
+			# The URI is designed to contain the count value after an underscore at the end of the string
+			countno = re.search(r'(?<=_)([0-9]+)$', node).group(0)
+			
+			# Use URI as nodename for digits since digits are not unique
+			if node == '100':
+				self.core.add_node(URI,  attrs=[("label", '∞')])			
+			else:
+				self.core.add_node(URI,  attrs=[("label", countno)])
+
 
 		elif node == "source":
 			print(node, nodeName)
