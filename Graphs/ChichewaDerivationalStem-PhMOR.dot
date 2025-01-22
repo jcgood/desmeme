@@ -126,11 +126,11 @@ digraph graphname {
 	elastic1 -> "ChichewaProsodicExtensions-MINIMUM_0"	[label=MINIMUM,
 		lp="656.37,62.25",
 		pos="e,607.39,35.963 663.36,96.543 649.49,91 633.66,82.588 622.99,70.5 617.13,63.85 613.11,55.188 610.38,46.871"];
-	∞	[height=0.5,
+	"ChichewaProsodicExtensions-MAXIMUM_100"	[height=0.5,
 		label=∞,
 		pos="694.74,18",
 		width=0.75];
-	elastic1 -> ∞	[label=MAXIMUM,
+	elastic1 -> "ChichewaProsodicExtensions-MAXIMUM_100"	[label=MAXIMUM,
 		lp="729.92,62.25",
 		pos="e,694.34,36.35 693.14,88.41 693.41,76.758 693.77,61.047 694.09,47.519"];
 	coherent2	[height=0.5,

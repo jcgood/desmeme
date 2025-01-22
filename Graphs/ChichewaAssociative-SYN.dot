@@ -197,11 +197,11 @@ digraph graphname {
 	partiallyFilled1 -> componentFinal	[label="FILLER PLACEMENT",
 		lp="932.64,62.25",
 		pos="e,835.85,36.265 955.35,94.109 917.83,84.882 870.88,73.015 867.01,70.5 857.33,64.194 848.93,54.81 842.31,45.773"];
-	embeddedDesmeme	[height=0.5,
+	embeddedDesmeme1	[height=0.5,
 		label=embeddedDesmeme,
 		pos="1002.3,18",
 		width=2.4216];
-	partiallyFilled1 -> embeddedDesmeme	[label=FORM,
+	partiallyFilled1 -> embeddedDesmeme1	[label=FORM,
 		lp="1021.8,62.25",
 		pos="e,1002.3,36.35 1002.3,88.41 1002.3,76.758 1002.3,61.047 1002.3,47.519"];
 	coherent3	[height=0.5,

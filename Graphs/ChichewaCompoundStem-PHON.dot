@@ -154,11 +154,11 @@ digraph graphname {
 	inelastic1 -> "ChichewaProsodicDerivationalStemEmbedded-COUNT_1"	[label=COUNT,
 		lp="1075,62.25",
 		pos="e,1051.7,36.35 1051.7,88.41 1051.7,76.758 1051.7,61.047 1051.7,47.519"];
-	embeddedDesmeme	[height=0.5,
+	embeddedDesmeme1	[height=0.5,
 		label=embeddedDesmeme,
 		pos="1183.7,18",
 		width=2.4216];
-	filled2 -> embeddedDesmeme	[label=FORM,
+	filled2 -> embeddedDesmeme1	[label=FORM,
 		lp="1195,62.25",
 		pos="e,1179.7,36.35 1167.7,88.41 1170.4,76.758 1174,61.047 1177.2,47.519"];
 }

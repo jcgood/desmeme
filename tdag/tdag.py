@@ -299,11 +299,11 @@ class tdag ( ):
 			if URI in self.canonicals:
 				nodeName = self.embeddedMapping[URI]
 			else:
-				embeddedNumber = len(self.canonicals) + 1
+				embeddedNumber = len(self.embeddeds) + 1
 				nodeName = node + str(embeddedNumber)
 				self.embeddeds.append(URI)
 				self.embeddedMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", it + "canonicalLineate" + nt)])
+				self.core.add_node(nodeName, attrs=[("label", it + "embeddedDesmeme" + nt)])
 
 		# Slightly different scenario for integer values.
 		# 1/19/2025, JG: Somehow this appears not to have been used in RDF parsing
@@ -327,7 +327,8 @@ class tdag ( ):
 			countno = re.search(r'(?<=_)([0-9]+)$', node).group(0)
 			
 			# Use URI as nodename for digits since digits are not unique
-			if node == '100':
+			if countno == '100':
+				print("xxx", URI)
 				self.core.add_node(URI,  attrs=[("label", '∞')])			
 			else:
 				self.core.add_node(URI,  attrs=[("label", countno)])
@@ -341,6 +342,7 @@ class tdag ( ):
 		else:
 			# make first letter of type name lowercase (needed for names borrowed from GOLD)
 			node = node[0].lower() + node[1:]
+			print(node, nodeName)
 			self.core.add_node(nodeName, attrs=[("label", it + node + nt)])
 
 		# This allows us to capture the generated name to build the edges

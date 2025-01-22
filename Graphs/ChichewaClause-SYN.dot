@@ -111,11 +111,11 @@ digraph graphname {
 	elastic1 -> "ChichewaPreverbal-Component-MINIMUM_0"	[label=MINIMUM,
 		lp="381.37,62.25",
 		pos="e,333.02,35.953 388.27,96.622 374.37,91.099 358.56,82.68 347.99,70.5 342.22,63.84 338.36,55.175 335.79,46.858"];
-	∞	[height=0.5,
+	"ChichewaPreverbal-Component-MAXIMUM_100"	[height=0.5,
 		label=∞,
 		pos="420.74,18",
 		width=0.75];
-	elastic1 -> ∞	[label=MAXIMUM,
+	elastic1 -> "ChichewaPreverbal-Component-MAXIMUM_100"	[label=MAXIMUM,
 		lp="455.51,62.25",
 		pos="e,420.14,36.35 418.34,88.41 418.74,76.758 419.29,61.047 419.76,47.519"];
 	incoherent1	[height=0.5,
@@ -153,11 +153,11 @@ digraph graphname {
 	inelastic1 -> "ChichewaVOX-Component-COUNT_1"	[label=COUNT,
 		lp="736.35,62.25",
 		pos="e,711.55,36.35 713.95,88.41 713.42,76.758 712.69,61.047 712.06,47.519"];
-	embeddedDesmeme	[height=0.5,
+	embeddedDesmeme1	[height=0.5,
 		label=embeddedDesmeme,
 		pos="842.74,18",
 		width=2.4216];
-	filled1 -> embeddedDesmeme	[label=FORM,
+	filled1 -> embeddedDesmeme1	[label=FORM,
 		lp="855.68,62.25",
 		pos="e,839.54,36.35 829.91,88.41 832.06,76.758 834.97,61.047 837.47,47.519"];
 	inelastic2	[height=0.5,

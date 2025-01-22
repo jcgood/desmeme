@@ -39,6 +39,7 @@ for desmeme in desmemes:
 							"RIGHT_SUPPORT",
 							"RESTKOMPONENTE",
 							"FILLED_COMPONENT",
+							"ASSOCIATE"
 						]
 	
 	# * unpacks the remainder to featvals
@@ -95,7 +96,7 @@ for desmeme in desmemes:
 			URIs[URIstem] += 1
 
 		# special logic for digits since they break python-graph somehow
-		if value.isdigit():
+		if value.isdigit() or value == "∞":
 			value = URI + "_" + value
 			URI = value
 
@@ -193,7 +194,7 @@ for desmeme in desmemes:
 						URI = compURIbase + "_" + value				
 						
 						# special logic for digits since they break python-graph somehow
-						if value.isdigit():
+						if value.isdigit() or value == "∞":
 							value = compURIbase + "-" + feature + "_" + value
 							URI = value
 						
@@ -206,9 +207,9 @@ for desmeme in desmemes:
 							#if (not desdag.has_node(value, URI)):
 								# capture the new name to disambiguate repeated features
 								
+							print("==", previousCompType, value, feature)
 							adjustedValue = desdag.add_node(value, URI)
 							tabEmbeddings[compTabCount + 1] = adjustedValue
-							#print("==", previousCompType, value, feature)
 							desdag.add_edge((previousCompType, adjustedValue), feature)
 				
 						# Should only ever increment by one tab
@@ -244,10 +245,9 @@ for desmeme in desmemes:
 					# I hope I got the embedding right
 					break
 
-##### getting error on a Chichewa locative-CLT construction that seems miscoded...not sure what's happening there
-##### may also be a genuine embeddeddesmeme erorr
 ## Also, some data is in RDF that needs dumped, like source, notes, transcription string, usw.
 ## May need to open up Protege to verify, or check book dump?
+## I accidentally broke RDFtoTabbed. Is it worth fixing? Or, should I verify the desmemes?
 	
 	# proof of concept is now OK, but a lot of detailed work to be done
 	# components are not yet done at all!!

@@ -162,11 +162,11 @@ digraph graphname {
 	inelastic2 -> "ChichewaClauseComponent-COUNT_1"	[label=COUNT,
 		lp="1057.5,150.75",
 		pos="e,1031.6,124.85 1035.8,176.91 1034.8,165.26 1033.6,149.55 1032.5,136.02"];
-	embeddedDesmeme	[height=0.5,
+	embeddedDesmeme1	[height=0.5,
 		label=embeddedDesmeme,
 		pos="1162.2,106.5",
 		width=2.4216];
-	filled2 -> embeddedDesmeme	[label=FORM,
+	filled2 -> embeddedDesmeme1	[label=FORM,
 		lp="1180,150.75",
 		pos="e,1161.4,124.85 1159,176.91 1159.5,165.26 1160.2,149.55 1160.9,136.02"];
 }

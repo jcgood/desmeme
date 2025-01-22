@@ -140,11 +140,11 @@ digraph graphname {
 	inelastic2 -> "ChichewaCleftRelative-COUNT_1"	[label=COUNT,
 		lp="651.27,150.75",
 		pos="e,615.75,124.26 634.62,176.91 630.35,164.99 624.55,148.81 619.63,135.08"];
-	embeddedDesmeme	[height=0.5,
+	embeddedDesmeme1	[height=0.5,
 		label=embeddedDesmeme,
 		pos="741.74,106.5",
 		width=2.4216];
-	filled2 -> embeddedDesmeme	[label=FORM,
+	filled2 -> embeddedDesmeme1	[label=FORM,
 		lp="761.24,150.75",
 		pos="e,741.74,124.85 741.74,176.91 741.74,165.26 741.74,149.55 741.74,136.02"];
 	"component_ChichewaCleft-Focus"	[height=0.5,
