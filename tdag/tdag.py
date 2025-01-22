@@ -111,6 +111,10 @@ class tdag ( ):
 		self.canonicals = [ ]
 		self.canonicalMapping = { }
 
+		# For embedded desmemes
+		self.embeddeds = [ ]
+		self.embeddedMapping = { }
+
 
 		# For different integer counts in the graphs
 		# This part of the description language should be updated, probably,
@@ -289,6 +293,16 @@ class tdag ( ):
 				nodeName = node + str(canonicalNumber)
 				self.canonicals.append(URI)
 				self.canonicalMapping[URI] = nodeName
+				self.core.add_node(nodeName, attrs=[("label", it + "canonicalLineate" + nt)])
+
+		elif node == "embeddedDesmeme":
+			if URI in self.canonicals:
+				nodeName = self.embeddedMapping[URI]
+			else:
+				embeddedNumber = len(self.canonicals) + 1
+				nodeName = node + str(embeddedNumber)
+				self.embeddeds.append(URI)
+				self.embeddedMapping[URI] = nodeName
 				self.core.add_node(nodeName, attrs=[("label", it + "canonicalLineate" + nt)])
 
 		# Slightly different scenario for integer values.
