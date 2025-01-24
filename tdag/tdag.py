@@ -328,7 +328,6 @@ class tdag ( ):
 			
 			# Use URI as nodename for digits since digits are not unique
 			if countno == '100':
-				print("xxx", URI)
 				self.core.add_node(URI,  attrs=[("label", '∞')])			
 			else:
 				self.core.add_node(URI,  attrs=[("label", countno)])
@@ -342,7 +341,6 @@ class tdag ( ):
 		else:
 			# make first letter of type name lowercase (needed for names borrowed from GOLD)
 			node = node[0].lower() + node[1:]
-			print(node, nodeName)
 			self.core.add_node(nodeName, attrs=[("label", it + node + nt)])
 
 		# This allows us to capture the generated name to build the edges

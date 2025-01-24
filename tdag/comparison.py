@@ -190,8 +190,9 @@ def draw_graphs(graphs, outpath, format="png"):
 		dotcmd = "dot -Tpdf " + outpath + str(name) + '.dot' + " > " + outpath + str(name) + '.pdf'
 		os.system(dotcmd)
 		
+		# 1/23/2025: I don't know why I take these extra steps, maybe I needed .eps at one point?
 		pscmd = "pdf2ps " + outpath + str(name) + '.pdf' + " " + outpath + str(name) + '.ps' 
-		print(pscmd)
+		#print(pscmd)
 		os.system(pscmd)
 
 		# ps2eps has different syntax from others 
@@ -206,14 +207,8 @@ def draw_graphs(graphs, outpath, format="png"):
 		rmeps = "rm " + outpath + str(name) + '.eps'
 		os.system(rmeps)
 
-# 		pdfcmd = "/Applications/Inkscape.app/Contents/Resources/bin/inkscape " + outpath + str(name) + '.svg' + " --export-pdf " + outpath + str(name) + '.pdf'
-# 		os.system(pdfcmd)
-# 
-# 		epscmd = "/Applications/Inkscape.app/Contents/Resources/bin/inkscape " + outpath + str(name) + '.svg' + " --export-eps " + outpath + str(name) + '.eps'
-# 		os.system(epscmd)
 		
-		
-		
+	
 # Turns a template into a .dot file but only gives components
 def draw_components(graphs, outpath, format="png"):
 
@@ -243,9 +238,3 @@ def draw_components(graphs, outpath, format="png"):
 		rmeps = "rm " + outpath + str(name) + '.eps'
 		os.system(rmeps)
 
-
-# 		dotcmd = "dot -Tsvg " + outpath + str(name) + '.dot' + " > " + outpath + str(name) + '.svg'
-# 		os.system(dotcmd)
-# 
-# 		imgcmd = "/Applications/Inkscape.app/Contents/Resources/bin/inkscape " + outpath + str(name) + '.svg' + " --export-pdf " + outpath + str(name) + '.pdf'
-# 		os.system(imgcmd)
