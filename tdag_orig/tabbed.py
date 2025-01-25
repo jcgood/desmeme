@@ -5,6 +5,7 @@ Adapting AVM export to a simple tabbed format for a migration from RDF.
 from tdag_orig import tdag
 import re
 
+# Do I even use this class in a crucial way? I don't think so.
 class tabbed ( ):
 
 	def __init__(self, name, type):

@@ -1,6 +1,7 @@
 from tdag.tdag import tdag
 from tdag.validator import schema
 from tdag.avm import avm
+from tdag.tabbed import get_tabbed_component
 
 from tdag.comparison import draw_graphs
 
@@ -24,98 +25,7 @@ desmemeSchema = schema(schemaFileName, "desmeme")
 
 # To do, can I refactor the add node/add edge logic for the desmeme loop like I did for component?
 
-def get_component(desdag, compID, componentFileName):
 
-	previousCompType = compID
-	topURI = compID
-
-	with open(componentFileName) as componentFile:
-		components = componentFile.read().split('\n\n')
-	
-	for component in components:
-
-		# repeating a lot of code here, will need to refactor, but I want to try to get a working pass first
-
-		# * unpacks the remainder to featvals
-		[compidfv, complangfv, *compfeatvals] = component.split('\n')
-
-		[compidfeat, compid] = compidfv.split('\t')
-		if compidfeat != "IDENTIFIER":
-			raise(ValueError('Expected leading IDENTIFIER feature, but found {compidfeat}'.format(compidfeat=repr(compidfeat))))
-		
-		# could do validation here to verify language match
-		[complangfeat, complang] = complangfv.split('\t')
-		if complangfeat != "LANGUAGE":
-			raise(ValueError('Expected leading LANGUAGE feature, but found {complangfeat}'.format(complangfeat=repr(complangfeat))))
-
-		# Maybe don't need this, overriden below?
-		adjustedID = "component_" + compid
-		if adjustedID == compID:
-			
-			if compid in seenComps:
-				continue
-			else:
-				seenComps.append(compid)
-			
-			compPrevTabCount = 0
-			compTabCount = 0
-			compURIbase = compid
-		
-			tabEmbeddings = { }
-
-			# Do I even need this (and the above one?)
-			compURIs = defaultdict(int)
-			
-			for compfeatval in compfeatvals:
-			
-				tabs = re.match('^\t+', compfeatval)
-				if tabs != None:
-					compTabCount = tabs[0].count('\t')
-				else: compTabCount = 0
-				compfeatval = compfeatval.lstrip()
-				
-				# Deals with a final line break issue, maybe can be handled better
-				if compfeatval == "": continue
-				else: feature, value = compfeatval.split('\t')
-		
-				URI = compURIbase + "_" + value				
-				
-				# special logic for digits since they break python-graph somehow
-				if value.isdigit():
-					value = compURIbase + "-" + feature + "_" + value
-					URI = value
-				
-
-				# Check where we are in the tabbing structure and adjust as needed
-				if compTabCount == compPrevTabCount:								
-					
-					# add_node returns the way the label was adjusted, e.g., elastic 2
-					adjustedValue = desdag.add_node(value, URI)
-					tabEmbeddings[compTabCount + 1] = adjustedValue
-		
-				# Should only ever increment by one tab
-				elif compTabCount > compPrevTabCount: 		
-					# add_node returns the way the label was adjusted, e.g., elastic 2
-					adjustedValue = desdag.add_node(value, URI)
-					compPrevTabCount = compTabCount
-					tabEmbeddings[compTabCount + 1] = adjustedValue
-					previousCompType = tabEmbeddings[compTabCount]
-
-				elif compTabCount < compPrevTabCount: 		
-					# add_node returns the way the label was adjusted, e.g., elastic 2
-					adjustedValue = desdag.add_node(value, URI)
-					compPrevTabCount = compTabCount		
-					tabEmbeddings[compTabCount + 1] = adjustedValue
-		
-					try: previousCompType = tabEmbeddings[compTabCount - 1]
-					except: previousCompType = topURI
-			
-				# Now we can add the edge			
-				desdag.add_edge((previousCompType, adjustedValue), feature)
-				
-			# No need to go further, we only need the one component
-			# I hope I got the embedding right
-			break
 					
 
 
@@ -231,7 +141,7 @@ for desmeme in desmemes:
 		# This is an ugly, redundant process since I don't think the graph library that I am
 		# using can merge graphs, which is why it should probably be updated (see above)
 		if atComponent == True:
-			get_component(desdag, URI, componentFileName)
+			get_tabbed_component(desdag, URI, componentFileName)
 
 
 

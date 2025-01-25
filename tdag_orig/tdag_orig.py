@@ -1,3 +1,5 @@
+# This older version of tdag is maintained for the tabbed export of the RDF versions
+
 # This set of functions helps process RDF templates to create graphs.
 # It adds a layer on top of pygraph in some cases to deal with cases of re-entrancy.
 
