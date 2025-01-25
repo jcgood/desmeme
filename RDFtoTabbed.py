@@ -1,6 +1,6 @@
-import tdag
-from tdag import rdfGraph, Namespace, RDF, process_templates
-from tdag.tabbed import tabbed
+import tdag_orig
+from tdag_orig import rdfGraph, Namespace, RDF, process_templates
+from tdag_orig.tabbed import tabbed
 import os
 
 # Load templates, turn them into despecified graphs
@@ -13,10 +13,9 @@ for template in templatesGenerator:
 	templates.append(template)
 gTemplates = process_templates(templates, rdfTemplates)
 
-tabbedfolder = "./Tabbed/"
 
-desfilename = "ChichewaDesmemes"
-compfilename = "ChichewaComponents"
+desfilename = "ChichewaDesmemes_run2"
+compfilename = "ChichewaComponents_run2"
 
 # Erase existing files
 # Needed temp files due to annoying problem where I couldn't avoid a blank

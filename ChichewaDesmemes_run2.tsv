@@ -1,0 +1,499 @@
+IDENTIFIER	ChichewaAR-MOR
+LANGUAGE	nya
+CONDITIONING	lexicoconstructionalConditioning
+	FILLER_POSITION	templateMultiple
+	FILLED_COMPONENTS	filledComponentSet
+		FILLED_COMPONENT	ChichewaApplicative
+		FILLED_COMPONENT	ChichewaReciprocal
+VIOLABILITY	potentiallyViolable
+	EXCEPTIONALITY	semantic
+	REPARABILITY	morphosyntacticInsertion
+STRICTURE	order
+	CONSTITUENT	morphologicalConstituent
+	COUNT	3
+	RELATIONS	simple
+FOUNDATION	arch
+	LEFT_SUPPORT	ChichewaVerbStem
+	LEFT_VOUSSOIR	ChichewaBeforeVerbStemNullComponent
+	KEYSTONE	ChichewaVerbStem
+	RIGHT_VOUSSOIR	ChichewaApplicative
+	RIGHT_SUPPORT	ChichewaReciprocal
+
+IDENTIFIER	ChichewaAssociative-SYN
+LANGUAGE	nya
+CONDITIONING	lexicoconstructionalConditioning
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	syntacticConstituent
+	COUNT	3
+	RELATIONS	simple
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaPossessum
+	RIGHT_SUPPORT	ChichewaPossessor
+	RESTKOMPONENTEN	restkomponentenSet
+		RESTKOMPONENTE	ChichewaAssociativeMarker
+
+IDENTIFIER	ChichewaCA-MOR
+LANGUAGE	nya
+CONDITIONING	lexicoconstructionalConditioning
+	FILLER_POSITION	templateMultiple
+	FILLED_COMPONENTS	filledComponentSet
+		FILLED_COMPONENT	ChichewaApplicative
+		FILLED_COMPONENT	ChichewaCausative
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	morphologicalConstituent
+	COUNT	3
+	RELATIONS	simple
+FOUNDATION	arch
+	LEFT_SUPPORT	ChichewaVerbStem
+	LEFT_VOUSSOIR	ChichewaBeforeVerbStemNullComponent
+	KEYSTONE	ChichewaVerbStem
+	RIGHT_VOUSSOIR	ChichewaCausative
+	RIGHT_SUPPORT	ChichewaApplicative
+
+IDENTIFIER	ChichewaCP-MOR
+LANGUAGE	nya
+CONDITIONING	lexicoconstructionalConditioning
+	FILLER_POSITION	templateMultiple
+	FILLED_COMPONENTS	filledComponentSet
+		FILLED_COMPONENT	ChichewaCausative
+		FILLED_COMPONENT	ChichewaPassive
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	morphologicalConstituent
+	COUNT	3
+	RELATIONS	simple
+FOUNDATION	arch
+	LEFT_SUPPORT	ChichewaVerbStem
+	LEFT_VOUSSOIR	ChichewaVerbNullComponent
+	KEYSTONE	ChichewaVerbStem
+	RIGHT_VOUSSOIR	ChichewaCausative
+	RIGHT_SUPPORT	ChichewaPassive
+
+IDENTIFIER	ChichewaClause-SYN
+LANGUAGE	nya
+CONDITIONING	constructionalConditioning
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	syntacticConstituent
+	COUNT	2
+	RELATIONS	simple
+FOUNDATION	arch
+	LEFT_SUPPORT	ChichewaPreverbal-Component
+	LEFT_VOUSSOIR	ChichewaPreverbal-Component
+	KEYSTONE	ChichewaVOX-Component
+	RIGHT_VOUSSOIR	ChichewaClauseNullComponent
+	RIGHT_SUPPORT	ChichewaVOX-Component
+
+IDENTIFIER	ChichewaCleft-SYN
+LANGUAGE	nya
+CONDITIONING	constructionalConditioning
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	syntacticConstituent
+	COUNT	3
+	RELATIONS	simple
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaNdi
+	RIGHT_SUPPORT	ChichewaCleftRelative
+	RESTKOMPONENTEN	restkomponentenSet
+		RESTKOMPONENTE	ChichewaCleft-Focus
+
+IDENTIFIER	ChichewaComplementClause-SYN
+LANGUAGE	nya
+CONDITIONING	lexicoconstructionalConditioning
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	syntacticConstituent
+	COUNT	2
+	RELATIONS	simple
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaComplementClauseLeftSupport
+	RIGHT_SUPPORT	ChichewaComplementClauseRightSupport
+
+IDENTIFIER	ChichewaCompoundStem-PHON
+LANGUAGE	nya
+CONDITIONING	constructionalConditioning
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	morphologicalConstituent
+	COUNT	2
+	RELATIONS	simple
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaVerbalReduplicant
+	RIGHT_SUPPORT	ChichewaProsodicDerivationalStemEmbedded
+
+IDENTIFIER	ChichewaDerivationalStem-PhMOR
+LANGUAGE	nya
+CONDITIONING	constructionalConditioning
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	morphologicalConstituent
+	COUNT	2
+	RELATIONS	simple
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaProsodicVerbRoot
+	RIGHT_SUPPORT	ChichewaProsodicExtensions
+
+IDENTIFIER	ChichewaImperative-MOR
+LANGUAGE	nya
+CONDITIONING	constructionalConditioning
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	morphologicalConstituent
+	COUNT	1
+	RELATIONS	simple
+FOUNDATION	arch
+	LEFT_SUPPORT	ChichewaVerbNullComponent
+	LEFT_VOUSSOIR	ChichewaBeforeVerbStemNullComponent
+	KEYSTONE	ChichewaVerbStem
+	RIGHT_VOUSSOIR	ChichewaBeforeVerbStemNullComponent
+	RIGHT_SUPPORT	ChichewaVerbStem
+
+IDENTIFIER	ChichewaKodi-SYN
+LANGUAGE	nya
+CONDITIONING	lexicoconstructionalConditioning
+	FILLER_POSITION	templateInitial
+	FILLED_COMPONENTS	filledComponentSet
+		FILLED_COMPONENT	ChichewaKodiComponent
+VIOLABILITY	potentiallyViolable
+	EXCEPTIONALITY	pragmatic
+	REPARABILITY	surfaceViolable
+STRICTURE	order
+	CONSTITUENT	syntacticConstituent
+	COUNT	2
+	RELATIONS	simple
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaKodiComponent
+	RIGHT_SUPPORT	ChichewaClauseComponent
+
+IDENTIFIER	ChichewaLocative-CLT
+LANGUAGE	nya
+CONDITIONING	constructionalConditioning
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	morphologicalConstituent
+	COUNT	2
+	RELATIONS	simple
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaLocativePrefix
+	RIGHT_SUPPORT	ChichewaLocativizedNoun
+	RESTKOMPONENTEN	restkomponentenSet
+		RESTKOMPONENTE	ChichewaAssociativeMarker
+
+IDENTIFIER	ChichewaMacroStem-PhMOR
+LANGUAGE	nya
+CONDITIONING	constructionalConditioning
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	morphologicalConstituent
+	COUNT	2
+	RELATIONS	simple
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaOMProsodic
+	RIGHT_SUPPORT	ChichewaCompoundStemEmbedded
+
+IDENTIFIER	ChichewaNDem-PhSYN
+LANGUAGE	nya
+CONDITIONING	constructionalConditioning
+VIOLABILITY	potentiallyViolable
+	EXCEPTIONALITY	morphosyntactic
+	REPARABILITY	surfaceViolable
+STRICTURE	order
+	CONSTITUENT	syntacticConstituent
+	COUNT	2
+	RELATIONS	simple
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaNPNoun
+	RIGHT_SUPPORT	ChichewaDem
+
+IDENTIFIER	ChichewaNP-SYN
+LANGUAGE	nya
+CONDITIONING	constructionalConditioning
+VIOLABILITY	potentiallyViolable
+	EXCEPTIONALITY	pragmatic
+	REPARABILITY	surfaceViolable
+STRICTURE	order
+	CONSTITUENT	syntacticConstituent
+	COUNT	4
+	RELATIONS	simple
+FOUNDATION	arch
+	LEFT_SUPPORT	ChichewaNPNoun
+	LEFT_VOUSSOIR	ChichewaNPNullComponent
+	KEYSTONE	ChichewaNPNoun
+	RIGHT_VOUSSOIR	ChichewaNPRightVoussoir
+	RIGHT_SUPPORT	ChichewaNPRightSupport
+	RESTKOMPONENTEN	restkomponentenSet
+		RESTKOMPONENTE	ChichewaNPField
+
+IDENTIFIER	ChichewaNeg1Verb-PhMOR
+LANGUAGE	nya
+CONDITIONING	constructionalConditioning
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	morphologicalConstituent
+	COUNT	2
+	RELATIONS	simple
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaVerb-Neg1
+	RIGHT_SUPPORT	ChichewVerbNoNeg1
+
+IDENTIFIER	ChichewaNiEnclitic-CLT
+LANGUAGE	nya
+CONDITIONING	lexicoconstructionalConditioning
+	FILLER_POSITION	templateFinal
+	FILLED_COMPONENTS	filledComponentSet
+		FILLED_COMPONENT	ChichewaNiComponent
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	morphologicalConstituent
+	COUNT	2
+	RELATIONS	simple
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaPreNiVerb
+	RIGHT_SUPPORT	ChichewaNiComponent
+
+IDENTIFIER	ChichewaNominalReduplicant-PhMOR
+LANGUAGE	nya
+CONDITIONING	prosodicConditioning
+VIOLABILITY	notViolable
+STRICTURE	length
+	CONSTITUENT	syllable
+	COUNT	2
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaNominalReduplicantFirstSyllable
+	RIGHT_SUPPORT	ChichewaNominalReduplicantSecondSyllable
+
+IDENTIFIER	ChichewaNominalReduplication-PhMOR
+LANGUAGE	nya
+CONDITIONING	constructionalConditioning
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	morphologicalConstituent
+	COUNT	2
+	RELATIONS	simple
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaProsodicNoun
+	RIGHT_SUPPORT	ChichewaNominalReduplicantEmbedded
+
+IDENTIFIER	ChichewaNoun-MOR
+LANGUAGE	nya
+CONDITIONING	constructionalConditioning
+VIOLABILITY	potentiallyViolable
+	EXCEPTIONALITY	lexical
+	REPARABILITY	surfaceViolable
+STRICTURE	order
+	CONSTITUENT	morphologicalConstituent
+	COUNT	2
+	RELATIONS	simple
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaNoun-Prefix
+	RIGHT_SUPPORT	ChichewaNoun-NounStem
+
+IDENTIFIER	ChichewaORelative-CLT
+LANGUAGE	nya
+CONDITIONING	lexicoconstructionalConditioning
+	FILLER_POSITION	templateFinal
+	FILLED_COMPONENTS	filledComponentSet
+		FILLED_COMPONENT	ChichewaORelativizer
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	morphologicalConstituent
+	COUNT	2
+	RELATIONS	simple
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaVerbClausal
+	RIGHT_SUPPORT	ChichewaORelativizer
+
+IDENTIFIER	ChichewaOsaVerb-MOR
+LANGUAGE	nya
+CONDITIONING	lexicoconstructionalConditioning
+	FILLER_POSITION	templateInitial
+	FILLED_COMPONENTS	filledComponentSet
+		FILLED_COMPONENT	ChichewaOsaVerbLeftSupport
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	morphologicalConstituent
+	COUNT	2
+	RELATIONS	simple
+FOUNDATION	arch
+	LEFT_SUPPORT	ChichewaOsaVerbLeftSupport
+	LEFT_VOUSSOIR	ChichewaOM
+	KEYSTONE	ChichewaVerbStem
+	RIGHT_VOUSSOIR	ChichewaVerbNullComponent
+	RIGHT_SUPPORT	ChichewaVerbStem
+
+IDENTIFIER	ChichewaPhrase-PhSYN
+LANGUAGE	nya
+CONDITIONING	prosodicConditioning
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	prosodicPhrase
+	COUNT	2
+	RELATIONS	simple
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaProsodicPhraseLeftSupport
+	RIGHT_SUPPORT	ChichewaProsodicPhraseRightSupport
+
+IDENTIFIER	ChichewaRMC-MOR
+LANGUAGE	nya
+CONDITIONING	constructionalConditioning
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	morphologicalConstituent
+	COUNT	2
+	RELATIONS	simple
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaVCExtensionRMCLeftSupport
+	RIGHT_SUPPORT	ChichewaVCExtensionRMCRightSupport
+
+IDENTIFIER	ChichewaRelativeClause-SYN
+LANGUAGE	nya
+CONDITIONING	constructionalConditioning
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	syntacticConstituent
+	COUNT	2
+	RELATIONS	simple
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaRelativeClauseRelativizer
+	RIGHT_SUPPORT	ChichewaRelativizedClause
+
+IDENTIFIER	ChichewaSTAMP-PhMOR
+LANGUAGE	nya
+CONDITIONING	constructionalConditioning
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	morphologicalConstituent
+	COUNT	4
+	RELATIONS	simple
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaSM
+	RIGHT_SUPPORT	ChichewaVerb-Neg2
+	RESTKOMPONENTEN	restkomponentenSet
+		RESTKOMPONENTE	ChichewaModal
+		RESTKOMPONENTE	ChichewaTM
+
+IDENTIFIER	ChichewaSyllable-PHON
+LANGUAGE	nya
+CONDITIONING	prosodicConditioning
+VIOLABILITY	potentiallyViolable
+	EXCEPTIONALITY	noKnownExceptions
+	REPARABILITY	phonologicalRepair
+STRICTURE	order
+	CONSTITUENT	segment
+	COUNT	2
+	RELATIONS	simple
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaC
+	RIGHT_SUPPORT	ChichewaV
+	RESTKOMPONENTEN	restkomponentenSet
+		RESTKOMPONENTE	ChichewaC2
+
+IDENTIFIER	ChichewaVOX-SYN
+LANGUAGE	nya
+CONDITIONING	constructionalConditioning
+VIOLABILITY	potentiallyViolable
+	EXCEPTIONALITY	morphosyntactic
+	REPARABILITY	surfaceViolable
+STRICTURE	order
+	CONSTITUENT	syntacticConstituent
+	COUNT	3
+	RELATIONS	simple
+FOUNDATION	arch
+	LEFT_SUPPORT	ChichewaVerbClausal
+	LEFT_VOUSSOIR	ChichewaClauseNullComponent
+	KEYSTONE	ChichewaVerbClausal
+	RIGHT_VOUSSOIR	ChichewaClauseO
+	RIGHT_SUPPORT	ChichewaClauseX
+
+IDENTIFIER	ChichewaVerb-MOR
+LANGUAGE	nya
+CONDITIONING	constructionalConditioning
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	morphosyntacticConstituent
+	COUNT	7
+	RELATIONS	simple
+FOUNDATION	arch
+	LEFT_SUPPORT	ChichewaVerb-Neg1
+	LEFT_VOUSSOIR	ChichewaOM
+	KEYSTONE	ChichewaVerbStem
+	RIGHT_VOUSSOIR	ChichewaVerbNullComponent
+	RIGHT_SUPPORT	ChichewaVerbStem
+	RESTKOMPONENTEN	restkomponentenSet
+		RESTKOMPONENTE	ChichewaModal
+		RESTKOMPONENTE	ChichewaSM
+		RESTKOMPONENTE	ChichewaTM
+		RESTKOMPONENTE	ChichewaVerb-Neg2
+
+IDENTIFIER	ChichewaVerbStem-PhMOR
+LANGUAGE	nya
+CONDITIONING	constructionalConditioning
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	morphologicalConstituent
+	COUNT	2
+	RELATIONS	simple
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaDerivedStemEmbedded
+	RIGHT_SUPPORT	ChichewaFVProsodic
+
+IDENTIFIER	ChichewaVerbWithImperatives-MOR
+LANGUAGE	nya
+CONDITIONING	constructionalConditioning
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	morphologicalConstituent
+	COUNT	8
+	RELATIONS	taxonomic
+FOUNDATION	arch
+	LEFT_SUPPORT	ChichewaNegForImp
+	LEFT_VOUSSOIR	ChichewaOM
+	KEYSTONE	ChichewaVerbStem
+	RIGHT_SUPPORT	ChichewaNiWholeVerb
+	RESTKOMPONENTEN	restkomponentenSet
+		RESTKOMPONENTE	ChichewaModal
+		RESTKOMPONENTE	ChichewaSMImp
+		RESTKOMPONENTE	ChichewaTM
+		RESTKOMPONENTE	ChichewaVerb-Neg2
+
+IDENTIFIER	ChichewaVerbWord-PhMOR
+LANGUAGE	nya
+CONDITIONING	constructionalConditioning
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	morphologicalConstituent
+	COUNT	2
+	RELATIONS	simple
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaSTAMP
+	RIGHT_SUPPORT	ChichewaMacroStemEmbedded
+
+IDENTIFIER	ChichewaVowelHarmony-PhMOR
+LANGUAGE	nya
+CONDITIONING	constructionalConditioning
+VIOLABILITY	potentiallyViolable
+	EXCEPTIONALITY	lexical
+	REPARABILITY	surfaceViolable
+STRICTURE	order
+	CONSTITUENT	syllable
+	COUNT	2
+	RELATIONS	simple
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaFirstSyllable
+	RIGHT_SUPPORT	ChichewaNonInitialSyllables
+
+IDENTIFIER	ChichewaWordMinimality-PhMOR
+LANGUAGE	nya
+CONDITIONING	prosodicConditioning
+VIOLABILITY	potentiallyViolable
+	EXCEPTIONALITY	noKnownExceptions
+	REPARABILITY	phonologicalInsertion
+STRICTURE	length
+	CONSTITUENT	syllable
+	COUNT	2
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaWordMinimalityLeftSupport
+	RIGHT_SUPPORT	ChichewaWordMinimalityRightSupport
