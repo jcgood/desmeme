@@ -3,8 +3,10 @@ Methods for working with tabbed graphs.
 Some will only work with tdag_orig
 """
 
-from tdag import tdag
+from tdag.tdag import tdag
 import re
+from collections import defaultdict
+
 
 class tabbed ( ):
 
@@ -498,9 +500,138 @@ class featval ( ):
 	def to_tabbed(self):
 		print(self.type, self.feature, self.value)
 		
+# Reads a tabbed representation of a desmeme
+def get_tabbed_desmemes(desmemeFileName, componentFileName):
 
+	desdags = [ ]
+
+	with open(desmemeFileName) as desmemeFile:
+		 desmemes = desmemeFile.read().split('\n\n')
+	
+	URIs = defaultdict(int)
+
+	for desmeme in desmemes:
+		
+		seenComps = [ ]
+	
+		# Features with component as a value since these need special treatment
+		componentFeatures = [
+								"LEFT_SUPPORT",
+								"LEFT_VOUSSOIR",
+								"KEYSTONE",
+								"RIGHT_VOUSSOIR",
+								"RIGHT_SUPPORT",
+								"RESTKOMPONENTE",
+								"FILLED_COMPONENT",
+								"ASSOCIATE"
+							]
+		
+		# * unpacks the remainder to featvals
+		[idfv, langfv, *featvals] = desmeme.split('\n')
+		
+		[idfeat, id_] = idfv.split('\t')
+		if idfeat != "IDENTIFIER":
+			raise(ValueError('Expected leading IDENTIFIER feature, but found {idfeat}'.format(idfeat=repr(idfeat))))
+				
+		[langfeat, lang] = langfv.split('\t')
+		if langfeat != "LANGUAGE":
+			raise(ValueError('Expected leading LANGUAGE feature, but found {langfeat}'.format(langfeat=repr(langfeat))))
+	
+		desdag = tdag(id_)
+	
+		topType = "desmeme"
+		previousType = topType
+		prevtabCount = 0
+		URIbase = id_
+	
+		# add root
+		desdag.add_node(topType, URIbase)
+	
+		# This tracks what feature/value we are at in the tab embeddings
+		embeddings = { }
+		
+		for featval in featvals:
+			
+			# Tracks if we need to do do component parsing
+			atComponent = False
+			
+			# Figure out how deeply tab-embedded we are
+			tabs = re.match('^\t+', featval)
+			if tabs != None:
+				tabCount = tabs[0].count('\t')
+			else: tabCount = 0
+			featval = featval.lstrip()
+			
+			# Deals with a final line break issue, maybe can be handled better
+			if featval == "": continue
+			else: feature, value = featval.split('\t')
+
+			# VALIDATION POINT
+			# check if value is in feature-to-vals
+			# this should be relatively easy, inshallah
+
+			# VALIDATION POINT
+			# Tracking features associated with this value (i.e, type)
+			# Will not apply to terminal types; I need to have logic for that
+			# The current feature gets deleted from the previous type feature list?
+			# To do: Walk through this logic and figure out how it impacts the ==, < and, > conditions
+
+			# Override component ID in node label with generic type
+			if feature in componentFeatures:
+				value = "component" + "_" + value
+				URI = value
+				atComponent = True
+		
+			else:
+				URIstem = URIbase +"-" + previousType + "-" + feature
+				featcounter = URIs[URIstem]
+				URI = URIstem + "-" + str(featcounter + 1)
+				URIs[URIstem] += 1
+	
+			# special logic for digits since they break python-graph somehow
+			if value.isdigit() or value == "∞":
+				value = URI + "_" + value
+				URI = value
+		
+
+			if tabCount == prevtabCount:
+				embeddings[tabCount + 1] = value
+				if (not desdag.has_node(value, URI)): desdag.add_node(value, URI)
+		
+			# Should only ever increment by one tab, but not doing error checking for this
+			# Maybe that could be useful for validation at some point
+			elif tabCount > prevtabCount: 		
+				embeddings[tabCount + 1] = value
+				prevtabCount = tabCount
+				previousType = embeddings[tabCount]	
+				if (not desdag.has_node(value, URI)): desdag.add_node(value, URI)
+	
+			elif tabCount < prevtabCount: 		
+
+				embeddings[tabCount + 1] = value
+				prevtabCount = tabCount
+				if (not desdag.has_node(value, URI)): desdag.add_node(value, URI)
+	
+				# Special logic for when we are at the zero-tab (i.e., line-initial) position
+				try: previousType = embeddings[tabCount - 1]
+				except: previousType = topType
+			
+			# Add the edge in now that the nodes are worked out
+			desdag.add_edge((previousType, value), feature)
+				
+			# If we are adding a component, then get the component features in the component file
+			# This is an ugly, redundant process since I don't think the graph library that I am
+			# using can merge graphs, which is why it should probably be updated (see above)
+			if atComponent == True:
+				get_tabbed_component(desdag, URI, componentFileName, seenComps)
+		
+		desdags.append(desdag)
+
+	return(desdags)
+	
+	
 # gets a tab-represented component to add to a graph
-def get_tabbed_component(desdag, compID, componentFileName):
+def get_tabbed_component(desdag, compID, componentFileName, seenComps):
 
 	previousCompType = compID
 	topURI = compID
