@@ -128,8 +128,6 @@ class tdag ( ):
 		
 		# Similar logic applies to all countable nodes. See comments here will help understand others.
 		if node == "component":
-			print(node, URI)
-			print(self.components)
 			if URI in self.components:
 				nodeName = self.componentMapping[URI]
 			else:
