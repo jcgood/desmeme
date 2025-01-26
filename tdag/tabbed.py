@@ -4,6 +4,8 @@ Some will only work with tdag_orig
 """
 
 from tdag.tdag import tdag
+from tdag.validator import schema
+
 import re
 from collections import defaultdict
 
@@ -501,7 +503,12 @@ class featval ( ):
 		print(self.type, self.feature, self.value)
 		
 # Reads a tabbed representation of a desmeme
-def get_tabbed_desmemes(desmemeFileName, componentFileName):
+# Does validation at the same time, interacting with other methods
+def get_tabbed_desmemes(desmemeFileName, componentFileName, schemaFileName=None):
+
+	
+	#print(typesToFeatures)
+	#print(featuresToTypes)
 
 	desdags = [ ]
 
@@ -532,7 +539,10 @@ def get_tabbed_desmemes(desmemeFileName, componentFileName):
 		[idfeat, id_] = idfv.split('\t')
 		if idfeat != "IDENTIFIER":
 			raise(ValueError('Expected leading IDENTIFIER feature, but found {idfeat}'.format(idfeat=repr(idfeat))))
-				
+		
+		print("")
+		print("ID:", id_)
+			
 		[langfeat, lang] = langfv.split('\t')
 		if langfeat != "LANGUAGE":
 			raise(ValueError('Expected leading LANGUAGE feature, but found {langfeat}'.format(langfeat=repr(langfeat))))
@@ -546,6 +556,16 @@ def get_tabbed_desmemes(desmemeFileName, componentFileName):
 	
 		# add root
 		desdag.add_node(topType, URIbase)
+		
+		# prepare validation tools
+		desmemeSchema = schema(schemaFileName, "desmeme")
+		desmemeSchema.processSchema()
+		topFeatures = desmemeSchema.typesToFeatures[topType]
+		# We'll keep track of features to check via a dictionary
+		featureList = { }
+		featureList[0] = topFeatures
+		featureList[0].remove("IDENTIFIER")
+		featureList[0].remove("LANGUAGE")
 	
 		# This tracks what feature/value we are at in the tab embeddings
 		embeddings = { }
@@ -566,9 +586,12 @@ def get_tabbed_desmemes(desmemeFileName, componentFileName):
 			if featval == "": continue
 			else: feature, value = featval.split('\t')
 
-			# VALIDATION POINT
-			# check if value is in feature-to-vals
-			# this should be relatively easy, inshallah
+			# This will raise exceptions if it doesn't validate
+			# This validation can be done more cleanly with an external function
+			# Validation for features is done within this function since it is
+			# more closely tied to parsing.
+			desmemeSchema.validate_value(feature, value)
+			
 
 			# VALIDATION POINT
 			# Tracking features associated with this value (i.e, type)
@@ -595,19 +618,36 @@ def get_tabbed_desmemes(desmemeFileName, componentFileName):
 		
 
 			if tabCount == prevtabCount:
+
+				# For building the graph
 				embeddings[tabCount + 1] = value
 				if (not desdag.has_node(value, URI)): desdag.add_node(value, URI)
+				
+				# For validation
+				try: featureList[tabCount + 1 ] = desmemeSchema.typesToFeatures[value]
+				except: featureList[tabCount + 1] = [ ] # for terminal types
+				#print("VV", featureList)
+				desmemeSchema.allowed_feature(feature, previousType)
+				desmemeSchema.process_feature(tabCount, feature, featureList)
+
 		
 			# Should only ever increment by one tab, but not doing error checking for this
 			# Maybe that could be useful for validation at some point
 			elif tabCount > prevtabCount: 		
+
+				# For building the graph
 				embeddings[tabCount + 1] = value
 				prevtabCount = tabCount
 				previousType = embeddings[tabCount]	
 				if (not desdag.has_node(value, URI)): desdag.add_node(value, URI)
 	
+				# For validation
+				#print("WW", tabCount, feature, featureList)
+				desmemeSchema.process_feature(tabCount, feature, featureList)
+
 			elif tabCount < prevtabCount: 		
 
+				# For building the graph
 				embeddings[tabCount + 1] = value
 				prevtabCount = tabCount
 				if (not desdag.has_node(value, URI)): desdag.add_node(value, URI)
@@ -615,7 +655,13 @@ def get_tabbed_desmemes(desmemeFileName, componentFileName):
 				# Special logic for when we are at the zero-tab (i.e., line-initial) position
 				try: previousType = embeddings[tabCount - 1]
 				except: previousType = topType
-			
+
+				# For validation
+				try: featureList[tabCount + 1] = desmemeSchema.typesToFeatures[value]
+				except: featureList[tabCount + 1] = [ ] # for terminal types
+				desmemeSchema.process_feature(tabCount, feature, featureList)
+				#print("ZZ", featureList)
+
 			# Add the edge in now that the nodes are worked out
 			desdag.add_edge((previousType, value), feature)
 				
@@ -625,6 +671,7 @@ def get_tabbed_desmemes(desmemeFileName, componentFileName):
 			if atComponent == True:
 				get_tabbed_component(desdag, URI, componentFileName, seenComps)
 		
+		desmemeSchema.missing_features(featureList)
 		desdags.append(desdag)
 
 	return(desdags)

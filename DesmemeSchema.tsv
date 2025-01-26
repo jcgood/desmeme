@@ -6,13 +6,14 @@ CONDITIONING	constructionalConditioning
 			templateFinal
 			templateMultiple
 		FILLED_COMPONENTS	filledComponentSet
-				FILLED_COMPONENT*	.
+				FILLED_COMPONENT+	.
 	prosodicConditioning
 VIOLABILITY	notViolable
 	potentiallyViolable
 		EXCEPTIONALITY	semantic
 			pragmatic
 			morphosyntactic
+			lexical
 			noKnownExceptions
 		REPARABILITY	morphosyntacticInsertion
 			surfaceViolable
@@ -37,10 +38,10 @@ FOUNDATION	arch
 		KEYSTONE	.
 		RIGHT_VOUSSOIR	.
 		RIGHT_SUPPORT	.
-		RESTKOMPONENTEN	restkomponentenSet
-				RESTKOMPONENTE*	.
+		RESTKOMPONENTEN*	restkomponentenSet
+				RESTKOMPONENTE+	.
 	span
 		LEFT_SUPPORT	.
 		RIGHT_SUPPORT	.
-		RESTKOMPONENTEN	restkomponentenSet
-				RESTKOMPONENTE*	.
+		RESTKOMPONENTEN*	restkomponentenSet
+				RESTKOMPONENTE+	.

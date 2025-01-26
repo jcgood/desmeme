@@ -1,5 +1,6 @@
 import re
 from collections import defaultdict
+from copy import deepcopy
 import warnings
 
 # Sets as a lazy way of dealing with duplicates, too bad order is not maintained
@@ -111,4 +112,82 @@ class schema ( ):
 		typesToFeaturesList = {key: list(values) for key, values in typesToFeatures.items()}
 		featuresToTypesList = {key: list(values) for key, values in featuresToTypes.items()}
 
-		return([typesToFeaturesList, featuresToTypesList])
+		self.typesToFeatures = typesToFeaturesList
+		self.typesToFeaturesOriginal = deepcopy(typesToFeaturesList) # We need a version we won't destroy
+		self.featuresToTypes = featuresToTypesList
+
+		# To self: return is a syntax construct, not a function; this returns a tuple
+		#return typesToFeaturesList, featuresToTypesList
+
+
+	def validate_value(self, feature, value):
+		
+		featuresToTypes	= self.featuresToTypes
+		
+		try: validTypes = featuresToTypes[feature]
+		except:
+			# For features coded with Kleene + or *
+			try: validTypes = featuresToTypes[feature+"+"]
+			except:
+				try: validTypes = featuresToTypes[feature+"*"]
+				except: raise Exception(f"Feature {feature} not found in schema when"
+										f"processing feature-value pair {feature} {value}.")
+
+		# Check for ID/count values coded as a list with a dot
+		if validTypes == ['.'] and isinstance(value, str):
+			valueOK = True
+		elif value in validTypes:
+			valueOK = True
+		else: raise Exception(f"Value {value} not found in schema when"
+									f"processing feature-value pair {feature} {value}.")
+
+
+	# This doesn't really need to be under schema, but I'm putting it here for tracking things better
+	def allowed_feature(self, feature, type_):
+		
+		typesToFeatures = self.typesToFeaturesOriginal
+		
+		validFeatures = typesToFeatures[type_]
+		
+		if feature in validFeatures:
+			pass
+		elif feature+"+" in validFeatures:
+			pass
+		elif feature+"*" in validFeatures:
+			pass
+		else:
+			raise Exception(f"Feature {feature} not associated with type {type_}.")
+			
+
+	# This doesn't really need to be under schema, but I'm putting it here for tracking things better
+	def process_feature(self, embedding, feature, featureList):
+		
+		workingFeatures = featureList[embedding]
+		#print("MM", feature, workingFeatures)
+		
+		try: workingFeatures.remove(feature)
+		except:
+			try: workingFeatures.remove(feature+"+")
+			except:
+				try: workingFeatures.remove(feature+"*")
+				except: pass
+			
+		#print("LL", workingFeatures)
+
+	# to do: Component validation (ugh)
+	# to do: I'm not convinced that current validation for feature removal gets all cases
+	# if a level of feature list is overriden, we may miss something
+	# we may need to do a dedicated check when the tab count decreases.
+
+	# This doesn't really need to be under schema, but I'm putting it here for tracking things better
+	def missing_features(self, featureList):
+	
+		# featureList is a dictionary. That's confusing. I should change it. It's a dictionary of features at a given level
+		for featureSet in featureList:
+			print(featureSet, featureList[featureSet])
+			for feature in featureList[featureSet]:
+				if feature.endswith("*"): featureList[featureSet].remove(feature)
+				
+			if featureList[featureSet] != []:
+				raise Exception(f"Some required features were missing: {featureList[featureSet]} {featureList}.")
+			
