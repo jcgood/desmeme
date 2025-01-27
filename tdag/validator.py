@@ -83,7 +83,7 @@ class schema ( ):
 		
 		
 				elif tabCount < embedding:
-							
+				
 					if(re.match('^.+\t.+$', line)):
 						(newFeature, newType) = line.split("\t")
 						# Because the top type is at position "-1" in the system, we need a special logic
@@ -130,7 +130,7 @@ class schema ( ):
 			try: validTypes = featuresToTypes[feature+"+"]
 			except:
 				try: validTypes = featuresToTypes[feature+"*"]
-				except: raise Exception(f"Feature {feature} not found in schema when"
+				except: raise Exception(f"Feature {feature} not found in schema when "
 										f"processing feature-value pair {feature} {value}.")
 
 		# Check for ID/count values coded as a list with a dot
@@ -138,7 +138,9 @@ class schema ( ):
 			valueOK = True
 		elif value in validTypes:
 			valueOK = True
-		else: raise Exception(f"Value {value} not found in schema when"
+		# I wonder if I can improve error reporting since it can be hard to work out
+		# specific issue from these
+		else: raise Exception(f"Feature {feature} not found in schema when "
 									f"processing feature-value pair {feature} {value}.")
 
 
@@ -147,7 +149,22 @@ class schema ( ):
 		
 		typesToFeatures = self.typesToFeaturesOriginal
 		
-		validFeatures = typesToFeatures[type_]
+		# Cleanup for component types
+		cleanedType = type_
+		if cleanedType.startswith("component_"):
+			cleanedType = "component"
+		elif cleanedType.startswith("elastic"):
+			cleanedType = "elastic"
+		elif cleanedType.startswith("inelastic"):
+			cleanedType = "inelastic"
+		elif cleanedType.startswith("partiallyFilled"):
+			cleanedType = "partiallyFilled"
+		elif cleanedType.startswith("stable"):
+			cleanedType = "stable"
+		elif cleanedType.startswith("unstable"):
+			cleanedType = "unstable"
+		
+		validFeatures = typesToFeatures[cleanedType]
 		
 		if feature in validFeatures:
 			pass
@@ -163,7 +180,6 @@ class schema ( ):
 	def process_feature(self, embedding, feature, featureList):
 		
 		workingFeatures = featureList[embedding]
-		#print("MM", feature, workingFeatures)
 		
 		try: workingFeatures.remove(feature)
 		except:
@@ -172,22 +188,26 @@ class schema ( ):
 				try: workingFeatures.remove(feature+"*")
 				except: pass
 			
-		#print("LL", workingFeatures)
 
-	# to do: Component validation (ugh)
-	# to do: I'm not convinced that current validation for feature removal gets all cases
-	# if a level of feature list is overriden, we may miss something
-	# we may need to do a dedicated check when the tab count decreases.
 
 	# This doesn't really need to be under schema, but I'm putting it here for tracking things better
-	def missing_features(self, featureList):
-	
-		# featureList is a dictionary. That's confusing. I should change it. It's a dictionary of features at a given level
-		for featureSet in featureList:
-			print(featureSet, featureList[featureSet])
-			for feature in featureList[featureSet]:
-				if feature.endswith("*"): featureList[featureSet].remove(feature)
-				
-			if featureList[featureSet] != []:
-				raise Exception(f"Some required features were missing: {featureList[featureSet]} {featureList}.")
+	# It works in two different conditions, one with a tabCount and one without
+	# If a tabCount is provided, it checks one list at one level above the tabCount
+	def missing_features(self, featureLevelDict, level=None):
+
+		if level == None:
+
+			for featureSet in featureLevelDict:
+
+				for feature in featureLevelDict[featureSet]:
+					if feature.endswith("*"): featureLevelDict[featureSet].remove(feature)
+					
+				if featureLevelDict[featureSet] != []:
+					raise Exception(f"Some required features were missing: {featureLevelDict[featureSet]} {featureLevelDict}.")
+					
+		else:
+			featureList = featureLevelDict[level + 1]
+			if featureList != []:
+				raise Exception(f"Some required features were missing: {featureList}, level: {level+1}.")
+ 
 			

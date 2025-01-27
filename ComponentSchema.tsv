@@ -16,6 +16,7 @@ FILLEDNESS	open
 		FILLER_PLACEMENT	componentFinal
 		FORM	embeddedDesmeme
 		COHERENCE	coherent
+	null
 STABILITY	stable
 	unstable
 		ASSOCIATE_POSITION	right

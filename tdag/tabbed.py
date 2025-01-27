@@ -316,8 +316,6 @@ class tabbed ( ):
 			try: RKre = topavm.RKre
 			except: RKre = False
 			
-			#print "ci", componentID, feat
-
 			# Hack to handle re-entrancy in RKset for Nimboran; breaks if reentrancy more than one
 			if feat == priorityfeature and feat == "RESTKOMPONENTE" and RKre == val.name:
 				
@@ -504,7 +502,7 @@ class featval ( ):
 		
 # Reads a tabbed representation of a desmeme
 # Does validation at the same time, interacting with other methods
-def get_tabbed_desmemes(desmemeFileName, componentFileName, schemaFileName=None):
+def get_tabbed_desmemes(desmemeFileName, componentFileName, schemaFileName, componentSchemaFileName):
 
 	
 	#print(typesToFeatures)
@@ -554,18 +552,26 @@ def get_tabbed_desmemes(desmemeFileName, componentFileName, schemaFileName=None)
 		prevtabCount = 0
 		URIbase = id_
 	
+		componentTopType = "component"
+	
 		# add root
 		desdag.add_node(topType, URIbase)
 		
 		# prepare validation tools
-		desmemeSchema = schema(schemaFileName, "desmeme")
+		desmemeSchema = schema(schemaFileName, topType)
 		desmemeSchema.processSchema()
-		topFeatures = desmemeSchema.typesToFeatures[topType]
+		topFeatures = desmemeSchema.typesToFeatures[topType].copy() # We don't want to destroy this
+
 		# We'll keep track of features to check via a dictionary
-		featureList = { }
-		featureList[0] = topFeatures
-		featureList[0].remove("IDENTIFIER")
-		featureList[0].remove("LANGUAGE")
+		featureLevelDict = { }
+		featureLevelDict[0] = topFeatures
+		featureLevelDict[0].remove("IDENTIFIER")
+		featureLevelDict[0].remove("LANGUAGE")
+	
+		# Prepare the component schemea
+		componentSchema = schema(componentSchemaFileName, componentTopType)
+		componentSchema.processSchema()
+
 	
 		# This tracks what feature/value we are at in the tab embeddings
 		embeddings = { }
@@ -590,14 +596,7 @@ def get_tabbed_desmemes(desmemeFileName, componentFileName, schemaFileName=None)
 			# This validation can be done more cleanly with an external function
 			# Validation for features is done within this function since it is
 			# more closely tied to parsing.
-			desmemeSchema.validate_value(feature, value)
-			
-
-			# VALIDATION POINT
-			# Tracking features associated with this value (i.e, type)
-			# Will not apply to terminal types; I need to have logic for that
-			# The current feature gets deleted from the previous type feature list?
-			# To do: Walk through this logic and figure out how it impacts the ==, < and, > conditions
+			desmemeSchema.validate_value(feature, value)			
 
 			# Override component ID in node label with generic type
 			if feature in componentFeatures:
@@ -624,11 +623,10 @@ def get_tabbed_desmemes(desmemeFileName, componentFileName, schemaFileName=None)
 				if (not desdag.has_node(value, URI)): desdag.add_node(value, URI)
 				
 				# For validation
-				try: featureList[tabCount + 1 ] = desmemeSchema.typesToFeatures[value]
-				except: featureList[tabCount + 1] = [ ] # for terminal types
-				#print("VV", featureList)
+				try: featureLevelDict[tabCount + 1 ] = desmemeSchema.typesToFeatures[value]
+				except: featureLevelDict[tabCount + 1] = [ ] # for terminal types
 				desmemeSchema.allowed_feature(feature, previousType)
-				desmemeSchema.process_feature(tabCount, feature, featureList)
+				desmemeSchema.process_feature(tabCount, feature, featureLevelDict)
 
 		
 			# Should only ever increment by one tab, but not doing error checking for this
@@ -642,8 +640,7 @@ def get_tabbed_desmemes(desmemeFileName, componentFileName, schemaFileName=None)
 				if (not desdag.has_node(value, URI)): desdag.add_node(value, URI)
 	
 				# For validation
-				#print("WW", tabCount, feature, featureList)
-				desmemeSchema.process_feature(tabCount, feature, featureList)
+				desmemeSchema.process_feature(tabCount, feature, featureLevelDict)
 
 			elif tabCount < prevtabCount: 		
 
@@ -656,11 +653,14 @@ def get_tabbed_desmemes(desmemeFileName, componentFileName, schemaFileName=None)
 				try: previousType = embeddings[tabCount - 1]
 				except: previousType = topType
 
-				# For validation
-				try: featureList[tabCount + 1] = desmemeSchema.typesToFeatures[value]
-				except: featureList[tabCount + 1] = [ ] # for terminal types
-				desmemeSchema.process_feature(tabCount, feature, featureList)
-				#print("ZZ", featureList)
+				# For validation. This is a more complicated case since we need to make
+				# sure the previous level's list was cleared off
+				# We check this before resetting the featureLevelDict
+				desmemeSchema.missing_features(featureLevelDict, tabCount)
+				
+				try: featureLevelDict[tabCount + 1] = desmemeSchema.typesToFeatures[value]
+				except: featureLevelDict[tabCount + 1] = [ ] # for terminal types
+				desmemeSchema.process_feature(tabCount, feature, featureLevelDict)
 
 			# Add the edge in now that the nodes are worked out
 			desdag.add_edge((previousType, value), feature)
@@ -669,23 +669,34 @@ def get_tabbed_desmemes(desmemeFileName, componentFileName, schemaFileName=None)
 			# This is an ugly, redundant process since I don't think the graph library that I am
 			# using can merge graphs, which is why it should probably be updated (see above)
 			if atComponent == True:
-				get_tabbed_component(desdag, URI, componentFileName, seenComps)
+				get_tabbed_component(desdag, URI, componentFileName, seenComps, componentSchema)
 		
-		desmemeSchema.missing_features(featureList)
+		desmemeSchema.missing_features(featureLevelDict)
 		desdags.append(desdag)
 
 	return(desdags)
 	
 	
 # gets a tab-represented component to add to a graph
-def get_tabbed_component(desdag, compID, componentFileName, seenComps):
+# kind of ugly to keep passing the componentSchema to this function, can maybe be improved
+# via some kind of class-based storage, but I'm not doing that now
+def get_tabbed_component(desdag, compID, componentFileName, seenComps, componentSchema):
 
 	previousCompType = compID
 	topURI = compID
+	topType = "component"
 
 	with open(componentFileName) as componentFile:
 		components = componentFile.read().split('\n\n')
 	
+	# prepare feature dictionary
+	topFeatures = componentSchema.typesToFeatures[topType].copy() # We don't want to destroy this
+	# We'll keep track of features to check via a dictionary
+	featureLevelDict = { }
+	featureLevelDict[0] = topFeatures
+	featureLevelDict[0].remove("IDENTIFIER")
+	featureLevelDict[0].remove("LANGUAGE")
+
 	for component in components:
 
 		# repeating a lot of code here, will need to refactor, but I want to try to get a working pass first
@@ -693,6 +704,8 @@ def get_tabbed_component(desdag, compID, componentFileName, seenComps):
 		# * unpacks the remainder to featvals
 		[compidfv, complangfv, *compfeatvals] = component.split('\n')
 
+		# I'm leaving this from earlier code, but not implicit validation here.
+		# Would be better to incorporate this into the validation methods
 		[compidfeat, compid] = compidfv.split('\t')
 		if compidfeat != "IDENTIFIER":
 			raise(ValueError('Expected leading IDENTIFIER feature, but found {compidfeat}'.format(compidfeat=repr(compidfeat))))
@@ -716,9 +729,6 @@ def get_tabbed_component(desdag, compID, componentFileName, seenComps):
 			compURIbase = compid
 		
 			tabEmbeddings = { }
-
-			# Do I even need this (and the above one?)
-			compURIs = defaultdict(int)
 			
 			for compfeatval in compfeatvals:
 			
@@ -732,6 +742,13 @@ def get_tabbed_component(desdag, compID, componentFileName, seenComps):
 				if compfeatval == "": continue
 				else: feature, value = compfeatval.split('\t')
 		
+				# This will raise exceptions if it doesn't validate
+				# This validation can be done more cleanly with an external function
+				# Validation for features is done within this function since it is
+				# more closely tied to parsing.
+				componentSchema.validate_value(feature, value)			
+
+
 				URI = compURIbase + "_" + value				
 				
 				# special logic for digits since they break python-graph somehow
@@ -743,30 +760,58 @@ def get_tabbed_component(desdag, compID, componentFileName, seenComps):
 				# Check where we are in the tabbing structure and adjust as needed
 				if compTabCount == compPrevTabCount:								
 					
+					# For building the graph
 					# add_node returns the way the label was adjusted, e.g., elastic 2
 					adjustedValue = desdag.add_node(value, URI)
 					tabEmbeddings[compTabCount + 1] = adjustedValue
-		
+					
+					# For validation
+					try: featureLevelDict[compTabCount + 1 ] = componentSchema.typesToFeatures[value]
+					except: featureLevelDict[compTabCount + 1] = [ ] # for terminal types
+					componentSchema.allowed_feature(feature, previousCompType)
+					componentSchema.process_feature(compTabCount, feature, featureLevelDict)
+					
 				# Should only ever increment by one tab
 				elif compTabCount > compPrevTabCount: 		
+					
+					# For building the graph
 					# add_node returns the way the label was adjusted, e.g., elastic 2
 					adjustedValue = desdag.add_node(value, URI)
 					compPrevTabCount = compTabCount
 					tabEmbeddings[compTabCount + 1] = adjustedValue
 					previousCompType = tabEmbeddings[compTabCount]
+					
+					# For validation
+					componentSchema.process_feature(compTabCount, feature, featureLevelDict)
 
 				elif compTabCount < compPrevTabCount: 		
+
+					# For building the graph
 					# add_node returns the way the label was adjusted, e.g., elastic 2
 					adjustedValue = desdag.add_node(value, URI)
 					compPrevTabCount = compTabCount		
 					tabEmbeddings[compTabCount + 1] = adjustedValue
-		
+					
+					# Special logic for when we are at the zero-tab (i.e., line-initial) position
 					try: previousCompType = tabEmbeddings[compTabCount - 1]
 					except: previousCompType = topURI
+					
+					# For validation. This is a more complicated case since we need to make
+					# sure the previous level's list was cleared off
+					# We check this before resetting the featureLevelDict
+					
+					# to do: When a required feature is missing in tests, I'm not getting
+					# errors. I'm testing this with ELASTIC. LOOK INTO
+					print(featureLevelDict)
+					componentSchema.missing_features(featureLevelDict, compTabCount)
+					
+					try: featureLevelDict[compTabCount + 1] = componentSchema.typesToFeatures[value]
+					except: featureLevelDict[compTabCount + 1] = [ ] # for terminal types
+					componentSchema.process_feature(compTabCount, feature, featureLevelDict)					
 			
 				# Now we can add the edge			
 				desdag.add_edge((previousCompType, adjustedValue), feature)
-				
+
+			componentSchema.missing_features(featureLevelDict)				
 			# No need to go further, we only need the one component
-			# I hope I got the embedding right
 			break

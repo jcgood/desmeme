@@ -15,14 +15,15 @@ componentFileName = "ChichewaComponents.tsv"
 graphfolder = "Graphs/"
 
 # For later, get the schema
-schemaFileName = "DesmemeSchema.tsv"
+desmemeSchemaFileName = "DesmemeSchema.tsv"
+componentSchemaFileName = "ComponentSchema.tsv"
 
 # Should I make a test suite?
 	
 ## Also, some data is in RDF that needs dumped, like source, notes, transcription string, usw.
 ## May need to open up Protege to verify, or check book dump?
 
-desdags = get_tabbed_desmemes(desmemeFileName, componentFileName, schemaFileName)
+desdags = get_tabbed_desmemes(desmemeFileName, componentFileName, desmemeSchemaFileName, componentSchemaFileName)
 
 for desdag in desdags:
 	
