@@ -514,6 +514,7 @@ def get_tabbed_desmemes(desmemeFileName, componentFileName, schemaFileName, comp
 		 desmemes = desmemeFile.read().split('\n\n')
 	
 	URIs = defaultdict(int)
+	allCompRefs = set() # Collect all component IDs to verify that all components in component file are used
 
 	for desmeme in desmemes:
 		
@@ -537,10 +538,7 @@ def get_tabbed_desmemes(desmemeFileName, componentFileName, schemaFileName, comp
 		[idfeat, id_] = idfv.split('\t')
 		if idfeat != "IDENTIFIER":
 			raise(ValueError('Expected leading IDENTIFIER feature, but found {idfeat}'.format(idfeat=repr(idfeat))))
-		
-		print("")
-		print("ID:", id_)
-			
+					
 		[langfeat, lang] = langfv.split('\t')
 		if langfeat != "LANGUAGE":
 			raise(ValueError('Expected leading LANGUAGE feature, but found {langfeat}'.format(langfeat=repr(langfeat))))
@@ -600,6 +598,7 @@ def get_tabbed_desmemes(desmemeFileName, componentFileName, schemaFileName, comp
 
 			# Override component ID in node label with generic type
 			if feature in componentFeatures:
+				allCompRefs.add(value)
 				value = "component" + "_" + value
 				URI = value
 				atComponent = True
@@ -672,8 +671,12 @@ def get_tabbed_desmemes(desmemeFileName, componentFileName, schemaFileName, comp
 				get_tabbed_component(desdag, URI, componentFileName, seenComps, componentSchema)
 		
 		desmemeSchema.missing_features(featureLevelDict)
+
 		desdags.append(desdag)
 
+	# Make sure all components in component file are used	
+	desmemeSchema.extra_comps(allCompRefs, componentFileName)
+	
 	return(desdags)
 	
 	
@@ -697,6 +700,7 @@ def get_tabbed_component(desdag, compID, componentFileName, seenComps, component
 	featureLevelDict[0].remove("IDENTIFIER")
 	featureLevelDict[0].remove("LANGUAGE")
 
+	foundComponent = False
 	for component in components:
 
 		# repeating a lot of code here, will need to refactor, but I want to try to get a working pass first
@@ -708,16 +712,18 @@ def get_tabbed_component(desdag, compID, componentFileName, seenComps, component
 		# Would be better to incorporate this into the validation methods
 		[compidfeat, compid] = compidfv.split('\t')
 		if compidfeat != "IDENTIFIER":
-			raise(ValueError('Expected leading IDENTIFIER feature, but found {compidfeat}'.format(compidfeat=repr(compidfeat))))
+			raise(Exception('Expected leading IDENTIFIER feature, but found {compidfeat}'.format(compidfeat=repr(compidfeat))))
 		
 		# could do validation here to verify language match
 		[complangfeat, complang] = complangfv.split('\t')
 		if complangfeat != "LANGUAGE":
-			raise(ValueError('Expected leading LANGUAGE feature, but found {complangfeat}'.format(complangfeat=repr(complangfeat))))
+			raise(Exception('Expected leading LANGUAGE feature, but found {complangfeat}'.format(complangfeat=repr(complangfeat))))
 
 		# Maybe don't need this, overriden below?
 		adjustedID = "component_" + compid
 		if adjustedID == compID:
+			
+			foundComponent = True
 			
 			if compid in seenComps:
 				continue
@@ -799,10 +805,6 @@ def get_tabbed_component(desdag, compID, componentFileName, seenComps, component
 					# For validation. This is a more complicated case since we need to make
 					# sure the previous level's list was cleared off
 					# We check this before resetting the featureLevelDict
-					
-					# to do: When a required feature is missing in tests, I'm not getting
-					# errors. I'm testing this with ELASTIC. LOOK INTO
-					print(featureLevelDict)
 					componentSchema.missing_features(featureLevelDict, compTabCount)
 					
 					try: featureLevelDict[compTabCount + 1] = componentSchema.typesToFeatures[value]
@@ -815,3 +817,7 @@ def get_tabbed_component(desdag, compID, componentFileName, seenComps, component
 			componentSchema.missing_features(featureLevelDict)				
 			# No need to go further, we only need the one component
 			break
+			
+	# If we got here, it means a component was referenced but not found
+	if foundComponent == False:
+		raise Exception(f"Did not find component {compID} in components file.")

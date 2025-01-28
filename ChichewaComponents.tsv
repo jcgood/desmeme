@@ -274,11 +274,13 @@ FILLEDNESS	open
 	COHERENCE	coherent
 STABILITY	stable
 
-IDENTIFIERX	ChichewaNPRightSupport
+IDENTIFIER	ChichewaNPRightSupport
 LANGUAGE	nya
 ELASTICITY	elastic
+	MINIMUM	0
 	MAXIMUM	1
 FILLEDNESS	open
+	COHERENCE	coherent
 STABILITY	stable
 
 IDENTIFIER	ChichewaNPField
@@ -649,6 +651,15 @@ FILLEDNESS	open
 STABILITY	stable
 
 IDENTIFIER	ChichewaWordMinimalityRightSupport
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	1
+	MAXIMUM	100
+FILLEDNESS	open
+	COHERENCE	coherent
+STABILITY	stable
+
+IDENTIFIER	xxx-tbd
 LANGUAGE	nya
 ELASTICITY	elastic
 	MINIMUM	1

@@ -18,6 +18,9 @@ graphfolder = "Graphs/"
 desmemeSchemaFileName = "DesmemeSchema.tsv"
 componentSchemaFileName = "ComponentSchema.tsv"
 
+## Validation seems done
+## Next step: Extract other information (e.g., source, transcription) from RDF, and incorporate somehow...
+
 # Should I make a test suite?
 	
 ## Also, some data is in RDF that needs dumped, like source, notes, transcription string, usw.
@@ -33,12 +36,12 @@ for desdag in desdags:
 	templateAVM.graph_toAVM(desdag)
 
 	# to_ASCII prints to STDOUT
-	#print("ID:\t" + name)
-	#templateAVM.to_ASCII()
-	#print()
+	print("ID:\t" + name)
+	templateAVM.to_ASCII()
+	print()
 
 	# expects a list of graphs; so construct a list of one element
 	# maybe make a draw_graph function at some point?
 	#draw_graphs([desdag], graphfolder)
 
-#draw_graphs(desdags, graphfolder)
+draw_graphs(desdags, graphfolder)

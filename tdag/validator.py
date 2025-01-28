@@ -209,5 +209,26 @@ class schema ( ):
 			featureList = featureLevelDict[level + 1]
 			if featureList != []:
 				raise Exception(f"Some required features were missing: {featureList}, level: {level+1}.")
- 
-			
+				
+
+	# This doesn't really need to be under schema, but I'm putting it here for tracking things better
+	# Checks is all extant components are used
+	# We check if a component referenced by a desmeme is actually found elsewhere in the
+	# parser.
+	def extra_comps(self, desCompRefs, componentFileName):
+
+		with open(componentFileName) as componentFile:
+			components = componentFile.read().split('\n\n')
+
+		allCompRefs = set()
+		for component in components:
+			[compidfv, *compfeatvals] = component.split('\n')
+			[compidfeat, compid] = compidfv.split('\t')
+			if compidfeat != "IDENTIFIER":
+				raise Exception(f"Expected leading IDENTIFIER feature, but found {compidfeat}.")
+			else:
+				allCompRefs.add(compid)
+		
+		unusedComps = allCompRefs - desCompRefs
+		if unusedComps:
+			raise Exception(f"Found components in component file that are not used: {unusedComps}.")
