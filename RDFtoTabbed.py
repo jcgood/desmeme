@@ -1,6 +1,7 @@
 import tdag_orig
-from tdag_orig import rdfGraph, Namespace, RDF, process_templates
+from tdag_orig import rdfGraph, Namespace, RDF, process_templates, process_templates_full
 from tdag_orig.tabbed import tabbed
+from tdag.comparison import draw_graphs
 import os
 
 # Load templates, turn them into despecified graphs
@@ -11,11 +12,11 @@ templatesGenerator = rdfTemplates.subjects(RDF['type'], instanceNS['desmeme'])
 templates = []
 for template in templatesGenerator:
 	templates.append(template)
-gTemplates = process_templates(templates, rdfTemplates)
+gTemplates = process_templates_full(templates, rdfTemplates)
 
 
-desfilename = "ChichewaDesmemes_run2"
-compfilename = "ChichewaComponents_run2"
+desfilename = "ChichewaDesmemes_full"
+compfilename = "ChichewaComponents_full"
 
 # Erase existing files
 # Needed temp files due to annoying problem where I couldn't avoid a blank
@@ -25,6 +26,9 @@ open(desfilename + "_temp.tsv", "w").close()
 open(compfilename + "_temp.tsv", "w").close()
 open(desfilename + ".tsv", "w").close()
 open(compfilename + ".tsv", "w").close()
+
+graphfolder = "Graphs_full/"
+
 
 # Need to keep track of components appear in more than one place
 seenComponents = [ ]
@@ -55,3 +59,5 @@ for gTemplate in gTemplates:
 
 os.remove(desfilename + "_temp.tsv") 		
 os.remove(compfilename + "_temp.tsv")
+
+#draw_graphs(gTemplates, graphfolder)

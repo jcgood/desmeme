@@ -272,7 +272,6 @@ class tdag ( ):
 			
 			if indexName in self.seenCounts:
 				nodeName = self.countMapping[indexName]
-				
 
 			else:
 				self.seenCounts.append(indexName)
@@ -289,13 +288,15 @@ class tdag ( ):
 					self.core.add_node(nodeName,  attrs=[("label", node)])
 
 		elif node == "source":
-			pass
+			print(node)
+			self.core.add_node(nodeName,  attrs=[("label", node)])
 		
 		# If we've made it this far, it's a non-repeatable, generic node.		
 		else:
 			# make first letter of type name lowercase (needed for names borrowed from GOLD)
-			node = node[0].lower() + node[1:]
+			##node = node[0].lower() + node[1:]
 			self.core.add_node(nodeName, attrs=[("label", "<<i>"+node+"</i>>")])
+			#print(nodeName, node)
 		return nodeName
 
 			
