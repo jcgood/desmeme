@@ -60,4 +60,4 @@ for gTemplate in gTemplates:
 os.remove(desfilename + "_temp.tsv") 		
 os.remove(compfilename + "_temp.tsv")
 
-#draw_graphs(gTemplates, graphfolder)
+draw_graphs(gTemplates, graphfolder)

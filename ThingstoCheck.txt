@@ -1,3 +1,5 @@
 ChichewaNPRightVoussoir: Stability not originally there
 
 Rerun on fresh components and desmemes when ready to deal with these errors
+
+Read Template2Notes.txt

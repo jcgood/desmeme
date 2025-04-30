@@ -352,6 +352,8 @@ def is_generic(rdfPred,tdag):
 
 # To do: Now have more predicates because I got the process_templates_full recursion working
 # So, start from there maybe regenerating untitled output.
+# Check Tabbed output and adjust
+# Maybe do some last bits by hand? It might be faster.
 
 def is_metadata(rdfPred):
 
