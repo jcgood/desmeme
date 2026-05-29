@@ -223,7 +223,7 @@ def draw_components(graphs, outpath, format="png"):
 		os.system(dotcmd)
 		
 		pscmd = "pdf2ps " + outpath + str(name) + '.pdf' + " " + outpath + str(name) + '.ps' 
-		print(pscmd)
+		#print(pscmd)
 		os.system(pscmd)
 
 		# ps2eps has different syntax from others 

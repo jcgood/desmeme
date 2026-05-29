@@ -1,3 +1,4 @@
+# I have a weird mix of the older and newer functions now
 import tdag_orig
 from tdag_orig import rdfGraph, Namespace, RDF, process_templates, process_templates_full
 from tdag_orig.tabbed import tabbed
@@ -60,4 +61,5 @@ for gTemplate in gTemplates:
 os.remove(desfilename + "_temp.tsv") 		
 os.remove(compfilename + "_temp.tsv")
 
-draw_graphs(gTemplates, graphfolder)
+# This breaks on full templates with metadata, etc.
+#draw_graphs(gTemplates, graphfolder)

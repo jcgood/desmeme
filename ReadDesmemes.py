@@ -44,4 +44,5 @@ for desdag in desdags:
 	# maybe make a draw_graph function at some point?
 	#draw_graphs([desdag], graphfolder)
 
-draw_graphs(desdags, graphfolder)
+# This breaks on full templates with metadata, etc.
+#draw_graphs(desdags, graphfolder)

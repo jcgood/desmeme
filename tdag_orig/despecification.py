@@ -117,8 +117,9 @@ def process_template_full(mother,genericMother,rdfGraph,tdag):
 		# Need to skip source information, probably better solution out there
 		elif is_metadata(predicate):
 			# Will decide later if it is worth implementing this. I kind of doubt it. May do it by hand.
-			print("MD", prettyDName,daughter,mother,predicate)
-			prettyDName = tdag.add_node(prettyDName,daughter,mother,predicate)
+			#print("MD", prettyDName,daughter,mother,predicate)
+			prettyDName = tdag.add_node(prettyDName,daughter,mother,predicate) # to self: the reassignment of prettyDName is because this function tracks repeatable nodes and unique IDs
+			prettyPredName = "NT:"+prettyPredName
 			tdag.add_edge((genericMother, prettyDName), label=prettyPredName)
 			process_template_full(daughter, prettyDName, rdfGraph, tdag)
 			pass
@@ -308,7 +309,7 @@ def conflate(rdfNode,rdfGraph):
 	type = rdfGraph.value(subject=rdfNode, predicate=RDF.type)
 	if type == None:
 		return rdfNode
-	elif type.endswith("source"):
+	elif type.endswith("source"): #Todo: Probably delete this condition since I'm handling this differently
 		return rdfNode
 	else: return type
 	
@@ -350,10 +351,15 @@ def is_generic(rdfPred,tdag):
 			#form:transcription
 			#specform:TRANSCRIPTION_STRING
 
-# To do: Now have more predicates because I got the process_templates_full recursion working
+# To do / ToDo: Now have more predicates because I got the process_templates_full recursion working
 # So, start from there maybe regenerating untitled output.
 # Check Tabbed output and adjust
 # Maybe do some last bits by hand? It might be faster.
+# We cannot draw the graphs from process_templates_full, compare with process_templates for that
+
+# I want to add prefix like "NT:" (for non typological) to all triples that aren't
+# typological comparison. I'm doing that with "MD" for now, but I don't know how to find the
+# identifier triple and the language triple yet, and I need to still add in the above URLs
 
 def is_metadata(rdfPred):
 
