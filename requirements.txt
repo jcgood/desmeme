@@ -1,3 +1,4 @@
+setuptools
 python-graph-core==1.8.2
 python-graph-dot==1.8.2
 pydot==3.0.3
