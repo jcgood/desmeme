@@ -1,5 +1,4 @@
-git+https://github.com/Shoobx/python-graph.git#subdirectory=graph-core
-git+https://github.com/Shoobx/python-graph.git#subdirectory=graph-dot
+git+https://github.com/Shoobx/python-graph.git
 pydot==3.0.3
 rdflib==7.1.1
 pytest==9.0.2
