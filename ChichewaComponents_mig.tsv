@@ -1,0 +1,761 @@
+IDENTIFIER	ChichewVerbNoNeg1
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	open
+	COHERENCE	coherent
+		EX:CLASS	gold:Verbal
+STABILITY	stable
+
+IDENTIFIER	ChichewaApplicative
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	1
+FILLEDNESS	filled
+	EX:FILLER_CLASS	local:valency
+	FORM	canonicalLineate
+		AN:TRANSCRIPTION_STRING	-il-
+		EX:LIAISON	sinistrous
+STABILITY	stable
+
+IDENTIFIER	ChichewaAssociativeMarker
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	partiallyFilled
+	EX:FILLER_CLASS	local:adpositionalStem
+	FILLER_PLACEMENT	componentFinal
+	FORM	embeddedDesmeme
+	COHERENCE	coherent
+		EX:CLASS	gold:Adposition
+STABILITY	unstable
+	ASSOCIATE_POSITION	right
+	ASSOCIATE	ChichewaPossessor
+
+IDENTIFIER	ChichewaBeforeVerbStemNullComponent
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	0
+FILLEDNESS	null
+STABILITY	stable
+
+IDENTIFIER	ChichewaC
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	1
+FILLEDNESS	open
+	COHERENCE	coherent
+		EX:CLASS	local:consonant
+STABILITY	unstable
+	ASSOCIATE_POSITION	right
+	ASSOCIATE	ChichewaC2
+
+IDENTIFIER	ChichewaC2
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	1
+FILLEDNESS	open
+	COHERENCE	incoherent
+		EX:CLASSES	local:glide
+		EX:CLASSES	local:obstruent
+STABILITY	unstable
+	ASSOCIATE_POSITION	left
+	ASSOCIATE	ChichewaC
+
+IDENTIFIER	ChichewaCausative
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	1
+FILLEDNESS	filled
+	EX:FILLER_CLASS	local:valency
+	FORM	canonicalLineate
+		AN:TRANSCRIPTION_STRING	-its-
+		EX:LIAISON	sinistrous
+STABILITY	stable
+
+IDENTIFIER	ChichewaClauseComponent
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	filled
+	EX:FILLER_CLASS	gold:MainClause
+	FORM	embeddedDesmeme
+STABILITY	stable
+
+IDENTIFIER	ChichewaClauseNullComponent
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	0
+FILLEDNESS	null
+STABILITY	stable
+
+IDENTIFIER	ChichewaClauseO
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	1
+FILLEDNESS	open
+	COHERENCE	coherent
+		EX:CLASS	gold:Object
+STABILITY	stable
+
+IDENTIFIER	ChichewaClauseX
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	100
+FILLEDNESS	open
+	COHERENCE	coherent
+		EX:CLASS	local:adjunct
+STABILITY	stable
+
+IDENTIFIER	ChichewaCleft-Focus
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	open
+	COHERENCE	coherent
+		EX:CLASS	local:constituent
+STABILITY	stable
+
+IDENTIFIER	ChichewaCleftRelative
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	filled
+	EX:FILLER_CLASS	local:relativeClause
+	FORM	embeddedDesmeme
+STABILITY	stable
+
+IDENTIFIER	ChichewaComplementClauseLeftSupport
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	filled
+	EX:FILLER_CLASS	gold:Complementizer
+	FORM	canonicalLineate
+		AN:TRANSCRIPTION_STRING	kutí
+		EX:LIAISON	independent
+STABILITY	unstable
+	ASSOCIATE_POSITION	right
+	ASSOCIATE	ChichewaComplementClauseRightSupport
+
+IDENTIFIER	ChichewaComplementClauseRightSupport
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	open
+	COHERENCE	coherent
+		EX:CLASS	local:finiteClause
+STABILITY	stable
+
+IDENTIFIER	ChichewaCompoundStemEmbedded
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	open
+	COHERENCE	coherent
+		EX:CLASS	gold:Verbal
+STABILITY	stable
+
+IDENTIFIER	ChichewaDem
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	1
+FILLEDNESS	open
+	COHERENCE	coherent
+		EX:CLASS	gold:Demonstrative
+STABILITY	stable
+
+IDENTIFIER	ChichewaDerivedStemEmbedded
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	filled
+	EX:FILLER_CLASS	gold:Verbal
+	FORM	embeddedDesmeme
+STABILITY	unstable
+	ASSOCIATE_POSITION	right
+	ASSOCIATE	ChichewaFVProsodic
+
+IDENTIFIER	ChichewaFVProsodic
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	open
+	COHERENCE	coherent
+		EX:CLASS	gold:Verbal
+STABILITY	unstable
+	ASSOCIATE_POSITION	left
+	ASSOCIATE	ChichewaDerivedStemEmbedded
+
+IDENTIFIER	ChichewaFirstSyllable
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	open
+	COHERENCE	coherent
+		EX:CLASS	gold:Syllable
+STABILITY	stable
+
+IDENTIFIER	ChichewaKodiComponent
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	filled
+	EX:FILLER_CLASS	gold:InterrogativeOperator
+	FORM	canonicalLineate
+		AN:TRANSCRIPTION_STRING	kodí
+		EX:LIAISON	independent
+STABILITY	stable
+
+IDENTIFIER	ChichewaLocativePrefix
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	open
+	COHERENCE	coherent
+		EX:CLASS	local:adpositionalPhrase
+STABILITY	unstable
+	ASSOCIATE_POSITION	left
+	ASSOCIATE	ChichewaLocativizedNoun
+
+IDENTIFIER	ChichewaLocativizedNoun
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	filled
+	EX:FILLER_CLASS	gold:Noun
+	FORM	embeddedDesmeme
+STABILITY	stable
+
+IDENTIFIER	ChichewaMacroStemEmbedded
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	filled
+	EX:FILLER_CLASS	gold:Verbal
+	FORM	embeddedDesmeme
+STABILITY	stable
+
+IDENTIFIER	ChichewaModal
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	1
+FILLEDNESS	open
+	COHERENCE	coherent
+		EX:CLASS	local:TenseMoodAspect
+STABILITY	stable
+
+IDENTIFIER	ChichewaNPField
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	100
+FILLEDNESS	open
+	COHERENCE	incoherent
+		EX:CLASSES	gold:Adjectival
+		EX:CLASSES	gold:Demonstrative
+		EX:CLASSES	gold:Quantifier
+STABILITY	stable
+
+IDENTIFIER	ChichewaNPNoun
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	open
+	COHERENCE	coherent
+		EX:CLASS	gold:Noun
+STABILITY	stable
+
+IDENTIFIER	ChichewaNPNullComponent
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	0
+FILLEDNESS	null
+STABILITY	stable
+
+IDENTIFIER	ChichewaNPRightSupport
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	1
+FILLEDNESS	open
+	COHERENCE	coherent
+		EX:CLASS	local:relativeClause
+STABILITY	stable
+
+IDENTIFIER	ChichewaNPRightVoussoir
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	1
+FILLEDNESS	open
+	COHERENCE	coherent
+		EX:CLASS	gold:PossessivePronoun
+STABILITY	stable
+
+IDENTIFIER	ChichewaNdi
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	filled
+	EX:FILLER_CLASS	gold:Copula
+	FORM	canonicalLineate
+		AN:TRANSCRIPTION_STRING	ndi
+		EX:LIAISON	independent
+STABILITY	stable
+
+IDENTIFIER	ChichewaNegForImp
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	1
+FILLEDNESS	open
+	COHERENCE	coherent
+		EX:CLASS	local:negative
+STABILITY	stable
+
+IDENTIFIER	ChichewaNiComponent
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	filled
+	EX:FILLER_CLASS	local:personReference
+	FORM	canonicalLineate
+		AN:TRANSCRIPTION_STRING	ni
+		EX:LIAISON	sinistrous
+STABILITY	stable
+
+IDENTIFIER	ChichewaNiWholeVerb
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	1
+FILLEDNESS	filled
+	EX:FILLER_CLASS	local:personReference
+	FORM	embeddedDesmeme
+STABILITY	unstable
+	ASSOCIATE_POSITION	left
+	ASSOCIATE	ChichewaNegForImp
+
+IDENTIFIER	ChichewaNominalReduplicantEmbedded
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	1
+FILLEDNESS	filled
+	EX:FILLER_CLASS	gold:Noun
+	FORM	reduplicant
+STABILITY	unstable
+	ASSOCIATE_POSITION	left
+	ASSOCIATE	ChichewaProsodicNoun
+
+IDENTIFIER	ChichewaNominalReduplicantFirstSyllable
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	open
+	COHERENCE	coherent
+		EX:CLASS	gold:Syllable
+STABILITY	stable
+
+IDENTIFIER	ChichewaNominalReduplicantSecondSyllable
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	open
+	COHERENCE	coherent
+		EX:CLASS	gold:Syllable
+STABILITY	stable
+
+IDENTIFIER	ChichewaNonInitialSyllables
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	100
+FILLEDNESS	open
+	COHERENCE	coherent
+		EX:CLASS	gold:Syllable
+STABILITY	unstable
+	ASSOCIATE_POSITION	left
+	ASSOCIATE	ChichewaFirstSyllable
+
+IDENTIFIER	ChichewaNoun-NounStem
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	open
+	COHERENCE	coherent
+		EX:CLASS	grammaticalCategory
+STABILITY	unstable
+	ASSOCIATE_POSITION	left
+	ASSOCIATE	ChichewaNoun-Prefix
+
+IDENTIFIER	ChichewaNoun-Prefix
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	open
+	COHERENCE	coherent
+		EX:CLASS	grammaticalCategory
+STABILITY	unstable
+	ASSOCIATE_POSITION	right
+	ASSOCIATE	ChichewaNoun-NounStem
+
+IDENTIFIER	ChichewaOM
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	1
+FILLEDNESS	open
+	COHERENCE	coherent
+		EX:CLASS	local:objectReference
+STABILITY	stable
+
+IDENTIFIER	ChichewaOMProsodic
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	1
+FILLEDNESS	open
+	COHERENCE	coherent
+		EX:CLASS	local:objectReference
+STABILITY	unstable
+	ASSOCIATE_POSITION	right
+	ASSOCIATE	ChichewaCompoundStemEmbedded
+
+IDENTIFIER	ChichewaORelativizer
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	partiallyFilled
+	EX:FILLER_CLASS	gold:Relativizer
+	FILLER_PLACEMENT	componentFinal
+	FORM	embeddedDesmeme
+	COHERENCE	coherent
+		EX:CLASS	gold:Relativizer
+STABILITY	stable
+
+IDENTIFIER	ChichewaOsaVerbLeftSupport
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	filled
+	EX:FILLER_CLASS	local:negative
+	FORM	canonicalLineate
+		AN:TRANSCRIPTION_STRING	ósa-
+		EX:LIAISON	dextrous
+STABILITY	stable
+
+IDENTIFIER	ChichewaPassive
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	1
+FILLEDNESS	filled
+	EX:FILLER_CLASS	local:valency
+	FORM	canonicalLineate
+		AN:TRANSCRIPTION_STRING	-idw-
+		EX:LIAISON	sinistrous
+STABILITY	stable
+
+IDENTIFIER	ChichewaPossessor
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	open
+	COHERENCE	coherent
+		EX:CLASS	gold:NounPhrase
+STABILITY	stable
+
+IDENTIFIER	ChichewaPossessum
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	1
+FILLEDNESS	open
+	COHERENCE	coherent
+		EX:CLASS	gold:NounPhrase
+STABILITY	stable
+
+IDENTIFIER	ChichewaPreNiVerb
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	open
+	COHERENCE	coherent
+		EX:CLASS	local:finite
+STABILITY	stable
+
+IDENTIFIER	ChichewaPreverbal-Component
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	100
+FILLEDNESS	open
+	COHERENCE	incoherent
+		EX:CLASSES	gold:NounPhrase
+		EX:CLASSES	Adverbial
+STABILITY	stable
+
+IDENTIFIER	ChichewaProsodicDerivationalStemEmbedded
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	filled
+	EX:FILLER_CLASS	gold:Verbal
+	FORM	embeddedDesmeme
+STABILITY	stable
+
+IDENTIFIER	ChichewaProsodicExtensions
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	100
+FILLEDNESS	open
+	COHERENCE	coherent
+		EX:CLASS	local:valency
+STABILITY	unstable
+	ASSOCIATE_POSITION	left
+	ASSOCIATE	ChichewaProsodicVerbRoot
+
+IDENTIFIER	ChichewaProsodicNoun
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	open
+	COHERENCE	coherent
+		EX:CLASS	gold:Noun
+STABILITY	stable
+
+IDENTIFIER	ChichewaProsodicPhraseLeftSupport
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	100
+FILLEDNESS	open
+	COHERENCE	coherent
+		EX:CLASS	prosodicWord
+STABILITY	stable
+
+IDENTIFIER	ChichewaProsodicPhraseRightSupport
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	open
+	COHERENCE	coherent
+		EX:CLASS	prosodicWord
+STABILITY	stable
+
+IDENTIFIER	ChichewaProsodicVerbRoot
+LANGUAGE	nya
+ELASTICITY	inelastic
+FILLEDNESS	open
+	COHERENCE	coherent
+		EX:CLASS	gold:Verbal
+STABILITY	stable
+
+IDENTIFIER	ChichewaReciprocal
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	1
+FILLEDNESS	filled
+	EX:FILLER_CLASS	local:valency
+	FORM	canonicalLineate
+		AN:TRANSCRIPTION_STRING	-an-
+		EX:LIAISON	sinistrous
+STABILITY	stable
+
+IDENTIFIER	ChichewaRelativeClauseRelativizer
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	1
+FILLEDNESS	partiallyFilled
+	EX:FILLER_CLASS	local:relativizerStem
+	FILLER_PLACEMENT	componentFinal
+	FORM	embeddedDesmeme
+	COHERENCE	coherent
+		EX:CLASS	gold:Relativizer
+STABILITY	stable
+
+IDENTIFIER	ChichewaRelativizedClause
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	open
+	COHERENCE	coherent
+		EX:CLASS	local:relativeClause
+STABILITY	stable
+
+IDENTIFIER	ChichewaSM
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	open
+	COHERENCE	coherent
+		EX:CLASS	local:subjectReference
+STABILITY	stable
+
+IDENTIFIER	ChichewaSMImp
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	1
+FILLEDNESS	open
+	COHERENCE	coherent
+		EX:CLASS	local:subjectReference
+STABILITY	stable
+
+IDENTIFIER	ChichewaSTAMP
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	100
+FILLEDNESS	open
+	COHERENCE	incoherent
+		EX:CLASSES	local:TenseMoodAspect
+		EX:CLASSES	local:negative
+		EX:CLASSES	local:subjectReference
+STABILITY	unstable
+	ASSOCIATE_POSITION	right
+	ASSOCIATE	ChichewaMacroStemEmbedded
+
+IDENTIFIER	ChichewaTM
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	1
+FILLEDNESS	open
+	COHERENCE	coherent
+		EX:CLASS	local:TenseMoodAspect
+STABILITY	stable
+
+IDENTIFIER	ChichewaV
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	open
+	COHERENCE	coherent
+		EX:CLASS	local:vowel
+STABILITY	stable
+
+IDENTIFIER	ChichewaVCExtensionRMCLeftSupport
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	open
+	COHERENCE	coherent
+		EX:CLASS	local:valency
+STABILITY	unstable
+	ASSOCIATE_POSITION	right
+	ASSOCIATE	ChichewaVCExtensionRMCRightSupport
+
+IDENTIFIER	ChichewaVCExtensionRMCRightSupport
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	open
+	COHERENCE	coherent
+		EX:CLASS	local:valency
+STABILITY	unstable
+	ASSOCIATE_POSITION	left
+	ASSOCIATE	ChichewaVCExtensionRMCLeftSupport
+
+IDENTIFIER	ChichewaVOX-Component
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	filled
+	EX:FILLER_CLASS	verbPhrase
+	FORM	embeddedDesmeme
+STABILITY	stable
+
+IDENTIFIER	ChichewaVerb-Neg1
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	1
+FILLEDNESS	filled
+	EX:FILLER_CLASS	local:negative
+	FORM	canonicalLineate
+		AN:TRANSCRIPTION_STRING	si
+		EX:LIAISON	dextrous
+STABILITY	stable
+
+IDENTIFIER	ChichewaVerb-Neg2
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	1
+FILLEDNESS	filled
+	EX:FILLER_CLASS	local:negative
+	FORM	canonicalLineate
+		AN:TRANSCRIPTION_STRING	sa
+		EX:LIAISON	dextrous
+STABILITY	stable
+
+IDENTIFIER	ChichewaVerbClausal
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	open
+	COHERENCE	coherent
+		EX:CLASS	local:finite
+STABILITY	stable
+
+IDENTIFIER	ChichewaVerbNullComponent
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	0
+FILLEDNESS	null
+STABILITY	stable
+
+IDENTIFIER	ChichewaVerbStem
+LANGUAGE	nya
+ELASTICITY	inelastic
+	COUNT	1
+FILLEDNESS	open
+	COHERENCE	coherent
+		EX:CLASS	gold:Verbal
+STABILITY	stable
+
+IDENTIFIER	ChichewaVerbalReduplicant
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	0
+	MAXIMUM	1
+FILLEDNESS	filled
+	EX:FILLER_CLASS	gold:Verbal
+	FORM	reduplicant
+STABILITY	unstable
+	ASSOCIATE_POSITION	right
+	ASSOCIATE	ChichewaProsodicDerivationalStemEmbedded
+
+IDENTIFIER	ChichewaWordMinimalityLeftSupport
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	1
+	MAXIMUM	100
+FILLEDNESS	open
+	COHERENCE	coherent
+		EX:CLASS	gold:Syllable
+STABILITY	stable
+
+IDENTIFIER	ChichewaWordMinimalityRightSupport
+LANGUAGE	nya
+ELASTICITY	elastic
+	MINIMUM	1
+	MAXIMUM	100
+FILLEDNESS	open
+	COHERENCE	coherent
+		EX:CLASS	gold:Syllable
+STABILITY	stable

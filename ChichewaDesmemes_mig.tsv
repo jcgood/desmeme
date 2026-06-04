@@ -1,0 +1,609 @@
+IDENTIFIER	ChichewaAR-MOR
+LANGUAGE	nya
+CONDITIONING	lexicoconstructionalConditioning
+	FILLER_POSITION	templateMultiple
+	FILLED_COMPONENTS	filledComponentSet
+		FILLED_COMPONENT	ChichewaApplicative
+		FILLED_COMPONENT	ChichewaReciprocal
+EX:FUNCTION	local:valency
+VIOLABILITY	potentiallyViolable
+	EXCEPTIONALITY	semantic
+	REPARABILITY	morphosyntacticInsertion
+STRICTURE	order
+	CONSTITUENT	morphologicalConstituent
+	COUNT	3
+	RELATIONS	simple
+FOUNDATION	arch
+	LEFT_SUPPORT	ChichewaVerbStem
+	LEFT_VOUSSOIR	ChichewaBeforeVerbStemNullComponent
+	KEYSTONE	ChichewaVerbStem
+	RIGHT_VOUSSOIR	ChichewaApplicative
+	RIGHT_SUPPORT	ChichewaReciprocal
+MD:HAS_SOURCE	HymanMchombo-2002
+	MD:bibliographicCitation	Hyman, Larry M. & Sam A. Mchombo. 1992. Morphotactic constraints in the Chichewa verb stem. In Laura Buszard-Welcher, Lionel Wee & William Weigel (eds.), Proceedings of the eighteenth meeting of the Berkeley Linguistics Society, general session and parassession, 350–363. Berkeley: Berkeley Linguistics Society.
+	MD:EXTERNALREFERENCE	http://elanguage.net/journals/bls/article/view/2757
+
+IDENTIFIER	ChichewaAssociative-SYN
+LANGUAGE	nya
+CONDITIONING	lexicoconstructionalConditioning
+	EX:CONDITIONS	This is the standard Bantu associative construction.
+EX:FUNCTION	local:possessive
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	syntacticConstituent
+	COUNT	3
+	RELATIONS	simple
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaPossessum
+	RIGHT_SUPPORT	ChichewaPossessor
+	RESTKOMPONENTEN	restkomponentenSet
+		RESTKOMPONENTE	ChichewaAssociativeMarker
+MD:HAS_SOURCE	Mchombo-2004
+
+IDENTIFIER	ChichewaCA-MOR
+LANGUAGE	nya
+CONDITIONING	lexicoconstructionalConditioning
+	FILLER_POSITION	templateMultiple
+	FILLED_COMPONENTS	filledComponentSet
+		FILLED_COMPONENT	ChichewaApplicative
+		FILLED_COMPONENT	ChichewaCausative
+	EX:CONDITIONS	Both the Causative and the Applicative are treated as the trigger of the condition.
+EX:FUNCTION	local:valency
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	morphologicalConstituent
+	COUNT	3
+	RELATIONS	simple
+FOUNDATION	arch
+	LEFT_SUPPORT	ChichewaVerbStem
+	LEFT_VOUSSOIR	ChichewaBeforeVerbStemNullComponent
+	KEYSTONE	ChichewaVerbStem
+	RIGHT_VOUSSOIR	ChichewaCausative
+	RIGHT_SUPPORT	ChichewaApplicative
+MD:HAS_SOURCE	HymanMchombo-2002
+	MD:bibliographicCitation	Hyman, Larry M. & Sam A. Mchombo. 1992. Morphotactic constraints in the Chichewa verb stem. In Laura Buszard-Welcher, Lionel Wee & William Weigel (eds.), Proceedings of the eighteenth meeting of the Berkeley Linguistics Society, general session and parassession, 350–363. Berkeley: Berkeley Linguistics Society.
+	MD:EXTERNALREFERENCE	http://elanguage.net/journals/bls/article/view/2757
+
+IDENTIFIER	ChichewaCP-MOR
+LANGUAGE	nya
+CONDITIONING	lexicoconstructionalConditioning
+	FILLER_POSITION	templateMultiple
+	FILLED_COMPONENTS	filledComponentSet
+		FILLED_COMPONENT	ChichewaCausative
+		FILLED_COMPONENT	ChichewaPassive
+	EX:CONDITIONS	Both the Causative and the Passive are treated as the trigger of the condition.
+EX:FUNCTION	local:valency
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	morphologicalConstituent
+	COUNT	3
+	RELATIONS	simple
+FOUNDATION	arch
+	LEFT_SUPPORT	ChichewaVerbStem
+	LEFT_VOUSSOIR	ChichewaVerbNullComponent
+	KEYSTONE	ChichewaVerbStem
+	RIGHT_VOUSSOIR	ChichewaCausative
+	RIGHT_SUPPORT	ChichewaPassive
+MD:HAS_SOURCE	HymanMchombo-2002
+	MD:bibliographicCitation	Hyman, Larry M. & Sam A. Mchombo. 1992. Morphotactic constraints in the Chichewa verb stem. In Laura Buszard-Welcher, Lionel Wee & William Weigel (eds.), Proceedings of the eighteenth meeting of the Berkeley Linguistics Society, general session and parassession, 350–363. Berkeley: Berkeley Linguistics Society.
+	MD:EXTERNALREFERENCE	http://elanguage.net/journals/bls/article/view/2757
+
+IDENTIFIER	ChichewaClause-SYN
+LANGUAGE	nya
+CONDITIONING	constructionalConditioning
+	EX:CONDITIONS	Basic clause
+EX:FUNCTION	gold:Clause
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	syntacticConstituent
+	COUNT	2
+	RELATIONS	simple
+FOUNDATION	arch
+	LEFT_SUPPORT	ChichewaPreverbal-Component
+	LEFT_VOUSSOIR	ChichewaPreverbal-Component
+	KEYSTONE	ChichewaVOX-Component
+	RIGHT_VOUSSOIR	ChichewaClauseNullComponent
+	RIGHT_SUPPORT	ChichewaVOX-Component
+MD:HAS_SOURCE	Mchombo-2004
+
+IDENTIFIER	ChichewaCleft-SYN
+LANGUAGE	nya
+CONDITIONING	constructionalConditioning
+	EX:CONDITIONS	This is the form of the cleft construction.
+EX:FUNCTION	local:focus
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	syntacticConstituent
+	COUNT	3
+	RELATIONS	simple
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaNdi
+	RIGHT_SUPPORT	ChichewaCleftRelative
+	RESTKOMPONENTEN	restkomponentenSet
+		RESTKOMPONENTE	ChichewaCleft-Focus
+MD:HAS_SOURCE	Mchombo-2004
+
+IDENTIFIER	ChichewaComplementClause-SYN
+LANGUAGE	nya
+CONDITIONING	lexicoconstructionalConditioning
+	EX:CONDITIONS	Complement clauses with kuti
+EX:FUNCTION	gold:ComplementSubordinate
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	syntacticConstituent
+	COUNT	2
+	RELATIONS	simple
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaComplementClauseLeftSupport
+	RIGHT_SUPPORT	ChichewaComplementClauseRightSupport
+MD:HAS_SOURCE	Mchombo-2004
+
+IDENTIFIER	ChichewaCompoundStem-PHON
+LANGUAGE	nya
+CONDITIONING	constructionalConditioning
+	EX:CONDITIONS	Conditioned by semantics that trigger verb stem reduplication.
+EX:FUNCTION	gold:Verbal
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	morphologicalConstituent
+	COUNT	2
+	RELATIONS	simple
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaVerbalReduplicant
+	RIGHT_SUPPORT	ChichewaProsodicDerivationalStemEmbedded
+MD:HAS_SOURCE	DowningMtenje-2017
+
+IDENTIFIER	ChichewaDerivationalStem-PhMOR
+LANGUAGE	nya
+CONDITIONING	constructionalConditioning
+	EX:CONDITIONS	Following Downing & Mtenje treating as a morphologically delimited prosodic domain.
+EX:FUNCTION	gold:Verbal
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	morphologicalConstituent
+	COUNT	2
+	RELATIONS	simple
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaProsodicVerbRoot
+	RIGHT_SUPPORT	ChichewaProsodicExtensions
+MD:HAS_SOURCE	DowningMtenje-2017
+
+IDENTIFIER	ChichewaImperative-MOR
+LANGUAGE	nya
+CONDITIONING	constructionalConditioning
+	EX:CONDITIONS	Imperative verbs
+EX:FUNCTION	local:imperative
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	morphologicalConstituent
+	COUNT	1
+	RELATIONS	simple
+FOUNDATION	arch
+	LEFT_SUPPORT	ChichewaVerbNullComponent
+	LEFT_VOUSSOIR	ChichewaBeforeVerbStemNullComponent
+	KEYSTONE	ChichewaVerbStem
+	RIGHT_VOUSSOIR	ChichewaBeforeVerbStemNullComponent
+	RIGHT_SUPPORT	ChichewaVerbStem
+MD:HAS_SOURCE	ChichewaImperative-Source
+	MD:bibliographicCitation	Downing & Mtenje 2017:139
+
+IDENTIFIER	ChichewaKodi-SYN
+LANGUAGE	nya
+CONDITIONING	lexicoconstructionalConditioning
+	FILLER_POSITION	templateInitial
+	FILLED_COMPONENTS	filledComponentSet
+		FILLED_COMPONENT	ChichewaKodiComponent
+	EX:CONDITIONS	Appears at beginning of question (this should actually be free, but I don't see that in the descriptions--this is why I treat it as violable)
+EX:FUNCTION	local:question
+VIOLABILITY	potentiallyViolable
+	EXCEPTIONALITY	pragmatic
+	REPARABILITY	surfaceViolable
+STRICTURE	order
+	CONSTITUENT	syntacticConstituent
+	COUNT	2
+	RELATIONS	simple
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaKodiComponent
+	RIGHT_SUPPORT	ChichewaClauseComponent
+MD:HAS_SOURCE	Mchombo-2004
+
+IDENTIFIER	ChichewaLocative-CLT
+LANGUAGE	nya
+CONDITIONING	constructionalConditioning
+	EX:CONDITIONS	Triggered by one of three noun class prefixes.
+EX:FUNCTION	local:adpositionalPhrase
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	morphologicalConstituent
+	COUNT	2
+	RELATIONS	simple
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaLocativePrefix
+	RIGHT_SUPPORT	ChichewaLocativizedNoun
+	RESTKOMPONENTEN	restkomponentenSet
+		RESTKOMPONENTE	ChichewaAssociativeMarker
+MD:HAS_SOURCE	Mchombo-2004
+
+IDENTIFIER	ChichewaMacroStem-PhMOR
+LANGUAGE	nya
+CONDITIONING	constructionalConditioning
+	EX:CONDITIONS	This is the prosodic constituent associated with OM+verb stem
+EX:FUNCTION	gold:Verbal
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	morphologicalConstituent
+	COUNT	2
+	RELATIONS	simple
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaOMProsodic
+	RIGHT_SUPPORT	ChichewaCompoundStemEmbedded
+MD:HAS_SOURCE	DowningMtenje-2017
+
+IDENTIFIER	ChichewaNDem-PhSYN
+LANGUAGE	nya
+CONDITIONING	constructionalConditioning
+	EX:CONDITIONS	Noun immediately followed by demonstrative.
+EX:FUNCTION	gold:NounPhrase
+VIOLABILITY	potentiallyViolable
+	EXCEPTIONALITY	morphosyntactic
+	REPARABILITY	surfaceViolable
+STRICTURE	order
+	CONSTITUENT	syntacticConstituent
+	COUNT	2
+	RELATIONS	simple
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaNPNoun
+	RIGHT_SUPPORT	ChichewaDem
+MD:HAS_SOURCE	DowningMtenje-2017
+
+IDENTIFIER	ChichewaNP-SYN
+LANGUAGE	nya
+CONDITIONING	constructionalConditioning
+	EX:CONDITIONS	Applies to any NP
+EX:FUNCTION	gold:NounPhrase
+VIOLABILITY	potentiallyViolable
+	EXCEPTIONALITY	pragmatic
+	REPARABILITY	surfaceViolable
+STRICTURE	order
+	CONSTITUENT	syntacticConstituent
+	COUNT	4
+	RELATIONS	simple
+FOUNDATION	arch
+	LEFT_SUPPORT	ChichewaNPNoun
+	LEFT_VOUSSOIR	ChichewaNPNullComponent
+	KEYSTONE	ChichewaNPNoun
+	RIGHT_VOUSSOIR	ChichewaNPRightVoussoir
+	RIGHT_SUPPORT	ChichewaNPRightSupport
+	RESTKOMPONENTEN	restkomponentenSet
+		RESTKOMPONENTE	ChichewaNPField
+MD:HAS_SOURCE	DowningMtenje-2017
+
+IDENTIFIER	ChichewaNeg1Verb-PhMOR
+LANGUAGE	nya
+CONDITIONING	constructionalConditioning
+	EX:CONDITIONS	This is the verb plus the first negative prefix.
+EX:FUNCTION	gold:Verbal
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	morphologicalConstituent
+	COUNT	2
+	RELATIONS	simple
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaVerb-Neg1
+	RIGHT_SUPPORT	ChichewVerbNoNeg1
+MD:HAS_SOURCE	DowningMtenje-2017
+
+IDENTIFIER	ChichewaNiEnclitic-CLT
+LANGUAGE	nya
+CONDITIONING	lexicoconstructionalConditioning
+	FILLER_POSITION	templateFinal
+	FILLED_COMPONENTS	filledComponentSet
+		FILLED_COMPONENT	ChichewaNiComponent
+	EX:CONDITIONS	Politive imperatives and 2pl object
+EX:FUNCTION	local:imperative
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	morphologicalConstituent
+	COUNT	2
+	RELATIONS	simple
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaPreNiVerb
+	RIGHT_SUPPORT	ChichewaNiComponent
+MD:HAS_SOURCE	Mchombo-2004
+
+IDENTIFIER	ChichewaNominalReduplicant-PhMOR
+LANGUAGE	nya
+CONDITIONING	prosodicConditioning
+	EX:CONDITIONS	Minimality and maximality requirement on its shape (disyllabic).
+EX:FUNCTION	local:intensification
+VIOLABILITY	notViolable
+STRICTURE	length
+	CONSTITUENT	Syllable
+	COUNT	2
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaNominalReduplicantFirstSyllable
+	RIGHT_SUPPORT	ChichewaNominalReduplicantSecondSyllable
+MD:HAS_SOURCE	DowningMtenje-2017
+
+IDENTIFIER	ChichewaNominalReduplication-PhMOR
+LANGUAGE	nya
+CONDITIONING	constructionalConditioning
+	EX:CONDITIONS	Reduplication encoding an intensification construction.
+EX:FUNCTION	local:intensification
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	morphologicalConstituent
+	COUNT	2
+	RELATIONS	simple
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaProsodicNoun
+	RIGHT_SUPPORT	ChichewaNominalReduplicantEmbedded
+MD:HAS_SOURCE	DowningMtenje-2017
+
+IDENTIFIER	ChichewaNoun-MOR
+LANGUAGE	nya
+CONDITIONING	constructionalConditioning
+EX:FUNCTION	gold:Noun
+VIOLABILITY	potentiallyViolable
+	EXCEPTIONALITY	lexical
+	REPARABILITY	surfaceViolable
+STRICTURE	order
+	CONSTITUENT	morphologicalConstituent
+	COUNT	2
+	RELATIONS	simple
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaNoun-Prefix
+	RIGHT_SUPPORT	ChichewaNoun-NounStem
+MD:HAS_SOURCE	Mchombo-2004
+
+IDENTIFIER	ChichewaORelative-CLT
+LANGUAGE	nya
+CONDITIONING	lexicoconstructionalConditioning
+	FILLER_POSITION	templateFinal
+	FILLED_COMPONENTS	filledComponentSet
+		FILLED_COMPONENT	ChichewaORelativizer
+	EX:CONDITIONS	Treating this as lexicoconstructional since, unlike other strategy, relativizer is required.
+EX:FUNCTION	local:relativeClause
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	morphologicalConstituent
+	COUNT	2
+	RELATIONS	simple
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaVerbClausal
+	RIGHT_SUPPORT	ChichewaORelativizer
+MD:HAS_SOURCE	Mchombo-2004
+
+IDENTIFIER	ChichewaOsaVerb-MOR
+LANGUAGE	nya
+CONDITIONING	lexicoconstructionalConditioning
+	FILLER_POSITION	templateInitial
+	FILLED_COMPONENTS	filledComponentSet
+		FILLED_COMPONENT	ChichewaOsaVerbLeftSupport
+	EX:CONDITIONS	A special negative imperative form with different positional properties than regular verbs.
+EX:FUNCTION	local:imperative
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	morphologicalConstituent
+	COUNT	2
+	RELATIONS	simple
+FOUNDATION	arch
+	LEFT_SUPPORT	ChichewaOsaVerbLeftSupport
+	LEFT_VOUSSOIR	ChichewaOM
+	KEYSTONE	ChichewaVerbStem
+	RIGHT_VOUSSOIR	ChichewaVerbNullComponent
+	RIGHT_SUPPORT	ChichewaVerbStem
+MD:HAS_SOURCE	Mchombo-2004
+
+IDENTIFIER	ChichewaPhrase-PhSYN
+LANGUAGE	nya
+CONDITIONING	prosodicConditioning
+	EX:CONDITIONS	Various analyses of where boundaries lie, roughly after an XP
+EX:FUNCTION	prosodicPhrase
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	prosodicPhrase
+	COUNT	2
+	RELATIONS	simple
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaProsodicPhraseLeftSupport
+	RIGHT_SUPPORT	ChichewaProsodicPhraseRightSupport
+MD:HAS_SOURCE	DowningMtenje-2017
+
+IDENTIFIER	ChichewaRMC-MOR
+LANGUAGE	nya
+CONDITIONING	constructionalConditioning
+	EX:CONDITIONS	This is the Repeated Morph Constraint template. Activated in presence of multiple extensions (one of which, Intensive, is not really a "valency" encoding device, but I'm not expanding the functions to encompass it at the moment.
+EX:FUNCTION	local:valency
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	morphologicalConstituent
+	COUNT	2
+	RELATIONS	simple
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaVCExtensionRMCLeftSupport
+	RIGHT_SUPPORT	ChichewaVCExtensionRMCRightSupport
+MD:HAS_SOURCE	HymanMchombo-2002
+	MD:bibliographicCitation	Hyman, Larry M. & Sam A. Mchombo. 1992. Morphotactic constraints in the Chichewa verb stem. In Laura Buszard-Welcher, Lionel Wee & William Weigel (eds.), Proceedings of the eighteenth meeting of the Berkeley Linguistics Society, general session and parassession, 350–363. Berkeley: Berkeley Linguistics Society.
+	MD:EXTERNALREFERENCE	http://elanguage.net/journals/bls/article/view/2757
+
+IDENTIFIER	ChichewaRelativeClause-SYN
+LANGUAGE	nya
+CONDITIONING	constructionalConditioning
+	EX:CONDITIONS	A relative clause template with the optional relativizer
+EX:FUNCTION	local:relativeClause
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	syntacticConstituent
+	COUNT	2
+	RELATIONS	simple
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaRelativeClauseRelativizer
+	RIGHT_SUPPORT	ChichewaRelativizedClause
+MD:HAS_SOURCE	Mchombo-2004
+
+IDENTIFIER	ChichewaSTAMP-PhMOR
+LANGUAGE	nya
+CONDITIONING	constructionalConditioning
+	EX:CONDITIONS	Phonological hiatus restriction in the STAMP complex.
+EX:FUNCTION	local:STAMP
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	morphologicalConstituent
+	COUNT	4
+	RELATIONS	simple
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaSM
+	RIGHT_SUPPORT	ChichewaVerb-Neg2
+	RESTKOMPONENTEN	restkomponentenSet
+		RESTKOMPONENTE	ChichewaModal
+		RESTKOMPONENTE	ChichewaTM
+MD:HAS_SOURCE	DowningMtenje-2017
+
+IDENTIFIER	ChichewaSyllable-PHON
+LANGUAGE	nya
+CONDITIONING	prosodicConditioning
+	EX:CONDITIONS	The basic syllable structure of the language
+EX:FUNCTION	gold:Syllable
+VIOLABILITY	potentiallyViolable
+	EXCEPTIONALITY	noKnownExceptions
+	REPARABILITY	phonologicalRepair
+STRICTURE	order
+	CONSTITUENT	segment
+	COUNT	2
+	RELATIONS	simple
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaC
+	RIGHT_SUPPORT	ChichewaV
+	RESTKOMPONENTEN	restkomponentenSet
+		RESTKOMPONENTE	ChichewaC2
+MD:HAS_SOURCE	DowningMtenje-2017
+
+IDENTIFIER	ChichewaVOX-SYN
+LANGUAGE	nya
+CONDITIONING	constructionalConditioning
+	EX:CONDITIONS	Word order for the VOX structure
+EX:FUNCTION	gold:MainClause
+VIOLABILITY	potentiallyViolable
+	EXCEPTIONALITY	morphosyntactic
+	REPARABILITY	surfaceViolable
+STRICTURE	order
+	CONSTITUENT	syntacticConstituent
+	COUNT	3
+	RELATIONS	simple
+FOUNDATION	arch
+	LEFT_SUPPORT	ChichewaVerbClausal
+	LEFT_VOUSSOIR	ChichewaClauseNullComponent
+	KEYSTONE	ChichewaVerbClausal
+	RIGHT_VOUSSOIR	ChichewaClauseO
+	RIGHT_SUPPORT	ChichewaClauseX
+MD:HAS_SOURCE	Mchombo-2004
+
+IDENTIFIER	ChichewaVerb-MOR
+LANGUAGE	nya
+CONDITIONING	constructionalConditioning
+	EX:CONDITIONS	all verbs
+EX:FUNCTION	local:finite
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	morphosyntacticConstituent
+	COUNT	7
+	RELATIONS	simple
+FOUNDATION	arch
+	LEFT_SUPPORT	ChichewaVerb-Neg1
+	LEFT_VOUSSOIR	ChichewaOM
+	KEYSTONE	ChichewaVerbStem
+	RIGHT_VOUSSOIR	ChichewaVerbNullComponent
+	RIGHT_SUPPORT	ChichewaVerbStem
+	RESTKOMPONENTEN	restkomponentenSet
+		RESTKOMPONENTE	ChichewaModal
+		RESTKOMPONENTE	ChichewaSM
+		RESTKOMPONENTE	ChichewaTM
+		RESTKOMPONENTE	ChichewaVerb-Neg2
+MD:HAS_SOURCE	ChichewaVerb-Source
+	MD:bibliographicCitation	Downing & Mtenje 2017:135
+
+IDENTIFIER	ChichewaVerbStem-PhMOR
+LANGUAGE	nya
+CONDITIONING	constructionalConditioning
+	EX:CONDITIONS	While this is a phonological constituent, its domain seems to be defined in morphological terms.
+EX:FUNCTION	prosodicPhrase
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	morphologicalConstituent
+	COUNT	2
+	RELATIONS	simple
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaDerivedStemEmbedded
+	RIGHT_SUPPORT	ChichewaFVProsodic
+MD:HAS_SOURCE	DowningMtenje-2017
+
+IDENTIFIER	ChichewaVerbWithImperatives-MOR
+LANGUAGE	nya
+CONDITIONING	constructionalConditioning
+	EX:CONDITIONS	Encompassses imperatives and regular verb forms, including -ni and osa-forms
+EX:FUNCTION	gold:Verbal
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	morphologicalConstituent
+	COUNT	8
+	RELATIONS	taxonomic
+FOUNDATION	arch
+	LEFT_SUPPORT	ChichewaNegForImp
+	LEFT_VOUSSOIR	ChichewaOM
+	KEYSTONE	ChichewaVerbStem
+	RIGHT_SUPPORT	ChichewaNiWholeVerb
+	RESTKOMPONENTEN	restkomponentenSet
+		RESTKOMPONENTE	ChichewaModal
+		RESTKOMPONENTE	ChichewaSMImp
+		RESTKOMPONENTE	ChichewaTM
+		RESTKOMPONENTE	ChichewaVerb-Neg2
+MD:HAS_SOURCE	Mchombo-2004
+
+IDENTIFIER	ChichewaVerbWord-PhMOR
+LANGUAGE	nya
+CONDITIONING	constructionalConditioning
+	EX:CONDITIONS	The environment for the prosodic unit associated with the entire verb.
+EX:FUNCTION	gold:Verbal
+VIOLABILITY	notViolable
+STRICTURE	order
+	CONSTITUENT	morphologicalConstituent
+	COUNT	2
+	RELATIONS	simple
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaSTAMP
+	RIGHT_SUPPORT	ChichewaMacroStemEmbedded
+MD:HAS_SOURCE	DowningMtenje-2017
+
+IDENTIFIER	ChichewaVowelHarmony-PhMOR
+LANGUAGE	nya
+CONDITIONING	constructionalConditioning
+	EX:CONDITIONS	Noun and verb stems (minus last vowel) show this harmony pattern.
+EX:FUNCTION	gold:Stem
+VIOLABILITY	potentiallyViolable
+	EXCEPTIONALITY	lexical
+	REPARABILITY	surfaceViolable
+STRICTURE	order
+	CONSTITUENT	Syllable
+	COUNT	2
+	RELATIONS	simple
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaFirstSyllable
+	RIGHT_SUPPORT	ChichewaNonInitialSyllables
+MD:HAS_SOURCE	DowningMtenje-2017
+
+IDENTIFIER	ChichewaWordMinimality-PhMOR
+LANGUAGE	nya
+CONDITIONING	prosodicConditioning
+	EX:CONDITIONS	Applies to surfacing words
+EX:FUNCTION	prosodicWord
+VIOLABILITY	potentiallyViolable
+	EXCEPTIONALITY	noKnownExceptions
+	REPARABILITY	phonologicalInsertion
+STRICTURE	length
+	CONSTITUENT	Syllable
+	COUNT	2
+FOUNDATION	span
+	LEFT_SUPPORT	ChichewaWordMinimalityLeftSupport
+	RIGHT_SUPPORT	ChichewaWordMinimalityRightSupport
+MD:HAS_SOURCE	DowningMtenje-2017
