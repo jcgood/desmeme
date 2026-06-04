@@ -6,29 +6,37 @@ Data and code repository for *The Linguistic Typology of Templates* (Cambridge U
 
 A **desmeme** is the formal typological description of a single templatic construction in a language. Desmemes are encoded as attribute-value matrices (AVMs) modeled as directed acyclic graphs (DAGs). The description language uses an architectural metaphor for the structural "foundation" of a template.
 
+## Provenance and history
+
+Provenance and historical record are first-class concerns in this repository. This is a linguistics research project whose data will be cited in published work; decisions, corrections, and the reasoning behind them must be traceable.
+
+- **RDF files in `rdf/` are never deleted.** They are the original authoritative source from which TSV files were derived. Even after TSV becomes the primary working format, the RDF files remain as the historical record of how the data was first encoded.
+- **Intermediate TSV variants** (e.g. `_full`, `_run2`) may be retired from the working tree once superseded, but their history is preserved in git.
+- **Data gap patches** (e.g. `COMPONENT_PATCHES` in migration scripts) must be documented with issue references so that corrections to the underlying data can be traced back to the original encoding decision.
+- **Commit messages** should explain *why* a change was made (constraint, correction, reclassification) not just *what* changed, so the reasoning survives long after the code context is gone.
+
 ## Repository structure
 
 ```
-template-CHx.rdf / .rdfs   # Source data (OWL/RDF, edited in Protégé)
-RDFtoTabbed.py              # Converts RDF → TSV flat files
-ReadDesmemes.py             # Reads TSV, validates, renders ASCII AVMs / graphs
-DesmemeSchema.tsv           # Schema for desmeme feature-value structure
-ComponentSchema.tsv         # Schema for component feature-value structure
-ChichewaDesmemes*.tsv       # Desmeme data for Chichewa (ISO: nya)
-ChichewaComponents*.tsv     # Component data for Chichewa
-Graphs_full/                # Generated .dot and .pdf graph visualizations
-tdag/                       # Main Python package (current)
-tdag_orig/                  # Older package version (still used by RDFtoTabbed.py)
-tempTex/                    # Book chapter LaTeX source (for context; not committed)
+tdag/                       # Main Python package
+schema/                     # DesmemeSchema.tsv, ComponentSchema.tsv, GrammaticalCategories.tsv
+data/
+  nya/                      # Chichewa (ISO 639-3: nya); future languages get sibling dirs
+    ChichewaDesmemes.tsv
+    ChichewaComponents.tsv
+rdf/                        # RDF/OWL source files (Protégé); historical record, never deleted
+scripts/                    # ReadDesmemes.py, RDFtoTabbed2.py (run from repo root)
+output/                     # Generated outputs: graphs, nexus files, ground truth
+tests/                      # Regression tests
 ```
 
 ## Data pipeline
 
-1. **Author** encodes desmemes in `template-CHx.rdf` using Protégé
-2. **`RDFtoTabbed.py`** reads the RDF and writes TSV flat files (`*_full.tsv`)
-3. **`ReadDesmemes.py`** reads TSV files, validates against schema, reconstructs graphs, outputs ASCII AVMs or graph visualizations
+1. **Author** encodes desmemes in `rdf/template-CHx.rdf` using Protégé
+2. **`scripts/RDFtoTabbed2.py`** reads the RDF and writes TSV files to `data/nya/`
+3. **`scripts/ReadDesmemes.py`** reads TSV files, validates against schema, renders ASCII AVMs or graph visualizations
 
-The TSV format is the working representation; the RDF is the authoritative source.
+The TSV files are the primary working representation. The RDF is the historical source of record.
 
 ## `tdag` package modules
 
@@ -37,7 +45,7 @@ The TSV format is the working representation; the RDF is the authoritative sourc
 - **`avm.py`** — Renders a `tdag` as an ASCII or LaTeX AVM
 - **`comparison.py`** — Graph similarity (simUI distance metric), nexus output for SplitsTree, `.dot`/PDF visualization via `pydot` + Graphviz
 - **`despecification.py`** — Strips bibliographic/metadata/instance nodes before typological comparison
-- **`validator.py`** — Schema validation: checks allowed features, required features, and value types against `DesmemeSchema.tsv` / `ComponentSchema.tsv`
+- **`validator.py`** — Schema validation: checks allowed features, required features, and value types against `schema/DesmemeSchema.tsv` / `schema/ComponentSchema.tsv`
 
 ## Schema / description language key concepts
 
@@ -59,24 +67,24 @@ The TSV format is the working representation; the RDF is the authoritative sourc
 
 - `pygraph` (python-graph, via [Shoobx fork](https://github.com/Shoobx/python-graph)) — graph data structures; **no longer maintained**, migration to NetworkX noted as future work
 - `pydot` — dot file generation
-- `rdflib` — RDF parsing (used in `tdag_orig`)
+- `rdflib` — RDF parsing
 - Graphviz (`dot`, `pdf2ps`, `ps2eps`) — graph rendering, called via `os.system()`
 
 ## Running the scripts
 
 ```bash
 # Read TSV data, validate, and print ASCII AVMs to stdout
-python ReadDesmemes.py
+python scripts/ReadDesmemes.py
 
-# Export RDF to TSV (requires template-CHx.rdf)
-python RDFtoTabbed.py
+# Re-export RDF to TSV (requires rdf/template-CHx.rdf)
+python scripts/RDFtoTabbed2.py
 ```
 
-Both scripts are run from the repo root. They expect the TSV files and schema files to be present in the root directory.
+Both scripts are run from the repo root.
 
 ## Known issues / notes
 
-- `tdag_orig` and `tdag` are parallel implementations; `RDFtoTabbed.py` uses `tdag_orig` for RDF reading and `tdag` for graph visualization
 - `draw_graphs()` in `comparison.py` is currently commented out in both main scripts because it breaks on full templates with metadata
 - The `pygraph` library may need to be replaced with NetworkX at some point
 - Some workarounds in `tabbed.py` are explicitly noted as hacks (e.g., Nimboran RK re-entrancy, Tiene criss-crossing associates)
+- Data gaps patched during migration are tracked in issues #14 and #15
