@@ -22,9 +22,6 @@ from pygraph.classes.exceptions import AdditionError
 import pydot
 import re
 
-# A series of functions for abstracting away from some RDF specificities, including documentation fields
-import tdag.despecification as despecification
-
 
 class tdag ( ):
 	

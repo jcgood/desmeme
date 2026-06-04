@@ -6,8 +6,6 @@ import os
 from pygraph.readwrite.dot import write
 from pygraph.readwrite import *
 
-import tdag.despecification
-from . despecification import prettyName
 
 # Implements simUI distance measure for templates
 def simUI_d(t1,t2):
@@ -76,8 +74,7 @@ def to_nex(distances, outfile):
 	outfile.write("TAXLABELS\n")
 
 	for template in distkeys:
-		templateName = prettyName(template)
-		outfile.write(templateName + "\n")
+		outfile.write(template + "\n")
 
 	outfile.write(";\n")
 	outfile.write("END; [Taxa]\n")
