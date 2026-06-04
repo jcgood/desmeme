@@ -1,0 +1,789 @@
+\def\name{name}
+
+\begin{ontologytop}
+
+\item \emph{coherence}
+\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A supertype for characterizing whether the elements that can fill a given component are of a coherent functional class or not.}
+
+
+	\begin{proplist}
+
+	\item \textsc{\name} $\rightarrow$ string representation of \emph{name}
+
+	\end{proplist}
+
+	\begin{classlist}
+
+	\item \emph{coherent}
+	\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A type that specifies that a given component is filled with a functionally coherent class of elements. It is associated with a feature specifying that class.}
+
+
+		\begin{proplist}
+
+		\item \textsc{class} $\rightarrow$  \emph{grammaticalCategory}
+
+		\end{proplist}
+
+	\item \emph{incoherent}
+	\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A type that specifies that a given component is not filled with a functionally coherent class of elements. It is associated with a feature allowing a set of the functional classes it is associated with to be specified.}
+
+
+		\begin{proplist}
+
+		\item \textsc{classes} $\rightarrow$ set of \emph{grammaticalCategory}
+
+		\end{proplist}
+
+	\end{classlist}
+
+\item \emph{component}
+\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A type for templatic components. This is one of the fundamental types in the typology.}
+
+
+	\begin{proplist}
+
+	\item \textsc{\name} $\rightarrow$ string representation of \emph{name}
+
+	\item \textsc{elasticity} $\rightarrow$ instance of \emph{elasticity}
+
+	\item \textsc{filledness} $\rightarrow$ instance of \emph{filledness}
+
+	\item \textsc{stability} $\rightarrow$ instance of \emph{stability}
+
+	\end{proplist}
+
+\item \emph{conditioning}
+\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A supertype for  characterizing the grammatical locus of some observable set of templatic restrictions, for instance, whether a template targets phonological elements or morphosyntactic ones. All templates are associated with some conditioning.}
+
+
+	\begin{proplist}
+
+	\item \textsc{\name} $\rightarrow$ string representation of \emph{name}
+
+	\end{proplist}
+
+	\begin{classlist}
+
+	\item \emph{morphosyntacticConditioning}
+	\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A type for characterizing cases where a template's conditioning environment is morphosyntactic in nature.}
+
+
+		\begin{classlist}
+
+		\item \emph{constructionalConditioning}
+		\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A type for characterizing cases where a template's conditioning environment is constructional (i.e., morphological or syntactic) in nature.}
+
+
+		\item \emph{lexicoconstructionalConditioning}
+		\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A type for characterizing cases where a template's conditioning environment is lexico-constructional in nature, that is where it involves a constructional environment where a specific lexical item or set of lexical items must also appear.}
+
+
+			\begin{proplist}
+
+			\item \textsc{filled components} $\rightarrow$ instance of \emph{filledComponentSet}
+
+			\item \textsc{filler position} $\rightarrow$  \emph{position}
+
+			\end{proplist}
+
+		\end{classlist}
+
+	\item \emph{phonologicalConditioning}
+	\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A type for characterizing cases where a template's conditioning environment is phonological in nature.}
+
+
+		\begin{classlist}
+
+		\item \emph{prosodicConditioning}
+		\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A type for characterizing cases where a template's conditioning environment is prosodic in nature.}
+
+
+		\end{classlist}
+
+	\end{classlist}
+
+\item \emph{constituent}
+\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A supertype for characterizing the kind of constituents that a given set of templatic restrictions applies over.}
+
+
+	\begin{classlist}
+
+	\item \emph{morphosyntacticConstituent}
+	\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A supertype for specifying that the linguistic constituents a set of templatic restrictions applies over are morphosyntactic in nature.}
+
+
+		\begin{classlist}
+
+		\item \emph{morphologicalConstituent}
+		\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A types for specifying that the linguistic constituent a set of templatic restrictions applies over are morphological in nature (e.g., morphemes within a word).}
+
+
+		\item \emph{syntacticConstituent}
+		\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A type for specifying that the linguistic constituents a set of templatic restrictions applies over are syntactic in nature (e.g., phrases in a clause).}
+
+
+		\end{classlist}
+
+	\item \emph{phonologicalConstituent}
+	\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A supertype for specifying that the linguistic constituents a set of templatic restrictions applies over are phonological in nature.}
+
+
+		\begin{classlist}
+
+		\item \emph{prosodicConstituent}
+		\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A type for specifying that the linguistic constituents a set of templatic restrictions applies over are prosodic in nature (e.g., a phonological phrase). The labels of the subtypes should be readily interpretable for their category.}
+
+
+			\begin{classlist}
+
+			\item \emph{gold:Mora}
+
+
+			\item \emph{gold:Syllable}
+
+
+			\item \emph{prosodicWord}
+
+
+			\end{classlist}
+
+		\item \emph{segment}
+		\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A type for specifying that the linguistic constituents a set of templatic restrictions applies over consists of segments}
+
+
+		\end{classlist}
+
+	\end{classlist}
+
+\item \emph{elasticity}
+\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A supertype for characterizing the overall size of a component, including whether or not its size is fixed or variable.}
+
+
+	\begin{proplist}
+
+	\item \textsc{\name} $\rightarrow$ string representation of \emph{name}
+
+	\end{proplist}
+
+	\begin{classlist}
+
+	\item \emph{elastic}
+	\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A type that specifies that a given component can potentially be filled with a varying number of elements. It is associated with features specifying the maximum and minimum number of elements it can contain.}
+
+
+		\begin{proplist}
+
+		\item \textsc{maximum} $\rightarrow$ {integer} \emph{}
+
+		\item \textsc{minimum} $\rightarrow$ {integer} \emph{}
+
+		\end{proplist}
+
+	\item \emph{inelastic}
+	\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A type that specifies that a given component must be filled with a fixed number of elements (usually just one). It is associated with a feature specifying the number of elements it must contain.}
+
+
+		\begin{proplist}
+
+		\item \textsc{count} $\rightarrow$ {integer} \emph{}
+
+		\end{proplist}
+
+	\end{classlist}
+
+\item \emph{exceptionality}
+\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A supertype for characterizing the nature of observed exceptions to a given templatic pattern.}
+
+
+	\begin{classlist}
+
+	\item \emph{attestable}
+	\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A supertype for those cases where exceptionality appears to be possible based on a language's overall grammatical patterns.}
+
+
+		\begin{classlist}
+
+		\item \emph{lexical}
+		\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A type for cases where the exceptions to a templatic pattern are lexically conditioned.}
+
+
+		\item \emph{semantic}
+		\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A type for cases where the exceptions to a templatic pattern are semantically conditioned.}
+
+
+		\end{classlist}
+
+	\item \emph{noKnownExceptions}
+	\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A type for cases where a language's grammar suggests there could be potential surface violations of a template, but where no actual surface violations are attested.}
+
+
+	\end{classlist}
+
+\item \emph{filledComponentSet}
+\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A type that serves as a container for the set of components (most typically just one) that are filled in a given template. The \feat{filled component} feature can be repeated as needed.}
+
+
+	\begin{proplist}
+
+	\item \textsc{\name} $\rightarrow$ string representation of \emph{name}
+
+	\item \textsc{filled component} $\rightarrow$ instance of \emph{component}
+
+	\end{proplist}
+
+\item \emph{filledness}
+\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A supertype for characterizing the nature of the class of elements that is found within a given component, for instance whether it can be occupied by only one morpheme or an entire class of morphemes.}
+
+
+	\begin{proplist}
+
+	\item \textsc{\name} $\rightarrow$ string representation of \emph{name}
+
+	\end{proplist}
+
+	\begin{classlist}
+
+	\item \emph{filled}
+	\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A type that specifies that a given component is always fully or partly occupied by a specific element (e.g., a specific morpheme). If the type is not specified as \type{partiallyFilled}, then the use of this type should be interpreted as ``completely filled''.}
+
+
+		\begin{proplist}
+
+		\item \textsc{filler class} $\rightarrow$  \emph{grammaticalCategory}
+
+		\item \textsc{form} $\rightarrow$ instance of \emph{form}
+
+		\end{proplist}
+
+		\begin{classlist}
+
+		\item \emph{partiallyFilled}
+		\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A subtype that inherits its properties from both the \type{filled} and \type{open} types that specifies that a given component is internally complex with part of its material always consisting of a specific element and part of its material drawn from a set of elements.}
+
+
+			\begin{proplist}
+
+			\item \textsc{filler placement} $\rightarrow$  \emph{position}
+
+			\end{proplist}
+
+		\end{classlist}
+
+	\item \emph{null}
+	\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A value for the \feat{filledness} feature of {null} components (i.e., components serving as placeholders for positions not found in a given template).}
+
+
+	\item \emph{open}
+	\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A type that specifies that a given component's fillers are always fully or partly drawn from a class of elements (e.g., morphemes of a particular semantic type). If the type is not specified as \type{partiallyFilled}, then the use of this type should be interpreted as ``completely open''.}
+
+
+		\begin{proplist}
+
+		\item \textsc{coherence} $\rightarrow$ instance of \emph{coherence}
+
+		\end{proplist}
+
+		\begin{classlist}
+
+		\item \emph{partiallyFilled}
+		\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A subtype that inherits its properties from both the \type{filled} and \type{open} types that specifies that a given component is internally complex with part of its material always consisting of a specific element and part of its material drawn from a set of elements.}
+
+
+			\begin{proplist}
+
+			\item \textsc{filler placement} $\rightarrow$  \emph{position}
+
+			\end{proplist}
+
+		\end{classlist}
+
+	\end{classlist}
+
+\item \emph{form}
+\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A supertype that could encompass various kinds of linguistic forms. In the present taxonomy, it serves as the supertype only for lineates.}
+
+
+	\begin{proplist}
+
+	\item \textsc{\name} $\rightarrow$ string representation of \emph{name}
+
+	\item \textsc{{\rm gold:inLanguage}} $\rightarrow$ instance of \emph{language identifier}
+
+	\end{proplist}
+
+	\begin{classlist}
+
+	\item \emph{lineate}
+	\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A supertype for types of linguistic form that involve stipulation of linear ordering. A template is a subtype of lineate.}
+
+
+		\begin{classlist}
+
+		\item \emph{canonicalLineate}
+		\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A type for sets of linearization restrictions that are considered to be ``normal'' and, therefore, not templatic. The linear specifications associated with most lexical items would fall into this type.}
+
+
+			\begin{proplist}
+
+			\item \textsc{liaison} $\rightarrow$  \emph{liaison}
+
+			\item \textsc{transcription} $\rightarrow$ instance of \emph{transcription}
+
+			\end{proplist}
+
+		\item \emph{desmeme}
+		\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A type for sets of of linearization restrictions that are not predictable and are not associated with the ordering of segments or suprasegments of a lexical item. Templates can be understood as a subclass of desmemes, though they are not given formal status in this ontology due to problems with devising a precise definition for them.}
+
+
+			\begin{proplist}
+
+			\item \textsc{conditioning} $\rightarrow$ instance of \emph{conditioning}
+
+			\item \textsc{foundation} $\rightarrow$ instance of \emph{foundation}
+
+			\item \textsc{function} $\rightarrow$  \emph{grammaticalCategory}
+
+			\item \textsc{stricture} $\rightarrow$ instance of \emph{stricture}
+
+			\item \textsc{violability} $\rightarrow$ instance of \emph{violability}
+
+			\end{proplist}
+
+			\begin{classlist}
+
+			\item \emph{embeddedDesmeme}
+			\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A subtype of desmeme used for cases where a component of a template is itself a desmeme. This category does not logically require its own type, but this is useful in the present database since it does not actually fully encode the templatic properties of embedded desmemes.}
+
+
+			\end{classlist}
+
+		\end{classlist}
+
+	\end{classlist}
+
+\item \emph{foundation}
+\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A supertype for subtypes that classify the nature of the relationships holding among a template's components, including partial indication of their relative order.}
+
+
+	\begin{proplist}
+
+	\item \textsc{\name} $\rightarrow$ string representation of \emph{name}
+
+	\item \textsc{left support} $\rightarrow$ instance of \emph{component}
+
+	\item \textsc{restkomponenten} $\rightarrow$ instance of \emph{restkomponentenSet}
+
+	\item \textsc{right support} $\rightarrow$ instance of \emph{component}
+
+	\end{proplist}
+
+	\begin{classlist}
+
+	\item \emph{arch}
+	\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A type of foundation whose components are analyzed as organized around a single privileged component. It has five predefined structural positions, the keystone (for the privileged component), the left and right voussoirs, and the left and right supports.}
+
+
+		\begin{proplist}
+
+		\item \textsc{keystone} $\rightarrow$ instance of \emph{component}
+
+		\item \textsc{left voussoir} $\rightarrow$ instance of \emph{component}
+
+		\item \textsc{right voussoir} $\rightarrow$ instance of \emph{component}
+
+		\end{proplist}
+
+	\item \emph{span}
+	\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A type of foundation without a privileged component around which the other components are organized. Its only predefined structural positions are the left and right supports.}
+
+
+	\end{classlist}
+
+\item \emph{grammaticalCategory}
+\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A supertype for general grammatical categories that can be used to specify the function and conditioning of a given template or the possible fillers of components. These types do not enter into the typological comparison at present but are included due their potential interest for purposes of reference and for future studies. A number of these types are drawn from the GOLD ontology. Those that are not should be interpretable on the basis of their labels or the descriptions of the relevant templates in the book this ontology is associated with.}
+
+
+	\begin{classlist}
+
+	\item \emph{TenseMoodAspect}
+
+
+		\begin{classlist}
+
+		\item \emph{tense}
+
+
+		\end{classlist}
+
+	\item \emph{adjunct}
+
+
+	\item \emph{adpositionalPhrase}
+
+
+	\item \emph{argument}
+
+
+	\item \emph{clauseChaining}
+
+
+	\item \emph{consonant}
+
+
+	\item \emph{coronalConsonant}
+
+
+	\item \emph{focal}
+
+
+	\item \emph{focus}
+
+
+	\item \emph{gold:Complementizer}
+
+
+	\item \emph{gold:MainClause}
+
+
+	\item \emph{gold:Noun}
+
+
+	\item \emph{gold:Object}
+
+
+		\begin{classlist}
+
+		\item \emph{gold:DirectObject}
+
+
+		\item \emph{gold:IndirectObject}
+
+
+		\end{classlist}
+
+	\item \emph{gold:Stem}
+
+
+	\item \emph{gold:Subject}
+
+
+	\item \emph{gold:Syllable}
+
+
+	\item \emph{gold:Verbal}
+
+
+		\begin{classlist}
+
+		\item \emph{finite}
+
+
+		\item \emph{gold:Auxiliary}
+
+
+		\end{classlist}
+
+	\item \emph{gold:VerbalParticle}
+
+
+	\item \emph{locative}
+
+
+	\item \emph{moraicUnit}
+
+
+	\item \emph{negative}
+
+
+	\item \emph{nonCoronalConsonant}
+
+
+	\item \emph{oblique}
+
+
+	\item \emph{personReference}
+
+
+		\begin{classlist}
+
+		\item \emph{objectReference}
+
+
+		\item \emph{subjectReference}
+
+
+		\end{classlist}
+
+	\item \emph{plural}
+
+
+	\item \emph{prosodicWord}
+
+
+	\item \emph{topical}
+
+
+	\item \emph{topicalization}
+
+
+	\item \emph{valency}
+
+
+	\end{classlist}
+
+\item \emph{liaison}
+\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A supertype for characterizing prosodic dependencies for a given form, for instance, whether it can be understood as prosodically independent or is dependent on a host in some general way.}
+
+
+	\begin{classlist}
+
+	\item \emph{dependent}
+	\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A type for characterizing forms that are dependent (e.g., affixes or clitics). Only one subtype is defined in the present typology for characterizing suffixing elements, since this is all that has been required to code the data to this point.}
+
+
+		\begin{classlist}
+
+		\item \emph{sinistrous}
+		\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A type of dependence for elements which lean ``left'' on their hosts, e.g., suffixes and enclitics.}
+
+
+		\end{classlist}
+
+	\item \emph{independent}
+	\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A type of liaison for forms which are not prosodically dependent.}
+
+
+	\end{classlist}
+
+\newpage
+\item \emph{position}
+\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A supertype for referring to linear positions as needed in the descriptions of the templates.}
+
+
+	\begin{proplist}
+
+	\item \textsc{\name} $\rightarrow$ string representation of \emph{name}
+
+	\end{proplist}
+
+	\begin{classlist}
+
+	\item \emph{associatePosition}
+	\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A supertype for the positional specifications of components with dependencies on other components.}
+
+
+		\begin{classlist}
+
+		\item \emph{left}
+		\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A type specifying that a component is dependent on a component appearing before it in the template.}
+
+
+		\item \emph{right}
+		\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A type specifying that a component is dependent on a component appearing after it in the template.}
+
+
+		\end{classlist}
+
+	\item \emph{fillerPosition}
+	\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A supertype for the position of a filler element in a lexico-constructional template. This position is evaluated with respect to the whole template, not just the component the filler is found in.}
+
+
+		\begin{classlist}
+
+		\item \emph{final}
+		\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A type specifying that the filler of a lexico-constructional template is in the final position of the template.}
+
+
+		\item \emph{medial}
+		\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A type specifying that the filler of a lexico-constructional template is in a medial position in the template.}
+
+
+		\item \emph{multiple}
+		\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A type specifying that there are multiple fillers in a lexico-constructional template.}
+
+
+		\end{classlist}
+
+	\end{classlist}
+
+\item \emph{relations}
+\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A supertype for subtypes classifying the nature of the relations holding among a template's components.}
+
+
+	\begin{classlist}
+
+	\item \emph{simple}
+	\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A type for classifying sets of components where their categorial relationship to each other is simply that they are part of the same template.}
+
+
+	\item \emph{taxonomic}
+	\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A type for classifying sets of components which can be divided up into distinct categories creating taxonomic relationships among them.}
+
+
+	\end{classlist}
+
+\item \emph{reparability}
+\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A supertype for characterizing kinds of possible repair strategies for potential violations of templatic restrictions.}
+
+
+	\begin{classlist}
+
+	\item \emph{irreparable}
+	\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A type indicating that potential violations to a template, when they occur, cannot be repaired.}
+
+
+	\item \emph{reparable}
+	\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A supertype indicating that potential violations to a template, when they occur, can be repaired.}
+
+
+		\begin{classlist}
+
+		\item \emph{morphosyntacticRepair}
+		\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A supertype indicating that potential violations to a template, when they occur, can be repaired using a morphosyntactic strategy.}
+
+
+			\begin{classlist}
+
+			\item \emph{homophony}
+			\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A type indicating that potential violations to a template, when they occur, can be repaired by allowing a surface construction to exhibit otherwise unexpected homophony.}
+
+
+			\item \emph{morphosyntacticInsertion}
+			\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A type indicating that potential violations to a template, when they occur, can be repaired via the insertion of a morphosyntactic element whose appearance would not otherwise be expected.}
+
+
+			\end{classlist}
+
+		\item \emph{phonologicalRepair}
+		\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A type indicating that potential violations to a template, when they occur, can be repaired using a phonological strategy.}
+
+
+			\begin{classlist}
+
+			\item \emph{shortening}
+			\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A type indicating that potential violations to a template, when they occur, can be repaired by shortening a constituent that would otherwise be expected to have a longer form than the one that appears on the surface.}
+
+
+			\end{classlist}
+
+		\end{classlist}
+
+	\end{classlist}
+
+\item \emph{restkomponentenSet}
+\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A type for a container where those components not occupying predefined structural slots in a template can be listed as part of a template's foundation. The \feat{restkomponente} feature can be repeated as needed.}
+
+
+	\begin{proplist}
+
+	\item \textsc{\name} $\rightarrow$ string representation of \emph{name}
+
+	\item \textsc{restkomponente} $\rightarrow$ instance of \emph{component}
+
+	\end{proplist}
+
+\item \emph{stability}
+\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A supertype for characterizing dependencies among components, in particular for cases where the nature of the content of one component can be somehow dependent on what is found in another component.}
+
+
+	\begin{proplist}
+
+	\item \textsc{\name} $\rightarrow$ string representation of \emph{name}
+
+	\end{proplist}
+
+	\begin{classlist}
+
+	\item \emph{stable}
+	\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A type that specifies that a given component does not exhibit any  dependencies with any other component.}
+
+
+	\item \emph{unstable}
+	\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A type that specifies that a given component exhibits a dependency with another component. Only one dependency can be specified per component since the need for more than one has not yet been needed in the database.}
+
+
+		\begin{proplist}
+
+		\item \textsc{associate} $\rightarrow$ instance of \emph{component}
+
+		\item \textsc{associate position} $\rightarrow$ instance of \emph{associatePosition}
+
+		\end{proplist}
+
+	\end{classlist}
+
+\item \emph{stricture}
+\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A supertype for subtypes that give a high-level classification of the nature of the linearization specifications associated with a given template, in particular whether they involve restrictions on the length of a constituent or the order of its components.}
+
+
+	\begin{proplist}
+
+	\item \textsc{\name} $\rightarrow$ string representation of \emph{name}
+
+	\item \textsc{constituent} $\rightarrow$  \emph{constituent}
+
+	\item \textsc{count} $\rightarrow$ {integer} \emph{}
+
+	\end{proplist}
+
+	\begin{classlist}
+
+	\item \emph{length}
+	\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A type for classifying a template whose stipulation involves a restriction on the size of a constituent}
+
+
+	\item \emph{order}
+	\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A type for classifying a template whose stipulation involves a restriction on the order of a set of elements}
+
+
+		\begin{proplist}
+
+		\item \textsc{relations} $\rightarrow$  \emph{relations}
+
+		\end{proplist}
+
+	\end{classlist}
+
+\item \emph{transcription}
+\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A type that specifies a given string is a transcriptional representation of some linguistic form.}
+
+
+	\begin{proplist}
+
+	\item \textsc{\name} $\rightarrow$ string representation of \emph{name}
+
+	\item \textsc{transcription string} $\rightarrow$ string representation of \emph{transcription}
+
+	\end{proplist}
+
+\item \emph{violability}
+\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A supertype for subtypes that  characterize whether or not the linearization restrictions of a given template can be violated or not and what repair strategies may be activated in cases of potential violations.}
+
+
+	\begin{proplist}
+
+	\item \textsc{\name} $\rightarrow$ string representation of \emph{name}
+
+	\end{proplist}
+
+	\begin{classlist}
+
+	\item \emph{notViolable}
+	\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A type for indicating that, given other aspects of a language's grammar, there is not the potential for a specific template to be violated.}
+
+	\newpage
+	\item \emph{potentiallyViolable}
+	\hspace{1em}\parbox[t]{\linegoal}{\footnotesize A type for indicating that, given other aspects of a language's grammar, there is the potential for a specific template to be violated, in which case further specification is given regarding the nature of exceptions to the template and what repair strategies (if any) may be applied to those exceptions.}
+
+
+		\begin{proplist}
+
+		\item \textsc{exceptionality} $\rightarrow$  \emph{exceptionality}
+
+		\item \textsc{reparability} $\rightarrow$  \emph{reparability}
+
+		\end{proplist}
+
+	\end{classlist}
+
+\end{ontologytop}
