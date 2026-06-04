@@ -502,7 +502,7 @@ class featval ( ):
 		
 # Reads a tabbed representation of a desmeme
 # Does validation at the same time, interacting with other methods
-def get_tabbed_desmemes(desmemeFileName, componentFileName, schemaFileName, componentSchemaFileName):
+def get_tabbed_desmemes(desmemeFileName, componentFileName, schemaFileName, componentSchemaFileName, skip_components=False):
 
 	
 	#print(typesToFeatures)
@@ -598,56 +598,60 @@ def get_tabbed_desmemes(desmemeFileName, componentFileName, schemaFileName, comp
 
 			# Override component ID in node label with generic type
 			if feature in componentFeatures:
-				allCompRefs.add(value)
+				if not skip_components:
+					allCompRefs.add(value)
 				value = "component" + "_" + value
 				URI = value
 				atComponent = True
-		
+
 			else:
 				URIstem = URIbase +"-" + previousType + "-" + feature
 				featcounter = URIs[URIstem]
 				URI = URIstem + "-" + str(featcounter + 1)
 				URIs[URIstem] += 1
-	
-			# special logic for digits since they break python-graph somehow
-			if value.isdigit() or value == "∞":
-				value = URI + "_" + value
-				URI = value
-		
+				# Digit values (e.g. COUNT) are used as bare node names so they are
+				# shared across templates during simUI comparison, matching the RDF
+				# pipeline. This is safe because the desmeme schema has at most one
+				# COUNT per graph. Component-level digits need URI-based names (handled
+				# in get_tabbed_component) because the same digit can appear multiple
+				# times in one graph (e.g. MINIMUM=1 for two components).
 
 			if tabCount == prevtabCount:
 
 				# For building the graph
 				embeddings[tabCount + 1] = value
-				if (not desdag.has_node(value, URI)): desdag.add_node(value, URI)
-				
+				if not (skip_components and atComponent):
+					if (not desdag.has_node(value, URI)): desdag.add_node(value, URI)
+
 				# For validation
 				try: featureLevelDict[tabCount + 1 ] = desmemeSchema.typesToFeatures[value]
 				except: featureLevelDict[tabCount + 1] = [ ] # for terminal types
 				desmemeSchema.allowed_feature(feature, previousType)
 				desmemeSchema.process_feature(tabCount, feature, featureLevelDict)
 
-		
+
 			# Should only ever increment by one tab, but not doing error checking for this
 			# Maybe that could be useful for validation at some point
-			elif tabCount > prevtabCount: 		
+			elif tabCount > prevtabCount:
 
 				# For building the graph
 				embeddings[tabCount + 1] = value
 				prevtabCount = tabCount
-				previousType = embeddings[tabCount]	
-				if (not desdag.has_node(value, URI)): desdag.add_node(value, URI)
-	
+				previousType = embeddings[tabCount]
+				if not (skip_components and atComponent):
+					if (not desdag.has_node(value, URI)): desdag.add_node(value, URI)
+
 				# For validation
 				desmemeSchema.process_feature(tabCount, feature, featureLevelDict)
 
-			elif tabCount < prevtabCount: 		
+			elif tabCount < prevtabCount:
 
 				# For building the graph
 				embeddings[tabCount + 1] = value
 				prevtabCount = tabCount
-				if (not desdag.has_node(value, URI)): desdag.add_node(value, URI)
-	
+				if not (skip_components and atComponent):
+					if (not desdag.has_node(value, URI)): desdag.add_node(value, URI)
+
 				# Special logic for when we are at the zero-tab (i.e., line-initial) position
 				try: previousType = embeddings[tabCount - 1]
 				except: previousType = topType
@@ -656,26 +660,28 @@ def get_tabbed_desmemes(desmemeFileName, componentFileName, schemaFileName, comp
 				# sure the previous level's list was cleared off
 				# We check this before resetting the featureLevelDict
 				desmemeSchema.missing_features(featureLevelDict, tabCount)
-				
+
 				try: featureLevelDict[tabCount + 1] = desmemeSchema.typesToFeatures[value]
 				except: featureLevelDict[tabCount + 1] = [ ] # for terminal types
 				desmemeSchema.process_feature(tabCount, feature, featureLevelDict)
 
 			# Add the edge in now that the nodes are worked out
-			desdag.add_edge((previousType, value), feature)
-				
+			if not (skip_components and atComponent):
+				desdag.add_edge((previousType, value), feature)
+
 			# If we are adding a component, then get the component features in the component file
 			# This is an ugly, redundant process since I don't think the graph library that I am
 			# using can merge graphs, which is why it should probably be updated (see above)
-			if atComponent == True:
+			if atComponent == True and not skip_components:
 				get_tabbed_component(desdag, URI, componentFileName, seenComps, componentSchema)
-		
+
 		desmemeSchema.missing_features(featureLevelDict)
 
 		desdags.append(desdag)
 
-	# Make sure all components in component file are used	
-	desmemeSchema.extra_comps(allCompRefs, componentFileName)
+	# Make sure all components in component file are used
+	if not skip_components:
+		desmemeSchema.extra_comps(allCompRefs, componentFileName)
 	
 	return(desdags)
 	

@@ -53,24 +53,11 @@ def get_distances(gTemplates):
 		
 			distance = simUI_d(gT.core, gTc.core)
 	
-			# If the standard template is already on the distances table, retrieve its hash
-			if distances.has_key(gTName):
-			
-				gTDists = distances[gTName]
-	 
-				if gTDists.has_key(gTcName):
-					pass
-				
-				# If this distance isn't there yet, add it in, and then reassign the template's hash to the final hash
-				else:
-					gTDists[gTcName] = distance
-					distances[gTName] = gTDists
-				
-			# Different logic for first time assigning a hash in the hash since we need to create its ash
+			if gTName in distances:
+				if gTcName not in distances[gTName]:
+					distances[gTName][gTcName] = distance
 			else:
-				firstgTDists = {}
-				firstgTDists[gTcName] = distance
-				distances[gTName] = firstgTDists
+				distances[gTName] = {gTcName: distance}
 	
 	return distances
 
@@ -80,32 +67,30 @@ def to_nex(distances, outfile):
 	
 	outfile = open(outfile, "w")
 
-	distkeys = distances.keys()
-	distkeys.sort()
-	
+	distkeys = sorted(distances.keys())
+
 	outfile.write("#nexus\n")
 	outfile.write("\n")
 	outfile.write("BEGIN Taxa;\n")
 	outfile.write("DIMENSIONS ntax="+str(len(distkeys))+";\n")
 	outfile.write("TAXLABELS\n")
-	
-	for template in distkeys:	
+
+	for template in distkeys:
 		templateName = prettyName(template)
 		outfile.write(templateName + "\n")
-		
+
 	outfile.write(";\n")
 	outfile.write("END; [Taxa]\n")
-	
+
 	outfile.write("\n")
-	
+
 	outfile.write("BEGIN Distances;\n")
 	outfile.write("DIMENSIONS ntax="+str(len(distkeys))+";\n")
 	outfile.write("FORMAT labels=left diagonal triangle=lower;\n")
 	outfile.write("MATRIX\n")
-	
+
 	templateCount =  0
-	distkeys = distances.keys()
-	distkeys.sort()
+	distkeys = sorted(distances.keys())
 	
 	for template in distkeys:
 		
@@ -114,11 +99,10 @@ def to_nex(distances, outfile):
 		distanceString = ""
 		gridCount = 0
 	
-		tempdistkeys = tempDistances.keys()
-		tempdistkeys.sort()
-	
+		tempdistkeys = sorted(tempDistances.keys())
+
 		for comparisonTemplate in tempdistkeys:
-			
+
 			# Prints half grid
 			if gridCount > templateCount:
 				break
@@ -141,19 +125,17 @@ def to_nex(distances, outfile):
 # Turns a distance hash into a format more suitable for R (for multidimensional scaling)
 def full_grid(distances):
 	
-	distkeys = distances.keys()
-	distkeys.sort()
-	
+	distkeys = sorted(distances.keys())
+
 	grid = ""
 	for template in distkeys:
-		
+
 		tempDistances = distances[template]
-	
+
 		distanceString = ""
 		gridCount = 0
-	
-		tempdistkeys = tempDistances.keys()
-		tempdistkeys.sort()
+
+		tempdistkeys = sorted(tempDistances.keys())
 	
 		for comparisonTemplate in tempdistkeys:
 							

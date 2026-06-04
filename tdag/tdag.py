@@ -305,21 +305,6 @@ class tdag ( ):
 				self.embeddedMapping[URI] = nodeName
 				self.core.add_node(nodeName, attrs=[("label", it + "embeddedDesmeme" + nt)])
 
-		# Slightly different scenario for integer values.
-		# 1/19/2025, JG: Somehow this appears not to have been used in RDF parsing
-		# I did not look into why, but it causes errors for tab-based parsing and
-		# has been adjusted
-		elif "-COUNT-" in node:
-
-			# The URI is designed to contain the count value after an underscore at the end of the string
-			countno = re.search(r'(?<=_)([0-9]+)$', node).group(0)
-			
-			# Use URI as nodename for digits since digits are not unique
-			if node == '100':
-				self.core.add_node(URI,  attrs=[("label", '∞')])			
-			else:
-				self.core.add_node(URI,  attrs=[("label", countno)])
-
 		# components code nodes slightly differently from desmemes
 		elif "-MAXIMUM_" in node or "-MINIMUM_" in node or "-COUNT" in node:
 
