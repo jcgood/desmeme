@@ -1,6 +1,5 @@
-setuptools
-python-graph-core==1.8.2
-python-graph-dot==1.8.2
+git+https://github.com/Shoobx/python-graph.git#subdirectory=graph-core
+git+https://github.com/Shoobx/python-graph.git#subdirectory=graph-dot
 pydot==3.0.3
 rdflib==7.1.1
 pytest==9.0.2
