@@ -181,22 +181,24 @@ class schema ( ):
 		
 		typesToFeatures = self.typesToFeaturesOriginal
 		
-		# Cleanup for component types
+		# Strip numeric suffixes added by tdag.add_node for repeatable node types
+		# (e.g. filled1 -> filled, canonicalLineate2 -> canonicalLineate).
+		# Must be exact base name + digits only, to avoid false matches like
+		# filledComponentSet or HymanMchombo-2002.
+		_REPEATABLE = ("elastic", "inelastic", "partiallyFilled", "filled",
+		               "open", "null", "coherent", "incoherent",
+		               "stable", "unstable", "canonicalLineate",
+		               "embeddedDesmeme", "final")
 		cleanedType = type_
 		if cleanedType.startswith("component_"):
 			cleanedType = "component"
-		elif cleanedType.startswith("elastic"):
-			cleanedType = "elastic"
-		elif cleanedType.startswith("inelastic"):
-			cleanedType = "inelastic"
-		elif cleanedType.startswith("partiallyFilled"):
-			cleanedType = "partiallyFilled"
-		elif cleanedType.startswith("stable"):
-			cleanedType = "stable"
-		elif cleanedType.startswith("unstable"):
-			cleanedType = "unstable"
+		else:
+			for _base in _REPEATABLE:
+				if cleanedType == _base or (cleanedType.startswith(_base) and cleanedType[len(_base):].isdigit()):
+					cleanedType = _base
+					break
 		
-		validFeatures = typesToFeatures[cleanedType]
+		validFeatures = typesToFeatures.get(cleanedType, [])
 
 		if feature in validFeatures:
 			pass

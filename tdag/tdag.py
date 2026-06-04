@@ -322,11 +322,12 @@ class tdag ( ):
 			print(node, nodeName)
 			pass
 		
-		# If we've made it this far, it's a non-repeatable, generic node.		
+		# If we've made it this far, it's a non-repeatable, generic node.
 		else:
 			# make first letter of type name lowercase (needed for names borrowed from GOLD)
 			node = node[0].lower() + node[1:]
-			self.core.add_node(nodeName, attrs=[("label", it + node + nt)])
+			if not self.core.has_node(nodeName):
+				self.core.add_node(nodeName, attrs=[("label", it + node + nt)])
 
 		# This allows us to capture the generated name to build the edges
 		return nodeName

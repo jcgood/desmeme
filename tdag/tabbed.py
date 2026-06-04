@@ -784,16 +784,18 @@ def get_tabbed_component(desdag, compID, componentFileName, seenComps, component
 					componentSchema.process_feature(compTabCount, feature, featureLevelDict)
 					
 				# Should only ever increment by one tab
-				elif compTabCount > compPrevTabCount: 		
-					
+				elif compTabCount > compPrevTabCount:
+
 					# For building the graph
 					# add_node returns the way the label was adjusted, e.g., elastic 2
 					adjustedValue = desdag.add_node(value, URI)
 					compPrevTabCount = compTabCount
 					tabEmbeddings[compTabCount + 1] = adjustedValue
 					previousCompType = tabEmbeddings[compTabCount]
-					
+
 					# For validation
+					try: featureLevelDict[compTabCount + 1] = componentSchema.typesToFeatures[value]
+					except: featureLevelDict[compTabCount + 1] = []
 					componentSchema.process_feature(compTabCount, feature, featureLevelDict)
 
 				elif compTabCount < compPrevTabCount: 		

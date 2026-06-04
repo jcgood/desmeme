@@ -7,24 +7,25 @@ ELASTICITY	elastic
 		COUNT	@int
 FILLEDNESS	open
 		COHERENCE	coherent
-					EX:CLASS*	@grammaticalCategory
+				EX:CLASS*	@grammaticalCategory
 			incoherent
-					EX:CLASSES*	@grammaticalCategory
+				EX:CLASSES*	@grammaticalCategory
 	filled
 		FORM	canonicalLineate
-					AN:TRANSCRIPTION_STRING*	@str
-					EX:LIAISON*	@str
+				AN:TRANSCRIPTION_STRING*	@str
+				EX:LIAISON*	@str
 			embeddedDesmeme
-					AN:TRANSCRIPTION_STRING*	@str
+				AN:TRANSCRIPTION_STRING*	@str
 			reduplicant
-					AN:TRANSCRIPTION_STRING*	@str
+				AN:TRANSCRIPTION_STRING*	@str
 		EX:FILLER_CLASS*	@grammaticalCategory
 	partiallyFilled
 		FILLER_PLACEMENT	componentFinal
 		FORM	embeddedDesmeme
-					AN:TRANSCRIPTION_STRING*	@str
+				AN:TRANSCRIPTION_STRING*	@str
 		COHERENCE	coherent
-					EX:CLASS*	@grammaticalCategory
+				EX:CLASS*	@grammaticalCategory
+		EX:FILLER_CLASS*	@grammaticalCategory
 	null
 STABILITY	stable
 	unstable
