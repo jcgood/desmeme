@@ -1,0 +1,5 @@
+python-graph-core==1.8.2
+python-graph-dot==1.8.2
+pydot==3.0.3
+rdflib==7.1.1
+pytest==9.0.2
