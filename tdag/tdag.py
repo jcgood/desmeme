@@ -27,10 +27,9 @@ class tdag ( ):
 	
 	def __init__(self, name, lang=None):
 		"""
-		Class for DAGs for templates, these DAGs contain despecified templates because
-		process_templates only adds properly despecifed nodes.
-		The code here is sensitive to the current working model of a template.
-		So, this makes it somewhat brittle.
+		DAG representing a single templatic construction, built from TSV data by
+		get_tabbed_desmemes(). Wraps a pygraph digraph with extra logic for
+		re-entrancy and repeatable node types.
 		"""
 
 		self.name = name
@@ -51,9 +50,7 @@ class tdag ( ):
 		self.edges = { }
 		
 		
-		# To do: Generalize this to work with non-RDF template descriptions? Probably done in another function.
-		# The mappings below relate a given component's URI to a more readable
-		# label made unique by adding an integer
+		# The mappings below relate a component ID to a disambiguated node label.
 
 		# Nodes that can repeat need to be created here and relevant logic needs to be added to add_node().
 		# This has been implemented for all attested cases, but not logically possible ones.
@@ -122,22 +119,13 @@ class tdag ( ):
 		#self.countMapping = { }
 
 		
-		# Some namespaces are for properties that can be typologically compared and some are not.
-		# These are the ones that are good for comparison.
-		# This "hardcoding" of the generic prefixes in the template class may not be ideal in the long run.
-		# This is for RDF-based processing, which I expect to be a legacy mode of processing at some point
-		self.genericPredPfxs = ["http://purl.org/linguistics/jcgood/general#",
-				   "http://purl.org/linguistics/jcgood/template#",
-				   "http://purl.org/linguistics/jcgood/templates#",
-				   "http://purl.org/linguistics/jcgood/component#"]
 	
 	
 	def add_node(self, node, URI, mother="", predicate=""):
 		"""
-		Adds desired RDF node to internal graph and does some processing for readability.
-		Includes special logic for dealing with "repeatable" nodes (in components and fillers).
-		This function returns a nodeName with an integer for disambiguation purposes, if needed.
-		If the same node is attempted to be added twice, just returns graph nodename as side effect
+		Add a node to the graph. Handles repeatable node types (elastic, filled, etc.)
+		by appending a disambiguating integer. Returns the actual node name used.
+		If the node already exists, returns its name as a side effect.
 		"""
 				
 		nodeName = node

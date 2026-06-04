@@ -621,8 +621,8 @@ def get_tabbed_desmemes(desmemeFileName, componentFileName, schemaFileName, comp
 				URI = URIstem + "-" + str(featcounter + 1)
 				URIs[URIstem] += 1
 				# Digit values (e.g. COUNT) are used as bare node names so they are
-				# shared across templates during simUI comparison, matching the RDF
-				# pipeline. This is safe because the desmeme schema has at most one
+				# shared across templates during simUI comparison. This is safe
+				# because the desmeme schema has at most one
 				# COUNT per graph. Component-level digits need URI-based names (handled
 				# in get_tabbed_component) because the same digit can appear multiple
 				# times in one graph (e.g. MINIMUM=1 for two components).

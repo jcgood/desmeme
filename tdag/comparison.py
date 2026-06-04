@@ -1,5 +1,4 @@
-# Functions for comparing graphs, once they've been properly despecified,
-# including visualization.
+# Functions for comparing tdag graphs, including distance metrics, nexus output, and visualization.
 
 import os
 
@@ -61,62 +60,50 @@ def get_distances(gTemplates):
 
 	
 # Turns a distance hash into a nexus file for SplitsTree
-def to_nex(distances, outfile):
-	
-	outfile = open(outfile, "w")
+def to_nex(distances, outpath):
 
 	distkeys = sorted(distances.keys())
 
-	outfile.write("#nexus\n")
-	outfile.write("\n")
-	outfile.write("BEGIN Taxa;\n")
-	outfile.write("DIMENSIONS ntax="+str(len(distkeys))+";\n")
-	outfile.write("TAXLABELS\n")
+	with open(outpath, "w") as outfile:
 
-	for template in distkeys:
-		outfile.write(template + "\n")
+		outfile.write("#nexus\n")
+		outfile.write("\n")
+		outfile.write("BEGIN Taxa;\n")
+		outfile.write("DIMENSIONS ntax="+str(len(distkeys))+";\n")
+		outfile.write("TAXLABELS\n")
 
-	outfile.write(";\n")
-	outfile.write("END; [Taxa]\n")
+		for template in distkeys:
+			outfile.write(template + "\n")
 
-	outfile.write("\n")
+		outfile.write(";\n")
+		outfile.write("END; [Taxa]\n")
 
-	outfile.write("BEGIN Distances;\n")
-	outfile.write("DIMENSIONS ntax="+str(len(distkeys))+";\n")
-	outfile.write("FORMAT labels=left diagonal triangle=lower;\n")
-	outfile.write("MATRIX\n")
+		outfile.write("\n")
 
-	templateCount =  0
-	distkeys = sorted(distances.keys())
-	
-	for template in distkeys:
-		
-		tempDistances = distances[template]
-	
-		distanceString = ""
-		gridCount = 0
-	
-		tempdistkeys = sorted(tempDistances.keys())
+		outfile.write("BEGIN Distances;\n")
+		outfile.write("DIMENSIONS ntax="+str(len(distkeys))+";\n")
+		outfile.write("FORMAT labels=left diagonal triangle=lower;\n")
+		outfile.write("MATRIX\n")
 
-		for comparisonTemplate in tempdistkeys:
+		templateCount = 0
+		for template in distkeys:
 
-			# Prints half grid
-			if gridCount > templateCount:
-				break
-				
-			else:
-				roundedDistance = round(tempDistances[comparisonTemplate],2)
+			tempDistances = distances[template]
+			distanceString = ""
+			gridCount = 0
+
+			for comparisonTemplate in sorted(tempDistances.keys()):
+				if gridCount > templateCount:
+					break
+				roundedDistance = round(tempDistances[comparisonTemplate], 2)
 				distanceString += ("\t" + str(roundedDistance))
-				
-			gridCount  += 1
-	
-		# Write out the distances string manually
-		outfile.write(template + "\t" + distanceString + "\n")
-	
-		templateCount += 1
-	
-	outfile.write(";\n")
-	outfile.write("END; [Distances]\n")
+				gridCount += 1
+
+			outfile.write(template + "\t" + distanceString + "\n")
+			templateCount += 1
+
+		outfile.write(";\n")
+		outfile.write("END; [Distances]\n")
 
 
 # Turns a distance hash into a format more suitable for R (for multidimensional scaling)
