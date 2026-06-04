@@ -515,6 +515,7 @@ def get_tabbed_desmemes(desmemeFileName, componentFileName, schemaFileName, comp
 	
 	URIs = defaultdict(int)
 	allCompRefs = set() # Collect all component IDs to verify that all components in component file are used
+	seen_lang = None
 
 	for desmeme in desmemes:
 		
@@ -542,8 +543,12 @@ def get_tabbed_desmemes(desmemeFileName, componentFileName, schemaFileName, comp
 		[langfeat, lang] = langfv.split('\t')
 		if langfeat != "LANGUAGE":
 			raise(ValueError('Expected leading LANGUAGE feature, but found {langfeat}'.format(langfeat=repr(langfeat))))
-	
-		desdag = tdag(id_)
+		if seen_lang is None:
+			seen_lang = lang
+		elif lang != seen_lang:
+			raise ValueError(f"Language mismatch in desmeme file: expected {seen_lang!r}, got {lang!r} in {id_!r}.")
+
+		desdag = tdag(id_, lang=lang)
 	
 		topType = "desmeme"
 		previousType = topType
@@ -726,10 +731,11 @@ def get_tabbed_component(desdag, compID, componentFileName, seenComps, component
 		if compidfeat != "IDENTIFIER":
 			raise(Exception('Expected leading IDENTIFIER feature, but found {compidfeat}'.format(compidfeat=repr(compidfeat))))
 		
-		# could do validation here to verify language match
 		[complangfeat, complang] = complangfv.split('\t')
 		if complangfeat != "LANGUAGE":
 			raise(Exception('Expected leading LANGUAGE feature, but found {complangfeat}'.format(complangfeat=repr(complangfeat))))
+		if desdag.lang is not None and complang != desdag.lang:
+			raise ValueError(f"Language mismatch: component {compid!r} has language {complang!r}, expected {desdag.lang!r}.")
 
 		# Maybe don't need this, overriden below?
 		adjustedID = "component_" + compid

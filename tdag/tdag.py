@@ -28,17 +28,16 @@ import tdag.despecification as despecification
 
 class tdag ( ):
 	
-	def __init__(self, name):
+	def __init__(self, name, lang=None):
 		"""
 		Class for DAGs for templates, these DAGs contain despecified templates because
 		process_templates only adds properly despecifed nodes.
 		The code here is sensitive to the current working model of a template.
 		So, this makes it somewhat brittle.
 		"""
-		
+
 		self.name = name
-		
-		# to do: Add metadata fields (language, source, usw.)
+		self.lang = lang  # ISO 639-3 language code, e.g. 'nya', 'cao'
 		
 		# The "core" of a template DAG is a directed graph from pygraph, allowing us to use most of its functionality.
 		# But, some extra information needs to be added on top of this core to get repeatable nodes and multiple
