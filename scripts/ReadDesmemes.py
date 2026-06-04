@@ -9,14 +9,13 @@ import re
 from collections import defaultdict
 
 
-desmemeFileName = "ChichewaDesmemes.tsv"
-componentFileName = "ChichewaComponents.tsv"
+desmemeFileName = "data/nya/ChichewaDesmemes.tsv"
+componentFileName = "data/nya/ChichewaComponents.tsv"
 
-graphfolder = "Graphs/"
+graphfolder = "output/Graphs_full/"
 
-# For later, get the schema
-desmemeSchemaFileName = "DesmemeSchema.tsv"
-componentSchemaFileName = "ComponentSchema.tsv"
+desmemeSchemaFileName = "schema/DesmemeSchema.tsv"
+componentSchemaFileName = "schema/ComponentSchema.tsv"
 
 ## Validation seems done
 ## Next step: Extract other information (e.g., source, transcription) from RDF, and incorporate somehow...

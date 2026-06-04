@@ -40,7 +40,7 @@ LOCAL_NS   = "http://purl.org/linguistics/jcgood/localcategory#"
 LANGUAGE   = "nya"
 
 g = rdflib.Graph()
-g.parse("template-CHx.rdf", format="xml")
+g.parse("rdf/template-CHx.rdf", format="xml")
 
 # Known data gaps in the RDF that must be patched during migration.
 # Each entry is (component_label, feature, value) to be written if the feature
@@ -284,19 +284,19 @@ def main():
 
     print(f"Found {len(desmemes)} desmemes, {len(all_comps)} components")
 
-    with open("ChichewaDesmemes_mig.tsv", "w") as out:
+    with open("data/nya/ChichewaDesmemes.tsv", "w") as out:
         for i, d in enumerate(desmemes):
             write_desmeme(d, out, first=(i == 0))
 
     seen = set()
-    with open("ChichewaComponents_mig.tsv", "w") as out:
+    with open("data/nya/ChichewaComponents.tsv", "w") as out:
         first = True
         for comp in all_comps:
             if rlabel(comp) not in seen:
                 write_component(comp, out, seen, first=first)
                 first = False
 
-    print("Wrote ChichewaDesmemes_mig.tsv and ChichewaComponents_mig.tsv")
+    print("Wrote data/nya/ChichewaDesmemes.tsv and data/nya/ChichewaComponents.tsv")
 
 
 if __name__ == "__main__":

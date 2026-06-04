@@ -23,13 +23,11 @@ sys.path.insert(0, ROOT)
 from tdag.tabbed import get_tabbed_desmemes
 from tdag.comparison import get_distances
 
-GROUND_TRUTH_NOCOMP = os.path.join(ROOT, "groundTruth2024", "templateNoComp.nex")
-DESMEME_TSV = os.path.join(ROOT, "ChichewaDesmemes.tsv")
-COMPONENT_TSV = os.path.join(ROOT, "ChichewaComponents.tsv")
-DESMEME_TSV_MIG = os.path.join(ROOT, "ChichewaDesmemes_mig.tsv")
-COMPONENT_TSV_MIG = os.path.join(ROOT, "ChichewaComponents_mig.tsv")
-DESMEME_SCHEMA = os.path.join(ROOT, "DesmemeSchema.tsv")
-COMPONENT_SCHEMA = os.path.join(ROOT, "ComponentSchema.tsv")
+GROUND_TRUTH_NOCOMP = os.path.join(ROOT, "output", "groundTruth2024", "templateNoComp.nex")
+DESMEME_TSV = os.path.join(ROOT, "data", "nya", "ChichewaDesmemes.tsv")
+COMPONENT_TSV = os.path.join(ROOT, "data", "nya", "ChichewaComponents.tsv")
+DESMEME_SCHEMA = os.path.join(ROOT, "schema", "DesmemeSchema.tsv")
+COMPONENT_SCHEMA = os.path.join(ROOT, "schema", "ComponentSchema.tsv")
 
 TOLERANCE = 0.01
 
@@ -85,13 +83,18 @@ def test_validation_smoke():
 
 
 def test_nocomp_distances():
-    """TSV-based noComp pairwise distances match 2024 ground truth within 0.01."""
+    """TSV-based noComp pairwise distances match 2024 ground truth within 0.01.
+
+    MD:/AN:/EX: nodes are excluded from the comparison graph (skip_md/an/ex)
+    to match the original RDF pipeline, which excluded metadata and annotation
+    fields from the distance calculation.
+    """
     ground_truth = parse_nex_distances(GROUND_TRUTH_NOCOMP)
     assert len(ground_truth) == 34, f"Expected 34 taxa in ground truth, got {len(ground_truth)}"
 
     desmemes = get_tabbed_desmemes(
         DESMEME_TSV, COMPONENT_TSV, DESMEME_SCHEMA, COMPONENT_SCHEMA,
-        skip_components=True
+        skip_components=True, skip_md=True, skip_an=True, skip_ex=True
     )
     assert len(desmemes) == 34
 
@@ -99,53 +102,6 @@ def test_nocomp_distances():
 
     # TSV names are "ChichewaX"; ground truth uses short names, some of which
     # have been renamed since the ground truth was generated (see RENAMES).
-    def gt_name(tsv_name):
-        short = tsv_name.replace("Chichewa", "", 1)
-        return RENAMES.get(short, short)
-
-    failures = []
-    for t1, row in distances.items():
-        g1 = gt_name(t1)
-        if g1 not in ground_truth:
-            failures.append(f"Name not found in ground truth: {t1!r} → {g1!r}")
-            continue
-        for t2, dist in row.items():
-            if t1 == t2:
-                continue
-            g2 = gt_name(t2)
-            if g2 not in ground_truth[g1]:
-                failures.append(f"Pair not in ground truth: {g1!r} vs {g2!r}")
-                continue
-            expected = ground_truth[g1][g2]
-            if abs(dist - expected) > TOLERANCE:
-                failures.append(
-                    f"{g1} vs {g2}: got {dist:.4f}, expected {expected:.2f} "
-                    f"(diff {abs(dist - expected):.4f})"
-                )
-
-    assert not failures, f"{len(failures)} distance mismatch(es):\n" + "\n".join(failures[:20])
-
-
-def test_migrated_validation_smoke():
-    """Migrated TSV files load and validate all 34 desmemes."""
-    desmemes = get_tabbed_desmemes(
-        DESMEME_TSV_MIG, COMPONENT_TSV_MIG, DESMEME_SCHEMA, COMPONENT_SCHEMA
-    )
-    assert len(desmemes) == 34, f"Expected 34 desmemes, got {len(desmemes)}"
-
-
-def test_migrated_nocomp_distances():
-    """Migrated TSV noComp distances match 2024 ground truth (MD:/AN:/EX: nodes excluded)."""
-    ground_truth = parse_nex_distances(GROUND_TRUTH_NOCOMP)
-
-    desmemes = get_tabbed_desmemes(
-        DESMEME_TSV_MIG, COMPONENT_TSV_MIG, DESMEME_SCHEMA, COMPONENT_SCHEMA,
-        skip_components=True, skip_md=True, skip_an=True, skip_ex=True
-    )
-    assert len(desmemes) == 34
-
-    distances = get_distances(desmemes)
-
     def gt_name(tsv_name):
         short = tsv_name.replace("Chichewa", "", 1)
         return RENAMES.get(short, short)

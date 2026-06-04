@@ -6,7 +6,7 @@ import warnings
 
 def _load_grammatical_categories():
     schema_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    path = os.path.join(schema_dir, "GrammaticalCategories.tsv")
+    path = os.path.join(schema_dir, "schema", "GrammaticalCategories.tsv")
     with open(path) as f:
         return {line.strip() for line in f if line.strip()}
 
