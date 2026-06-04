@@ -1,13 +1,17 @@
-IDENTIFIER	.
-LANGUAGE	.
+IDENTIFIER	@id
+LANGUAGE	@lang
 CONDITIONING	constructionalConditioning
+		EX:CONDITIONS*	@str
 	lexicoconstructionalConditioning
 		FILLER_POSITION	templateInitial
 			templateFinal
 			templateMultiple
 		FILLED_COMPONENTS	filledComponentSet
-				FILLED_COMPONENT+	.
+				FILLED_COMPONENT+	@ref
+		EX:CONDITIONS*	@str
 	prosodicConditioning
+		EX:CONDITIONS*	@str
+EX:FUNCTION*	@grammaticalCategory
 VIOLABILITY	notViolable
 	potentiallyViolable
 		EXCEPTIONALITY	semantic
@@ -22,26 +26,29 @@ VIOLABILITY	notViolable
 			morphosyntacticInsertion
 STRICTURE	length
 		CONSTITUENT	syllable
-		COUNT	.
+		COUNT	@int
 	order
 		CONSTITUENT	morphologicalConstituent
 			syntacticConstituent
 			morphosyntacticConstituent
 			prosodicPhrase
 			segment
-		COUNT	.
+		COUNT	@int
 		RELATIONS	simple
 			taxonomic
 FOUNDATION	arch
-		LEFT_SUPPORT	.
-		LEFT_VOUSSOIR	.
-		KEYSTONE	.
-		RIGHT_VOUSSOIR	.
-		RIGHT_SUPPORT	.
+		LEFT_SUPPORT	@ref
+		LEFT_VOUSSOIR	@ref
+		KEYSTONE	@ref
+		RIGHT_VOUSSOIR	@ref
+		RIGHT_SUPPORT	@ref
 		RESTKOMPONENTEN*	restkomponentenSet
-				RESTKOMPONENTE+	.
+				RESTKOMPONENTE+	@ref
 	span
-		LEFT_SUPPORT	.
-		RIGHT_SUPPORT	.
+		LEFT_SUPPORT	@ref
+		RIGHT_SUPPORT	@ref
 		RESTKOMPONENTEN*	restkomponentenSet
-				RESTKOMPONENTE+	.
+				RESTKOMPONENTE+	@ref
+MD:HAS_SOURCE*	@ref
+		MD:bibliographicCitation	@str
+		MD:EXTERNALREFERENCE*	@str

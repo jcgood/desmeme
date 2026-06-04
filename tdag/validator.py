@@ -1,7 +1,16 @@
 import re
+import os
 from collections import defaultdict
 from copy import deepcopy
 import warnings
+
+def _load_grammatical_categories():
+    schema_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    path = os.path.join(schema_dir, "GrammaticalCategories.tsv")
+    with open(path) as f:
+        return {line.strip() for line in f if line.strip()}
+
+GRAMMATICAL_CATEGORIES = _load_grammatical_categories()
 
 # Sets as a lazy way of dealing with duplicates, too bad order is not maintained
 typesToFeatures = defaultdict(set)
@@ -133,15 +142,32 @@ class schema ( ):
 				except: raise Exception(f"Feature {feature} not found in schema when "
 										f"processing feature-value pair {feature} {value}.")
 
-		# Check for ID/count values coded as a list with a dot
-		if validTypes == ['.'] and isinstance(value, str):
+		# @-sigil type checking
+		if validTypes == ['@id'] and isinstance(value, str):
+			valueOK = True
+		elif validTypes == ['@lang'] and isinstance(value, str):
+			valueOK = True
+		elif validTypes == ['@int']:
+			valueOK = (isinstance(value, str) and (value.isdigit() or value == '∞'))
+			if not valueOK:
+				raise Exception(f"Feature {feature} expects an integer, got {value!r}.")
+		elif validTypes == ['@ref'] and isinstance(value, str):
+			valueOK = True
+		elif validTypes == ['@str'] and isinstance(value, str):
+			valueOK = True
+		elif validTypes == ['@grammaticalCategory']:
+			valueOK = value in GRAMMATICAL_CATEGORIES
+			if not valueOK:
+				raise Exception(f"Value {value!r} for feature {feature} is not a known "
+								f"grammatical category.")
+		# Legacy dot placeholder (kept for backward compatibility during migration)
+		elif validTypes == ['.'] and isinstance(value, str):
 			valueOK = True
 		elif value in validTypes:
 			valueOK = True
-		# I wonder if I can improve error reporting since it can be hard to work out
-		# specific issue from these
-		else: raise Exception(f"Feature {feature} not found in schema when "
-									f"processing feature-value pair {feature} {value}.")
+		else:
+			raise Exception(f"Value {value!r} not valid for feature {feature} "
+							f"(expected one of {validTypes}).")
 
 
 	# This doesn't really need to be under schema, but I'm putting it here for tracking things better
@@ -165,13 +191,23 @@ class schema ( ):
 			cleanedType = "unstable"
 		
 		validFeatures = typesToFeatures[cleanedType]
-		
+
 		if feature in validFeatures:
 			pass
 		elif feature+"+" in validFeatures:
 			pass
 		elif feature+"*" in validFeatures:
 			pass
+		elif feature.startswith(("MD:", "AN:", "EX:")):
+			# Prefixed features are validated against the schema by their full name.
+			# If not found under the current type, check if any type in the schema
+			# allows them (they may be optional and the parser may not have
+			# descended into their parent yet). Raise only if completely unknown.
+			allFeatures = set()
+			for feats in typesToFeatures.values():
+				allFeatures.update(feats)
+			if feature not in allFeatures and feature+"*" not in allFeatures and feature+"+" not in allFeatures:
+				raise Exception(f"Prefixed feature {feature} not found anywhere in schema.")
 		else:
 			raise Exception(f"Feature {feature} not associated with type {type_}.")
 			
@@ -198,15 +234,12 @@ class schema ( ):
 		if level == None:
 
 			for featureSet in featureLevelDict:
-
-				for feature in featureLevelDict[featureSet]:
-					if feature.endswith("*"): featureLevelDict[featureSet].remove(feature)
-					
+				featureLevelDict[featureSet] = [f for f in featureLevelDict[featureSet] if not f.endswith("*")]
 				if featureLevelDict[featureSet] != []:
 					raise Exception(f"Some required features were missing: {featureLevelDict[featureSet]} {featureLevelDict}.")
 					
 		else:
-			featureList = featureLevelDict[level + 1]
+			featureList = [f for f in featureLevelDict[level + 1] if not f.endswith("*")]
 			if featureList != []:
 				raise Exception(f"Some required features were missing: {featureList}, level: {level+1}.")
 				

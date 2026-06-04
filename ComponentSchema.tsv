@@ -1,24 +1,33 @@
-IDENTIFIER	.
-LANGUAGE	.
+IDENTIFIER	@id
+LANGUAGE	@lang
 ELASTICITY	elastic
-		MINIMUM	.
-		MAXIMUM	.
+		MINIMUM	@int
+		MAXIMUM	@int
 	inelastic
-		COUNT	.
+		COUNT	@int
 FILLEDNESS	open
 		COHERENCE	coherent
+					EX:CLASS*	@grammaticalCategory
 			incoherent
+					EX:CLASSES*	@grammaticalCategory
 	filled
 		FORM	canonicalLineate
+					AN:TRANSCRIPTION_STRING*	@str
+					EX:LIAISON*	@str
 			embeddedDesmeme
+					AN:TRANSCRIPTION_STRING*	@str
 			reduplicant
+					AN:TRANSCRIPTION_STRING*	@str
+		EX:FILLER_CLASS*	@grammaticalCategory
 	partiallyFilled
 		FILLER_PLACEMENT	componentFinal
 		FORM	embeddedDesmeme
+					AN:TRANSCRIPTION_STRING*	@str
 		COHERENCE	coherent
+					EX:CLASS*	@grammaticalCategory
 	null
 STABILITY	stable
 	unstable
 		ASSOCIATE_POSITION	right
 				left
-		ASSOCIATE	.
+		ASSOCIATE	@ref
