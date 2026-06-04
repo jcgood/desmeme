@@ -502,7 +502,7 @@ class featval ( ):
 		
 # Reads a tabbed representation of a desmeme
 # Does validation at the same time, interacting with other methods
-def get_tabbed_desmemes(desmemeFileName, componentFileName, schemaFileName, componentSchemaFileName, skip_components=False):
+def get_tabbed_desmemes(desmemeFileName, componentFileName, schemaFileName, componentSchemaFileName, skip_components=False, skip_md=False, skip_an=False, skip_ex=False):
 
 	
 	#print(typesToFeatures)
@@ -578,6 +578,7 @@ def get_tabbed_desmemes(desmemeFileName, componentFileName, schemaFileName, comp
 			
 			# Tracks if we need to do do component parsing
 			atComponent = False
+			atMetadata = False
 			
 			# Figure out how deeply tab-embedded we are
 			tabs = re.match('^\t+', featval)
@@ -595,6 +596,11 @@ def get_tabbed_desmemes(desmemeFileName, componentFileName, schemaFileName, comp
 			# Validation for features is done within this function since it is
 			# more closely tied to parsing.
 			desmemeSchema.validate_value(feature, value)			
+
+			if (skip_md and feature.startswith("MD:")) or \
+			   (skip_an and feature.startswith("AN:")) or \
+			   (skip_ex and feature.startswith("EX:")):
+				atMetadata = True
 
 			# Override component ID in node label with generic type
 			if feature in componentFeatures:
@@ -620,7 +626,7 @@ def get_tabbed_desmemes(desmemeFileName, componentFileName, schemaFileName, comp
 
 				# For building the graph
 				embeddings[tabCount + 1] = value
-				if not (skip_components and atComponent):
+				if not (skip_components and atComponent) and not atMetadata:
 					if (not desdag.has_node(value, URI)): desdag.add_node(value, URI)
 
 				# For validation
@@ -638,7 +644,7 @@ def get_tabbed_desmemes(desmemeFileName, componentFileName, schemaFileName, comp
 				embeddings[tabCount + 1] = value
 				prevtabCount = tabCount
 				previousType = embeddings[tabCount]
-				if not (skip_components and atComponent):
+				if not (skip_components and atComponent) and not atMetadata:
 					if (not desdag.has_node(value, URI)): desdag.add_node(value, URI)
 
 				# For validation
@@ -649,7 +655,7 @@ def get_tabbed_desmemes(desmemeFileName, componentFileName, schemaFileName, comp
 				# For building the graph
 				embeddings[tabCount + 1] = value
 				prevtabCount = tabCount
-				if not (skip_components and atComponent):
+				if not (skip_components and atComponent) and not atMetadata:
 					if (not desdag.has_node(value, URI)): desdag.add_node(value, URI)
 
 				# Special logic for when we are at the zero-tab (i.e., line-initial) position
@@ -666,7 +672,7 @@ def get_tabbed_desmemes(desmemeFileName, componentFileName, schemaFileName, comp
 				desmemeSchema.process_feature(tabCount, feature, featureLevelDict)
 
 			# Add the edge in now that the nodes are worked out
-			if not (skip_components and atComponent):
+			if not (skip_components and atComponent) and not atMetadata:
 				desdag.add_edge((previousType, value), feature)
 
 			# If we are adding a component, then get the component features in the component file
