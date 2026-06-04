@@ -1,29 +1,30 @@
+import argparse
+import glob
+import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from tdag.tdag import tdag
 from tdag.validator import schema
 from tdag.avm import avm
 from tdag.tabbed import get_tabbed_desmemes
-
 from tdag.comparison import draw_graphs
 
-import re
-from collections import defaultdict
+parser = argparse.ArgumentParser(description="Read and display desmeme data.")
+parser.add_argument("--lang", default="nya", help="ISO 639-3 language code (default: nya)")
+args = parser.parse_args()
 
+data_dir = os.path.join("data", args.lang)
+des_matches  = glob.glob(os.path.join(data_dir, "*Desmemes.tsv"))
+comp_matches = glob.glob(os.path.join(data_dir, "*Components.tsv"))
+if not des_matches or not comp_matches:
+    raise FileNotFoundError(f"No TSV data files found in {data_dir}/")
 
-desmemeFileName = "data/nya/ChichewaDesmemes.tsv"
-componentFileName = "data/nya/ChichewaComponents.tsv"
-
-graphfolder = "output/Graphs_full/"
-
-desmemeSchemaFileName = "schema/DesmemeSchema.tsv"
+desmemeFileName   = des_matches[0]
+componentFileName = comp_matches[0]
+graphfolder       = "output/Graphs_full/"
+desmemeSchemaFileName   = "schema/DesmemeSchema.tsv"
 componentSchemaFileName = "schema/ComponentSchema.tsv"
-
-## Validation seems done
-## Next step: Extract other information (e.g., source, transcription) from RDF, and incorporate somehow...
-
-# Should I make a test suite?
-	
-## Also, some data is in RDF that needs dumped, like source, notes, transcription string, usw.
-## May need to open up Protege to verify, or check book dump?
 
 desdags = get_tabbed_desmemes(desmemeFileName, componentFileName, desmemeSchemaFileName, componentSchemaFileName)
 

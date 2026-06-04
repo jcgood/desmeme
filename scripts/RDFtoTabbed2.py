@@ -1,7 +1,16 @@
 """
-Migration script: reads template-CHx.rdf and writes corrected TSV files.
+Migration script: reads an RDF template file and writes corrected TSV files.
 
-Replaces RDFtoTabbed.py with the following improvements:
+Usage (run from repo root):
+  python scripts/RDFtoTabbed2.py --lang nya --name Chichewa
+  python scripts/RDFtoTabbed2.py --lang cao --name Chacobo --rdf rdf/template-cao.rdf
+
+Arguments:
+  --lang   ISO 639-3 language code (required); determines output directory data/{lang}/
+  --name   Language name prefix for output filenames (required), e.g. Chichewa, Chacobo
+  --rdf    Path to RDF source file (default: rdf/template-CHx.rdf)
+
+Improvements over the original RDFtoTabbed.py:
 - NT: prefixes replaced by MD:/AN:/EX: per the three-prefix scheme
 - EX:CONDITIONS written under CONDITIONING (not under HAS_SOURCE)
 - All previously dropped fields now exported:
@@ -16,6 +25,10 @@ Replaces RDFtoTabbed.py with the following improvements:
 - LIAISON values exported as bare local names (sinistrous, independent, dextrous)
 """
 
+import argparse
+import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import rdflib
 from rdflib import URIRef, Literal, Namespace, RDF, RDFS
 
@@ -37,10 +50,17 @@ DCTERMS    = Namespace("http://purl.org/dc/terms#")                           # 
 GOLD_NS    = "http://purl.org/linguistics/gold#"
 GENERAL_NS = "http://purl.org/linguistics/jcgood/general#"
 LOCAL_NS   = "http://purl.org/linguistics/jcgood/localcategory#"
-LANGUAGE   = "nya"
+
+parser = argparse.ArgumentParser(description="Export RDF template data to TSV.")
+parser.add_argument("--lang", required=True, help="ISO 639-3 language code (e.g. nya, cao)")
+parser.add_argument("--name", required=True, help="Language name prefix for filenames (e.g. Chichewa, Chacobo)")
+parser.add_argument("--rdf",  default="rdf/template-CHx.rdf", help="Path to RDF source file")
+args = parser.parse_args()
+
+LANGUAGE = args.lang
 
 g = rdflib.Graph()
-g.parse("rdf/template-CHx.rdf", format="xml")
+g.parse(args.rdf, format="xml")
 
 # Known data gaps in the RDF that must be patched during migration.
 # Each entry is (component_label, feature, value) to be written if the feature
@@ -284,19 +304,24 @@ def main():
 
     print(f"Found {len(desmemes)} desmemes, {len(all_comps)} components")
 
-    with open("data/nya/ChichewaDesmemes.tsv", "w") as out:
+    out_dir = os.path.join("data", args.lang)
+    os.makedirs(out_dir, exist_ok=True)
+    des_path  = os.path.join(out_dir, f"{args.name}Desmemes.tsv")
+    comp_path = os.path.join(out_dir, f"{args.name}Components.tsv")
+
+    with open(des_path, "w") as out:
         for i, d in enumerate(desmemes):
             write_desmeme(d, out, first=(i == 0))
 
     seen = set()
-    with open("data/nya/ChichewaComponents.tsv", "w") as out:
+    with open(comp_path, "w") as out:
         first = True
         for comp in all_comps:
             if rlabel(comp) not in seen:
                 write_component(comp, out, seen, first=first)
                 first = False
 
-    print("Wrote data/nya/ChichewaDesmemes.tsv and data/nya/ChichewaComponents.tsv")
+    print(f"Wrote {des_path} and {comp_path}")
 
 
 if __name__ == "__main__":
