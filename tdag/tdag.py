@@ -23,6 +23,12 @@ import pydot
 import re
 
 
+def _dot_id(name):
+    """Return a DOT-safe node ID. Colons are port separators in DOT syntax,
+    so namespace-prefixed values (e.g. local:valency) must have them replaced."""
+    return name.replace(":", "_")
+
+
 class tdag ( ):
 	
 	def __init__(self, name, lang=None):
@@ -432,36 +438,20 @@ class tdag ( ):
 		else:
 			dotDag.set_name(dag.name)
 		
-		# Go through all the nodes in the graph
 		for node in dagGraph.nodes():
 			attr_list = {}
 			for attr in dagGraph.node_attributes(node):
 				attr_list[str(attr[0])] = str(attr[1])
-			
-			newNode = pydot.Node(str(node), **attr_list)
-			
+			newNode = pydot.Node(_dot_id(str(node)), **attr_list)
 			dotDag.add_node(newNode)
-			
-		# Hacking for my specific drawing needs--no weights, just labels
-		# Add all the edges with labels.
-		dagEdgeKeys = dag.edges.keys()
-		for dagEdgeKey in dagEdgeKeys:
-			
+
+		for dagEdgeKey in dag.edges.keys():
 			(edge, label) = dag.edges[dagEdgeKey]
 			(edge_from, edge_to) = edge
-			
-			# Clean up label for printing
-			label = str(label)
-			label = label.replace("_", " ")
-
-			attr_list = {}
-			attr_list['label'] = label
-			
-			newEdge = pydot.Edge(str(edge_from), str(edge_to), **attr_list)
-			
+			attr_list = {'label': str(label).replace("_", " ")}
+			newEdge = pydot.Edge(_dot_id(str(edge_from)), _dot_id(str(edge_to)), **attr_list)
 			dotDag.add_edge(newEdge)
-			
-		#return dotDag.to_string()
+
 		return dotDag
 		
 		
@@ -486,40 +476,22 @@ class tdag ( ):
 		else:
 			dotDag.set_name(dag.name)
 		
-		# Go through all the nodes in the graph for components
 		for node in dagGraph.nodes():
 			attr_list = {}
 			for attr in dagGraph.node_attributes(node):
 				attr_list[str(attr[0])] = str(attr[1])
-			
 			for cat in componentcats:
-				catmatch = re.compile(cat)
-				if catmatch.match(node): # Need numeric nodes, too
-					newNode = pydot.Node(str(node), **attr_list)			
+				if re.compile(cat).match(node):
+					newNode = pydot.Node(_dot_id(str(node)), **attr_list)
 					dotDag.add_node(newNode)
-		
-		
-		# Hacking for my specific drawing needs--no weights, just labels
-		# Add all the edges with labels.
-		dagEdgeKeys = dag.edges.keys()
-		for dagEdgeKey in dagEdgeKeys:
-			
+
+		for dagEdgeKey in dag.edges.keys():
 			(edge, label) = dag.edges[dagEdgeKey]
 			(edge_from, edge_to) = edge
-			
-			# Clean up label for printing
-			label = str(label)
-			label = label.replace("_", " ")
-
-			attr_list = {}
-			attr_list['label'] = label
-			
-						
+			attr_list = {'label': str(label).replace("_", " ")}
 			for cat in componentcats:
-				catmatch = re.compile(cat)
-				if catmatch.match(edge_from):
-					newEdge = pydot.Edge(str(edge_from), str(edge_to), **attr_list)
+				if re.compile(cat).match(edge_from):
+					newEdge = pydot.Edge(_dot_id(str(edge_from)), _dot_id(str(edge_to)), **attr_list)
 					dotDag.add_edge(newEdge)
-				
-		#return dotDag.to_string()
+
 		return dotDag
