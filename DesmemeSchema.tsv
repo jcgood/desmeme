@@ -3,10 +3,10 @@ LANGUAGE	@lang
 CONDITIONING	constructionalConditioning
 		EX:CONDITIONS*	@str
 	lexicoconstructionalConditioning
-		FILLER_POSITION	templateInitial
+		FILLER_POSITION*	templateInitial
 			templateFinal
 			templateMultiple
-		FILLED_COMPONENTS	filledComponentSet
+		FILLED_COMPONENTS*	filledComponentSet
 				FILLED_COMPONENT+	@ref
 		EX:CONDITIONS*	@str
 	prosodicConditioning
@@ -25,7 +25,7 @@ VIOLABILITY	notViolable
 			phonologicalRepair
 			morphosyntacticInsertion
 STRICTURE	length
-		CONSTITUENT	syllable
+		CONSTITUENT	Syllable
 		COUNT	@int
 	order
 		CONSTITUENT	morphologicalConstituent
@@ -38,9 +38,9 @@ STRICTURE	length
 			taxonomic
 FOUNDATION	arch
 		LEFT_SUPPORT	@ref
-		LEFT_VOUSSOIR	@ref
+		LEFT_VOUSSOIR*	@ref
 		KEYSTONE	@ref
-		RIGHT_VOUSSOIR	@ref
+		RIGHT_VOUSSOIR*	@ref
 		RIGHT_SUPPORT	@ref
 		RESTKOMPONENTEN*	restkomponentenSet
 				RESTKOMPONENTE+	@ref

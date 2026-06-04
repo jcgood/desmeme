@@ -272,6 +272,7 @@ ELASTICITY	elastic
 	MAXIMUM	1
 FILLEDNESS	open
 	COHERENCE	coherent
+STABILITY	stable
 
 IDENTIFIER	ChichewaNPRightSupport
 LANGUAGE	nya

@@ -130,9 +130,15 @@ class schema ( ):
 
 
 	def validate_value(self, feature, value):
-		
+
+		# NT: is the legacy prefix used before the MD:/AN:/EX: scheme was
+		# introduced. Accept any string value; the migration script will
+		# rename these to the correct prefix.
+		if feature.startswith("NT:") and isinstance(value, str):
+			return
+
 		featuresToTypes	= self.featuresToTypes
-		
+
 		try: validTypes = featuresToTypes[feature]
 		except:
 			# For features coded with Kleene + or *
@@ -198,7 +204,7 @@ class schema ( ):
 			pass
 		elif feature+"*" in validFeatures:
 			pass
-		elif feature.startswith(("MD:", "AN:", "EX:")):
+		elif feature.startswith(("MD:", "AN:", "EX:", "NT:")):
 			# Prefixed features are validated against the schema by their full name.
 			# If not found under the current type, check if any type in the schema
 			# allows them (they may be optional and the parser may not have

@@ -259,7 +259,7 @@ LANGUAGE	nya
 CONDITIONING	prosodicConditioning
 VIOLABILITY	notViolable
 STRICTURE	length
-	CONSTITUENT	syllable
+	CONSTITUENT	Syllable
 	COUNT	2
 FOUNDATION	span
 	LEFT_SUPPORT	ChichewaNominalReduplicantFirstSyllable
@@ -452,7 +452,6 @@ FOUNDATION	arch
 	LEFT_SUPPORT	ChichewaNegForImp
 	LEFT_VOUSSOIR	ChichewaOM
 	KEYSTONE	ChichewaVerbStem
-	RIGHT_VOUSSOIR	xxx-tbd
 	RIGHT_SUPPORT	ChichewaNiWholeVerb
 	RESTKOMPONENTEN	restkomponentenSet
 		RESTKOMPONENTE	ChichewaModal
@@ -479,7 +478,7 @@ VIOLABILITY	potentiallyViolable
 	EXCEPTIONALITY	lexical
 	REPARABILITY	surfaceViolable
 STRICTURE	order
-	CONSTITUENT	syllable
+	CONSTITUENT	Syllable
 	COUNT	2
 	RELATIONS	simple
 FOUNDATION	span
@@ -493,7 +492,7 @@ VIOLABILITY	potentiallyViolable
 	EXCEPTIONALITY	noKnownExceptions
 	REPARABILITY	phonologicalInsertion
 STRICTURE	length
-	CONSTITUENT	syllable
+	CONSTITUENT	Syllable
 	COUNT	2
 FOUNDATION	span
 	LEFT_SUPPORT	ChichewaWordMinimalityLeftSupport
