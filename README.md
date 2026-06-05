@@ -57,15 +57,15 @@ All scripts are run from the repo root.
 
 ## Schema
 
-Desmemes and their components are described using a typed attribute-value language. Feature namespaces:
+Desmemes and their components are described using a typed attribute-value language. See **[docs/SCHEMA.md](docs/SCHEMA.md)** for the full technical reference, including the tab-indentation format, type sigils, namespace prefixes, and all feature definitions.
+
+Quick orientation:
 
 - `MD:` — metadata (bibliographic source, external references)
 - `AN:` — annotations (transcription strings)
 - `EX:` — excluded from core typology but potentially typological (function, liaison, filler class)
 
 Type sigils: `@id`, `@lang`, `@int`, `@ref`, `@str`, `@grammaticalCategory`
-
-See `schema/DesmemeSchema.tsv` and `schema/ComponentSchema.tsv` for the full description language. Grammatical category values are enumerated in `schema/GrammaticalCategories.tsv`.
 
 ## Earlier materials
 
