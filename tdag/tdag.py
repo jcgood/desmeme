@@ -13,12 +13,6 @@ It adds a layer on top of pygraph in some cases to deal with cases of re-entranc
 from pygraph.classes.digraph import digraph
 from pygraph.classes.exceptions import AdditionError
 
-# Do I need all these? (Commented out on 1/4/2025 to see if needed)
-# from pygraph.classes.exceptions import InvalidGraphType
-# from pygraph.classes.graph import graph
-# from pygraph.classes.hypergraph import hypergraph
-# from pygraph.readwrite.markup import write
-
 import pydot
 import re
 
@@ -135,33 +129,12 @@ class tdag ( ):
 		"""
 				
 		nodeName = node
-		
-		# Originally, node names were italicized, but the dot->pdf rendering messes up
-		# the way "f" is rendered (and maybe some other characters) in Times New Roman
-		# italics. So, I am turning off italics for now, but using these variables to
-		# bring them back if that problem can be addressed.
-		it = ""
-		nt = ""
-		#it = "<<i>" # dot italics prefix
-		#nt = "</i>>" # dot italics suffix
-		
-		
+
 		# Cases may need to be added as new possible "duplicate" possibilities are attested.
 		
 		# Similar logic applies to all countable nodes. See comments here will help understand others.
-		if "component_" in node:				
-
-			self.core.add_node(nodeName, attrs=[("label", it + "component" + nt)])
-				
-# 			if URI in self.components:
-# 				nodeName = self.componentMapping[URI]
-# 				pass
-# 			else:
-# 				componentNumber = len(self.components) + 1 # These increments ensure each repeatable node gets its own identifier.
-# 				nodeName = URI # Use actual component IDs now
-# 				self.components.append(URI)
-# 				self.componentMapping[URI] = nodeName # This is the nodename with the number on it to make sure it can be identified properly for pydot.
-# 				self.core.add_node(nodeName, attrs=[("label", it + URI + nt)]) # Now we add the node to the internal graph, giving it a label without the extra digit.
+		if "component_" in node:
+			self.core.add_node(nodeName, attrs=[("label", "component")])
 
 
 		elif node == "elastic":
@@ -172,7 +145,7 @@ class tdag ( ):
 				nodeName = node + str(elasticNumber)
 				self.elastics.append(URI)
 				self.elasticMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", it + "elastic" + nt)])
+				self.core.add_node(nodeName, attrs=[("label", "elastic")])
 		
 		elif node == "inelastic":		
 			
@@ -183,7 +156,7 @@ class tdag ( ):
 				nodeName = node + str(inelasticNumber)
 				self.inelastics.append(URI)
 				self.inelasticMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", it + "inelastic" + nt)])
+				self.core.add_node(nodeName, attrs=[("label", "inelastic")])
 
 		elif node == "stable":
 			if URI in self.stabilities:
@@ -193,7 +166,7 @@ class tdag ( ):
 				nodeName = node + str(stabilityNumber)
 				self.stabilities.append(URI)
 				self.stabilityMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", it + "stable" + nt)])
+				self.core.add_node(nodeName, attrs=[("label", "stable")])
 
 		elif node == "unstable":
 			if URI in self.unstabilities:
@@ -203,7 +176,7 @@ class tdag ( ):
 				nodeName = node + str(unstabilityNumber)
 				self.unstabilities.append(URI)
 				self.unstabilityMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", it + "unstable" + nt)])
+				self.core.add_node(nodeName, attrs=[("label", "unstable")])
 
 		elif node == "filled":
 			if URI in self.filleds:
@@ -213,7 +186,7 @@ class tdag ( ):
 				nodeName = node + str(filledNumber)
 				self.filleds.append(URI)
 				self.filledMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", it + "filled" + nt)])
+				self.core.add_node(nodeName, attrs=[("label", "filled")])
 
 		elif node == "open":
 			if URI in self.opens:
@@ -223,7 +196,7 @@ class tdag ( ):
 				nodeName = node + str(openNumber)
 				self.opens.append(URI)
 				self.openMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", it + "open" + nt)])
+				self.core.add_node(nodeName, attrs=[("label", "open")])
 
 		elif node == "partiallyFilled":
 			if URI in self.partialfilleds:
@@ -233,7 +206,7 @@ class tdag ( ):
 				nodeName = node + str(partialfilledNumber)
 				self.partialfilleds.append(URI)
 				self.partialfilledMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", it + "partiallyFilled" + nt)])
+				self.core.add_node(nodeName, attrs=[("label", "partiallyFilled")])
 
 		elif node == "final":
 			if URI in self.finals:
@@ -243,7 +216,7 @@ class tdag ( ):
 				nodeName = node + str(finalNumber)
 				self.finals.append(URI)
 				self.finalMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", it + "final" + nt)])
+				self.core.add_node(nodeName, attrs=[("label", "final")])
 
 		elif node == "null":
 			if URI in self.nulls:
@@ -253,7 +226,7 @@ class tdag ( ):
 				nodeName = node + str(nullNumber)
 				self.nulls.append(URI)
 				self.nullMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", it + "null" + nt)])
+				self.core.add_node(nodeName, attrs=[("label", "null")])
 
 		elif node == "coherent":
 			if URI in self.coherents:
@@ -263,7 +236,7 @@ class tdag ( ):
 				nodeName = node + str(coherentNumber)
 				self.coherents.append(URI)
 				self.coherentMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", it + "coherent" + nt)])
+				self.core.add_node(nodeName, attrs=[("label", "coherent")])
 
 		elif node == "incoherent":
 			if URI in self.incoherents:
@@ -273,7 +246,7 @@ class tdag ( ):
 				nodeName = node + str(incoherentNumber)
 				self.incoherents.append(URI)
 				self.incoherentMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", it + "incoherent" + nt)])
+				self.core.add_node(nodeName, attrs=[("label", "incoherent")])
 
 		elif node == "canonicalLineate":
 			if URI in self.canonicals:
@@ -283,17 +256,17 @@ class tdag ( ):
 				nodeName = node + str(canonicalNumber)
 				self.canonicals.append(URI)
 				self.canonicalMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", it + "canonicalLineate" + nt)])
+				self.core.add_node(nodeName, attrs=[("label", "canonicalLineate")])
 
 		elif node == "embeddedDesmeme":
-			if URI in self.canonicals:
+			if URI in self.embeddeds:
 				nodeName = self.embeddedMapping[URI]
 			else:
 				embeddedNumber = len(self.embeddeds) + 1
 				nodeName = node + str(embeddedNumber)
 				self.embeddeds.append(URI)
 				self.embeddedMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", it + "embeddedDesmeme" + nt)])
+				self.core.add_node(nodeName, attrs=[("label", "embeddedDesmeme")])
 
 		# components code nodes slightly differently from desmemes
 		elif "-MAXIMUM_" in node or "-MINIMUM_" in node or "-COUNT" in node:
@@ -308,16 +281,12 @@ class tdag ( ):
 				self.core.add_node(URI,  attrs=[("label", countno)])
 
 
-		elif node == "source":
-			print(node, nodeName)
-			pass
-		
 		# If we've made it this far, it's a non-repeatable, generic node.
 		else:
 			# make first letter of type name lowercase (needed for names borrowed from GOLD)
 			node = node[0].lower() + node[1:]
 			if not self.core.has_node(nodeName):
-				self.core.add_node(nodeName, attrs=[("label", it + node + nt)])
+				self.core.add_node(nodeName, attrs=[("label", node)])
 
 		# This allows us to capture the generated name to build the edges
 		return nodeName
@@ -358,10 +327,7 @@ class tdag ( ):
 				if edge == storedEdge:
 					storedLabel = self.core.edge_label(storedEdge)
 					if label == storedLabel:
-						# This shouldn't happen. So, if it does, we raise an error.
 						raise AdditionError("Edge (%s, %s, %s) already in digraph" % (u, v, label))
-						print("Edge (%s, %s, %s, %s) already in digraph" % (u, v, label, self.name))
-						pass
 					else:
 						# Looks good, add the edge with the new label.
 						self.add_labeled_edge(edge, label, wt=1, attrs=[])
@@ -404,24 +370,6 @@ class tdag ( ):
 
 
 
-	# Stub--used edge system for to_dot
-	def to_R(self):
-		nodes = self.core.nodes()
-		edges = self.core.edges()
-		
-		for node in nodes:
-			print(node)
-			
-		for edge in edges:
-			print(edge)
-			
-			
-	# Stub--used edge system for to_dot
-	def to_XML(self):
-		graph = self.core
-		write(graph)
-
-	
 	# Adds a layer on top of normal .dot file creation for multiple edges to across same nodes
 	def to_dot(dag, weighted=False):
 
