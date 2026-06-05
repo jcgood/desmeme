@@ -1,0 +1,82 @@
+#nexus
+
+BEGIN Taxa;
+DIMENSIONS ntax=34;
+TAXLABELS
+ChichewaAR-MOR
+ChichewaAssociative-SYN
+ChichewaCA-MOR
+ChichewaCP-MOR
+ChichewaClause-SYN
+ChichewaCleft-SYN
+ChichewaComplementClause-SYN
+ChichewaCompoundStem-PHON
+ChichewaDerivationalStem-PhMOR
+ChichewaImperative-MOR
+ChichewaKodi-SYN
+ChichewaLocative-CLT
+ChichewaMacroStem-PhMOR
+ChichewaNDem-PhSYN
+ChichewaNP-SYN
+ChichewaNeg1Verb-PhMOR
+ChichewaNiEnclitic-CLT
+ChichewaNominalReduplicant-PhMOR
+ChichewaNominalReduplication-PhMOR
+ChichewaNoun-MOR
+ChichewaORelative-CLT
+ChichewaOsaVerb-MOR
+ChichewaPhrase-PhSYN
+ChichewaRMC-MOR
+ChichewaRelativeClause-SYN
+ChichewaSTAMP-PhMOR
+ChichewaSyllable-PHON
+ChichewaVOX-SYN
+ChichewaVerb-MOR
+ChichewaVerbStem-PhMOR
+ChichewaVerbWithImperatives-MOR
+ChichewaVerbWord-PhMOR
+ChichewaVowelHarmony-PhMOR
+ChichewaWordMinimality-PhMOR
+;
+END; [Taxa]
+
+BEGIN Distances;
+DIMENSIONS ntax=34;
+FORMAT labels=left diagonal triangle=lower;
+MATRIX
+ChichewaAR-MOR		0.0
+ChichewaAssociative-SYN		0.69	0.0
+ChichewaCA-MOR		0.31	0.54	0.0
+ChichewaCP-MOR		0.31	0.54	0.0	0.0
+ChichewaClause-SYN		0.75	0.58	0.62	0.62	0.0
+ChichewaCleft-SYN		0.76	0.2	0.64	0.64	0.45	0.0
+ChichewaComplementClause-SYN		0.75	0.3	0.62	0.62	0.4	0.45	0.0
+ChichewaCompoundStem-PHON		0.75	0.58	0.62	0.62	0.4	0.45	0.4	0.0
+ChichewaDerivationalStem-PhMOR		0.75	0.58	0.62	0.62	0.4	0.45	0.4	0.0	0.0
+ChichewaImperative-MOR		0.67	0.69	0.5	0.5	0.4	0.58	0.67	0.4	0.4	0.0
+ChichewaKodi-SYN		0.67	0.6	0.71	0.71	0.67	0.69	0.46	0.67	0.67	0.82	0.0
+ChichewaLocative-CLT		0.76	0.5	0.64	0.64	0.45	0.36	0.45	0.11	0.11	0.45	0.69	0.0
+ChichewaMacroStem-PhMOR		0.75	0.58	0.62	0.62	0.4	0.45	0.4	0.0	0.0	0.4	0.67	0.11	0.0
+ChichewaNDem-PhSYN		0.78	0.64	0.82	0.82	0.5	0.54	0.5	0.5	0.5	0.71	0.43	0.54	0.5	0.0
+ChichewaNP-SYN		0.72	0.67	0.76	0.76	0.54	0.57	0.73	0.73	0.73	0.64	0.56	0.67	0.73	0.5	0.0
+ChichewaNeg1Verb-PhMOR		0.75	0.58	0.62	0.62	0.4	0.45	0.4	0.0	0.0	0.4	0.67	0.11	0.0	0.5	0.73	0.0
+ChichewaNiEnclitic-CLT		0.62	0.54	0.46	0.46	0.62	0.64	0.36	0.36	0.36	0.62	0.53	0.42	0.36	0.67	0.83	0.36	0.0
+ChichewaNominalReduplicant-PhMOR		0.94	0.77	0.87	0.87	0.75	0.77	0.64	0.64	0.64	0.85	0.81	0.67	0.64	0.79	0.94	0.64	0.69	0.0
+ChichewaNominalReduplication-PhMOR		0.75	0.58	0.62	0.62	0.4	0.45	0.4	0.0	0.0	0.4	0.67	0.11	0.0	0.5	0.73	0.0	0.36	0.64	0.0
+ChichewaNoun-MOR		0.71	0.73	0.75	0.75	0.62	0.64	0.62	0.36	0.36	0.62	0.53	0.42	0.36	0.33	0.6	0.36	0.57	0.79	0.36	0.0
+ChichewaORelative-CLT		0.62	0.54	0.46	0.46	0.62	0.64	0.36	0.36	0.36	0.62	0.53	0.42	0.36	0.67	0.83	0.36	0.0	0.69	0.36	0.57	0.0
+ChichewaOsaVerb-MOR		0.53	0.64	0.33	0.33	0.5	0.73	0.5	0.5	0.5	0.5	0.53	0.54	0.5	0.75	0.76	0.5	0.33	0.79	0.5	0.67	0.33	0.0
+ChichewaPhrase-PhSYN		0.82	0.58	0.71	0.71	0.55	0.58	0.4	0.4	0.4	0.67	0.67	0.45	0.4	0.62	0.81	0.4	0.5	0.5	0.4	0.62	0.5	0.62	0.0
+ChichewaRMC-MOR		0.75	0.58	0.62	0.62	0.4	0.45	0.4	0.0	0.0	0.4	0.67	0.11	0.0	0.5	0.73	0.0	0.36	0.64	0.0	0.36	0.36	0.5	0.4	0.0
+ChichewaRelativeClause-SYN		0.82	0.45	0.71	0.71	0.22	0.3	0.22	0.22	0.22	0.55	0.57	0.3	0.22	0.36	0.64	0.22	0.5	0.64	0.22	0.5	0.5	0.62	0.4	0.22	0.0
+ChichewaSTAMP-PhMOR		0.76	0.5	0.64	0.64	0.58	0.36	0.58	0.3	0.3	0.45	0.76	0.2	0.3	0.64	0.57	0.3	0.54	0.77	0.3	0.54	0.54	0.64	0.58	0.3	0.45	0.0
+ChichewaSyllable-PHON		0.79	0.67	0.83	0.83	0.73	0.67	0.64	0.64	0.64	0.81	0.65	0.57	0.64	0.6	0.71	0.64	0.69	0.71	0.64	0.6	0.69	0.76	0.54	0.64	0.64	0.67	0.0
+ChichewaVOX-SYN		0.62	0.64	0.67	0.67	0.5	0.54	0.71	0.71	0.71	0.62	0.62	0.73	0.71	0.33	0.38	0.71	0.82	0.94	0.71	0.57	0.82	0.75	0.8	0.71	0.62	0.73	0.76	0.0
+ChichewaVerb-MOR		0.76	0.62	0.64	0.64	0.45	0.5	0.69	0.58	0.58	0.45	0.83	0.5	0.58	0.73	0.57	0.58	0.73	0.86	0.58	0.73	0.73	0.64	0.69	0.58	0.58	0.5	0.75	0.64	0.0
+ChichewaVerbStem-PhMOR		0.75	0.58	0.62	0.62	0.4	0.45	0.4	0.0	0.0	0.4	0.67	0.11	0.0	0.5	0.73	0.0	0.36	0.64	0.0	0.36	0.36	0.5	0.4	0.0	0.22	0.3	0.64	0.71	0.58	0.0
+ChichewaVerbWithImperatives-MOR		0.76	0.71	0.64	0.64	0.58	0.62	0.79	0.58	0.58	0.45	0.89	0.5	0.58	0.81	0.67	0.58	0.73	0.86	0.58	0.73	0.73	0.64	0.79	0.58	0.69	0.5	0.82	0.73	0.5	0.58	0.0
+ChichewaVerbWord-PhMOR		0.75	0.58	0.62	0.62	0.4	0.45	0.4	0.0	0.0	0.4	0.67	0.11	0.0	0.5	0.73	0.0	0.36	0.64	0.0	0.36	0.36	0.5	0.4	0.0	0.22	0.3	0.64	0.71	0.58	0.0	0.58	0.0
+ChichewaVowelHarmony-PhMOR		0.78	0.73	0.82	0.82	0.62	0.64	0.62	0.5	0.5	0.71	0.53	0.54	0.5	0.33	0.6	0.5	0.67	0.69	0.5	0.18	0.67	0.75	0.62	0.5	0.5	0.64	0.6	0.57	0.73	0.5	0.81	0.5	0.0
+ChichewaWordMinimality-PhMOR		0.89	0.88	0.94	0.94	0.87	0.88	0.79	0.79	0.79	0.94	0.76	0.8	0.79	0.73	0.89	0.79	0.81	0.4	0.79	0.73	0.81	0.88	0.69	0.79	0.79	0.88	0.57	0.88	0.94	0.79	0.94	0.79	0.64	0.0
+;
+END; [Distances]

@@ -50,7 +50,7 @@ desmemes = get_tabbed_desmemes(
 
 distances = get_distances(desmemes)
 
-outpath = args.output or os.path.join("output", f"{args.lang}.nex")
+outpath = args.output or os.path.join("output", args.lang, "nexus", f"{args.lang}.nex")
 os.makedirs(os.path.dirname(outpath), exist_ok=True)
 to_nex(distances, outpath)
 print(f"Wrote {len(desmemes)} x {len(desmemes)} distance matrix to {outpath}")
