@@ -1,14 +1,26 @@
 """
-Module for processing graphs describing templates.
+tdag — DAG wrapper for templatic constructions.
 
-This module helps process templates described graphs.
-It adds a layer on top of pygraph in some cases to deal with cases of re-entrancy.
+Wraps a pygraph digraph with two layers of extra machinery:
+
+1. Repeatable node types (elastic, filled, stable, etc.) can appear
+   multiple times in one graph. Each instance gets a disambiguating
+   integer suffix (elastic1, elastic2, …) while sharing the same
+   display label. _repeatable_node() handles this uniformly.
+
+2. Labeled parallel edges. pygraph's digraph allows at most one edge
+   between any two nodes. Templates with foundation re-entrancy (e.g.
+   a component appearing as both LEFT_SUPPORT and KEYSTONE) need
+   multiple labeled arcs between the same pair of nodes. add_edge()
+   and add_labeled_edge() implement this by maintaining a separate
+   self.edges dict alongside pygraph's internal edge table.
+
+The canonical way to build a tdag from data is via
+tdag.tabbed.get_tabbed_desmemes().
+
+Dependencies: pygraph (Shoobx fork), pydot.
+Possible future work: migrate from pygraph to NetworkX.
 """
-
-## To do: https://github.com/Shoobx/python-graph/tree/afd6f1cf0f04350d05ea28ad3ea567b623031ae4
-# is the library used here, but no longer maintained
-# maybe switch to NetworkX?
-# https://networkx.org/documentation/stable/index.html
 
 from pygraph.classes.digraph import digraph
 from pygraph.classes.exceptions import AdditionError
@@ -18,310 +30,144 @@ import re
 
 
 def _dot_id(name):
-    """Return a DOT-safe node ID. Colons are port separators in DOT syntax,
-    so namespace-prefixed values (e.g. local:valency) must have them replaced."""
+    """Return a DOT-safe node ID.
+
+    Colons are port separators in DOT syntax, so namespace-prefixed
+    values (e.g. local:valency) must have their colons replaced before
+    being passed to pydot. The display label is unaffected.
+    """
     return name.replace(":", "_")
 
 
-class tdag ( ):
-	
+# Node types that can appear more than once within a single tdag (e.g.
+# two components can both be 'elastic'). Each instance is stored under a
+# disambiguated name (elastic1, elastic2, …); add_node dispatches on this
+# set to route them through _repeatable_node().
+_REPEATABLE_TYPES = frozenset({
+    "elastic", "inelastic",
+    "stable", "unstable",
+    "filled", "open", "partiallyFilled", "null",
+    "coherent", "incoherent",
+    "canonicalLineate", "embeddedDesmeme",
+    "final",
+})
+
+
+class tdag:
+	"""DAG representing a single templatic construction.
+
+	Attributes:
+	    name (str): The desmeme identifier (e.g. 'ChichewaAR-MOR').
+	    lang (str|None): ISO 639-3 language code (e.g. 'nya', 'cao').
+	    core (digraph): The underlying pygraph directed graph. Nodes are
+	        stored here; use tdag methods rather than accessing core
+	        directly where possible.
+	    edges (dict): Maps integer edge IDs to ((from, to), label) tuples.
+	        Maintained alongside pygraph's internal edge table to support
+	        labeled parallel edges for foundation re-entrancy.
+	    edgeCount (int): Monotonically increasing ID for the next edge.
+	"""
+
 	def __init__(self, name, lang=None):
-		"""
-		DAG representing a single templatic construction, built from TSV data by
-		get_tabbed_desmemes(). Wraps a pygraph digraph with extra logic for
-		re-entrancy and repeatable node types.
-		"""
-
 		self.name = name
-		self.lang = lang  # ISO 639-3 language code, e.g. 'nya', 'cao'
-		
-		# The "core" of a template DAG is a directed graph from pygraph, allowing us to use most of its functionality.
-		# But, some extra information needs to be added on top of this core to get repeatable nodes and multiple
-		# pointing to/from the same nodes.
-		# POSSIBLE CONFUSION: In a few places, we call tdag functions and pygraph functions
-		# with the same and/or similar names. This is noted in some places (where remembered).
+		self.lang = lang
+
 		self.core = digraph()
-		
-		# Information from here down is kept track of to deal with special properties of tdags.
-		# We store a copy of edges at DAG level so we can add IDs to them.
-		# This helps us get foundation re-entrancy.
-		# These are just labeled edges with an ID.
+
+		# Labeled edge tracking for re-entrancy (see module docstring).
 		self.edgeCount = 0
-		self.edges = { }
-		
-		
-		# The mappings below relate a component ID to a disambiguated node label.
+		self.edges = {}
 
-		# Nodes that can repeat need to be created here and relevant logic needs to be added to add_node().
-		# This has been implemented for all attested cases, but not logically possible ones.
-		# So, some may need to be added, but there should be warnings when this is a problem.
-		self.components = [ ]
-		self.componentMapping = { }
-
-		# The next two are for component elasticity
-		self.elastics = [ ]
-		self.elasticMapping = { }
-
-		self.inelastics = [ ]
-		self.inelasticMapping = { }
+		# Maps each repeatable type name to a dict of {URI -> node_name}.
+		# Populated lazily by _repeatable_node().
+		self._repeatable = {}
 
 
-		# The next two are for types of component stability
-		self.stabilities = [ ]
-		self.stabilityMapping = { }
+	def _repeatable_node(self, type_name, URI):
+		"""Return the disambiguated node name for a repeatable-type node.
 
-		self.unstabilities = [ ]
-		self.unstabilityMapping = { }
-
-
-		# The next four are for types of component filledness
-		self.opens = [ ]
-		self.openMapping = { }
-
-		self.filleds = [ ]
-		self.filledMapping = { }
-
-		self.partialfilleds = [ ]
-		self.partialfilledMapping = { }
-
-		# For positioning of partiallyFilled elements.
-		# Need to add other positions as coded.
-		# In fact, none were needed initially since repetition didn't come up, but "final" was added as a test.
-		self.finals = [ ]
-		self.finalMapping = { }
-
-		self.nulls = [ ]
-		self.nullMapping = { }
-
-		self.coherents = [ ]
-		self.coherentMapping = { }
-
-		self.incoherents = [ ]
-		self.incoherentMapping = { }
+		If URI has been seen before for this type, returns the existing
+		node name. Otherwise creates a new numbered node (e.g. elastic3)
+		in the core graph and records the mapping.
+		"""
+		mapping = self._repeatable.setdefault(type_name, {})
+		if URI not in mapping:
+			n = len(mapping) + 1
+			node_name = type_name + str(n)
+			mapping[URI] = node_name
+			self.core.add_node(node_name, attrs=[("label", type_name)])
+		return mapping[URI]
 
 
-		# For canonical fillers of components (as opposed to templatic fillers)
-		self.canonicals = [ ]
-		self.canonicalMapping = { }
-
-		# For embedded desmemes
-		self.embeddeds = [ ]
-		self.embeddedMapping = { }
-
-
-		# For different integer counts in the graphs
-		# This part of the description language should be updated, probably,
-		# to fixedSlot, optionalSlot, field (see Template2Notes.txt) 
-		
-		## Don't think these are needed for new implementation, 1/19/2025
-		#self.seenCounts = [ ]
-		#self.counts = { }
-		#self.countMapping = { }
-
-		
-	
-	
 	def add_node(self, node, URI, mother="", predicate=""):
-		"""
-		Add a node to the graph. Handles repeatable node types (elastic, filled, etc.)
-		by appending a disambiguating integer. Returns the actual node name used.
-		If the node already exists, returns its name as a side effect.
-		"""
-				
-		nodeName = node
+		"""Add a node to the graph and return the name it was stored under.
 
-		# Cases may need to be added as new possible "duplicate" possibilities are attested.
-		
-		# Similar logic applies to all countable nodes. See comments here will help understand others.
+		Handles four cases:
+		- component_ nodes: each has a unique ID; label is always 'component'.
+		- Repeatable structural types (elastic, filled, etc.): delegated to
+		  _repeatable_node() which appends a disambiguating integer.
+		- Count-value nodes for component elasticity (MINIMUM/MAXIMUM/COUNT):
+		  stored under their full URI with the bare digit as display label.
+		- Everything else: stored under the (lowercased) node name directly.
+		  A has_node guard allows shared nodes such as grammatical category
+		  values (e.g. local:valency) that may appear in multiple components.
+		"""
 		if "component_" in node:
-			self.core.add_node(nodeName, attrs=[("label", "component")])
+			self.core.add_node(node, attrs=[("label", "component")])
+			return node
 
+		if node in _REPEATABLE_TYPES:
+			return self._repeatable_node(node, URI)
 
-		elif node == "elastic":
-			if URI in self.elastics:
-				nodeName = self.elasticMapping[URI]
-			else:
-				elasticNumber = len(self.elastics) + 1
-				nodeName = node + str(elasticNumber)
-				self.elastics.append(URI)
-				self.elasticMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", "elastic")])
-		
-		elif node == "inelastic":		
-			
-			if URI in self.inelastics:
-				nodeName = self.inelasticMapping[URI]
-			else:
-				inelasticNumber = len(self.inelastics) + 1
-				nodeName = node + str(inelasticNumber)
-				self.inelastics.append(URI)
-				self.inelasticMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", "inelastic")])
-
-		elif node == "stable":
-			if URI in self.stabilities:
-				nodeName = self.stabilityMapping[URI]
-			else:
-				stabilityNumber = len(self.stabilities) + 1
-				nodeName = node + str(stabilityNumber)
-				self.stabilities.append(URI)
-				self.stabilityMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", "stable")])
-
-		elif node == "unstable":
-			if URI in self.unstabilities:
-				nodeName = self.unstabilityMapping[URI]
-			else:
-				unstabilityNumber = len(self.unstabilities) + 1
-				nodeName = node + str(unstabilityNumber)
-				self.unstabilities.append(URI)
-				self.unstabilityMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", "unstable")])
-
-		elif node == "filled":
-			if URI in self.filleds:
-				nodeName = self.filledMapping[URI]
-			else:
-				filledNumber = len(self.filleds) + 1
-				nodeName = node + str(filledNumber)
-				self.filleds.append(URI)
-				self.filledMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", "filled")])
-
-		elif node == "open":
-			if URI in self.opens:
-				nodeName = self.openMapping[URI]
-			else:
-				openNumber = len(self.opens) + 1
-				nodeName = node + str(openNumber)
-				self.opens.append(URI)
-				self.openMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", "open")])
-
-		elif node == "partiallyFilled":
-			if URI in self.partialfilleds:
-				nodeName = self.partialfilledMapping[URI]
-			else:
-				partialfilledNumber = len(self.partialfilleds) + 1
-				nodeName = node + str(partialfilledNumber)
-				self.partialfilleds.append(URI)
-				self.partialfilledMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", "partiallyFilled")])
-
-		elif node == "final":
-			if URI in self.finals:
-				nodeName = self.finalMapping[URI]
-			else:
-				finalNumber = len(self.finals) + 1
-				nodeName = node + str(finalNumber)
-				self.finals.append(URI)
-				self.finalMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", "final")])
-
-		elif node == "null":
-			if URI in self.nulls:
-				nodeName = self.nullMapping[URI]
-			else:
-				nullNumber = len(self.nulls) + 1
-				nodeName = node + str(nullNumber)
-				self.nulls.append(URI)
-				self.nullMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", "null")])
-
-		elif node == "coherent":
-			if URI in self.coherents:
-				nodeName = self.coherentMapping[URI]
-			else:
-				coherentNumber = len(self.coherents) + 1
-				nodeName = node + str(coherentNumber)
-				self.coherents.append(URI)
-				self.coherentMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", "coherent")])
-
-		elif node == "incoherent":
-			if URI in self.incoherents:
-				nodeName = self.incoherentMapping[URI]
-			else:
-				incoherentNumber = len(self.incoherents) + 1
-				nodeName = node + str(incoherentNumber)
-				self.incoherents.append(URI)
-				self.incoherentMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", "incoherent")])
-
-		elif node == "canonicalLineate":
-			if URI in self.canonicals:
-				nodeName = self.canonicalMapping[URI]
-			else:
-				canonicalNumber = len(self.canonicals) + 1
-				nodeName = node + str(canonicalNumber)
-				self.canonicals.append(URI)
-				self.canonicalMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", "canonicalLineate")])
-
-		elif node == "embeddedDesmeme":
-			if URI in self.embeddeds:
-				nodeName = self.embeddedMapping[URI]
-			else:
-				embeddedNumber = len(self.embeddeds) + 1
-				nodeName = node + str(embeddedNumber)
-				self.embeddeds.append(URI)
-				self.embeddedMapping[URI] = nodeName
-				self.core.add_node(nodeName, attrs=[("label", "embeddedDesmeme")])
-
-		# components code nodes slightly differently from desmemes
-		elif "-MAXIMUM_" in node or "-MINIMUM_" in node or "-COUNT" in node:
-
-			# The URI is designed to contain the count value after an underscore at the end of the string
+		# Component elasticity counts: URI encodes the value after a final
+		# underscore (e.g. ChichewaApplicative-inelastic1-MINIMUM_1). Value
+		# 100 is a sentinel for ∞.
+		if "-MAXIMUM_" in node or "-MINIMUM_" in node or "-COUNT" in node:
 			countno = re.search(r'(?<=_)([0-9]+)$', node).group(0)
-			
-			# Use URI as nodename for digits since digits are not unique
-			if countno == '100':
-				self.core.add_node(URI,  attrs=[("label", '∞')])			
-			else:
-				self.core.add_node(URI,  attrs=[("label", countno)])
+			label = '∞' if countno == '100' else countno
+			self.core.add_node(URI, attrs=[("label", label)])
+			return node
+
+		# Generic non-repeatable node. The node is stored under its original
+		# name (so edges built by tabbed.py can find it), but the display
+		# label lowercases the first letter for visual consistency —
+		# GOLD-derived names (e.g. Syllable) are capitalised in the ontology.
+		label = node[0].lower() + node[1:]
+		if not self.core.has_node(node):
+			self.core.add_node(node, attrs=[("label", label)])
+		return node
 
 
-		# If we've made it this far, it's a non-repeatable, generic node.
-		else:
-			# make first letter of type name lowercase (needed for names borrowed from GOLD)
-			node = node[0].lower() + node[1:]
-			if not self.core.has_node(nodeName):
-				self.core.add_node(nodeName, attrs=[("label", node)])
-
-		# This allows us to capture the generated name to build the edges
-		return nodeName
-
-
-			
 	def has_node(self, node, URI):
+		"""Return node if it already exists in the core graph, else None.
+
+		Used by tabbed.py as a guard before calling add_node(), to avoid
+		re-adding shared nodes (e.g. a grammatical category value that
+		appears in multiple components of the same template).
 		"""
-		This function doesn't seem to be strictly needed, and I don't really
-		understand what it was doing. But, I found that it can be useful for
-		error checking since it somehow finds repeatable nodes that are not
-		being properly handled. So, I'm keeping it. It seems to work by telling
-		us if a node with that name has already been added, which normally
-		shouldn't happen.
-		"""
-		if self.core.has_node(node) == True:
+		if self.core.has_node(node):
 			return node
 
 
-	#This allows for multiple edges between the same node with different labels.
-	#It's not intended to be pretty.
-	def add_edge(self, edge, label, wt=1, attrs=[]):
-		
-		# Begin hack
-		# An edge consists of a pair of nodes to be connected.
+	def add_edge(self, edge, label, wt=1, attrs=None):
+		"""Add a labeled edge, supporting parallel edges between the same nodes.
+
+		pygraph allows at most one edge between any two nodes. Foundation
+		re-entrancy (e.g. a component that is both LEFT_SUPPORT and KEYSTONE)
+		requires two differently-labeled arcs between the same pair. This
+		method checks for an existing edge and, if found, adds a new
+		labeled parallel edge rather than raising a duplicate error.
+		"""
+		if attrs is None:
+			attrs = []
 		u, v = edge
-		
-		# Do some error checking--make sure the nodes are already there.
-		for n in [u,v]:
-			if not n in self.core.node_neighbors:
-				raise AdditionError( "%s is missing from the node_neighbors table" % n )
-			if not n in self.core.node_incidence:
-				raise AdditionError( "%s is missing from the node_incidence table" % n )
-		
-		# Check to see if edge exists already; if so we need to make sure we create a new one with a new label
+
+		for n in [u, v]:
+			if n not in self.core.node_neighbors:
+				raise AdditionError("%s is missing from the node_neighbors table" % n)
+			if n not in self.core.node_incidence:
+				raise AdditionError("%s is missing from the node_incidence table" % n)
+
 		if v in self.core.node_neighbors[u] and u in self.core.node_incidence[v]:
 			for storedEdge in self.core.edges():
 				if edge == storedEdge:
@@ -329,117 +175,98 @@ class tdag ( ):
 					if label == storedLabel:
 						raise AdditionError("Edge (%s, %s, %s) already in digraph" % (u, v, label))
 					else:
-						# Looks good, add the edge with the new label.
-						self.add_labeled_edge(edge, label, wt=1, attrs=[])
-				else:
-					pass
-
-		# This is the usual case: One pair of nodes, one edge. Just add it.
+						self.add_labeled_edge(edge, label)
 		else:
-			self.add_labeled_edge(edge, label, wt=1, attrs=[])
-	
+			self.add_labeled_edge(edge, label)
 
-	# Checks to see if a labeled edge is already there.
+
 	def has_edge(self, edge, label):
-	
-		# For re-entrancy in foundations from same parent
+		"""Return True if a labeled edge already exists between these nodes."""
 		if self.core.has_edge(edge):
 			for storedEdge in self.core.edges():
 				if edge == storedEdge:
-					storedLabel = self.core.edge_label(storedEdge)
-					if label == storedLabel:
+					if self.core.edge_label(storedEdge) == label:
 						return True
-					else: pass
-				else: pass
-			return False
-			
-		#Standard
-		else: return False
+		return False
 
-	# This uses pygraphs built-in graph capabilities but adds labeled edges for
-	# re-entrancy.
-	def add_labeled_edge(self, edge, label, wt=1, attrs=[]):
+
+	def add_labeled_edge(self, edge, label, wt=1, attrs=None):
+		"""Low-level: add a labeled edge directly, bypassing duplicate checks.
+
+		Maintains both pygraph's internal neighbor/incidence tables and the
+		tdag-level self.edges dict. The self.edges dict is what to_dot()
+		iterates over when rendering, since it preserves labels for parallel
+		edges that pygraph's edge list would otherwise collapse.
+		"""
+		if attrs is None:
+			attrs = []
 		u, v = edge
 		self.core.node_neighbors[u].append(v)
 		self.core.node_incidence[v].append(u)
 		self.core.set_edge_weight((u, v), wt)
-		self.core.add_edge_attributes( (u, v), attrs )
-		self.core.set_edge_properties( (u, v), label=label, weight=wt )
-		self.edges[self.edgeCount] = ((u,v), label)
-		self.edgeCount = self.edgeCount + 1
+		self.core.add_edge_attributes((u, v), attrs)
+		self.core.set_edge_properties((u, v), label=label, weight=wt)
+		self.edges[self.edgeCount] = ((u, v), label)
+		self.edgeCount += 1
 
 
+	def to_dot(self, weighted=False):
+		"""Render the full tdag as a pydot graph.
 
-	# Adds a layer on top of normal .dot file creation for multiple edges to across same nodes
-	def to_dot(dag, weighted=False):
-
-		# Get the core graph we've made
-		dagGraph = dag.core
-		
-		# Create a pydot object
+		Iterates over self.edges (not pygraph's edge list) so that labeled
+		parallel edges for re-entrancy are preserved. Node names are passed
+		through _dot_id() to sanitise namespace-prefixed values (e.g.
+		local:valency → local_valency) that DOT would otherwise misparse
+		as node:port pairs.
+		"""
 		dotDag = pydot.Dot()
-		
-		# For now, we don't set the name because "_" seems to cause an error
-		# So we use the existing name. I no longer follow all the logic.
-		if not 'name' in dir(dagGraph):
-			dotDag.set_name('graphname')
-		else:
-			dotDag.set_name(dag.name)
-		
-		for node in dagGraph.nodes():
-			attr_list = {}
-			for attr in dagGraph.node_attributes(node):
-				attr_list[str(attr[0])] = str(attr[1])
-			newNode = pydot.Node(_dot_id(str(node)), **attr_list)
-			dotDag.add_node(newNode)
+		dotDag.set_name(self.name)
 
-		for dagEdgeKey in dag.edges.keys():
-			(edge, label) = dag.edges[dagEdgeKey]
-			(edge_from, edge_to) = edge
+		for node in self.core.nodes():
+			attr_list = {str(k): str(v) for k, v in self.core.node_attributes(node)}
+			dotDag.add_node(pydot.Node(_dot_id(str(node)), **attr_list))
+
+		for (edge, label) in self.edges.values():
+			edge_from, edge_to = edge
 			attr_list = {'label': str(label).replace("_", " ")}
-			newEdge = pydot.Edge(_dot_id(str(edge_from)), _dot_id(str(edge_to)), **attr_list)
-			dotDag.add_edge(newEdge)
+			dotDag.add_edge(pydot.Edge(_dot_id(str(edge_from)), _dot_id(str(edge_to)), **attr_list))
 
 		return dotDag
-		
-		
 
-	# Makes dot files just for the components of a graph
-	# BUG: prints out floating digit nodes for digity things that aren't part of components also floats lexico-constructional conditioning position
-	def to_dot_components(dag, weighted=False):
 
-		# These are the nodes that can be in components
-		componentcats = ['component','elastic','inelastic','null','filled','open','partiallyFilled','canonicalLineate','coherent','incoherent','stable','unstable','final','initial','medial', 'MAXIMUM', 'MINIMUM', 'COUNT']
+	def to_dot_components(self, weighted=False):
+		"""Render only the component subgraph of this tdag as a pydot graph.
 
-		# Get the core graph we've made
-		dagGraph = dag.core
-		
-		# Create a pydot object
+		Filters to nodes and edges whose names match the set of component-
+		internal type names. Used by draw_components() to produce component-
+		only visualisations.
+
+		Known issue: floating digit nodes (COUNT/MINIMUM/MAXIMUM values not
+		attached to a component) and lexicoconstructional conditioning
+		positions may appear in the output.
+		"""
+		component_types = {
+			'component', 'elastic', 'inelastic', 'null', 'filled', 'open',
+			'partiallyFilled', 'canonicalLineate', 'coherent', 'incoherent',
+			'stable', 'unstable', 'final', 'initial', 'medial',
+			'MAXIMUM', 'MINIMUM', 'COUNT',
+		}
+
+		def _is_component_node(name):
+			return any(re.compile(cat).match(name) for cat in component_types)
+
 		dotDag = pydot.Dot()
-		
-		# For now, we don't set the name because "_" seems to cause an error
-		# So we use the existing name. I no longer follow all the logic.
-		if not 'name' in dir(dagGraph):
-			dotDag.set_name('graphname')
-		else:
-			dotDag.set_name(dag.name)
-		
-		for node in dagGraph.nodes():
-			attr_list = {}
-			for attr in dagGraph.node_attributes(node):
-				attr_list[str(attr[0])] = str(attr[1])
-			for cat in componentcats:
-				if re.compile(cat).match(node):
-					newNode = pydot.Node(_dot_id(str(node)), **attr_list)
-					dotDag.add_node(newNode)
+		dotDag.set_name(self.name)
 
-		for dagEdgeKey in dag.edges.keys():
-			(edge, label) = dag.edges[dagEdgeKey]
-			(edge_from, edge_to) = edge
-			attr_list = {'label': str(label).replace("_", " ")}
-			for cat in componentcats:
-				if re.compile(cat).match(edge_from):
-					newEdge = pydot.Edge(_dot_id(str(edge_from)), _dot_id(str(edge_to)), **attr_list)
-					dotDag.add_edge(newEdge)
+		for node in self.core.nodes():
+			if _is_component_node(node):
+				attr_list = {str(k): str(v) for k, v in self.core.node_attributes(node)}
+				dotDag.add_node(pydot.Node(_dot_id(str(node)), **attr_list))
+
+		for (edge, label) in self.edges.values():
+			edge_from, edge_to = edge
+			if _is_component_node(edge_from):
+				attr_list = {'label': str(label).replace("_", " ")}
+				dotDag.add_edge(pydot.Edge(_dot_id(str(edge_from)), _dot_id(str(edge_to)), **attr_list))
 
 		return dotDag
